@@ -247,3 +247,46 @@ table.data { width: 100%; border-collapse: collapse; min-width: 560px; }
 .final__text { font-family: var(--serif); font-size: clamp(30px, 5vw, 72px); line-height: 1.12; letter-spacing: -.01em; max-width: 24ch; margin-top: 24px; }
 .footer { display: grid; gap: 12px; }
 .footer__note { max-width: 100ch; font-size: 11.5px; line-height: 1.6; margin: 0; }
+
+/* ── homepage film ── */
+.film { position: relative; height: 900vh; background: #000; }
+.film--still { height: auto; }
+.film__stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.film--still .film__stage { position: relative; }
+.film__canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #000; }
+.film__shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(5,5,4,.72) 0%, rgba(5,5,4,.28) 46%, rgba(5,5,4,0) 72%), linear-gradient(0deg, rgba(5,5,4,.55), rgba(5,5,4,0) 38%); }
+.cap { position: absolute; left: var(--gutter); right: var(--gutter); bottom: clamp(56px, 12vh, 140px); max-width: 1100px; will-change: transform, opacity; opacity: 0; visibility: hidden; }
+.cap--open { top: 50%; bottom: auto; transform: translateY(-50%); }
+.cap__brand { font-family: var(--serif); font-size: clamp(56px, 13vw, 220px); line-height: .9; letter-spacing: .06em; margin: 0 0 24px -.04em; }
+.cap__descriptor { font-family: var(--sans); font-weight: 400; font-size: clamp(10px, 1.1vw, 13px); letter-spacing: .24em; color: var(--ivory); max-width: 52ch; line-height: 1.8; }
+.cap__line { font-family: var(--serif); font-size: clamp(32px, 5.4vw, 88px); line-height: 1.04; letter-spacing: -.015em; margin-top: 18px; max-width: 18ch; }
+.cap--close .cap__brand { font-size: clamp(48px, 9vw, 150px); }
+.film__hint { position: absolute; right: var(--gutter); bottom: 36px; display: flex; align-items: center; gap: 14px; font-size: 10px; letter-spacing: .26em; text-transform: uppercase; color: var(--stone); }
+.film__hint i { width: 1px; height: 44px; background: linear-gradient(var(--bronze), transparent); animation: hint 2.2s ease-in-out infinite; transform-origin: top; }
+@keyframes hint { 0% { transform: scaleY(0); } 60% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+.film--still .cap { position: relative; opacity: 1; visibility: visible; transform: none; left: auto; right: auto; bottom: auto; top: auto; padding: 32px var(--gutter); }
+.film--still .film__shade, .film--still .film__hint { display: none; }
+@media (prefers-reduced-motion: reduce) { .film__hint i { animation: none; } }
+@media (max-width: 860px) {
+  .film { height: 650vh; }
+  .film__shade { background: linear-gradient(0deg, rgba(5,5,4,.82), rgba(5,5,4,.15) 60%, rgba(5,5,4,.35)); }
+  .cap { bottom: 72px; }
+  .cap__line { max-width: none; }
+  .film__hint { display: none; }
+}
+
+.home__manifesto { padding-top: clamp(100px, 16vw, 260px); padding-bottom: clamp(100px, 16vw, 260px); }
+.home__thesis { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 5vw, 84px); line-height: 1.08; letter-spacing: -.015em; max-width: 24ch; margin-top: 28px; }
+.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(24px, 4vw, 64px); margin-top: 48px; }
+.pillar { border-top: 1px solid var(--bronze); padding-top: 24px; }
+.pillar__n { font-size: 11px; letter-spacing: .22em; color: var(--bronze); }
+.pillar h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 4vw, 64px); margin: 12px 0 16px; line-height: 1; }
+.pillar p { color: var(--stone); max-width: 36ch; }
+.cap--right { left: auto; text-align: right; }
+.cap--right .cap__line { margin-left: auto; }
+.film--still .film__stage { height: auto; }
+.film--still .film__canvas { position: relative; height: 70vh; }
+.film--still .cap--right { text-align: left; }
+.film--still .cap--right .cap__line { margin-left: 0; }
+.film--still .cap { background: var(--black); }
+@media (max-width: 860px) { .cap--right { left: var(--gutter); text-align: left; } .cap--right .cap__line { margin-left: 0; } }
