@@ -249,7 +249,7 @@ table.data { width: 100%; border-collapse: collapse; min-width: 560px; }
 .footer__note { max-width: 100ch; font-size: 11.5px; line-height: 1.6; margin: 0; }
 
 /* ── homepage film ── */
-.film { position: relative; height: 900vh; background: #000; }
+.film { position: relative; height: 1250vh; background: #000; }
 .film--still { height: auto; }
 .film__stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
 .film--still .film__stage { position: relative; }
@@ -268,7 +268,7 @@ table.data { width: 100%; border-collapse: collapse; min-width: 560px; }
 .film--still .film__shade, .film--still .film__hint { display: none; }
 @media (prefers-reduced-motion: reduce) { .film__hint i { animation: none; } }
 @media (max-width: 860px) {
-  .film { height: 650vh; }
+  .film { height: 900vh; }
   .film__shade { background: linear-gradient(0deg, rgba(5,5,4,.82), rgba(5,5,4,.15) 60%, rgba(5,5,4,.35)); }
   .cap { bottom: 72px; }
   .cap__line { max-width: none; }

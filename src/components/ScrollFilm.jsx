@@ -13,22 +13,30 @@ const BEHIND = 8
 const AHEAD = 20
 const CONCURRENCY = 6
 
-// Captions: German text from the ARVENTAS strategy document (section 5 "Positionierungsaussage"
-// and the three pillars). Timing follows the chapter ranges in public/frames/manifest.json:
-// `from`/`to` name chapters; the fade window is derived from them.
+// Captions: German brand copy from the ARVENTAS strategy document (section 5 "Positionierungsaussage",
+// the three pillars, and the cover descriptor). Timing is expressed in SOURCE-VIDEO seconds
+// (`at: [in, out]`) and mapped to scroll progress through the frame times in manifest.json, so the
+// captions stay on the right shot however the frames are sampled.
 const CAPTIONS = [
-  { id: 'open', from: 'fassade', to: 'fassade', kind: 'open' },
-  { id: 'zugang', from: 'wohnen', to: 'schlafen', tag: '01 — Zugang', text: 'Wir finden Objekte, die nicht am Markt sind,' },
-  { id: 'analyse', from: 'plan', to: 'plan', tag: '02 — Analyse', text: 'bewerten sie in Tagen statt Wochen,', right: true },
-  { id: 'abwicklung', from: 'luftbild', to: 'luftbild', tag: '03 — Abwicklung', text: 'und bringen sie zum passenden Eigentümer oder Investor.' },
-  { id: 'close', from: 'dachterrasse', to: 'dachterrasse', kind: 'close' },
+  { id: 'open', kind: 'open', at: [0, 5] },
+  { id: 'zugang', tag: '01 — Zugang', text: 'Wir finden Objekte, die nicht am Markt sind,', at: [6.5, 20] },
+  { id: 'analyse', tag: '02 — Analyse', text: 'bewerten sie in Tagen statt Wochen,', at: [25.5, 37], right: true },
+  { id: 'abwicklung', tag: '03 — Abwicklung', text: 'und bringen sie zum passenden Eigentümer oder Investor.', at: [43.5, 70] },
+  { id: 'region', tag: 'Off-Market Immobilien-Intelligenz', text: 'Bayern & Baden-Württemberg', at: [74, 103] },
+  { id: 'close', kind: 'close', at: [107, 200] },
 ]
-const windowFor = (c, ch) => {
-  const a = ch[c.from][0], b = ch[c.to][1]
-  const e = Math.min(0.035, (b - a) / 4)
-  if (c.kind === 'open') return [-1, -0.5, b - e * 1.5, b]
-  if (c.kind === 'close') return [a + e, a + e * 2.5, 2, 3]
-  return [a + e * 0.5, a + e * 1.5, b - e * 1.5, b - e * 0.5]
+// source seconds -> progress (0..1) using the manifest's frame times
+const toProgress = (t, times) => {
+  let lo = 0, hi = times.length - 1
+  while (lo < hi) { const m = (lo + hi) >> 1; if (times[m] < t) lo = m + 1; else hi = m }
+  return lo / Math.max(1, times.length - 1)
+}
+const windowFor = (c, times) => {
+  const a = toProgress(c.at[0], times), b = c.at[1] >= times[times.length - 1] ? 3 : toProgress(c.at[1], times)
+  const e = 0.012
+  if (c.kind === 'open') return [-1, -0.5, b - e, b]
+  if (c.kind === 'close') return [a, a + e * 2, 2, 3]
+  return [a, a + e, b - e, b]
 }
 
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
@@ -158,7 +166,7 @@ export default function ScrollFilm() {
 
     fetch('/frames/manifest.json').then((r) => r.json()).then((m) => {
       count = m.count
-      CAPTIONS.forEach((c) => { wins[c.id] = windowFor(c, m.chapters) })
+      CAPTIONS.forEach((c) => { wins[c.id] = windowFor(c, m.t) })
       next()
     })
 
