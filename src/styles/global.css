@@ -290,3 +290,4 @@ table.data { width: 100%; border-collapse: collapse; min-width: 560px; }
 .film--still .cap--right .cap__line { margin-left: 0; }
 .film--still .cap { background: var(--black); }
 @media (max-width: 860px) { .cap--right { left: var(--gutter); text-align: left; } .cap--right .cap__line { margin-left: 0; } }
+.cap--right .cap__line { text-shadow: 0 2px 24px rgba(0,0,0,.65); }
