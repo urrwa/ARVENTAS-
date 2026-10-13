@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ARVENTAS — Off-Market-Immobilien-Intelligenz, Bayern &amp; Baden-Württemberg">
+<title>ARVENTAS Homepage Film</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap">
+<style>
+/* Layout: sticky full-bleed film stage scrubbed by scroll, then a quiet editorial brand page. Dark, single look by design. */
+:root{--bg:#0b0b0a;--panel:#1a1a18;--fg:#f2ede4;--mute:#a8a39a;--line:rgba(242,237,228,.16);--accent:#b58f63;--sans:'Manrope',system-ui,sans-serif;--disp:'Syne','Arial Black',system-ui,sans-serif;--serif:var(--disp);--gut:clamp(16px,5vw,72px);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+.film{position:relative;height:1250vh;background:#000}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;contain:paint}
+#cv{position:absolute;inset:0;width:100%;height:100%;background:#000}
+.grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:gr .8s steps(6) infinite}
+@keyframes gr{0%{background-position:0 0}20%{background-position:-60px 40px}40%{background-position:40px -70px}60%{background-position:-40px -20px}80%{background-position:70px 60px}100%{background-position:0 0}}
+@media(prefers-reduced-motion:reduce){.grain{animation:none}}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(5,5,4,.62) 0,rgba(5,5,4,.28) 9%,rgba(5,5,4,0) 22%),linear-gradient(90deg,rgba(5,5,4,.72) 0,rgba(5,5,4,.28) 46%,rgba(5,5,4,0) 72%),linear-gradient(0deg,rgba(5,5,4,.55),rgba(5,5,4,0) 38%)}
+.cap{z-index:3;position:absolute;left:var(--gut);right:var(--gut);bottom:clamp(56px,12vh,140px);max-width:1100px;opacity:0;visibility:hidden;will-change:transform,opacity}
+.cap.open{max-width:none;bottom:clamp(40px,9vh,110px);top:auto}.cap.open .small.l{position:absolute;left:0;bottom:calc(100% + 40px)}.cap.open .small.r{position:absolute;right:0;bottom:calc(100% + 40px);top:auto}
+.cap.right{left:auto;text-align:right}
+.big{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(40px,9vw,160px);line-height:.95;letter-spacing:-.01em;margin:0 0 24px}
+.cap.close .big{font-size:clamp(40px,8vw,140px)}
+.desc{font-size:clamp(10px,1.1vw,13px);letter-spacing:.24em;line-height:1.8;max-width:52ch}
+.line{font-family:var(--disp);font-weight:700;font-size:clamp(24px,4.2vw,70px);line-height:1.08;letter-spacing:-.01em;margin-top:18px;max-width:20ch;text-transform:uppercase}
+.cap.right .line{margin-left:auto;text-shadow:0 2px 24px rgba(0,0,0,.65)}
+.cta{display:inline-block;margin-top:28px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:6px;transition:color .3s,letter-spacing .4s}
+.cta:hover{color:var(--accent);letter-spacing:.26em}
+/* ---- intro curtain, header, menu (motion language studied from the supplied reference recording) ---- */
+.curtain{position:absolute;inset:0;z-index:2;background:#0b0b0a;display:grid;place-items:center}
+.il{display:flex;align-items:center;gap:18px;font-family:var(--disp);font-weight:800;font-size:11px;letter-spacing:.42em;text-transform:uppercase}
+.il i{display:block;height:1px;width:0;background:var(--fg);transition:none}
+.hdr{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:calc(22px + env(safe-area-inset-top,0px)) var(--gut) 22px;pointer-events:none;color:#fff}
+.hdr>*{pointer-events:auto}
+.hbrand{font-family:var(--disp);font-weight:800;font-size:12px;letter-spacing:.42em;text-transform:uppercase;opacity:0}
+.hr{display:flex;align-items:center;gap:30px}
+.lang{display:flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:700;font-size:12px;letter-spacing:.16em;opacity:0}
+.lang button{background:none;border:0;color:#fff;opacity:.62;font:inherit;letter-spacing:inherit;cursor:pointer;padding:6px 2px;transition:opacity .25s,color .25s}
+.lang button[aria-pressed=true]{opacity:1;color:var(--accent)}
+.lang button:hover{opacity:1}
+.lang span{opacity:.35}
+.burger{opacity:0;background:none;border:0;color:inherit;cursor:pointer;width:46px;height:30px;padding:0;position:relative}
+.burger span{position:absolute;right:6px;height:2px;background:#fff;border-radius:1px;transition:width .45s cubic-bezier(.7,0,.2,1),transform .55s cubic-bezier(.7,0,.2,1),top .55s cubic-bezier(.7,0,.2,1),opacity .3s}
+.burger span:nth-child(1){top:8px;width:30px}.burger span:nth-child(2){top:14px;width:20px}.burger span:nth-child(3){top:20px;width:10px}
+.burger:hover span:nth-child(2){width:30px}.burger:hover span:nth-child(3){width:20px}
+.burger[aria-expanded=true] span{width:26px!important;top:14px}
+.burger[aria-expanded=true] span:nth-child(1){transform:rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:25;background:#0b0b0a;display:grid;align-content:center;padding:96px var(--gut) 48px;clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .9s cubic-bezier(.76,0,.24,1),visibility 0s .9s}
+.menu.open{clip-path:inset(0);visibility:visible;transition:clip-path .9s cubic-bezier(.76,0,.24,1),visibility 0s}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{overflow:hidden}
+.mi{display:flex;align-items:center;gap:.5em;font-family:var(--disp);font-weight:700;font-size:clamp(34px,7vw,92px);line-height:1.12;text-transform:uppercase;color:#fff;transform:translateY(105%);transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .35s,color .25s}
+.menu.open .mi{transform:none}
+.menu.open li:nth-child(1) .mi{transition-delay:.35s,0s,0s}.menu.open li:nth-child(2) .mi{transition-delay:.42s,0s,0s}.menu.open li:nth-child(3) .mi{transition-delay:.49s,0s,0s}.menu.open li:nth-child(4) .mi{transition-delay:.56s,0s,0s}
+.mi .roll{display:block;height:1.12em;overflow:hidden}
+.mi .roll b{display:block;font-weight:inherit;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.mi:hover .roll b{transform:translateY(-100%)}
+.mi .ar{opacity:0;transform:translateX(-14px);transition:opacity .35s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.mi:hover .ar{opacity:1;transform:none}
+.menu ul:hover .mi:not(:hover){opacity:.28}
+.mi:hover,.mi.cur{color:var(--accent)}
+.hl{font-family:var(--disp);font-weight:800;text-transform:uppercase;line-height:1.02;letter-spacing:-.01em}
+.hl .l1{font-size:clamp(34px,8.4vw,170px);line-height:.95;white-space:nowrap;display:block}
+.hl .l2{display:flex;justify-content:space-between;gap:3vw;font-size:clamp(18px,3.55vw,70px);white-space:nowrap}
+.hl .l3{text-align:right;font-size:clamp(18px,3.55vw,70px);white-space:nowrap}
+.hl .ch{display:inline-block;clip-path:inset(0 100% 0 0)}
+.hl .sp{display:inline-block;width:.28em}
+.hl.go .ch{clip-path:inset(0 0 0 0)}
+.small{position:absolute;font-size:11px;letter-spacing:.2em;text-transform:uppercase;line-height:1.7;opacity:0;transition:opacity 1s .2s}
+.small.l{left:var(--gut);top:calc(var(--smtop,0px))}.small.r{right:var(--gut);max-width:34ch;text-align:left}
+.stage.live .small{opacity:1}
+body.lock{overflow:hidden}
+@media(max-width:860px){.mi{font-size:clamp(26px,7.4vw,48px)}.mi .roll{height:auto}.mi .roll b+b{display:none}.small.l{display:none}.hl .l1{font-size:10vw}.hl .l2{flex-direction:column;gap:0;font-size:6.2vw}.hl .l3{text-align:left;font-size:6.2vw}.small.r{display:none}}
+@media(prefers-reduced-motion:reduce){.curtain{display:none}.hbrand,.burger,.lang{opacity:1}.hl .ch{clip-path:none}.small{opacity:1}.mi{transition:none}}
+
+.hint{z-index:3;position:absolute;right:var(--gut);bottom:34px;display:flex;gap:14px;align-items:center;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--mute)}
+.hint i{width:1px;height:44px;background:linear-gradient(var(--accent),transparent);animation:h 2.2s ease-in-out infinite;transform-origin:top}
+@keyframes h{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.sec{padding:clamp(80px,12vw,200px) var(--gut);border-top:1px solid var(--line)}
+.sec.alt{background:var(--panel)}
+.thesis{font-family:var(--disp);font-weight:600;font-size:clamp(24px,3.4vw,58px);line-height:1.14;letter-spacing:-.01em;max-width:26ch;margin-top:28px}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:clamp(24px,4vw,64px);margin-top:48px}
+.pillar{border-top:1px solid var(--accent);padding-top:24px;min-width:0}
+.pn{font-size:11px;letter-spacing:.22em;color:var(--accent)}
+.pillar h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(26px,2.8vw,46px);margin:12px 0 16px;line-height:1.05}
+.pillar p{color:var(--mute);max-width:38ch;font-size:15px}
+.sub{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.6vw,62px);line-height:1.08;max-width:24ch;margin:20px 0 56px}
+.stages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr)}
+.stages li{position:relative;padding:28px 12px 0 0;min-width:0}
+.stages li::before{content:'';position:absolute;top:12px;left:0;right:0;height:1px;background:var(--line)}
+.stages li::after{content:'';position:absolute;top:7px;left:0;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1px solid var(--accent);transition:background .4s}
+.stages li.on::after{background:var(--accent)}
+.stages span{font-size:11px;letter-spacing:.2em;color:var(--mute)}
+.stages b{display:block;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(16px,1.7vw,26px);line-height:1.1;margin-top:8px}
+.loop{margin-top:32px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.final{font-family:var(--disp);font-weight:700;font-size:clamp(26px,4vw,64px);line-height:1.1;max-width:24ch;text-transform:uppercase}
+footer{padding:48px var(--gut);border-top:1px solid var(--line);font-size:12px;color:var(--mute);letter-spacing:.08em}
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s,transform 1s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.film{height:900vh}.shade{background:linear-gradient(180deg,rgba(5,5,4,.6) 0,rgba(5,5,4,0) 16%),linear-gradient(0deg,rgba(5,5,4,.82),rgba(5,5,4,.15) 60%,rgba(5,5,4,.35))}.cap{bottom:72px}.cap.right{left:var(--gut);text-align:left}.cap.right .line{margin-left:0}.line{max-width:none}.hint{display:none}.stages{grid-template-columns:1fr}.stages li{padding:0 0 24px 36px}.stages li::before{top:0;bottom:0;left:5px;right:auto;width:1px;height:auto}.stages li::after{top:4px}}
+@media(prefers-reduced-motion:reduce){.hint i{animation:none}.rv{opacity:1;transform:none;transition:none}}
+
+/* ---- rest of the page: light editorial sections (motion language studied from the reference recording) ---- */
+.rest{background:#f2ede4;color:#0b0b0a;position:relative}
+.rest .eyebrow{color:#7a5c36}
+.rsec{padding:clamp(80px,12vw,190px) var(--gut) clamp(70px,9vw,140px);border-top:0}
+.rsec.alt2{background:#e8e1d4}
+.rh{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(24px,4.6vw,84px);line-height:1.06;letter-spacing:-.01em;max-width:22ch;margin-top:22px}
+.rh .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-right:.28em}
+.rh .w>span{display:inline-block;transform:translateY(112%);transition:transform 1s cubic-bezier(.2,.8,.2,1) calc(var(--i)*55ms)}
+.rh.in .w>span{transform:none}
+.r1row{display:flex;justify-content:space-between;gap:40px;align-items:flex-start;margin-top:clamp(32px,5vw,72px);flex-wrap:wrap}
+.rl{font-family:var(--disp);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid #8a6a3f;padding-bottom:6px;transition:letter-spacing .4s,color .3s}
+.rl:hover{letter-spacing:.28em;color:#8a6a3f}
+.rp{max-width:44ch;font-size:15px;line-height:1.75;color:#3a362f}
+.rsub{margin-top:18px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#7a5c36}
+.r2{padding:0 0 clamp(70px,9vw,140px)}
+.r2 .eyebrow{padding:0 var(--gut);margin-bottom:28px}
+.marquee{overflow:hidden;border-block:1px solid rgba(11,11,10,.16)}
+.mtrack{display:flex;width:max-content;animation:mq 40s linear infinite}
+.marquee:hover .mtrack{animation-play-state:paused}
+.mtrack span{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(26px,4.4vw,70px);padding:.4em .7em;white-space:nowrap;display:flex;align-items:center;gap:1.4em}
+.mtrack span::after{content:'';width:.26em;height:.26em;background:#b58f63;display:inline-block;transform:rotate(45deg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(36px,5vw,72px)}
+.tc{position:relative;aspect-ratio:3/4.4;overflow:hidden;background:#111;cursor:pointer;outline:none;clip-path:inset(100% 0 0 0);transition:clip-path 1.1s cubic-bezier(.2,.8,.2,1) calc(var(--i)*110ms)}
+.cards4.in .tc{clip-path:inset(0)}
+.tc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.3s cubic-bezier(.2,.8,.2,1)}
+.tc:hover img,.tc:focus-visible img{transform:scale(1.07)}
+.tc::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0) 48%);pointer-events:none}
+.tc .lab{position:absolute;z-index:1;left:18px;bottom:18px;right:18px;color:#fff;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(13px,1.3vw,21px);line-height:1.15}
+.tp{position:absolute;inset:0;z-index:2;background:#b58f63;color:#0b0b0a;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;transform:translateY(101%);transition:transform .65s cubic-bezier(.7,0,.2,1)}
+.tc:hover .tp,.tc:focus-visible .tp,.tc:focus-within .tp{transform:none}
+.tp small{margin-top:0;margin-bottom:auto;font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.tp b{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(10px,.9vw,15px);line-height:1.15}.tp b span{min-width:0;overflow-wrap:anywhere;hyphens:auto}
+.tp i{font-style:normal;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.tc:hover .tp i{transform:translate(3px,-3px)}
+.tp p{margin:12px 0 0;font-size:14px;line-height:1.55;max-width:30ch}
+.rest .pillars{margin-top:44px}
+.rest .pillar{border-top-color:#0b0b0a}
+.rest .pillar .pn{color:#7a5c36}
+.rest .pillar p{color:#3a362f}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gut) 24px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#b58f63 transparent;background:#f2ede4}
+.sc{flex:0 0 clamp(270px,31vw,470px);scroll-snap-align:start;position:relative;aspect-ratio:4/5;overflow:hidden;background:#111;color:#fff}
+.sc .ph{position:absolute;inset:0}
+.sc .ph img{position:absolute;top:0;left:-8%;width:116%;height:100%;object-fit:cover;will-change:transform}
+.sc::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,0) 55%);pointer-events:none}
+.sc .sn{position:absolute;z-index:1;top:16px;left:18px;font-size:11px;letter-spacing:.22em}
+.sc .st{position:absolute;z-index:1;left:18px;right:18px;bottom:20px}
+.sc .st b{display:block;font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(20px,2.2vw,34px);line-height:1.05}
+.sc .st p{font-size:14px;line-height:1.55;margin:10px 0 0;max-width:34ch;opacity:.94}
+
+.ftr{background:#101010;color:#f2ede4;padding:clamp(56px,7vw,110px) var(--gut) 28px;overflow:hidden}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
+.ft-h{font-family:var(--disp);font-weight:300;font-size:clamp(28px,3.2vw,52px);letter-spacing:-.01em;margin:0 0 clamp(28px,3vw,48px);line-height:1.05}
+.ft-form{position:relative;display:flex;max-width:640px;padding-bottom:4px}
+.ft-form input{flex:1;background:none;border:0;outline:0;color:inherit;font:inherit;font-size:17px;padding:14px 0}
+.ft-form input::placeholder{color:#8c877e}
+.ft-form button{background:none;border:0;color:inherit;cursor:pointer;padding:0 4px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.ft-form button:hover,.ft-form input:focus+button{transform:translateX(8px)}
+.ft-line{position:absolute;left:0;right:0;bottom:0;height:1px;background:#3a3834;overflow:hidden}
+.ft-line:after{content:"";position:absolute;inset:0;background:#c9a56b;transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.ft-form:focus-within .ft-line:after{transform:scaleX(1)}
+.ft-msg{min-height:22px;margin:10px 0 0;font-size:13px;color:#c9a56b}
+.ft-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:640px;gap:clamp(20px,3vw,40px);margin-top:clamp(28px,4vw,60px)}
+.ft-info>div{position:relative;padding-bottom:18px}
+.ft-info>div:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#4a463f;transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0s) + .25s)}
+.ft-info>div.in:after{transform:scaleX(1)}
+.ft-info>div:before{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#c9a56b;transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.8,.2,1);z-index:1}
+.ft-info>div:hover:before{transform:scaleX(1)}
+.ft-info>div:hover p{color:#c9a56b}
+.ft-info p{transition:color .4s}
+.ft-info small{display:block;color:#8c877e;font-size:13px;margin-bottom:14px}
+.ft-info p{margin:0;font-size:17px;line-height:1.45;max-width:20ch}
+.ft-nav{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.ft-nav a{color:inherit;text-decoration:none;font-family:var(--disp);font-weight:300;font-size:clamp(28px,3vw,48px);line-height:1.2;overflow:hidden;display:block}
+.ft-nav .roll{display:block;position:relative;overflow:hidden;height:1.2em}
+.ft-nav .roll b{display:block;font-weight:inherit;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.ft-nav a:hover .roll b{transform:translateY(-100%)}
+.ft-nav a:hover .roll b:last-child{color:#c9a56b}
+.ft-nav a:nth-child(2){--n:1}.ft-nav a:nth-child(3){--n:2}.ft-nav a:nth-child(4){--n:3}
+.ft-nav a{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--n,0)*.08s)}
+.ftr.in .ft-nav a{opacity:1;transform:none}
+.ft-mark{display:flex;justify-content:space-between;padding-right:.04em;font-family:var(--disp);font-weight:800;font-size:clamp(34px,10.4vw,210px);line-height:.86;margin-top:clamp(40px,6vw,100px);text-transform:uppercase;letter-spacing:-.02em;user-select:none}
+.ft-mark span{display:block;overflow:hidden;padding-top:.04em}
+.ft-mark b{display:block;font-weight:inherit;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*.07s + .15s)}
+.ftr.in .ft-mark b{transform:none}
+.ft-mark span:hover b{color:#c9a56b;transition-delay:0s;transition:color .3s}
+.ft-cred{margin:14px 0 0;font-size:11px;letter-spacing:.06em;color:#6d685f;line-height:1.6}.ft-cred a{color:inherit}
+.ft-bot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:clamp(24px,3vw,40px);font-size:12px;letter-spacing:.08em;color:#8c877e}
+@media(max-width:860px){.ft-grid{grid-template-columns:1fr}.ft-info{grid-template-columns:1fr 1fr}.ft-nav{order:-1;margin-bottom:12px}}
+
+.rfin{background:#0b0b0a;color:#f2ede4;padding:clamp(90px,13vw,200px) var(--gut)}
+.hdr{transition:color .3s}
+.burger span{background:currentColor}
+.hdr.on-light{color:#0b0b0a}
+.hdr.on-light .lang button{color:#0b0b0a}
+.hdr.on-light .lang button[aria-pressed=true]{color:#8a6a3f}
+@media(max-width:860px){.cards4{grid-template-columns:repeat(2,1fr)}.tc{aspect-ratio:3/4}.r1row{flex-direction:column}.tp p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.mtrack{animation:none}.rh .w>span{transform:none;transition:none}.tc{clip-path:none;transition:none}}
+
+/* ---- dark "points" list (motion language studied from the second reference recording) ---- */
+.svc{background:#101010;color:#f2ede4;padding:clamp(80px,11vw,170px) var(--gut) clamp(70px,9vw,140px)}
+.svh{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:clamp(40px,6vw,90px);align-items:start}
+.svh .l{grid-column:1/span 4;color:#a8a39a}
+.svh h2{grid-column:5/span 8;margin:0;font-family:'Manrope',sans-serif;font-weight:300;font-size:clamp(28px,3.6vw,60px);line-height:1.1;letter-spacing:-.02em}
+.svcl{list-style:none;margin:0;padding:0;border-top:1px solid rgba(242,237,228,.16)}
+.srow{position:relative;display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:center;min-height:clamp(130px,15vw,230px);padding:20px 0;border-bottom:1px solid rgba(242,237,228,.16);overflow:hidden;isolation:isolate;color:#f2ede4}
+.sbg{position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center;clip-path:inset(0 100% 0 0);transition:clip-path .85s cubic-bezier(.7,0,.2,1)}
+.sbg::after{content:'';position:absolute;inset:0;background:rgba(10,10,10,.52)}
+.srow:hover .sbg,.srow:focus-visible .sbg{clip-path:inset(0)}
+.snum{grid-column:1;display:grid;place-items:center;width:28px;height:28px;border:1px solid rgba(242,237,228,.55);border-radius:50%;font-size:10px;letter-spacing:.04em}
+.sdesc{grid-column:2/span 4;font-size:14px;line-height:1.65;max-width:34ch;color:#e6e0d4}
+.sword{grid-column:6/span 5;font-family:'Manrope',sans-serif;font-weight:400;font-size:clamp(44px,8vw,148px);line-height:1;letter-spacing:-.035em;text-underline-offset:.08em;text-decoration-thickness:2px}
+.srow:hover .sword{text-decoration:underline}
+.sar{grid-column:11/span 2;justify-self:end;width:clamp(40px,5.2vw,84px);height:auto;color:#f2ede4;transition:opacity .35s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.svcl:hover .sar{opacity:.3}
+.svcl .srow:hover .sar{opacity:1;transform:translateX(-6px) scale(1.06)}
+.svs{margin-top:clamp(64px,9vw,140px);display:flex;flex-direction:column;gap:32px;align-items:flex-start}
+.svt{margin:0;font-family:'Manrope',sans-serif;font-weight:500;font-size:clamp(22px,3vw,48px);line-height:1.22;letter-spacing:-.02em;max-width:30ch}
+.svt b{font-weight:500;color:#f2ede4}.svt span{color:#8c877e}
+.spill{display:inline-block;padding:14px 26px;border:1px solid rgba(242,237,228,.5);border-radius:999px;font-size:13px;letter-spacing:.04em;transition:background .35s,color .35s}
+.spill:hover{background:#f2ede4;color:#0b0b0a}
+@media(max-width:860px){.svh{display:block}.svh h2{margin-top:16px}.srow{grid-template-columns:auto 1fr auto;gap:14px 16px;min-height:0;padding:24px 0}.snum{grid-column:1;grid-row:1}.sword{grid-column:2;grid-row:1;font-size:clamp(40px,13vw,72px)}.sar{grid-column:3;grid-row:1;width:40px}.sdesc{grid-column:1/-1;grid-row:2;max-width:none}}
+@media(prefers-reduced-motion:reduce){.sbg{transition:none}}
+
+/* ---- dark engine section with photo cards (second/third reference recording) ---- */
+.eng{background:#101010;color:#f2ede4;padding:clamp(80px,11vw,170px) var(--gut) clamp(70px,9vw,140px)}
+.eh-row{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start;margin-bottom:clamp(36px,5vw,72px)}
+.eh{grid-column:1/span 7;margin:0;font-family:'Manrope',sans-serif;font-weight:300;text-transform:none;font-size:clamp(32px,5vw,88px);line-height:1.04;letter-spacing:-.03em;max-width:none}
+.eh .w{margin-right:.22em}
+.eh .wd.in .w>span{transform:none}
+.eh .g{color:#8c877e}
+.ep{grid-column:9/span 4;display:flex;flex-direction:column;gap:22px;align-items:flex-start;padding-top:.6em}
+.ep p{margin:0;font-size:14px;line-height:1.7;color:#c9c3b6;max-width:40ch}
+.ecards{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ec{position:relative;aspect-ratio:3/3.7;overflow:hidden;background:#111;color:#fff;outline:none;clip-path:inset(100% 0 0 0);transition:clip-path 1.1s cubic-bezier(.2,.8,.2,1) calc(var(--i)*120ms)}
+.ecards.in .ec{clip-path:inset(0)}
+.ec img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.3s cubic-bezier(.2,.8,.2,1),filter .6s}
+.ec::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.08) 40%,rgba(0,0,0,.62));transition:background .6s;pointer-events:none}
+.ec:hover img,.ec:focus-visible img{transform:scale(1.06)}
+.ec:hover::after,.ec:focus-visible::after{background:linear-gradient(180deg,rgba(0,0,0,.62),rgba(0,0,0,.34) 45%,rgba(0,0,0,.72))}
+.en{position:absolute;z-index:1;top:22px;left:22px;font-size:11px;letter-spacing:.22em;opacity:.8}
+.et{position:absolute;z-index:1;top:46px;left:22px;right:22px;margin:0;font-family:'Manrope',sans-serif;font-weight:400;font-size:clamp(22px,2.4vw,40px);line-height:1.05;letter-spacing:-.02em}
+.ed{position:absolute;z-index:1;left:22px;right:22px;bottom:84px;margin:0;font-size:14px;line-height:1.6;max-width:36ch;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.ec:hover .ed,.ec:focus-visible .ed{opacity:1;transform:none}
+.eb{position:absolute;z-index:1;left:22px;bottom:22px;display:inline-flex;gap:8px;align-items:center;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.55);font-size:11px;letter-spacing:.04em;transition:background .35s,color .35s}
+.eb:hover{background:#f2ede4;color:#0b0b0a}
+.eng .loop{margin-top:28px}
+@media(max-width:860px){.eh-row{display:block}.eh{margin-bottom:28px}.ecards{grid-template-columns:1fr}.ec{aspect-ratio:4/3.4}.ed{opacity:1;transform:none;bottom:70px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.ec{clip-path:none;transition:none}}
+</style>
+
+<header class="hdr"><a class="hbrand" id="hbrand" href="#film" data-final="ARVENTAS">ARVENTAS</a><div class="hr"><div class="lang" role="group" aria-label="Sprache / Language"><button type="button" data-l="de" aria-pressed="true">DE</button><span aria-hidden="true">/</span><button type="button" data-l="en" aria-pressed="false">EN</button></div><button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen"><span></span><span></span><span></span></button></div></header>
+<nav class="menu" id="menu" aria-label="Hauptmenü" aria-hidden="true"><ul>
+<li><a class="mi cur" href="#film" data-t="Home"><span class="roll" data-i="m_home"><b>Home</b><b>Home</b></span><span class="ar">→</span></a></li>
+<li><a class="mi" href="#pillars"><span class="roll" data-i="m_pill"><b>Beweissäulen</b><b>Beweissäulen</b></span><span class="ar">→</span></a></li>
+<li><a class="mi" href="#stages"><span class="roll" data-i="m_eng"><b>Die Engine</b><b>Die Engine</b></span><span class="ar">→</span></a></li>
+<li><a class="mi" href="/strategie"><span class="roll" data-i="m_strat"><b>Strategie</b><b>Strategie</b></span><span class="ar">→</span></a></li>
+</ul></nav>
+
+<section class="film" id="film" aria-label="ARVENTAS Film">
+  <div class="stage">
+    <canvas id="cv" role="img" aria-label="Architekturfilm: Fassade, Grundriss, Wohnraum, Bad, Schlafzimmer, Luftbild, Spielplatz, Dachterrasse"></canvas>
+    <div class="shade"></div><div class="grain" aria-hidden="true"></div>
+    <div class="cap open" id="c-open"><h1 class="hl" id="hl" aria-label="ARVENTAS — Off-Market Immobilien-Intelligenz · Bayern &amp; Baden-Württemberg"><span class="ln l1" data-split data-i="h1">ARVENTAS</span><span class="ln l2" style="display:flex"><span data-split data-i="h2a">OFF-MARKET</span><span data-split data-i="h2b">IMMOBILIEN-</span></span><span class="ln l3" data-split data-i="h3" style="display:block">INTELLIGENZ</span></h1></div>
+    <div class="cap" id="c-zugang"><p class="eyebrow" data-i="c1t">01 — Zugang</p><p class="line" data-i="c1">Wir finden Objekte, die nicht am Markt sind,</p></div>
+    <div class="cap right" id="c-analyse"><p class="eyebrow" data-i="c2t">02 — Analyse</p><p class="line" data-i="c2">bewerten sie in Tagen statt Wochen,</p></div>
+    <div class="cap" id="c-abwicklung"><p class="eyebrow" data-i="c3t">03 — Abwicklung</p><p class="line" data-i="c3">und bringen sie zum passenden Eigentümer oder Investor.</p></div>
+    <div class="cap" id="c-region"><p class="eyebrow" data-i="c4t">Off-Market Immobilien-Intelligenz</p><p class="line" data-i="c4">Bayern &amp; Baden-Württemberg</p></div>
+    <div class="cap close" id="c-close"><p class="big">ARVENTAS</p><a class="cta" href="/strategie" data-i="cta">Zur Strategie →</a></div>
+    <div class="hint" aria-hidden="true"><span data-i="scroll">Scrollen</span><i></i></div>
+    <div class="curtain" id="curtain"><div class="il"><span id="il-word">ARVENTAS</span><i id="il-bar"></i></div></div>
+  </div>
+</section>
+
+<main class="rest" id="rest">
+<section class="rsec lt" id="intro">
+ <p class="eyebrow rv" data-i="thl">Die These in einem Satz</p>
+ <h2 class="rh wd" data-words data-i="r1h">ARVENTAS beherrscht beide Seiten des schwierigsten Geschäfts im deutschen Immobilienmarkt</h2>
+ <div class="r1row"><a class="rl rv" href="/strategie" data-i="cta">Zur Strategie →</a><p class="rp rv" data-i="r1p">Nahezu jeder Marktteilnehmer verfügt über eines von zwei Dingen. ARVENTAS verfügt über beide — und diese Kombination, systematisch gemacht, ist das gesamte Geschäftsmodell.</p></div>
+</section>
+<section class="r2 lt" id="tech" aria-label="Technologie">
+ <p class="eyebrow rv" data-i="r2l">Technologie &amp; Daten</p>
+ <div class="marquee" aria-hidden="true"><div class="mtrack"><span>onOffice</span><span>DeepImmo</span><span>PriceHubble</span><span>n8n</span><span>Supabase</span><span>LLM-Ebene</span><span>GA4</span><span>onOffice</span><span>DeepImmo</span><span>PriceHubble</span><span>n8n</span><span>Supabase</span><span>LLM-Ebene</span><span>GA4</span></div></div>
+</section>
+<section class="rsec lt" id="targets">
+ <p class="eyebrow rv" data-i="r3l">Verkaufsseite — Bestand beschaffen</p>
+ <h2 class="rh wd" data-words data-i="r3t">Zielgruppen</h2>
+ <p class="rsub rv" data-i="r3s">An wen wir verkaufen — und in welcher Reihenfolge</p>
+ <div class="cards4" id="cards4"><article class="tc" tabindex="0" style="--i:0"><img src="/home-img/t0_g.jpg" alt="" loading="lazy" decoding="async"><span class="lab" data-i="tc0l">Erbengemeinschaften &amp; Nachlassverwalter</span><div class="tp"><small>01 · Tier 1</small><b><span data-i="tc0t">Erbengemeinschaften &amp; Nachlassverwalter</span><i aria-hidden="true">↗</i></b><p data-i="tc0d">Mehrere Erben, Liquiditätsbedarf, Präferenz für Diskretion</p></div></article><article class="tc" tabindex="0" style="--i:1"><img src="/home-img/t1_g.jpg" alt="" loading="lazy" decoding="async"><span class="lab" data-i="tc1l">Insolvenzverwalter</span><div class="tp"><small>02 · Tier 1</small><b><span data-i="tc1t">Insolvenzverwalter</span><i aria-hidden="true">↗</i></b><p data-i="tc1d">Gesetzliche Verwertungspflicht unter Zeitdruck; professionelle Gegenpartei</p></div></article><article class="tc" tabindex="0" style="--i:2"><img src="/home-img/t2_g.jpg" alt="" loading="lazy" decoding="async"><span class="lab" data-i="tc2l">Private MFH-Eigentümer, 60+</span><div class="tp"><small>03 · Tier 1</small><b><span data-i="tc2t">Private MFH-Eigentümer, 60+</span><i aria-hidden="true">↗</i></b><p data-i="tc2d">Sanierungspflichten, Verwaltungsmüdigkeit, keine Nachfolge</p></div></article><article class="tc" tabindex="0" style="--i:3"><img src="/home-img/t3_g.jpg" alt="" loading="lazy" decoding="async"><span class="lab" data-i="tc3l">Multiplikatoren-Netzwerk</span><div class="tp"><small>04 · Tier 1</small><b><span data-i="tc3t">Multiplikatoren-Netzwerk</span><i aria-hidden="true">↗</i></b><p data-i="tc3d">Keine Kunden — der qualitativ hochwertigste Angebotsweg im Markt</p></div></article></div>
+</section>
+<section class="svc" id="pillars">
+ <div class="svh"><p class="l eyebrow rv" data-i="m_pill">Beweissäulen</p><h2 class="rv" data-i="pil">Die drei Beweissäulen</h2></div>
+ <ul class="svcl"><li class="rv"><a class="srow" href="/strategie"><span class="sbg" style="background-image:url(/home-img/t3_g.jpg)"></span><span class="snum">01</span><span class="sdesc" data-i="p0d">Objekte, die nie ein Portal erreichen, erschlossen über vier Jahrzehnte an Beziehungen</span><span class="sword" data-i="p0t">Zugang</span><svg class="sar" viewBox="0 0 80 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M2 20h72M56 4l18 16-18 16"/></svg></a></li><li class="rv"><a class="srow" href="/strategie"><span class="sbg" style="background-image:url(/home-img/s1_g.jpg)"></span><span class="snum">02</span><span class="sdesc" data-i="p1d">Eine entscheidungsreife Einschätzung in fünf Arbeitstagen — Wert, Potenzial, Rechtsmachbarkeit, Rendite</span><span class="sword" data-i="p1t">Analyse</span><svg class="sar" viewBox="0 0 80 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M2 20h72M56 4l18 16-18 16"/></svg></a></li><li class="rv"><a class="srow" href="/strategie"><span class="sbg" style="background-image:url(/home-img/s4_g.jpg)"></span><span class="snum">03</span><span class="sdesc" data-i="p2d">Von der ersten Analyse bis zum Notar, mit beiden Seiten der Transaktion unter einem Dach</span><span class="sword" data-i="p2t">Abwicklung</span><svg class="sar" viewBox="0 0 80 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M2 20h72M56 4l18 16-18 16"/></svg></a></li></ul>
+ <div class="svs"><p class="svt rv"><b data-i="sv1">Wir finden Objekte, die nicht am Markt sind, bewerten sie in Tagen statt Wochen,</b> <span data-i="sv2">und bringen sie zum passenden Eigentümer oder Investor.</span></p><a class="spill rv" href="/strategie" data-i="cta">Zur Strategie →</a></div>
+</section>
+<section class="eng" id="stages">
+ <div class="eh-row"><h2 class="rh eh" aria-label="Ein Kreislauf, sechs Stufen, mit jedem Zyklus stärker"><span class="wd" data-words data-i="eh1">Ein Kreislauf, sechs Stufen,</span> <span class="wd g" data-words data-i="eh2">mit jedem Zyklus stärker</span></h2>
+ <div class="ep"><p class="rv" data-i="ep">Das ist das Betriebsmodell in voller Form. Es sollte das gedankliche Bild sein, das jeder Partner und jeder Vertriebsmitarbeiter mit sich trägt.</p><a class="spill rv" href="/strategie" data-i="cta">Zur Strategie →</a></div></div>
+ <div class="ecards" id="ecards"><article class="ec" tabindex="0" style="--i:0"><img src="/home-img/s0_g.jpg" alt="" loading="lazy" decoding="async"><span class="en">01</span><h3 class="et" data-i="s0">Sourcing</h3><p class="ed" data-i="e0d">Off-Market-Objekte werden über das Partnernetzwerk, Verwalter, Empfehlungspartner und Signalmonitoring gesichert.</p><a class="eb" href="/strategie"><span data-i="more">Mehr erfahren</span> →</a></article><article class="ec" tabindex="0" style="--i:1"><img src="/home-img/s1_g.jpg" alt="" loading="lazy" decoding="async" style="object-position:78% 50%"><span class="en">02</span><h3 class="et" data-i="s1">Analyse</h3><p class="ed" data-i="e1d">Der Objektreport: Bewertung, Potenzial, Rechtsmachbarkeit, Renditeszenarien — geliefert in fünf Arbeitstagen.</p><a class="eb" href="/strategie"><span data-i="more">Mehr erfahren</span> →</a></article><article class="ec" tabindex="0" style="--i:2"><img src="/home-img/s2_g.jpg" alt="" loading="lazy" decoding="async" style="object-position:62% 50%"><span class="en">03</span><h3 class="et" data-i="s2">Anziehung</h3><p class="ed" data-i="e2d">Analysierte Off-Market-Gelegenheiten ziehen qualifizierte Investoren in den ARVENTAS Investorenkreis.</p><a class="eb" href="/strategie"><span data-i="more">Mehr erfahren</span> →</a></article><article class="ec" tabindex="0" style="--i:0"><img src="/home-img/s3_g.jpg" alt="" loading="lazy" decoding="async" style="object-position:72% 30%"><span class="en">04</span><h3 class="et" data-i="s3">Matching</h3><p class="ed" data-i="e3d">Käuferpool wird nach Ticket, Region, Risikoprofil und Finanzierungsfähigkeit auf den Bestand gematcht.</p><a class="eb" href="/strategie"><span data-i="more">Mehr erfahren</span> →</a></article><article class="ec" tabindex="0" style="--i:1"><img src="/home-img/s4_g.jpg" alt="" loading="lazy" decoding="async" style="object-position:14% 50%"><span class="en">05</span><h3 class="et" data-i="s4">Abwicklung</h3><p class="ed" data-i="e4d">Mandat unterzeichnet, Transaktion abgeschlossen, beide Seiten aus einem Haus bedient.</p><a class="eb" href="/strategie"><span data-i="more">Mehr erfahren</span> →</a></article><article class="ec" tabindex="0" style="--i:2"><img src="/home-img/s5_g.jpg" alt="" loading="lazy" decoding="async" style="object-position:82% 72%"><span class="en">06</span><h3 class="et" data-i="s5">Lernen</h3><p class="ed" data-i="e5d">Jedes Ergebnis — gewonnen, verloren, abgelehnt — fließt zurück in das Scoring-Modell und die Käuferprofil-Datenbank.</p><a class="eb" href="/strategie"><span data-i="more">Mehr erfahren</span> →</a></article></div>
+ <p class="loop rv" data-i="loop">Lernen → Sourcing</p>
+</section>
+</main>
+<footer class="ftr" id="footer">
+ <div class="ft-grid">
+  <div class="ft-l">
+   <h2 class="ft-h wd" data-words data-i="f_h">Newsletter abonnieren</h2>
+   <form class="ft-form rv" id="ftForm" novalidate><input type="email" id="ftMail" autocomplete="email" data-iph="f_ph" placeholder="E-Mail-Adresse" aria-label="E-Mail"><button type="submit" aria-label="Senden"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h17M14 6l6 6-6 6"/></svg></button><i class="ft-line"></i></form>
+   <p class="ft-msg" id="ftMsg" aria-live="polite"></p>
+   <div class="ft-info">
+    <div class="rv" style="--d:.05s"><small data-i="f_l1">Region</small><p data-i="f_v1">Bayern &amp; Baden-Württemberg</p></div>
+    <div class="rv" style="--d:.15s"><small data-i="f_l2">Fokus</small><p data-i="f_v2">Off-Market-Immobilien</p></div>
+    <div class="rv" style="--d:.25s"><small data-i="f_l3">Kontakt</small><p data-i="f_v3">Auf Anfrage</p></div>
+   </div>
+  </div>
+  <nav class="ft-nav" aria-label="Footer">
+   <a href="#film"><span class="roll" data-i="m_home"><b>Home</b><b>Home</b></span></a>
+   <a href="#pillars"><span class="roll" data-i="m_pill"><b>Beweissäulen</b><b>Beweissäulen</b></span></a>
+   <a href="#stages"><span class="roll" data-i="m_eng"><b>Die Engine</b><b>Die Engine</b></span></a>
+   <a href="/strategie"><span class="roll" data-i="m_strat"><b>Strategie</b><b>Strategie</b></span></a>
+  </nav>
+ </div>
+ <div class="ft-mark" aria-label="ARVENTAS"><span style="--i:0"><b>A</b></span><span style="--i:1"><b>R</b></span><span style="--i:2"><b>V</b></span><span style="--i:3"><b>E</b></span><span style="--i:4"><b>N</b></span><span style="--i:5"><b>T</b></span><span style="--i:6"><b>A</b></span><span style="--i:7"><b>S</b></span></div>
+ <div class="ft-bot"><span data-i="foot">ARVENTAS — OFF-MARKET IMMOBILIEN-INTELLIGENZ · BAYERN &amp; BADEN-WÜRTTEMBERG</span><span>© 2026 ARVENTAS</span></div>
+<p class="ft-cred"><span data-i="f_cred">Fotos</span>: Alec Krum, Daniel Seßler, Leon Seibert, Lissete Laverde, Max van den Oetelaar, Miikka Luotio, Ryan Ancill, Thought Catalog, TienDat Nguyen, Tierra Mallorca — <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+</footer>
+
+<script>
+(function(){
+var T=[0.0, 0.167, 0.25, 0.333, 0.417, 0.5, 0.583, 0.667, 0.75, 0.833, 1.0, 1.083, 1.167, 1.25, 1.333, 1.5, 1.667, 1.75, 1.833, 2.0, 2.083, 2.167, 2.25, 2.333, 2.417, 2.5, 2.667, 2.833, 3.0, 3.167, 3.333, 3.417, 3.5, 3.667, 3.75, 4.0, 4.167, 4.333, 4.417, 4.5, 4.667, 4.75, 5.0, 5.167, 5.333, 5.417, 5.5, 5.667, 5.75, 6.0, 6.167, 6.333, 6.5, 6.667, 7.167, 7.667, 8.0, 8.5, 9.0, 9.5, 10.0, 10.5, 11.0, 11.5, 12.0, 12.5, 13.0, 13.5, 14.0, 14.5, 15.0, 15.5, 16.0, 16.5, 17.0, 17.5, 18.0, 18.5, 19.0, 19.5, 20.0, 20.167, 20.333, 20.417, 20.5, 20.667, 20.75, 21.0, 21.167, 21.333, 21.417, 21.5, 21.667, 21.75, 22.0, 22.167, 22.333, 22.417, 22.5, 22.667, 22.833, 23.0, 23.167, 23.333, 23.417, 23.5, 23.667, 23.833, 24.0, 24.167, 24.333, 24.417, 24.5, 24.667, 24.833, 25.0, 25.333, 25.667, 26.0, 26.417, 26.833, 27.333, 27.833, 28.0, 28.5, 29.0, 29.5, 30.0, 30.5, 31.0, 31.5, 31.833, 32.0, 32.167, 32.333, 32.417, 32.667, 32.833, 33.083, 33.167, 33.333, 33.833, 34.333, 34.833, 35.25, 35.667, 36.0, 36.167, 36.333, 36.417, 36.5, 36.667, 36.833, 37.0, 37.167, 37.333, 37.417, 37.5, 37.667, 37.833, 38.0, 38.167, 38.333, 38.417, 38.5, 38.667, 38.833, 39.0, 39.167, 39.333, 39.417, 39.667, 39.833, 40.0, 40.167, 40.333, 40.417, 40.667, 40.833, 41.0, 41.167, 41.333, 41.417, 41.667, 41.833, 42.0, 42.167, 42.333, 42.417, 42.5, 42.667, 42.833, 43.0, 43.167, 43.333, 43.417, 43.5, 43.667, 43.833, 44.0, 44.167, 44.333, 44.5, 44.667, 44.833, 45.0, 45.167, 45.333, 45.5, 45.667, 45.833, 46.0, 46.167, 46.333, 46.5, 46.667, 46.833, 47.0, 47.167, 47.333, 47.5, 47.667, 47.833, 48.0, 48.167, 48.333, 48.5, 48.667, 48.833, 49.0, 49.167, 49.333, 49.5, 49.667, 49.833, 50.0, 50.167, 50.333, 50.5, 50.667, 50.833, 51.0, 51.167, 51.333, 51.5, 51.667, 51.833, 52.333, 52.833, 53.167, 53.583, 53.833, 54.167, 54.5, 54.833, 55.167, 55.5, 55.667, 56.0, 56.333, 56.667, 57.0, 57.333, 57.667, 58.0, 58.333, 58.667, 59.0, 59.333, 59.667, 59.833, 60.0, 60.167, 60.333, 60.417, 60.5, 60.667, 60.833, 61.0, 61.167, 61.333, 61.417, 61.5, 61.667, 61.833, 62.0, 62.167, 62.333, 62.417, 62.5, 62.667, 62.833, 63.0, 63.167, 63.333, 63.417, 63.5, 63.667, 63.833, 64.0, 64.167, 64.333, 64.417, 64.5, 64.667, 64.833, 65.0, 65.167, 65.333, 65.417, 65.5, 65.667, 65.833, 66.0, 66.167, 66.333, 66.417, 66.5, 66.667, 66.833, 67.0, 67.167, 67.333, 67.417, 67.5, 67.667, 67.833, 68.0, 68.167, 68.333, 68.417, 68.5, 68.667, 68.833, 69.0, 69.167, 69.333, 69.417, 69.5, 69.667, 69.833, 70.0, 70.167, 70.333, 70.417, 70.5, 70.667, 70.833, 71.0, 71.167, 71.333, 71.417, 71.667, 71.833, 72.0, 72.167, 72.333, 72.417, 72.667, 72.833, 73.0, 73.167, 73.333, 73.417, 73.5, 73.667, 73.833, 74.0, 74.167, 74.333, 74.417, 74.5, 74.667, 74.833, 75.0, 75.167, 75.333, 75.417, 75.5, 75.667, 75.833, 76.0, 76.5, 77.0, 77.5, 78.0, 78.5, 79.0, 79.5, 80.0, 80.5, 81.0, 81.5, 82.0, 82.5, 83.0, 83.5, 84.0, 84.5, 85.0, 85.5, 86.0, 86.5, 87.0, 87.5, 88.0, 88.5, 89.0, 89.167, 89.333, 89.5, 89.667, 89.833, 90.0, 90.167, 90.333, 90.5, 90.667, 90.833, 91.0, 91.167, 91.333, 91.5, 91.667, 91.833, 92.0, 92.167, 92.333, 92.5, 92.667, 92.833, 93.0, 93.167, 93.667, 94.167, 94.667, 95.167, 95.667, 96.167, 96.667, 97.167, 97.667, 98.167, 98.667, 99.167, 99.5, 100.0, 100.5, 101.0, 101.5, 102.0, 102.5, 103.0, 103.5, 104.0, 104.5, 105.0, 105.167, 105.333, 105.5, 105.667, 105.833, 106.0, 106.167, 106.333, 106.5, 106.667, 106.833, 107.0, 107.167, 107.333, 107.5, 107.667, 107.833, 108.0, 108.167, 108.333, 108.5, 108.667, 108.833, 109.0, 109.167, 109.333, 109.5, 109.667, 109.833, 110.083, 110.333, 110.667, 111.0, 111.333, 111.5, 112.0, 112.5, 113.0, 113.333, 113.667, 114.0, 114.333, 114.667, 115.0, 115.333, 115.583, 115.833, 116.167, 116.5, 116.833, 117.167, 117.5, 117.833, 118.167, 118.5, 118.833, 119.167, 119.5, 119.833, 120.0, 120.167, 120.25, 120.333, 120.417, 120.5, 120.583, 120.667, 120.75, 120.833, 120.917, 121.0, 121.167, 121.25, 121.333, 121.417, 121.5, 121.583, 121.667, 121.75, 121.833, 122.0, 122.083, 122.167, 122.333, 122.5, 122.667, 122.833, 123.0, 123.167, 123.333, 123.5, 123.667, 123.833, 124.0, 124.167, 124.333, 124.5, 124.667, 124.75, 124.833, 125.0, 125.083, 125.167, 125.25, 125.333, 125.417, 125.5, 125.583, 125.667, 125.75, 125.833, 125.917, 126.0, 126.083, 126.25], N=572;
+var BEHIND=8, AHEAD=20, CONC=6;
+var CAPS=[
+ {id:'open',kind:'open',at:[0,5]},
+ {id:'zugang',at:[6.5,20]},
+ {id:'analyse',at:[25.5,37]},
+ {id:'abwicklung',at:[43.5,70]},
+ {id:'region',at:[74,103]},
+ {id:'close',kind:'close',at:[107,200]}
+];
+var clamp=function(v,a,b){return Math.min(b==null?1:b,Math.max(a==null?0:a,v))};
+function toP(t){var lo=0,hi=T.length-1;while(lo<hi){var m=(lo+hi)>>1;if(T[m]<t)lo=m+1;else hi=m}return lo/Math.max(1,T.length-1)}
+CAPS.forEach(function(c){var a=toP(c.at[0]),b=c.at[1]>=T[T.length-1]?3:toP(c.at[1]),e=.012;
+ c.w=c.kind==='open'?[-1,-.5,b-e,b]:c.kind==='close'?[a,a+e*2,2,3]:[a,a+e,b-e,b];c.el=document.getElementById('c-'+c.id)});
+function vis(p,w){return p<w[1]?clamp((p-w[0])/(w[1]-w[0])):p>w[2]?clamp(1-(p-w[2])/(w[3]-w[2])):1}
+var root=document.getElementById('film'),cv=document.getElementById('cv'),ctx=cv.getContext('2d',{alpha:false});
+var blobs={},bitmaps={},pending={},active=0,target=0,cur=0,raf=0,last=-1,started=false;
+var SET=innerWidth<=860?'sm':'lg';
+function url(i){return '/frames/'+SET+'/f'+String(i+1).padStart(4,'0')+'.webp'}
+function size(){var d=Math.min(devicePixelRatio||1,2),w=Math.min(Math.round(cv.clientWidth*d),1920);var h=Math.round(cv.clientHeight*(w/cv.clientWidth));if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;last=-1}}
+function draw(b){var cw=cv.width,ch=cv.height,s=Math.max(cw/b.width,ch/b.height),w=b.width*s,h=b.height*s;ctx.imageSmoothingQuality='high';ctx.drawImage(b,(cw-w)/2,(ch-h)/2,w,h)}
+function decode(i){if(bitmaps[i]||!blobs[i]||pending[i])return Promise.resolve();pending[i]=1;
+ var o={};
+ return createImageBitmap(blobs[i],o).then(function(b){bitmaps[i]=b}).catch(function(){}).then(function(){delete pending[i]})}
+function pump(){var c=Math.round(cur);for(var i=c-BEHIND;i<=c+AHEAD;i++)if(i>=0&&i<N)decode(i);
+ Object.keys(bitmaps).forEach(function(k){k=+k;if(k<c-BEHIND-6||k>c+AHEAD+10){bitmaps[k].close();delete bitmaps[k]}})}
+function render(){var c=clamp(Math.round(cur),0,N-1),i=c;if(!bitmaps[i]){for(var d=1;d<=12;d++){if(bitmaps[c-d]){i=c-d;break}if(bitmaps[c+d]){i=c+d;break}}}
+ if(bitmaps[i]&&i!==last){draw(bitmaps[i]);last=i}}
+function prog(){var r=root.getBoundingClientRect();return clamp(-r.top/Math.max(1,r.height-innerHeight))}
+function caps(p){CAPS.forEach(function(c){var v=vis(p,c.w),s=c.el.style;s.opacity=v;s.visibility=v<.01?'hidden':'visible';
+ s.transform='translate3d(0,'+((1-v)*24)+'px,0)';s.pointerEvents=v>.5?'auto':'none'})}
+function tick(){raf=0;var d=target-cur;cur=Math.abs(d)<.02?target:cur+d*.14;pump();render();caps(clamp(cur/(N-1)));if(cur!==target)raf=requestAnimationFrame(tick)}
+function kick(){target=prog()*(N-1);if(!raf)raf=requestAnimationFrame(tick)}
+var PACK=30,NP=Math.ceil(N/PACK),pk={},pinf={};
+function loadPack(p){pinf[p]=1;active++;
+ var ps=[];for(var k=0;k<PACK;k++){(function(i){if(i>=N)return;ps.push(fetch(url(i)).then(function(r){return r.blob()}).then(function(b){blobs[i]=b}).catch(function(){}))})(p*PACK+k)}
+ Promise.all(ps).then(function(){pk[p]=1})
+ .catch(function(){}).then(function(){active--;delete pinf[p];if(!started&&pk[0]){started=true;begin()}next()})}
+function next(){while(active<3){var best=-1,bd=1e9,cp=Math.floor(Math.round(cur)/PACK);
+  for(var p=0;p<NP;p++){if(pk[p]||pinf[p])continue;var d=p>=cp?p-cp:(cp-p)*3;if(d<bd){bd=d;best=p}}
+  if(best<0)return;loadPack(best)}}
+function begin(){cur=target=prog()*(N-1);var ps=[];for(var k=0;k<AHEAD;k++)ps.push(decode(clamp(Math.round(cur)+k,0,N-1)));
+ Promise.all(ps).then(function(){size();render();caps(prog());window.__filmReady&&window.__filmReady()})}
+addEventListener('scroll',kick,{passive:true});addEventListener('resize',function(){size();last=-1;kick()});
+size();caps(0);next();
+// reveals + engine
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv,.pillar,.ftr').forEach(function(el){io.observe(el)});
+var st=document.getElementById('stages'),eo=new IntersectionObserver(function(es){if(es[0].isIntersecting){[].forEach.call(st.children,function(li,i){setTimeout(function(){li.classList.add('on')},i*320)});eo.disconnect()}},{threshold:.4});eo.observe(st);
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.rv,.pillar').forEach(function(el){el.classList.add('in')})}
+})();
+
+// ---------- intro sequence + header + menu ----------
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var stage=document.querySelector('.stage'),curtain=document.getElementById('curtain'),bar=document.getElementById('il-bar'),word=document.getElementById('il-word');
+var hb=document.getElementById('hbrand'),burger=document.getElementById('burger'),menu=document.getElementById('menu'),hl=document.getElementById('hl');
+var CH='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// split headline into per-letter spans
+document.querySelectorAll('[data-split]').forEach(function(el){if(el.querySelector('.ch'))return;var txt=el.textContent;el.textContent='';el.setAttribute('aria-hidden','true');
+ txt.split('').forEach(function(c){var s=document.createElement('span');if(c===' '){s.className='sp'}else{s.className='ch';s.textContent=c}el.appendChild(s)})});
+function scramble(el,final,dur,done){var t0=performance.now();(function f(now){var p=Math.min(1,(now-t0)/dur),out='';
+ for(var i=0;i<final.length;i++){var fixed=p>(i+1)/final.length;out+=final[i]===' '?' ':(fixed?final[i]:CH[Math.floor(Math.random()*26)])}
+ el.textContent=out;if(p<1)requestAnimationFrame(f);else{el.textContent=final;done&&done()}})(t0)}
+var ready=false;window.__filmReady=function(){ready=true};
+function reveal(){
+ // letters wipe in with random stagger
+ var chs=[].slice.call(hl.querySelectorAll('.ch'));
+ chs.forEach(function(c,i){c.style.transition='clip-path .42s cubic-bezier(.6,0,.2,1) '+(i*0.03+Math.random()*0.35).toFixed(3)+'s'});
+ hl.classList.add('go');
+ setTimeout(function(){ // curtain retracts leftwards, revealing the film
+  curtain.animate([{clipPath:'inset(0 0 0 0)'},{clipPath:'inset(0 100% 0 0)'}],{duration:1150,easing:'cubic-bezier(.7,0,.2,1)',fill:'forwards'}).onfinish=function(){curtain.style.display='none'};
+  stage.classList.add('live');document.body.classList.remove('lock');window.__introDone=true;kickScroll()
+ },1000);
+}
+function kickScroll(){try{dispatchEvent(new Event('scroll'))}catch(e){}}
+if(reduce){curtain.style.display='none';stage.classList.add('live');return}
+document.body.classList.add('lock');
+// loading line grows (>= 2.4s, waits for first frames)
+var t0=performance.now(),MIN=1800,W=110;
+(function load(now){var p=Math.min(1,(now-t0)/MIN);if(!ready)p=Math.min(p,.92);bar.style.width=(p*W)+'px';
+ if(p<1||!ready)requestAnimationFrame(load);else{
+  scramble(word,'ARVENTAS',520,function(){
+   word.parentNode.animate([{opacity:1},{opacity:0}],{duration:320,fill:'forwards'});
+   hb.style.opacity=1;scramble(hb,'ARVENTAS',650);burger.animate([{opacity:0},{opacity:1}],{duration:600,fill:'forwards'});document.querySelector('.lang').animate([{opacity:0},{opacity:1}],{duration:600,fill:'forwards'});
+   setTimeout(reveal,200)})}})(t0);
+// menu
+function setMenu(open){menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',String(!open));burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',(window.__lang&&window.__lang()==='en')?(open?'Close menu':'Open menu'):(open?'Menü schließen':'Menü öffnen'));document.body.classList.toggle('lock',open||!window.__introDone)}
+burger.addEventListener('click',function(){setMenu(!menu.classList.contains('open'))});
+addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(e){var h=a.getAttribute('href');if(h&&h[0]==='#'){e.preventDefault();setMenu(false);setTimeout(function(){var el=document.querySelector(h);if(h==='#film'){scrollTo(0,0)}else if(el){el.scrollIntoView()}},350)}else{setMenu(false)}})});
+})();
+
+// ---------- language (DE default, EN translation) ----------
+(function(){
+var D={"de": {"m_home": "Home", "m_pill": "Beweissäulen", "m_eng": "Die Engine", "m_strat": "Strategie", "c1t": "01 — Zugang", "c1": "Wir finden Objekte, die nicht am Markt sind,", "c2t": "02 — Analyse", "c2": "bewerten sie in Tagen statt Wochen,", "c3t": "03 — Abwicklung", "c3": "und bringen sie zum passenden Eigentümer oder Investor.", "c4t": "Off-Market Immobilien-Intelligenz", "c4": "Bayern & Baden-Württemberg", "cta": "Zur Strategie →", "scroll": "Scrollen", "h1": "ARVENTAS", "h2a": "OFF-MARKET", "h2b": "IMMOBILIEN-", "h3": "INTELLIGENZ", "hl": "ARVENTAS — Off-Market Immobilien-Intelligenz · Bayern & Baden-Württemberg", "thl": "Die These in einem Satz", "th": "ARVENTAS ist der kürzeste Weg zwischen einem Objekt, das nicht am Markt ist, und dem Käufer, dem es gehören sollte — belegt durch eine Analyse, die sonst niemand in fünf Tagen liefern kann.", "pil": "Die drei Beweissäulen", "eng": "Die Engine", "engsub": "Ein Kreislauf, sechs Stufen, mit jedem Zyklus stärker", "loop": "Lernen → Sourcing", "s0": "Sourcing", "s1": "Analyse", "s2": "Anziehung", "s3": "Matching", "s4": "Abwicklung", "s5": "Lernen", "final": "Go-to-Market- & Wachstumsstrategie", "foot": "ARVENTAS — OFF-MARKET IMMOBILIEN-INTELLIGENZ · BAYERN & BADEN-WÜRTTEMBERG", "mopen": "Menü öffnen", "mclose": "Menü schließen", "p0t": "Zugang", "p0d": "Objekte, die nie ein Portal erreichen, erschlossen über vier Jahrzehnte an Beziehungen", "p1t": "Analyse", "p1d": "Eine entscheidungsreife Einschätzung in fünf Arbeitstagen — Wert, Potenzial, Rechtsmachbarkeit, Rendite", "p2t": "Abwicklung", "p2d": "Von der ersten Analyse bis zum Notar, mit beiden Seiten der Transaktion unter einem Dach", "r1h": "ARVENTAS beherrscht beide Seiten des schwierigsten Geschäfts im deutschen Immobilienmarkt", "r1p": "Nahezu jeder Marktteilnehmer verfügt über eines von zwei Dingen. ARVENTAS verfügt über beide — und diese Kombination, systematisch gemacht, ist das gesamte Geschäftsmodell.", "r2l": "Technologie & Daten", "r3l": "Verkaufsseite — Bestand beschaffen", "r3t": "Zielgruppen", "r3s": "An wen wir verkaufen — und in welcher Reihenfolge", "tc0t": "Erbengemeinschaften & Nachlassverwalter", "tc0d": "Mehrere Erben, Liquiditätsbedarf, Bedarf an belastbarer und neutraler Bewertung, starke Präferenz für Diskretion", "tc1t": "Insolvenzverwalter", "tc1d": "Gesetzliche Verwertungspflicht unter Zeitdruck; professionelle Gegenpartei; je Amtsgericht öffentlich gelistet", "tc2t": "Private MFH-Eigentümer, 60+", "tc2d": "Sanierungspflichten, Verwaltungsmüdigkeit, keine Nachfolge, Unklarheit über den aktuellen Wert", "tc3t": "Multiplikatoren-Netzwerk (Steuerberater, Notare, Erbrechtsanwälte, Hausverwaltungen, Banken)", "tc3d": "Keine Kunden — der qualitativ hochwertigste Angebotsweg im Markt. Ein guter Partner liefert wiederholt", "tc0l": "Erbengemeinschaften & Nachlassverwalter", "tc1l": "Insolvenzverwalter", "tc2l": "Private MFH-Eigentümer, 60+", "tc3l": "Multiplikatoren-Netzwerk", "e0d": "Off-Market-Objekte werden über das Partnernetzwerk, Verwalter, Empfehlungspartner und Signalmonitoring gesichert.", "e1d": "Der Objektreport: Bewertung, Potenzial, Rechtsmachbarkeit, Renditeszenarien — geliefert in fünf Arbeitstagen.", "e2d": "Analysierte Off-Market-Gelegenheiten ziehen qualifizierte Investoren in den ARVENTAS Investorenkreis.", "e3d": "Käuferpool wird nach Ticket, Region, Risikoprofil und Finanzierungsfähigkeit auf den Bestand gematcht.", "e4d": "Mandat unterzeichnet, Transaktion abgeschlossen, beide Seiten aus einem Haus bedient.", "e5d": "Jedes Ergebnis — gewonnen, verloren, abgelehnt — fließt zurück in das Scoring-Modell und die Käuferprofil-Datenbank.", "sv1": "Wir finden Objekte, die nicht am Markt sind, bewerten sie in Tagen statt Wochen,", "sv2": "und bringen sie zum passenden Eigentümer oder Investor.", "eh1": "Ein Kreislauf, sechs Stufen,", "eh2": "mit jedem Zyklus stärker", "ep": "Das ist das Betriebsmodell in voller Form. Es sollte das gedankliche Bild sein, das jeder Partner und jeder Vertriebsmitarbeiter mit sich trägt.", "more": "Mehr erfahren", "f_h": "Newsletter abonnieren", "f_ph": "E-Mail-Adresse", "f_l1": "Region", "f_v1": "Bayern & Baden-Württemberg", "f_l2": "Fokus", "f_v2": "Off-Market-Immobilien", "f_l3": "Kontakt", "f_v3": "Auf Anfrage", "f_ok": "Der Newsletter startet in Kürze.", "f_bad": "Bitte eine gültige E-Mail eingeben.", "f_cred": "Fotos"}, "en": {"m_home": "Home", "m_pill": "Pillars of proof", "m_eng": "The Engine", "m_strat": "Strategy", "c1t": "01 — Access", "c1": "We find properties that aren't on the market,", "c2t": "02 — Analysis", "c2": "assess them in days instead of weeks,", "c3t": "03 — Closing", "c3": "and bring them to the right owner or investor.", "c4t": "Off-Market Real Estate Intelligence", "c4": "Bavaria & Baden-Württemberg", "cta": "To the strategy →", "scroll": "Scroll", "h1": "ARVENTAS", "h2a": "OFF-MARKET", "h2b": "REAL ESTATE", "h3": "INTELLIGENCE", "hl": "ARVENTAS — Off-Market Real Estate Intelligence · Bavaria & Baden-Württemberg", "thl": "The thesis in one sentence", "th": "ARVENTAS is the shortest path between a property that is not on the market and the buyer it should belong to — backed by an analysis that no one else can deliver in five days.", "pil": "The three pillars of proof", "eng": "The Engine", "engsub": "One loop, six stages, stronger with every cycle", "loop": "Learning → Sourcing", "s0": "Sourcing", "s1": "Analysis", "s2": "Attraction", "s3": "Matching", "s4": "Closing", "s5": "Learning", "final": "Go-to-Market & Growth Strategy", "foot": "ARVENTAS — OFF-MARKET REAL ESTATE INTELLIGENCE · BAVARIA & BADEN-WÜRTTEMBERG", "mopen": "Open menu", "mclose": "Close menu", "p0t": "Access", "p0d": "Properties that never reach a portal, opened up through four decades of relationships", "p1t": "Analysis", "p1d": "A decision-ready assessment in five working days — value, potential, legal feasibility, yield", "p2t": "Closing", "p2d": "From the first analysis to the notary, with both sides of the transaction under one roof", "r1h": "ARVENTAS masters both sides of the hardest business in the German property market", "r1p": "Almost every market participant has one of two things. ARVENTAS has both — and this combination, made systematic, is the entire business model.", "r2l": "Technology & Data", "r3l": "Supply side — sourcing properties", "r3t": "Target groups", "r3s": "Whom we sell to — and in what order", "tc0t": "Heirs' communities & estate administrators", "tc0d": "Several heirs, need for liquidity, need for a reliable and neutral valuation, strong preference for discretion", "tc1t": "Insolvency administrators", "tc1d": "Statutory duty to realise assets under time pressure; professional counterparty; publicly listed per local court", "tc2t": "Private multifamily owners, 60+", "tc2d": "Renovation obligations, management fatigue, no succession, uncertainty about the current value", "tc3t": "Network of multipliers (tax advisors, notaries, probate lawyers, property managers, banks)", "tc3d": "Not clients — the highest-quality route to supply in the market. A good partner delivers repeatedly", "tc0l": "Heirs' communities & estate administrators", "tc1l": "Insolvency administrators", "tc2l": "Private multifamily owners, 60+", "tc3l": "Network of multipliers", "e0d": "Off-market properties are secured through the partner network, administrators, referral partners and signal monitoring.", "e1d": "The property report: valuation, potential, legal feasibility, yield scenarios — delivered in five working days.", "e2d": "Analysed off-market opportunities draw qualified investors into the ARVENTAS investor circle.", "e3d": "The buyer pool is matched to inventory by ticket size, region, risk profile and financing capacity.", "e4d": "Mandate signed, transaction closed, both sides served from one house.", "e5d": "Every outcome — won, lost, declined — flows back into the scoring model and the buyer-profile database.", "sv1": "We find properties that aren't on the market, assess them in days instead of weeks,", "sv2": "and bring them to the right owner or investor.", "eh1": "One loop, six stages,", "eh2": "stronger with every cycle", "ep": "This is the operating model in full. It should be the mental picture every partner and every salesperson carries with them.", "more": "Learn more", "f_h": "Subscribe to our newsletter", "f_ph": "Email address", "f_l1": "Region", "f_v1": "Bavaria & Baden-Württemberg", "f_l2": "Focus", "f_v2": "Off-market real estate", "f_l3": "Contact", "f_v3": "On request", "f_ok": "The newsletter launches soon.", "f_bad": "Please enter a valid email.", "f_cred": "Photos"}};
+var lang='de';
+try{var s=localStorage.getItem('arv-lang');if(s==='en'||s==='de')lang=s}catch(e){}
+function set(el,txt){ if(el.hasAttribute('data-words')&&window.__words){window.__words(el,txt);return} if(el.classList.contains('roll')){[].forEach.call(el.querySelectorAll('b'),function(b){b.textContent=txt})} else if(el.hasAttribute('data-split')){split(el,txt)} else {el.textContent=txt} }
+function split(el,txt){el.textContent='';el.setAttribute('aria-hidden','true');txt.split('').forEach(function(c){var s=document.createElement('span');if(c===' '){s.className='sp'}else{s.className='ch';s.textContent=c}el.appendChild(s)})}
+function apply(l){
+ lang=l;var d=D[l];document.documentElement.lang=l;var pi=document.getElementById('ftMail');if(pi)pi.placeholder=d.f_ph||pi.placeholder;
+ [].forEach.call(document.querySelectorAll('[data-i]'),function(el){var k=el.getAttribute('data-i');if(d[k]!=null)set(el,d[k])});
+ var hl=document.getElementById('hl');if(hl)hl.setAttribute('aria-label',d.hl);
+ [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-l')===l))});
+ var bg=document.getElementById('burger');if(bg){var open=bg.getAttribute('aria-expanded')==='true';bg.setAttribute('aria-label',open?d.mclose:d.mopen)}
+ try{localStorage.setItem('arv-lang',l)}catch(e){}
+}
+window.__lang=function(){return lang};
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-l'))})});
+window.__applyLang=apply;
+if(lang!=='de'){ /* wait until intro splits the headline, then swap */ var iv=setInterval(function(){if(document.querySelector('#hl .ch')){clearInterval(iv);apply(lang)}},30)}
+else{apply('de')}
+})();
+
+// ---------- rest of page: word reveal, cards, strip parallax, header colour ----------
+(function(){
+var hdr=document.querySelector('.hdr'),menu=document.getElementById('menu');
+function words(el,txt){el.textContent='';var ws=txt.split(' ');ws.forEach(function(w,i){var a=document.createElement('span');a.className='w';a.style.setProperty('--i',i);var b=document.createElement('span');b.textContent=w;a.appendChild(b);el.appendChild(a);el.appendChild(document.createTextNode(' '))})}
+window.__words=words;
+[].forEach.call(document.querySelectorAll('[data-words]'),function(el){words(el,el.textContent)});
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}})},{threshold:.2});
+[].forEach.call(document.querySelectorAll('.wd,.cards4,.ecards,.ft-h'),function(el){io2.observe(el)});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){[].forEach.call(document.querySelectorAll('.wd,.cards4,.ecards,.ft-h'),function(el){el.classList.add('in')})}
+var io3=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io3.unobserve(e.target)}})},{threshold:.12});
+[].forEach.call(document.querySelectorAll('.rv,.pillar'),function(el){io3.observe(el)});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){[].forEach.call(document.querySelectorAll('.rv,.pillar'),function(el){el.classList.add('in')})}
+// strip parallax
+var strip=document.getElementById('stages');
+function par(){if(!strip)return;var r=strip.getBoundingClientRect(),cx=r.left+r.width/2;[].forEach.call(strip.querySelectorAll('.sc'),function(c){var cr=c.getBoundingClientRect(),d=(cr.left+cr.width/2-cx)/r.width;var im=c.querySelector('img');if(im)im.style.transform='translate3d('+(-d*38)+'px,0,0)'})}
+if(strip){strip.addEventListener('scroll',par,{passive:true});addEventListener('resize',par);par()}
+// header colour over light sections
+var lts=[].slice.call(document.querySelectorAll('.lt'));
+function hc(){var open=menu&&menu.classList.contains('open');var on=false;if(!open){for(var i=0;i<lts.length;i++){var r=lts[i].getBoundingClientRect();if(r.top<46&&r.bottom>46){on=true;break}}}hdr.classList.toggle('on-light',on)}
+addEventListener('scroll',hc,{passive:true});addEventListener('resize',hc);
+if(menu){new MutationObserver(hc).observe(menu,{attributes:true,attributeFilter:['class']})}
+hc();
+})();
+
+// ---------- footer ----------
+(function(){var f=document.getElementById('ftForm'),m=document.getElementById('ftMail'),g=document.getElementById('ftMsg');if(!f)return;
+function L(){return (window.__lang&&window.__lang())||document.documentElement.lang||'de'}
+f.addEventListener('submit',function(e){e.preventDefault();var en=document.documentElement.lang==='en',ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m.value);
+ g.textContent=ok?(en?'The newsletter launches soon.':'Der Newsletter startet in Kürze.'):(en?'Please enter a valid email.':'Bitte eine gültige E-Mail eingeben.');if(ok)m.value=''});
+document.querySelectorAll('.ft-nav a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var h=a.getAttribute('href'),el=document.querySelector(h);if(h==='#film')scrollTo(0,0);else if(el)el.scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
