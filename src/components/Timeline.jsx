@@ -1,8 +1,7 @@
 import { useRef } from 'react'
 import { useGsap } from './useMotion.js'
 
-/* Generic phase timeline. `phases`: [{ tag, name, fields: [[label, value]] }].
-   Empty values render as an em dash so the structure is visible but nothing is invented. */
+/* Phase timeline. phases: [{ name, weeks, items: [], gate }] — all text from the document. */
 export default function Timeline({ phases, ruler }) {
   const ref = useRef(null)
   useGsap(ref, (gsap) => {
@@ -11,24 +10,23 @@ export default function Timeline({ phases, ruler }) {
       scrollTrigger: { trigger: ref.current, start: 'top 80%', once: true } })
     const fill = ref.current.querySelector('.ruler__fill')
     if (fill) gsap.to(fill, { scaleX: 1, ease: 'none',
-      scrollTrigger: { trigger: ref.current, start: 'top 70%', end: 'bottom 60%', scrub: true } })
+      scrollTrigger: { trigger: ref.current, start: 'top 70%', end: 'bottom 70%', scrub: true } })
   }, [])
   return (
-    <div ref={ref}>
+    <div ref={ref} className="tlwrap">
       {ruler && (
         <>
-          <div className="ruler">{ruler.map((r) => <span key={r}>{r}</span>)}</div>
-          <div className="ruler__bar"><div className="ruler__fill" /></div>
+          <div className="ruler" aria-hidden="true">{ruler.map((r) => <span key={r}>{r}</span>)}</div>
+          <div className="ruler__bar" aria-hidden="true"><div className="ruler__fill" /></div>
         </>
       )}
-      <ol className="timeline timeline--row" style={{ '--cols': phases.length, listStyle: 'none', padding: 0 }}>
+      <ol className="timeline timeline--row" style={{ '--cols': phases.length }}>
         {phases.map((p, i) => (
           <li className="tl__item" key={i}>
-            <div className="tl__tag">{p.tag}</div>
-            <div className="tl__name">{p.name || '—'}</div>
-            {(p.fields || []).map(([l, v]) => (
-              <div className="tl__field" key={l}><b>{l}</b>{v || '—'}</div>
-            ))}
+            <div className="tl__tag">{p.weeks}</div>
+            <div className="tl__name">{p.name}</div>
+            <ul className="tl__list">{p.items.map((t, j) => <li key={j}>{t}</li>)}</ul>
+            {p.gate && <div className="tl__gate">{p.gate}</div>}
           </li>
         ))}
       </ol>

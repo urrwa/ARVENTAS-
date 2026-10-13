@@ -7,6 +7,8 @@
    { type: 'note', text }  { type: 'kpis', items: [{ value, label }] }
    { type: 'table', head: [], rows: [[]] }
 */
+import doc from './doc.json'
+
 export const meta = {
   brand: 'ARVENTAS',
   descriptor: 'OFF-MARKET IMMOBILIEN-INTELLIGENZ · BAYERN & BADEN-WÜRTTEMBERG',
@@ -22,24 +24,23 @@ export const meta = {
 }
 
 // layout = visual composition; visual = which procedural architecture plate to use
-export const sections = [
-  { n: 1, id: 'these', title: 'Die strategische These', layout: 'thesis', visual: 'altbau', body: [] },
-  { n: 2, id: 'marktfenster', title: 'Warum jetzt — das Marktfenster', layout: 'compare', visual: 'mixed', body: [],
-    table: { head: ['', 'Bayern', 'Baden-Württemberg'], rows: [] } },
-  { n: 3, id: 'bestand', title: 'Was ARVENTAS bereits besitzt', layout: 'split', visual: 'detail', body: [] },
-  { n: 4, id: 'engine', title: 'Die Engine — wie sie sich verstärkt', layout: 'engine', visual: 'multi', body: [] },
-  { n: 5, id: 'positionierung', title: 'Positionierung & Botschaften', layout: 'editorial', visual: 'altbau', body: [] },
-  { n: 6, id: 'zielgruppen', title: 'Zielgruppen', layout: 'split', visual: 'multi', flip: true, body: [] },
-  { n: 7, id: 'angebot', title: 'Das Angebotsportfolio', layout: 'table', visual: 'mixed', body: [] },
-  { n: 8, id: 'kanaele', title: 'Go-to-Market-Kanäle', layout: 'editorial', visual: 'detail', body: [] },
-  { n: 9, id: 'launchplan', title: 'Der 100-Tage-Launchplan', layout: 'launch', visual: 'multi', body: [] },
-  { n: 10, id: 'funnel', title: 'Funnel-Modell & Ziele', layout: 'funnel', visual: 'mixed', body: [] },
-  { n: 11, id: 'vertrieb', title: 'Vertriebsprozess & Standards', layout: 'split', visual: 'altbau', flip: true, body: [] },
-  { n: 12, id: 'technologie', title: 'Technologie & Daten', layout: 'tech', visual: 'detail', body: [] },
-  { n: 13, id: 'marke', title: 'Gründergetriebene Markenstrategie', layout: 'editorial', visual: 'multi', body: [] },
-  { n: 14, id: 'roadmap', title: '12-Monats-Wachstums-Roadmap', layout: 'roadmap', visual: 'mixed', body: [] },
-  { n: 15, id: 'kpis', title: 'KPIs, Risiken & Leitplanken', layout: 'table', visual: 'detail', body: [] },
-  { n: 16, id: 'naechste-schritte', title: 'Unmittelbare nächste Schritte', layout: 'closing', visual: 'altbau', body: [] },
+const raw = [
+  { n: 1, id: 'these', title: 'Die strategische These', layout: 'thesis', visual: 'altbau' },
+  { n: 2, id: 'marktfenster', title: 'Warum jetzt — das Marktfenster', layout: 'compare', visual: 'mixed' },
+  { n: 3, id: 'bestand', title: 'Was ARVENTAS bereits besitzt', layout: 'split', visual: 'detail' },
+  { n: 4, id: 'engine', title: 'Die Engine — wie sie sich verstärkt', layout: 'engine', visual: 'multi' },
+  { n: 5, id: 'positionierung', title: 'Positionierung & Botschaften', layout: 'editorial', visual: 'altbau' },
+  { n: 6, id: 'zielgruppen', title: 'Zielgruppen', layout: 'split', visual: 'multi', flip: true },
+  { n: 7, id: 'angebot', title: 'Das Angebotsportfolio', layout: 'table', visual: 'mixed' },
+  { n: 8, id: 'kanaele', title: 'Go-to-Market-Kanäle', layout: 'editorial', visual: 'detail' },
+  { n: 9, id: 'launchplan', title: 'Der 100-Tage-Launchplan', layout: 'launch', visual: 'multi' },
+  { n: 10, id: 'funnel', title: 'Funnel-Modell & Ziele', layout: 'funnel', visual: 'mixed' },
+  { n: 11, id: 'vertrieb', title: 'Vertriebsprozess & Standards', layout: 'split', visual: 'altbau', flip: true },
+  { n: 12, id: 'technologie', title: 'Technologie & Daten', layout: 'tech', visual: 'detail' },
+  { n: 13, id: 'marke', title: 'Gründergetriebene Markenstrategie', layout: 'editorial', visual: 'multi' },
+  { n: 14, id: 'roadmap', title: '12-Monats-Wachstums-Roadmap', layout: 'roadmap', visual: 'mixed' },
+  { n: 15, id: 'kpis', title: 'KPIs, Risiken & Leitplanken', layout: 'table', visual: 'detail' },
+  { n: 16, id: 'naechste-schritte', title: 'Unmittelbare nächste Schritte', layout: 'closing', visual: 'altbau' },
 ]
 
 // Named in the brief; no data invented.
@@ -54,3 +55,13 @@ export const techSystems = [
   { id: 'llm', name: 'LLM-Schicht' },
   { id: 'ga4', name: 'GA4' },
 ]
+
+// Merge supplied document content (src/content/doc.json, extracted verbatim from the German strategy document).
+export const sections = raw.map((r) => {
+  const d = doc.sections['s' + String(r.n).padStart(2, '0')]
+  return { ...r, subtitle: d.subtitle, body: d.blocks }
+})
+export const kpis = doc.kpis
+export const tocDesc = doc.tocDesc
+export const finalRec = doc.final
+export const disclaimer = doc.footer

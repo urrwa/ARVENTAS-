@@ -1,0 +1,1267 @@
+{
+ "kpis": [
+  {
+   "value": "8–12",
+   "label": "Einheiten, die in den ersten 100 Tagen notariell beurkundet werden"
+  },
+  {
+   "value": "3–5",
+   "label": "Off-Market-Objekte, die unter Mandat gesichert werden"
+  },
+  {
+   "value": "600",
+   "label": "Qualifizierte Investoren im Käuferpool"
+  },
+  {
+   "value": "5 Tage",
+   "label": "Von der Beauftragung bis zum gelieferten Objektreport"
+  }
+ ],
+ "tocDesc": "Ein einziger Operationsplan: wo ARVENTAS antritt, an wen verkauft wird, wie Angebot und Nachfrage erzeugt werden, was in den ersten 100 Tagen geschieht und wie das Geschäft in zwölf Monaten aussehen soll.",
+ "footer": "Erstellt von Branded Genius für die ARVENTAS Gründungspartner, August 2026. Funnel-Conversion-Raten, Cost-per-Lead-Annahmen und Kapazitätswerte sind Planungsschätzungen, die durch gemessene Performancedaten zu ersetzen sind. Regulatorische Verweise dienen der kommerziellen Planung und bedürfen vor Verwendung in kundenseitigen Materialien der Bestätigung durch die Rechtsberatung von ARVENTAS.",
+ "final": {
+  "label": "Die Empfehlung in einem Absatz",
+  "text": "Enger und konsequenter starten, als es die Intuition nahelegt. Ein Regionenpaar, ein Käufertier, ein Objektprofil. Angebot aufbauen, bevor Nachfrage geöffnet wird. Den Objektreport in den Mittelpunkt jedes Gesprächs auf beiden Seiten stellen. Die Partner sichtbar machen. Acht bis zwölf Einheiten und ein wiederholbares Playbook in 100 Tagen beweisen — und dann eine Engine skalieren, von der bereits bekannt ist, dass sie funktioniert."
+ },
+ "sections": {
+  "s01": {
+   "title": "Die strategische These",
+   "subtitle": "ARVENTAS beherrscht beide Seiten des schwierigsten Geschäfts im deutschen Immobilienmarkt",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Nahezu jeder Marktteilnehmer verfügt über eines von zwei Dingen. ARVENTAS verfügt über beide — und diese Kombination, systematisch gemacht, ist das gesamte Geschäftsmodell."
+    },
+    {
+     "type": "p",
+     "text": "Makler haben Käufer, kämpfen aber um Bestand. Investoren haben Kapital, aber keinen Zugang. Datenanbieter haben Analysen, aber keine Transaktion. Aufteiler haben Objekte, aber keine verlässliche Nachfrage. ARVENTAS hält Off-Market-Bestand, den der öffentliche Markt nicht sieht, und einen Pool qualifizierter Käufer, die bereit sind zu handeln."
+    },
+    {
+     "type": "p",
+     "text": "Die Strategie besteht nicht darin, eine weitere Fähigkeit hinzuzufügen. Sie besteht darin, diese Kombination schnell, belegbar und wiederholbar zu machen — sodass jede Transaktion die nächste leichter gewinnbar macht."
+    },
+    {
+     "type": "callout",
+     "label": "Die These in einem Satz",
+     "text": "ARVENTAS ist der kürzeste Weg zwischen einem Objekt, das nicht am Markt ist, und dem Käufer, dem es gehören sollte — belegt durch eine Analyse, die sonst niemand in fünf Tagen liefern kann."
+    },
+    {
+     "type": "h3",
+     "text": "Drei Entscheidungen, die diese Strategie von den Partnern verlangt"
+    },
+    {
+     "type": "table",
+     "head": [
+      "#",
+      "Entscheidung",
+      "Warum sie zählt"
+     ],
+     "rows": [
+      [
+       "1",
+       "Die Transaktion in den Vordergrund stellen, nicht die Technologie",
+       "Die Intelligence-Engine ist der Grund, warum ARVENTAS Mandate gewinnt — sie ist nicht das Produkt, das verkauft wird. Eigentümer kaufen Sicherheit; Investoren kaufen Rendite."
+      ],
+      [
+       "2",
+       "Angebot mit Nachfrage gewinnen, nicht mit Provision",
+       "„Wir haben bereits qualifizierte Käufer für dieses Objekt\" schlägt jeden konkurrierenden Pitch. Der Käuferpool ist die Akquisewaffe für das Angebot."
+      ],
+      [
+       "3",
+       "Eng starten, in einem Segment, und die Unit Economics beweisen",
+       "Bayern und Baden-Württemberg, Wohn- und Mischnutzung off-market, Tickets von 150.000 € bis 300.000 €. Eine bewiesene Engine skaliert auf fünf Regionen."
+      ]
+     ]
+    }
+   ]
+  },
+  "s02": {
+   "title": "Warum jetzt",
+   "subtitle": "Das Marktfenster ist offen — und zwar genau für dieses Modell",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Vier Kräfte laufen 2026 zusammen. Jede einzelne begünstigt für sich genommen einen off-market-orientierten, analysegeführten, regional fokussierten Marktteilnehmer."
+    },
+    {
+     "type": "table",
+     "head": [
+      "#",
+      "Kraft",
+      "Bedeutung für ARVENTAS"
+     ],
+     "rows": [
+      [
+       "01",
+       "Off-Market ist nicht länger die Ausnahme",
+       "Off-Market-Transaktionsvolumen stieg im Q1 2026 um ein Fünftel. Wohnimmobilien machen 46 % der Off-Market-Ankäufe aus. Der Reiz liegt in Abschlusssicherheit und Diskretion — ein Serviceversprechen, das durch einen besser organisierten Anbieter gewinnbar ist."
+      ],
+      [
+       "02",
+       "Finanzierungskosten haben die Rendite entscheidend gemacht",
+       "Zehnjährige Zinsbindungen bei ~4,0 %. Privatanleger kaufen nach Rendite und nach Zahlen, die sie überprüfen können. Genau das liefert der Objektreport."
+      ],
+      [
+       "03",
+       "Eigentum wechselt den Besitzer",
+       "Großer Teil des deutschen MFH-Bestands bei Eigentümern ab 65, gehalten über Erbengemeinschaften und Insolvenzverfahren. Brauchen Diskretion, belastbare Bewertung und diskrete Abwicklung."
+      ],
+      [
+       "04",
+       "Energieregulierung bepreist müden Bestand neu",
+       "Sanierungspflichten drängen unmodernisierte Gebäude in Transaktionen — was Angebot für ARVENTAS und ein analytisches Problem schafft, für dessen Lösung die Intelligence-Ebene gebaut ist."
+      ]
+     ]
+    },
+    {
+     "type": "callout",
+     "label": "Was das in Summe bedeutet",
+     "text": "Mehr Wohnbestand bewegt sich off-market, Käufer brauchen belegte Zahlen statt Optimismus, Eigentümer brauchen Diskretion und Tempo, und die Objekte selbst werden schwerer zu bewerten. Jeder einzelne Punkt ist ein Grund, mit einem Anbieter zusammenzuarbeiten, der Zugang, Analyse und eine wartende Käuferliste hat. Das Fenster bleibt nicht so sauber offen, sobald größere Marktteilnehmer dieselbe Fähigkeit aufbauen."
+    }
+   ]
+  },
+  "s03": {
+   "title": "Der Vorsprung",
+   "subtitle": "Vier Assets, die ARVENTAS bereits besitzt — und die die meisten Wettbewerber nicht kaufen können",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Strategie sollte von dem ausgehen, was bereits wahr ist. Diese vier Assets existieren heute. Alles Folgende ist ein Plan, sie in Umsatz zu überführen."
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "tag": "ASSET 01",
+       "title": "Off-Market-Bestand",
+       "text": "Objekte, die nie ein Portal erreichen. Das ist der knappste Input im Markt und der am schwersten zu replizierende — er entsteht aus Beziehungen, nicht aus Budget. Er macht die Investorenproposition ab Tag eins glaubwürdig."
+      },
+      {
+       "tag": "ASSET 02",
+       "title": "Die Gründerbank",
+       "text": "Fünf bis sechs Partner mit jahrzehntelanger deutscher Immobilien-Transaktionserfahrung. In einer vertrauensgetriebenen Kategorie ist eine unbekannte Marke eine Belastung — eine bekannte Bank an Personen ist es nicht."
+      },
+      {
+       "tag": "ASSET 03",
+       "title": "Die Intelligence-Ebene",
+       "text": "Eine KI-gestützte Analyse-Engine, die fragmentierte Markt-, Bewertungs- und Regulierungsdaten in Tagen statt Wochen in einen entscheidungsreifen Report überführt. Sie ist der Geschwindigkeitsvorteil auf der Verkaufsseite."
+      },
+      {
+       "tag": "ASSET 04",
+       "title": "Beide Seiten der Transaktion",
+       "text": "Verkäufer und Käufer im selben Haus. Beide zu halten bedeutet, dass ARVENTAS Matching, Timing und Abschlusssicherheit steuert — und an beiden Enden der Transaktion Wert erfasst."
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "label": "Die verteidigbare Position",
+     "text": "Innerhalb von achtzehn Monaten sollte ARVENTAS etwas sagen können, das kein regionaler Wettbewerber sagen kann: „Wir wissen, was dieses Gebäude wert ist, wir wissen, ob es rechtlich aufgeteilt werden darf, und wir wissen bereits, wer es kaufen wird.\""
+    },
+    {
+     "type": "h3",
+     "text": "Regulatorischer Vorteil: Bayern vs. Baden-Württemberg"
+    },
+    {
+     "type": "table",
+     "head": [
+      "",
+      "Bayern",
+      "Baden-Württemberg"
+     ],
+     "rows": [
+      [
+       "Regime",
+       "§ 250 BauGB über die GBestV-Bau, in Kraft seit Juni 2023",
+       "Keine landesrechtliche Regelung nach § 250. Ältere Umwandlungsverordnung nach § 172 BauGB"
+      ],
+      [
+       "Geltungsbereich",
+       "50 ausgewiesene Gemeinden",
+       "Nur innerhalb kommunaler Milieuschutzgebiete, nach Wahl der Gemeinde"
+      ],
+      [
+       "Schwelle",
+       "Bestandsgebäude mit 11+ Einheiten. Gebäude bis 10 Einheiten ausgenommen",
+       "Prüfung auf Grundstücksebene erforderlich; Neubauten ausgenommen"
+      ],
+      [
+       "Gültig bis",
+       "Derzeit Ende 2026; bundesrechtliche Ermächtigung bis Ende 2030",
+       "November 2028"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "In Bayern benötigen Bestandsgebäude mit sechs bis zehn Einheiten innerhalb der ausgewiesenen Gemeinden überhaupt keine Umwandlungsgenehmigung. Wettbewerber, die größere Gebäude verfolgen, stehen im Genehmigungsstau; ARVENTAS geht daran vorbei. Das sollte zu einem harten Ankaufsfilter und zu einer „Umwandlungs-Ampel\" im Report werden."
+    }
+   ]
+  },
+  "s04": {
+   "title": "Die Engine",
+   "subtitle": "Ein Kreislauf, sechs Stufen, mit jedem Zyklus stärker",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Das ist das Betriebsmodell in voller Form. Es sollte das gedankliche Bild sein, das jeder Partner und jeder Vertriebsmitarbeiter mit sich trägt."
+    },
+    {
+     "type": "steps",
+     "items": [
+      {
+       "tag": "01",
+       "title": "Sourcing",
+       "text": "Off-Market-Objekte werden über das Partnernetzwerk, Verwalter, Empfehlungspartner und Signalmonitoring gesichert."
+      },
+      {
+       "tag": "02",
+       "title": "Analyse",
+       "text": "Der Objektreport: Bewertung, Potenzial, Rechtsmachbarkeit, Renditeszenarien — geliefert in fünf Arbeitstagen."
+      },
+      {
+       "tag": "03",
+       "title": "Anziehung",
+       "text": "Analysierte Off-Market-Gelegenheiten ziehen qualifizierte Investoren in den ARVENTAS Investorenkreis."
+      },
+      {
+       "tag": "04",
+       "title": "Matching",
+       "text": "Käuferpool wird nach Ticket, Region, Risikoprofil und Finanzierungsfähigkeit auf den Bestand gematcht."
+      },
+      {
+       "tag": "05",
+       "title": "Abwicklung",
+       "text": "Mandat unterzeichnet, Transaktion abgeschlossen, beide Seiten aus einem Haus bedient."
+      },
+      {
+       "tag": "06",
+       "title": "Lernen",
+       "text": "Jedes Ergebnis — gewonnen, verloren, abgelehnt — fließt zurück in das Scoring-Modell und die Käuferprofil-Datenbank."
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "label": "Der Kreislauf",
+     "text": "Ein größerer Käuferpool gewinnt mehr Mandate → mehr Mandate schaffen mehr Bestand → mehr Bestand zieht mehr Käufer an → jede abgeschlossene Transaktion schärft die Analyse → schärfere Analyse gewinnt das nächste Mandat schneller."
+    },
+    {
+     "type": "panels",
+     "items": [
+      {
+       "title": "Verkaufsseite (Angebot)",
+       "rows": [
+        [
+         "Wer:",
+         "Eigentümer, Erben, Verwalter, Bauträger"
+        ],
+        [
+         "Was sie kaufen:",
+         "Sicherheit, Diskretion, einen belastbaren Preis"
+        ],
+        [
+         "Einstiegsangebot:",
+         "Kostenloser ARVENTAS Objektreport"
+        ],
+        [
+         "Zykluslänge:",
+         "3–12 Monate"
+        ],
+        [
+         "Engpass:",
+         "Beziehungstiefe und Vertrauen — langsam aufzubauen"
+        ],
+        [
+         "Strategische Rolle:",
+         "Das knappe Gut. Alles hängt davon ab."
+        ]
+       ]
+      },
+      {
+       "title": "Käuferseite (Nachfrage)",
+       "rows": [
+        [
+         "Wer:",
+         "Privatkapital-Investoren, Berufstätige, Bestandshalter"
+        ],
+        [
+         "Was sie kaufen:",
+         "Rendite, Zugang, belegte Zahlen"
+        ],
+        [
+         "Einstiegsangebot:",
+         "Mitgliedschaft im Investorenkreis + Rendite-Check"
+        ],
+        [
+         "Zykluslänge:",
+         "4–12 Wochen"
+        ],
+        [
+         "Engpass:",
+         "Finanzierungsfähigkeit — schnell zu prüfen"
+        ],
+        [
+         "Strategische Rolle:",
+         "Der Hebel. Seine Größe gewinnt das Angebot."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "label": "Die Sequenzregel",
+     "text": "Angebot zuerst, Nachfrage danach — immer. Ein Investorenlead in diesem Segment kühlt innerhalb von zwei bis drei Wochen ab. Erst Bestand aufbauen, dann die Nachfragehähne öffnen."
+    }
+   ]
+  },
+  "s05": {
+   "title": "Positionierung",
+   "subtitle": "Eine Marke, zwei Gespräche",
+   "blocks": [
+    {
+     "type": "callout",
+     "label": "Positionierungsaussage",
+     "text": "ARVENTAS — Off-Market Immobilien-Intelligenz für Bayern und Baden-Württemberg. Wir finden Objekte, die nicht am Markt sind, bewerten sie in Tagen statt Wochen, und bringen sie zum passenden Eigentümer oder Investor."
+    },
+    {
+     "type": "h3",
+     "text": "Die drei Beweissäulen"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Säule",
+      "Was sie bedeutet",
+      "Wie sie belegt wird"
+     ],
+     "rows": [
+      [
+       "Zugang",
+       "Objekte, die nie ein Portal erreichen, erschlossen über vier Jahrzehnte an Beziehungen",
+       "Die laufende Off-Market-Liste. Deal-Geschichten. Namentlicher Track Record der Partner"
+      ],
+      [
+       "Analyse",
+       "Eine entscheidungsreife Einschätzung in fünf Arbeitstagen — Wert, Potenzial, Rechtsmachbarkeit, Rendite",
+       "Der Objektreport selbst, im ersten Termin als Muster übergeben"
+      ],
+      [
+       "Abwicklung",
+       "Von der ersten Analyse bis zum Notar, mit beiden Seiten der Transaktion unter einem Dach",
+       "Abgeschlossene Transaktionen, namentliche Referenzen, Abwicklungszeiten"
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "text": "Botschaftsarchitektur"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Zielgruppe",
+      "Kernbotschaft",
+      "Beweis, mit dem zu führen ist"
+     ],
+     "rows": [
+      [
+       "Eigentümer & Erben",
+       "„In fünf Arbeitstagen wissen Sie, was Ihre Immobilie wirklich wert ist — und wer sie kaufen würde. Ohne öffentliches Inserat.\"",
+       "Muster-Objektreport + Größe des Käuferpools"
+      ],
+      [
+       "Verwalter",
+       "„Belastbare Bewertung, dokumentierter Prozess, diskrete Abwicklung — mit einem bereits identifizierten Käufer.\"",
+       "Prozessdokumentation + Abschlusssicherheit"
+      ],
+      [
+       "Privatanleger",
+       "„Regionale Off-Market-Objekte ab 150.000 € — analysiert, bevor Sie sie überhaupt sehen.\"",
+       "Renditeberechnung + die Analyse, die sie kostenlos erhalten"
+      ],
+      [
+       "Professionelle Käufer",
+       "„Direkter Zugang zu regionalem Deal Flow, bevor er den Markt erreicht.\"",
+       "Volumen, Geschwindigkeit, First-Look-Rechte"
+      ]
+     ]
+    }
+   ]
+  },
+  "s06": {
+   "title": "Zielgruppen",
+   "subtitle": "An wen wir verkaufen — und in welcher Reihenfolge",
+   "blocks": [
+    {
+     "type": "h3",
+     "text": "Verkaufsseite — Bestand beschaffen"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Segment",
+      "Warum sie transaktieren",
+      "Zugangsweg",
+      "Priorität"
+     ],
+     "rows": [
+      [
+       "Erbengemeinschaften & Nachlassverwalter",
+       "Mehrere Erben, Liquiditätsbedarf, Präferenz für Diskretion",
+       "Notare, Erbrechtsanwälte, Direktmailing",
+       "Tier 1"
+      ],
+      [
+       "Insolvenzverwalter",
+       "Gesetzliche Verwertungspflicht unter Zeitdruck; professionelle Gegenpartei",
+       "Direktansprache, namentliche Liste",
+       "Tier 1"
+      ],
+      [
+       "Private MFH-Eigentümer, 60+",
+       "Sanierungspflichten, Verwaltungsmüdigkeit, keine Nachfolge",
+       "Adressiertes Direktmailing, Empfehlung",
+       "Tier 1"
+      ],
+      [
+       "Multiplikatoren-Netzwerk",
+       "Keine Kunden — der qualitativ hochwertigste Angebotsweg im Markt",
+       "Strukturiertes Empfehlungsprogramm",
+       "Tier 1"
+      ],
+      [
+       "Bauträger mit stockendem Bestand",
+       "Finanzierungsdruck, unverkaufte Einheiten, Exit ohne öffentliches Distress-Signal",
+       "Direkt, LinkedIn, Netzwerk",
+       "Tier 2"
+      ],
+      [
+       "Bestandshalter in Repositionierung",
+       "Portfoliobereinigung, Energie-Exposure, Kapitalumschichtung",
+       "Partnernetzwerk, ABM",
+       "Tier 2"
+      ],
+      [
+       "Family Offices & Institutionelle",
+       "Größere Tickets, längere Zyklen, anderes Servicemodell",
+       "Ausschließlich Partnerbeziehungen",
+       "Phase 3"
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "text": "Käuferseite — Bestand platzieren"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Tier",
+      "Profil",
+      "Vertriebsansatz",
+      "Rolle im Plan"
+     ],
+     "rows": [
+      [
+       "Fortgeschrittene (1–5 Vortransaktionen)",
+       "35–55, angestellte Fachkräfte aus Medizin, IT, Ingenieurwesen. Besitzen bereits eine Immobilie.",
+       "Objekt zuerst. Kurzer Zyklus. Entscheidet über die Zahlen.",
+       "Launch-Fokus — schnellste Conversion, niedrigste Kosten pro Einheit"
+      ],
+      [
+       "Anfänger (Erstinvestment)",
+       "Höheres Einkommen, kein Immobilienbesitz, motiviert durch Altersvorsorge und Steuer",
+       "Aufklärung zuerst. Längere Nurture-Strecke. Finanzierungspartner zwingend.",
+       "Volumen-Tier — wird geöffnet ab Monat 4"
+      ],
+      [
+       "Profis (10+ Transaktionen)",
+       "Professionelle Käufer, Appetit auf ganze Objekte und Mehrfacheinheiten",
+       "Beziehungsgeführt. Keine Kampagnen. Partner zu Partner.",
+       "Margen-Tier — größte Tickets, schnellste Abwicklung"
+      ]
+     ]
+    }
+   ]
+  },
+  "s07": {
+   "title": "Das Angebotsportfolio",
+   "subtitle": "Fünf Produkte, zwei Umsatzmotoren",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Alles, was ARVENTAS verkauft, sollte entweder eine Beziehung eröffnen oder eine Transaktion abschließen. Produkte, die keines von beidem tun, sollten nicht existieren."
+    },
+    {
+     "type": "table",
+     "head": [
+      "Produkt",
+      "Seite",
+      "Was der Kunde erhält",
+      "Kommerzielle Rolle"
+     ],
+     "rows": [
+      [
+       "ARVENTAS Objektreport",
+       "Beide",
+       "Aktueller Wert, Potenzial, Umwandlungs-Ampel, Renditeszenarien, indikative Käufernachfrage — fünf Arbeitstage",
+       "Der Türöffner. Kostenlos für qualifizierte Eigentümer. Eröffnet jede Beziehung."
+      ],
+      [
+       "Verkaufs- / Vertriebsmandat",
+       "Verkauf",
+       "Vollständige Off-Market-Platzierung mit gematchtem Käufer, diskrete Abwicklung bis zum Notar",
+       "Umsatzmotor 1. Provision auf die Transaktion"
+      ],
+      [
+       "Off-Market Investorenkreis",
+       "Kauf",
+       "First-Look-Zugang zu analysierten regionalen Objekten vor Freigabe, auf das Profil gematcht",
+       "Der Pool. Kostenlose Mitgliedschaft. Baut den Hebel auf, der Mandate gewinnt."
+      ],
+      [
+       "Ankaufsberatung",
+       "Kauf",
+       "Objektauswahl, Due-Diligence-Unterstützung, Begleitung der Finanzierungsstruktur",
+       "Umsatzmotor 2. Honorar oder käuferseitige Provision"
+      ],
+      [
+       "Entwicklungs- & Repositionierungsberatung",
+       "Beide",
+       "Aufteilungsstrategie, Sanierungsszenarien, Repositionierungsplan für Bestand",
+       "Margenverlängerung. Macht aus einem Bewertungsgespräch ein Projekt."
+      ]
+     ]
+    },
+    {
+     "type": "callout",
+     "label": "Nicht verhandelbar",
+     "text": "Ein menschlicher Partner prüft und zeichnet jeden Report, bevor er das Haus verlässt. Die KI erstellt die Analyse; ein Partner mit dreißig Jahren Urteilsvermögen gibt sie frei. Diese Kombination — Maschinentempo mit namentlicher menschlicher Verantwortung — ist das eigentliche Produkt."
+    }
+   ]
+  },
+  "s08": {
+   "title": "Go-to-Market-Kanäle",
+   "subtitle": "Wie jede Seite tatsächlich erzeugt wird",
+   "blocks": [
+    {
+     "type": "h3",
+     "text": "Verkaufsseite — startet zuerst"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Kanal",
+      "Vorgehen",
+      "Warum es hier funktioniert"
+     ],
+     "rows": [
+      [
+       "Verwalternetzwerk",
+       "Namentliche Liste von Insolvenz- und Nachlassverwaltern in BY & BW. Persönliche Ansprache durch einen Partner, quartalsweise Kadenz",
+       "Professionelle Gegenparteien, wiederkehrendes Angebot, zulässige B2B-Ansprache"
+      ],
+      [
+       "Multiplikatoren-Empfehlungsprogramm",
+       "Strukturiertes Programm für Steuerberater, Notare, Erbrechtsanwälte, Hausverwaltungen und Regionalbanken. Definierte Empfehlungsvergütung",
+       "Höchste Angebotsqualität, nahezu keine Akquisekosten, verstärkt sich Jahr für Jahr"
+      ],
+      [
+       "Adressiertes Direktmailing",
+       "Zielgerichtete Briefe an Eigentümer von Gebäuden mit 6–10 Einheiten in Prioritätsgemeinden, mit Angebot des kostenlosen Objektreports",
+       "Der am wenigsten genutzte Kanal in dieser Nische. Auf Grundlage des berechtigten Interesses umsetzbar"
+      ],
+      [
+       "Signalmonitoring",
+       "Zwangsversteigerungskalender, Nachlassbekanntmachungen, Inserate älter als 120 Tage — automatisiert zu einer wöchentlich bewerteten Gelegenheitsliste",
+       "Macht den Datenstack zur Beschaffungswaffe statt zum Reporting-Werkzeug"
+      ],
+      [
+       "LinkedIn ABM",
+       "Named-Account-Ansatz zu Bauträgern und Bestandshaltern in BY & BW, geführt über Partnerprofile",
+       "Erreicht die Tier-2-Angebotssegmente"
+      ],
+      [
+       "Regionale Präsenz",
+       "IHK, Haus & Grund, Eigentümerverbände, Erb- und Nachfolgeveranstaltungen, Regionalpresse",
+       "Vertrauensgetriebenes Segment; persönlicher Kontakt konvertiert dort, wo Werbung es nicht kann"
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "text": "Käuferseite — wird aktiviert, sobald Bestand existiert"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Kanal",
+      "Vorgehen",
+      "Rolle"
+     ],
+     "rows": [
+      [
+       "Finanzierungsvermittler-Partnerschaften",
+       "Co-Marketing mit regionalen Baufinanzierungsvermittlern. Sie halten eine Zielgruppe, die bereits nach Einkommen, Vertragsart und Bonität gefiltert ist",
+       "Der Nachfragekanal mit dem größten Hebel"
+      ],
+      [
+       "Meta Ads",
+       "Landingpage plus Qualifizierungsformular. Segmentiert nach Region, Tier und Objekttyp. Kreation um Rendite und Zugang",
+       "Primärer Volumentreiber. Skaliert planbar, sobald die Kosten pro qualifiziertem Termin bekannt sind"
+      ],
+      [
+       "Google Search",
+       "Regionale Begriffe mit hoher Kaufabsicht: Kapitalanlage Immobilie, Off-Market Immobilien Bayern, Mehrfamilienhaus Aufteilung",
+       "Geringeres Volumen, höhere Absicht, beste Finanzierungsquote"
+      ],
+      [
+       "Investorenkreis & Webinar",
+       "Monatliche regionale Onlinesession, geführt von einem Gründungspartner, aufgebaut um reale Objekte",
+       "Baut den Pool auf, der Mandate gewinnt. Das strategisch wichtigste käuferseitige Asset."
+      ],
+      [
+       "Rendite-Check",
+       "Neunzig-Sekunden-Rechner für Rendite und monatlichen Eigenanteil auf der Website",
+       "Beantwortet die drei häufigsten Einwände, bevor ein Vertriebsmitarbeiter beteiligt ist"
+      ],
+      [
+       "Gründer-Content",
+       "Kurzvideos und schriftliche Kommentare der Partner — Marktlagen, Deal-Analysen, Renditemechanik",
+       "Verstärkt sich mit der Zeit. Baut das Vertrauen auf, das die Kategorie verlangt."
+      ]
+     ]
+    }
+   ]
+  },
+  "s09": {
+   "title": "Der Launch",
+   "subtitle": "Die ersten 100 Tage",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Drei Phasen, jede mit einem Ausstiegskriterium. Keine Phase beginnt, bevor die vorherige ihr Gate passiert hat."
+    },
+    {
+     "type": "phase",
+     "name": "Phase 0 — Fundament",
+     "weeks": "Wochen 1–3",
+     "items": [
+      "Vertriebsunterlagen: Unternehmenspräsentation, Leistungs-Onepager, anonymisierter Muster-Objektreport, Partnerprofile, FAQ, freigegebene Einwandbehandlungen, Angebots- und Mandatsvorlagen",
+      "Systeme: onOffice mit vollständiger Pipeline konfiguriert, geteiltes Postfach, Buchungskalender, Dokumentationsregeln, benannter Systemverantwortlicher",
+      "Team: benannter Verantwortlicher für jede Funktion — Analyse, Angebotsfreigabe, Verhandlung, Recht, Eskalation, Daten",
+      "Messung: GA4, serverseitiges Conversion-Tracking, CRM-Integration, UTM-Taxonomie",
+      "Compliance: freigegebene Aussagenliste, Disclaimer-Formulierungen, Einwilligungsarchitektur abgezeichnet"
+     ],
+     "gate": "Gate → Nichts geht live — keine Werbung, keine Ansprache, keine Terminvereinbarung — bevor nicht ein Partner einem Interessenten einen fertigen Musterreport übergeben und ein Vertriebsmitarbeiter einen Lead im CRM erfassen kann."
+    },
+    {
+     "type": "phase",
+     "name": "Phase 1 — Angebot",
+     "weeks": "Wochen 3–8",
+     "items": [
+      "Verwalterliste für Bayern und Baden-Württemberg aufbauen und bearbeiten",
+      "Multiplikatoren-Empfehlungsprogramm starten — Ziel: sechs unterzeichnete Partner",
+      "Erste adressierte Direktmailing-Welle an Eigentümer von Gebäuden mit 6–10 Einheiten in Prioritätsgemeinden",
+      "Umwandlungs-Ampel-Datensatz aufbauen: 50 bayerische Gemeinden plus Milieuschutz-Kartierung Baden-Württemberg",
+      "Die ersten zehn Objektreports liefern; Vorlage anhand echten Feedbacks verfeinern",
+      "Registrierungskampagne für den Investorenkreis mit geringem Budget öffnen (~2.000 €/Monat)",
+      "Partner-Content-Programm beginnt: wöchentlich LinkedIn, erster regionaler Marktkommentar"
+     ],
+     "gate": "Gate → Drei Off-Market-Objekte unter Mandat oder Absichtserklärung, bevor käuferseitiges Mediabudget freigegeben wird."
+    },
+    {
+     "type": "phase",
+     "name": "Phase 2 — Nachfrage",
+     "weeks": "Wochen 6–12",
+     "items": [
+      "Meta und Google live, Skalierung in Richtung ~12.000 €/Monat gegen gemessene Kosten pro qualifiziertem Termin",
+      "Segment- und objektbezogene Landingpages; Rendite-Check live",
+      "Erstes monatliches Investorenwebinar, gehostet von einem Gründungspartner",
+      "Finanzierungsvermittler-Partnerschaften — Ziel: zwei unterzeichnet",
+      "Speed-to-Lead durchgesetzt: Erstkontakt innerhalb von fünf Minuten",
+      "Matching-Prozess live: Käuferpool abfragbar nach Region, Ticket, Typ und Finanzierungsstatus"
+     ],
+     "gate": "Gate → Kosten pro qualifiziertem Termin etabliert und über zwei aufeinanderfolgende Monate stabil."
+    },
+    {
+     "type": "phase",
+     "name": "Phase 3 — Beweis",
+     "weeks": "Wochen 12–16",
+     "items": [
+      "Erste Einheiten notariell beurkundet; vollständige Funnel-Ökonomie durchgängig gemessen",
+      "Einwandbibliothek aus echten Gesprächsaufzeichnungen neu aufgebaut und freigegeben",
+      "Erste zwei Fallstudien erstellt — das Glaubwürdigkeits-Asset, das dem Geschäft derzeit fehlt",
+      "Erfolgreiche Kreation, Skripte und Report-Muster als Betriebsplaybook dokumentiert",
+      "Go/No-Go-Entscheidung zu Region zwei und zur Öffnung des Anfänger-Tiers"
+     ],
+     "gate": "Gate → Acht bis zwölf notariell beurkundete Einheiten und ein dokumentiertes, wiederholbares Playbook vor jeder Expansion."
+    }
+   ]
+  },
+  "s10": {
+   "title": "Funnel-Modell",
+   "subtitle": "Wie die Zahlen aussehen müssen",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ein Planungsmodell für den eingeschwungenen Zustand in Monat drei, eine Region, ein Segment. Dies sind Ausgangsannahmen, die durch die eigenen gemessenen Daten von ARVENTAS zu ersetzen sind."
+    },
+    {
+     "type": "h3",
+     "text": "Käuferseite — vom Budget zum Notar"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Stufe",
+      "Conversion",
+      "Monatliches Volumen"
+     ],
+     "rows": [
+      [
+       "Mediabudget",
+       "—",
+       "12.000 €"
+      ],
+      [
+       "Rohleads bei durchschnittlich 35 € Cost per Lead",
+       "—",
+       "340"
+      ],
+      [
+       "Innerhalb von fünf Minuten kontaktiert",
+       "65 %",
+       "220"
+      ],
+      [
+       "Besteht den Qualifizierungsstandard",
+       "45 %",
+       "100"
+      ],
+      [
+       "Termin gebucht",
+       "60 %",
+       "60"
+      ],
+      [
+       "Termin wahrgenommen",
+       "70 %",
+       "42"
+      ],
+      [
+       "Finanzierungszusage eingeholt",
+       "35 %",
+       "15"
+      ],
+      [
+       "Reservierung / Notar",
+       "30 %",
+       "4–5 Einheiten"
+      ]
+     ]
+    },
+    {
+     "type": "panels",
+     "items": [
+      {
+       "title": "Kennzahlen",
+       "rows": [
+        [
+         "",
+         "Mediakosten pro qualifiziertem Termin: ~285 €"
+        ],
+        [
+         "",
+         "Mediakosten pro notariell beurkundeter Einheit: ~2.600 €"
+        ],
+        [
+         "",
+         "Qualifizierte Termine bei 12.000 € Budget: 42/Monat"
+        ]
+       ]
+      },
+      {
+       "title": "100-Tage-Ziele",
+       "rows": [
+        [
+         "",
+         "Gespräche mit Eigentümern und Verwaltern: 120"
+        ],
+        [
+         "",
+         "Gelieferte Objektreports: 25"
+        ],
+        [
+         "",
+         "Off-Market-Objekte unter Mandat oder LOI: 3–5"
+        ],
+        [
+         "",
+         "Investorenkreis-Registrierungen: 600"
+        ],
+        [
+         "",
+         "Qualifizierte wahrgenommene Termine: 90–140"
+        ],
+        [
+         "",
+         "Notariell beurkundete Einheiten: 8–12"
+        ],
+        [
+         "",
+         "Unterzeichnete Multiplikatorenpartner: 6"
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "s11": {
+   "title": "Prozess & Standards",
+   "subtitle": "Neun Stufen, eine Pipeline, keine Ausnahmen",
+   "blocks": [
+    {
+     "type": "table",
+     "head": [
+      "#",
+      "Stufe",
+      "Verantwortung",
+      "Standard"
+     ],
+     "rows": [
+      [
+       "1",
+       "Lead identifiziert",
+       "Marketing / Sourcing",
+       "Innerhalb einer Stunde im CRM, Quelle getaggt"
+      ],
+      [
+       "2",
+       "Erstkontakt",
+       "Vertrieb",
+       "Innerhalb von fünf Minuten bei eingehenden käuferseitigen Anfragen; taggleich auf der Verkaufsseite"
+      ],
+      [
+       "3",
+       "Qualifiziert",
+       "Vertrieb",
+       "Gegen den dokumentierten Qualifizierungsstandard, im CRM erfasst"
+      ],
+      [
+       "4",
+       "Termin gebucht",
+       "Vertrieb",
+       "Direkt in den Partnerkalender, per E-Mail und SMS bestätigt"
+      ],
+      [
+       "5",
+       "Analyse / Beratung",
+       "ARVENTAS Partner",
+       "Objektreport innerhalb von fünf Arbeitstagen geliefert"
+      ],
+      [
+       "6",
+       "Empfehlung / Angebot",
+       "Partner + Freigeber",
+       "Vor Versand freigegeben, versioniert"
+      ],
+      [
+       "7",
+       "Nachfassen",
+       "Vertrieb",
+       "Definierte Kadenz; kein Lead bleibt ohne nächste Aktion oder Datum"
+      ],
+      [
+       "8",
+       "Mandat unterzeichnet",
+       "Abteilungsleitung + Geschäftsführung",
+       "Gegengezeichnet, protokolliert, Übergabe dokumentiert"
+      ],
+      [
+       "9",
+       "Transaktion",
+       "ARVENTAS",
+       "Ergebnis erfasst und an das Scoring-Modell zurückgespielt"
+      ]
+     ]
+    },
+    {
+     "type": "callout",
+     "label": "Speed-to-Lead ist der günstigste verfügbare Performance-Gewinn",
+     "text": "Ein Reaktionsziel von vierundzwanzig Stunden kostet in diesem Segment rund die Hälfte der Erreichbarkeitsquote. Fünf Minuten sind mit Routing-Regeln, einem geteilten Postfach und einem Dienstplan erreichbar — es erfordert kein zusätzliches Budget und keine zusätzlichen Stellen."
+    }
+   ]
+  },
+  "s12": {
+   "title": "Technologie & Daten",
+   "subtitle": "Ein Rückgrat, kein Nachbau von Funktionierendem",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Das Leitprinzip: nicht nachbauen, was native Integrationen bereits leisten. Eigenentwicklung ist den drei Dingen vorbehalten, die einen echten Vorsprung schaffen."
+    },
+    {
+     "type": "table",
+     "head": [
+      "Ebene",
+      "System",
+      "Rolle"
+     ],
+     "rows": [
+      [
+       "CRM-Rückgrat",
+       "onOffice",
+       "Single Source of Truth. Alle Leads, Objekte, Mandate, Aktivitäten und Ergebnisse. Nichts liegt außerhalb."
+      ],
+      [
+       "Sourcing & Marktintelligenz",
+       "DeepImmo",
+       "Objektfindung, Marktdaten, Eigentümer- und Käuferintelligenz"
+      ],
+      [
+       "Bewertung",
+       "PriceHubble",
+       "Automatisierte Bewertung und Standortanalytik als Input für den Report"
+      ],
+      [
+       "Orchestrierung",
+       "n8n",
+       "Workflow-Automatisierung zwischen den Systemen; keine manuelle Doppelerfassung"
+      ],
+      [
+       "Analysespeicher",
+       "Supabase",
+       "Der Master-Analysedatensatz je Objekt — das Asset, das sich aufbaut"
+      ],
+      [
+       "Generierung",
+       "LLM-Ebene",
+       "Report-Entwurf und Narrativ aus dem strukturierten Analysedatensatz"
+      ],
+      [
+       "Marketing-Messung",
+       "GA4 + serverseitiges Tracking",
+       "Kanalattribution bis zum CRM-Ergebnis, nicht bis zum Formularausfüllen"
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "text": "Was sich als Eigenentwicklung lohnt"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "tag": "01",
+       "title": "Der Opportunity Score",
+       "text": "Eine einzelne bewertete Kennzahl je Objekt, die Bewertung, Renditepotenzial, Sanierungs-Exposure, Rechtsmachbarkeit und Käuferpool-Match kombiniert. Das ist die proprietäre Urteilsebene."
+      },
+      {
+       "tag": "02",
+       "title": "Die Umwandlungs-Ampel",
+       "text": "Automatisierte Rechtsmachbarkeitsbewertung je Objekt: Landesregime, Gemeinde, Einheitenzahl, Baualter, Milieuschutzstatus. Macht aus einer juristischen Spezialprüfung einen sofortigen Screening-Filter."
+      },
+      {
+       "tag": "03",
+       "title": "Die Matching-Ebene",
+       "text": "Käuferpool abfragbar gegen den Bestand nach Region, Ticket, Typ, Risikoprofil und Finanzierungsstatus. Trägt den Satz, der Mandate gewinnt: „Wir haben bereits Käufer dafür.\""
+      },
+      {
+       "tag": "04",
+       "title": "Der Feedback-Kreislauf",
+       "text": "Jedes Ergebnis — Mandat gewonnen oder verloren, Einheit verkauft oder nicht — wird in das Scoring-Modell zurückgeschrieben. Das ist es, was Jahr zwei deutlich besser macht als Jahr eins."
+      }
+     ]
+    }
+   ]
+  },
+  "s13": {
+   "title": "Marke",
+   "subtitle": "Die Partner sind die Marke — und derzeit das am wenigsten genutzte Asset",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "ARVENTAS ist ein neuer Name in einer Kategorie, in der niemand mit einem Fremden Geschäfte macht. Aber die Partner sind nicht neu. Vier Jahrzehnte Transaktionserfahrung verteilt auf fünf oder sechs Personen sind die Glaubwürdigkeit, für deren Aufbau ein Wettbewerber eine Generation bräuchte."
+    },
+    {
+     "type": "table",
+     "head": [
+      "Asset",
+      "Was es ist",
+      "Was es bewirkt"
+     ],
+     "rows": [
+      [
+       "ARVENTAS Marktbrief (quartalsweise)",
+       "Ein echter regionaler Marktbericht für BY & BW — Transaktionsdaten, Renditen nach Stadt, regulatorische Änderungen, Off-Market-Einordnung",
+       "Der Türöffner. Gibt jedem Vertriebsmitarbeiter einen legitimen Anlass, jeden Eigentümer, Verwalter oder Multiplikator in der Region zu kontaktieren"
+      ],
+      [
+       "Partnerkommentar (wöchentlich)",
+       "Jeder Partner verantwortet ein Thema — Bewertung, Aufteilung, Finanzierung, Erbfolge, Regulierung, Entwicklung",
+       "Baut individuelle Autorität auf. Menschen folgen Menschen. Der Beitrag eines Partners übertrifft eine Unternehmensseite um eine Größenordnung"
+      ],
+      [
+       "Deal-Geschichten (monatlich)",
+       "Eine anonymisierte Transaktion, richtig erzählt: die Ausgangslage, die Analyse, das Ergebnis, der Zeitverlauf",
+       "Der Beweis, der dem Geschäft derzeit fehlt. Bedient Verkaufs- und Käuferseite gleichzeitig"
+      ],
+      [
+       "Investorenwebinar (monatlich)",
+       "Live-Regionalsession um reale Objekte, gehostet von einem Partner",
+       "Füllt den Käuferpool, erzeugt Einwilligungen und wandelt Aufklärung in Termine"
+      ],
+      [
+       "Regionale Präsenz (laufend)",
+       "Eigentümerverbände, IHKs, Nachfolge- und Erbveranstaltungen, Regionalpresse",
+       "Dort werden Tier-1-Angebotsbeziehungen tatsächlich geknüpft"
+      ]
+     ]
+    },
+    {
+     "type": "callout",
+     "label": "Der Markentest",
+     "text": "Innerhalb von zwölf Monaten sollte ein Immobilieneigentümer in Augsburg, Nürnberg, Karlsruhe oder Heilbronn, der einen diskreten Verkauf erwägt, ARVENTAS ungestützt nennen können — und die Marke mit einer konkreten Sache verbinden: Die sagen einem, was es wirklich wert ist, schnell, und die wissen schon, wer es kauft."
+    }
+   ]
+  },
+  "s14": {
+   "title": "Wachstums-Roadmap",
+   "subtitle": "Zwölf Monate, drei Horizonte",
+   "blocks": [
+    {
+     "type": "phase",
+     "name": "Monate 1–3 — Beweisen",
+     "weeks": "Eine Region, ein Segment",
+     "items": [
+      "Launch gemäß 100-Tage-Plan umgesetzt; 8–12 Einheiten notariell beurkundet",
+      "Kosten pro qualifiziertem Termin und Kosten pro notariell beurkundeter Einheit etabliert",
+      "Sechs Multiplikatorenpartner und zwei Finanzierungspartner unterzeichnet",
+      "Objektreport-Vorlage an echtem Kundenfeedback erprobt",
+      "Erste zwei Fallstudien veröffentlicht"
+     ],
+     "gate": ""
+    },
+    {
+     "type": "phase",
+     "name": "Monate 4–6 — Vertiefen",
+     "weeks": "Gleiche Region, bessere Ökonomie",
+     "items": [
+      "Nur die Kanäle skalieren, die sich bewährt haben; die übrigen ohne Sentimentalität einstellen",
+      "Multiplikatoren-Netzwerk auf fünfzehn Partner — der margenstärkste Angebotsweg",
+      "Anfänger-Käufertier öffnen, nachdem die Nurture-Infrastruktur steht",
+      "Umwandlungs-Ampel als Standardbestandteil des Reports produktisiert",
+      "Ankaufsberatung als kostenpflichtige käuferseitige Leistung gestartet",
+      "Marktbrief als regionale Referenzpublikation etabliert"
+     ],
+     "gate": ""
+    },
+    {
+     "type": "phase",
+     "name": "Monate 7–9 — Ausweiten",
+     "weeks": "Zweite Region, angrenzende Produkte",
+     "items": [
+      "Region zwei nach dem dokumentierten Playbook eröffnet — Franken, Rhein-Neckar oder das verbleibende Bundesland",
+      "Angrenzende Produkte für die bestehende Käuferbasis: Pflegeimmobilien, Denkmalbestand, Entwicklungsbeteiligungen",
+      "Professionelles und Portfolio-Käufertier mit First-Look-Vereinbarungen formalisiert",
+      "Entwicklungs- und Repositionierungsberatung als Margenverlängerung skaliert"
+     ],
+     "gate": ""
+    },
+    {
+     "type": "phase",
+     "name": "Monate 10–12 — Verstärken",
+     "weeks": "Den Burggraben bauen",
+     "items": [
+      "Die Off-Market-Angebotsdatenbank — jedes Eigentümergespräch, jedes bewertete Objekt und jeder abgelehnte Deal wird aufbewahrt und systematisch erneut angesprochen",
+      "Der Käuferpool als stehendes Asset — „wir haben 400 finanzierungsbestätigte Käufer, die warten\" wird zum stärksten angebotsseitigen Pitch der Region",
+      "Wiederkehrender Deal Flow von Bauträgern, Bestandshaltern und Verwaltern, die inzwischen standardmäßig mit ARVENTAS transaktieren",
+      "Selektiver Einstieg in größere Tickets und institutionelle Beziehungen — auf Basis eines bewiesenen Track Records"
+     ],
+     "gate": ""
+    },
+    {
+     "type": "callout",
+     "label": "Das lange Spiel",
+     "text": "Der dauerhafte Vorsprung liegt weder im Marketing noch in der Technologie. Er liegt in der Schnittmenge dreier Datensätze, die sonst niemand gemeinsam hält: welche regionalen Objekte rechtlich und wirtschaftlich tragfähig sind, welche Eigentümer wann ansprechbar sind, und welche Käufer finanziert und bereit sind. Jede Transaktion schärft alle drei."
+    }
+   ]
+  },
+  "s15": {
+   "title": "Governance",
+   "subtitle": "Was wir messen, und was schiefgehen kann",
+   "blocks": [
+    {
+     "type": "panels",
+     "items": [
+      {
+       "title": "Angebotsseite — wöchentliches Scorecard",
+       "rows": [
+        [
+         "",
+         "Eröffnete Gespräche mit Eigentümern und Verwaltern"
+        ],
+        [
+         "",
+         "Gelieferte Objektreports / durchschnittliche Lieferzeit in Tagen"
+        ],
+        [
+         "",
+         "Mandatsgewinnquote"
+        ],
+        [
+         "",
+         "Objekte unter Mandat oder LOI"
+        ],
+        [
+         "",
+         "Bestandsreichweite in Tagen"
+        ],
+        [
+         "",
+         "Aktive Multiplikatorenpartner"
+        ]
+       ]
+      },
+      {
+       "title": "Nachfrageseite — wöchentliches Scorecard",
+       "rows": [
+        [
+         "",
+         "Mediabudget und Cost per Lead"
+        ],
+        [
+         "",
+         "Qualifizierungsquote gegen den Standard"
+        ],
+        [
+         "",
+         "Median Speed-to-Lead"
+        ],
+        [
+         "",
+         "Gebuchte und wahrgenommene Termine"
+        ],
+        [
+         "",
+         "Kosten pro qualifiziertem Termin"
+        ],
+        [
+         "",
+         "Größe des Investorenkreis-Pools und Zahl der finanzierungsbestätigten Käufer"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "type": "h3",
+     "text": "Risikoregister"
+    },
+    {
+     "type": "table",
+     "head": [
+      "Risiko",
+      "Exposition",
+      "Maßnahme"
+     ],
+     "rows": [
+      [
+       "Bestand läuft leer",
+       "Vertrieb im Leerlauf, Käuferpool kühlt ab, Glaubwürdigkeit beschädigt",
+       "Dauerhaft zwei Personen auf der Angebotsseite. Bestandsreichweite wöchentlich prüfen. Nachfragebudget unterhalb des Schwellenwerts automatisch drosseln."
+      ],
+      [
+       "Nachfrage vor Angebot",
+       "Verbranntes Budget und eine kalte Liste, die nicht wieder aufgeht",
+       "Das Phase-1-Gate. Drei Objekte gesichert, bevor käuferseitiges Mediabudget freigegeben wird."
+      ],
+      [
+       "Regulatorische Reibung bei der Aufteilung",
+       "Deals im Genehmigungsverfahren blockiert oder verzögert",
+       "Umwandlungs-Ampel-Screening, bevor ein Objekt in die Pipeline gelangt. Fokus auf das genehmigungsfreie Band von 6–10 Einheiten in Bayern."
+      ],
+      [
+       "Compliance-Risiko in der Ansprache",
+       "Bußgelder und Reputationsschaden in einem vertrauensabhängigen Segment",
+       "Einwilligungsbasierte Architektur auf der Käuferseite. Dokumentiertes Opt-in. Freigegebene Aussagenliste. Rechtliche Freigabe vor Launch."
+      ],
+      [
+       "Grenze zur erlaubnispflichtigen Beratung",
+       "Gespräche zu Rendite, Steuern und Finanzierung liegen nahe an regulierter Beratung",
+       "Klären, welche Erlaubnisse ARVENTAS hält. Finanzierung an lizenzierte Partner verweisen."
+      ],
+      [
+       "Partnerkapazität",
+       "Die Partner sind Abschließer, Analysten und Marke zugleich. Das ist eine reale Beschränkung.",
+       "Vertrieb qualifiziert und präsentiert; Partner schließen ab und geben frei. Content gebündelt produzieren."
+      ],
+      [
+       "Zinssensitivität",
+       "Steigende Finanzierungskosten drücken die Leistbarkeit für Privatkäufer",
+       "Rendite- statt wertsteigerungsgeführte Botschaften. Fokus auf Sekundärstädte. Professionelles Käufertier als Absicherung."
+      ],
+      [
+       "Vertriebsunterlagen nicht fertig",
+       "Sechs Personen verkaufen ohne etwas zum Versenden",
+       "Das Phase-0-Gate. Nicht verhandelbar."
+      ]
+     ]
+    }
+   ]
+  },
+  "s16": {
+   "title": "Nächste Schritte",
+   "subtitle": "Was wir für den Start benötigen",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Acht Punkte. Sind sie bestätigt, kann Phase 0 unmittelbar beginnen und käuferseitige Aktivität innerhalb von sechs Wochen live gehen."
+    },
+    {
+     "type": "nsteps",
+     "items": [
+      {
+       "title": "Ticket- und Objektgrößenziel bestätigen",
+       "text": "150.000 € bis 300.000 € je Einheit, zuzüglich der Zielspanne für die Objektgröße. Bestimmt Targeting, Finanzmodell und Käuferprofil."
+      },
+      {
+       "title": "Benannte Verantwortliche je Funktion",
+       "text": "Analyse, Angebotsfreigabe, Verhandlung, Recht, CRM, Eskalation. Ohne sie bewegt sich nichts durch die Pipeline."
+      },
+      {
+       "title": "CRM bestätigt und Zugänge bereitgestellt",
+       "text": "Blockiert sonst Messung, Routing, Prognose und Attribution."
+      },
+      {
+       "title": "Anonymisierter Muster-Objektreport",
+       "text": "Das wichtigste Vertriebs-Asset des Unternehmens. Nichts ersetzt es."
+      },
+      {
+       "title": "Fallstudien aus abgeschlossenen Transaktionen",
+       "text": "Glaubwürdigkeit. Derzeit die größte Lücke im Vertriebswerkzeugkasten."
+      },
+      {
+       "title": "Partnerprofile aufbereiten",
+       "text": "Track Record, Transaktionsvolumen, Spezialisierungen. Die Gründerbank ist die Marke. Sie muss präsentabel sein."
+      },
+      {
+       "title": "Freigegebene Aussagen und Erlaubnisse bestätigen",
+       "text": "Jedes Asset und jedes Skript hängt davon ab. Disclaimer-Formulierungen und Bestätigung der gehaltenen Erlaubnisse."
+      },
+      {
+       "title": "Mediabudget für die ersten 100 Tage",
+       "text": "Bestimmt die realistische Größe der Nachfrage-Engine."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
