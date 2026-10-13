@@ -43,7 +43,7 @@ def source_for(t, segs):
         if s['name'] == 'hold':
             continue
         if a <= t <= b:
-            return 'up', s['dst'][0] + (t - a)
+            return 'up', s['dst'][0] + min(t - a, (s['dst'][1] - s['dst'][0]) - 1.5 / UPFPS)
     for s in segs:
         if s['name'] == 'hold' and HOLD[0] <= t <= HOLD[1]:
             return 'up', s['dst'][0] + (s['dst'][1] - s['dst'][0]) / 2
