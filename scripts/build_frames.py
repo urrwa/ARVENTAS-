@@ -37,7 +37,7 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         # extract the chosen frames in one pass using the frame index list
         sel = '+'.join(f'eq(n,{round(t * FPS)})' for t in times)
-        subprocess.run(['ffmpeg', '-v', 'error', '-i', SRC, '-vf', f"fps={FPS},select='{sel}',scale=1920:1080:flags=lanczos",
+        subprocess.run(['ffmpeg', '-v', 'error', '-i', SRC, '-vf', f"fps={FPS},select='{sel}',scale=1920:1080:flags=lanczos,hqdn3d=2:2:3:3,unsharp=5:5:0.7:5:5:0.0",
                         '-vsync', '0', os.path.join(tmp, '%05d.png')], check=True)
         files = sorted(os.listdir(tmp))
         assert len(files) == len(times), (len(files), len(times))
