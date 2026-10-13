@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Slice the whole of source/hero.mp4 into scroll-scrubbed WebP frame sequences, in original order.
 
-The video is one continuous camera flight, so nothing is reordered or cross-faded. Sampling is
+The video is one continuous camera flight, so nothing is reordered or cross-faded. Frames are plain Lanczos 1920 exports of the source (no sharpening: it only exaggerated the AI-upscale smear). Sampling is
 adaptive: moving passages keep every 1/FPS frame (so the camera moves and whip-pan transitions
 survive), static holds are thinned to one frame per MAX_GAP seconds.
 Outputs: public/frames/{lg,sm}/f0001.webp … and public/frames/manifest.json (frame times `t`).
@@ -37,7 +37,7 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         # extract the chosen frames in one pass using the frame index list
         sel = '+'.join(f'eq(n,{round(t * FPS)})' for t in times)
-        subprocess.run(['ffmpeg', '-v', 'error', '-i', SRC, '-vf', f"fps={FPS},select='{sel}',scale=1920:1080:flags=lanczos,hqdn3d=2:2:3:3,unsharp=5:5:0.7:5:5:0.0",
+        subprocess.run(['ffmpeg', '-v', 'error', '-i', SRC, '-vf', f"fps={FPS},select='{sel}',scale=1920:1080:flags=lanczos",
                         '-vsync', '0', os.path.join(tmp, '%05d.png')], check=True)
         files = sorted(os.listdir(tmp))
         assert len(files) == len(times), (len(files), len(times))
