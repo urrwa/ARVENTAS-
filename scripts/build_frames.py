@@ -16,7 +16,7 @@ OUT = os.path.join(HERE, '..', 'public', 'frames')
 FPS = 12
 MAX_GAP = 0.5      # seconds; longest gap allowed inside a static hold
 THRESH = 1.2       # mean abs difference (0-255, 64x36 gray) that counts as motion
-SIZES = {'lg': (1600, 78), 'sm': (960, 74)}
+SIZES = {'lg': (1920, 92), 'sm': (1280, 85)}
 
 def pick_times():
     raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', SRC, '-vf', f'fps={FPS},scale=64:36,format=gray',
