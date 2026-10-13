@@ -17,7 +17,6 @@ export default function Home() {
     <div ref={page}>
       <header className="nav">
         <Link to="/" className="nav__brand" aria-label="ARVENTAS Startseite">ARVENTAS</Link>
-        <Link to="/strategie" className="nav__btn">Strategie</Link>
       </header>
       <main>
         <ScrollFilm />
