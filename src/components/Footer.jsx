@@ -35,7 +35,6 @@ export default function Footer() {
         </div>
         <div className="ftr-bot">
           <span><Brand /> · Off-Market-Immobilien in Deutschland</span>
-          <span>Prototyp mit Demo-Inhalten – nicht zur Veröffentlichung freigegeben</span>
         </div>
       </div>
       <div className="ftr-mark" aria-hidden="true">ΛRVENTΛS</div>
