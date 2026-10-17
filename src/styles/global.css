@@ -762,3 +762,14 @@ b, strong, th { font-weight: 600; }
 .form .check { font-size: 12.5px; margin-bottom: 10px; }
 .form .prog { margin-bottom: 18px; }
 .form .state { padding: 16px 18px; }
+
+/* Luxuriöser Reveal: Foto wird von unten wie ein Vorhang aufgezogen, ruhiger Zoom-Out */
+.step-row img { opacity: 1; transform: scale(1.14); clip-path: inset(100% 0 0 0); transition: clip-path 1100ms cubic-bezier(.77, 0, .18, 1), transform 2000ms cubic-bezier(.2, .7, .1, 1); }
+.step-row::after { opacity: 1; clip-path: inset(100% 0 0 0); transition: clip-path 1100ms cubic-bezier(.77, 0, .18, 1); }
+.step-row:hover img, .step-row:focus-visible img, .step-row.on img { opacity: 1; transform: scale(1); clip-path: inset(0); }
+.step-row:hover::after, .step-row:focus-visible::after, .step-row.on::after { clip-path: inset(0); }
+.sr-title { transition: transform 900ms cubic-bezier(.2, .7, .1, 1), letter-spacing 900ms cubic-bezier(.2, .7, .1, 1); }
+.step-row:hover .sr-title, .step-row:focus-visible .sr-title, .step-row.on .sr-title { transform: translateX(14px); letter-spacing: .03em; }
+.sr-no { transition: background 600ms ease, color 600ms ease, border-color 600ms ease; }
+.step-row:hover .sr-no, .step-row:focus-visible .sr-no, .step-row.on .sr-no { background: var(--gold); border-color: var(--gold); color: var(--black); }
+@media (prefers-reduced-motion: reduce) { .step-row img, .step-row::after, .sr-title, .sr-no { transition: none; } }
