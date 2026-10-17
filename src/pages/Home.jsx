@@ -106,7 +106,7 @@ export default function Home() {
           </div>
           <ul className="labels rv"><li><span>01</span>Wert verstehen.</li><li><span>02</span>Optionen prüfen.</li><li><span>03</span>Diskret vermarkten.</li></ul>
           <div className="btn-row"><Btn to="/immobilie-verkaufen#anfrage">Objektprüfung anfragen</Btn></div>
-          <p className="small muted" style={{ marginTop: 16 }}>Beispielbilder, keine Objekte von ARVENTAS. Es werden keine vertraulichen Adressen gezeigt.</p>
+          <p className="small muted" style={{ marginTop: 16 }}>Beispielbilder, keine Objekte von <Brand />. Es werden keine vertraulichen Adressen gezeigt.</p>
         </div>
       </section>
 

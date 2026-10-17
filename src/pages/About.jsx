@@ -59,7 +59,7 @@ export default function About() {
               <svg viewBox="0 0 520 180" width="100%" role="img" aria-label="Reduziertes Strukturdiagramm als Platzhalter">
                 <rect x="170" y="10" width="180" height="46" fill="none" stroke="#192537" strokeWidth="1.5" /><text x="260" y="38" textAnchor="middle" fontSize="13" fill="#0B0B0B">Dachmarke</text>
                 <path d="M260 56 V80 M90 80 H430 M90 80 V104 M260 80 V104 M430 80 V104" stroke="#B09E80" strokeWidth="2" fill="none" />
-                {[[10, 'Gesellschaft A'], [180, 'Gesellschaft B'], [350, 'Gesellschaft C']].map(([x, t]) => (<g key={x}><rect x={x} y="104" width="160" height="46" fill="none" stroke="#192537" strokeDasharray="5 4" /><text x={x + 80} y="132" textAnchor="middle" fontSize="12" fill="#3d3f43">{t}</text></g>))}
+                {[[10, 'Gesellschaft A'], [180, 'Gesellschaft B'], [350, 'Gesellschaft C']].map(([x, t]) => (<g key={x}><rect x={x} y="104" width="160" height="46" fill="none" stroke="#192537" strokeDasharray="5 4" /><text x={x + 80} y="132" textAnchor="middle" fontSize="12" fill="#0B0B0B" fillOpacity=".72">{t}</text></g>))}
               </svg>
               <p className="small" style={{ marginTop: 8 }}>Platzhalter: Bezeichnungen und Beziehungen werden nach Bestätigung der Unternehmensstruktur ergänzt. Keine pauschale Behauptung einer rechtlichen Risikotrennung oder Haftungsfreiheit.</p>
             </div>

@@ -41,7 +41,7 @@ export default function Header() {
     <header className={`hdr${isHome ? ' fixed' : ''}${state.over ? ' clear' : ''}${state.pre ? ' pre' : ''}`} inert={open || undefined}>
       <div className="hdr-in">
         <Link to="/" className="logo" aria-label="ARVENTAS – zur Startseite">
-          <img src="/media/arventas-logo.png" alt="ARVENTAS" width="119" height="72" />
+          <img src="/media/arventas-logo.png" alt="ARVENTAS" width="132" height="80" />
         </Link>
         <nav className="nav" aria-label="Hauptnavigation">
           {links.map((l) => <NavLink key={l.to} to={l.to} className="nl">{l.label}</NavLink>)}

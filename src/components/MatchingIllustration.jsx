@@ -49,7 +49,7 @@ export default function MatchingIllustration() {
             {crit.map((c, i) => (
               <g key={'c' + i} className="mn">
                 <rect x="14" y={c.y - 28} width="156" height="56" fill="none" stroke="#192537" strokeWidth="1.2" />
-                <text x="26" y={c.y - 8} fontSize="10" fill="#3d3f43" letterSpacing="1.4">{c.k.toUpperCase()}</text>
+                <text x="26" y={c.y - 8} fontSize="10" fill="#0B0B0B" fillOpacity=".72" letterSpacing="1.4">{c.k.toUpperCase()}</text>
                 <text x="26" y={c.y + 12} fontSize="13" fontWeight="600" fill="#0B0B0B">{c.v.length > 20 ? c.v.slice(0, 19) + '…' : c.v}</text>
               </g>
             ))}
@@ -57,7 +57,7 @@ export default function MatchingIllustration() {
             {info.map((n, i) => (
               <g key={'d' + i} className="mn">
                 <rect x="470" y={n.y - 28} width="156" height="56" fill="none" stroke="#B09E80" strokeWidth="1.4" />
-                <text x="482" y={n.y - 8} fontSize="10" fill="#3d3f43" letterSpacing="1.4">INFORMATION</text>
+                <text x="482" y={n.y - 8} fontSize="10" fill="#0B0B0B" fillOpacity=".72" letterSpacing="1.4">INFORMATION</text>
                 <text x="482" y={n.y + 12} fontSize="13" fontWeight="600" fill="#0B0B0B">{n.k}</text>
               </g>
             ))}

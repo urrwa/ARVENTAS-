@@ -23,7 +23,9 @@ function translate(s) {
   let t = EN[core]
   if (t == null) for (const [re, fn] of RULES) { const r = re.exec(core); if (r) { t = fn(r); break } }
   if (t == null) return s
-  return t[0] === '^' ? t.slice(1) + m[3] : m[1] + t + m[3]
+  if (t[0] === '^') return t.slice(1) + m[3]   // ohne führendes Leerzeichen
+  if (t[0] === '~') return ' ' + t.slice(1) + m[3] // mit führendem Leerzeichen
+  return m[1] + t + m[3]
 }
 export const tr = (s) => (lang === 'en' && s ? translate(s) : s)
 

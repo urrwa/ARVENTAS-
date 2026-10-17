@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { DemoNotice } from './ui.jsx'
+import Brand from './Brand.jsx'
 import { REGIONS, PROPERTY_TYPES } from '../content/data.js'
 
 // Alle Formulare laufen im Demo-Modus: Es gibt kein Backend, daher wird nichts versendet.
@@ -99,7 +100,7 @@ export function LeadForm({ id, fields, submitLabel, doneTitle, doneText, intro, 
         {marketing && (
           <label className="check" style={{ textTransform: 'none', letterSpacing: 0, fontSize: 14, fontWeight: 400, color: 'var(--ink)' }}>
             <input type="checkbox" checked={mk} onChange={(e) => setMk(e.target.checked)} />
-            <span>Optional und getrennt von Ihrer Anfrage: Ich möchte Marketingkommunikation von ARVENTAS erhalten. Die Einwilligung ist freiwillig und jederzeit widerrufbar.</span>
+            <span>Optional und getrennt von Ihrer Anfrage: Ich möchte Marketingkommunikation von <Brand /> erhalten. Die Einwilligung ist freiwillig und jederzeit widerrufbar.</span>
           </label>
         )}
         <button type="submit" className="btn btn-marine" disabled={status === 'sending'}>
@@ -203,7 +204,7 @@ export function InvestorWizard() {
             </div>
             <label className="check" style={{ textTransform: 'none', letterSpacing: 0, fontSize: 14, fontWeight: 400, color: 'var(--ink)' }}>
               <input type="checkbox" checked={mk} onChange={(e) => setMk(e.target.checked)} />
-              <span>Optional und getrennt von Ihrem Suchprofil: Ich möchte Marketingkommunikation von ARVENTAS erhalten. Die Einwilligung ist freiwillig und jederzeit widerrufbar.</span>
+              <span>Optional und getrennt von Ihrem Suchprofil: Ich möchte Marketingkommunikation von <Brand /> erhalten. Die Einwilligung ist freiwillig und jederzeit widerrufbar.</span>
             </label>
           </>
         )}

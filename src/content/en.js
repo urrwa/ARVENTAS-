@@ -601,5 +601,18 @@ export default {
  "ΛRVENTΛS": "ΛRVENTΛS",
  "← Zurück": "← Back",
  "Hauptmenü": "Main menu",
- "Menü": "Menu"
+ "Menü": "Menu",
+ "Optional und getrennt von Ihrer Anfrage: Ich möchte Marketingkommunikation von": "Optional and separate from your inquiry: I would like to receive marketing communication from",
+ "Optional und getrennt von Ihrem Suchprofil: Ich möchte Marketingkommunikation von": "Optional and separate from your search profile: I would like to receive marketing communication from",
+ "erhalten. Die Einwilligung ist freiwillig und jederzeit widerrufbar.": "^. Consent is voluntary and can be withdrawn at any time.",
+ "Illustrative Visualisierung – kein": "Illustrative visualisation – not an",
+ "-Projekt": "~project",
+ "Nein.": "No.",
+ "gibt keine automatischen Kaufempfehlungen und keine Renditegarantien. Sie erhalten nachvollziehbare Informationen für Ihre eigene Entscheidung.": "gives no automatic purchase recommendations and no guarantees of returns. You receive comprehensible information for your own decision.",
+ "Was": "What",
+ "ergänzt": "adds",
+ "verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung.": "connects selected off-market properties with suitable investors – through sound analysis, personal experience and discreet transaction support.",
+ "agiert ausschließlich deutschlandweit.": "operates exclusively across Germany.",
+ "Beispielbilder, keine Objekte von": "Sample images, not properties of",
+ ". Es werden keine vertraulichen Adressen gezeigt.": "^. No confidential addresses are shown."
 }

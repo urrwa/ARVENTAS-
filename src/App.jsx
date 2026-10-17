@@ -27,11 +27,20 @@ function useReveal(key) {
       els.forEach((e) => e.classList.add('in'))
       return
     }
+    // Reveal startet schon vor dem Sichtbarwerden (rootMargin), damit schnelles Scrollen keine leeren Flächen zeigt.
+    const pending = new Set(els)
+    const show = (e) => { e.classList.add('in'); pending.delete(e); io.unobserve(e) }
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } })
-    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' })
+      entries.forEach((e) => { if (e.isIntersecting) show(e.target) })
+    }, { threshold: 0, rootMargin: '0px 0px 25% 0px' })
     els.forEach((e) => io.observe(e))
-    return () => io.disconnect()
+    // Sicherheitsnetz: Elemente, die beim schnellen Scrollen übersprungen wurden, werden nachträglich eingeblendet.
+    let raf = 0
+    const sweep = () => { raf = 0; pending.forEach((e) => { if (e.getBoundingClientRect().top < innerHeight * 1.25) show(e) }) }
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(sweep) }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    sweep()
+    return () => { io.disconnect(); window.removeEventListener('scroll', onScroll); cancelAnimationFrame(raf) }
   }, [key])
 }
 

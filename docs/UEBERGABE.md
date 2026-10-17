@@ -66,3 +66,27 @@ Design-Tokens: `src/styles/global.css` (`:root`). Inhalte und Auswahllisten: `sr
 - Interaktionen geprüft: Formularvalidierung, Ladezustand, Demo-Bestätigung, Fehlerzustand, mehrstufige Registrierung (Pflichtfelder, Zurück, Zusammenfassung), Report-Tabs per Tastatur, Karte und Liste synchron, Region-Vorbelegung, Matching-Auswahl, Cookie-Dialog (Öffnen, Escape), mobiles Menü (Öffnen, Escape).
 - Nicht getestet: Screenreader, Kontrastprüfung mit Werkzeug, Safari und Firefox, Lighthouse-Werte, echte Mobilgeräte. Es werden keine Performance- oder Ladezeitwerte behauptet.
 - Status je Funktion: visuell umgesetzt und im Prototyp funktionsfähig; **nicht** mit echtem Backend verbunden; **nicht** für die Veröffentlichung freigegeben.
+
+## 9. Brandbook-Abgleich (Prüfung vom 17.10.2026)
+Grundlage: nur die als Screenshots gelieferten Brandbook-Seiten (Markenname, Verwendung, Markenessenz, Zielgruppe, Logo-System/Variationen/Symbol/Freiraum, Typografie, Farben, Fotografie-Richtung, Tonfall, Website-Richtung, Do's/Don'ts) plus die Vorgaben des Briefings. Das vollständige Brandbook liegt nicht vor.
+
+**Bestätigt und korrigiert**
+- Sichtbare Markennennung: Neun Stellen schrieben noch „ARVENTAS“ (Formular-Einwilligungen, Film-Hinweis, FAQ, Partner-Seite, Über uns, Startseite). Jetzt überall ΛRVENTΛS über `Brandify`/`Brand`; technische Lesefassung nur in Alt-Texten, Titeln, Meta, Screenreader-Text.
+- Farben: Die vier Brandbook-Farben stimmten. Entfernt wurden abweichende Zusatzfarben: Karten-Hover `#2D405B` (jetzt Gold-Kontur), graue Textfarben `#3D3F43`/`#CFD1D6` (jetzt Schwarz/Elfenbein mit Transparenz), grauer Formularrand `#8D9199` (jetzt Marine mit Transparenz). Schrift auf Dunkel nutzt Elfenbein statt Weiß; reines Weiß nur noch als Formular- und Infografikfläche (`--surface`).
+- Fotos: Die eingebaute Vignette (hinzugefügter Schatten/Verlauf, laut Briefing S. 22 untersagt) und die starke Abdunklung wurden entfernt; die Bilder sind neu und natürlicher abgestimmt. Textlesbarkeit über Fotos bleibt über ein gleichmäßiges Overlay gesichert (berechnet, mindestens 4,5:1 an den hellsten Stellen).
+- Typografie: Inter 700 wurde künstlich erzeugt (nur 400/500/600 geladen). `b`/`strong` jetzt 600.
+- Kontrast: Der „Demo“-Hinweis und Formular-Meldungen auf Anfrage- und Partnerseite hatten hellen Text auf heller Fläche (1,2:1). Behoben.
+- Leere Bereiche beim schnellen Scrollen: Einblend-Animationen starteten erst beim Sichtbarwerden; bei schnellem Scrollen waren ca. 23 % der sichtbaren Inhalte noch ausgeblendet. Jetzt Start 25 % vor dem Sichtbarwerden plus Nachholmechanismus (ca. 2–3 % in der Einblendung).
+- Logo: Header-Logo vergrößert (80 px, mobil 64 px; Wortmarke war mobil nur ca. 6 px hoch). Datei bleibt unverändert (Pixel-Vergleich mit der gelieferten Datei: Differenz 0; Seitenverhältnis 1,647 in Header, Footer und Intro).
+- Favicon ergänzt: unveränderter Ausschnitt des Logo-Symbols (Brandbook zeigt „Logo-Symbol“ separat); Freigabe der Verwendung bitte bestätigen.
+- Mobil: Karten auf der Startseite zeigten einen schwarzen Rahmen um das Bild (Hover-Effekt ohne Hover). Entfernt. Zweispaltige Textblöcke: Abstand Überschrift zu Text angepasst.
+
+**Geprüft und in Ordnung**
+- Keine Verläufe, keine Schatten, keine Glas-Effekte im Code. Alle internen Links und Ankerziele funktionieren. Keine horizontale Überbreite bei 360, 390, 768, 1024, 1440, 1920 px. Alle 830 geprüften Textelemente auf einfarbigen Flächen erfüllen den Kontrast.
+
+**Nicht verifizierbar (bitte manuell prüfen)**
+- Logo-Schutzraum und Mindestgrößen: Brandbook-Seite „Freiraumregeln“ liegt nur als Bild vor, Maße nicht lesbar. Horizontale Logo-Variante fehlt (siehe Medienverzeichnis).
+- Schriftgewichte der Headlines (aktuell Playfair Display 500; Brandbook nennt keine lesbaren Gewichte).
+- Gold/Elfenbein-Hex gegen das Original-Brandbook: Werte stammen aus dem Briefing (S. 14), nicht aus einer eigenen Messung im PDF.
+- Fotografie-Richtung (Brandbook „Vermeiden“-Liste nicht vollständig lesbar); Fotos sind Platzhalter (Unsplash) und der Film ist eine KI-Illustration.
+- Echte Geräte, Safari, Firefox, Screenreader.
