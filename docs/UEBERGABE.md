@@ -40,7 +40,7 @@ Design-Tokens: `src/styles/global.css` (`:root`). Inhalte und Auswahllisten: `sr
 2. **Gradienten:** Die frühere Verlaufs-Abdunklung des Films wurde durch ein gleichmäßiges Overlay ersetzt.
 3. **Brandbook:** Es liegen bisher nur einzelne Screenshots vor (Seiten zu Markenname, Verwendung, Markenessenz, Zielgruppe, Logo-System). Erkennbar übernommen: Schreibweise mit Lambda. Alle übrigen Brandbook-Vorgaben stammen aus dem Briefing (Farben S. 14, Typografie S. 12, Bildsprache S. 22).
 4. **Interne Strategie:** Die frühere Seite `/strategie` (internes Go-to-Market-Dokument) ist nicht mehr öffentlich. Sie liegt unverändert unter `internal/strategie-old/` und wird nicht gebaut.
-5. **Deutsch:** Alle sichtbaren Texte sind Deutsch in Sie-Ansprache. Der frühere DE/EN-Umschalter entfällt.
+5. **Deutsch und Leseversion:** Alle Originaltexte sind Deutsch in Sie-Ansprache. Zusätzlich gibt es einen DE/EN-Umschalter im Header als Lesehilfe für die Abnahme (`src/i18n.js`, Wörterbuch `src/content/en.js`). Die englischen Texte sind eine einfache Übersetzung ohne redaktionelle Prüfung. Vor Veröffentlichung entscheiden, ob der Umschalter bleibt (Briefing: alle sichtbaren Texte Deutsch).
 
 ## 6. Integrationspunkte (nicht angebunden, nichts vorgetäuscht)
 - Formulare (Eigentümer, Partner, Investorenkreis): laufen im Demo-Modus, `submitDemo()` in `src/components/forms.jsx` ersetzen durch einen serverseitigen Endpunkt. Fehlerzustand testbar mit `?demo=fehler`.

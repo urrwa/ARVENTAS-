@@ -12,9 +12,12 @@ import '@fontsource/inter/greek-500.css'
 import '@fontsource/inter/greek-600.css'
 import './styles/global.css'
 import App from './App.jsx'
+import { initI18n } from './i18n.js'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <App />
   </BrowserRouter>
 )
+
+initI18n()

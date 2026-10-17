@@ -1,5 +1,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
+import LangToggle from './LangToggle.jsx'
 
 const links = [
   { to: '/immobilie-verkaufen', label: 'Für Eigentümer' },
@@ -58,6 +59,7 @@ export default function Header() {
         <Link to="/" className="logo" aria-label="ARVENTAS – zur Startseite">
           <img src="/media/arventas-logo.png" alt="ARVENTAS" width="119" height="72" />
         </Link>
+        <LangToggle />
         <button ref={burger} className="burger" type="button" aria-expanded={open} aria-controls="hauptnavigation" aria-label={open ? 'Menü schließen' : 'Menü öffnen'} onClick={() => setOpen(!open)}>
           <span /><span /><span />
         </button>
