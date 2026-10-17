@@ -847,3 +847,15 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .hs-nav { display: flex; gap: 10px; padding: 22px var(--gut) 0; }
 .hs-nav button { width: 48px; height: 48px; border: 1px solid var(--marine); background: none; border-radius: 50%; cursor: pointer; font-size: 18px; color: var(--marine); transition: background var(--t-ui) ease, color var(--t-ui) ease; }
 .hs-nav button:hover { background: var(--marine); color: var(--ivory); }
+
+/* Buchstaben-Animation */
+.letters .lw { display: inline-block; white-space: nowrap; }
+.letters .lc { display: inline-block; opacity: 0; transform: translateY(.45em); transition: opacity 700ms ease, transform 900ms cubic-bezier(.2, .7, .1, 1); }
+.letters.in .lc { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .letters .lc { opacity: 1; transform: none; transition: none; } }
+/* kleinere Schrift */
+.h1 { font-size: clamp(26px, 3.6vw, 50px); }
+.h2 { font-size: clamp(24px, 2.8vw, 38px); }
+.lead { font-size: clamp(15px, 1.2vw, 17px); }
+.phero h1 { max-width: 22ch; }
+.hs-track { scroll-padding-inline: var(--gut); }
