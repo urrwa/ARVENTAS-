@@ -13,6 +13,9 @@ const CAPS = [
   { id: 'close', kind: 'close', at: [107, 200] },
 ]
 const BEHIND = 8, AHEAD = 20, PACK = 30
+// Artefakt-Variante (nur zur Ansicht in Claude): relative Pfade und Frame-Pakete statt Einzeldateien.
+const ART = !!import.meta.env.VITE_ARTIFACT
+const BASE = ART ? '' : '/'
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
 
 export default function ScrollFilm() {
@@ -39,7 +42,7 @@ export default function ScrollFilm() {
     const blobs = {}, bitmaps = {}, pending = {}, pk = {}, pinf = {}
     let active = 0, target = 0, cur = 0, raf = 0, last = -1, started = false, ready = false
     const SET = innerWidth <= 860 ? 'sm' : 'lg'
-    const url = (i) => `/frames/${SET}/f${String(i + 1).padStart(4, '0')}.webp`
+    const url = (i) => `${BASE}frames/${SET}/f${String(i + 1).padStart(4, '0')}.webp`
 
     function toP(t) { let lo = 0, hi = T.length - 1; while (lo < hi) { const m = (lo + hi) >> 1; if (T[m] < t) lo = m + 1; else hi = m } return lo / Math.max(1, T.length - 1) }
     function vis(p, w) { return p < w[1] ? clamp((p - w[0]) / (w[1] - w[0])) : p > w[2] ? clamp(1 - (p - w[2]) / (w[3] - w[2])) : 1 }
@@ -84,16 +87,24 @@ export default function ScrollFilm() {
     const kick = () => { target = prog() * (N - 1); if (!raf) raf = requestAnimationFrame(tick) }
     function loadPack(p) {
       pinf[p] = 1; active++
+      const done = () => {
+        active--; delete pinf[p]
+        if (!started && pk[0]) { started = true; begin() }
+        next()
+      }
+      if (ART) {
+        fetch(`${BASE}frames/${SET === 'sm' ? 'sm_p' : 'p'}${String(p).padStart(2, '0')}.json`).then((r) => r.json()).then((arr) => {
+          arr.forEach((s, k) => { const bin = atob(s), u = new Uint8Array(bin.length); for (let j = 0; j < bin.length; j++) u[j] = bin.charCodeAt(j); blobs[p * PACK + k] = new Blob([u], { type: 'image/webp' }) })
+          pk[p] = 1
+        }).catch(() => {}).then(done)
+        return
+      }
       const ps = []
       for (let k = 0; k < PACK; k++) {
         const i = p * PACK + k; if (i >= N) break
         ps.push(fetch(url(i)).then((r) => r.blob()).then((b) => { blobs[i] = b }).catch(() => {}))
       }
-      Promise.all(ps).then(() => { pk[p] = 1 }).then(() => {
-        active--; delete pinf[p]
-        if (!started && pk[0]) { started = true; begin() }
-        next()
-      })
+      Promise.all(ps).then(() => { pk[p] = 1 }).then(done)
     }
     function next() {
       if (dead) return
@@ -133,7 +144,7 @@ export default function ScrollFilm() {
       requestAnimationFrame(load)
     }
 
-    fetch('/frames/manifest.json').then((r) => r.json()).then((m) => {
+    fetch(`${BASE}frames/manifest.json`).then((r) => r.json()).then((m) => {
       if (dead) return
       T = m.t; N = m.count
       CAPS.forEach((c) => {
@@ -183,7 +194,7 @@ export default function ScrollFilm() {
         <div className="hint" aria-hidden="true"><span>Scrollen</span><i /></div>
         <div className="curtain" ref={curtain}>
           <div className="il">
-            <span ref={word}><img src="/media/arventas-logo.png" alt="ARVENTAS" /></span>
+            <span ref={word}><img src={`${BASE}media/arventas-logo.png`} alt="ARVENTAS" /></span>
             <i ref={bar} />
           </div>
         </div>

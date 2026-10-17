@@ -474,7 +474,9 @@ html.lock, body.lock { overflow: hidden; }
 .dark .prof small { color: var(--text-on-dark-soft); }
 .tri-vis.doc { background: var(--marine); }
 
-.phero .h1 { text-transform: none; letter-spacing: .005em; }
+.phero .h1 { text-transform: uppercase; letter-spacing: .04em; }
+/* Brandbook: Schlagzeilen in Versalien mit großem Tracking. Auf schmalen Bildschirmen Normalschreibung, damit lange deutsche Wörter nicht umbrechen. */
+@media (max-width: 720px) { .phero .h1 { text-transform: none; letter-spacing: .005em; } }
 .cols3.c4 { grid-template-columns: repeat(4, 1fr); }
 .cols3.c3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 860px) { .cols3.c4, .cols3.c3 { grid-template-columns: 1fr; } }

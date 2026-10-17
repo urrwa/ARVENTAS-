@@ -45,6 +45,7 @@ export default function About() {
             <ul className="checks rv" style={{ color: 'var(--ivory)' }}>
               <li>Präzision</li><li>Zurückhaltung</li><li>Vertrauen</li><li>Seriosität</li>
             </ul>
+            <p className="rv" style={{ marginTop: 22, fontFamily: 'var(--font-head)', fontSize: 'clamp(20px,2vw,26px)', color: 'var(--ivory)' }}>Elegant. Selten. Zeitlos. Scharfsinnig.</p>
           </div>
         </div>
       </section>
