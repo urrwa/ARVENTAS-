@@ -20,3 +20,4 @@ Alle Dateien liegen in `public/media/`. Status „Platzhalter“ bedeutet: vor V
 Keine erfundenen Bild-URLs, keine Chat-Dateiverweise als öffentliche Adressen. Beispielbilder sind im Seitentext als solche gekennzeichnet.
 
 - `kontakt-haus.jpg`: Hero der Kontaktseite. KI-generiert (Higgsfield), keine reale Immobilie; vor Livegang durch echtes Foto ersetzen oder als KI-Bild kennzeichnen.
+- `baustein-marktwert.jpg`, `baustein-lage.jpg`, `baustein-potenzial.jpg`, `baustein-rentabilitaet.jpg`, `baustein-pruefhinweise.jpg`, `baustein-nachfrage.jpg`: Objektreport, Analysebausteine. KI-generiert (Higgsfield), keine realen Objekte; vor Livegang ersetzen oder kennzeichnen.

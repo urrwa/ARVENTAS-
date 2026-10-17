@@ -1,17 +1,18 @@
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq } from '../components/ui.jsx'
+import BlockGrid from '../components/BlockGrid.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { REPORT_FAQ } from '../content/data.js'
 
 const BLOCKS = [
-  ['Marktwert', 'Einordnung des Werts anhand nachvollziehbarer Verfahren.'],
-  ['Standort', 'Beschreibung von Lage, Umfeld und Entwicklung.'],
-  ['Potenzial', 'Möglichkeiten als Prüffragen, nicht als Zusage.'],
-  ['Wirtschaftlichkeit', 'Szenarien, die den Einfluss von Annahmen zeigen.'],
-  ['Prüfhinweise', 'Offene Punkte, die vor einer Entscheidung zu klären sind.'],
-  ['Nachfrage', 'Passende Suchprofile, ohne Käuferzahlen.'],
+  ['Marktwert', 'Einordnung des Werts anhand nachvollziehbarer Verfahren.', '/media/baustein-marktwert.jpg'],
+  ['Standort', 'Beschreibung von Lage, Umfeld und Entwicklung.', '/media/baustein-lage.jpg'],
+  ['Potenzial', 'Möglichkeiten als Prüffragen, nicht als Zusage.', '/media/baustein-potenzial.jpg'],
+  ['Wirtschaftlichkeit', 'Szenarien, die den Einfluss von Annahmen zeigen.', '/media/baustein-rentabilitaet.jpg'],
+  ['Prüfhinweise', 'Offene Punkte, die vor einer Entscheidung zu klären sind.', '/media/baustein-pruefhinweise.jpg'],
+  ['Nachfrage', 'Passende Suchprofile, ohne Käuferzahlen.', '/media/baustein-nachfrage.jpg'],
 ]
 const FLOW = [
   { t: 'Anfrage', d: 'Sie schildern Ihr Anliegen.' },
@@ -32,9 +33,7 @@ export default function ReportPage() {
       <section className="sec ivory">
         <div className="wrap">
           <SectionHead eyebrow="Analysebausteine" title="Sechs Bausteine, ein Bild." normal />
-          <div className="cols3 c3 rv">
-            {BLOCKS.map(([t, d]) => <div key={t}><h3 className="h3">{t}</h3><p>{d}</p></div>)}
-          </div>
+          <BlockGrid items={BLOCKS} />
         </div>
       </section>
 
