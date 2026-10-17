@@ -614,5 +614,6 @@ export default {
  "verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung.": "connects selected off-market properties with suitable investors – through sound analysis, personal experience and discreet transaction support.",
  "agiert ausschließlich deutschlandweit.": "operates exclusively across Germany.",
  "Beispielbilder, keine Objekte von": "Sample images, not properties of",
- ". Es werden keine vertraulichen Adressen gezeigt.": "^. No confidential addresses are shown."
+ ". Es werden keine vertraulichen Adressen gezeigt.": "^. No confidential addresses are shown.",
+ "Platzhalter – bestätigte Profile folgen. Keine erfundenen Namen oder Rollen.": "Placeholder – confirmed profiles to follow. No invented names or roles."
 }

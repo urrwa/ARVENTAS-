@@ -126,7 +126,7 @@ export default function Home() {
           <div className="team">
             <div className="portrait rv"><div><b>Porträt folgt</b>Platzhalter für ein echtes Editorial-Porträt mit Fachgebiet. Vor Veröffentlichung ersetzen oder ausblenden.</div></div>
             <div className="profiles rv">
-              <Placeholder title="Platzhalter – Ansprechpartner">Weitere Ansprechpartner werden hier in einer ruhigen Auswahl gezeigt, sobald bestätigte Profile vorliegen. Keine erfundenen Namen oder Rollen.</Placeholder>
+              <p className="small muted">Platzhalter – bestätigte Profile folgen. Keine erfundenen Namen oder Rollen.</p>
               <div className="prof"><div className="av" /><div><b>Profil folgt</b><small>Name, Rolle und Fachgebiet nach Bestätigung</small></div></div>
               <div className="prof"><div className="av" /><div><b>Profil folgt</b><small>Name, Rolle und Fachgebiet nach Bestätigung</small></div></div>
             </div>

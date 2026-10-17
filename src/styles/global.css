@@ -590,3 +590,21 @@ b, strong, th { font-weight: 600; }
 .cap.open .eyebrow { font-size: 11px; }
 .cap .eyebrow { font-size: 11px; }
 @media (max-width: 860px) { .film-h1 { font-size: clamp(26px, 7.4vw, 34px); } .cap .line { font-size: clamp(22px, 6.4vw, 30px); } }
+
+/* ---------- Feinschliff: ruhiger, hochwertiger, minimalistischer ---------- */
+/* Header-Button: feine Gold-Kontur statt großer Goldfläche (Gold nur als Akzent) */
+.hdr .nav .btn-gold { background: transparent; color: var(--ivory); border-color: var(--gold); min-height: 44px; padding: 0 22px; }
+.hdr .nav .btn-gold:hover, .hdr .nav .btn-gold:focus-visible { background: var(--gold); color: var(--black); }
+/* Platzhalter und Hinweise: Haarlinie statt gestrichelter, getönter Kästen */
+.ph { border: 1px solid rgba(25, 37, 55, .28); background: none; }
+.dark .ph, .black .ph { border-color: rgba(176, 158, 128, .45); background: none; }
+.portrait { border: 1px solid rgba(25, 37, 55, .28); background: none; }
+.dark .portrait, .black .portrait { border-color: rgba(176, 158, 128, .45); background: none; }
+.prof .av { border: 1px solid rgba(25, 37, 55, .28); background: none; }
+.dark .prof .av, .black .prof .av { border-color: rgba(176, 158, 128, .45); background: none; }
+.demo { border: 0; border-left: 2px solid var(--gold); background: none; padding: 2px 0 2px 14px; }
+/* Startseiten-Karten: der Rahmen um das Bild verschmilzt mit der Sektion, das Bild "öffnet" sich beim Hover */
+.door { background: var(--marine); }
+.door::after { display: none; }
+.door img { filter: brightness(.45); }
+@media (min-width: 861px) { .door-txt { left: calc(4% + clamp(20px, 2.5vw, 40px)); right: calc(4% + clamp(20px, 2.5vw, 40px)); bottom: calc(4% + clamp(20px, 2.5vw, 40px)); } }
