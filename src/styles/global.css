@@ -773,3 +773,10 @@ b, strong, th { font-weight: 600; }
 .sr-no { transition: background 600ms ease, color 600ms ease, border-color 600ms ease; }
 .step-row:hover .sr-no, .step-row:focus-visible .sr-no, .step-row.on .sr-no { background: var(--gold); border-color: var(--gold); color: var(--black); }
 @media (prefers-reduced-motion: reduce) { .step-row img, .step-row::after, .sr-title, .sr-no { transition: none; } }
+
+/* Schrittzeilen: langsamer, ruhiger */
+.step-row img { transition: clip-path 1900ms cubic-bezier(.65, 0, .25, 1), transform 3200ms cubic-bezier(.2, .6, .1, 1); }
+.step-row::after { transition: clip-path 1900ms cubic-bezier(.65, 0, .25, 1); }
+.sr-title { transition: transform 1500ms cubic-bezier(.2, .6, .1, 1), letter-spacing 1500ms cubic-bezier(.2, .6, .1, 1); }
+.sr-no { transition: background 1000ms ease, color 1000ms ease, border-color 1000ms ease; }
+.sr-arr { transition: transform 1200ms cubic-bezier(.2, .6, .1, 1), opacity 900ms ease; }

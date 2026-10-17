@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import Brand from './Brand.jsx'
 
 // Scroll-gesteuerter Architekturfilm (Bildsequenz auf Canvas), wie in der freigegebenen Vorversion.
 // Die Frames stammen aus dem bereitgestellten Clip (KI-generierte Illustration, kein ARVENTAS-Projekt).
@@ -165,7 +164,6 @@ export default function ScrollFilm() {
           <p className="line">Werte schaffen. Zukunft bauen.</p>
           <div className="btn-row"><a href="#zugaenge" className="btn btn-gold">Was möchten Sie bewegen? <span className="arr down" aria-hidden="true">↓</span></a></div>
         </div>
-        <div className="film-note">Illustrative Visualisierung – kein <Brand />-Projekt</div>
         <div className="hint" aria-hidden="true"><span>Scrollen</span><i /></div>
       </div>
     </section>
