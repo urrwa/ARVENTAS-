@@ -22,9 +22,6 @@ const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
 export default function ScrollFilm() {
   const root = useRef(null)
   const cv = useRef(null)
-  const curtain = useRef(null)
-  const bar = useRef(null)
-  const word = useRef(null)
   const stage = useRef(null)
 
   useEffect(() => {
@@ -34,10 +31,6 @@ export default function ScrollFilm() {
     const rootEl = root.current, canvas = cv.current, ctx = canvas.getContext('2d', { alpha: false })
     const capEls = {}
     CAPS.forEach((c) => { capEls[c.id] = rootEl.querySelector('#c-' + c.id) })
-    document.body.classList.add('lock')
-    document.documentElement.classList.add('lock')
-    const unlock = () => { document.body.classList.remove('lock'); document.documentElement.classList.remove('lock') }
-    cleanups.push(unlock)
 
     let T = [], N = 0
     const blobs = {}, bitmaps = {}, pending = {}, pk = {}, pinf = {}
@@ -123,27 +116,10 @@ export default function ScrollFilm() {
       Promise.all(ps).then(() => { if (dead) return; size(); render(); caps(prog()); ready = true })
     }
 
-    // ---------- Intro: Ladelinie, dann Vorhang ----------
-    function intro() {
-      const stg = stage.current, cur_ = curtain.current, bar_ = bar.current, word_ = word.current
-      if (reduce) { cur_.style.display = 'none'; stg.classList.add('live'); window.__introDone = true; window.dispatchEvent(new Event('arventas:intro')); unlock(); return }
-      const t0 = performance.now(), MIN = 1200, W = 110
-      const load = (now) => {
-        if (dead) return
-        let p = Math.min(1, (now - t0) / MIN); if (!ready) p = Math.min(p, 0.92)
-        bar_.style.width = p * W + 'px'
-        if (p < 1 || !ready) { requestAnimationFrame(load); return }
-        word_.parentNode.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 320, delay: 150, fill: 'forwards' })
-        setTimeout(() => {
-          if (dead) return
-          cur_.animate([{ clipPath: 'inset(0 0 0 0)' }, { clipPath: 'inset(0 100% 0 0)' }], { duration: 800, easing: 'cubic-bezier(.7,0,.2,1)', fill: 'forwards' }).onfinish = () => { cur_.style.display = 'none' }
-          stg.classList.add('live'); unlock(); window.__introDone = true
-          window.dispatchEvent(new Event('arventas:intro'))
-          try { dispatchEvent(new Event('scroll')) } catch (e) { /* ignorieren */ }
-        }, 450)
-      }
-      requestAnimationFrame(load)
-    }
+    // Kein Lade-Intro (Briefing: kein vorgeschaltetes Logo-Intro, keine Eingangssperre): Hero sofort sichtbar, Standbild als Platzhalter.
+    stage.current.classList.add('live')
+    window.__introDone = true
+    window.dispatchEvent(new Event('arventas:intro'))
 
     fetch(`${BASE}frames/manifest.json`).then((r) => r.json()).then((m) => {
       if (dead) return
@@ -159,8 +135,6 @@ export default function ScrollFilm() {
       window.addEventListener('resize', onResize)
       cleanups.push(() => { window.removeEventListener('scroll', kick); window.removeEventListener('resize', onResize) })
     }).catch(() => { /* ohne Frames: Vorhang trotzdem öffnen */ ready = true })
-    intro()
-
     return () => {
       dead = true
       cancelAnimationFrame(raf)
@@ -172,7 +146,7 @@ export default function ScrollFilm() {
   return (
     <section className="film" id="film" ref={root} aria-label="Architekturfilm: Einführung">
       <div className="stage" ref={stage}>
-        <canvas ref={cv} id="cv" role="img" aria-label="Illustrativer Architekturfilm: Fassade, Wohnräume, Luftbild" />
+        <canvas ref={cv} id="cv" style={{ backgroundImage: `url(${BASE}media/hero-poster.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} role="img" aria-label="Illustrativer Architekturfilm: Fassade, Wohnräume, Luftbild" />
         <div className="film-overlay" />
         <div className="cap open" id="c-open">
           <p className="eyebrow">Off-Market Immobilien · Deutschlandweit</p>
@@ -193,12 +167,6 @@ export default function ScrollFilm() {
         </div>
         <div className="film-note">Illustrative Visualisierung – kein <Brand />-Projekt</div>
         <div className="hint" aria-hidden="true"><span>Scrollen</span><i /></div>
-        <div className="curtain" ref={curtain}>
-          <div className="il">
-            <span ref={word}><img src={`${BASE}media/arventas-logo.png`} alt="ARVENTAS" /></span>
-            <i ref={bar} />
-          </div>
-        </div>
       </div>
     </section>
   )
