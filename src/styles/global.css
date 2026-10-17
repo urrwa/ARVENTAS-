@@ -1001,3 +1001,5 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .mviz .mdot { opacity: 0; transition: opacity 600ms ease 5000ms; }
 .match.in .mviz .mdot { opacity: .9; }
 @media (prefers-reduced-motion: reduce) { .match .mctl fieldset, .mviz .mc, .mviz .md, .mviz .mp { opacity: 1; transform: none; transition: none; } .mviz .la, .mviz .lb { stroke-dashoffset: 0; transition: none; } .mviz .mdot { display: none; } }
+/* Alle Abschnitte nach dem stehenden Abschnitt liegen darüber (sonst bleibt er sichtbar hängen) */
+@media (prefers-reduced-motion: no-preference) { .stick-under ~ * { position: relative; z-index: 1; } }
