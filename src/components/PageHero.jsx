@@ -1,12 +1,33 @@
+import { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
 import { Brandify } from './Brand.jsx'
 
-export default function PageHero({ crumb, title, lead, children, image, tall }) {
+function useFadeOut(on, ref) {
+  useEffect(() => {
+    const el = ref.current
+    if (!on || !el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    let raf = 0
+    const run = () => {
+      raf = 0
+      const k = Math.min(1, window.scrollY / (window.innerHeight * 0.55))
+      el.style.opacity = String(1 - k)
+      el.style.transform = `translateY(${(-k * 40).toFixed(1)}px)`
+    }
+    const onS = () => { if (!raf) raf = requestAnimationFrame(run) }
+    run()
+    window.addEventListener('scroll', onS, { passive: true })
+    return () => { window.removeEventListener('scroll', onS); raf && cancelAnimationFrame(raf); el.style.opacity = ''; el.style.transform = '' }
+  }, [on, ref])
+}
+
+export default function PageHero({ crumb, title, lead, children, image, tall, fadeOut }) {
+  const wrapRef = useRef(null)
+  useFadeOut(fadeOut, wrapRef)
   return (
     <section className={`phero dark${image ? ' has-img' : ''}${tall ? ' tall' : ''}`}>
       {image && <img className="phero-img" src={image} alt="" loading="eager" />}
-      <div className="wrap">
+      <div className="wrap" ref={wrapRef}>
         <p className="crumbs"><Link to="/">Start</Link> / {crumb}</p>
         <h1 className="h1">{typeof title === 'string' ? <Letters text={title} per={45} /> : title}</h1>
         {lead && <p className="lead">{typeof lead === 'string' ? <Letters text={lead} per={14} max={1400} delay={500} /> : <Brandify>{lead}</Brandify>}</p>}

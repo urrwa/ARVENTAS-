@@ -17,9 +17,9 @@ export default function Contact() {
   return (
     <>
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns über Ihre Möglichkeiten sprechen: getrennte Zugänge für Eigentümer, Investoren und Partner." />
-      <PageHero image="/media/kontakt-haus.jpg" crumb="Kontakt" title="Lassen Sie uns über Ihre Möglichkeiten sprechen." lead="Wählen Sie den passenden Zugang. Eigentümer, Investoren und Partner haben getrennte Wege." />
+      <PageHero fadeOut image="/media/kontakt-haus.jpg" crumb="Kontakt" title="Lassen Sie uns über Ihre Möglichkeiten sprechen." lead="Wählen Sie den passenden Zugang. Eigentümer, Investoren und Partner haben getrennte Wege." />
       <div className="cover-over">
-      <section className="sec ivory">
+      <section className="sec ivory over-photo">
         <div className="wrap contact-grid">
           <div className="contact-intro">
             <RevealText className="contact-statement" text="Schreiben Sie uns. Wir antworten persönlich und vertraulich." />

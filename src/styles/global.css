@@ -934,3 +934,14 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .phero .h1 { font-size: clamp(28px, 3.8vw, 58px); line-height: 1.08; }
 .phero .lead { max-width: 46ch; margin-top: 16px; font-size: clamp(14px, 1.1vw, 16px); }
 .phero .btn-row { margin-top: 22px; }
+
+/* Kontakt: Formular-Karte schiebt sich über das stehende Foto */
+@media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
+  .cover-over { background: transparent; }
+  .sec.over-photo { background: transparent; padding-top: 40vh; }
+  .over-photo .contact-statement, .over-photo .reveal-text { color: var(--ivory); }
+  .over-photo .hair { border-top-color: rgba(245, 243, 239, .35); }
+  .over-photo .contact-intro p { color: var(--ivory); }
+  .over-photo .contact-intro { position: sticky; top: 120px; }
+}
+@media (min-width: 861px) and (prefers-reduced-motion: no-preference) { .over-photo + .sec { padding-top: clamp(64px, 8vw, 120px) !important; } }
