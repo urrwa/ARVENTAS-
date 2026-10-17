@@ -20,7 +20,7 @@ export default function Partners() {
           <ParallaxCards inside items={[
             { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: '/media/schluessel-modell.jpg', ratio: '4 / 5', speed: 1 },
             { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', img: '/media/besprechung.jpg', ratio: '3 / 4', speed: 1.8 },
-            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/vertrag-unterzeichnung.jpg', ratio: '4 / 5', speed: 0.7 },
+            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/vertrag-unterzeichnung.jpg', ratio: '21 / 9', speed: 0.7, wide: true },
           ]} />
         </div>
       </section>

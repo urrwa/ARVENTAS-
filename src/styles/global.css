@@ -1068,3 +1068,13 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .sec.pc-sec { background: transparent; padding-top: 4vh; }
   .pc-in { gap: clamp(8px, 1vw, 14px); }
 }
+
+/* Karten paarweise (2 + 1), jede Reihe fährt mit Animation von unten ein */
+.pc-in { grid-template-columns: 1fr 1fr; max-width: 1100px; margin-inline: auto; }
+.pc-in .pc-card { opacity: 0; transform: translateY(90px); transition: opacity 900ms ease, transform 1300ms cubic-bezier(.2, .7, .1, 1); transition-delay: calc(var(--row, 0) * 160ms); }
+.pc-in .pc-card.in { opacity: 1; transform: none; }
+.pc-in .pc-card:nth-child(2) { margin-top: clamp(40px, 7vw, 110px); }
+.pc-in .pc-card.wide { grid-column: 1 / -1; }
+.pc-in .pc-card.wide .pc-cap p { max-width: 60ch; }
+@media (max-width: 860px) { .pc-in { grid-template-columns: 1fr; } .pc-in .pc-card.wide .pc-img { aspect-ratio: 4 / 5 !important; } }
+@media (prefers-reduced-motion: reduce) { .pc-in .pc-card { opacity: 1; transform: none; transition: none; } }
