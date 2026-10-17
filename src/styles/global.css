@@ -867,3 +867,16 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 }
 .hs-img img, .strip-track img { scale: 1.05; translate: calc(var(--mx, 0) * -8px) calc(var(--my, 0) * -6px); }
 @media (prefers-reduced-motion: reduce), (hover: none) { .phero-img, .imgf img, .choose-img img, .hs-img img, .step-row img, .door img, .strip-track img { scale: 1; translate: none; } }
+
+/* Formulare: noch etwas kleiner, überall */
+.form .f { margin-bottom: 8px; }
+.form .f label, .form .f .lbl { font-size: 10.5px; letter-spacing: .1em; margin-bottom: 3px; }
+.form .f input[type=text], .form .f input[type=email], .form .f input[type=tel], .form .f input[type=number], .form .f select, .form .f textarea { font-size: 13.5px; padding: 5px 10px; min-height: 36px; }
+.form .f textarea { min-height: 60px; }
+.form .f .help { font-size: 11px; margin-top: 2px; }
+.form .demo { padding: 5px 10px; font-size: 12px; margin-bottom: 10px; }
+.form .check { font-size: 12px; margin-bottom: 8px; gap: 8px; }
+.form .check input, .f label.check input { width: 18px; height: 18px; }
+.form .btn { min-height: 44px; }
+.form .btn:has(.arr) { min-height: 44px; padding-left: 22px; }
+.form .btn:has(.arr)::before { width: 32px; height: 32px; margin-top: -16px; }
