@@ -67,7 +67,7 @@ export default function Header() {
           <Link to="/kontakt" className="btn btn-gold">Beratung anfragen</Link>
         </nav>
       </div>
-      <style>{`@media (min-width:1061px){.nl-m{display:none}}`}</style>
+      
     </header>
   )
 }

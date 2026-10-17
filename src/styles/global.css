@@ -121,7 +121,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .burger[aria-expanded=true] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .burger[aria-expanded=true] span:nth-child(2) { opacity: 0; }
 .burger[aria-expanded=true] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-@media (max-width: 1060px) {
+@media (max-width: 1260px) {
   .burger { display: block; }
   .nav { position: fixed; inset: var(--header-h) 0 0 0; background: var(--marine); flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0; padding: 24px var(--gut) 40px; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity var(--t-ui) ease, visibility 0s linear var(--t-ui); }
   .nav.open { visibility: visible; opacity: 1; transition: opacity var(--t-ui) ease; }
@@ -441,7 +441,7 @@ html.lock, body.lock { overflow: hidden; }
 @media (max-width: 860px) { .film { height: 900vh; } }
 .stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; contain: paint; }
 .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; background: var(--black); }
-.film-overlay { position: absolute; inset: 0; background: rgba(11, 11, 11, .42); pointer-events: none; }
+.film-overlay { position: absolute; inset: 0; background: rgba(11, 11, 11, .56); pointer-events: none; }
 .cap { z-index: 3; position: absolute; left: var(--gut); right: var(--gut); bottom: clamp(64px, 12vh, 140px); max-width: 1100px; opacity: 0; visibility: hidden; will-change: transform, opacity; }
 .cap.open { max-width: 900px; }
 .cap.right { left: auto; text-align: right; }
@@ -486,3 +486,7 @@ html.lock, body.lock { overflow: hidden; }
 .door::after { background: rgba(11, 11, 11, .5); }
 .door img { clip-path: inset(4% 4% 4% 4%); }
 @media (max-width: 860px) { .hint { display: none; } .film-note { right: var(--gut); } }
+
+.nav a.nl, .nav .btn { white-space: nowrap; }
+.cap .eyebrow { color: var(--ivory); }
+@media (min-width: 1261px) { .nl-m { display: none; } }
