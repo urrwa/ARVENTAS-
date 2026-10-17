@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 // Versetzte Fotokarten: Spalten laufen beim Scrollen mit unterschiedlicher Geschwindigkeit, Fotos werden beim Erscheinen aufgezogen.
-export default function ParallaxCards({ items }) {
+export default function ParallaxCards({ items, inside = false }) {
   const root = useRef(null)
   useEffect(() => {
     const el = root.current
@@ -24,14 +24,14 @@ export default function ParallaxCards({ items }) {
     return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf); io && io.disconnect() }
   }, [])
   return (
-    <div className="pc" ref={root}>
+    <div className={`pc${inside ? ' pc-in' : ''}`} ref={root}>
       {items.map((it, i) => (
         <article key={i} className="pc-card" style={{ '--s': it.speed ?? 1, '--i': i }}>
           <div className="pc-img" style={{ aspectRatio: it.ratio || '4 / 5' }}>
             <img src={it.img} alt="" loading="lazy" />
-            <h3 className="pc-t">{it.title}</h3>
+            <div className="pc-cap"><h3 className="pc-t">{it.title}</h3>{inside && <p>{it.text}</p>}</div>
           </div>
-          <p>{it.text}</p>
+          {!inside && <p>{it.text}</p>}
         </article>
       ))}
     </div>

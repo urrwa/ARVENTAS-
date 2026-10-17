@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
 import { Brandify } from './Brand.jsx'
 
-function useFadeOut(on, ref) {
+function useFadeOut(on, ref, blur) {
   useEffect(() => {
     const el = ref.current
     if (!on || !el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -13,17 +13,18 @@ function useFadeOut(on, ref) {
       const k = Math.min(1, window.scrollY / (window.innerHeight * 0.55))
       el.style.opacity = String(1 - k)
       el.style.transform = `translateY(${(-k * 40).toFixed(1)}px)`
+      if (blur) { const im = el.parentElement.querySelector('.phero-img'); if (im) im.style.filter = `blur(${(Math.min(1, window.scrollY / (window.innerHeight * 0.7)) * 18).toFixed(1)}px)` }
     }
     const onS = () => { if (!raf) raf = requestAnimationFrame(run) }
     run()
     window.addEventListener('scroll', onS, { passive: true })
-    return () => { window.removeEventListener('scroll', onS); raf && cancelAnimationFrame(raf); el.style.opacity = ''; el.style.transform = '' }
-  }, [on, ref])
+    return () => { window.removeEventListener('scroll', onS); raf && cancelAnimationFrame(raf); el.style.opacity = ''; el.style.transform = ''; const im = el.parentElement && el.parentElement.querySelector('.phero-img'); if (im) im.style.filter = '' }
+  }, [on, ref, blur])
 }
 
-export default function PageHero({ crumb, title, lead, children, image, tall, fadeOut }) {
+export default function PageHero({ crumb, title, lead, children, image, tall, fadeOut, blur }) {
   const wrapRef = useRef(null)
-  useFadeOut(fadeOut, wrapRef)
+  useFadeOut(fadeOut, wrapRef, blur)
   return (
     <section className={`phero dark${image ? ' has-img' : ''}${tall ? ' tall' : ''}`}>
       {image && <img className="phero-img" src={image} alt="" loading="eager" />}
