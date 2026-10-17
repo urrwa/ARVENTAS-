@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router-dom'
+import StepRows from '../components/StepRows.jsx'
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Tabs, Faq, Placeholder } from '../components/ui.jsx'
@@ -23,10 +24,14 @@ export default function Owners() {
         <div className="btn-row"><Btn href="#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 
-      <section className="sec ivory">
+      <section className="sec dark">
         <div className="wrap">
           <SectionHead eyebrow="Erzählstruktur" title="Drei Schritte zur Klarheit." />
-          <ol className="steps3 rv"><li>Situation verstehen.</li><li>Immobilie analysieren.</li><li>Verkaufsweg entscheiden.</li></ol>
+          <StepRows items={[
+            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/besprechung.jpg' },
+            { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', img: '/media/planunterlagen.jpg' },
+            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/vertrag-unterzeichnung.jpg' },
+          ]} />
         </div>
       </section>
 
