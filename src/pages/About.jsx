@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import Brand from '../components/Brand.jsx'
 import RevealText from '../components/RevealText.jsx'
+import ScrollZoom from '../components/ScrollZoom.jsx'
 import HScroll from '../components/HScroll.jsx'
 
 export default function About() {
@@ -26,11 +27,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="strip" aria-hidden="true">
-        <div className="strip-track">
-          {['facade-altbau', 'interior-sessel', 'haus-abend', 'stadt-luftbild', 'gebaeude-sanierung', 'schluessel-modell', 'facade-altbau', 'interior-sessel', 'haus-abend', 'stadt-luftbild'].map((n, i) => <img key={i} src={`/media/${n}.jpg`} alt="" loading="lazy" />)}
-        </div>
-      </section>
+      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/kontakt-haus.jpg" />
 
       <section className="sec ivory">
         <div className="wrap">
