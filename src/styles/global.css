@@ -683,8 +683,12 @@ b, strong, th { font-weight: 600; }
 .ftr li { margin-bottom: 14px; }
 .ftr-cols a, .ftr-cols .lk { font-family: var(--font-head); font-size: clamp(18px, 1.7vw, 24px); letter-spacing: .01em; }
 .ftr-bot { margin-top: clamp(40px, 5vw, 72px); padding-bottom: 20px; }
-.ftr-mark { font-family: var(--font-head); font-weight: 500; font-size: clamp(56px, 15.2vw, 300px); line-height: .8; letter-spacing: .06em; white-space: nowrap; text-align: center; color: transparent; -webkit-text-stroke: 1px rgba(176, 158, 128, .55); user-select: none; pointer-events: none; margin-top: 8px; margin-bottom: -.12em; }
 .ftr a.btn { background: var(--gold); color: var(--black); font-family: var(--font-body); font-size: 14px; text-decoration: none; }
 .ftr a.btn:hover { text-decoration: none; color: var(--black); }
 .ftr .lk { text-align: left; white-space: nowrap; }
-.ftr-mark { line-height: .95; margin-bottom: -.2em; }
+
+/* Wortmarke: Linien zeichnen sich beim Einblenden, danach füllt sie sich dezent */
+.ftr-mark { display: block; width: 100%; height: auto; margin-top: 12px; margin-bottom: -4.5%; pointer-events: none; user-select: none; }
+.ftr-mark text { font-family: var(--font-head); font-weight: 500; font-size: 168px; fill: rgba(176, 158, 128, 0); stroke: var(--gold); stroke-width: 1.2; stroke-dasharray: 1400; stroke-dashoffset: 1400; transition: stroke-dashoffset 3.2s cubic-bezier(.4, 0, .2, 1), fill 1.6s ease 2.6s; }
+.ftr-mark.on text { stroke-dashoffset: 0; fill: rgba(176, 158, 128, .1); }
+@media (prefers-reduced-motion: reduce) { .ftr-mark text { transition: none; stroke-dashoffset: 0; fill: rgba(176, 158, 128, .1); } }

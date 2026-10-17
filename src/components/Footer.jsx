@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useConsent } from './Consent.jsx'
 import Brand from './Brand.jsx'
@@ -5,6 +6,14 @@ import { Btn } from './ui.jsx'
 
 export default function Footer() {
   const { openSettings } = useConsent()
+  const mark = useRef(null)
+  useEffect(() => {
+    const el = mark.current
+    if (!el || !('IntersectionObserver' in window)) { el && el.classList.add('on'); return }
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('on'); io.disconnect() } }, { threshold: 0.25 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   return (
     <footer className="ftr">
       <div className="wrap">
@@ -37,7 +46,9 @@ export default function Footer() {
           <span><Brand /> · Off-Market-Immobilien in Deutschland</span>
         </div>
       </div>
-      <div className="ftr-mark" aria-hidden="true">ΛRVENTΛS</div>
+      <svg ref={mark} className="ftr-mark" viewBox="0 0 1000 170" aria-hidden="true" focusable="false">
+        <text x="40" y="150" textLength="920" lengthAdjust="spacing">ΛRVENTΛS</text>
+      </svg>
     </footer>
   )
 }
