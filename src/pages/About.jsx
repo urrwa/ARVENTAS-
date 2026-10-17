@@ -2,36 +2,47 @@ import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import Brand from '../components/Brand.jsx'
+import RevealText from '../components/RevealText.jsx'
+import HScroll from '../components/HScroll.jsx'
 
 export default function About() {
   return (
     <>
       <Seo title="Über uns | ARVENTAS" description="Wer ARVENTAS ist: aktuelles Off-Market-Geschäftsmodell, Mission und Arbeitsweise, Werte und deutschlandweiter Tätigkeitsbereich." />
-      <PageHero image="/media/besprechung.jpg" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
+      <PageHero tall image="/media/besprechung.jpg" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
 
-      <section className="sec ivory">
-        <div className="wrap two">
-          <div>
-            <SectionHead eyebrow="Wer wir sind" title={<>Wer <Brand /> ist.</>} normal />
-            <p className="rv">Die Marke steht für zeitlose Eleganz, unaufdringliche Stärke, Präzision, Zurückhaltung und Vertrauen. Dieser Anspruch prägt unsere Arbeit: ruhig, klar und sorgfältig.</p>
-            <h3 className="h3 rv" style={{ margin: '28px 0 10px' }}>Der Name</h3>
-            <p className="rv">Der Markenname geht auf die Ideen „Assets“, „Architecture“ und „Ventures“ zurück (Brandbook).</p>
+      <div className="cover-over">
+      <section className="sec ivory about-big-sec">
+        <div className="wrap">
+          <p className="eyebrow">Wer wir sind</p>
+          <RevealText className="about-big" text="Die Marke steht für zeitlose Eleganz, unaufdringliche Stärke, Präzision, Zurückhaltung und Vertrauen. Dieser Anspruch prägt unsere Arbeit: ruhig, klar und sorgfältig." />
+          <hr className="hair" />
+          <div className="vals">
+            {['Präzision', 'Zurückhaltung', 'Vertrauen', 'Seriosität'].map((v, i) => (
+              <div key={v} className="val rv" style={{ '--d': i * 90 }}><span>0{i + 1}</span><strong>{v}</strong></div>
+            ))}
           </div>
-          <div className="imgf rv" style={{ aspectRatio: '4/3' }}><img src="/media/facade-altbau.jpg" alt="Altbaufassade (Beispielbild)" loading="lazy" /></div>
+          <p className="rv about-name"><b>Der Name.</b> Der Markenname geht auf die Ideen „Assets“, „Architecture“ und „Ventures“ zurück (Brandbook).</p>
         </div>
       </section>
 
-      <section className="sec ivory" style={{ paddingTop: 0 }}>
+      <section className="strip" aria-hidden="true">
+        <div className="strip-track">
+          {['facade-altbau', 'interior-sessel', 'haus-abend', 'stadt-luftbild', 'gebaeude-sanierung', 'schluessel-modell', 'facade-altbau', 'interior-sessel', 'haus-abend', 'stadt-luftbild'].map((n, i) => <img key={i} src={`/media/${n}.jpg`} alt="" loading="lazy" />)}
+        </div>
+      </section>
+
+      <section className="sec ivory">
         <div className="wrap">
           <SectionHead eyebrow="Aktuelles Geschäftsmodell" title="Zugang, Analyse, Matching, Begleitung." normal />
-          <div className="cols3 c4 rv">
-            <div><h3 className="h3">Zugang</h3><p>Immobilien abseits öffentlicher Portale.</p></div>
-            <div><h3 className="h3">Analyse</h3><p>Wert, Potenzial und Risiken nachvollziehbar einordnen.</p></div>
-            <div><h3 className="h3">Matching</h3><p>Suchprofil und Immobilieninformationen zusammenführen.</p></div>
-            <div><h3 className="h3">Begleitung</h3><p>Persönliche Transaktionsbegleitung.</p></div>
-          </div>
-          <p className="rv" style={{ marginTop: 24, maxWidth: '62ch' }}>Die interne KI-Technologie unterstützt Objektanalysen und Prozesse. Sie ist kein öffentlich verkauftes Softwareprodukt.</p>
         </div>
+        <HScroll items={[
+          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/haus-abend.jpg' },
+          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/planunterlagen.jpg' },
+          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/notizbuch.jpg' },
+          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/vertrag-unterzeichnung.jpg' },
+        ]} />
+        <div className="wrap"><p className="rv" style={{ marginTop: 24, maxWidth: '62ch' }}>Die interne KI-Technologie unterstützt Objektanalysen und Prozesse. Sie ist kein öffentlich verkauftes Softwareprodukt.</p></div>
       </section>
 
       <section className="sec dark">
@@ -41,11 +52,7 @@ export default function About() {
             <p className="rv">Jede freigegebene Analyse hat eine verantwortliche Person. Wir benennen Annahmen, trennen Einschätzung von Gutachten und machen offene Punkte sichtbar.</p>
           </div>
           <div>
-            <h3 className="h3 rv" style={{ marginBottom: 14 }}>Werte</h3>
-            <ul className="checks rv" style={{ color: 'var(--ivory)' }}>
-              <li>Präzision</li><li>Zurückhaltung</li><li>Vertrauen</li><li>Seriosität</li>
-            </ul>
-            <p className="rv" style={{ marginTop: 22, fontFamily: 'var(--font-head)', fontSize: 'clamp(20px,2vw,26px)', color: 'var(--ivory)' }}>Elegant. Selten. Zeitlos. Scharfsinnig.</p>
+            <p className="rv" style={{ marginTop: 0, fontFamily: 'var(--font-head)', fontSize: 'clamp(20px,2vw,26px)', color: 'var(--ivory)' }}>Elegant. Selten. Zeitlos. Scharfsinnig.</p>
           </div>
         </div>
       </section>
@@ -77,6 +84,7 @@ export default function About() {
           <div className="btn-row"><Btn to="/kontakt">Kontakt aufnehmen</Btn></div>
         </div>
       </section>
+      </div>
     </>
   )
 }
