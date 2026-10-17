@@ -62,17 +62,30 @@ export function Tabs({ label, items, className = 'tabs', listClass = 'tabs-list'
 }
 
 export function Faq({ items }) {
+  const [open, setOpen] = useState(-1)
+  const uid = useId()
   return (
     <div className="faq">
-      {items.map((q) => (
-        <details key={q.q}>
-          <summary>{q.q}</summary>
-          <div className="ans">
-            {q.open && <span className="tagd">Redaktionelle Freigabe offen</span>}
-            <p><Brandify>{q.a}</Brandify></p>
+      {items.map((q, i) => {
+        const on = open === i
+        return (
+          <div key={q.q} className={`faq-item${on ? ' on' : ''}`}>
+            <h3 className="faq-q">
+              <button type="button" id={`${uid}-b${i}`} aria-expanded={on} aria-controls={`${uid}-p${i}`} onClick={() => setOpen(on ? -1 : i)}>
+                <span>{q.q}</span><i aria-hidden="true" />
+              </button>
+            </h3>
+            <div className="faq-panel" id={`${uid}-p${i}`} role="region" aria-labelledby={`${uid}-b${i}`} inert={!on}>
+              <div className="faq-clip">
+                <div className="ans">
+                  {q.open && <span className="tagd">Redaktionelle Freigabe offen</span>}
+                  <p><Brandify>{q.a}</Brandify></p>
+                </div>
+              </div>
+            </div>
           </div>
-        </details>
-      ))}
+        )
+      })}
     </div>
   )
 }

@@ -351,11 +351,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .checks li::before { content: ''; position: absolute; left: 4px; top: 22px; width: 12px; height: 1px; background: var(--gold); }
 
 /* ---------- FAQ ---------- */
-.faq details { border-bottom: 1px solid var(--line-light); }
-.faq summary { cursor: pointer; list-style: none; padding: 22px 40px 22px 0; font-family: var(--font-head); font-size: clamp(19px, 1.8vw, 24px); position: relative; min-height: 48px; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-family: var(--font-body); font-size: 26px; font-weight: 300; transition: transform var(--t-ui) ease; }
-.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
 .faq .ans { padding: 0 0 24px; max-width: 70ch; color: var(--ink-soft); }
 .faq .ans .tagd { margin-bottom: 8px; }
 
@@ -707,3 +702,22 @@ b, strong, th { font-weight: 600; }
 .ftr-cols a, .ftr-cols .lk { font-size: clamp(15px, 1.2vw, 17px); }
 .ftr-bot { margin-top: clamp(28px, 3.5vw, 48px); padding-top: 16px; font-size: 12px; }
 .ftr-mark { margin-top: 4px; }
+
+/* FAQ: weich auf- und zuklappend */
+.faq-item { border-bottom: 1px solid var(--line-light); position: relative; }
+.faq-item::after { content: ''; position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 700ms var(--ease, cubic-bezier(.2, .7, .1, 1)); }
+.faq-item.on::after { transform: scaleX(1); }
+.faq-q { margin: 0; font: inherit; }
+.faq-q button { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 24px; text-align: left; background: none; border: 0; cursor: pointer; padding: 22px 0; min-height: 48px; font-family: var(--font-head); font-size: clamp(19px, 1.8vw, 24px); color: inherit; transition: color var(--t-ui) ease, padding-left 500ms var(--ease, ease); }
+.faq-q button:hover { color: var(--marine); padding-left: 8px; }
+.faq-q i { position: relative; flex: none; width: 18px; height: 18px; }
+.faq-q i::before, .faq-q i::after { content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 1px; background: currentColor; transition: transform 500ms var(--ease, ease), opacity 300ms ease; }
+.faq-q i::after { transform: rotate(90deg); }
+.faq-item.on .faq-q i::after { transform: rotate(0); opacity: 0; }
+.faq-item.on .faq-q i::before { transform: rotate(180deg); }
+.faq-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 600ms cubic-bezier(.2, .7, .1, 1); }
+.faq-item.on .faq-panel { grid-template-rows: 1fr; }
+.faq-clip { overflow: hidden; min-height: 0; }
+.faq-clip .ans { opacity: 0; transform: translateY(10px); transition: opacity 400ms ease, transform 600ms cubic-bezier(.2, .7, .1, 1); }
+.faq-item.on .faq-clip .ans { opacity: 1; transform: none; transition-delay: 120ms; }
+@media (prefers-reduced-motion: reduce) { .faq-panel, .faq-clip .ans, .faq-q i::before, .faq-q i::after, .faq-item::after { transition: none; } }
