@@ -41,6 +41,12 @@ export const OWNER_FAQ = [
   { q: 'Wie wird die Vertraulichkeit gehandhabt?', a: 'Ihr Objekt wird nicht öffentlich beworben. Konkrete Adressen und Eigentümerdaten werden nicht öffentlich gezeigt. Die vertraglichen Vertraulichkeitsregeln werden nach Freigabe ergänzt.', open: true },
   { q: 'Wie wird die Bearbeitungszeit vereinbart?', a: 'Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen.', open: false },
 ]
+export const CONTACT_FAQ = [
+  { q: 'Welchen Zugang soll ich wählen?', a: 'Eigentümer, Investoren und Partner haben getrennte Wege. Wählen Sie oben den Zugang, der zu Ihrem Anliegen passt.', open: false },
+  { q: 'Wie geht es nach meiner Anfrage weiter?', a: 'Wir prüfen Ihre Angaben und melden uns persönlich. Die genauen Abläufe werden vor der Veröffentlichung ergänzt.', open: true },
+  { q: 'Wird meine Anfrage vertraulich behandelt?', a: 'Ihre Angaben werden nicht öffentlich gezeigt. Die vertraglichen Vertraulichkeitsregeln werden nach Freigabe ergänzt.', open: true },
+  { q: 'Gibt es eine Online-Terminbuchung?', a: 'Derzeit nicht. Bitte senden Sie eine Terminanfrage über eines der Formulare; einen Termin vereinbaren wir persönlich mit Ihnen.', open: false },
+]
 export const INVESTOR_FAQ = [
   { q: 'Was bedeutet Off-Market?', a: 'Off-Market-Immobilien werden nicht über öffentliche Portale angeboten. Sie werden stattdessen gezielt an passende Interessenten vermittelt.', open: false },
   { q: 'Muss ich mich registrieren, um die Informationen zu lesen?', a: 'Nein. Die Informationsseiten sind ohne Registrierung zugänglich. Ein Suchprofil legen Sie nur an, wenn Sie passende Immobilien erhalten möchten.', open: false },

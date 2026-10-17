@@ -614,3 +614,10 @@ b, strong, th { font-weight: 600; }
 .door::after { display: none; }
 .door img { filter: brightness(.45); }
 @media (min-width: 861px) { .door-txt { left: calc(4% + clamp(20px, 2.5vw, 40px)); right: calc(4% + clamp(20px, 2.5vw, 40px)); bottom: calc(4% + clamp(20px, 2.5vw, 40px)); } }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px, 6vw, 96px); align-items: start; }
+.contact-statement { font-family: var(--font-head); font-size: clamp(26px, 3.2vw, 44px); line-height: 1.2; letter-spacing: .02em; text-transform: uppercase; color: var(--marine); margin-bottom: 28px; }
+.contact-intro .hair { border: 0; border-top: 1px solid var(--line-light); margin: 0 0 24px; }
+.contact-card { background: var(--ivory); border: 1px solid var(--line-light); padding: clamp(22px, 3vw, 40px); }
+.contact-card .tabs-panel { max-width: none; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
