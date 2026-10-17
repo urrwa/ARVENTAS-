@@ -812,3 +812,9 @@ h1, h2, h3, h4, p, li, summary, button { overflow-wrap: break-word; hyphens: aut
 /* Seiten-Scrollbalken ausblenden (Scrollen funktioniert weiterhin) */
 html { scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+/* Sticky-Cover: Abschnitt bleibt am unteren Rand stehen, der nächste schiebt sich darüber */
+@media (prefers-reduced-motion: no-preference) {
+  .stick-under { position: sticky; bottom: 0; z-index: 0; }
+  .cover-next { position: relative; z-index: 1; }
+}

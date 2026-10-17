@@ -120,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* 08 – Persönliche Verantwortung */}
-      <section className="sec dark" aria-labelledby="h-team">
+      <section className="sec dark stick-under" aria-labelledby="h-team">
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Menschen</p><h2 id="h-team" className="h2 rv">Daten prüfen.<br />Menschen entscheiden.</h2><p className="lead rv">Persönliche Verantwortung hinter jeder freigegebenen Analyse.</p></header>
           <div className="team">
@@ -136,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* 09 – Deutschlandweit */}
-      <section className="sec ivory" aria-labelledby="h-de">
+      <section className="sec ivory cover-next" aria-labelledby="h-de">
         <div className="wrap">
           <SectionHead eyebrow="Deutschlandweit" title="Regional verstehen. Deutschlandweit verbinden." lead="Immobilienkompetenz für Eigentümer und Investoren in ganz Deutschland." />
           <GermanyRegionSelector />
