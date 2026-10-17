@@ -55,9 +55,10 @@ export default function Home() {
       <ScrollFilm />
 
       {/* 02 – Zwei visuelle Zugänge */}
-      <section id="zugaenge" className="sec dark" aria-labelledby="h-zug">
+      <section id="zugaenge" className="sec dark doors-sec" aria-labelledby="h-zug">
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Zwei Wege</p><h2 id="h-zug" className="h2 rv">Was möchten Sie bewegen?</h2></header>
+        </div>
           <div className="doors">
             <Link to="/immobilie-verkaufen" className="door rv">
               <img src="/media/facade-altbau.jpg" alt="Gepflegte Altbaufassade (Beispielbild)" loading="lazy" />
@@ -68,7 +69,6 @@ export default function Home() {
               <div className="door-txt"><p className="eyebrow">Für Investoren</p><h3>Passende Immobilien finden.</h3><p>Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt.</p><span className="btn btn-gold">Suchprofil erstellen <span className="arr" aria-hidden="true">→</span></span></div>
             </Link>
           </div>
-        </div>
       </section>
 
       {/* 03 – Drei Stärken */}

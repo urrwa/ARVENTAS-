@@ -945,3 +945,13 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .over-photo .contact-intro { position: sticky; top: 120px; }
 }
 @media (min-width: 861px) and (prefers-reduced-motion: no-preference) { .over-photo + .sec { padding-top: clamp(64px, 8vw, 120px) !important; } }
+
+/* Zwei Wege: Vollflächig und ruhig */
+.doors-sec { padding-bottom: 0; }
+.doors-sec .sec-head { margin-bottom: clamp(20px, 3vw, 40px); }
+.doors-sec .doors { gap: 2px; }
+.doors-sec .door { min-height: calc(100svh - var(--header-h)); }
+.doors-sec .door img { clip-path: inset(0); transform: scale(1.04); transition: transform 2400ms cubic-bezier(.2, .6, .1, 1), filter 900ms ease; }
+.doors-sec .door:hover img { transform: scale(1.1); filter: brightness(.55); }
+.doors-sec .door-txt { left: clamp(28px, 4.5vw, 72px); right: clamp(28px, 4.5vw, 72px); bottom: clamp(32px, 5vw, 80px); }
+@media (max-width: 860px) { .doors-sec .door { min-height: 82svh; } }
