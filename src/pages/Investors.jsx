@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import WordZoom from '../components/WordZoom.jsx'
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq, Tabs } from '../components/ui.jsx'
@@ -20,11 +21,11 @@ export default function InvestorsPage() {
         <div className="btn-row"><Btn to="/investorenkreis">Suchprofil erstellen</Btn></div>
       </PageHero>
 
-      <section className="sec ivory">
-        <div className="wrap two">
-          <div><SectionHead eyebrow="Off-Market" title="Off-Market verständlich erklärt." normal />
-            <p className="rv">Off-Market-Immobilien werden nicht über öffentliche Portale angeboten. Sie werden gezielt an passende Interessenten vermittelt. Das bedeutet nicht, dass sie automatisch besser sind. Entscheidend bleibt eine sorgfältige Prüfung.</p></div>
-          <div className="imgf rv" style={{ aspectRatio: '4/3' }}><img src="/media/haus-abend.jpg" alt="Wohnhaus im Abendlicht (Beispielbild)" loading="lazy" /></div>
+      <WordZoom left="Off-Market" right="verständlich erklärt." images={['/media/haus-abend.jpg', '/media/stadt-luftbild.jpg', '/media/facade-altbau.jpg', '/media/interior-sessel.jpg']} />
+      <section className="sec ivory wz-after">
+        <div className="wrap">
+          <p className="eyebrow">Off-Market</p>
+          <p className="rv">Off-Market-Immobilien werden nicht über öffentliche Portale angeboten. Sie werden gezielt an passende Interessenten vermittelt. Das bedeutet nicht, dass sie automatisch besser sind. Entscheidend bleibt eine sorgfältige Prüfung.</p>
         </div>
       </section>
 
