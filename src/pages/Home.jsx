@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import ScrollFilm from '../components/ScrollFilm.jsx'
@@ -40,6 +41,14 @@ function ConnectSvg() {
 }
 
 export default function Home() {
+  // Sticky-Cover: Abschnitt bleibt stehen, sobald sein Unterkante den unteren Bildrand erreicht (top negativ bei hohen Abschnitten).
+  useEffect(() => {
+    const els = Array.from(document.querySelectorAll('.stick-under'))
+    const set = () => els.forEach((el) => { el.style.top = Math.min(0, window.innerHeight - el.offsetHeight) + 'px' })
+    set()
+    window.addEventListener('resize', set)
+    return () => window.removeEventListener('resize', set)
+  }, [])
   return (
     <>
       <Seo title="ARVENTAS | Off-Market-Immobilien deutschlandweit" description="Ausgewählte Off-Market-Immobilien, fundierte Objektanalysen und persönliche Begleitung für Eigentümer und Investoren in ganz Deutschland." />
