@@ -955,3 +955,9 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .doors-sec .door:hover img { transform: scale(1.1); filter: brightness(.55); }
 .doors-sec .door-txt { left: clamp(28px, 4.5vw, 72px); right: clamp(28px, 4.5vw, 72px); bottom: clamp(32px, 5vw, 80px); }
 @media (max-width: 860px) { .doors-sec .door { min-height: 82svh; } }
+
+/* Bilder biegen sich mit der Scrollgeschwindigkeit; Spalten laufen leicht versetzt */
+.tri-vis, .hs-img { transform-origin: 50% 50%; transform: perspective(900px) rotateX(calc(var(--sv, 0) * 16deg)) scaleY(calc(1 - var(--sa, 0) * .05)); border-radius: calc(var(--sa, 0) * 70px) / calc(var(--sa, 0) * 34px); will-change: transform; }
+.tri-item:nth-child(odd) { translate: 0 calc(var(--sv, 0) * -14px); }
+.tri-item:nth-child(even) { translate: 0 calc(var(--sv, 0) * 14px); }
+@media (prefers-reduced-motion: reduce) { .tri-vis, .hs-img { transform: none; border-radius: 0; } .tri-item { translate: none !important; } }

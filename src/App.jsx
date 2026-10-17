@@ -61,12 +61,34 @@ function useMouseParallax() {
   }, [])
 }
 
+// Scroll-Geschwindigkeit als CSS-Variable (--sv: -1..1, --sa: 0..1): Bilder biegen sich beim Scrollen leicht.
+function useScrollBend() {
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const root = document.documentElement
+    let last = window.scrollY, v = 0, raf = 0
+    const tick = () => {
+      const y = window.scrollY
+      const target = Math.max(-1, Math.min(1, (y - last) / 38))
+      last = y
+      v += (target - v) * 0.14
+      if (Math.abs(v) < 0.002 && Math.abs(target) < 0.002) v = 0
+      root.style.setProperty('--sv', v.toFixed(4)); root.style.setProperty('--sa', Math.abs(v).toFixed(4))
+      raf = v !== 0 || target !== 0 ? requestAnimationFrame(tick) : 0
+    }
+    const on = () => { if (!raf) raf = requestAnimationFrame(tick) }
+    window.addEventListener('scroll', on, { passive: true })
+    return () => { window.removeEventListener('scroll', on); raf && cancelAnimationFrame(raf) }
+  }, [])
+}
+
 function Shell() {
   const { pathname, hash } = useLocation()
   const { open } = useMenu()
   const main = useRef(null)
   useReveal(pathname)
   useMouseParallax()
+  useScrollBend()
   useEffect(() => {
     if (hash) {
       const el = document.getElementById(decodeURIComponent(hash.slice(1)))
