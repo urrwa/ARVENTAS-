@@ -574,3 +574,11 @@ html.menu-open { overflow: hidden; }
 .two > div > .sec-head { margin-bottom: clamp(18px, 2vw, 28px); }
 /* Nur geladene Schriftschnitte verwenden (Inter 400/500/600): kein künstlich erzeugtes Fett */
 b, strong, th { font-weight: 600; }
+
+/* Hero-Text passt sich der Fensterhöhe an, damit er auch in niedrigen oder gezoomten Fenstern nicht in den Header ragt */
+.cap.open { max-width: min(1200px, 100%); bottom: clamp(52px, 9vh, 110px); }
+.film-h1 { font-size: clamp(34px, min(4.4vw, 7.6vh), 64px); line-height: 1.08; }
+.cap.open .lead { margin-top: clamp(10px, 2vh, 20px); font-size: clamp(15px, min(1.4vw, 2.6vh), 19px); }
+.cap.open .btn-row { margin-top: clamp(16px, 3vh, 28px); }
+.cap.open .eyebrow { margin-bottom: clamp(10px, 2vh, 20px); }
+@media (max-height: 560px) { .cap.open .lead { display: none; } }
