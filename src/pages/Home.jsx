@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
+import HoverList from '../components/HoverList.jsx'
 import ScrollFilm from '../components/ScrollFilm.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
@@ -75,11 +76,11 @@ export default function Home() {
       <section className="sec ivory" aria-labelledby="h-str">
         <div className="wrap">
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
-          <div className="tri">
-            <article className="tri-item rv"><div className="tri-vis"><img src="/media/stadt-luftbild.jpg" alt="Luftbild einer Stadt (Beispielbild)" loading="lazy" /></div><p className="tri-n">01</p><h3>Zugang</h3><p>Immobilien abseits öffentlicher Portale.</p></article>
-            <article className="tri-item rv" style={{ '--d': 120 }}><div className="tri-vis doc"><DocSvg /></div><p className="tri-n">02</p><h3>Analyse</h3><p>Wert, Potenzial und Risiken nachvollziehbar einordnen.</p></article>
-            <article className="tri-item rv" style={{ '--d': 240 }}><div className="tri-vis doc"><ConnectSvg /></div><p className="tri-n">03</p><h3>Abwicklung</h3><p>Persönlich begleitet zur fundierten Entscheidung.</p></article>
-          </div>
+          <HoverList items={[
+            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/stadt-luftbild.jpg' },
+            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/planunterlagen.jpg' },
+            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/vertrag-unterzeichnung.jpg' },
+          ]} />
         </div>
       </section>
 

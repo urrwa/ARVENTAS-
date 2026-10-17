@@ -961,3 +961,25 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .tri-item:nth-child(odd) { translate: 0 calc(var(--sv, 0) * -14px); }
 .tri-item:nth-child(even) { translate: 0 calc(var(--sv, 0) * 14px); }
 @media (prefers-reduced-motion: reduce) { .tri-vis, .hs-img { transform: none; border-radius: 0; } .tri-item { translate: none !important; } }
+
+/* Hover-Liste mit folgendem Bild */
+.hl { position: relative; border-top: 1px solid var(--line-light); }
+.hl-row { position: relative; display: grid; grid-template-columns: 56px minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: clamp(12px, 2vw, 32px); padding: clamp(26px, 3.4vw, 48px) 0; border-bottom: 1px solid var(--line-light); transition: opacity 500ms ease; outline: none; cursor: default; }
+.hl.has-act .hl-row:not(.act) { opacity: .3; }
+.hl-n { font-size: 12px; letter-spacing: .2em; color: var(--marine); }
+.hl-row h3 { font-family: var(--font-head); font-weight: 400; font-size: clamp(26px, 3.6vw, 52px); text-transform: uppercase; letter-spacing: .03em; transition: transform 700ms cubic-bezier(.2, .7, .1, 1); }
+.hl-row.act h3 { transform: translateX(14px); }
+.hl-row p { color: var(--ink-soft); margin: 0; max-width: 36ch; }
+.hl-pic { position: absolute; left: 0; top: 0; width: clamp(180px, 20vw, 300px); aspect-ratio: 4/3; pointer-events: none; z-index: 5; overflow: hidden; opacity: 0; transition: opacity 400ms ease; will-change: transform; }
+.hl.has-act .hl-pic { opacity: 1; }
+.hl-pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.15); transition: opacity 500ms ease, transform 900ms cubic-bezier(.2, .7, .1, 1); }
+.hl-pic img.on { opacity: 1; transform: none; }
+.hl-thumb { display: none; }
+@media (hover: none) {
+  .hl-pic { display: none; }
+  .hl-row { grid-template-columns: 40px 1fr; row-gap: 12px; }
+  .hl-row p { grid-column: 2; }
+  .hl-thumb { display: block; grid-column: 2; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+}
+@media (max-width: 860px) and (hover: hover) { .hl-row { grid-template-columns: 40px 1fr; } .hl-row p { grid-column: 2; } }
+@media (prefers-reduced-motion: reduce) { .hl-row, .hl-row h3, .hl-pic img { transition: none; } }
