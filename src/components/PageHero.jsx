@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import { Brandify } from './Brand.jsx'
 
-export default function PageHero({ crumb, title, lead, children }) {
+export default function PageHero({ crumb, title, lead, children, image }) {
   return (
-    <section className="phero dark">
+    <section className={`phero dark${image ? ' has-img' : ''}`}>
+      {image && <img className="phero-img" src={image} alt="" loading="eager" />}
       <div className="wrap">
         <p className="crumbs"><Link to="/">Start</Link> / {crumb}</p>
         <h1 className="h1 rv">{title}</h1>

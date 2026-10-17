@@ -18,3 +18,5 @@ Alle Dateien liegen in `public/media/`. Status „Platzhalter“ bedeutet: vor V
 | Schriften Playfair Display, Inter | gesamte Seite | WOFF/WOFF2 via @fontsource | Open Font License | Frei nutzbar | System-Schriften | – |
 
 Keine erfundenen Bild-URLs, keine Chat-Dateiverweise als öffentliche Adressen. Beispielbilder sind im Seitentext als solche gekennzeichnet.
+
+- `kontakt-haus.jpg`: Hero der Kontaktseite. KI-generiert (Higgsfield), keine reale Immobilie; vor Livegang durch echtes Foto ersetzen oder als KI-Bild kennzeichnen.
