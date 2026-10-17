@@ -188,7 +188,7 @@ export default function ScrollFilm() {
         <div className="cap" id="c-begleitung"><p className="eyebrow">04 — Transaktionsbegleitung</p><p className="line">Persönlich begleitet zur fundierten Entscheidung.</p></div>
         <div className="cap close" id="c-close">
           <p className="line">Werte schaffen. Zukunft bauen.</p>
-          <div className="btn-row"><a href="#zugaenge" className="btn btn-gold">Was möchten Sie bewegen? <span className="arr" aria-hidden="true">↓</span></a></div>
+          <div className="btn-row"><a href="#zugaenge" className="btn btn-gold">Was möchten Sie bewegen? <span className="arr down" aria-hidden="true">↓</span></a></div>
         </div>
         <div className="film-note">Illustrative Visualisierung – kein ARVENTAS-Projekt</div>
         <div className="hint" aria-hidden="true"><span>Scrollen</span><i /></div>

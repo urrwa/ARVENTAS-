@@ -86,7 +86,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ---------- Buttons ---------- */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 28px; border: 1px solid transparent; font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background var(--t-ui) ease, color var(--t-ui) ease, border-color var(--t-ui) ease; }
 .btn .arr { transition: transform var(--t-ui) ease; }
-.btn:hover .arr { transform: translateX(4px); }
 .btn-gold { background: var(--gold); color: var(--black); }
 .btn-gold:hover { background: var(--ivory); }
 .btn-marine { background: var(--marine); color: var(--ivory); }
@@ -536,3 +535,30 @@ html.menu-open { overflow: hidden; }
 
 .burger { transition: opacity var(--t-ui) ease; }
 .menu-open .burger { opacity: 0; }
+
+/* ---------- Pfeil-Buttons: Pill mit Pfeil-Chip (Hover: Chip füllt den Button, Pfeil läuft durch) ---------- */
+.btn:has(.arr) { --chip: var(--marine); --chip-fg: var(--ivory); --hover-fg: var(--ivory); position: relative; isolation: isolate; overflow: hidden; border-radius: 999px; padding: 0 7px 0 26px; gap: 16px; min-height: 52px; transition: color 350ms var(--ease) 80ms; }
+.btn-gold:has(.arr) { --chip: var(--black); --chip-fg: var(--ivory); --hover-fg: var(--ivory); }
+.btn-marine:has(.arr) { --chip: var(--gold); --chip-fg: var(--black); --hover-fg: var(--black); }
+.btn-line:has(.arr) { --chip: var(--marine); --chip-fg: var(--ivory); --hover-fg: var(--ivory); }
+.dark .btn-line:has(.arr), .black .btn-line:has(.arr), .hero .btn-line:has(.arr), .film .btn-line:has(.arr) { --chip: var(--ivory); --chip-fg: var(--marine); --hover-fg: var(--marine); }
+/* Füllung: wächst aus der Position des Chips */
+.btn:has(.arr)::before { content: ''; position: absolute; z-index: -1; right: 7px; top: 50%; width: 38px; height: 38px; margin-top: -19px; border-radius: 50%; background: var(--chip); transform: scale(1); transition: transform 650ms var(--ease); }
+.btn:has(.arr):hover::before, .btn:has(.arr):focus-visible::before, .door:hover .btn:has(.arr)::before, .door:focus-visible .btn:has(.arr)::before { transform: scale(16); }
+.btn:has(.arr):hover, .btn:has(.arr):focus-visible, .door:hover .btn:has(.arr), .door:focus-visible .btn:has(.arr) { color: var(--hover-fg); }
+/* Hover-Zustände der alten Buttons nicht mehr nötig */
+.btn-gold:has(.arr):hover, .btn-marine:has(.arr):hover, .btn-line:has(.arr):hover, .door:hover .btn-gold:has(.arr) { border-color: currentColor; }
+.btn-gold:has(.arr):hover { background: var(--gold); } .btn-marine:has(.arr):hover { background: var(--marine); } .btn-line:has(.arr):hover { background: transparent; }
+.btn-gold:has(.arr):hover { border-color: transparent; } .btn-marine:has(.arr):hover { border-color: transparent; }
+.dark .btn-line:has(.arr):hover, .black .btn-line:has(.arr):hover, .hero .btn-line:has(.arr):hover, .film .btn-line:has(.arr):hover { border-color: var(--ivory); }
+/* Chip mit zwei Pfeilen */
+.btn:has(.arr) .arr { position: relative; display: block; flex: none; width: 38px; height: 38px; border-radius: 50%; background: var(--chip); color: var(--chip-fg); font-size: 0; line-height: 0; overflow: hidden; z-index: 1; transform: none; }
+.btn:has(.arr) .arr::before, .btn:has(.arr) .arr::after { content: ''; position: absolute; inset: 0; background: currentColor; -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M13 6l6 6-6 6'/></svg>") center / 16px 16px no-repeat; mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M13 6l6 6-6 6'/></svg>") center / 16px 16px no-repeat; transition: transform 500ms var(--ease); }
+.btn:has(.arr) .arr::after { transform: translateX(-170%); }
+.btn:has(.arr):hover .arr::before, .btn:has(.arr):focus-visible .arr::before, .door:hover .btn:has(.arr) .arr::before { transform: translateX(170%); }
+.btn:has(.arr):hover .arr::after, .btn:has(.arr):focus-visible .arr::after, .door:hover .btn:has(.arr) .arr::after { transform: none; }
+.btn:has(.arr) .arr.down::before, .btn:has(.arr) .arr.down::after { rotate: 90deg; }
+@media (max-width: 560px) { .btn-row .btn:has(.arr) { justify-content: space-between; } }
+@media (prefers-reduced-motion: reduce) { .btn:has(.arr), .btn:has(.arr)::before, .btn:has(.arr) .arr::before, .btn:has(.arr) .arr::after { transition-duration: 1ms !important; transition-delay: 0s !important; } }
+.btn-gold:has(.arr):hover, .btn-gold:has(.arr):focus-visible, .door:hover .btn-gold:has(.arr) { background: var(--black); }
+.btn-marine:has(.arr):hover, .btn-marine:has(.arr):focus-visible { background: var(--gold); }
