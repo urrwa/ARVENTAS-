@@ -1078,3 +1078,16 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .pc-in .pc-card.wide .pc-cap p { max-width: 60ch; }
 @media (max-width: 860px) { .pc-in { grid-template-columns: 1fr; } .pc-in .pc-card.wide .pc-img { aspect-ratio: 4 / 5 !important; } }
 @media (prefers-reduced-motion: reduce) { .pc-in .pc-card { opacity: 1; transform: none; transition: none; } }
+
+/* Luxus-Variante: Karten abwechselnd versetzt, Überschrift über dem Foto */
+.pc-in .pc-card:nth-child(even) { margin-top: clamp(40px, 7vw, 110px); }
+.pc-in .pc-card.wide:nth-child(even) { margin-top: 0; }
+.pc-in .pc-card:nth-child(odd) { --row: 0; }
+@media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
+  .pc-sec .sec-head { margin-bottom: clamp(36px, 5vw, 72px); }
+  .pc-sec .sec-head .eyebrow, .pc-sec .sec-head .h2, .pc-sec .sec-head .lead { color: var(--ivory); }
+  .pc-sec .sec-head .eyebrow::before { background: var(--gold); }
+  .pc-in .pc-img::before { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(245, 243, 239, .45); z-index: 3; pointer-events: none; }
+  .pc-in .pc-cap { left: 28px; right: 28px; bottom: 28px; }
+  .pc-in .pc-card { margin-bottom: clamp(8px, 2vw, 28px); }
+}

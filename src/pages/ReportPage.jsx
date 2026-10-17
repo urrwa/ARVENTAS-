@@ -1,7 +1,7 @@
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq } from '../components/ui.jsx'
-import BlockGrid from '../components/BlockGrid.jsx'
+import ParallaxCards from '../components/ParallaxCards.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { REPORT_FAQ } from '../content/data.js'
@@ -26,14 +26,14 @@ export default function ReportPage() {
   return (
     <>
       <Seo title="Objektreport | ARVENTAS" description="Immobilien verstehen, Entscheidungen fundieren: der Objektreport mit Marktwerteinschätzung, Standort, Potenzial und Prüfhinweisen." />
-      <PageHero image="/media/planunterlagen.jpg" crumb="Objektreport" title="Immobilien verstehen. Entscheidungen fundieren." lead="Datenbasiert analysiert. Persönlich geprüft.">
+      <PageHero fadeOut blur image="/media/planunterlagen.jpg" crumb="Objektreport" title="Immobilien verstehen. Entscheidungen fundieren." lead="Datenbasiert analysiert. Persönlich geprüft.">
         <div className="btn-row"><Btn href="#muster" variant="line">Muster ansehen</Btn><Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 
-      <section className="sec ivory">
+      <section className="sec ivory over-photo pc-sec">
         <div className="wrap">
           <SectionHead eyebrow="Analysebausteine" title="Sechs Bausteine, ein Bild." normal />
-          <BlockGrid items={BLOCKS} />
+          <ParallaxCards inside items={BLOCKS.map(([title, text, img], i) => ({ title, text, img, ratio: i % 3 === 1 ? '3 / 4' : '4 / 5', speed: [1, 1.7, 0.8, 1.3, 0.9, 1.6][i] }))} />
         </div>
       </section>
 
