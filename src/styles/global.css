@@ -276,17 +276,23 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Deutschlandkarte ---------- */
 .germany { display: grid; grid-template-columns: minmax(260px, 420px) 1fr; gap: clamp(24px, 5vw, 80px); align-items: start; }
-.map-svg { width: 100%; max-width: 420px; height: auto; }
-.map-svg path { fill: var(--marine); stroke: var(--ivory); stroke-width: 1.2; cursor: pointer; transition: fill var(--t-ui) ease; }
-.map-svg path:hover { stroke: var(--gold); stroke-width: 3; }
+.map-wrap { position: relative; max-width: 420px; width: 100%; }
+.map-svg { width: 100%; height: auto; display: block; }
+.map-svg path { fill: rgba(25, 37, 55, .09); stroke: var(--ivory); stroke-width: 1.4; cursor: pointer; transition: fill var(--t-ui) ease; outline: none; }
+.map-svg path:hover { fill: rgba(176, 158, 128, .55); }
 .map-svg path[aria-pressed=true] { fill: var(--gold); }
-.map-svg path:focus-visible { outline: none; stroke: var(--gold); stroke-width: 4; }
+.map-svg path:focus-visible { fill: rgba(176, 158, 128, .55); stroke: var(--marine); stroke-width: 2.5; }
+.map-card { position: absolute; right: 0; top: 0; display: grid; gap: 2px; padding: 14px 18px; background: var(--ivory); border: 1px solid var(--line-light); min-width: 190px; opacity: 0; transform: translateY(6px); transition: opacity var(--t-ui) ease, transform var(--t-ui) ease; pointer-events: none; }
+.map-card[data-on="1"] { opacity: 1; transform: none; }
+.map-card strong { font-family: var(--font-head); font-weight: 500; font-size: 20px; color: var(--marine); }
+.reg-more { margin: 14px 0 22px; }
+.reg-more summary { cursor: pointer; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--marine); padding: 10px 0; min-height: 44px; }
 .reg-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 20px; margin: 18px 0 26px; }
 .reg-list button { text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line-light); padding: 12px 0; cursor: pointer; font-size: 15px; color: var(--ink); min-height: 44px; transition: color var(--t-ui) ease; }
 .reg-list button:hover { color: var(--marine); font-weight: 500; }
 .reg-list button[aria-pressed=true] { font-weight: 600; color: var(--marine); border-bottom-color: var(--gold); }
 .reg-sel { font-family: var(--font-head); font-size: clamp(22px, 2.4vw, 32px); min-height: 1.3em; margin-bottom: 4px; }
-@media (max-width: 860px) { .germany { grid-template-columns: 1fr; } .map-svg { max-width: 300px; margin: 0 auto; } }
+@media (max-width: 860px) { .germany { grid-template-columns: 1fr; } .map-wrap { max-width: 320px; margin: 0 auto; } }
 
 /* ---------- Wissen ---------- */
 .know { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(16px, 2.4vw, 36px); }

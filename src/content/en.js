@@ -316,6 +316,8 @@ export default {
  "Nicht nur ein Wert.": "Not just a value.",
  "Niedersachsen": "Lower Saxony",
  "Noch keine Region gewählt": "No region selected yet",
+ "Landeshauptstadt": "State capital",
+ "Liste anzeigen": "Show list",
  "Noch offen": "Still open",
  "Norddeutschland": "Northern Germany",
  "Nordrhein-Westfalen": "North Rhine-Westphalia",
