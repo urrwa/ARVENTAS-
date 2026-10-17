@@ -795,3 +795,20 @@ b, strong, th { font-weight: 600; }
 .nav a.nl { font-size: 11.5px; letter-spacing: .14em; padding: 6px 0; }
 .nav { gap: clamp(14px, 1.8vw, 28px); }
 .hdr .nav .btn-gold { min-height: 36px; padding: 0 18px; font-size: 11px; letter-spacing: .12em; }
+
+/* Schmale Bildschirme: nichts darf seitlich überstehen */
+html, body { overflow-x: clip; }
+h1, h2, h3, h4, p, li, summary, button { overflow-wrap: break-word; hyphens: auto; }
+@media (max-width: 360px) {
+  .hdr-in { gap: 8px; padding-inline: 14px; }
+  .logo img { height: 40px; }
+  .hdr .lang, .hdr .lang button { font-size: 11px; }
+  .hdr-in > * { min-width: 0; }
+}
+@media (max-width: 360px) { .lang button { min-width: 30px; padding: 0 3px; letter-spacing: .06em; } .burger { width: 40px; } .logo img { height: 36px; } }
+.wrap, .wrap > *, .two > *, .sec-head, .grid-2 > * { min-width: 0; max-width: 100%; }
+.ftr-top > *, .ftr-cols > * { min-width: 0; }
+@media (max-width: 360px) { .ftr-cols { grid-template-columns: 1fr; } .ftr-slogan span { display: block; } }
+/* Seiten-Scrollbalken ausblenden (Scrollen funktioniert weiterhin) */
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { display: none; width: 0; height: 0; }
