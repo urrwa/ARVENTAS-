@@ -62,11 +62,11 @@ export default function Home() {
         </div>
           <div className="doors">
             <Link to="/immobilie-verkaufen" className="door rv">
-              <img src="/media/facade-altbau.jpg" alt="Gepflegte Altbaufassade (Beispielbild)" loading="lazy" />
+              <img src="/media/facade-altbau.webp" alt="Gepflegte Altbaufassade (Beispielbild)" loading="lazy" />
               <div className="door-txt"><p className="eyebrow">Für Eigentümer</p><h3>Meine Immobilie verkaufen.</h3><p>Diskret. Strukturiert. Persönlich.</p><span className="btn btn-gold">Objektreport anfragen <span className="arr" aria-hidden="true">→</span></span></div>
             </Link>
             <Link to="/kapitalanlage-immobilien" className="door rv" style={{ '--d': 120 }}>
-              <img src="/media/haus-abend.jpg" alt="Wohnhaus im Abendlicht (Beispielbild)" loading="lazy" />
+              <img src="/media/haus-abend.webp" alt="Wohnhaus im Abendlicht (Beispielbild)" loading="lazy" />
               <div className="door-txt"><p className="eyebrow">Für Investoren</p><h3>Passende Immobilien finden.</h3><p>Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt.</p><span className="btn btn-gold">Suchprofil erstellen <span className="arr" aria-hidden="true">→</span></span></div>
             </Link>
           </div>
@@ -77,9 +77,9 @@ export default function Home() {
         <div className="wrap">
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
           <HoverList items={[
-            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/stadt-luftbild.jpg' },
-            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/planunterlagen.jpg' },
-            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/vertrag-unterzeichnung.jpg' },
+            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/stadt-luftbild.webp' },
+            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/planunterlagen.webp' },
+            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/vertrag-unterzeichnung.webp' },
           ]} />
         </div>
       </section>
@@ -110,9 +110,9 @@ export default function Home() {
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Für Eigentümer</p><h2 id="h-own" className="h2 rv">Ihr Eigentum.<br />Kein öffentliches Schaufenster.</h2><p className="lead rv">Wert, Potenziale und Verkaufswege klären – mit einem persönlichen Ansprechpartner.</p></header>
           <div className="windows rv" aria-hidden="true">
-            <div><img src="/media/interior-sessel.jpg" alt="" loading="lazy" /></div>
-            <div><img src="/media/facade-altbau.jpg" alt="" loading="lazy" /></div>
-            <div><img src="/media/gebaeude-sanierung.jpg" alt="" loading="lazy" /></div>
+            <div><img src="/media/interior-sessel.webp" alt="" loading="lazy" /></div>
+            <div><img src="/media/facade-altbau.webp" alt="" loading="lazy" /></div>
+            <div><img src="/media/gebaeude-sanierung.webp" alt="" loading="lazy" /></div>
           </div>
           <ul className="labels rv"><li><span>01</span>Wert verstehen.</li><li><span>02</span>Optionen prüfen.</li><li><span>03</span>Diskret vermarkten.</li></ul>
           <div className="btn-row"><Btn to="/immobilie-verkaufen#anfrage">Objektprüfung anfragen</Btn></div>
@@ -158,10 +158,10 @@ export default function Home() {
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Wissen</p><h2 id="h-wis" className="h2 rv">Hinter die Fassade schauen.</h2></header>
           <div className="know rv">
-            <Link className="know-main" to="/wissen/off-market-verstehen"><img src="/media/stadt-luftbild.jpg" alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>Off-Market verstehen.</h3></div></Link>
+            <Link className="know-main" to="/wissen/off-market-verstehen"><img src="/media/stadt-luftbild.webp" alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>Off-Market verstehen.</h3></div></Link>
             <div className="know-col">
-              <Link className="know-sm" to="/wissen/immobilien-bewerten"><img src="/media/planunterlagen.jpg" alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>Immobilien bewerten.</h3></div></Link>
-              <Link className="know-sm" to="/wissen/potenziale-einordnen"><img src="/media/gebaeude-sanierung.jpg" alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>Potenziale einordnen.</h3></div></Link>
+              <Link className="know-sm" to="/wissen/immobilien-bewerten"><img src="/media/planunterlagen.webp" alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>Immobilien bewerten.</h3></div></Link>
+              <Link className="know-sm" to="/wissen/potenziale-einordnen"><img src="/media/gebaeude-sanierung.webp" alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>Potenziale einordnen.</h3></div></Link>
             </div>
           </div>
           <div className="btn-row"><Btn to="/wissen">Wissen entdecken</Btn></div>
@@ -179,7 +179,7 @@ export default function Home() {
               <Link to="/investorenkreis">Investmentprofil erstellen <span className="arr" aria-hidden="true">→</span></Link>
               <Link to="/partner#anfrage">Partnerschaft besprechen <span className="arr" aria-hidden="true">→</span></Link>
             </nav>
-            <div className="choose-img rv"><img src="/media/facade-altbau.jpg" alt="" loading="lazy" style={{ objectPosition: '50% 20%' }} /></div>
+            <div className="choose-img rv"><img src="/media/facade-altbau.webp" alt="" loading="lazy" style={{ objectPosition: '50% 20%' }} /></div>
           </div>
           <p className="small" style={{ marginTop: 20 }}>Die Auswahl führt zum passenden Formular.</p>
         </div>

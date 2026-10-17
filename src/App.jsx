@@ -1,22 +1,23 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
+import { lazy, Suspense, useEffect, useRef } from 'react'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { ConsentProvider } from './components/Consent.jsx'
 import { MenuProvider, useMenu } from './components/MenuContext.jsx'
 import MenuPanel from './components/MenuPanel.jsx'
 import Home from './pages/Home.jsx'
-import Owners from './pages/Owners.jsx'
-import InvestorsPage from './pages/Investors.jsx'
-import InvestorCircle from './pages/InvestorCircle.jsx'
-import ReportPage from './pages/ReportPage.jsx'
-import About from './pages/About.jsx'
-import Partners from './pages/Partners.jsx'
-import Knowledge from './pages/Knowledge.jsx'
-import Article from './pages/Article.jsx'
-import Contact from './pages/Contact.jsx'
-import { Impressum, Datenschutz } from './pages/Legal.jsx'
-import NotFound from './pages/NotFound.jsx'
+const Owners = lazy(() => import('./pages/Owners.jsx'))
+const InvestorsPage = lazy(() => import('./pages/Investors.jsx'))
+const InvestorCircle = lazy(() => import('./pages/InvestorCircle.jsx'))
+const ReportPage = lazy(() => import('./pages/ReportPage.jsx'))
+const About = lazy(() => import('./pages/About.jsx'))
+const Partners = lazy(() => import('./pages/Partners.jsx'))
+const Knowledge = lazy(() => import('./pages/Knowledge.jsx'))
+const Article = lazy(() => import('./pages/Article.jsx'))
+const Contact = lazy(() => import('./pages/Contact.jsx'))
+const Impressum = lazy(() => import('./pages/Legal.jsx').then((m) => ({ default: m.Impressum })))
+const Datenschutz = lazy(() => import('./pages/Legal.jsx').then((m) => ({ default: m.Datenschutz })))
+const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 
 // Scroll-Reveal (400–700 ms, siehe global.css). Beobachtet nach jedem Routenwechsel alle neuen .rv/.tl/.tri-Elemente.
 function useReveal(key) {
@@ -64,7 +65,7 @@ function useMouseParallax() {
 // Scroll-Geschwindigkeit als CSS-Variable (--sv: -1..1, --sa: 0..1): Bilder biegen sich beim Scrollen leicht.
 function useScrollBend() {
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.matchMedia('(hover: hover)').matches) return
     const root = document.documentElement
     let last = window.scrollY, v = 0, raf = 0
     const tick = () => {
@@ -104,6 +105,7 @@ function Shell() {
       <Header />
       <div className="page" inert={open || undefined}>
       <main id="main" ref={main} tabIndex={-1} style={{ outline: 'none' }}>
+        <Suspense fallback={<div style={{ minHeight: '100svh' }} />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/immobilie-verkaufen" element={<Owners />} />
@@ -119,6 +121,7 @@ function Shell() {
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </main>
       <Footer />
       </div>

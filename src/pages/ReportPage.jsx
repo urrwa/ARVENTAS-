@@ -7,12 +7,12 @@ import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { REPORT_FAQ } from '../content/data.js'
 
 const BLOCKS = [
-  ['Marktwert', 'Einordnung des Werts anhand nachvollziehbarer Verfahren.', '/media/baustein-marktwert.jpg'],
-  ['Standort', 'Beschreibung von Lage, Umfeld und Entwicklung.', '/media/baustein-lage.jpg'],
-  ['Potenzial', 'Möglichkeiten als Prüffragen, nicht als Zusage.', '/media/baustein-potenzial.jpg'],
-  ['Wirtschaftlichkeit', 'Szenarien, die den Einfluss von Annahmen zeigen.', '/media/baustein-rentabilitaet.jpg'],
-  ['Prüfhinweise', 'Offene Punkte, die vor einer Entscheidung zu klären sind.', '/media/baustein-pruefhinweise.jpg'],
-  ['Nachfrage', 'Passende Suchprofile, ohne Käuferzahlen.', '/media/baustein-nachfrage.jpg'],
+  ['Marktwert', 'Einordnung des Werts anhand nachvollziehbarer Verfahren.', '/media/baustein-marktwert.webp'],
+  ['Standort', 'Beschreibung von Lage, Umfeld und Entwicklung.', '/media/baustein-lage.webp'],
+  ['Potenzial', 'Möglichkeiten als Prüffragen, nicht als Zusage.', '/media/baustein-potenzial.webp'],
+  ['Wirtschaftlichkeit', 'Szenarien, die den Einfluss von Annahmen zeigen.', '/media/baustein-rentabilitaet.webp'],
+  ['Prüfhinweise', 'Offene Punkte, die vor einer Entscheidung zu klären sind.', '/media/baustein-pruefhinweise.webp'],
+  ['Nachfrage', 'Passende Suchprofile, ohne Käuferzahlen.', '/media/baustein-nachfrage.webp'],
 ]
 const FLOW = [
   { t: 'Anfrage', d: 'Sie schildern Ihr Anliegen.' },
@@ -26,7 +26,7 @@ export default function ReportPage() {
   return (
     <>
       <Seo title="Objektreport | ARVENTAS" description="Immobilien verstehen, Entscheidungen fundieren: der Objektreport mit Marktwerteinschätzung, Standort, Potenzial und Prüfhinweisen." />
-      <PageHero fadeOut blur image="/media/planunterlagen.jpg" crumb="Objektreport" title="Immobilien verstehen. Entscheidungen fundieren." lead="Datenbasiert analysiert. Persönlich geprüft.">
+      <PageHero fadeOut blur image="/media/planunterlagen.webp" crumb="Objektreport" title="Immobilien verstehen. Entscheidungen fundieren." lead="Datenbasiert analysiert. Persönlich geprüft.">
         <div className="btn-row"><Btn href="#muster" variant="line">Muster ansehen</Btn><Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 

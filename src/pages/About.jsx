@@ -10,7 +10,7 @@ export default function About() {
   return (
     <>
       <Seo title="Über uns | ARVENTAS" description="Wer ARVENTAS ist: aktuelles Off-Market-Geschäftsmodell, Mission und Arbeitsweise, Werte und deutschlandweiter Tätigkeitsbereich." />
-      <PageHero tall image="/media/besprechung.jpg" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
+      <PageHero tall image="/media/besprechung.webp" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
 
       <div className="cover-over">
       <section className="sec ivory about-big-sec">
@@ -27,17 +27,17 @@ export default function About() {
         </div>
       </section>
 
-      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/kontakt-haus.jpg" />
+      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/kontakt-haus.webp" />
 
       <section className="sec ivory">
         <div className="wrap">
           <SectionHead eyebrow="Aktuelles Geschäftsmodell" title="Zugang, Analyse, Matching, Begleitung." normal />
         </div>
         <HScroll items={[
-          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/haus-abend.jpg' },
-          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/planunterlagen.jpg' },
-          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/notizbuch.jpg' },
-          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/vertrag-unterzeichnung.jpg' },
+          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/haus-abend.webp' },
+          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/planunterlagen.webp' },
+          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/notizbuch.webp' },
+          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/vertrag-unterzeichnung.webp' },
         ]} />
         <div className="wrap"><p className="rv" style={{ marginTop: 24, maxWidth: '62ch' }}>Die interne KI-Technologie unterstützt Objektanalysen und Prozesse. Sie ist kein öffentlich verkauftes Softwareprodukt.</p></div>
       </section>

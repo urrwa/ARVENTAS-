@@ -11,7 +11,7 @@ export default function Knowledge() {
   return (
     <>
       <Seo title="Wissen | ARVENTAS" description="Wissen und Marktinformationen: Off-Market verstehen, Immobilien bewerten, Potenziale einordnen." />
-      <PageHero image="/media/notizbuch.jpg" crumb="Wissen" title="Hinter die Fassade schauen." lead="Off-Market verstehen. Immobilien bewerten. Potenziale einordnen." />
+      <PageHero image="/media/notizbuch.webp" crumb="Wissen" title="Hinter die Fassade schauen." lead="Off-Market verstehen. Immobilien bewerten. Potenziale einordnen." />
       <section className="sec ivory">
         <div className="wrap">
           <div className="ktabs">
@@ -34,7 +34,7 @@ export default function Knowledge() {
               <span className="kf-cap">{cat}</span>
               {CATEGORIES.map((c) => {
                 const a = c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c)
-                return <img key={c} className={cat === c ? 'on' : ''} src={a ? a.img : '/media/notizbuch.jpg'} alt="" loading="lazy" />
+                return <img key={c} className={cat === c ? 'on' : ''} src={a ? a.img : '/media/notizbuch.webp'} alt="" loading="lazy" />
               })}
             </div>
           </div>

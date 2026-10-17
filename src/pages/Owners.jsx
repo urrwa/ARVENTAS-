@@ -20,7 +20,7 @@ export default function Owners() {
   return (
     <>
       <Seo title="Immobilie verkaufen | ARVENTAS" description="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen – persönlich begleitet, deutschlandweit." />
-      <PageHero image="/media/facade-altbau.jpg" crumb="Für Eigentümer" title="Ihre Immobilie. Unser Marktverständnis." lead="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.">
+      <PageHero image="/media/facade-altbau.webp" crumb="Für Eigentümer" title="Ihre Immobilie. Unser Marktverständnis." lead="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.">
         <div className="btn-row"><Btn href="#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 
@@ -28,9 +28,9 @@ export default function Owners() {
         <div className="wrap">
           <SectionHead eyebrow="Erzählstruktur" title="Drei Schritte zur Klarheit." />
           <StepRows items={[
-            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/besprechung.jpg' },
-            { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', img: '/media/planunterlagen.jpg' },
-            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/vertrag-unterzeichnung.jpg' },
+            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/besprechung.webp' },
+            { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', img: '/media/planunterlagen.webp' },
+            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/vertrag-unterzeichnung.webp' },
           ]} />
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function Owners() {
           <div><SectionHead eyebrow="Diskreter Verkaufsansatz" title="Kein öffentliches Schaufenster." normal />
             <p className="rv">Ihr Objekt wird nicht über öffentliche Portale beworben. Der Kreis der Interessenten wird gezielt ausgewählt. Konkrete Adressen werden nicht öffentlich gezeigt.</p>
             <div className="btn-row"><Btn to="/objektreport">Objektreport ansehen</Btn></div></div>
-          <div className="imgf rv" style={{ aspectRatio: '4/3' }}><img src="/media/facade-altbau.jpg" alt="Altbaufassade (Beispielbild)" loading="lazy" /></div>
+          <div className="imgf rv" style={{ aspectRatio: '4/3' }}><img src="/media/facade-altbau.webp" alt="Altbaufassade (Beispielbild)" loading="lazy" /></div>
         </div>
       </section>
 

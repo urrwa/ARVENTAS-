@@ -120,7 +120,8 @@ export default function ScrollFilm() {
     window.__introDone = true
     window.dispatchEvent(new Event('arventas:intro'))
 
-    fetch(`${BASE}frames/manifest.json`).then((r) => r.json()).then((m) => {
+    // Frames erst nach dem ersten Bild laden, damit Poster/Text (LCP) Vorrang haben.
+    const startFrames = () => fetch(`${BASE}frames/manifest.json`).then((r) => r.json()).then((m) => {
       if (dead) return
       T = m.t; N = m.count
       CAPS.forEach((c) => {
@@ -134,6 +135,9 @@ export default function ScrollFilm() {
       window.addEventListener('resize', onResize)
       cleanups.push(() => { window.removeEventListener('scroll', kick); window.removeEventListener('resize', onResize) })
     }).catch(() => { /* ohne Frames: Vorhang trotzdem öffnen */ ready = true })
+    const delay = window.innerWidth < 860 ? 1800 : 700
+    const t0 = setTimeout(startFrames, delay)
+    cleanups.push(() => clearTimeout(t0))
     return () => {
       dead = true
       cancelAnimationFrame(raf)
@@ -145,7 +149,7 @@ export default function ScrollFilm() {
   return (
     <section className="film" id="film" ref={root} aria-label="Architekturfilm: Einführung">
       <div className="stage" ref={stage}>
-        <canvas ref={cv} id="cv" style={{ backgroundImage: `url(${BASE}media/hero-poster.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} role="img" aria-label="Illustrativer Architekturfilm: Fassade, Wohnräume, Luftbild" />
+        <canvas ref={cv} id="cv" style={{ backgroundImage: `url(${BASE}media/${typeof window !== 'undefined' && window.innerWidth < 860 ? 'hero-poster-sm' : 'hero-poster'}.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }} role="img" aria-label="Illustrativer Architekturfilm: Fassade, Wohnräume, Luftbild" />
         <div className="film-overlay" />
         <div className="cap open" id="c-open">
           <p className="eyebrow">Off-Market Immobilien · Deutschlandweit</p>

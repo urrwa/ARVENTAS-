@@ -1,3 +1,7 @@
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-display: swap; font-weight: 400; src: url('/fonts/playfair-display-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-display: swap; font-weight: 500; src: url('/fonts/playfair-display-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 400; src: url('/fonts/inter-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 500; src: url('/fonts/inter-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 /* ARVENTAS – Design-Tokens und globale Gestaltung.
    Farben: Brandbook S. 14 (Gold, Marineblau, Elfenbein, Schwarz). Weiß nur für die Wortmarke und funktionale Lesbarkeit.
    Verboten laut Briefing: dekorative Verläufe, Gold-Glows, schwebende Karten mit Drop-Shadows, Neonfarben, Glas-Effekte. */
@@ -1114,3 +1118,5 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .wz-full { width: calc(var(--sw) + (100vw - var(--sw)) * var(--p)); height: calc(var(--sh) + (100vh - var(--sh)) * var(--p)); transform: translate(calc(-50% + var(--dx) * (1 - var(--p))), calc(-50% + var(--dy) * (1 - var(--p)))); opacity: 1; }
 .wz-slot { visibility: hidden; }
 @media (max-width: 860px) { .wz-full { width: calc(var(--sw) + (100vw - var(--sw)) * var(--p)); height: calc(var(--sh) + (100vh - var(--sh)) * var(--p)); } }
+.cap.open { opacity: 1; visibility: visible; }
+@media (max-width: 430px) { .cap .line { font-size: clamp(19px, 5.6vw, 24px); letter-spacing: .02em; } }

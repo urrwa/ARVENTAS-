@@ -11,16 +11,16 @@ export default function Partners() {
   return (
     <>
       <Seo title="Partnernetzwerk | ARVENTAS" description="Kompetenzen verbinden, Zusammenarbeit gestalten: Partneranfrage für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren." />
-      <PageHero fadeOut blur image="/media/schluessel-modell.jpg" crumb="Partner" title="Kompetenzen verbinden. Zusammenarbeit gestalten." lead="Für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren.">
+      <PageHero fadeOut blur image="/media/schluessel-modell.webp" crumb="Partner" title="Kompetenzen verbinden. Zusammenarbeit gestalten." lead="Für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren.">
         <div className="btn-row"><Btn href="#anfrage">Partnerschaft anfragen</Btn></div>
       </PageHero>
 
       <section className="sec ivory over-photo pc-sec">
         <div className="wrap">
           <ParallaxCards inside items={[
-            { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: '/media/schluessel-modell.jpg', ratio: '4 / 5', speed: 1 },
-            { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', img: '/media/besprechung.jpg', ratio: '3 / 4', speed: 1.8 },
-            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/vertrag-unterzeichnung.jpg', ratio: '21 / 9', speed: 0.7, wide: true },
+            { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: '/media/schluessel-modell.webp', ratio: '4 / 5', speed: 1 },
+            { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', img: '/media/besprechung.webp', ratio: '3 / 4', speed: 1.8 },
+            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/vertrag-unterzeichnung.webp', ratio: '21 / 9', speed: 0.7, wide: true },
           ]} />
         </div>
       </section>

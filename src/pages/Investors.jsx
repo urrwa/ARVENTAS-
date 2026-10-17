@@ -17,11 +17,11 @@ export default function InvestorsPage() {
   return (
     <>
       <Seo title="Kapitalanlage-Immobilien | ARVENTAS" description="Ausgewählte Off-Market-Immobilien für Investoren: Suchprofil, Objektanalyse, Chancen und Risiken – persönlich begleitet, deutschlandweit." />
-      <PageHero image="/media/stadt-luftbild.jpg" crumb="Für Investoren" title="Investieren beginnt mit dem richtigen Zugang." lead="Passende Immobilien finden und Entscheidungen auf Grundlage nachvollziehbarer Informationen treffen.">
+      <PageHero image="/media/stadt-luftbild.webp" crumb="Für Investoren" title="Investieren beginnt mit dem richtigen Zugang." lead="Passende Immobilien finden und Entscheidungen auf Grundlage nachvollziehbarer Informationen treffen.">
         <div className="btn-row"><Btn to="/investorenkreis">Suchprofil erstellen</Btn></div>
       </PageHero>
 
-      <WordZoom left="Off-Market" right="verständlich erklärt." images={['/media/haus-abend.jpg', '/media/stadt-luftbild.jpg', '/media/facade-altbau.jpg', '/media/interior-sessel.jpg']} />
+      <WordZoom left="Off-Market" right="verständlich erklärt." images={['/media/haus-abend.webp', '/media/stadt-luftbild.webp', '/media/facade-altbau.webp', '/media/interior-sessel.webp']} />
       <section className="sec ivory wz-after">
         <div className="wrap">
           <p className="eyebrow">Off-Market</p>

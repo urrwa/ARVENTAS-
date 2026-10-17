@@ -1,6 +1,8 @@
 // Sprachumschalter DE/EN (Lesehilfe für die Abnahme). Deutsch bleibt die Originalsprache.
 // Technik: Ein DOM-Übersetzer ersetzt deutsche Texte anhand des Wörterbuchs in content/en.js und stellt sie bei Rückwechsel wieder her.
-import EN from './content/en.js'
+let EN = {}
+let loaded = false
+const loadEN = () => (loaded ? Promise.resolve() : import('./content/en.js').then((m) => { EN = m.default; loaded = true }))
 
 let lang = 'de'
 try { if (localStorage.getItem('arventas-lang') === 'en') lang = 'en' } catch (e) { /* Speicher nicht verfügbar */ }
@@ -70,8 +72,9 @@ function onMutations(recs) {
   observer.takeRecords() // eigene Änderungen verwerfen
 }
 
-export function setLang(l) {
+export async function setLang(l) {
   lang = l === 'en' ? 'en' : 'de'
+  if (lang === 'en') await loadEN()
   try { localStorage.setItem('arventas-lang', lang) } catch (e) { /* ignorieren */ }
   document.documentElement.lang = lang
   if (lang === 'en') walk(document.body); else restore(document.body)
@@ -83,5 +86,5 @@ export function initI18n() {
   observer = new MutationObserver(onMutations)
   observer.observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATTRS })
   document.documentElement.lang = lang
-  if (lang === 'en') { walk(document.body); observer.takeRecords() }
+  if (lang === 'en') loadEN().then(() => { walk(document.body); observer.takeRecords(); subs.forEach((f) => f()) })
 }
