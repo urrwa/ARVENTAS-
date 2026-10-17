@@ -925,3 +925,12 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .tl li:nth-child(6) { --k: 5; }
 .tl li:nth-child(7) { --k: 6; }
 .tl li:nth-child(8) { --k: 7; }
+
+/* Seitenköpfe wie im Vorbild: Vollbild-Foto, Text unten links */
+.phero.has-img { min-height: 100svh; display: flex; align-items: flex-end; padding-block: clamp(32px, 6vw, 88px); }
+.phero.has-img > .wrap { width: 100%; }
+.phero.has-img .crumbs { margin-bottom: clamp(18px, 3vw, 40px); }
+.phero h1 { max-width: 28ch; }
+.phero .h1 { font-size: clamp(28px, 3.8vw, 58px); line-height: 1.08; }
+.phero .lead { max-width: 46ch; margin-top: 16px; font-size: clamp(14px, 1.1vw, 16px); }
+.phero .btn-row { margin-top: 22px; }
