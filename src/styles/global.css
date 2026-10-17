@@ -634,3 +634,15 @@ b, strong, th { font-weight: 600; }
   .phero.has-img > .wrap { width: 100%; }
   .cover-over { position: relative; z-index: 1; background: var(--ivory); }
 }
+
+/* Kompaktes Kontaktformular */
+.contact-card { padding: clamp(18px, 2.2vw, 28px); }
+.contact-card .tabs-panel { padding-top: 16px; }
+.contact-card .f { margin-bottom: 14px; }
+.contact-card .f label, .contact-card .f .lbl { font-size: 12px; margin-bottom: 5px; }
+.contact-card .f input[type=text], .contact-card .f input[type=email], .contact-card .f input[type=tel], .contact-card .f input[type=number], .contact-card .f select, .contact-card .f textarea { font-size: 15px; padding: 9px 12px; min-height: 44px; }
+.contact-card .f textarea { min-height: 84px; }
+.contact-card .f .help { font-size: 12px; margin-top: 4px; }
+.contact-card .demo { padding: 8px 12px; font-size: 13px; margin-bottom: 16px; }
+.contact-card .check { margin-bottom: 12px; font-size: 13px; }
+.contact-card .f-row { gap: 0 14px; }
