@@ -7,8 +7,8 @@ export default function PageHero({ crumb, title, lead, children, image }) {
       {image && <img className="phero-img" src={image} alt="" loading="eager" />}
       <div className="wrap">
         <p className="crumbs"><Link to="/">Start</Link> / {crumb}</p>
-        <h1 className="h1 rv">{title}</h1>
-        {lead && <p className="lead rv" style={{ '--d': 80 }}><Brandify>{lead}</Brandify></p>}
+        <div className="rise"><h1 className="h1">{title}</h1></div>
+        {lead && <div className="rise" style={{ '--rd': '260ms' }}><p className="lead"><Brandify>{lead}</Brandify></p></div>}
         {children}
       </div>
     </section>
