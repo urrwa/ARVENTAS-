@@ -17,6 +17,7 @@ export default function Contact() {
     <>
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns über Ihre Möglichkeiten sprechen: getrennte Zugänge für Eigentümer, Investoren und Partner." />
       <PageHero image="/media/kontakt-haus.jpg" crumb="Kontakt" title="Lassen Sie uns über Ihre Möglichkeiten sprechen." lead="Wählen Sie den passenden Zugang. Eigentümer, Investoren und Partner haben getrennte Wege." />
+      <div className="cover-over">
       <section className="sec ivory">
         <div className="wrap contact-grid">
           <div className="contact-intro">
@@ -46,6 +47,7 @@ export default function Contact() {
           <Faq items={CONTACT_FAQ} />
         </div>
       </section>
+      </div>
     </>
   )
 }

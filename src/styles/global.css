@@ -627,3 +627,10 @@ b, strong, th { font-weight: 600; }
 .phero.has-img::after { content: ""; position: absolute; inset: 0; background: rgba(25, 37, 55, .35); pointer-events: none; }
 .phero.has-img > .wrap { position: relative; z-index: 1; }
 @media (max-width: 720px) { .phero-img { object-position: 78% 50%; } .phero.has-img::after { background: rgba(25, 37, 55, .5); } }
+
+/* Sticky-Cover-Scroll: Hero bleibt stehen, der Inhalt schiebt sich darüber. */
+@media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
+  .phero.has-img { position: sticky; top: 0; z-index: 0; min-height: 86vh; display: flex; align-items: flex-end; }
+  .phero.has-img > .wrap { width: 100%; }
+  .cover-over { position: relative; z-index: 1; background: var(--ivory); }
+}
