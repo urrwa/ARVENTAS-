@@ -1,216 +1,192 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { reducedMotion } from './useMotion.js'
 
-/* Scroll-scrubbed film: a frame sequence (public/frames, built by scripts/build_frames.py
-   from source/hero.mp4) drawn to a canvas, driven by scroll progress through a sticky stage.
-   - Frames are fetched as blobs (nearest-to-playhead first) and only a small window around the
-     playhead is decoded to bitmaps, so memory stays bounded.
-   - The playhead eases toward the scroll target, so scrubbing stays smooth in both directions.
-   - Normal page scroll is never hijacked. */
-
-const BEHIND = 8
-const AHEAD = 20
-const CONCURRENCY = 6
-
-// Captions: German brand copy from the ARVENTAS strategy document (section 5 "Positionierungsaussage",
-// the three pillars, and the cover descriptor). Timing is expressed in SOURCE-VIDEO seconds
-// (`at: [in, out]`) and mapped to scroll progress through the frame times in manifest.json, so the
-// captions stay on the right shot however the frames are sampled.
-const CAPTIONS = [
+// Scroll-gesteuerter Architekturfilm (Bildsequenz auf Canvas), wie in der freigegebenen Vorversion.
+// Die Frames stammen aus dem bereitgestellten Clip (KI-generierte Illustration, kein ARVENTAS-Projekt).
+// Zeitpunkte der Einblendungen (Sekunden im Quellfilm):
+const CAPS = [
   { id: 'open', kind: 'open', at: [0, 5] },
-  { id: 'zugang', tag: '01 — Zugang', text: 'Wir finden Objekte, die nicht am Markt sind,', at: [6.5, 20] },
-  { id: 'analyse', tag: '02 — Analyse', text: 'bewerten sie in Tagen statt Wochen,', at: [25.5, 37], right: true },
-  { id: 'abwicklung', tag: '03 — Abwicklung', text: 'und bringen sie zum passenden Eigentümer oder Investor.', at: [43.5, 70] },
-  { id: 'region', tag: 'Off-Market Immobilien-Intelligenz', text: 'Bayern & Baden-Württemberg', at: [74, 103] },
+  { id: 'zugang', at: [6.5, 20] },
+  { id: 'analyse', at: [25.5, 37] },
+  { id: 'matching', at: [43.5, 70] },
+  { id: 'begleitung', at: [74, 103] },
   { id: 'close', kind: 'close', at: [107, 200] },
 ]
-// source seconds -> progress (0..1) using the manifest's frame times
-const toProgress = (t, times) => {
-  let lo = 0, hi = times.length - 1
-  while (lo < hi) { const m = (lo + hi) >> 1; if (times[m] < t) lo = m + 1; else hi = m }
-  return lo / Math.max(1, times.length - 1)
-}
-const windowFor = (c, times) => {
-  const a = toProgress(c.at[0], times), b = c.at[1] >= times[times.length - 1] ? 3 : toProgress(c.at[1], times)
-  const e = 0.012
-  if (c.kind === 'open') return [-1, -0.5, b - e, b]
-  if (c.kind === 'close') return [a, a + e * 2, 2, 3]
-  return [a, a + e, b - e, b]
-}
-
+const BEHIND = 8, AHEAD = 20, PACK = 30
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
-const vis = (p, [a, b, c, d]) => (p < b ? clamp((p - a) / (b - a)) : p > c ? clamp(1 - (p - c) / (d - c)) : 1)
 
 export default function ScrollFilm() {
   const root = useRef(null)
-  const canvas = useRef(null)
-  const caps = useRef({})
-  const [ready, setReady] = useState(false)
-  const [still, setStill] = useState(false)
-  const [set, setSet] = useState(null)
+  const cv = useRef(null)
+  const curtain = useRef(null)
+  const bar = useRef(null)
+  const word = useRef(null)
+  const stage = useRef(null)
 
   useEffect(() => {
-    setStill(reducedMotion())
-    setSet(window.matchMedia('(max-width: 860px)').matches ? 'sm' : 'lg')
-  }, [])
+    let dead = false
+    const cleanups = []
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+    const rootEl = root.current, canvas = cv.current, ctx = canvas.getContext('2d', { alpha: false })
+    const capEls = {}
+    CAPS.forEach((c) => { capEls[c.id] = rootEl.querySelector('#c-' + c.id) })
+    document.body.classList.add('lock')
+    document.documentElement.classList.add('lock')
+    const unlock = () => { document.body.classList.remove('lock'); document.documentElement.classList.remove('lock') }
+    cleanups.push(unlock)
 
-  useEffect(() => {
-    if (!set || still) return
-    let alive = true
-    const cvs = canvas.current
-    const ctx = cvs.getContext('2d', { alpha: false })
-    let count = 0
-    let wins = {}
-    const blobs = new Map()
-    const bitmaps = new Map()
-    const pending = new Set()
-    let target = 0
-    let current = 0
-    let raf = 0
-    let lastDrawn = -1
-    const url = (i) => `/frames/${set}/f${String(i + 1).padStart(4, '0')}.webp`
+    let T = [], N = 0
+    const blobs = {}, bitmaps = {}, pending = {}, pk = {}, pinf = {}
+    let active = 0, target = 0, cur = 0, raf = 0, last = -1, started = false, ready = false
+    const SET = innerWidth <= 860 ? 'sm' : 'lg'
+    const url = (i) => `/frames/${SET}/f${String(i + 1).padStart(4, '0')}.webp`
 
-    const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      const w = Math.min(Math.round(cvs.clientWidth * dpr), 1920)
-      const h = Math.round(cvs.clientHeight * (w / cvs.clientWidth))
-      if (cvs.width !== w || cvs.height !== h) { cvs.width = w; cvs.height = h; lastDrawn = -1 }
+    function toP(t) { let lo = 0, hi = T.length - 1; while (lo < hi) { const m = (lo + hi) >> 1; if (T[m] < t) lo = m + 1; else hi = m } return lo / Math.max(1, T.length - 1) }
+    function vis(p, w) { return p < w[1] ? clamp((p - w[0]) / (w[1] - w[0])) : p > w[2] ? clamp(1 - (p - w[2]) / (w[3] - w[2])) : 1 }
+    function size() {
+      const d = Math.min(devicePixelRatio || 1, 2), w = Math.min(Math.round(canvas.clientWidth * d), 1920)
+      const h = Math.round(canvas.clientHeight * (w / canvas.clientWidth))
+      if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; last = -1 }
     }
-
-    const draw = (bmp) => {
-      const cw = cvs.width, ch = cvs.height
-      const s = Math.max(cw / bmp.width, ch / bmp.height) // cover
-      const w = bmp.width * s, h = bmp.height * s
-      ctx.imageSmoothingQuality = 'high'
-      ctx.drawImage(bmp, (cw - w) / 2, (ch - h) / 2, w, h)
+    function draw(b) {
+      const cw = canvas.width, ch = canvas.height, s = Math.max(cw / b.width, ch / b.height), w = b.width * s, h = b.height * s
+      ctx.imageSmoothingQuality = 'high'; ctx.drawImage(b, (cw - w) / 2, (ch - h) / 2, w, h)
     }
-
-    const decode = async (i) => {
-      if (bitmaps.has(i) || !blobs.has(i) || pending.has(i)) return
-      pending.add(i)
-      try {
-        const bmp = await createImageBitmap(blobs.get(i))
-        if (!alive) return bmp.close()
-        bitmaps.set(i, bmp)
-      } finally { pending.delete(i) }
+    function decode(i) {
+      if (bitmaps[i] || !blobs[i] || pending[i]) return Promise.resolve()
+      pending[i] = 1
+      return createImageBitmap(blobs[i]).then((b) => { if (dead) b.close(); else bitmaps[i] = b }).catch(() => {}).then(() => { delete pending[i] })
     }
-
-    const pump = () => {
-      const c = Math.round(current)
-      for (let i = c - BEHIND; i <= c + AHEAD; i++) if (i >= 0 && i < count) decode(i)
-      for (const [i, b] of bitmaps) if (i < c - BEHIND - 6 || i > c + AHEAD + 10) { b.close(); bitmaps.delete(i) }
+    function pump() {
+      const c = Math.round(cur)
+      for (let i = c - BEHIND; i <= c + AHEAD; i++) if (i >= 0 && i < N) decode(i)
+      Object.keys(bitmaps).forEach((k) => { k = +k; if (k < c - BEHIND - 6 || k > c + AHEAD + 10) { bitmaps[k].close(); delete bitmaps[k] } })
     }
-
-    const render = () => {
-      const c = clamp(Math.round(current), 0, count - 1)
-      let i = c
-      if (!bitmaps.has(i)) {
-        for (let d = 1; d <= 12; d++) {
-          if (bitmaps.has(c - d)) { i = c - d; break }
-          if (bitmaps.has(c + d)) { i = c + d; break }
-        }
-      }
-      if (bitmaps.has(i) && i !== lastDrawn) { draw(bitmaps.get(i)); lastDrawn = i }
+    function render() {
+      const c = clamp(Math.round(cur), 0, N - 1); let i = c
+      if (!bitmaps[i]) for (let d = 1; d <= 12; d++) { if (bitmaps[c - d]) { i = c - d; break } if (bitmaps[c + d]) { i = c + d; break } }
+      if (bitmaps[i] && i !== last) { draw(bitmaps[i]); last = i }
     }
-
-    const progress = () => {
-      const r = root.current.getBoundingClientRect()
-      return clamp(-r.top / Math.max(1, r.height - window.innerHeight))
-    }
-
-    const captions = (p) => {
-      CAPTIONS.forEach((c) => {
-        const el = caps.current[c.id]
-        if (!el || !wins[c.id]) return
-        const v = vis(p, wins[c.id])
-        el.style.opacity = v
-        el.style.transform = `translate3d(0, ${(1 - v) * 24}px, 0)`
-        el.style.visibility = v < 0.01 ? 'hidden' : 'visible'
-        el.style.pointerEvents = v > 0.5 ? 'auto' : 'none'
+    const prog = () => { const r = rootEl.getBoundingClientRect(); return clamp(-r.top / Math.max(1, r.height - innerHeight)) }
+    function caps(p) {
+      CAPS.forEach((c) => {
+        const v = vis(p, c.w), s = c.el.style
+        s.opacity = v; s.visibility = v < 0.01 ? 'hidden' : 'visible'
+        s.transform = `translate3d(0,${(1 - v) * 24}px,0)`; s.pointerEvents = v > 0.5 ? 'auto' : 'none'
       })
     }
-
-    const tick = () => {
-      raf = 0
-      const diff = target - current
-      current = Math.abs(diff) < 0.02 ? target : current + diff * 0.14
-      pump(); render()
-      captions(clamp(current / Math.max(1, count - 1)))
-      if (current !== target) raf = requestAnimationFrame(tick)
+    function tick() {
+      raf = 0; const d = target - cur
+      cur = Math.abs(d) < 0.02 ? target : cur + d * 0.14
+      pump(); render(); caps(clamp(cur / (N - 1)))
+      if (cur !== target) raf = requestAnimationFrame(tick)
     }
-    const kick = () => { target = progress() * (count - 1); if (!raf) raf = requestAnimationFrame(tick) }
-
-    // fetch queue: nearest-to-playhead first
-    let active = 0
-    const next = () => {
-      if (!alive) return
-      while (active < CONCURRENCY) {
-        let best = -1, bd = 1e9
-        const c = Math.round(current)
-        for (let i = 0; i < count; i++) if (!blobs.has(i) && !inflight.has(i)) { const d = i >= c ? i - c : (c - i) * 3; if (d < bd) { bd = d; best = i } }
+    const kick = () => { target = prog() * (N - 1); if (!raf) raf = requestAnimationFrame(tick) }
+    function loadPack(p) {
+      pinf[p] = 1; active++
+      const ps = []
+      for (let k = 0; k < PACK; k++) {
+        const i = p * PACK + k; if (i >= N) break
+        ps.push(fetch(url(i)).then((r) => r.blob()).then((b) => { blobs[i] = b }).catch(() => {}))
+      }
+      Promise.all(ps).then(() => { pk[p] = 1 }).then(() => {
+        active--; delete pinf[p]
+        if (!started && pk[0]) { started = true; begin() }
+        next()
+      })
+    }
+    function next() {
+      if (dead) return
+      const NP = Math.ceil(N / PACK)
+      while (active < 3) {
+        let best = -1, bd = 1e9; const cp = Math.floor(Math.round(cur) / PACK)
+        for (let p = 0; p < NP; p++) { if (pk[p] || pinf[p]) continue; const d = p >= cp ? p - cp : (cp - p) * 3; if (d < bd) { bd = d; best = p } }
         if (best < 0) return
-        inflight.add(best); active++
-        fetch(url(best)).then((r) => r.blob()).then((b) => { blobs.set(best, b) }).catch(() => {})
-          .finally(() => { inflight.delete(best); active--; if (alive) { if (!ready0 && blobs.size >= 24) { ready0 = true; start() } next() } })
+        loadPack(best)
       }
     }
-    const inflight = new Set()
-    let ready0 = false
-    const start = async () => {
-      current = target = progress() * (count - 1)
-      await Promise.all(Array.from({ length: AHEAD }, (_, k) => decode(clamp(Math.round(current) + k, 0, count - 1))))
-      if (!alive) return
-      resize(); render(); captions(progress()); setReady(true)
+    function begin() {
+      cur = target = prog() * (N - 1)
+      const ps = []; for (let k = 0; k < AHEAD; k++) ps.push(decode(clamp(Math.round(cur) + k, 0, N - 1)))
+      Promise.all(ps).then(() => { if (dead) return; size(); render(); caps(prog()); ready = true })
+    }
+
+    // ---------- Intro: Ladelinie, dann Vorhang ----------
+    function intro() {
+      const stg = stage.current, cur_ = curtain.current, bar_ = bar.current, word_ = word.current
+      if (reduce) { cur_.style.display = 'none'; stg.classList.add('live'); window.__introDone = true; window.dispatchEvent(new Event('arventas:intro')); unlock(); return }
+      const t0 = performance.now(), MIN = 1200, W = 110
+      const load = (now) => {
+        if (dead) return
+        let p = Math.min(1, (now - t0) / MIN); if (!ready) p = Math.min(p, 0.92)
+        bar_.style.width = p * W + 'px'
+        if (p < 1 || !ready) { requestAnimationFrame(load); return }
+        word_.parentNode.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 320, delay: 150, fill: 'forwards' })
+        setTimeout(() => {
+          if (dead) return
+          cur_.animate([{ clipPath: 'inset(0 0 0 0)' }, { clipPath: 'inset(0 100% 0 0)' }], { duration: 800, easing: 'cubic-bezier(.7,0,.2,1)', fill: 'forwards' }).onfinish = () => { cur_.style.display = 'none' }
+          stg.classList.add('live'); unlock(); window.__introDone = true
+          window.dispatchEvent(new Event('arventas:intro'))
+          try { dispatchEvent(new Event('scroll')) } catch (e) { /* ignorieren */ }
+        }, 450)
+      }
+      requestAnimationFrame(load)
     }
 
     fetch('/frames/manifest.json').then((r) => r.json()).then((m) => {
-      count = m.count
-      CAPTIONS.forEach((c) => { wins[c.id] = windowFor(c, m.t) })
-      next()
-    })
+      if (dead) return
+      T = m.t; N = m.count
+      CAPS.forEach((c) => {
+        const a = toP(c.at[0]), b = c.at[1] >= T[T.length - 1] ? 3 : toP(c.at[1]), e = 0.012
+        c.w = c.kind === 'open' ? [-1, -0.5, b - e, b] : c.kind === 'close' ? [a, a + e * 2, 2, 3] : [a, a + e, b - e, b]
+        c.el = capEls[c.id]
+      })
+      size(); caps(0); next()
+      window.addEventListener('scroll', kick, { passive: true })
+      const onResize = () => { size(); last = -1; kick() }
+      window.addEventListener('resize', onResize)
+      cleanups.push(() => { window.removeEventListener('scroll', kick); window.removeEventListener('resize', onResize) })
+    }).catch(() => { /* ohne Frames: Vorhang trotzdem öffnen */ ready = true })
+    intro()
 
-    const onResize = () => { resize(); lastDrawn = -1; kick() }
-    window.addEventListener('scroll', kick, { passive: true })
-    window.addEventListener('resize', onResize)
     return () => {
-      alive = false
+      dead = true
       cancelAnimationFrame(raf)
-      window.removeEventListener('scroll', kick)
-      window.removeEventListener('resize', onResize)
-      bitmaps.forEach((b) => b.close())
+      cleanups.forEach((f) => f())
+      Object.values(bitmaps).forEach((b) => b.close && b.close())
     }
-  }, [set, still]) // eslint-disable-line react-hooks/exhaustive-deps
-
-  const setCap = (id) => (el) => { if (el) caps.current[id] = el }
-  const poster = set ? `/frames/${set}/f0001.webp` : undefined
+  }, [])
 
   return (
-    <section ref={root} className={`film ${still ? 'film--still' : ''} ${ready ? 'is-ready' : ''}`} aria-label="ARVENTAS — Film">
-      <div className="film__stage">
-        {still ? (
-          <img className="film__canvas" src={poster} alt="Architekturaufnahme eines Mehrfamilienhauses" />
-        ) : (
-          <canvas ref={canvas} className="film__canvas" role="img" aria-label="Architekturfilm: Fassade, Wohnraum, Schlafzimmer, Luftbild, Dachterrasse" />
-        )}
-        <div className="film__shade" aria-hidden="true" />
-
-        <div className="cap cap--open" ref={setCap('open')}>
-          <p className="cap__brand">ARVENTAS</p>
-          <h1 className="cap__descriptor">OFF-MARKET IMMOBILIEN-INTELLIGENZ · BAYERN &amp; BADEN-WÜRTTEMBERG</h1>
-        </div>
-        {CAPTIONS.filter((c) => c.text).map((c) => (
-          <div className={`cap cap--line ${c.right ? 'cap--right' : ''}`} key={c.id} ref={setCap(c.id)}>
-            <p className="eyebrow">{c.tag}</p>
-            <p className="cap__line">{c.text}</p>
+    <section className="film" id="film" ref={root} aria-label="Architekturfilm: Einführung">
+      <div className="stage" ref={stage}>
+        <canvas ref={cv} id="cv" role="img" aria-label="Illustrativer Architekturfilm: Fassade, Wohnräume, Luftbild" />
+        <div className="film-overlay" />
+        <div className="cap open" id="c-open">
+          <p className="eyebrow">Off-Market Immobilien · Deutschlandweit</p>
+          <h1 className="h1 film-h1">Immobilien mit Potenzial.<br />Zugang mit Vorsprung.</h1>
+          <p className="lead">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet.</p>
+          <div className="btn-row">
+            <Link to="/immobilie-verkaufen" className="btn btn-gold">Immobilie verkaufen <span className="arr" aria-hidden="true">→</span></Link>
+            <Link to="/kapitalanlage-immobilien" className="btn btn-line">Immobilien entdecken <span className="arr" aria-hidden="true">→</span></Link>
           </div>
-        ))}
-        <div className="cap cap--close" ref={setCap('close')}>
-          <p className="cap__brand">ARVENTAS</p>
-          <Link className="link-arrow" to="/strategie">Zur Strategie →</Link>
         </div>
-
-        <div className="film__hint" aria-hidden="true"><span>Scrollen</span><i /></div>
+        <div className="cap" id="c-zugang"><p className="eyebrow">01 — Zugang</p><p className="line">Immobilien abseits öffentlicher Portale.</p></div>
+        <div className="cap right" id="c-analyse"><p className="eyebrow">02 — Analyse</p><p className="line">Wert, Potenzial und Risiken nachvollziehbar einordnen.</p></div>
+        <div className="cap" id="c-matching"><p className="eyebrow">03 — Matching</p><p className="line">Suchprofil und Immobilieninformationen sinnvoll zusammenführen.</p></div>
+        <div className="cap" id="c-begleitung"><p className="eyebrow">04 — Transaktionsbegleitung</p><p className="line">Persönlich begleitet zur fundierten Entscheidung.</p></div>
+        <div className="cap close" id="c-close">
+          <p className="line">Werte schaffen. Zukunft bauen.</p>
+          <div className="btn-row"><a href="#zugaenge" className="btn btn-gold">Was möchten Sie bewegen? <span className="arr" aria-hidden="true">↓</span></a></div>
+        </div>
+        <div className="film-note">Illustrative Visualisierung – kein ARVENTAS-Projekt</div>
+        <div className="hint" aria-hidden="true"><span>Scrollen</span><i /></div>
+        <div className="curtain" ref={curtain}>
+          <div className="il">
+            <span ref={word}><img src="/media/arventas-logo.png" alt="ARVENTAS" /></span>
+            <i ref={bar} />
+          </div>
+        </div>
       </div>
     </section>
   )
