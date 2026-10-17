@@ -692,3 +692,6 @@ b, strong, th { font-weight: 600; }
 .ftr-mark text { font-family: var(--font-head); font-weight: 500; font-size: 168px; fill: rgba(176, 158, 128, 0); stroke: var(--gold); stroke-width: 1.2; stroke-dasharray: 1400; stroke-dashoffset: 1400; transition: stroke-dashoffset 3.2s cubic-bezier(.4, 0, .2, 1), fill 1.6s ease 2.6s; }
 .ftr-mark.on text { stroke-dashoffset: 0; fill: rgba(176, 158, 128, .1); }
 @media (prefers-reduced-motion: reduce) { .ftr-mark text { transition: none; stroke-dashoffset: 0; fill: rgba(176, 158, 128, .1); } }
+.f label.check { display: flex; align-items: center; gap: 10px; margin-bottom: 0; }
+.f label.check input { width: 20px; height: 20px; margin: 0; flex: none; }
+.f label.check span { line-height: 1.4; }
