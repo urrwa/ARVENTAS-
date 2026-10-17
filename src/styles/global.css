@@ -124,10 +124,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 1260px) { .nav { display: none; } }
 
 /* ---------- Footer ---------- */
-.ftr { background: var(--black); color: var(--text-on-dark); padding-block: clamp(56px, 7vw, 100px) 28px; }
+.ftr { background: var(--black); color: var(--text-on-dark); padding-block: clamp(56px, 7vw, 100px) 0; overflow: hidden; }
 .ftr-top { display: grid; grid-template-columns: 1.1fr 2fr; gap: clamp(32px, 6vw, 100px); }
 .ftr-logo img { width: clamp(200px, 22vw, 300px); height: auto; margin-left: -6px; }
-.ftr-slogan { font-family: var(--font-head); font-size: clamp(20px, 2vw, 26px); margin: 20px 0 0; color: var(--ivory); }
+.ftr-slogan { font-family: var(--font-head); font-size: clamp(26px, 3vw, 42px); line-height: 1.2; margin: 28px 0 0; color: var(--ivory); max-width: 14ch; }
+.ftr-slogan .soft { color: rgba(245, 243, 239, .42); }
 .ftr-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .ftr h4 { font-family: var(--font-body); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin: 0 0 16px; font-weight: 500; }
 .ftr li { margin-bottom: 8px; }
@@ -676,3 +677,14 @@ b, strong, th { font-weight: 600; }
   .contact-card fieldset > .f:has(textarea), .contact-card fieldset > .f:has(input[type=checkbox]) { grid-column: 1 / -1; }
 }
 .contact-card fieldset > .btn { justify-self: start; }
+
+/* Footer: groß, ruhig, mit angeschnittener Wortmarke */
+.ftr h4 { font-size: 11px; letter-spacing: .24em; margin-bottom: 22px; }
+.ftr li { margin-bottom: 14px; }
+.ftr-cols a, .ftr-cols .lk { font-family: var(--font-head); font-size: clamp(18px, 1.7vw, 24px); letter-spacing: .01em; }
+.ftr-bot { margin-top: clamp(40px, 5vw, 72px); padding-bottom: 20px; }
+.ftr-mark { font-family: var(--font-head); font-weight: 500; font-size: clamp(56px, 15.2vw, 300px); line-height: .8; letter-spacing: .06em; white-space: nowrap; text-align: center; color: transparent; -webkit-text-stroke: 1px rgba(176, 158, 128, .55); user-select: none; pointer-events: none; margin-top: 8px; margin-bottom: -.12em; }
+.ftr a.btn { background: var(--gold); color: var(--black); font-family: var(--font-body); font-size: 14px; text-decoration: none; }
+.ftr a.btn:hover { text-decoration: none; color: var(--black); }
+.ftr .lk { text-align: left; white-space: nowrap; }
+.ftr-mark { line-height: .95; margin-bottom: -.2em; }

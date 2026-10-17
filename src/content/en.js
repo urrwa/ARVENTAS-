@@ -543,6 +543,8 @@ export default {
  "Wert, Potenzial und Risiken werden nachvollziehbar eingeordnet, mit Quellen und Annahmen.": "Value, potential and risks are assessed transparently, with sources and assumptions.",
  "Wert, Potenziale und Verkaufswege klären – mit einem persönlichen Ansprechpartner.": "Clarify value, potential and sales routes – with a personal contact person.",
  "Werte": "Values",
+ "Werte schaffen.": "Creating value.",
+ "Zukunft bauen.": "Building the future.",
  "Werte schaffen. Zukunft bauen.": "Creating value. Building the future.",
  "Westdeutschland": "Western Germany",
  "Wie Zuständigkeiten geklärt werden": "How responsibilities are clarified",
