@@ -1023,3 +1023,16 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .kframe img.on { opacity: 1; transform: none; }
 @media (max-width: 860px) { .ktabs { grid-template-columns: 1fr; } .kframe { order: -1; } }
 @media (prefers-reduced-motion: reduce) { .kt-body, .kt-in p, .kt-link, .kframe img, .kt > button { transition: none; } }
+
+/* Versetzte Fotokarten (Partner) */
+.pc { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.6vw, 40px); align-items: start; padding-bottom: clamp(40px, 6vw, 90px); }
+.pc-card { --o: 0; translate: 0 calc(var(--o) * var(--s, 1) * -46px); will-change: translate; }
+.pc-card:nth-child(2) { margin-top: clamp(40px, 7vw, 110px); }
+.pc-img { position: relative; overflow: hidden; background: var(--marine); margin-bottom: 18px; }
+.pc-img img { width: 100%; height: 100%; object-fit: cover; display: block; clip-path: inset(100% 0 0 0); transform: scale(1.12); transition: clip-path 1200ms cubic-bezier(.7, 0, .2, 1), transform 2400ms cubic-bezier(.2, .6, .1, 1); transition-delay: calc(var(--i, 0) * 140ms); }
+.pc-card.in .pc-img img { clip-path: inset(0); transform: none; }
+.pc-img::after { content: ''; position: absolute; inset: 0; background: rgba(11, 11, 11, .42); }
+.pc-t { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 20px; font-family: var(--font-head); font-weight: 500; font-size: clamp(20px, 2vw, 28px); line-height: 1.15; color: var(--white); }
+.pc-card > p { color: var(--ink-soft); margin: 0; max-width: 40ch; }
+@media (max-width: 860px) { .pc { grid-template-columns: 1fr; } .pc-card { translate: none; } .pc-card:nth-child(2) { margin-top: 0; } }
+@media (prefers-reduced-motion: reduce) { .pc-card { translate: none; } .pc-img img { clip-path: none; transform: none; transition: none; } }

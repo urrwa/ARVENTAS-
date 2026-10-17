@@ -1,6 +1,7 @@
 import Seo from '../components/Seo.jsx'
 import Brand from '../components/Brand.jsx'
 import PageHero from '../components/PageHero.jsx'
+import ParallaxCards from '../components/ParallaxCards.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, PARTNER_FIELDS } from '../components/forms.jsx'
@@ -16,11 +17,11 @@ export default function Partners() {
 
       <section className="sec ivory">
         <div className="wrap">
-          <div className="cols3 rv">
-            <div><h3 className="h3">Welche Partner angesprochen werden</h3><p>Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.</p></div>
-            <div><h3 className="h3">Was <Brand /> ergänzt</h3><p>Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.</p></div>
-            <div><h3 className="h3">Wie Zuständigkeiten geklärt werden</h3><p>Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.</p></div>
-          </div>
+          <ParallaxCards items={[
+            { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: '/media/schluessel-modell.jpg', ratio: '4 / 5', speed: 1 },
+            { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', img: '/media/besprechung.jpg', ratio: '3 / 4', speed: 1.8 },
+            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/vertrag-unterzeichnung.jpg', ratio: '4 / 5', speed: 0.7 },
+          ]} />
         </div>
       </section>
 
