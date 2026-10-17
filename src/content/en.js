@@ -580,6 +580,7 @@ export default {
  "Daten und Unterlagen werden strukturiert geprüft.": "Data and documents are reviewed in a structured way.",
  "Gemeinsam wägen wir die Optionen ab, ohne Druck.": "Together we weigh the options, without pressure.",
  "Der Name.": "The name.",
+ "Beitrag lesen": "Read article",
  "Zugang wählen": "Choose access",
  "Schreiben Sie uns. Wir antworten persönlich und vertraulich.": "Write to us. We reply personally and in confidence.",
  "Wählen Sie den passenden Zugang und senden Sie uns Ihr Anliegen über das Formular.": "Choose the right access and send us your request via the form.",

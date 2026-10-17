@@ -14,14 +14,31 @@ export default function Knowledge() {
       <PageHero image="/media/notizbuch.jpg" crumb="Wissen" title="Hinter die Fassade schauen." lead="Off-Market verstehen. Immobilien bewerten. Potenziale einordnen." />
       <section className="sec ivory">
         <div className="wrap">
-          <div className="cats" role="group" aria-label="Kategorien">
-            {CATEGORIES.map((c) => <button key={c} type="button" className="chip" aria-pressed={cat === c} onClick={() => setCat(c)}>{c}</button>)}
+          <div className="ktabs">
+            <div className="ktabs-list" role="tablist" aria-label="Kategorien">
+              {CATEGORIES.map((c) => {
+                const a = c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c)
+                const on = cat === c
+                return (
+                  <div key={c} className={`kt${on ? ' on' : ''}`}>
+                    <button type="button" role="tab" aria-selected={on} onClick={() => setCat(c)} onMouseEnter={() => setCat(c)}>{c}</button>
+                    <div className="kt-body"><div className="kt-in">
+                      <p>{a ? a.teaser : 'In dieser Kategorie sind noch keine Beiträge ausgearbeitet.'}</p>
+                      {a && <Link to={`/wissen/${a.slug}`} className="kt-link" tabIndex={on ? 0 : -1}>Beitrag lesen <span aria-hidden="true">→</span></Link>}
+                    </div></div>
+                  </div>
+                )
+              })}
+            </div>
+            <div className="kframe" aria-hidden="true">
+              {CATEGORIES.map((c) => {
+                const a = c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c)
+                return <img key={c} className={cat === c ? 'on' : ''} src={a ? a.img : '/media/notizbuch.jpg'} alt="" loading="lazy" />
+              })}
+            </div>
           </div>
           {lead ? (
             <>
-              <Link to={`/wissen/${lead.slug}`} className="know-main rv" style={{ marginBottom: 36, display: 'block' }}>
-                <img src={lead.img} alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>{lead.title}</h3><p style={{ color: 'var(--ivory)', margin: '8px 0 0', maxWidth: '48ch' }}>{lead.teaser}</p></div>
-              </Link>
               <ul className="alist">
                 {list.map((a) => (
                   <li key={a.slug}><Link to={`/wissen/${a.slug}`}><small>{a.cat}</small><h3>{a.title}</h3><span className="tagd" style={{ margin: 0 }}>Entwurf</span></Link></li>
