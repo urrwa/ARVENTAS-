@@ -582,3 +582,11 @@ b, strong, th { font-weight: 600; }
 .cap.open .btn-row { margin-top: clamp(16px, 3vh, 28px); }
 .cap.open .eyebrow { margin-bottom: clamp(10px, 2vh, 20px); }
 @media (max-height: 560px) { .cap.open .lead { display: none; } }
+
+/* Kleinere Schrift im Hero und in den Film-Einblendungen */
+.film-h1 { font-size: clamp(28px, min(3.3vw, 6.2vh), 46px); line-height: 1.12; letter-spacing: .05em; }
+.cap .line { font-size: clamp(24px, 3vw, 44px); line-height: 1.15; }
+.cap.open .lead { font-size: clamp(14px, min(1.15vw, 2.3vh), 17px); max-width: 44ch; }
+.cap.open .eyebrow { font-size: 11px; }
+.cap .eyebrow { font-size: 11px; }
+@media (max-width: 860px) { .film-h1 { font-size: clamp(26px, 7.4vw, 34px); } .cap .line { font-size: clamp(22px, 6.4vw, 30px); } }
