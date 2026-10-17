@@ -44,11 +44,29 @@ function useReveal(key) {
   }, [key])
 }
 
+// Bilder reagieren leicht auf die Mausbewegung (sanfte Parallaxe über CSS-Variablen).
+function useMouseParallax() {
+  useEffect(() => {
+    if (!window.matchMedia('(hover: hover)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const root = document.documentElement
+    let tx = 0, ty = 0, x = 0, y = 0, raf = 0
+    const tick = () => {
+      x += (tx - x) * 0.07; y += (ty - y) * 0.07
+      root.style.setProperty('--mx', x.toFixed(4)); root.style.setProperty('--my', y.toFixed(4))
+      raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.001 ? requestAnimationFrame(tick) : 0
+    }
+    const move = (e) => { tx = (e.clientX / window.innerWidth) * 2 - 1; ty = (e.clientY / window.innerHeight) * 2 - 1; if (!raf) raf = requestAnimationFrame(tick) }
+    window.addEventListener('mousemove', move, { passive: true })
+    return () => { window.removeEventListener('mousemove', move); raf && cancelAnimationFrame(raf) }
+  }, [])
+}
+
 function Shell() {
   const { pathname, hash } = useLocation()
   const { open } = useMenu()
   const main = useRef(null)
   useReveal(pathname)
+  useMouseParallax()
   useEffect(() => {
     if (hash) {
       const el = document.getElementById(decodeURIComponent(hash.slice(1)))

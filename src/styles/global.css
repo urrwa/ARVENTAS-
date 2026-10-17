@@ -859,3 +859,11 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .lead { font-size: clamp(15px, 1.2vw, 17px); }
 .phero h1 { max-width: 22ch; }
 .hs-track { scroll-padding-inline: var(--gut); }
+
+/* Bilder bewegen sich dezent mit der Maus */
+.phero-img, .imgf img, .choose-img img, .hs-img img, .step-row img, .door img, .strip-track img {
+  scale: 1.07;
+  translate: calc(var(--mx, 0) * -14px) calc(var(--my, 0) * -9px);
+}
+.hs-img img, .strip-track img { scale: 1.05; translate: calc(var(--mx, 0) * -8px) calc(var(--my, 0) * -6px); }
+@media (prefers-reduced-motion: reduce), (hover: none) { .phero-img, .imgf img, .choose-img img, .hs-img img, .step-row img, .door img, .strip-track img { scale: 1; translate: none; } }
