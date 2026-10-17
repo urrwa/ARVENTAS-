@@ -599,5 +599,7 @@ export default {
  "Über uns": "About us",
  "Über uns | ARVENTAS": "About us | ARVENTAS",
  "ΛRVENTΛS": "ΛRVENTΛS",
- "← Zurück": "← Back"
+ "← Zurück": "← Back",
+ "Hauptmenü": "Main menu",
+ "Menü": "Menu"
 }

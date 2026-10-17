@@ -1,6 +1,7 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import LangToggle from './LangToggle.jsx'
+import { useMenu } from './MenuContext.jsx'
 
 const links = [
   { to: '/immobilie-verkaufen', label: 'Für Eigentümer' },
@@ -9,19 +10,13 @@ const links = [
   { to: '/ueber-uns', label: 'Über uns' },
   { to: '/wissen', label: 'Wissen' },
 ]
-const mobileOnly = [
-  { to: '/partner', label: 'Partner' },
-  { to: '/kontakt', label: 'Kontakt' },
-]
 
 export default function Header() {
-  const [open, setOpen] = useState(false)
+  const { open, setOpen } = useMenu()
   const { pathname } = useLocation()
   const isHome = pathname === '/'
   const [state, setState] = useState({ pre: isHome && !window.__introDone, over: isHome })
-  const nav = useRef(null)
   const burger = useRef(null)
-  useEffect(() => setOpen(false), [pathname])
   // Startseite: Header liegt transparent über dem Film (erst nach dem Intro sichtbar), danach flache Marine-Leiste.
   useEffect(() => {
     if (!isHome) { setState({ pre: false, over: false }); return }
@@ -36,40 +31,27 @@ export default function Header() {
     window.addEventListener('arventas:intro', calc)
     return () => { window.removeEventListener('scroll', calc); window.removeEventListener('resize', calc); window.removeEventListener('arventas:intro', calc) }
   }, [isHome])
+  // Nach dem Schließen springt der Fokus zurück auf den Menü-Knopf
+  const wasOpen = useRef(false)
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    if (!open) return
-    const first = nav.current && nav.current.querySelector('a')
-    first && first.focus()
-    const onKey = (e) => {
-      if (e.key === 'Escape') { setOpen(false); burger.current && burger.current.focus() }
-      if (e.key === 'Tab') { // Fokus bleibt im geöffneten Menü
-        const f = [burger.current, ...nav.current.querySelectorAll('a')]
-        const a = f.indexOf(document.activeElement)
-        if (e.shiftKey && a <= 0) { e.preventDefault(); f[f.length - 1].focus() }
-        else if (!e.shiftKey && a === f.length - 1) { e.preventDefault(); f[0].focus() }
-      }
-    }
-    document.addEventListener('keydown', onKey)
-    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = '' }
+    if (wasOpen.current && !open && burger.current) burger.current.focus()
+    wasOpen.current = open
   }, [open])
   return (
-    <header className={`hdr${isHome ? ' fixed' : ''}${state.over && !open ? ' clear' : ''}${state.pre ? ' pre' : ''}`}>
+    <header className={`hdr${isHome ? ' fixed' : ''}${state.over ? ' clear' : ''}${state.pre ? ' pre' : ''}`} inert={open || undefined}>
       <div className="hdr-in">
         <Link to="/" className="logo" aria-label="ARVENTAS – zur Startseite">
           <img src="/media/arventas-logo.png" alt="ARVENTAS" width="119" height="72" />
         </Link>
-        <LangToggle />
-        <button ref={burger} className="burger" type="button" aria-expanded={open} aria-controls="hauptnavigation" aria-label={open ? 'Menü schließen' : 'Menü öffnen'} onClick={() => setOpen(!open)}>
-          <span /><span /><span />
-        </button>
-        <nav ref={nav} id="hauptnavigation" className={`nav${open ? ' open' : ''}`} aria-label="Hauptnavigation">
+        <nav className="nav" aria-label="Hauptnavigation">
           {links.map((l) => <NavLink key={l.to} to={l.to} className="nl">{l.label}</NavLink>)}
-          {mobileOnly.map((l) => <NavLink key={l.to} to={l.to} className="nl nl-m">{l.label}</NavLink>)}
           <Link to="/kontakt" className="btn btn-gold">Beratung anfragen</Link>
         </nav>
+        <LangToggle />
+        <button ref={burger} className="burger" type="button" aria-expanded={open} aria-controls="push-menu" aria-label="Menü öffnen" onClick={() => setOpen(true)}>
+          <span /><span /><span />
+        </button>
       </div>
-      
     </header>
   )
 }

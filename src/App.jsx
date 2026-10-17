@@ -3,6 +3,8 @@ import { useEffect, useRef } from 'react'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { ConsentProvider } from './components/Consent.jsx'
+import { MenuProvider, useMenu } from './components/MenuContext.jsx'
+import MenuPanel from './components/MenuPanel.jsx'
 import Home from './pages/Home.jsx'
 import Owners from './pages/Owners.jsx'
 import InvestorsPage from './pages/Investors.jsx'
@@ -35,6 +37,7 @@ function useReveal(key) {
 
 function Shell() {
   const { pathname, hash } = useLocation()
+  const { open } = useMenu()
   const main = useRef(null)
   useReveal(pathname)
   useEffect(() => {
@@ -50,6 +53,7 @@ function Shell() {
     <>
       <a className="skip" href="#main">Zum Inhalt springen</a>
       <Header />
+      <div className="page" inert={open || undefined}>
       <main id="main" ref={main} tabIndex={-1} style={{ outline: 'none' }}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -68,6 +72,8 @@ function Shell() {
         </Routes>
       </main>
       <Footer />
+      </div>
+      <MenuPanel />
     </>
   )
 }
@@ -75,7 +81,9 @@ function Shell() {
 export default function App() {
   return (
     <ConsentProvider>
-      <Shell />
+      <MenuProvider>
+        <Shell />
+      </MenuProvider>
     </ConsentProvider>
   )
 }
