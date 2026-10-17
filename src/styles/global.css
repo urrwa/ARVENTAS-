@@ -1109,3 +1109,8 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .wz-after p:not(.eyebrow) { font-size: clamp(18px, 1.6vw, 22px); max-width: 52ch; }
 @media (max-width: 860px) { .wz-row { flex-wrap: wrap; justify-content: center; white-space: normal; font-size: clamp(28px, 9vw, 44px); } .wz-full { width: calc(24vw + (100vw - 24vw) * var(--p)); height: calc(12vw + (100vh - 12vw) * var(--p)); } }
 @media (prefers-reduced-motion: reduce) { .wz { height: auto; } .wz-stick { position: static; height: auto; padding: 60px 0; } .wz-full { display: none; } .wz-row { opacity: 1; } }
+
+.wz { --dx: 0px; --dy: 0px; --sw: 100px; --sh: 60px; }
+.wz-full { width: calc(var(--sw) + (100vw - var(--sw)) * var(--p)); height: calc(var(--sh) + (100vh - var(--sh)) * var(--p)); transform: translate(calc(-50% + var(--dx) * (1 - var(--p))), calc(-50% + var(--dy) * (1 - var(--p)))); opacity: 1; }
+.wz-slot { visibility: hidden; }
+@media (max-width: 860px) { .wz-full { width: calc(var(--sw) + (100vw - var(--sw)) * var(--p)); height: calc(var(--sh) + (100vh - var(--sh)) * var(--p)); } }
