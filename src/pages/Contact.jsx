@@ -1,4 +1,5 @@
 import { useSearchParams, Link } from 'react-router-dom'
+import RevealText from '../components/RevealText.jsx'
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { SectionHead, Tabs, Placeholder, Faq } from '../components/ui.jsx'
@@ -21,7 +22,7 @@ export default function Contact() {
       <section className="sec ivory">
         <div className="wrap contact-grid">
           <div className="contact-intro">
-            <p className="contact-statement rv">Schreiben Sie uns. Wir antworten persönlich und vertraulich.</p>
+            <RevealText className="contact-statement" text="Schreiben Sie uns. Wir antworten persönlich und vertraulich." />
             <hr className="hair" />
             <p className="rv">Wählen Sie den passenden Zugang und senden Sie uns Ihr Anliegen über das Formular.</p>
           </div>

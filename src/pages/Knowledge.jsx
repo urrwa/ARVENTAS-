@@ -11,7 +11,7 @@ export default function Knowledge() {
   return (
     <>
       <Seo title="Wissen | ARVENTAS" description="Wissen und Marktinformationen: Off-Market verstehen, Immobilien bewerten, Potenziale einordnen." />
-      <PageHero crumb="Wissen" title="Hinter die Fassade schauen." lead="Off-Market verstehen. Immobilien bewerten. Potenziale einordnen." />
+      <PageHero image="/media/notizbuch.jpg" crumb="Wissen" title="Hinter die Fassade schauen." lead="Off-Market verstehen. Immobilien bewerten. Potenziale einordnen." />
       <section className="sec ivory">
         <div className="wrap">
           <div className="cats" role="group" aria-label="Kategorien">

@@ -721,3 +721,11 @@ b, strong, th { font-weight: 600; }
 .faq-clip .ans { opacity: 0; transform: translateY(10px); transition: opacity 400ms ease, transform 600ms cubic-bezier(.2, .7, .1, 1); }
 .faq-item.on .faq-clip .ans { opacity: 1; transform: none; transition-delay: 120ms; }
 @media (prefers-reduced-motion: reduce) { .faq-panel, .faq-clip .ans, .faq-q i::before, .faq-q i::after, .faq-item::after { transition: none; } }
+
+.reveal-text .w { opacity: .28; transition: opacity 180ms linear; }
+.phero.has-img::after { background: rgba(25, 37, 55, .5); }
+@media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
+  .phero.has-img ~ * { position: relative; z-index: 1; }
+}
+.phero.has-img::after { background: rgba(25, 37, 55, .64); }
+@media (max-width: 720px) { .phero.has-img::after { background: rgba(25, 37, 55, .72); } }

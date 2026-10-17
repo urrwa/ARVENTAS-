@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useId, useRef, useState } from 'react'
 import Brand, { Brandify } from './Brand.jsx'
+import RevealText from './RevealText.jsx'
 
 export const Arrow = () => <span className="arr" aria-hidden="true">→</span>
 
@@ -17,7 +18,7 @@ export function SectionHead({ eyebrow, title, lead, h = 'h2', normal = false, de
     <header className="sec-head">
       {eyebrow && <p className="eyebrow rv">{eyebrow}</p>}
       <H className={`${h === 'h1' ? 'h1' : 'h2'}${normal ? ' normal' : ''} rv`} style={{ '--d': delay }}>{title}</H>
-      {lead && <p className="lead rv" style={{ '--d': delay + 80 }}><Brandify>{lead}</Brandify></p>}
+      {lead && (typeof lead === 'string' ? <RevealText text={lead} className="lead" /> : <p className="lead rv" style={{ '--d': delay + 80 }}><Brandify>{lead}</Brandify></p>)}
     </header>
   )
 }

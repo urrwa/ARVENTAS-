@@ -16,7 +16,7 @@ export default function InvestorsPage() {
   return (
     <>
       <Seo title="Kapitalanlage-Immobilien | ARVENTAS" description="Ausgewählte Off-Market-Immobilien für Investoren: Suchprofil, Objektanalyse, Chancen und Risiken – persönlich begleitet, deutschlandweit." />
-      <PageHero crumb="Für Investoren" title="Investieren beginnt mit dem richtigen Zugang." lead="Passende Immobilien finden und Entscheidungen auf Grundlage nachvollziehbarer Informationen treffen.">
+      <PageHero image="/media/stadt-luftbild.jpg" crumb="Für Investoren" title="Investieren beginnt mit dem richtigen Zugang." lead="Passende Immobilien finden und Entscheidungen auf Grundlage nachvollziehbarer Informationen treffen.">
         <div className="btn-row"><Btn to="/investorenkreis">Suchprofil erstellen</Btn></div>
       </PageHero>
 

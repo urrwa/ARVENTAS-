@@ -35,6 +35,7 @@ const attrOrig = new WeakMap()
 let observer = null
 
 function doText(n) {
+  if (n.parentNode && n.parentNode.closest && n.parentNode.closest('[data-notr]')) return
   const cur = n.nodeValue
   const t = translate(cur)
   if (t !== cur) { textOrig.set(n, cur); n.nodeValue = t }

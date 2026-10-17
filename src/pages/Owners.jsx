@@ -19,7 +19,7 @@ export default function Owners() {
   return (
     <>
       <Seo title="Immobilie verkaufen | ARVENTAS" description="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen – persönlich begleitet, deutschlandweit." />
-      <PageHero crumb="Für Eigentümer" title="Ihre Immobilie. Unser Marktverständnis." lead="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.">
+      <PageHero image="/media/facade-altbau.jpg" crumb="Für Eigentümer" title="Ihre Immobilie. Unser Marktverständnis." lead="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.">
         <div className="btn-row"><Btn href="#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 
