@@ -1345,4 +1345,8 @@ export default {
  "vergleichbare Objekte": "comparable properties",
  "· Strategische Immobilienentwicklung mit System.": "~· Strategic real estate development with a system.",
  "Übersicht": "Overview",
+ "Strategische Immobilienentwicklung mit System: Struktur, Marktverständnis und klare Entscheidungen.": "Strategic real estate development with a system: structure, market understanding and clear decisions.",
+ "(Über uns)": "(About us)",
+ "Fünf Leistungen.": "Five services.",
+ "Ein System.": "One system.",
 }

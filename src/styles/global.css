@@ -1,5 +1,6 @@
 @font-face { font-family: 'Playfair Display'; font-style: normal; font-display: swap; font-weight: 400; src: url('/fonts/playfair-display-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 @font-face { font-family: 'Playfair Display'; font-style: normal; font-display: swap; font-weight: 500; src: url('/fonts/playfair-display-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-display: swap; font-weight: 700; src: url('/fonts/playfair-display-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 @font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 400; src: url('/fonts/inter-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 @font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 500; src: url('/fonts/inter-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 /* ARVENTAS – Design-Tokens und globale Gestaltung.
@@ -1422,7 +1423,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .hh-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; animation: hhzoom 2800ms var(--ease) both; }
 .hh::after { content: ""; position: absolute; inset: 0; background: rgba(25, 37, 55, .42); pointer-events: none; }
 .hh-in { position: relative; z-index: 1; width: 100%; max-width: 1520px; margin: 0 auto; padding: 0 var(--gut) clamp(28px, 4.5vw, 64px); display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(20px, 4vw, 64px); }
-.hh-h1 { font-family: var(--font-head); font-weight: 500; text-transform: uppercase; letter-spacing: .03em; line-height: 1.06; font-size: clamp(30px, 4.6vw, 72px); max-width: 15ch; margin: 0; color: var(--ivory); }
+.hh-h1 { margin: 0; color: var(--ivory); }
 .hh-card { flex: none; width: min(340px, 100%); background: var(--ivory); color: var(--marine); border-radius: 6px; display: grid; }
 .hh-a { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 16px 16px 22px; color: var(--marine); text-decoration: none; font-size: 15px; letter-spacing: .04em; transition: background 400ms ease; }
 .hh-a + .hh-a { border-top: 1px solid rgba(25, 37, 55, .16); font-size: 13px; padding-block: 14px; }
@@ -1433,7 +1434,34 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @keyframes hhzoom { from { transform: scale(1.08); } }
 @media (max-width: 860px) {
   .hh-in { flex-direction: column; align-items: stretch; }
-  .hh-h1 { font-size: clamp(28px, 8vw, 40px); text-transform: none; letter-spacing: .005em; max-width: 14ch; }
   .hh-card { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { .hh-img { animation: none; } }
+
+/* Redaktioneller Stil: Playfair fett, eng, Blocksatz (Vorbild: Archter) */
+.ed { font-family: var(--font-head); font-weight: 700; letter-spacing: -.015em; line-height: 1.1; text-transform: none; text-align: justify; hyphens: auto; }
+.hh-h1.ed { font-size: clamp(20px, 2.1vw, 32px); max-width: 520px; text-transform: none; letter-spacing: -.01em; line-height: 1.16; }
+.edi { background: var(--ivory); color: var(--marine); padding: clamp(56px, 9vw, 140px) 0 clamp(56px, 8vw, 120px); }
+.edi-row { display: grid; grid-template-columns: minmax(80px, 1fr) minmax(0, 5fr); gap: clamp(16px, 3vw, 48px); align-items: start; }
+.edi-label { margin: 6px 0 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--marine); }
+.sw { margin: 0; }
+.sw.edi-big { font-size: clamp(26px, 3.7vw, 58px); color: var(--marine); }
+.sw-w { --w: clamp(0, calc(var(--p, 0) * (var(--n) + 6) - var(--i)), 1); opacity: calc(.16 + var(--w) * .84); filter: blur(calc((1 - var(--w)) * 7px)); }
+.edi-row2 { display: grid; grid-template-columns: 86px minmax(0, 1fr) auto; gap: clamp(16px, 5vw, 80px); align-items: end; margin-top: clamp(64px, 9vw, 150px); padding-left: calc((100% - clamp(16px, 3vw, 48px)) / 6 + clamp(16px, 3vw, 48px)); }
+.edi-img { width: 86px; aspect-ratio: 3 / 4; overflow: hidden; }
+.edi-img img { width: 100%; height: 100%; object-fit: cover; }
+.edi-small { margin: 0; font-size: clamp(16px, 1.5vw, 22px); max-width: 24ch; justify-self: center; }
+.edi-btn { display: inline-flex; align-items: center; gap: 14px; background: var(--marine); color: var(--ivory); text-decoration: none; padding: 8px 8px 8px 20px; border-radius: 6px; font-size: 14px; letter-spacing: .04em; transition: background 400ms ease; }
+.edi-btn i { font-style: normal; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--ivory); border-radius: 4px; transition: background 400ms ease, color 400ms ease; }
+.edi-btn:hover, .edi-btn:focus-visible { background: var(--black); }
+.edi-btn:hover i { background: var(--gold); color: var(--black); border-color: var(--gold); }
+.big-sec { padding-top: clamp(64px, 9vw, 140px); }
+.big-h { margin: 0 0 clamp(28px, 4vw, 60px); font-size: clamp(44px, 9.5vw, 150px); line-height: .98; letter-spacing: -.03em; text-align: left; hyphens: manual; color: var(--ivory); display: block; }
+.big-h .r { display: block; text-align: right; }
+@media (max-width: 860px) {
+  .edi-row { grid-template-columns: 1fr; }
+  .edi-row2 { grid-template-columns: 70px minmax(0, 1fr); padding-left: 0; }
+  .edi-small { justify-self: start; }
+  .edi-btn { grid-column: 1 / -1; justify-self: start; }
+  .hh-h1.ed { font-size: 20px; max-width: none; }
+}

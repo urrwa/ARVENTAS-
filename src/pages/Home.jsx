@@ -3,6 +3,9 @@ import HomeHero from '../components/HomeHero.jsx'
 import HoverList from '../components/HoverList.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
+import Letters from '../components/Letters.jsx'
+import ScrollWords from '../components/ScrollWords.jsx'
+import { Link } from 'react-router-dom'
 import { Sec, IconGrid, StepsRow, Chain, Split, GoldLine } from '../components/blocks.jsx'
 import { AUDIENCES, CHAIN, SERVICE_LIST, CLAIM } from '../content/site.js'
 
@@ -21,29 +24,44 @@ const JOURNEY = [
 ]
 const FOR = ['Klarere Strukturen für komplexe Entscheidungen.', 'Bessere Priorisierung von Chancen und Risiken.', 'Marktverständnis als Grundlage.', 'Strategien, die Wachstum schaffen.', 'Entwicklungspotenziale erkennen und nutzen.']
 
+// Redaktioneller Abschnitt auf hellem Grund: Beschriftung, großer Blocksatz mit Wort-Reveal, kleines Bild mit Kurztext.
+function Editorial() {
+  return (
+    <section className="edi" aria-label="Über ARVENTAS">
+      <div className="wrap">
+        <div className="edi-row">
+          <p className="edi-label">(Über uns)</p>
+          <ScrollWords className="edi-big ed" text="ARVENTAS ist kein klassisches Immobilienunternehmen. Wir verbinden Marktverständnis, Bewertung, strategische Analyse, Vermarktung und Entwicklung zu einem klaren System für bessere Immobilienentscheidungen." />
+        </div>
+        <div className="edi-row2">
+          <div className="edi-img rv"><img src="/media/buero-abend-2.webp" alt="" loading="lazy" decoding="async" /></div>
+          <p className="edi-small ed rv">Wir denken über die Immobilie hinaus und fokussieren uns auf langfristiges Potenzial.</p>
+          <Link to="/ueber-uns" className="edi-btn rv"><span>Über uns</span><i aria-hidden="true">→</i></Link>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function Home() {
   return (
     <>
       <Seo title={`ARVENTAS | ${CLAIM}`} description="ARVENTAS verbindet Marktverständnis, Immobilienbewertung, Strategie und intelligente Vermarktung für fundierte Immobilienentscheidungen." />
       <HomeHero />
 
+      <Editorial />
+
       <Sec eyebrow="Wofür ARVENTAS steht" title="Struktur für bessere Immobilienentscheidungen."
         lead="ARVENTAS steht für einen klaren, strukturierten und strategischen Ansatz in der Immobilienentwicklung. Wir betrachten Immobilien nicht isoliert, sondern verbinden Markt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsrahmen.">
         <IconGrid items={PILLARS} cols={4} />
-      </Sec>
-
-      <Sec eyebrow="Einleitung zum Unternehmen" title={<>ARVENTAS ist kein klassisches Immobilienunternehmen.</>}>
-        <Split img="/media/buero-abend-2.webp" alt="Beleuchteter Besprechungsraum am Abend">
-          <p className="rv">Wir sind ein strategisches Immobilien-System, das Marktverständnis, Bewertung, Strategie und intelligente Vermarktung verbindet und so fundierte Entscheidungen ermöglicht.</p>
-          <GoldLine>Nicht Makler. Nicht klassisches Bauunternehmen. Ein strukturierter Real-Estate-Intelligence- und Entwicklungspartner.</GoldLine>
-        </Split>
       </Sec>
 
       <Sec eyebrow="Kundenjourney" title="Vom Marktsignal zur klaren Strategie.">
         <StepsRow items={JOURNEY} />
       </Sec>
 
-      <Sec eyebrow="Leistungsübersicht" title="Ein System. Fünf strategische Leistungsbereiche.">
+      <Sec className="big-sec">
+        <h2 className="big-h ed"><Letters text="Fünf Leistungen." per={30} /><span className="r"><Letters text="Ein System." per={30} delay={500} /></span></h2>
         <HoverList items={SERVICE_LIST.map((s) => ({ t: s.t, d: s.card, img: s.img, icon: s.icon, to: `/leistungen/${s.slug}` }))} />
         <div className="btn-row"><Btn to="/leistungen" variant="line">Leistungen entdecken</Btn></div>
       </Sec>
