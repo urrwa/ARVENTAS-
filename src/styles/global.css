@@ -1533,23 +1533,6 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (prefers-reduced-motion: reduce) { .gal-sec { height: auto; } .gal-stick { position: static; height: auto; padding-block: 56px; } .gal-t { transform: none; } }
 
 /* Eine Hintergrundfarbe auf der Startseite: Elfenbein bis zum Ende (Abschlussband und Fußleiste hell) */
-.page:has(.hf) .ctab { background: var(--ivory); }
-.page:has(.hf) .ctab-box { background: var(--ivory); border-color: var(--marine); }
-.page:has(.hf) .ctab-txt .h2 { color: var(--marine); }
-.page:has(.hf) .ctab-txt p, .page:has(.hf) .ctab-claim { color: var(--ink-soft); }
-.page:has(.hf) .ctab-txt .eyebrow { color: var(--marine); }
-.page:has(.hf) .ctab .btn-gold { background: var(--marine); color: var(--ivory); border-color: var(--marine); }
-.page:has(.hf) .ctab .btn-line { color: var(--marine); border-color: var(--marine); --chip: var(--marine); --chip-fg: var(--ivory); --hover-fg: var(--ivory); }
-.page:has(.hf) .ftr { background: var(--ivory); color: var(--marine); }
-.page:has(.hf) .ftr-slogan { color: var(--marine); }
-.page:has(.hf) .ftr-slogan .soft { color: var(--ink-soft); }
-.page:has(.hf) .ftr h4 { color: var(--marine); opacity: .6; }
-.page:has(.hf) .ftr a, .page:has(.hf) .ftr .lk { color: var(--marine); }
-.page:has(.hf) .ftr a.btn { background: var(--marine); color: var(--ivory); }
-.page:has(.hf) .ftr-bot { color: var(--ink-soft); border-top-color: var(--line-light); }
-.page:has(.hf) .ftr-logo img { filter: invert(1) brightness(.25) sepia(1) hue-rotate(185deg) saturate(2.5); }
-.page:has(.hf) .ftr-mark text { stroke: var(--marine); fill: rgba(25, 37, 55, 0); }
-.page:has(.hf) .ftr-mark.on text { fill: rgba(25, 37, 55, .06); }
 .gal-sec { background: var(--ivory); }
 
 /* Zweite Reihe schiebt sich nach dem Setzen über die erste (Stapeln) */
@@ -1583,3 +1566,29 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 /* Hero-Text minimal (Vorbild Archter): kleine, fette Aussage im Blocksatz unten links */
 .hf-h1.ed { position: absolute; left: var(--gut); right: auto; bottom: clamp(24px, 4vh, 48px); width: min(520px, calc(100% - 2 * var(--gut) - 360px)); margin: 0; padding: 0; display: block; font-size: clamp(20px, 2.1vw, 32px); line-height: 1.16; letter-spacing: -.01em; text-align: justify; text-transform: none; opacity: calc(1 - var(--t) * .9); transform: none; }
 @media (max-width: 860px) { .hf-h1.ed { width: auto; right: var(--gut); bottom: clamp(150px, 22vh, 190px); font-size: 20px; text-align: left; } }
+
+/* Startseite: durchgehend Marine-Blau (ein Hintergrund), Schrift Elfenbein, Akzente Gold */
+.sec.light, .edi, .gal-sec { background: var(--marine); color: var(--ivory); }
+.sec.light .eyebrow { color: var(--gold); }
+.sec.light .eyebrow::before { background: var(--gold); }
+.sec.light .h2, .sec.light .big-h, .sec.light .hl-row h3 { color: var(--ivory); }
+.sec.light .lead, .sec.light p, .sec.light .hl-row p { color: var(--text-on-dark-soft); }
+.sec.light .icard, .sec.light .srow li { background: var(--card-bg); border-color: var(--gold-line); color: var(--ivory); }
+.sec.light .icard:hover { border-color: var(--gold); background: rgba(245, 243, 239, .06); }
+.sec.light .icard h3, .sec.light .srow b, .sec.light .chain b { color: var(--ivory); }
+.sec.light .icard p, .sec.light .srow li > span:last-child { color: var(--text-on-dark-soft); }
+.sec.light .ring, .sec.light .hl-ico { border-color: var(--gold); color: var(--gold); }
+.sec.light .srow .sn, .sec.light .hl-n { color: var(--gold); opacity: 1; }
+.sec.light .srow li:not(:last-child)::after { color: var(--gold); }
+.sec.light .chain li:not(:last-child)::after { border-top-color: var(--gold); opacity: .7; }
+.sec.light .gl, .sec.light .gl li { color: var(--ivory); }
+.sec.light .gl li::before { border-color: var(--gold); }
+.sec.light .gline { color: var(--gold); border-top-color: var(--gold-line); }
+.sec.light .more { color: var(--gold); }
+.sec.light .hl { border-top-color: var(--line-light); }
+.sec.light .btn-marine { background: var(--gold); color: var(--black); }
+.icard .num { color: var(--ivory); }
+.icard .num small { color: var(--text-on-dark-soft); }
+.edi-label { color: var(--gold); }
+.sw.edi-big { color: var(--ivory); }
+.gal-t { background: rgba(245, 243, 239, .08); }
