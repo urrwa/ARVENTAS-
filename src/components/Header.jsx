@@ -1,5 +1,5 @@
-import { Link, NavLink } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
 import LangToggle from './LangToggle.jsx'
 import { useMenu } from './MenuContext.jsx'
 
@@ -15,6 +15,15 @@ export const NAV = [
 export default function Header() {
   const { open, setOpen } = useMenu()
   const burger = useRef(null)
+  const isHome = useLocation().pathname === '/'
+  const [top, setTop] = useState(true)
+  // Startseite: Leiste liegt zunächst klar über dem Foto und wird beim Scrollen flächig.
+  useEffect(() => {
+    const f = () => setTop(window.scrollY < 40)
+    f()
+    window.addEventListener('scroll', f, { passive: true })
+    return () => window.removeEventListener('scroll', f)
+  }, [])
   // Nach dem Schließen springt der Fokus zurück auf den Menü-Knopf
   const wasOpen = useRef(false)
   useEffect(() => {
@@ -22,7 +31,7 @@ export default function Header() {
     wasOpen.current = open
   }, [open])
   return (
-    <header className="hdr" inert={open || undefined}>
+    <header className={`hdr${isHome && top ? ' clear' : ''}`} inert={open || undefined}>
       <div className="hdr-in">
         <Link to="/" className="logo" aria-label="ARVENTAS – zur Startseite">
           <img src="/media/arventas-logo.png" alt="ARVENTAS" width="132" height="80" />

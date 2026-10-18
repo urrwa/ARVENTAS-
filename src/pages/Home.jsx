@@ -1,5 +1,5 @@
 import Seo from '../components/Seo.jsx'
-import PageHero from '../components/PageHero.jsx'
+import HomeHero from '../components/HomeHero.jsx'
 import HoverList from '../components/HoverList.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
@@ -25,11 +25,7 @@ export default function Home() {
   return (
     <>
       <Seo title={`ARVENTAS | ${CLAIM}`} description="ARVENTAS verbindet Marktverständnis, Immobilienbewertung, Strategie und intelligente Vermarktung für fundierte Immobilienentscheidungen." />
-      <PageHero tall image="/media/buero-abend-1.webp" eyebrow="Strategische Immobilienentwicklung" title="Strategische Immobilienentwicklung mit System."
-        lead="ARVENTAS verbindet Marktverständnis, Immobilienbewertung, Strategie und intelligente Vermarktung. Wir helfen Projektentwicklern, Investoren und Immobilienunternehmen, Potenziale früher zu erkennen, Risiken besser einzuordnen und Entscheidungen fundierter zu treffen.">
-        <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn><Btn to="/kontakt?art=Strategiegespräch" variant="line">Strategiegespräch anfragen</Btn></div>
-        <ul className="kw" aria-label="Leistungen">{SERVICE_LIST.map((s) => <li key={s.slug}>{s.t}</li>)}</ul>
-      </PageHero>
+      <HomeHero />
 
       <Sec eyebrow="Wofür ARVENTAS steht" title="Struktur für bessere Immobilienentscheidungen."
         lead="ARVENTAS steht für einen klaren, strukturierten und strategischen Ansatz in der Immobilienentwicklung. Wir betrachten Immobilien nicht isoliert, sondern verbinden Markt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsrahmen.">

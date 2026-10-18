@@ -1416,3 +1416,24 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (max-width: 700px) { .kw { gap: 6px 16px; } .kw li + li::before { display: none; } }
 .svc-btn { padding: 10px 16px; font-size: 12px; } .icard h3 { hyphens: manual; overflow-wrap: break-word; }
 @media (max-width: 860px) { .hl-row { grid-template-columns: 56px minmax(0, 1fr); } .hl-row p { grid-column: 2; } .hl-row h3 { font-size: clamp(20px, 6vw, 28px); } }
+
+/* Startseiten-Kopf im Stil einer Fotobühne */
+.hh { position: relative; min-height: 100svh; margin-top: calc(-1 * var(--header-h)); overflow: hidden; background: var(--marine); color: var(--ivory); display: flex; align-items: flex-end; }
+.hh-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; animation: hhzoom 2800ms var(--ease) both; }
+.hh::after { content: ""; position: absolute; inset: 0; background: rgba(25, 37, 55, .42); pointer-events: none; }
+.hh-in { position: relative; z-index: 1; width: 100%; max-width: 1520px; margin: 0 auto; padding: 0 var(--gut) clamp(28px, 4.5vw, 64px); display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(20px, 4vw, 64px); }
+.hh-h1 { font-family: var(--font-head); font-weight: 500; text-transform: uppercase; letter-spacing: .03em; line-height: 1.06; font-size: clamp(30px, 4.6vw, 72px); max-width: 15ch; margin: 0; color: var(--ivory); }
+.hh-card { flex: none; width: min(340px, 100%); background: var(--ivory); color: var(--marine); border-radius: 6px; display: grid; }
+.hh-a { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 16px 16px 22px; color: var(--marine); text-decoration: none; font-size: 15px; letter-spacing: .04em; transition: background 400ms ease; }
+.hh-a + .hh-a { border-top: 1px solid rgba(25, 37, 55, .16); font-size: 13px; padding-block: 14px; }
+.hh-a i { font-style: normal; display: grid; place-items: center; width: 40px; height: 40px; background: var(--marine); color: var(--ivory); border-radius: 4px; transition: background 400ms ease, color 400ms ease, transform 500ms var(--ease); }
+.hh-a:not(.main) i { background: transparent; color: var(--marine); width: 28px; height: 28px; }
+.hh-a:hover i, .hh-a:focus-visible i { background: var(--gold); color: var(--black); transform: translateX(3px); }
+.hh-a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+@keyframes hhzoom { from { transform: scale(1.08); } }
+@media (max-width: 860px) {
+  .hh-in { flex-direction: column; align-items: stretch; }
+  .hh-h1 { font-size: clamp(28px, 8vw, 40px); text-transform: none; letter-spacing: .005em; max-width: 14ch; }
+  .hh-card { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .hh-img { animation: none; } }
