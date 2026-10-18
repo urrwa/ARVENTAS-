@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
 
-// Einstieg: Foto mit Text. Beim Scrollen blendet der Text aus, das Haus fährt heran, dann erscheint die Wortmarke mit dem Foto in den Buchstaben.
+// Einstieg: Das Haus steht im Himmel vor der Überschrift. Beim Scrollen steigt es auf, die Überschrift sinkt weg,
+// die Wortmarke zeichnet sich als Linie, füllt sich mit dem Foto, steigt ebenfalls auf, dann kommen die Wolken.
 export default function Hero() {
   const wrap = useRef(null)
   useEffect(() => {
@@ -25,25 +26,34 @@ export default function Hero() {
   return (
     <section className="hz" id="film" ref={wrap} aria-label="Einführung">
       <div className="hz-stick">
-        <picture>
-          <source media="(max-width: 859px)" srcSet="/media/hero-haus-sm.webp" />
-          <img className="hz-img" src="/media/hero-haus.webp" alt="Moderne Villa im Abendlicht (KI-generiertes Beispielbild)" fetchpriority="high" />
-        </picture>
-        <div className="hz-shade" />
-        <div className="hz-copy wrap">
+        <img className="hz-sky" src="/media/himmel.webp" alt="" fetchpriority="high" />
+        <div className="hz-behind">
           <p className="eyebrow">Off-Market Immobilien · Deutschlandweit</p>
-          <h1 className="h1 hs-h1"><Letters text="Immobilien mit Potenzial. Zugang mit Vorsprung." per={34} /></h1>
+          <h1 className="hz-h1"><Letters text="Immobilien mit Potenzial. Zugang mit Vorsprung." per={30} /></h1>
+        </div>
+        <div className="hz-mark" aria-hidden="true">
+          <svg viewBox="0 0 1000 220" focusable="false">
+            <defs>
+              <pattern id="hz-pat" patternUnits="userSpaceOnUse" width="1000" height="220">
+                <image href="/media/hero-haus.webp" width="1000" height="560" x="0" y="-250" preserveAspectRatio="xMidYMid slice" />
+              </pattern>
+            </defs>
+            <text className="hz-fill" x="500" y="170" textAnchor="middle" textLength="940" lengthAdjust="spacing" fill="url(#hz-pat)">ΛRVENTΛS</text>
+            <text className="hz-line" x="500" y="170" textAnchor="middle" textLength="940" lengthAdjust="spacing">ΛRVENTΛS</text>
+          </svg>
+          <span className="hz-sub">Werte schaffen. Zukunft bauen.</span>
+        </div>
+        <img className="hz-house" src="/media/haus-freisteller.webp" alt="Moderne Villa im Abendlicht (KI-generiertes Beispielbild)" fetchpriority="high" />
+        <img className="hz-cloud-front" src="/media/wolken-vorn.webp" alt="" />
+        <div className="hz-copy">
           <p className="lead">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet.</p>
           <div className="btn-row">
             <Link to="/immobilie-verkaufen" className="btn btn-gold">Immobilie verkaufen <span className="arr" aria-hidden="true">→</span></Link>
             <Link to="/kapitalanlage-immobilien" className="btn btn-line">Immobilien entdecken <span className="arr" aria-hidden="true">→</span></Link>
           </div>
         </div>
-        <div className="hz-cover" aria-hidden="true" />
-        <div className="hz-mark" aria-hidden="true">
-          <span className="hz-word">ΛRVENTΛS</span>
-          <span className="hz-sub">Werte schaffen. Zukunft bauen.</span>
-        </div>
+        <div className="hz-clouds" aria-hidden="true"><img src="/media/himmel.webp" alt="" /></div>
+        <div className="hz-navy" aria-hidden="true" />
       </div>
     </section>
   )
