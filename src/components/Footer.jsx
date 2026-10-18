@@ -20,20 +20,24 @@ export default function Footer() {
         <div className="ftr-top">
           <div className="ftr-lead">
             <Link to="/" className="ftr-logo" aria-label="ARVENTAS – zur Startseite"><img src="/media/arventas-logo.png" alt="ARVENTAS" width="300" height="182" loading="lazy" /></Link>
-            <p className="ftr-slogan"><span>Werte schaffen.</span> <span className="soft">Zukunft bauen.</span></p>
-            <div className="btn-row"><Btn to="/kontakt" variant="gold">Beratung anfragen</Btn></div>
+            <p className="ftr-slogan"><span>Strategische Immobilienentwicklung</span> <span className="soft">mit System.</span></p>
+            <div className="btn-row"><Btn to="/kontakt" variant="gold">Potenzial analysieren</Btn></div>
           </div>
           <div className="ftr-cols">
-            <nav aria-label="Wege"><h4>Wege</h4><ul>
-              <li><Link to="/immobilie-verkaufen">Für Eigentümer</Link></li>
-              <li><Link to="/kapitalanlage-immobilien">Für Investoren</Link></li>
-              <li><Link to="/objektreport">Objektreport</Link></li>
-            </ul></nav>
-            <nav aria-label="Unternehmen"><h4>Unternehmen</h4><ul>
+            <nav aria-label="Navigation"><h4>Navigation</h4><ul>
+              <li><Link to="/">Startseite</Link></li>
+              <li><Link to="/leistungen">Leistungen</Link></li>
+              <li><Link to="/system">System</Link></li>
+              <li><Link to="/insights">Insights</Link></li>
               <li><Link to="/ueber-uns">Über uns</Link></li>
-              <li><Link to="/partner">Partner</Link></li>
-              <li><Link to="/wissen">Wissen</Link></li>
               <li><Link to="/kontakt">Kontakt</Link></li>
+            </ul></nav>
+            <nav aria-label="Leistungen"><h4>Leistungen</h4><ul>
+              <li><Link to="/leistungen/marktanalyse">Marktanalyse</Link></li>
+              <li><Link to="/leistungen/immobilienbewertung">Immobilienbewertung</Link></li>
+              <li><Link to="/leistungen/strategische-analyse">Strategische Analyse</Link></li>
+              <li><Link to="/leistungen/strategische-vermarktung">Strategische Vermarktung</Link></li>
+              <li><Link to="/leistungen/development-intelligence">Development Intelligence</Link></li>
             </ul></nav>
             <nav aria-label="Rechtliches"><h4>Rechtliches</h4><ul>
               <li><Link to="/impressum">Impressum</Link></li>
@@ -43,7 +47,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="ftr-bot">
-          <span><Brand /> · Off-Market-Immobilien in Deutschland</span>
+          <span><Brand /> · Strategische Immobilienentwicklung mit System.</span>
         </div>
       </div>
       <svg ref={mark} className="ftr-mark" viewBox="0 0 1000 170" aria-hidden="true" focusable="false">

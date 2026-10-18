@@ -63,14 +63,14 @@ export const REPORT_FAQ = [
 
 export const ARTICLES = [
   {
-    slug: 'off-market-verstehen', cat: 'Off-Market', title: 'Off-Market verstehen', img: '/media/stadt-luftbild.webp',
+    slug: 'off-market-verstehen', cat: 'Off-Market', title: 'Off-Market verstehen', img: '/media/cta-abend-1.webp',
     teaser: 'Was Off-Market bedeutet, wie der Zugang funktioniert und worauf Sie achten sollten.',
     sections: [
       { h: 'Was bedeutet Off-Market?', p: ['Off-Market-Immobilien werden nicht über öffentliche Immobilienportale vermarktet. Der Kreis der Interessenten ist begrenzt, die Ansprache erfolgt persönlich.'] },
       { h: 'Warum entscheiden sich Eigentümer dafür?', p: ['Typische Beweggründe sind Diskretion, Planbarkeit und ein kontrollierter Kreis von Interessenten. Welche Gründe im Einzelfall überwiegen, ist individuell verschieden.'] },
       { h: 'Worauf sollten Investoren achten?', p: ['Auch bei Off-Market-Objekten gilt: Informationen prüfen, Annahmen hinterfragen, Unterlagen vollständig sichten. Ein nicht öffentliches Angebot ist kein Qualitätsmerkmal an sich.'] },
     ],
-    steps: 'Wenn Sie wissen möchten, wie ein Objekt eingeordnet werden kann, ist der Objektreport der nächste Schritt.',
+    steps: 'Wenn Sie wissen möchten, wie ein Objekt eingeordnet werden kann, ist eine Immobilienbewertung der nächste Schritt.',
   },
   {
     slug: 'immobilien-bewerten', cat: 'Immobilienbewertung', title: 'Immobilien bewerten', img: '/media/planunterlagen.webp',
@@ -80,7 +80,7 @@ export const ARTICLES = [
       { h: 'Typische Verfahren', p: ['In Deutschland sind das Vergleichswertverfahren, das Ertragswertverfahren und das Sachwertverfahren gebräuchlich. Welches Verfahren geeignet ist, hängt von der Objektart ab.'] },
       { h: 'Annahmen sichtbar machen', p: ['Jede Bewertung beruht auf Annahmen. Ein guter Bericht benennt Datenquellen, Stand und Annahmen, damit Sie die Ergebnisse nachvollziehen können.'] },
     ],
-    steps: 'Im Objektreport werden Herkunft von Daten und Annahmen je Baustein ausgewiesen.',
+    steps: 'Bei jeder Bewertung werden Herkunft von Daten und Annahmen nachvollziehbar benannt.',
   },
   {
     slug: 'potenziale-einordnen', cat: 'Entwicklungspotenziale', title: 'Potenziale einordnen', img: '/media/gebaeude-sanierung.webp',
@@ -90,7 +90,7 @@ export const ARTICLES = [
       { h: 'Typische Fragestellungen', p: ['Bestandsoptimierung, Nachverdichtung oder Nutzungsänderung sind gängige Überlegungen. Jede davon braucht eine eigene rechtliche und wirtschaftliche Prüfung.'] },
       { h: 'Vorprüfung statt Entscheidung', p: ['Rechtliche Vorprüfungen dienen der Orientierung. Sie ersetzen keine verbindliche Auskunft der zuständigen Stellen.'] },
     ],
-    steps: 'Im Objektreport finden Sie Prüfhinweise, die offene Punkte benennen.',
+    steps: 'In einer strategischen Analyse werden offene Punkte und Prüfhinweise benannt.',
   },
 ]
 export const CATEGORIES = ['Alle', 'Off-Market', 'Immobilienbewertung', 'Kapitalanlage', 'Entwicklungspotenziale', 'Marktinformationen']

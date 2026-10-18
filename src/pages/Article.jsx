@@ -12,11 +12,11 @@ export default function Article() {
   if (!a) return <NotFound />
   return (
     <>
-      <Seo title={`${a.title} | Wissen | ARVENTAS`} description={a.teaser} />
-      <PageHero image="/media/notizbuch.webp" crumb={<><Link to="/wissen">Wissen</Link> / {a.title}</>} title={a.title} lead={a.teaser}>
+      <Seo title={`${a.title} | Insights | ARVENTAS`} description={a.teaser} />
+      <PageHero image="/media/cta-abend-2.webp" crumb={<><Link to="/insights">Insights</Link> / {a.title}</>} title={a.title} lead={a.teaser}>
         <p style={{ marginTop: 20 }}><span className="tagd">Entwurf</span></p>
       </PageHero>
-      <section className="sec ivory">
+      <section className="sec dark">
         <div className="wrap">
           <article className="art">
             <Placeholder title="Entwurf">Dieser Beitrag ist ein Entwurf und keine aktuelle Recherche. Quellen, Stand und redaktionelle Freigabe sind noch offen.</Placeholder>
@@ -25,7 +25,7 @@ export default function Article() {
             <p>Quellen: noch zu ergänzen. Annahmen: werden im ausgearbeiteten Beitrag je Aussage benannt.</p>
             <h2>Nächster Schritt</h2>
             <p>{a.steps}</p>
-            <div className="btn-row"><Btn to="/objektreport" variant="marine">Zum Objektreport</Btn><Btn to="/wissen" variant="line">Alle Beiträge</Btn></div>
+            <div className="btn-row"><Btn to="/kontakt" variant="gold">Potenzial analysieren</Btn><Btn to="/insights" variant="line">Alle Beiträge</Btn></div>
           </article>
         </div>
       </section>

@@ -4,15 +4,8 @@ import LangToggle from './LangToggle.jsx'
 import { useMenu } from './MenuContext.jsx'
 import { useConsent } from './Consent.jsx'
 
-const items = [
-  { to: '/immobilie-verkaufen', label: 'Für Eigentümer' },
-  { to: '/kapitalanlage-immobilien', label: 'Für Investoren' },
-  { to: '/objektreport', label: 'Objektreport' },
-  { to: '/ueber-uns', label: 'Über uns' },
-  { to: '/wissen', label: 'Wissen' },
-  { to: '/partner', label: 'Partner' },
-  { to: '/kontakt', label: 'Kontakt' },
-]
+import { NAV } from './Header.jsx'
+const items = NAV
 
 // Push-Menü: Seitenpanel von rechts, die Seite wird nach links geschoben. Links erscheinen gestaffelt,
 // beim Hover läuft ein Balken hinter dem Link durch.
@@ -52,7 +45,7 @@ export default function MenuPanel() {
             ))}
           </ul>
         </nav>
-        <Link to="/kontakt" className="btn btn-marine panel-cta">Beratung anfragen <span className="arr" aria-hidden="true">→</span></Link>
+        <Link to="/kontakt" className="btn btn-marine panel-cta">Strategiegespräch anfragen <span className="arr" aria-hidden="true">→</span></Link>
         <div className="panel-bot">
           <div>
             <h4>Rechtliches</h4>

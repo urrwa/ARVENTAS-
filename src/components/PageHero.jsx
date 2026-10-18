@@ -22,14 +22,15 @@ function useFadeOut(on, ref, blur) {
   }, [on, ref, blur])
 }
 
-export default function PageHero({ crumb, title, lead, children, image, tall, fadeOut, blur }) {
+export default function PageHero({ crumb, eyebrow, title, lead, children, image, tall, fadeOut, blur }) {
   const wrapRef = useRef(null)
   useFadeOut(fadeOut, wrapRef, blur)
   return (
     <section className={`phero dark${image ? ' has-img' : ''}${tall ? ' tall' : ''}`}>
       {image && <img className="phero-img" src={image} alt="" loading="eager" />}
       <div className="wrap" ref={wrapRef}>
-        <p className="crumbs"><Link to="/">Start</Link> / {crumb}</p>
+        {crumb && <p className="crumbs"><Link to="/">Start</Link> / {crumb}</p>}
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
         <h1 className="h1">{typeof title === 'string' ? <Letters text={title} per={45} /> : title}</h1>
         {lead && <p className="lead">{typeof lead === 'string' ? <Letters text={lead} per={14} max={1400} delay={500} /> : <Brandify>{lead}</Brandify>}</p>}
         {children}

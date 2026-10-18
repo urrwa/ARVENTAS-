@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Icon from './Icon.jsx'
 
 // Listenzeilen: Beim Hover wird die Zeile hervorgehoben und ein Bild folgt weich dem Cursor.
@@ -30,7 +31,7 @@ export default function HoverList({ items }) {
       {items.map((it, i) => (
         <article key={it.t} className={`hl-row${act === i ? ' act' : ''}`} onMouseEnter={() => setAct(i)} onFocus={() => setAct(i)} onBlur={() => setAct(-1)} tabIndex={0}>
           <span className="hl-n">{it.icon ? <span className="hl-ico"><Icon name={it.icon} /></span> : `0${i + 1}`}</span>
-          <h3>{it.t}</h3>
+          <h3>{it.to ? <Link to={it.to} className="hl-link">{it.t}</Link> : it.t}</h3>
           <p>{it.d}</p>
           <img className="hl-thumb" src={it.img} alt="" loading="lazy" decoding="async" />
         </article>

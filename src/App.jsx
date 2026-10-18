@@ -6,13 +6,11 @@ import { ConsentProvider } from './components/Consent.jsx'
 import { MenuProvider, useMenu } from './components/MenuContext.jsx'
 import MenuPanel from './components/MenuPanel.jsx'
 import Home from './pages/Home.jsx'
-const Owners = lazy(() => import('./pages/Owners.jsx'))
-const InvestorsPage = lazy(() => import('./pages/Investors.jsx'))
-const InvestorCircle = lazy(() => import('./pages/InvestorCircle.jsx'))
-const ReportPage = lazy(() => import('./pages/ReportPage.jsx'))
+const Leistungen = lazy(() => import('./pages/Leistungen.jsx'))
+const ServicePage = lazy(() => import('./pages/ServicePage.jsx'))
+const System = lazy(() => import('./pages/System.jsx'))
+const Insights = lazy(() => import('./pages/Insights.jsx'))
 const About = lazy(() => import('./pages/About.jsx'))
-const Partners = lazy(() => import('./pages/Partners.jsx'))
-const Knowledge = lazy(() => import('./pages/Knowledge.jsx'))
 const Article = lazy(() => import('./pages/Article.jsx'))
 const Contact = lazy(() => import('./pages/Contact.jsx'))
 const Impressum = lazy(() => import('./pages/Legal.jsx').then((m) => ({ default: m.Impressum })))
@@ -22,26 +20,35 @@ const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 // Scroll-Reveal (400–700 ms, siehe global.css). Beobachtet nach jedem Routenwechsel alle neuen .rv/.tl/.tri-Elemente.
 function useReveal(key) {
   useEffect(() => {
-    const els = [...document.querySelectorAll('.rv:not(.in), .tl:not(.in), .tri:not(.in)')]
-    if (!els.length) return
-    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      els.forEach((e) => e.classList.add('in'))
-      return
-    }
+    const sel = '.rv:not(.in), .tl:not(.in), .tri:not(.in)'
+    const reduce = !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches
+    const seen = new WeakSet()
+    const pending = new Set()
+    const show = (e) => { e.classList.add('in'); pending.delete(e); io && io.unobserve(e) }
     // Reveal startet schon vor dem Sichtbarwerden (rootMargin), damit schnelles Scrollen keine leeren Flächen zeigt.
-    const pending = new Set(els)
-    const show = (e) => { e.classList.add('in'); pending.delete(e); io.unobserve(e) }
-    const io = new IntersectionObserver((entries) => {
+    const io = reduce ? null : new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) show(e.target) })
     }, { threshold: 0, rootMargin: '0px 0px 25% 0px' })
-    els.forEach((e) => io.observe(e))
+    // Seiten werden lazy geladen: neu eingefügte Elemente werden nachträglich erfasst.
+    const scan = () => {
+      document.querySelectorAll(sel).forEach((e) => {
+        if (seen.has(e)) return
+        seen.add(e)
+        if (reduce) { e.classList.add('in'); return }
+        pending.add(e); io.observe(e)
+      })
+    }
+    scan()
     // Sicherheitsnetz: Elemente, die beim schnellen Scrollen übersprungen wurden, werden nachträglich eingeblendet.
     let raf = 0
     const sweep = () => { raf = 0; pending.forEach((e) => { if (e.getBoundingClientRect().top < innerHeight * 1.25) show(e) }) }
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(sweep) }
     window.addEventListener('scroll', onScroll, { passive: true })
+    let sr = 0
+    const mo = new MutationObserver(() => { if (!sr) sr = requestAnimationFrame(() => { sr = 0; scan(); sweep() }) })
+    mo.observe(document.getElementById('main') || document.body, { childList: true, subtree: true })
     sweep()
-    return () => { io.disconnect(); window.removeEventListener('scroll', onScroll); cancelAnimationFrame(raf) }
+    return () => { io && io.disconnect(); mo.disconnect(); window.removeEventListener('scroll', onScroll); cancelAnimationFrame(raf); cancelAnimationFrame(sr) }
   }, [key])
 }
 
@@ -113,14 +120,12 @@ function Shell() {
         <Suspense fallback={<div style={{ minHeight: '100svh' }} />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/immobilie-verkaufen" element={<Owners />} />
-          <Route path="/kapitalanlage-immobilien" element={<InvestorsPage />} />
-          <Route path="/investorenkreis" element={<InvestorCircle />} />
-          <Route path="/objektreport" element={<ReportPage />} />
+          <Route path="/leistungen" element={<Leistungen />} />
+          <Route path="/leistungen/:slug" element={<ServicePage />} />
+          <Route path="/system" element={<System />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/:slug" element={<Article />} />
           <Route path="/ueber-uns" element={<About />} />
-          <Route path="/partner" element={<Partners />} />
-          <Route path="/wissen" element={<Knowledge />} />
-          <Route path="/wissen/:slug" element={<Article />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />

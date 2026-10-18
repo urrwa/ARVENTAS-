@@ -10,7 +10,7 @@ const subs = new Set()
 export const getLang = () => lang
 export const subscribe = (f) => { subs.add(f); return () => subs.delete(f) }
 
-const norm = (s) => s.replace(/\s+/g, ' ').trim()
+const norm = (s) => s.replace(/\u00AD/g, '').replace(/\s+/g, ' ').trim()
 const PHONE = { 'E-Mail': 'Email', Telefon: 'Phone', Rückruf: 'Callback' }
 const RULES = [
   [/^Prinzipdarstellung: Ihr Suchprofil mit Region (.+), Budgetband (.+) und Immobilientyp (.+) wird mit Immobilieninformationen abgeglichen\.$/,
