@@ -1246,3 +1246,18 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 /* Hero-Ende: Navy früher voll, nächste Sektion schiebt sich über den leeren Rest */
 .hz:not(.flat) { margin-bottom: -34vh; }
 .hz:not(.flat) + * { position: relative; z-index: 2; }
+
+/* Zugänge: Kacheln öffnen sich aus kleinem Ausschnitt, Nachbar dunkelt ab, Vorschaubild folgt dem Cursor */
+.doors-sec .door { transition: filter 800ms ease; }
+.doors-sec .door:not(.in) img { clip-path: inset(30% 32% 30% 32%); }
+.doors-sec .door img { transition: clip-path 1500ms cubic-bezier(.7, 0, .2, 1), transform 2400ms cubic-bezier(.2, .6, .1, 1), filter 900ms ease; }
+.doors-sec .door .door-txt { transition: opacity 900ms ease 700ms; }
+.doors-sec .door:not(.in) .door-txt { opacity: 0; }
+@media (hover: hover) { .doors-sec .doors:hover .door:not(:hover) { filter: brightness(.35); } }
+.door-pv { position: absolute; left: 0; top: 0; width: 0; height: 0; z-index: 3; pointer-events: none; }
+.door-pv img { max-width: none; translate: none !important; position: absolute; left: -80px; top: -105px; width: 160px; height: 210px; object-fit: cover; opacity: 0; scale: .6; transform: none; clip-path: none; filter: none; transition: opacity 350ms ease, scale 600ms cubic-bezier(.2, .6, .1, 1); }
+.door-pv[data-on="1"] img.on { opacity: 1; scale: 1; }
+.doors-sec .door-pv img { clip-path: none; filter: none; }
+@media (hover: none), (max-width: 860px) { .door-pv { display: none; } }
+@media (prefers-reduced-motion: reduce) { .doors-sec .door:not(.in) img { clip-path: inset(0); } .door-pv { display: none; } }
+.doors-sec .door:hover .door-pv img, .doors-sec .door .door-pv img { filter: none; transform: none; }
