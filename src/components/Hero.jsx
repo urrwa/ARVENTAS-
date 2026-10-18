@@ -51,6 +51,8 @@ export default function Hero() {
             <Link to="/kapitalanlage-immobilien" className="btn btn-line">Immobilien entdecken <span className="arr" aria-hidden="true">→</span></Link>
           </div>
         </div>
+        <div className="hz-rise r1" aria-hidden="true"><img src="/media/wolken-bank.webp" alt="" /></div>
+        <div className="hz-rise r2" aria-hidden="true"><img src="/media/wolken-bank.webp" alt="" /></div>
         <div className="hz-clouds" aria-hidden="true"><img src="/media/wolken-voll.webp" alt="" /></div>
         <div className="hz-navy" aria-hidden="true" />
       </div>
