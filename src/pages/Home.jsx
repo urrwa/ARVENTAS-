@@ -60,7 +60,7 @@ function Door({ to, img, alt, eyebrow, title, text, cta, d, peek }) {
   const move = (e) => {
     if (e.pointerType !== 'mouse') return
     const r = box.current.getBoundingClientRect(), q = pos.current
-    q.tx = e.clientX - r.left; q.ty = e.clientY - r.top
+    q.tx = Math.min(Math.max(e.clientX - r.left, 130), r.width - 130); q.ty = Math.min(Math.max(e.clientY - r.top, 170), r.height - 210)
     if (!on) { q.x = q.tx; q.y = q.ty; setOn(true); setArmed(true) }
     if (!q.raf) q.raf = requestAnimationFrame(loop)
   }
@@ -69,7 +69,8 @@ function Door({ to, img, alt, eyebrow, title, text, cta, d, peek }) {
     <Link ref={box} to={to} className="door rv" style={d ? { '--d': d } : undefined} onPointerMove={move} onPointerLeave={leave}>
       <img src={`/media/${img}.webp`} alt={alt} loading="lazy" />
       <div className="door-pv" ref={pv} data-on={on ? '1' : '0'} aria-hidden="true">
-        {armed && peek.map((n, k) => <img key={n} src={`/media/${n}.webp`} alt="" decoding="async" className={k === i ? 'on' : ''} />)}
+        {armed && <div className="door-pv-frame">{peek.map((n, k) => <img key={n} src={`/media/${n}.webp`} alt="" decoding="async" className={k === i ? 'on' : ''} />)}</div>}
+        {armed && <span className="door-pv-n" data-notr>{String(i + 1).padStart(2, '0')} — {String(peek.length).padStart(2, '0')}</span>}
       </div>
       <div className="door-txt"><p className="eyebrow">{eyebrow}</p><h3>{title}</h3><p>{text}</p><span className="btn btn-gold">{cta} <span className="arr" aria-hidden="true">→</span></span></div>
     </Link>
@@ -97,9 +98,9 @@ export default function Home() {
         </div>
           <div className="doors">
             <Door to="/immobilie-verkaufen" img="facade-altbau" alt="Gepflegte Altbaufassade (Beispielbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen"
-              peek={['vertrag-unterzeichnung', 'planunterlagen', 'schluessel-modell', 'gebaeude-sanierung']} />
+              peek={['vertrag-unterzeichnung', 'schluessel-modell', 'planunterlagen', 'gebaeude-sanierung', 'besprechung', 'kontakt-haus']} />
             <Door to="/kapitalanlage-immobilien" img="haus-abend" alt="Wohnhaus im Abendlicht (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120}
-              peek={['stadt-luftbild', 'besprechung', 'notizbuch', 'interior-sessel']} />
+              peek={['stadt-luftbild', 'interior-sessel', 'notizbuch', 'baustein-marktwert', 'baustein-lage', 'baustein-potenzial']} />
           </div>
       </section>
 

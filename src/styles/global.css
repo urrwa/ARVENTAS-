@@ -1261,3 +1261,11 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (hover: none), (max-width: 860px) { .door-pv { display: none; } }
 @media (prefers-reduced-motion: reduce) { .doors-sec .door:not(.in) img { clip-path: inset(0); } .door-pv { display: none; } }
 .doors-sec .door:hover .door-pv img, .doors-sec .door .door-pv img { filter: none; transform: none; }
+
+/* Vorschau: größer, ruhiger, mit feinem Rahmen und Zähler */
+.door-pv-frame { position: absolute; left: -120px; top: -160px; width: 240px; height: 320px; overflow: hidden; border: 1px solid var(--gold); opacity: 0; scale: .7; transition: opacity 500ms ease, scale 900ms cubic-bezier(.2, .6, .1, 1); }
+.door-pv[data-on="1"] .door-pv-frame { opacity: 1; scale: 1; }
+.door-pv .door-pv-frame img { left: 0; top: 0; width: 100%; height: 100%; scale: 1.18; opacity: 0; transition: opacity 1100ms ease, scale 2600ms cubic-bezier(.2, .6, .1, 1); }
+.door-pv[data-on="1"] .door-pv-frame img.on { opacity: 1; scale: 1; }
+.door-pv-n { position: absolute; left: -120px; top: 172px; font-size: 11px; letter-spacing: .24em; color: var(--gold); opacity: 0; transition: opacity 500ms ease; white-space: nowrap; }
+.door-pv[data-on="1"] .door-pv-n { opacity: 1; }
