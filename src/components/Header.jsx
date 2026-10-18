@@ -15,7 +15,7 @@ export default function Header() {
   const { open, setOpen } = useMenu()
   const { pathname } = useLocation()
   const isHome = pathname === '/'
-  const [state, setState] = useState({ pre: isHome && !window.__introDone, over: isHome })
+  const [state, setState] = useState({ pre: false, over: isHome })
   const burger = useRef(null)
   // Startseite: Header liegt transparent über dem Film (erst nach dem Intro sichtbar), danach flache Marine-Leiste.
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Header() {
     const calc = () => {
       const film = document.getElementById('film')
       const over = film ? film.getBoundingClientRect().bottom > 90 : false
-      setState({ pre: !window.__introDone, over })
+      setState({ pre: false, over })
     }
     calc()
     window.addEventListener('scroll', calc, { passive: true })

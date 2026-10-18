@@ -21,3 +21,4 @@ Keine erfundenen Bild-URLs, keine Chat-Dateiverweise als öffentliche Adressen. 
 
 - `kontakt-haus.jpg`: Hero der Kontaktseite. KI-generiert (Higgsfield), keine reale Immobilie; vor Livegang durch echtes Foto ersetzen oder als KI-Bild kennzeichnen.
 - `baustein-marktwert.jpg`, `baustein-lage.jpg`, `baustein-potenzial.jpg`, `baustein-rentabilitaet.jpg`, `baustein-pruefhinweise.jpg`, `baustein-nachfrage.jpg`: Objektreport, Analysebausteine. KI-generiert (Higgsfield), keine realen Objekte; vor Livegang ersetzen oder kennzeichnen.
+- `hero-haus.webp`, `hero-haus-sm.webp`: Startseiten-Hero. KI-generiert (Higgsfield), kein reales Objekt; vor Livegang ersetzen oder kennzeichnen. Der frühere Scroll-Film (public/frames) wurde entfernt.

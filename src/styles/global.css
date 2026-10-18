@@ -1150,3 +1150,17 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .dark .btn-marine:has(.arr) { --chip: var(--black); --chip-fg: var(--ivory); --hover-fg: var(--ivory); }
 .dark .tri-item h3, .dark .h2, .dark .h3 { color: var(--ivory); }
 .page:has(.doors-sec) .ftr { background: var(--marine); }
+
+/* Statischer Hero mit Foto */
+.hero-static { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--marine); color: var(--white); }
+.hs-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; scale: 1.04; translate: calc(var(--mx, 0) * -12px) calc(var(--my, 0) * -8px); }
+.hs-shade { position: absolute; inset: 0; background: rgba(11, 17, 28, .5); }
+.hs-copy { position: relative; z-index: 2; padding-block: clamp(110px, 16vh, 180px) clamp(48px, 9vh, 100px); }
+.hs-copy .eyebrow { color: var(--ivory); }
+.hs-h1 { font-size: clamp(28px, 4vw, 60px); max-width: 20ch; color: var(--white); }
+.hs-copy .lead { color: var(--ivory); margin-top: 18px; font-size: clamp(14px, 1.2vw, 17px); max-width: 44ch; }
+@media (max-width: 720px) { .hs-h1 { font-size: clamp(26px, 7.6vw, 34px); } }
+@media (hover: none) { .hs-bg { scale: 1; translate: none; } }
+
+.hs-copy { width: 100%; margin-inline: auto; }
+.hs-shade { background: rgba(11, 17, 28, .55); }

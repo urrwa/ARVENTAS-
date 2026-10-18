@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import HoverList from '../components/HoverList.jsx'
-import ScrollFilm from '../components/ScrollFilm.jsx'
+import Hero from '../components/Hero.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <>
       <Seo title="ARVENTAS | Off-Market-Immobilien deutschlandweit" description="Ausgewählte Off-Market-Immobilien, fundierte Objektanalysen und persönliche Begleitung für Eigentümer und Investoren in ganz Deutschland." />
-      <ScrollFilm />
+      <Hero />
 
       {/* 02 – Zwei visuelle Zugänge */}
       <section id="zugaenge" className="sec dark doors-sec" aria-labelledby="h-zug">
