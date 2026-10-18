@@ -1349,4 +1349,5 @@ export default {
  "(Über uns)": "(About us)",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
+ "Prinzip": "Principle",
 }

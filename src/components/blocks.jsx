@@ -6,8 +6,8 @@ import { SectionHead } from './ui.jsx'
 export const hy = (t) => t.replace(/(Immobilien|Entscheidungs|Potenzial|Risiko|Markt|Standort|Vermarktungs|Entwicklungs)(?=[a-zäöüß]{4,})/g, '$1\u00AD')
 
 // Bausteine der Seiten im dunklen Stil: Icon-Karten, Schrittreihen, Systemkette, Gegenüberstellung.
-export const Sec = ({ id, eyebrow, title, lead, children, className = '' }) => (
-  <section id={id} className={`sec dark ${className}`}>
+export const Sec = ({ id, eyebrow, title, lead, children, className = '', tone = 'dark' }) => (
+  <section id={id} className={`sec ${tone} ${className}`}>
     <div className="wrap">
       {title && <SectionHead eyebrow={eyebrow} title={title} lead={lead} />}
       {children}
@@ -17,7 +17,7 @@ export const Sec = ({ id, eyebrow, title, lead, children, className = '' }) => (
 
 export const Ring = ({ name, size = 22 }) => <span className="ring"><Icon name={name} size={size} /></span>
 
-export function IconGrid({ items, cols = 5, lists = true }) {
+export function IconGrid({ items, cols = 5, lists = true, numbered = false }) {
   return (
     <div className={`igrid c${cols}`}>
       {items.map((it, i) => {
@@ -27,6 +27,7 @@ export function IconGrid({ items, cols = 5, lists = true }) {
             <h3>{hy(it.t)}</h3>
             {it.d && <p>{it.d}</p>}
             {lists && it.list && <ul className="gl">{it.list.map((x) => <li key={x}>{x}</li>)}</ul>}
+            {numbered && <span className="num">{String(i + 1).padStart(2, '0')}<small>Prinzip</small></span>}
             {it.link && <span className="more">{it.link} <span aria-hidden="true">→</span></span>}
           </>
         )
