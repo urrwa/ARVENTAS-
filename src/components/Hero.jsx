@@ -26,16 +26,15 @@ export default function Hero() {
   return (
     <section className="hz" id="film" ref={wrap} aria-label="Einführung">
       <div className="hz-stick">
-        <img className="hz-sky" src="/media/himmel.webp" alt="" fetchpriority="high" />
+        <img className="hz-sky" src="/media/himmel2.webp" alt="" fetchpriority="high" />
         <div className="hz-behind">
-          <p className="eyebrow">Off-Market Immobilien · Deutschlandweit</p>
           <h1 className="hz-h1"><Letters text="Immobilien mit Potenzial. Zugang mit Vorsprung." per={30} /></h1>
         </div>
         <div className="hz-mark" aria-hidden="true">
           <svg viewBox="0 0 1000 220" focusable="false">
             <defs>
               <pattern id="hz-pat" patternUnits="userSpaceOnUse" width="1000" height="220">
-                <image href="/media/hero-haus.webp" width="1000" height="560" x="0" y="-250" preserveAspectRatio="xMidYMid slice" />
+                <image href="/media/haus-fuellung.webp" width="1000" height="560" x="0" y="-250" preserveAspectRatio="xMidYMid slice" />
               </pattern>
             </defs>
             <text className="hz-fill" x="500" y="170" textAnchor="middle" textLength="940" lengthAdjust="spacing" fill="url(#hz-pat)">ΛRVENTΛS</text>
@@ -43,16 +42,16 @@ export default function Hero() {
           </svg>
           <span className="hz-sub">Werte schaffen. Zukunft bauen.</span>
         </div>
-        <img className="hz-house" src="/media/haus-freisteller.webp" alt="Moderne Villa im Abendlicht (KI-generiertes Beispielbild)" fetchpriority="high" />
-        <img className="hz-cloud-front" src="/media/wolken-vorn.webp" alt="" />
+        <img className="hz-house" src="/media/haus2.webp" alt="Moderne Villa im Abendlicht (KI-generiertes Beispielbild)" fetchpriority="high" />
+        <img className="hz-cloud-front" src="/media/wolken-bank.webp" alt="" />
         <div className="hz-copy">
           <p className="lead">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet.</p>
           <div className="btn-row">
-            <Link to="/immobilie-verkaufen" className="btn btn-gold">Immobilie verkaufen <span className="arr" aria-hidden="true">→</span></Link>
+            <Link to="/immobilie-verkaufen" className="btn btn-marine">Immobilie verkaufen <span className="arr" aria-hidden="true">→</span></Link>
             <Link to="/kapitalanlage-immobilien" className="btn btn-line">Immobilien entdecken <span className="arr" aria-hidden="true">→</span></Link>
           </div>
         </div>
-        <div className="hz-clouds" aria-hidden="true"><img src="/media/himmel.webp" alt="" /></div>
+        <div className="hz-clouds" aria-hidden="true"><img src="/media/wolken-voll.webp" alt="" /></div>
         <div className="hz-navy" aria-hidden="true" />
       </div>
     </section>

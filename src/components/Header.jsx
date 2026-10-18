@@ -22,7 +22,7 @@ export default function Header() {
     if (!isHome) { setState({ pre: false, over: false }); return }
     const calc = () => {
       const film = document.getElementById('film')
-      const over = film ? film.getBoundingClientRect().bottom > 90 : false
+      const over = false
       setState({ pre: false, over })
     }
     calc()
