@@ -6,7 +6,6 @@ import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
 import Letters from '../components/Letters.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
-import { Link } from 'react-router-dom'
 import { Sec, IconGrid, StepsRow, Chain, Split, GoldLine } from '../components/blocks.jsx'
 import { AUDIENCES, CHAIN, SERVICE_LIST, CLAIM } from '../content/site.js'
 
@@ -64,11 +63,6 @@ function Editorial() {
         <div className="edi-row">
           <p className="edi-label">(Über uns)</p>
           <ScrollWords className="edi-big ed" text="ARVENTAS ist kein klassisches Immobilienunternehmen. Wir verbinden Marktverständnis, Bewertung, strategische Analyse, Vermarktung und Entwicklung zu einem klaren System für bessere Immobilienentscheidungen." />
-        </div>
-        <div className="edi-row2">
-          <div className="edi-img rv"><img src="/media/buero-abend-2.webp" alt="" loading="lazy" decoding="async" /></div>
-          <p className="edi-small ed rv">Wir denken über die Immobilie hinaus und fokussieren uns auf langfristiges Potenzial.</p>
-          <Link to="/ueber-uns" className="edi-btn rv"><span>Über uns</span><i aria-hidden="true">→</i></Link>
         </div>
       </div>
     </section>
