@@ -7,7 +7,9 @@ export default function Letters({ as: Tag = 'span', text, className = '', style,
   const ref = useRef(null)
   const [, bump] = useState(0)
   useEffect(() => subscribe(() => bump((n) => n + 1)), [])
-  const str = tr(text).replace(/ARVENTAS/g, 'ΛRVENTΛS')
+  let t = tr(text)
+  if (t === text) { const parts = text.split(/(?<=\.)\s+/); if (parts.length > 1) t = parts.map((x) => tr(x)).join(' ') }
+  const str = t.replace(/ARVENTAS/g, 'ΛRVENTΛS')
   const words = str.split(/\s+/).filter(Boolean)
   const total = str.replace(/\s+/g, '').length
   const step = Math.min(per, max / Math.max(1, total))
