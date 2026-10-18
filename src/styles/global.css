@@ -1623,3 +1623,8 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (prefers-reduced-motion: reduce) { .hf-part.l, .hf-part.r { transform: none; opacity: 1; } .hf-line { transform: none; opacity: 1; } }
 .hf-split { font-weight: 500; }
 .hf-shade { background: rgba(25, 37, 55, .36); }
+
+/* Lücke nach der Bildbühne schließen */
+.gal-sec { margin-bottom: -34svh; }
+.gal-sec + .sec { position: relative; z-index: 2; background: var(--marine); padding-top: clamp(36px, 4vw, 72px); }
+@media (max-width: 860px) { .gal-sec { margin-bottom: -22svh; } }
