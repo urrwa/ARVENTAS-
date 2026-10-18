@@ -38,7 +38,11 @@ export default function HomeFilm() {
       <div className="hf-stick">
         <video ref={vid} className="hf-vid" poster="/media/haus-film-poster.webp" muted playsInline preload="auto" aria-hidden="true" />
         <div className="hf-shade" />
-        <h1 className="hf-h1 ed"><Letters text="Strategische Immobilienentwicklung mit System: Struktur, Marktverständnis und klare Entscheidungen." per={14} max={1100} /></h1>
+        <h1 className="hf-split" aria-label="Strategische Immobilienentwicklung mit System.">
+          <span className="hf-part l"><Letters text="Strategische Immobilienentwicklung" per={38} max={1300} delay={200} /></span>
+          <span className="hf-line" aria-hidden="true" />
+          <span className="hf-part r"><Letters text="mit System." per={60} max={700} delay={1100} /></span>
+        </h1>
         <div className="hh-card hf-card">
           <Link to="/kontakt" className="hh-a main"><span>Potenzial analysieren</span><i aria-hidden="true">→</i></Link>
           <Link to="/kontakt?art=Strategiegespräch" className="hh-a"><span>Strategiegespräch anfragen</span><i aria-hidden="true">→</i></Link>

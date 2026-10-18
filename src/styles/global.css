@@ -1604,3 +1604,22 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (max-width: 860px) { .hf { height: 540vh; } }
 @media (prefers-reduced-motion: reduce) { .hf + * { margin-top: 0; } .hf { height: 100svh; } }
 .hf + .edi { min-height: calc(100svh + 40px); box-sizing: border-box; }
+
+/* Hero-Aussage geteilt: linke Hälfte gleitet beim Scrollen nach links, rechte nach rechts. Hell, gesperrt, ruhig. */
+.hf-split { position: absolute; left: var(--gut); right: var(--gut); bottom: clamp(190px, 27vh, 280px); margin: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: end; gap: clamp(14px, 2.4vw, 40px); font-family: var(--font-head); font-weight: 400; text-transform: uppercase; letter-spacing: .12em; line-height: 1.22; color: var(--ivory); }
+.hf-part { display: block; font-size: clamp(18px, 2.35vw, 38px); opacity: calc(1 - var(--t) * 1.25); will-change: transform; }
+.hf-part.l { max-width: 15ch; text-align: left; transform: translate3d(calc(var(--t) * -62vw), 0, 0); }
+.hf-part.r { text-align: right; justify-self: end; transform: translate3d(calc(var(--t) * 62vw), 0, 0); }
+.hf-line { align-self: center; width: clamp(40px, 9vw, 150px); height: 1px; background: var(--gold); transform: scaleX(calc(1 - var(--t))); opacity: calc(1 - var(--t) * 1.5); }
+.hf-part .lc { text-shadow: none; }
+@media (max-width: 860px) {
+  .hf-split { grid-template-columns: 1fr; gap: 12px; bottom: clamp(160px, 24vh, 210px); }
+  .hf-part { font-size: clamp(20px, 6vw, 28px); letter-spacing: .1em; }
+  .hf-part.l { max-width: 13ch; }
+  .hf-line { width: 56px; justify-self: end; }
+  .hf-part.l { transform: translate3d(calc(var(--t) * -110vw), 0, 0); }
+  .hf-part.r { transform: translate3d(calc(var(--t) * 110vw), 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .hf-part.l, .hf-part.r { transform: none; opacity: 1; } .hf-line { transform: none; opacity: 1; } }
+.hf-split { font-weight: 500; }
+.hf-shade { background: rgba(25, 37, 55, .36); }
