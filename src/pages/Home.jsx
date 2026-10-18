@@ -37,8 +37,9 @@ function Gallery() {
     let raf = 0
     const run = () => {
       raf = 0
-      const r = el.getBoundingClientRect(), span = Math.max(1, r.height - window.innerHeight)
-      el.style.setProperty('--p', Math.min(1, Math.max(0, -r.top / span)).toFixed(4))
+      const r = el.getBoundingClientRect(), vh = window.innerHeight, lead = vh * 0.85, span = Math.max(1, r.height - vh)
+      // Start schon beim Hereinscrollen der Bühne, damit vor dem Anheften keine leere Fläche steht.
+      el.style.setProperty('--p', Math.min(1, Math.max(0, (lead - r.top) / (span + lead))).toFixed(4))
     }
     const on = () => { if (!raf) raf = requestAnimationFrame(run) }
     run()

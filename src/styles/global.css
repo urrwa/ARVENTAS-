@@ -1592,3 +1592,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .edi-label { color: var(--gold); }
 .sw.edi-big { color: var(--ivory); }
 .gal-t { background: rgba(245, 243, 239, .08); }
+.edi { padding-bottom: clamp(24px, 3vw, 48px); }
+.gal-sec { height: 380vh; }
+.gal-t { --k: clamp(0, calc((var(--p) * 2.6 - var(--d)) / .5), 1); --s: clamp(0, calc((var(--p) - .7) / .26), 1); }
+@media (max-width: 860px) { .gal-sec { height: 440vh; } }
