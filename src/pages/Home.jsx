@@ -27,7 +27,7 @@ const FOR = ['Klarere Strukturen für komplexe Entscheidungen.', 'Bessere Priori
 // Redaktioneller Abschnitt auf hellem Grund: Beschriftung, großer Blocksatz mit Wort-Reveal, kleines Bild mit Kurztext.
 // Gepinnte Bildbühne: Die Kacheln steigen aus verschiedenen Spalten und mit Versatz von unten ein und setzen sich zu einem Raster.
 // [Bild, Verzögerung] in Leserichtung (4 Spalten, 2 Reihen). Nach dem Setzen scrollt die Bühne weiter.
-const GAL = [[0, 0], [1, .02], [2, 0], [3, 0], [4, .3], [5, .4], [6, .5], [7, .6]]
+const GAL = [[0, 0], [1, .02], [2, 0], [3, 0], [4, .25], [5, .33], [6, .41], [7, .49]]
 function Gallery() {
   const ref = useRef(null)
   useEffect(() => {
@@ -50,7 +50,7 @@ function Gallery() {
     <section className="gal-sec" ref={ref} aria-hidden="true">
       <div className="gal-stick">
         <div className="gal">
-          {GAL.map(([i, d]) => <div key={i} className="gal-t" style={{ '--d': d }}><img src={`/media/gal-${i + 1}.webp`} alt="" loading="lazy" decoding="async" /></div>)}
+          {GAL.map(([i, d]) => <div key={i} className={`gal-t${i >= 4 ? ' r2' : ''}`} style={{ '--d': d }}><img src={`/media/gal-${i + 1}.webp`} alt="" loading="lazy" decoding="async" /></div>)}
         </div>
       </div>
     </section>
