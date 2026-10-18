@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* 03 – Drei Stärken */}
-      <section className="sec ivory" aria-labelledby="h-str">
+      <section className="sec dark" aria-labelledby="h-str">
         <div className="wrap">
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
           <HoverList items={[
@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* 05 – Zwei nachvollziehbare Prozesse */}
-      <section className="sec ivory" aria-labelledby="h-proc">
+      <section className="sec dark" aria-labelledby="h-proc">
         <div className="wrap">
           <SectionHead eyebrow="Ablauf" title="Vom ersten Gespräch zum nächsten Schritt." />
           <ProcessTimeline />
@@ -106,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* 06 – Eigentümer */}
-      <section className="sec black" aria-labelledby="h-own">
+      <section className="sec dark" aria-labelledby="h-own">
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Für Eigentümer</p><h2 id="h-own" className="h2 rv">Ihr Eigentum.<br />Kein öffentliches Schaufenster.</h2><p className="lead rv">Wert, Potenziale und Verkaufswege klären – mit einem persönlichen Ansprechpartner.</p></header>
           <div className="windows rv" aria-hidden="true">
@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* 07 – Investoren und Matching */}
-      <section className="sec ivory" aria-labelledby="h-match">
+      <section className="sec dark" aria-labelledby="h-match">
         <div className="wrap">
           <SectionHead eyebrow="Für Investoren" title="Nicht jedes Objekt. Das passende." lead="Suchprofil und Immobilieninformationen sinnvoll zusammenführen." />
           <MatchingIllustration />
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* 09 – Deutschlandweit */}
-      <section className="sec ivory cover-next" aria-labelledby="h-de">
+      <section className="sec dark cover-next" aria-labelledby="h-de">
         <div className="wrap">
           <SectionHead eyebrow="Deutschlandweit" title="Regional verstehen. Deutschlandweit verbinden." lead="Immobilienkompetenz für Eigentümer und Investoren in ganz Deutschland." />
           <GermanyRegionSelector />
@@ -154,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* 10 – Wissen als Editorial */}
-      <section className="sec black" aria-labelledby="h-wis">
+      <section className="sec dark" aria-labelledby="h-wis">
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Wissen</p><h2 id="h-wis" className="h2 rv">Hinter die Fassade schauen.</h2></header>
           <div className="know rv">

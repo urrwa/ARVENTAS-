@@ -1120,3 +1120,33 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (max-width: 860px) { .wz-full { width: calc(var(--sw) + (100vw - var(--sw)) * var(--p)); height: calc(var(--sh) + (100vh - var(--sh)) * var(--p)); } }
 .cap.open { opacity: 1; visibility: visible; }
 @media (max-width: 430px) { .cap .line { font-size: clamp(19px, 5.6vw, 24px); letter-spacing: .02em; } }
+
+/* Startseite: durchgehend ein Hintergrund (Marine); Komponenten für helle Flächen auf dunkel umgestellt */
+.dark .hl, .dark .hl-row { border-color: var(--line-dark); }
+.dark .hl-n { color: var(--gold); }
+.dark .hl-row h3 { color: var(--ivory); }
+.dark .hl-row p { color: var(--text-on-dark-soft); }
+.dark .tl::before { background: var(--line-dark); }
+.dark .tl::after { background: var(--gold); }
+.dark .tl li::before { background: var(--marine); border-color: var(--gold); color: var(--ivory); }
+.dark .tl li b { color: var(--ivory); } .dark .tl li span { color: var(--text-on-dark-soft); }
+.dark .chip { border-color: rgba(245, 243, 239, .5); color: var(--ivory); }
+.dark .chip[aria-pressed=true] { background: var(--ivory); color: var(--marine); }
+.dark .chip:hover { background: rgba(245, 243, 239, .1); } .dark .chip[aria-pressed=true]:hover { background: var(--ivory); }
+.dark .mctl legend { color: var(--gold); }
+.dark .mnote { color: var(--text-on-dark-soft); }
+.dark .map-svg path { fill: rgba(245, 243, 239, .1); stroke: var(--marine); }
+.dark .map-svg path:hover, .dark .map-svg path:focus-visible { fill: rgba(176, 158, 128, .55); }
+.dark .map-svg path[aria-pressed=true] { fill: var(--gold); }
+.dark .map-card { background: var(--marine); border-color: var(--line-dark); }
+.dark .map-card strong { color: var(--ivory); }
+.dark .reg-sel, .dark .reg-more summary { color: var(--ivory); }
+.dark .reg-list button { color: var(--text-on-dark-soft); border-color: var(--line-dark); }
+.dark .reg-list button:hover, .dark .reg-list button[aria-pressed=true] { color: var(--ivory); }
+.dark .germany .eyebrow { color: var(--gold) !important; }
+.dark .germany .btn-marine { background: var(--gold); color: var(--black); --chip: var(--black); --chip-fg: var(--ivory); --hover-fg: var(--ivory); }
+.dark .small.muted, .dark .muted { color: var(--text-on-dark-soft); }
+.dark .btn-marine { background: var(--gold); color: var(--black); }
+.dark .btn-marine:has(.arr) { --chip: var(--black); --chip-fg: var(--ivory); --hover-fg: var(--ivory); }
+.dark .tri-item h3, .dark .h2, .dark .h3 { color: var(--ivory); }
+.page:has(.doors-sec) .ftr { background: var(--marine); }
