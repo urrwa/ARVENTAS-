@@ -15,7 +15,7 @@ export default function HomeFilm() {
     v.src = !mp4 ? '/media/haus-film.webm' : window.innerWidth < 860 ? '/media/haus-film-sm.mp4' : '/media/haus-film.mp4'
     let target = 0, cur = 0, raf = 0
     const calc = () => {
-      const r = w.getBoundingClientRect(), span = Math.max(1, r.height - window.innerHeight)
+      const r = w.getBoundingClientRect(), span = Math.max(1, r.height - 2 * window.innerHeight) // letzte Bildschirmhöhe: nächster Abschnitt schiebt sich über den stehenden Film
       target = Math.min(1, Math.max(0, -r.top / span))
     }
     const tick = () => {
