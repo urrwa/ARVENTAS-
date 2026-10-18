@@ -24,3 +24,4 @@ Keine erfundenen Bild-URLs, keine Chat-Dateiverweise als öffentliche Adressen. 
 - `hero-haus.webp`, `hero-haus-sm.webp`: Startseiten-Hero. KI-generiert (Higgsfield), kein reales Objekt; vor Livegang ersetzen oder kennzeichnen. Der frühere Scroll-Film (public/frames) wurde entfernt.
 - `haus-freisteller.webp`, `himmel.webp`, `wolken-vorn.webp`: Hero-Übergang der Startseite (Freisteller des Hauses, Himmel, vordere Wolken). KI-generiert/bearbeitet (Higgsfield), keine realen Objekte; vor Livegang ersetzen oder kennzeichnen.
 - `haus2.webp`, `himmel2.webp`, `wolken-voll.webp`, `wolken-bank.webp`, `haus-fuellung.webp`: Hero-Übergang der Startseite (zweite Fassung, heller Himmel). KI-generiert/bearbeitet (Higgsfield); ersetzen oder kennzeichnen vor Livegang.
+- `wolken-schleier.webp`: durchscheinende Wolkenschleier (aus KI-generierter Wolkenebene abgeleitet, Higgsfield), Hero-Übergang.
