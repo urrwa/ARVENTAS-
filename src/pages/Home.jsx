@@ -109,9 +109,9 @@ export default function Home() {
         <div className="wrap">
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
           <HoverList items={[
-            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/stadt-luftbild.webp' },
-            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/planunterlagen.webp' },
-            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/vertrag-unterzeichnung.webp' },
+            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/stadt-luftbild.webp', icon: 'key' },
+            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/planunterlagen.webp', icon: 'chart' },
+            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/vertrag-unterzeichnung.webp', icon: 'hand' },
           ]} />
         </div>
       </section>

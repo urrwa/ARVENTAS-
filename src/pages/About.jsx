@@ -1,4 +1,5 @@
 import Seo from '../components/Seo.jsx'
+import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import Brand from '../components/Brand.jsx'
@@ -10,7 +11,7 @@ export default function About() {
   return (
     <>
       <Seo title="Über uns | ARVENTAS" description="Wer ARVENTAS ist: aktuelles Off-Market-Geschäftsmodell, Mission und Arbeitsweise, Werte und deutschlandweiter Tätigkeitsbereich." />
-      <PageHero tall image="/media/besprechung.webp" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
+      <PageHero tall image="/media/buero-abend-2.webp" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
 
       <div className="cover-over">
       <section className="sec ivory about-big-sec">
@@ -82,6 +83,7 @@ export default function About() {
         </div>
       </section>
       </div>
+      <CtaBand image="/media/cta-abend-1.webp" />
     </>
   )
 }

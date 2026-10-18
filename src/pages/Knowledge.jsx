@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
+import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { ARTICLES, CATEGORIES } from '../content/data.js'
 
@@ -52,6 +53,7 @@ export default function Knowledge() {
           <p className="small muted" style={{ marginTop: 32 }}>Alle Beiträge sind Entwürfe und stellen keine aktuelle Recherche und keine Marktdaten dar. Veröffentlichungsdaten und Expertenzitate werden erst nach redaktioneller Freigabe ergänzt.</p>
         </div>
       </section>
+      <CtaBand image="/media/cta-abend-2.webp" />
     </>
   )
 }

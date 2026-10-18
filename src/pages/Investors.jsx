@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import WordZoom from '../components/WordZoom.jsx'
 import Seo from '../components/Seo.jsx'
+import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq, Tabs } from '../components/ui.jsx'
 import { INVESTOR_FAQ } from '../content/data.js'
@@ -17,7 +18,7 @@ export default function InvestorsPage() {
   return (
     <>
       <Seo title="Kapitalanlage-Immobilien | ARVENTAS" description="Ausgewählte Off-Market-Immobilien für Investoren: Suchprofil, Objektanalyse, Chancen und Risiken – persönlich begleitet, deutschlandweit." />
-      <PageHero image="/media/stadt-luftbild.webp" crumb="Für Investoren" title="Investieren beginnt mit dem richtigen Zugang." lead="Passende Immobilien finden und Entscheidungen auf Grundlage nachvollziehbarer Informationen treffen.">
+      <PageHero image="/media/buero-abend-1.webp" crumb="Für Investoren" title="Investieren beginnt mit dem richtigen Zugang." lead="Passende Immobilien finden und Entscheidungen auf Grundlage nachvollziehbarer Informationen treffen.">
         <div className="btn-row"><Btn to="/investorenkreis">Suchprofil erstellen</Btn></div>
       </PageHero>
 
@@ -58,6 +59,7 @@ export default function InvestorsPage() {
           <div><SectionHead eyebrow="FAQ" title="Häufige Fragen" normal /><Faq items={INVESTOR_FAQ} /></div>
         </div>
       </section>
+      <CtaBand image="/media/cta-abend-2.webp" />
     </>
   )
 }

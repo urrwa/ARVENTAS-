@@ -1,4 +1,5 @@
 import Seo from '../components/Seo.jsx'
+import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq } from '../components/ui.jsx'
 import ParallaxCards from '../components/ParallaxCards.jsx'
@@ -67,6 +68,7 @@ export default function ReportPage() {
           <div className="btn-row"><Btn to="/immobilie-verkaufen#anfrage" variant="marine">Objektreport anfragen</Btn></div>
         </div>
       </section>
+      <CtaBand image="/media/cta-abend-1.webp" />
     </>
   )
 }
