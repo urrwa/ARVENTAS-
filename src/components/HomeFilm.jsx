@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import Letters from './Letters.jsx'
 
-// Startseiten-Kopf als Scroll-Film: Die Kamera fährt durch die Glasfassade in die Lounge (aus dem Kundenfoto erzeugt).
-// Der Fortschritt des Scrollens steuert die Videozeit; die Überschrift gleitet dabei nach außen. Nur notwendiger Text.
+// Startseiten-Kopf als Scroll-Film: Die Kamera fährt durch die Glastür in die Lounge (aus dem Kundenfoto erzeugt).
+// Der Fortschritt des Scrollens steuert die Videozeit. Text minimal: kurze fette Aussage unten links, Handlungskarte unten rechts.
 export default function HomeFilm() {
   const wrap = useRef(null), vid = useRef(null)
   useEffect(() => {
@@ -37,13 +38,7 @@ export default function HomeFilm() {
       <div className="hf-stick">
         <video ref={vid} className="hf-vid" poster="/media/haus-film-poster.webp" muted playsInline preload="auto" aria-hidden="true" />
         <div className="hf-shade" />
-        <ul className="hf-kw" aria-label="Leistungen"><li>Marktanalyse</li><li>Immobilienbewertung</li><li>Strategische Analyse</li></ul>
-        <p className="hf-lead">Struktur, Marktverständnis und klare Entscheidungen.</p>
-        <h1 className="hf-h1 ed">
-          <span className="hf-l a">Strategische</span>
-          <span className="hf-l b">Immobilienentwicklung</span>
-          <span className="hf-l c">mit System.</span>
-        </h1>
+        <h1 className="hf-h1 ed"><Letters text="Strategische Immobilienentwicklung mit System: Struktur, Marktverständnis und klare Entscheidungen." per={14} max={1100} /></h1>
         <div className="hh-card hf-card">
           <Link to="/kontakt" className="hh-a main"><span>Potenzial analysieren</span><i aria-hidden="true">→</i></Link>
           <Link to="/kontakt?art=Strategiegespräch" className="hh-a"><span>Strategiegespräch anfragen</span><i aria-hidden="true">→</i></Link>
