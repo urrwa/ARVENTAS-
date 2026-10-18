@@ -25,8 +25,9 @@ const JOURNEY = [
 const FOR = ['Klarere Strukturen für komplexe Entscheidungen.', 'Bessere Priorisierung von Chancen und Risiken.', 'Marktverständnis als Grundlage.', 'Strategien, die Wachstum schaffen.', 'Entwicklungspotenziale erkennen und nutzen.']
 
 // Redaktioneller Abschnitt auf hellem Grund: Beschriftung, großer Blocksatz mit Wort-Reveal, kleines Bild mit Kurztext.
-// Verstreute Bildkacheln fügen sich beim Scrollen zu einem Raster zusammen.
-const GAL = [[0, 150], [1, -40], [2, 210], [3, 20], [4, -90], [5, 120], [6, -20], [7, 190]]
+// Gepinnte Bildbühne: Die Kacheln steigen aus verschiedenen Spalten und mit Versatz von unten ein und setzen sich zu einem Raster.
+// [Bild, Verzögerung] in Leserichtung (4 Spalten, 2 Reihen). Nach dem Setzen scrollt die Bühne weiter.
+const GAL = [[0, 0], [1, .02], [2, 0], [3, 0], [4, .3], [5, .4], [6, .5], [7, .6]]
 function Gallery() {
   const ref = useRef(null)
   useEffect(() => {
@@ -36,8 +37,8 @@ function Gallery() {
     let raf = 0
     const run = () => {
       raf = 0
-      const r = el.getBoundingClientRect(), vh = window.innerHeight
-      el.style.setProperty('--p', Math.min(1, Math.max(0, (vh * 0.95 - r.top) / (vh * 0.75))).toFixed(4))
+      const r = el.getBoundingClientRect(), span = Math.max(1, r.height - window.innerHeight)
+      el.style.setProperty('--p', Math.min(1, Math.max(0, -r.top / span)).toFixed(4))
     }
     const on = () => { if (!raf) raf = requestAnimationFrame(run) }
     run()
@@ -46,10 +47,10 @@ function Gallery() {
     return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
   }, [])
   return (
-    <section className="gal-sec" aria-hidden="true">
-      <div className="wrap">
-        <div className="gal" ref={ref}>
-          {GAL.map(([i, dy]) => <div key={i} className="gal-t" style={{ '--dy': `${dy}px` }}><img src={`/media/gal-${i + 1}.webp`} alt="" loading="lazy" decoding="async" /></div>)}
+    <section className="gal-sec" ref={ref} aria-hidden="true">
+      <div className="gal-stick">
+        <div className="gal">
+          {GAL.map(([i, d]) => <div key={i} className="gal-t" style={{ '--d': d }}><img src={`/media/gal-${i + 1}.webp`} alt="" loading="lazy" decoding="async" /></div>)}
         </div>
       </div>
     </section>

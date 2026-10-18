@@ -1500,11 +1500,6 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .icard .num small { font-family: var(--font-body); font-weight: 400; font-size: 12px; letter-spacing: .06em; color: var(--ink-soft); }
 .feat .icard { min-height: 300px; }
 
-.gal-sec { background: var(--ivory); padding: 0 0 clamp(56px, 8vw, 120px); overflow: hidden; }
-.gal { --p: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 20px); padding-left: calc((100% - clamp(16px, 3vw, 48px)) / 6 + clamp(16px, 3vw, 48px)); }
-.gal-t { aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; background: var(--ink-soft); transform: translate3d(0, calc((1 - var(--p)) * var(--dy)), 0); }
-.gal-t img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (max-width: 860px) { .gal { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-left: 0; } .sec.light .sec-head { grid-template-columns: 1fr; } .sec.light .sec-head > .eyebrow { grid-row: auto; margin-bottom: 14px; } .sec.light .sec-head > :not(.eyebrow) { grid-column: 1; } }
 @media (prefers-reduced-motion: reduce) { .gal-t { transform: none; } }
 
 /* Scroll-Film im Startseitenkopf (Vorbild Rio Property): Video folgt dem Scrollen, Überschrift gleitet nach außen */
@@ -1527,3 +1522,32 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .hf-lead { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .hf { height: 100svh; } .hf-l { transform: none; opacity: 1; } }
+
+/* Gepinnte Bildbühne (Vorbild Rivos) */
+.gal-sec { --p: 0; height: 300vh; padding: 0; overflow: visible; }
+.gal-stick { position: sticky; top: 0; height: 100svh; display: flex; align-items: center; overflow: hidden; }
+.gal { --p: inherit; width: 100%; max-width: 1520px; margin: 0 auto; padding-inline: var(--gut); padding-left: calc(var(--gut) + (100% - 2 * var(--gut)) / 6 + clamp(16px, 3vw, 48px)); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 20px); }
+.gal-t { --k: clamp(0, calc((var(--p) * 1.55 - var(--d)) / .5), 1); aspect-ratio: 3 / 4; max-height: 40svh; width: 100%; justify-self: center; border-radius: 10px; overflow: hidden; background: var(--ink-soft); transform: translate3d(0, calc((1 - var(--k)) * 110svh), 0); }
+.gal-t img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 860px) { .gal { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-left: var(--gut); } .gal-t { max-height: 30svh; } .gal-sec { height: 360vh; } }
+@media (prefers-reduced-motion: reduce) { .gal-sec { height: auto; } .gal-stick { position: static; height: auto; padding-block: 56px; } .gal-t { transform: none; } }
+
+/* Eine Hintergrundfarbe auf der Startseite: Elfenbein bis zum Ende (Abschlussband und Fußleiste hell) */
+.page:has(.hf) .ctab { background: var(--ivory); }
+.page:has(.hf) .ctab-box { background: var(--ivory); border-color: var(--marine); }
+.page:has(.hf) .ctab-txt .h2 { color: var(--marine); }
+.page:has(.hf) .ctab-txt p, .page:has(.hf) .ctab-claim { color: var(--ink-soft); }
+.page:has(.hf) .ctab-txt .eyebrow { color: var(--marine); }
+.page:has(.hf) .ctab .btn-gold { background: var(--marine); color: var(--ivory); border-color: var(--marine); }
+.page:has(.hf) .ctab .btn-line { color: var(--marine); border-color: var(--marine); --chip: var(--marine); --chip-fg: var(--ivory); --hover-fg: var(--ivory); }
+.page:has(.hf) .ftr { background: var(--ivory); color: var(--marine); }
+.page:has(.hf) .ftr-slogan { color: var(--marine); }
+.page:has(.hf) .ftr-slogan .soft { color: var(--ink-soft); }
+.page:has(.hf) .ftr h4 { color: var(--marine); opacity: .6; }
+.page:has(.hf) .ftr a, .page:has(.hf) .ftr .lk { color: var(--marine); }
+.page:has(.hf) .ftr a.btn { background: var(--marine); color: var(--ivory); }
+.page:has(.hf) .ftr-bot { color: var(--ink-soft); border-top-color: var(--line-light); }
+.page:has(.hf) .ftr-logo img { filter: invert(1) brightness(.25) sepia(1) hue-rotate(185deg) saturate(2.5); }
+.page:has(.hf) .ftr-mark text { stroke: var(--marine); fill: rgba(25, 37, 55, 0); }
+.page:has(.hf) .ftr-mark.on text { fill: rgba(25, 37, 55, .06); }
+.gal-sec { background: var(--ivory); }
