@@ -1350,4 +1350,7 @@ export default {
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",
+ "Strategische": "Strategic",
+ "Immobilienentwicklung": "Real estate development",
+ "Struktur, Marktverständnis und klare Entscheidungen.": "Structure, market understanding and clear decisions.",
 }

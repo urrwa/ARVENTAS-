@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Seo from '../components/Seo.jsx'
-import HomeHero from '../components/HomeHero.jsx'
+import HomeFilm from '../components/HomeFilm.jsx'
 import HoverList from '../components/HoverList.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <>
       <Seo title={`ARVENTAS | ${CLAIM}`} description="ARVENTAS verbindet Marktverständnis, Immobilienbewertung, Strategie und intelligente Vermarktung für fundierte Immobilienentscheidungen." />
-      <HomeHero />
+      <HomeFilm />
 
       <Editorial />
 
