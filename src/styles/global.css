@@ -1156,7 +1156,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 
 /* Hero-Übergang (heller Himmel): Haus steigt und wächst, Überschrift sinkt weg, Wortmarke zeichnet sich und füllt sich mit dem Haus, Wolken füllen das Bild */
 .hz { --p: 0; position: relative; height: 520vh; background: var(--marine); }
-.hz-stick { --t1: clamp(0, calc(var(--p) / .3), 1); --h: clamp(0, calc((var(--p) - .03) / .5), 1); --d: clamp(0, calc((var(--p) - .16) / .3), 1); --f: clamp(0, calc((var(--p) - .44) / .14), 1); --c1: clamp(0, calc((var(--p) - .36) / .34), 1); --c2: clamp(0, calc((var(--p) - .46) / .34), 1); --c: clamp(0, calc((var(--p) - .58) / .3), 1); --n: clamp(0, calc((var(--p) - .8) / .2), 1);
+.hz-stick { --t1: clamp(0, calc(var(--p) / .3), 1); --h: clamp(0, calc((var(--p) - .03) / .5), 1); --d: clamp(0, calc((var(--p) - .16) / .3), 1); --f: clamp(0, calc((var(--p) - .44) / .14), 1); --c1: clamp(0, calc((var(--p) - .36) / .34), 1); --c2: clamp(0, calc((var(--p) - .46) / .34), 1); --c: clamp(0, calc((var(--p) - .58) / .3), 1); --n: clamp(0, calc((var(--p) - .72) / .16), 1);
   position: sticky; top: 0; height: 100svh; overflow: hidden; color: var(--marine); background: #cfe3f5; }
 .hz-sky { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hz-behind { position: absolute; left: 0; right: 0; top: 15vh; z-index: 1; text-align: center; padding-inline: var(--gut); transform: translateY(calc(var(--t1) * 46vh)); opacity: calc(1 - var(--t1) * 1.2); }
@@ -1242,3 +1242,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .rep2-panel { margin: 0 16px 16px; }
 }
 @media (prefers-reduced-motion: reduce) { .rep2-panel, .rep2-panel .rep-row, .rep2-panel .checks li { animation: none; } .rep2-bg img { transition: none; } }
+
+/* Hero-Ende: Navy früher voll, nächste Sektion schiebt sich über den leeren Rest */
+.hz:not(.flat) { margin-bottom: -34vh; }
+.hz:not(.flat) + * { position: relative; z-index: 2; }
