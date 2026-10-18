@@ -12,3 +12,4 @@ Alle Dateien liegen in `public/media/`. Status „Platzhalter“ bedeutet: vor V
 
 Entfernt: alle KI-generierten Bilder (Hero-Haus/Himmel/Wolken, Objektreport-Bausteine, Kontakt-Haus) und die Deutschlandkarte.
 Es werden keine erfundenen Zahlen, Kundenzitate, Namen oder Kontaktdaten angezeigt.
+- haus-film.mp4, haus-film-sm.mp4, haus-film.webm, haus-film-poster.webp: Startseiten-Scroll-Film. KI-Videogenerierung (Higgsfield/Kling) aus dem Kundenfoto buero-abend-1; vor Livegang prüfen oder kennzeichnen.
