@@ -10,17 +10,19 @@ export default function HoverList({ items }) {
     const el = root.current
     const p = pos.current
     const tick = () => {
-      p.x += (p.tx - p.x) * 0.12; p.y += (p.ty - p.y) * 0.12
+      p.x += (p.tx - p.x) * 0.3; p.y += (p.ty - p.y) * 0.3
       if (pic.current) pic.current.style.transform = `translate3d(${p.x.toFixed(1)}px, ${p.y.toFixed(1)}px, 0)`
       p.raf = Math.abs(p.tx - p.x) + Math.abs(p.ty - p.y) > 0.3 ? requestAnimationFrame(tick) : 0
     }
+    let r = el.getBoundingClientRect()
+    const upd = () => { r = el.getBoundingClientRect() }
+    window.addEventListener('scroll', upd, { passive: true })
     const move = (e) => {
-      const r = el.getBoundingClientRect()
       p.tx = e.clientX - r.left + 28; p.ty = e.clientY - r.top - 110
       if (!p.raf) p.raf = requestAnimationFrame(tick)
     }
     el.addEventListener('mousemove', move)
-    return () => { el.removeEventListener('mousemove', move); p.raf && cancelAnimationFrame(p.raf) }
+    return () => { window.removeEventListener('scroll', upd); el.removeEventListener('mousemove', move); p.raf && cancelAnimationFrame(p.raf) }
   }, [])
   return (
     <div className={`hl${act >= 0 ? ' has-act' : ''}`} ref={root} onMouseLeave={() => setAct(-1)}>
@@ -29,11 +31,11 @@ export default function HoverList({ items }) {
           <span className="hl-n">0{i + 1}</span>
           <h3>{it.t}</h3>
           <p>{it.d}</p>
-          <img className="hl-thumb" src={it.img} alt="" loading="lazy" />
+          <img className="hl-thumb" src={it.img} alt="" loading="lazy" decoding="async" />
         </article>
       ))}
       <div className="hl-pic" ref={pic} aria-hidden="true">
-        {items.map((it, i) => <img key={it.t} src={it.img} alt="" className={act === i ? 'on' : ''} />)}
+        {items.map((it, i) => <img key={it.t} src={it.img} alt="" decoding="async" className={act === i ? 'on' : ''} />)}
       </div>
     </div>
   )

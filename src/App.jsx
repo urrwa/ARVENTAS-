@@ -49,16 +49,21 @@ function useReveal(key) {
 function useMouseParallax() {
   useEffect(() => {
     if (!window.matchMedia('(hover: hover)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const root = document.documentElement
+    // Nur sichtbare Bilder werden direkt bewegt (kein Root-Variablenwechsel, kein globales Style-Recalc).
+    const SEL = '.phero-img, .imgf img, .choose-img img, .hs-img img, .step-row img, .door img'
+    const vis = new Set(), seen = new WeakSet()
+    const io = new IntersectionObserver((es) => es.forEach((e) => (e.isIntersecting ? vis.add(e.target) : vis.delete(e.target))))
+    const scan = () => document.querySelectorAll(SEL).forEach((el) => { if (!seen.has(el)) { seen.add(el); io.observe(el) } })
+    scan(); const t = setInterval(scan, 1500)
     let tx = 0, ty = 0, x = 0, y = 0, raf = 0
     const tick = () => {
-      x += (tx - x) * 0.07; y += (ty - y) * 0.07
-      root.style.setProperty('--mx', x.toFixed(4)); root.style.setProperty('--my', y.toFixed(4))
-      raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.001 ? requestAnimationFrame(tick) : 0
+      x += (tx - x) * 0.1; y += (ty - y) * 0.1
+      vis.forEach((el) => { el.style.translate = `${(x * -12).toFixed(1)}px ${(y * -8).toFixed(1)}px` })
+      raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.002 ? requestAnimationFrame(tick) : 0
     }
     const move = (e) => { tx = (e.clientX / window.innerWidth) * 2 - 1; ty = (e.clientY / window.innerHeight) * 2 - 1; if (!raf) raf = requestAnimationFrame(tick) }
     window.addEventListener('mousemove', move, { passive: true })
-    return () => { window.removeEventListener('mousemove', move); raf && cancelAnimationFrame(raf) }
+    return () => { window.removeEventListener('mousemove', move); clearInterval(t); io.disconnect(); raf && cancelAnimationFrame(raf) }
   }, [])
 }
 
