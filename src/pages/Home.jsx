@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Seo from '../components/Seo.jsx'
+import SketchMorph from '../components/SketchMorph.jsx'
 import HomeFilm from '../components/HomeFilm.jsx'
 import HoverList from '../components/HoverList.jsx'
 import CtaBand from '../components/CtaBand.jsx'
@@ -87,6 +88,8 @@ export default function Home() {
       <HomeFilm />
 
       <Editorial />
+
+      <SketchMorph />
 
       <Gallery />
 

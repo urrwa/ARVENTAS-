@@ -1,9 +1,21 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
 
 // Startseiten-Kopf als Scroll-Film: Die Kamera fährt durch die Glastür in die Lounge (aus dem Kundenfoto erzeugt).
 // Der Fortschritt des Scrollens steuert die Videozeit. Text minimal: kurze fette Aussage unten links, Handlungskarte unten rechts.
+function CountUp({ to }) {
+  const [n, setN] = useState(0)
+  useEffect(() => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setN(to); return }
+    let raf = 0, t0 = 0
+    const tick = (t) => { if (!t0) t0 = t; const k = Math.min(1, (t - t0) / 1600); setN(Math.round(to * (1 - Math.pow(1 - k, 3)))); if (k < 1) raf = requestAnimationFrame(tick) }
+    const id = setTimeout(() => { raf = requestAnimationFrame(tick) }, 900)
+    return () => { clearTimeout(id); cancelAnimationFrame(raf) }
+  }, [to])
+  return n
+}
+
 export default function HomeFilm() {
   const wrap = useRef(null), vid = useRef(null)
   useEffect(() => {
@@ -43,14 +55,23 @@ export default function HomeFilm() {
       <div className="hf-stick">
         <video ref={vid} className="hf-vid" poster="/media/haus-film-poster.webp" muted playsInline preload="none" aria-hidden="true" />
         <div className="hf-shade" />
-        <h1 className="hf-split" aria-label="Strategische Immobilienentwicklung mit System.">
-          <span className="hf-part l"><Letters text="Strategische Immobilienentwicklung" per={38} max={1300} delay={200} /></span>
-          <span className="hf-line" aria-hidden="true" />
-          <span className="hf-part r"><Letters text="mit System." per={60} max={700} delay={1100} /></span>
-        </h1>
-        <div className="hh-card hf-card">
-          <Link to="/kontakt" className="hh-a main"><span>Potenzial analysieren</span><i aria-hidden="true">→</i></Link>
-          <Link to="/kontakt?art=Strategiegespräch" className="hh-a"><span>Strategiegespräch anfragen</span><i aria-hidden="true">→</i></Link>
+        <div className="hf-rv">
+          <h1 className="hf-h" aria-label="Strategische Immobilienentwicklung mit System.">
+            <span className="hf-ln"><Letters text="Strategische" per={38} max={900} delay={200} /></span>
+            <span className="hf-ln"><Letters text="Immobilienentwicklung" per={38} max={1000} delay={450} /></span>
+            <span className="hf-ln"><Letters text="mit System." per={50} max={700} delay={900} /></span>
+          </h1>
+          <p className="hf-sub">Markt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg verbunden.</p>
+          <a href="#entwurf" className="hf-see"><i aria-hidden="true">▶</i><span>So entsteht Klarheit</span></a>
+          <ul className="hf-stats">
+            <li><b><CountUp to={5} /></b><span>Leistungen</span></li>
+            <li><b><CountUp to={5} /></b><span>Schritte</span></li>
+          </ul>
+          <Link to="/leistungen" className="hf-mini">
+            <img src="/media/gal-4.webp" alt="" width="120" height="120" loading="lazy" decoding="async" />
+            <span>Ein System für bessere Immobilienentscheidungen.</span>
+            <em>Leistungen ansehen <i aria-hidden="true">→</i></em>
+          </Link>
         </div>
       </div>
     </section>
