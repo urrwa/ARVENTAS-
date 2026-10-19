@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Icon from './Icon.jsx'
 import { SectionHead } from './ui.jsx'
@@ -86,34 +86,39 @@ export const GoldLine = ({ children }) => <p className="gline rv">{children}</p>
 
 export function Versus({ left, right, line }) {
   const ref = useRef(null)
+  const [t, setT] = useState({ l: -1, r: -1, done: false })
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.style.setProperty('--p', 1); return }
-    let raf = 0
-    const run = () => {
-      raf = 0
-      const r = el.getBoundingClientRect(), vh = window.innerHeight
-      el.style.setProperty('--p', Math.min(1, Math.max(0, (vh * 0.9 - r.top) / (vh * 0.6))).toFixed(3))
-    }
-    const on = () => { if (!raf) raf = requestAnimationFrame(run) }
-    run()
-    window.addEventListener('scroll', on, { passive: true })
-    window.addEventListener('resize', on)
-    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
-  }, [])
+    const nl = left.items.length, nr = right.items.length
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) { setT({ l: nl, r: nr, done: true }); return }
+    const timers = []
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return
+      io.disconnect()
+      // links: langsam und ohne Abschluss, rechts: zügig bis zum Ziel
+      for (let i = 0; i <= nl; i++) timers.push(setTimeout(() => setT((x) => ({ ...x, l: i })), 500 + i * 1000))
+      for (let i = 0; i <= nr; i++) timers.push(setTimeout(() => setT((x) => ({ ...x, r: i })), 500 + i * 520))
+      timers.push(setTimeout(() => setT((x) => ({ ...x, done: true })), 500 + Math.max(nl * 1000, nr * 520) + 300))
+    }, { threshold: 0.35 })
+    io.observe(el)
+    return () => { io.disconnect(); timers.forEach(clearTimeout) }
+  }, [left.items.length, right.items.length])
+  const st = (cur, i) => (i < cur ? 'done' : i === cur ? 'on' : '')
   return (
-    <div className="vs2" ref={ref}>
-      <div className="vs2-l">
-        <p className="vs2-h">{left.t}</p>
-        <ul>{left.items.map((x, i) => <li key={x} style={{ '--i': i }}><span aria-hidden="true">—</span>{x}</li>)}</ul>
+    <div className={`vs3${t.done ? ' fin' : ''}`} ref={ref}>
+      <div className="vs3-p old">
+        <p className="vs3-h">{left.t}</p>
+        <span className="vs3-bar"><i style={{ transform: `scaleX(${Math.min(1, Math.max(0, t.l) / left.items.length)})` }} /></span>
+        <ul>{left.items.map((x, i) => <li key={x} className={st(t.l, i)}><span className="ring" aria-hidden="true" />{x}</li>)}</ul>
       </div>
-      <div className="vs2-mid" aria-hidden="true"><span>VS.</span></div>
-      <div className="vs2-r">
-        <h3 className="vs2-h">{right.t}</h3>
-        <ol>{right.items.map((x, i) => <li key={x} style={{ '--i': i + 2 }}><span className="n">({String(i + 1).padStart(2, '0')})</span>{x}</li>)}</ol>
+      <span className="vs3-mid" aria-hidden="true">VS.</span>
+      <div className="vs3-p new">
+        <p className="vs3-h">{right.t}</p>
+        <span className="vs3-bar"><i style={{ transform: `scaleX(${Math.min(1, Math.max(0, t.r) / right.items.length)})` }} /></span>
+        <ul>{right.items.map((x, i) => <li key={x} className={st(t.r, i)}><span className="ring" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.3l2.2 2.2 4.8-5" /></svg></span>{x}</li>)}</ul>
       </div>
-      {line && <p className="vs2-line">{line}</p>}
+      {line && <p className="vs3-line">{line}</p>}
     </div>
   )
 }
