@@ -2,6 +2,7 @@ import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import JourneySplit from '../components/JourneySplit.jsx'
+import RiseList from '../components/RiseList.jsx'
 import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid, GoldLine, Split, Versus } from '../components/blocks.jsx'
@@ -38,10 +39,7 @@ export default function System() {
         <Versus {...VERSUS} line="Wir reagieren nicht einfach auf den Markt. Wir strukturieren Entscheidungen, bevor sich der Markt bewegt." />
       </Sec>
 
-      <Sec eyebrow="Systemprinzipien" title="Auf klaren Prinzipien aufgebaut."
-        lead="Das ARVENTAS System wurde entwickelt, um Klarheit in komplexe Immobilienentscheidungen zu bringen. Es folgt klaren Prinzipien, die jede Analyse und jede strategische Empfehlung leiten.">
-        <IconGrid items={SYSTEM.principles} cols={5} />
-      </Sec>
+      <RiseList items={SYSTEM.principles} title="Auf klaren Prinzipien aufgebaut." />
 
             <Sec eyebrow="Kundenergebnis" title="Was Kunden durch das ARVENTAS System gewinnen."
         lead="Am Ende des Prozesses erhalten Kunden keine isolierten Informationen. Sie erhalten einen klareren Blick auf Märkte, Chancen, Risiken und die mögliche strategische Richtung.">
