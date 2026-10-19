@@ -1796,3 +1796,5 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .aud-card:hover .aud-img img { transform: scale(calc(1.05 - (1 - var(--q)) * .3)); }
 @media (max-width: 860px) { .aud-card:nth-child(even) { margin-top: 0; } .aud-img { aspect-ratio: 4 / 3; } }
 @media (prefers-reduced-motion: reduce) { .aud-card { opacity: 1; } .aud-img { clip-path: none; } .aud-img img { transform: none; } .aud-bar { transform: none; } }
+/* Editorial-Absatz: ruhig, linksbündig, leichter (Luxus statt Blocksatz) */
+.sw.edi-big { text-align: left !important; font-weight: 500; line-height: 1.28; hyphens: none !important; text-wrap: pretty; }

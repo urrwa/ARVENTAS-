@@ -12,7 +12,12 @@ export default function HomeFilm() {
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduce) { w.style.setProperty('--p', 0); return }
     const mp4 = v.canPlayType('video/mp4; codecs="avc1.42E01E"')
-    v.src = !mp4 ? '/media/haus-film.webm' : window.innerWidth < 860 ? '/media/haus-film-sm.mp4' : '/media/haus-film.mp4'
+    const src = !mp4 ? '/media/haus-film.webm' : window.innerWidth < 860 ? '/media/haus-film-sm.mp4' : '/media/haus-film.mp4'
+    // Die große Videodatei erst nach dem Laden der Seite holen, damit Text, Poster und Bilder zuerst da sind.
+    const start = () => { v.preload = 'auto'; v.src = src; v.load() }
+    let idle = 0, tm = 0
+    const go = () => { if ('requestIdleCallback' in window) idle = requestIdleCallback(start, { timeout: 1500 }); else tm = setTimeout(start, 600) }
+    if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true })
     let target = 0, cur = 0, raf = 0
     const calc = () => {
       const r = w.getBoundingClientRect(), span = Math.max(1, r.height - 2 * window.innerHeight) // letzte Bildschirmhöhe: nächster Abschnitt schiebt sich über den stehenden Film
@@ -31,12 +36,12 @@ export default function HomeFilm() {
     window.addEventListener('scroll', on, { passive: true })
     window.addEventListener('resize', on)
     v.addEventListener('loadeddata', on)
-    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); v.removeEventListener('loadeddata', on); raf && cancelAnimationFrame(raf) }
+    return () => { window.removeEventListener('load', go); idle && cancelIdleCallback(idle); clearTimeout(tm); window.removeEventListener('scroll', on); window.removeEventListener('resize', on); v.removeEventListener('loadeddata', on); raf && cancelAnimationFrame(raf) }
   }, [])
   return (
     <section className="hf" ref={wrap} aria-label="Einführung">
       <div className="hf-stick">
-        <video ref={vid} className="hf-vid" poster="/media/haus-film-poster.webp" muted playsInline preload="auto" aria-hidden="true" />
+        <video ref={vid} className="hf-vid" poster="/media/haus-film-poster.webp" muted playsInline preload="none" aria-hidden="true" />
         <div className="hf-shade" />
         <h1 className="hf-split" aria-label="Strategische Immobilienentwicklung mit System.">
           <span className="hf-part l"><Letters text="Strategische Immobilienentwicklung" per={38} max={1300} delay={200} /></span>
