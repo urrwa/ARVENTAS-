@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
+import FilmModal from './FilmModal.jsx'
 
 // Startseiten-Kopf (Vorbild Rivos): Der Film läuft von selbst in Dauerschleife, Aussage links, Zahlen unten links, Karte unten rechts.
 function CountUp({ to }) {
@@ -17,6 +18,8 @@ function CountUp({ to }) {
 
 export default function HomeFilm() {
   const wrap = useRef(null), vid = useRef(null)
+  const [show, setShow] = useState(false)
+  const close = useCallback(() => setShow(false), [])
   useEffect(() => {
     const v = vid.current
     if (!v) return
@@ -51,7 +54,7 @@ export default function HomeFilm() {
             <span className="hf-ln"><Letters text="mit System." per={50} max={700} delay={900} /></span>
           </h1>
           <p className="hf-sub">Markt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg verbunden.</p>
-          <a href="#entwurf" className="hf-see"><i aria-hidden="true">▶</i><span>So entsteht Klarheit</span></a>
+          <button type="button" className="hf-see" onClick={() => setShow(true)} aria-haspopup="dialog"><i aria-hidden="true">▶</i><span>So entsteht Klarheit</span></button>
           <ul className="hf-stats">
             <li><b><CountUp to={5} /></b><span>Leistungen</span></li>
             <li><b><CountUp to={5} /></b><span>Schritte</span></li>
@@ -63,6 +66,7 @@ export default function HomeFilm() {
           </Link>
         </div>
       </div>
+      {show && <FilmModal onClose={close} />}
     </section>
   )
 }
