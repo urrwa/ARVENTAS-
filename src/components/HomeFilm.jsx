@@ -31,16 +31,10 @@ export default function HomeFilm() {
     let idle = 0, tm = 0
     const go = () => { if ('requestIdleCallback' in window) idle = requestIdleCallback(start, { timeout: 1500 }); else tm = setTimeout(start, 600) }
     if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true })
-    // Beim Schleifen weich aus- und wieder einblenden, damit der Schnitt nicht auffällt.
-    const fade = () => {
-      const d = v.duration
-      if (!d) return
-      v.style.opacity = String(Math.max(0, Math.min(1, v.currentTime / 0.7, (d - v.currentTime) / 0.7)))
-    }
-    v.addEventListener('timeupdate', fade)
+    // Der Film läuft vor und zurück (Hin-und-Her-Schleife), daher braucht der Schleifenpunkt keine Überblendung.
     const vis = () => { if (document.hidden) v.pause(); else { const p = v.play(); p && p.catch(() => {}) } }
     document.addEventListener('visibilitychange', vis)
-    return () => { window.removeEventListener('load', go); idle && cancelIdleCallback(idle); clearTimeout(tm); v.removeEventListener('timeupdate', fade); document.removeEventListener('visibilitychange', vis) }
+    return () => { window.removeEventListener('load', go); idle && cancelIdleCallback(idle); clearTimeout(tm); document.removeEventListener('visibilitychange', vis) }
   }, [])
   return (
     <section className="hf" ref={wrap} aria-label="Einführung">
