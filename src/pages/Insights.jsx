@@ -3,6 +3,7 @@ import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import ArticleCards from '../components/ArticleCards.jsx'
+import StairFlow from '../components/StairFlow.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid } from '../components/blocks.jsx'
 import { INSIGHT_AREAS, INSIGHT_WHY } from '../content/site.js'
@@ -19,7 +20,7 @@ export default function Insights() {
 
       <Sec eyebrow="Übersicht" title="Alle Marktimpulse auf einen Blick."
         lead="Die Insights-Seite bündelt relevante Inhalte rund um Immobilienmärkte, Standortentwicklung, Marktbewegungen und strategische Immobilienentscheidungen.">
-        <IconGrid items={INSIGHT_AREAS} cols={5} />
+        <StairFlow items={INSIGHT_AREAS} images={['/media/gal-1.webp', '/media/gal-3.webp', '/media/gal-5.webp', '/media/gal-7.webp', '/media/gal-8.webp']} />
         <p className="small muted">Die Bereiche werden schrittweise mit geprüften Inhalten gefüllt. Bis dahin sind die Beiträge unten Entwürfe.</p>
       </Sec>
 
