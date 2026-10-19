@@ -1855,3 +1855,10 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .sec .inl { margin-top: clamp(16px, 3vw, 40px); }
 @media (max-width: 860px) { .inl-i:hover img, .inl-i:focus img { transform: scale(2.6); } }
 @media (prefers-reduced-motion: reduce) { .inl > * { opacity: 1; filter: none; transform: none; } }
+/* Leistungsliste: Bild folgt dem Cursor, erscheint sofort und weich (Vorbild Maison Nova) */
+.hl-row { grid-template-columns: 56px minmax(0, 1.5fr) minmax(0, 1fr); }
+.hl-row p { grid-column: auto; }
+.hl-pic { opacity: 0 !important; scale: .72; transition: opacity 180ms ease, scale 320ms cubic-bezier(.2, .7, .1, 1) !important; transform-origin: 0 50%; }
+.hl.has-act .hl-pic { opacity: 1 !important; scale: 1; }
+.hl-pic img { transition: opacity 160ms ease !important; }
+@media (max-width: 860px) { .hl-row { grid-template-columns: 56px minmax(0, 1fr); } .hl-row p { grid-column: 2; } }
