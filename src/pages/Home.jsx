@@ -26,7 +26,7 @@ const JOURNEY = [
   { icon: 'route', t: 'Die Strategie entwickeln', d: 'Wir entwickeln den richtigen Ansatz für Positionierung, Vermarktung und Entwicklung.' },
   { icon: 'send', t: 'Strukturiert vorgehen', d: 'Wir begleiten die nächsten Schritte mit Klarheit und einer strukturierten Basis.' },
 ]
-const FOR = ['Klarere Strukturen für komplexe Entscheidungen.', 'Bessere Priorisierung von Chancen und Risiken.', 'Marktverständnis als Grundlage.', 'Strategien, die Wachstum schaffen.', 'Entwicklungspotenziale erkennen und nutzen.']
+const FOR = ['Klarere Strukturen für komplexe Entscheidungen.', 'Marktverständnis als Grundlage.', 'Strategien, die Wachstum schaffen.']
 
 // Redaktioneller Abschnitt auf hellem Grund: Beschriftung, großer Blocksatz mit Wort-Reveal, kleines Bild mit Kurztext.
 // Gepinnte Bildbühne: Die Kacheln steigen aus verschiedenen Spalten und mit Versatz von unten ein und setzen sich zu einem Raster.
