@@ -2225,3 +2225,22 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .fl-photo::after { content: none; }
 .fl-photo img { width: auto; height: min(94%, 920px); max-width: 100%; object-fit: contain; border-radius: 0; filter: drop-shadow(0 0 40px rgba(176, 158, 128, .14)); }
 @media (max-width: 860px) { .fl-photo { height: 52svh; } .fl-photo img { height: 100%; } }
+/* Foreal genau: große, angeschnittene Gebäudefläche, Text oben, kleine Karten, die sich oben stapeln */
+.fl-body { grid-template-columns: clamp(250px, 24vw, 370px) minmax(0, 1fr) clamp(290px, 28vw, 470px); padding-bottom: clamp(40px, 6vw, 90px); }
+.fl-cards { display: block; }
+.fl-card { --i: 0; position: sticky; top: calc(var(--header-h, 76px) + 3svh + var(--i) * 24px); margin-bottom: 56svh; opacity: 1; transform: none; transition: none; }
+.fl-card:last-child { margin-bottom: 4svh; }
+.fl-card img { aspect-ratio: 4 / 2.7; }
+.fl-info { gap: 8px; padding: clamp(12px, 1.3vw, 18px) clamp(12px, 1.2vw, 16px) clamp(12px, 1.3vw, 18px); }
+.fl-row b { font-size: clamp(17px, 1.5vw, 22px); }
+.fl-photo { top: 0; height: 100svh; margin: 0; overflow: hidden; align-items: center; z-index: 1; }
+.fl-photo img { height: 128%; width: auto; max-width: none; flex: none; filter: none; }
+.fl-txt { top: 0; height: 100svh; align-items: flex-start; padding-top: calc(var(--header-h, 76px) + 4svh); padding-left: clamp(8px, 1.4vw, 28px); }
+.fl-h { font-size: clamp(28px, 3.4vw, 56px); }
+@media (max-width: 860px) {
+  .fl-body { display: flex; flex-direction: column; }
+  .fl-card { position: relative; top: auto; margin-bottom: 18px; }
+  .fl-photo { position: relative; height: 52svh; }
+  .fl-photo img { height: 100%; }
+  .fl-txt { position: static; height: auto; padding: 0 0 24px; }
+}

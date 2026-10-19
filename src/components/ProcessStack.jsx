@@ -36,7 +36,7 @@ export default function ProcessStack({ steps, lead, active = -1 }) {
       <div className="wrap fl-body">
         <ol className="fl-cards">
           {steps.map((s, i) => (
-            <li key={s.t} className={`fl-card${i === active ? ' on' : ''}`} aria-current={i === active ? 'step' : undefined}>
+            <li key={s.t} className={`fl-card${i === active ? ' on' : ''}`} aria-current={i === active ? 'step' : undefined} style={{ '--i': i }}>
               <img src={`/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" />
               <span className="fl-info">
                 <span className="fl-row"><b>{s.t}</b><i>{String(i + 1).padStart(2, '0')}</i></span>
