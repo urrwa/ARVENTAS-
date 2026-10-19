@@ -1843,3 +1843,15 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .inl-more { max-width: 46ch; margin: clamp(32px, 5vw, 72px) 0 0 auto; }
 @media (max-width: 860px) { .inl-i:hover img, .inl-i:focus img { transform: scale(3); } .inl-more { margin-left: 0; } }
 @media (prefers-reduced-motion: reduce) { .inl-i img { transition: none; } }
+/* Absatz mit Bildern: ruhiger und edler */
+.inl { max-width: 30em; font-weight: 400; font-size: clamp(24px, 2.9vw, 46px); line-height: 1.42; letter-spacing: -.005em; color: var(--ivory); --p: 0; }
+.inl > * { --k: clamp(0, var(--p) * (var(--n) + 3) - var(--i), 1); opacity: calc(.16 + var(--k) * .84); }
+.inl-t { filter: blur(calc((1 - var(--k)) * 5px)); margin-right: .3em; }
+.inl-i { width: 1.55em; height: 1em; margin-right: .3em; vertical-align: -.16em; border: 1px solid var(--gold-line); border-radius: 3px; transform: scale(calc(.8 + var(--k) * .2)); }
+.inl-i img { border-radius: 2px; }
+.inl-i:hover img, .inl-i:focus img { transform: scale(3.6); }
+.inl-more { max-width: 40ch; margin: clamp(56px, 8vw, 120px) 0 0 auto; }
+.inl-more p { color: var(--text-on-dark-soft); line-height: 1.7; }
+.sec .inl { margin-top: clamp(16px, 3vw, 40px); }
+@media (max-width: 860px) { .inl-i:hover img, .inl-i:focus img { transform: scale(2.6); } }
+@media (prefers-reduced-motion: reduce) { .inl > * { opacity: 1; filter: none; transform: none; } }
