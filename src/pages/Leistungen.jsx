@@ -2,6 +2,7 @@ import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import HoverList from '../components/HoverList.jsx'
+import InlineText from '../components/InlineText.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid, Split, GoldLine, Versus } from '../components/blocks.jsx'
 import { SERVICE_LIST, BENEFITS, VERSUS } from '../content/site.js'
@@ -16,11 +17,11 @@ export default function Leistungen() {
       </PageHero>
 
       <Sec eyebrow="Unser Ansatz" title="Nicht einzelne Leistungen. Ein verbundenes System.">
-        <Split img="/media/buero-abend-1.webp" alt="Lounge hinter Glasfassade am Abend">
-          <p className="rv">Immobilienentscheidungen entstehen selten durch einen einzelnen Faktor. Standort, Nachfrage, Preisentwicklung, Objektqualität, Risiko, Vermarktung und Entwicklungspotenzial müssen gemeinsam betrachtet werden.</p>
+        <InlineText parts={['Immobilienentscheidungen entstehen selten durch', { img: '/media/gal-1.webp' }, 'einen einzelnen Faktor. Standort, Nachfrage,', { img: '/media/gal-3.webp' }, 'Preisentwicklung, Objektqualität,', { img: '/media/gal-6.webp' }, 'Risiko, Vermarktung und', { img: '/media/gal-8.webp' }, 'Entwicklungspotenzial müssen gemeinsam betrachtet werden.']} />
+        <div className="inl-more">
           <p className="rv">ARVENTAS bringt diese Bereiche in eine klare Struktur. So entsteht aus einzelnen Informationen ein fundiertes Gesamtbild.</p>
           <GoldLine>Struktur ersetzt Zufall.</GoldLine>
-        </Split>
+        </div>
       </Sec>
 
       <Sec eyebrow="Leistungsübersicht" title="Unsere Kernleistungen im Überblick."
