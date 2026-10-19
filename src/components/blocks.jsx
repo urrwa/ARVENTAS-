@@ -85,28 +85,36 @@ export function Questions({ items }) {
 export const GoldLine = ({ children }) => <p className="gline rv">{children}</p>
 
 export function Versus({ left, right, line }) {
-  const ref = useRef(null)
+  const wrap = useRef(null)
   const [t, setT] = useState({ l: -1, r: -1, done: false })
+  const nl = left.items.length, nr = right.items.length
   useEffect(() => {
-    const el = ref.current
+    const el = wrap.current
     if (!el) return
-    const nl = left.items.length, nr = right.items.length
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) { setT({ l: nl, r: nr, done: true }); return }
-    const timers = []
-    const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return
-      io.disconnect()
-      // links: langsam und ohne Abschluss, rechts: zügig bis zum Ziel
-      for (let i = 0; i <= nl; i++) timers.push(setTimeout(() => setT((x) => ({ ...x, l: i })), 500 + i * 1000))
-      for (let i = 0; i <= nr; i++) timers.push(setTimeout(() => setT((x) => ({ ...x, r: i })), 500 + i * 520))
-      timers.push(setTimeout(() => setT((x) => ({ ...x, done: true })), 500 + Math.max(nl * 1000, nr * 520) + 300))
-    }, { threshold: 0.35 })
-    io.observe(el)
-    return () => { io.disconnect(); timers.forEach(clearTimeout) }
-  }, [left.items.length, right.items.length])
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setT({ l: nl, r: nr, done: true }); return }
+    let raf = 0
+    const run = () => {
+      raf = 0
+      const r = el.getBoundingClientRect(), vh = window.innerHeight
+      const pinned = window.innerWidth >= 861
+      // Fortschritt 0..1: am Desktop gepinnt über die Scrollstrecke, mobil beim Durchlauf durchs Bild
+      const p = pinned ? -r.top / Math.max(1, r.height - vh * 0.7) + 0.05 : (vh * 0.85 - r.top) / (r.height * 0.95)
+      const c = Math.min(1, Math.max(0, p))
+      const l = Math.min(nl, Math.floor(Math.min(1, c / 0.78) * (nl + 1)) - 1)
+      const rr = Math.min(nr, Math.floor(Math.min(1, c / 0.42) * (nr + 1)) - 1)
+      const done = c > 0.86
+      setT((x) => (x.l === l && x.r === rr && x.done === done ? x : { l, r: rr, done }))
+    }
+    const on = () => { if (!raf) raf = requestAnimationFrame(run) }
+    run()
+    window.addEventListener('scroll', on, { passive: true })
+    window.addEventListener('resize', on)
+    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
+  }, [nl, nr])
   const st = (cur, i) => (i < cur ? 'done' : i === cur ? 'on' : '')
   return (
-    <div className={`vs3${t.done ? ' fin' : ''}`} ref={ref}>
+    <div className="vs3-wrap" ref={wrap}>
+    <div className={`vs3${t.done ? ' fin' : ''}`}>
       <div className="vs3-p old">
         <p className="vs3-h">{left.t}</p>
         <span className="vs3-bar"><i style={{ transform: `scaleX(${Math.min(1, Math.max(0, t.l) / left.items.length)})` }} /></span>
@@ -119,6 +127,7 @@ export function Versus({ left, right, line }) {
         <ul>{right.items.map((x, i) => <li key={x} className={st(t.r, i)}><span className="ring" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.3l2.2 2.2 4.8-5" /></svg></span>{x}</li>)}</ul>
       </div>
       {line && <p className="vs3-line">{line}</p>}
+    </div>
     </div>
   )
 }

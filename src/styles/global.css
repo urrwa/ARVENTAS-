@@ -1920,3 +1920,16 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .vs3.fin .vs3-line { opacity: 1; transform: none; }
 @media (max-width: 860px) { .vs3 { grid-template-columns: 1fr; } .vs3-mid { justify-self: center; } .vs3-line { text-align: left; } }
 @media (prefers-reduced-motion: reduce) { .vs3-line { opacity: 1; transform: none; } }
+/* Zeilen stapeln sich: jede bleibt oben haften, die nächste schiebt sich darüber, die vorige tritt zurück */
+.srows { padding-bottom: clamp(8px, 2vw, 24px); }
+.sr-row { --c: 0; position: sticky; top: calc(var(--header-h, 76px) + 12px + var(--i) * 12px); background: var(--marine); min-height: clamp(260px, 36vw, 440px); margin-bottom: clamp(24px, 6vh, 64px); transform-origin: 50% 0; transform: scale(calc(1 - var(--c) * .05)); }
+.sr-row > * { opacity: calc(var(--q) * (1 - var(--c) * .65)); }
+@media (max-width: 760px) { .sr-row { position: relative; top: auto; transform: none; margin-bottom: 0; } .sr-row > * { opacity: var(--q); } }
+@media (prefers-reduced-motion: reduce) { .sr-row { position: relative; top: auto; transform: none; } .sr-row > * { opacity: 1; } }
+/* Gegenüberstellung wird vom Scrollen gesteuert (am Desktop gepinnt) */
+.vs3-wrap { height: 230svh; }
+.vs3-wrap > .vs3 { position: sticky; top: calc(var(--header-h, 76px) + 28px); margin-top: 0; }
+.vs3-bar i { transition-duration: 500ms; }
+.vs3-p.new .vs3-bar i { transition-duration: 300ms; }
+@media (max-width: 860px) { .vs3-wrap { height: auto; } .vs3-wrap > .vs3 { position: static; margin-top: clamp(28px, 4vw, 56px); } }
+@media (prefers-reduced-motion: reduce) { .vs3-wrap { height: auto; } .vs3-wrap > .vs3 { position: static; } }
