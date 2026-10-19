@@ -2134,3 +2134,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .ftr3-top { grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr) minmax(0, 1fr); }
 .ftr3-pages ul { grid-template-columns: repeat(2, minmax(0, auto)); grid-template-rows: repeat(3, auto); grid-auto-flow: column; column-gap: clamp(28px, 4vw, 64px); row-gap: 12px; }
 @media (max-width: 860px) { .ftr3-top { grid-template-columns: 1fr; } }
+/* Footer-Foto: kleiner und rund */
+.ftr3-photo { max-width: 220px; aspect-ratio: 1 / 1.15; border-radius: clamp(18px, 1.8vw, 28px); }
+.ftr3-top { grid-template-columns: minmax(0, .6fr) minmax(0, 1.6fr) minmax(0, 1fr); }
+@media (max-width: 860px) { .ftr3-photo { max-width: 150px; } }
