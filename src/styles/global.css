@@ -2214,3 +2214,14 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .fl-ghost text { font-family: var(--font-head); font-weight: 500; font-size: 168px; fill: rgba(245, 243, 239, .075); }
 .fl-intro p { margin-top: 4vh; }
 @media (max-width: 860px) { .fl-ghost { width: 96vw; } .fl-intro { min-height: 44svh; } }
+/* Gebäude ohne Rahmen: Foto verschmilzt mit dem blauen Grund (kein Bildkasten) */
+.fl-photo { border-radius: 0; overflow: visible; margin-inline: clamp(-140px, -7vw, -50px); background: transparent; }
+.fl-photo::after { content: none; }
+.fl-photo img { mix-blend-mode: lighten; -webkit-mask-image: radial-gradient(ellipse 62% 68% at 52% 50%, #000 42%, transparent 100%); mask-image: radial-gradient(ellipse 62% 68% at 52% 50%, #000 42%, transparent 100%); object-position: 40% 50%; filter: brightness(1.05) saturate(1.05); }
+@media (max-width: 860px) { .fl-photo { margin-inline: -20px; } .fl-photo img { -webkit-mask-image: radial-gradient(ellipse 80% 78% at 50% 50%, #000 45%, transparent 100%); mask-image: radial-gradient(ellipse 80% 78% at 50% 50%, #000 45%, transparent 100%); } }
+@media (prefers-reduced-motion: reduce) { .fl-photo img { mix-blend-mode: normal; } }
+/* Turm als Freisteller: steht direkt auf dem blauen Grund, ohne Bildrahmen */
+.fl-photo { border-radius: 0; overflow: visible; background: transparent; margin: 0; display: flex; justify-content: center; align-items: center; }
+.fl-photo::after { content: none; }
+.fl-photo img { width: auto; height: min(94%, 920px); max-width: 100%; object-fit: contain; border-radius: 0; filter: drop-shadow(0 0 40px rgba(176, 158, 128, .14)); }
+@media (max-width: 860px) { .fl-photo { height: 52svh; } .fl-photo img { height: 100%; } }

@@ -5,7 +5,7 @@ import Letters from './Letters.jsx'
 // Nach Foreal: Intro mit großer Wortmarke, darunter laufen hohe Fotokarten normal durch,
 // während Gebäudefoto und Text rechts stehen bleiben. Grund bleibt Marineblau.
 const IMGS = ['gal-5', 'buero-abend-2', 'cta-abend-2', 'buero-abend-1', 'gal-2']
-const BG = '/media/cta-abend-1.webp'
+const BG = '/media/turm.webp'
 
 export default function ProcessStack({ steps, lead, active = -1 }) {
   const root = useRef(null)
@@ -45,7 +45,7 @@ export default function ProcessStack({ steps, lead, active = -1 }) {
             </li>
           ))}
         </ol>
-        <div className="fl-photo" aria-hidden="true"><img src={BG} alt="" loading="lazy" decoding="async" /></div>
+        <div className="fl-photo" aria-hidden="true"><img src={BG} alt="" width="1000" height="2275" loading="lazy" decoding="async" /></div>
         <div className="fl-txt">
           <div className="fl-txt-in">
             <p className="fl-lab">(Unser System)</p>
