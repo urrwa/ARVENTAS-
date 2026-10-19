@@ -1391,6 +1391,7 @@ export default {
  "Von der Marktanalyse bis zur Development Intelligence.": "From market analysis to development intelligence.",
  "Vom Markt bis zur Steuerung von Vermarktung und Entwicklung.": "From the market to steering marketing and development.",
  "Ein klarer Entscheidungsweg statt Einzelmaßnahmen.": "A clear decision path instead of individual measures.",
+ "Alle Leistungen": "All services",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",

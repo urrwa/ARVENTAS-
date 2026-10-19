@@ -27,8 +27,8 @@ const JOURNEY = [
   { icon: 'send', t: 'Strukturiert vorgehen', d: 'Wir begleiten die nächsten Schritte mit Klarheit und einer strukturierten Basis.' },
 ]
 const FACTS = [
-  { n: '5', l: 'Leistungen', d: 'Von der Marktanalyse bis zur Development Intelligence.', img: 'gal-5' },
-  { n: '5', l: 'Schritte', d: 'Vom Markt bis zur Steuerung von Vermarktung und Entwicklung.', img: 'gal-2' },
+  { n: '5', l: 'Leistungen', d: 'Von der Marktanalyse bis zur Development Intelligence.', img: 'turm', pos: '50% 30%' },
+  { n: '5', l: 'Schritte', d: 'Vom Markt bis zur Steuerung von Vermarktung und Entwicklung.', img: 'turm', pos: '50% 78%' },
   { n: '1', l: 'System', d: 'Ein klarer Entscheidungsweg statt Einzelmaßnahmen.', img: 'cta-abend-2' },
 ]
 const FOR = ['Klarere Strukturen für komplexe Entscheidungen.', 'Marktverständnis als Grundlage.', 'Strategien, die Wachstum schaffen.']
@@ -105,7 +105,7 @@ export default function Home() {
         <div className="btn-row"><Btn to="/leistungen" variant="marine">Leistungen entdecken</Btn></div>
       </Sec>
 
-      <ProcessStack facts={FACTS} steps={CHAIN_CARDS} lead="Wir verbinden Markt, Objekt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg. So entstehen aus Informationen bessere Entscheidungen." />
+      <ProcessStack facts={FACTS} links={SERVICE_LIST.map((s) => ({ t: s.t, to: `/leistungen/${s.slug}` }))} steps={CHAIN_CARDS} lead="Wir verbinden Markt, Objekt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg. So entstehen aus Informationen bessere Entscheidungen." />
 
       <Sec tone="light" eyebrow="Für wen wir arbeiten" title="Für Immobilienentscheider, die Klarheit brauchen.">
         <ul className="gl big rv">{FOR.map((x) => <li key={x}>{x}</li>)}</ul>

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { Btn } from './ui.jsx'
 import Letters from './Letters.jsx'
 
@@ -7,7 +8,7 @@ import Letters from './Letters.jsx'
 const IMGS = ['gal-5', 'buero-abend-2', 'cta-abend-2', 'buero-abend-1', 'gal-2']
 const BG = '/media/turm.webp'
 
-export default function ProcessStack({ steps, lead, active = -1, facts }) {
+export default function ProcessStack({ steps, lead, active = -1, facts, links }) {
   const root = useRef(null)
   useEffect(() => {
     const el = root.current
@@ -64,9 +65,17 @@ export default function ProcessStack({ steps, lead, active = -1, facts }) {
               <b>{f.n}</b>
               <span className="fl-fl">{f.l}</span>
               <p>{f.d}</p>
-              <img src={`/media/${f.img}.webp`} alt="" loading="lazy" decoding="async" />
+              <img src={`/media/${f.img}.webp`} alt="" loading="lazy" decoding="async" style={{ '--pos': f.pos }} />
             </article>
           ))}
+        </div>
+      )}
+      {links && (
+        <div className="wrap fl-links">
+          <ul>
+            {links.map((l) => <li key={l.to}><Link to={l.to}><span aria-hidden="true">↘</span>{l.t}</Link></li>)}
+            <li className="all"><Link to="/leistungen"><span aria-hidden="true">↘</span>Alle Leistungen</Link></li>
+          </ul>
         </div>
       )}
     </section>
