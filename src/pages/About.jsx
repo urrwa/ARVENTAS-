@@ -2,10 +2,13 @@ import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import AudienceCards from '../components/AudienceCards.jsx'
+import StackRows from '../components/StackRows.jsx'
+import ScrollWords from '../components/ScrollWords.jsx'
 import { Btn } from '../components/ui.jsx'
-import { Sec, IconGrid, GoldLine, Split, Versus } from '../components/blocks.jsx'
+import { Sec, Versus } from '../components/blocks.jsx'
 import { ABOUT, VERSUS, AUDIENCES } from '../content/site.js'
 
+// Seitenaufbau nach dem Vorbild Archter-Studio: Studio-Absatz mit Bild, dunkle Haltung, großer Ansatz-Absatz, Mission/Zukunft über Vollbild.
 export default function About() {
   return (
     <>
@@ -15,48 +18,59 @@ export default function About() {
         <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn></div>
       </PageHero>
 
-      <Sec eyebrow="Übersicht" title="Einblick in ARVENTAS, unsere Haltung und unser Netzwerk."
-        lead="Diese Seite zeigt, wofür ARVENTAS steht, wie wir denken und warum unser Ansatz für moderne Immobilienentwicklung anders ist.">
-        <IconGrid items={ABOUT.overview} cols={4} />
-      </Sec>
-
-      <Sec eyebrow="Unsere Mission" title="Wir schaffen Klarheit, bevor Entscheidungen getroffen werden.">
-        <div className="why">
-          <div>
-            <p className="rv">Immobilienentscheidungen sind komplex: Standort, Nachfrage, Preisentwicklung, Risiko, Vermarktung und Entwicklungspotenzial beeinflussen den Erfolg eines Projekts. ARVENTAS bringt diese Faktoren in eine klare Struktur.</p>
-            <p className="rv">Unser Ziel ist es, Potenziale sichtbar zu machen, Risiken besser einzuordnen und Entscheidungsgrundlagen zu schaffen, die strategisch verwertbar sind.</p>
-            <GoldLine>Wir erkennen Potenziale, bewerten Möglichkeiten und schaffen Struktur für nachhaltige Entwicklung.</GoldLine>
+      <section className="ab-studio">
+        <div className="wrap ab-studio-in">
+          <p className="ab-label">(Unsere Mission)</p>
+          <div className="ab-studio-txt">
+            <ScrollWords className="ab-lead" text="Wir schaffen Klarheit, bevor Entscheidungen getroffen werden. Standort, Nachfrage, Preisentwicklung, Risiko, Vermarktung und Entwicklungspotenzial bringen wir in eine klare Struktur. So werden Potenziale sichtbar und Risiken besser einzuordnen." />
           </div>
-          <IconGrid items={ABOUT.missionRing} cols={3} />
+          <div className="ab-studio-img"><img src="/media/buero-abend-1.webp" alt="Lounge hinter Glasfassade am Abend" loading="lazy" decoding="async" /></div>
         </div>
-      </Sec>
+      </section>
 
-      <Sec eyebrow="Unsere Haltung" title="Nicht schneller entscheiden. Besser entscheiden.">
-        <Split img="/media/cta-abend-1.webp" flip alt="Bürogebäude am Abend">
-          <p className="rv">Wir glauben nicht an zufällige Immobilienentscheidungen. Wir glauben an Marktverständnis, klare Analyse, realistische Bewertung und strategische Umsetzung. ARVENTAS betrachtet Immobilien nicht isoliert. Wir betrachten das Zusammenspiel aus Markt, Objekt, Nachfrage, Risiko und Entwicklungsperspektive.</p>
-        </Split>
-        <IconGrid items={ABOUT.stance} cols={4} />
-      </Sec>
+      <section className="ab-dark">
+        <div className="wrap ab-dark-in">
+          <div className="ab-dark-img"><img src="/media/cta-abend-1.webp" alt="Bürogebäude am Abend" loading="lazy" decoding="async" /></div>
+          <div className="ab-dark-txt">
+            <p className="ab-label">(Unsere Haltung)</p>
+            <h2 className="ab-h">Nicht schneller entscheiden. Besser entscheiden.</h2>
+            <p>Wir glauben an Marktverständnis, klare Analyse, realistische Bewertung und strategische Umsetzung.</p>
+            <div className="btn-row"><Btn to="/kontakt" variant="gold">Mit uns arbeiten</Btn></div>
+          </div>
+        </div>
+      </section>
 
-      <Sec eyebrow="Unser Unterschied" title="Wir sind keine klassische Makler- oder Baufirma."
-        lead="ARVENTAS arbeitet nicht nach dem Prinzip, Objekte anzubieten, Preise zu schätzen, zu vermarkten und abzuwarten. Unser Ansatz beginnt früher: Wir analysieren Markt und Standort, bewerten Potenziale, ordnen Risiken ein und entwickeln daraus eine klare Strategie.">
+      <section className="ab-approach">
+        <div className="wrap">
+          <p className="ab-label">(Unser Unterschied)</p>
+          <ScrollWords className="ab-big" text="Wir sind keine klassische Makler- oder Baufirma. Unser Ansatz beginnt früher: Wir analysieren Markt und Standort, bewerten Potenziale, ordnen Risiken ein und entwickeln daraus eine klare Strategie." />
+        </div>
+      </section>
+
+      <Sec>
         <Versus {...VERSUS} />
       </Sec>
 
-      <Sec eyebrow="Partnernetzwerk" title="Starke Ergebnisse entstehen durch passende Partner."
-        lead="ARVENTAS arbeitet mit ausgewählten Partnern, die fachlich, strategisch und charakterlich zu unserem System passen. Dabei geht es nicht um Masse, sondern um Qualität, Verlässlichkeit und Passung.">
-        <IconGrid items={ABOUT.partners} cols={4} />
-        <GoldLine>Partner werden nicht gesammelt. Sie werden passend integriert.</GoldLine>
+      <section className="ab-mv">
+        <img className="ab-mv-bg" src="/media/cta-abend-2.webp" alt="" loading="lazy" decoding="async" />
+        <div className="wrap ab-mv-cards">
+          <article>
+            <h3>Partnernetzwerk</h3>
+            <p>Starke Ergebnisse entstehen durch passende Partner. Qualität, Verlässlichkeit, Struktur und Langfristigkeit.</p>
+          </article>
+          <article>
+            <h3>Zukunft</h3>
+            <p>Moderne Immobilienentwicklung braucht mehr als Erfahrung. Früher erkennen, besser bewerten, gezielter handeln.</p>
+          </article>
+        </div>
+      </section>
+
+      <Sec eyebrow="Unsere Haltung im Detail" title="Vier Prinzipien.">
+        <StackRows items={ABOUT.stance} />
       </Sec>
 
-      <Sec eyebrow="Für wen" title="Für Entscheider, die Immobilienpotenziale klarer verstehen wollen."
-        lead="ARVENTAS richtet sich an Unternehmen und Partner, die vor wichtigen Immobilienentscheidungen mehr Klarheit, Struktur und strategische Einordnung benötigen.">
+      <Sec eyebrow="Für wen" title="Für Entscheider mit Anspruch.">
         <AudienceCards items={AUDIENCES} />
-      </Sec>
-
-      <Sec eyebrow="Zukunft" title="Moderne Immobilienentwicklung braucht mehr als Erfahrung."
-        lead="Der Immobilienmarkt verändert sich: Nachfrage, Finanzierung, Standorte, Nutzungskonzepte und Marktlogik entwickeln sich ständig weiter. Deshalb braucht es bessere Grundlagen für Projekte, Partnerschaften und Entwicklungschancen.">
-        <IconGrid items={ABOUT.future} cols={4} />
       </Sec>
 
       <CtaBand image="/media/cta-abend-2.webp" title="Lassen Sie uns Immobilienpotenziale klarer einordnen." text="ARVENTAS unterstützt Sie dabei, Märkte, Objekte und Entwicklungschancen besser zu verstehen und strategisch nutzbar zu machen." />

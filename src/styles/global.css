@@ -1963,3 +1963,29 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .ps { height: 300vh; }
 @media (max-width: 860px) { .js-step { min-height: 52svh; } .ctab-wrap { height: 130svh; } .ps { height: 260vh; } }
 @media (prefers-reduced-motion: reduce) { .rl, .vs3-wrap, .ctab-wrap, .ps { height: auto; } }
+/* Über uns (Vorbild Archter-Studio) */
+.ab-label { margin: 0; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.ab-studio { background: var(--marine); padding-block: clamp(72px, 10vw, 150px); }
+.ab-studio-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(24px, 5vw, 90px); align-items: stretch; }
+.ab-studio-in .ab-label { grid-column: 1 / -1; }
+.ab-studio-txt { display: flex; align-items: flex-end; }
+.ab-lead { font-family: var(--font-head); font-weight: 400; font-size: clamp(22px, 2.3vw, 36px); line-height: 1.38; color: var(--ivory); margin: 0; }
+.ab-studio-img { overflow: hidden; aspect-ratio: 4 / 5; }
+.ab-studio-img img, .ab-dark-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ab-dark { background: var(--black); padding-block: clamp(64px, 9vw, 130px); }
+.ab-dark-in { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 6vw, 100px); align-items: center; }
+.ab-dark-img { overflow: hidden; aspect-ratio: 5 / 4; }
+.ab-dark-txt { display: flex; flex-direction: column; gap: clamp(14px, 2vw, 24px); align-items: flex-start; }
+.ab-h { margin: 0; font-family: var(--font-head); font-weight: 500; font-size: clamp(26px, 3.2vw, 50px); line-height: 1.1; letter-spacing: -.01em; color: var(--ivory); text-transform: none; }
+.ab-dark-txt p:not(.ab-label) { margin: 0; max-width: 40ch; color: var(--text-on-dark-soft); line-height: 1.7; }
+.ab-approach { background: var(--marine); padding-block: clamp(72px, 10vw, 150px); }
+.ab-approach .ab-label { margin-bottom: clamp(18px, 3vw, 36px); }
+.ab-big { margin: 0; max-width: 24em; font-family: var(--font-head); font-weight: 400; font-size: clamp(26px, 3.6vw, 56px); line-height: 1.25; color: var(--ivory); }
+.ab-mv { position: relative; min-height: 120svh; padding-block: clamp(64px, 10vw, 140px); display: flex; align-items: flex-end; overflow: hidden; }
+.ab-mv-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ab-mv::after { content: ""; position: absolute; inset: 0; background: rgba(27, 36, 56, .42); }
+.ab-mv-cards { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 28px); }
+.ab-mv-cards article { background: rgba(14, 14, 14, .78); padding: clamp(20px, 2.6vw, 40px); border: 1px solid rgba(245, 243, 239, .14); }
+.ab-mv-cards h3 { margin: 0 0 12px; font-family: var(--font-head); font-weight: 500; font-size: clamp(22px, 2vw, 30px); color: var(--ivory); text-transform: none; }
+.ab-mv-cards p { margin: 0; color: var(--text-on-dark-soft); line-height: 1.65; max-width: 44ch; }
+@media (max-width: 860px) { .ab-studio-in, .ab-dark-in, .ab-mv-cards { grid-template-columns: 1fr; } .ab-studio-img { aspect-ratio: 4 / 3; } .ab-mv { min-height: 100svh; } }
