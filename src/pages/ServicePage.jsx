@@ -4,8 +4,9 @@ import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import JourneySplit from '../components/JourneySplit.jsx'
 import ProcessStack from '../components/ProcessStack.jsx'
+import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
-import { Sec, IconGrid, Chain, Questions, GoldLine, Split } from '../components/blocks.jsx'
+import { Sec, Chain, Questions, GoldLine, Split } from '../components/blocks.jsx'
 import { SERVICES, CHAIN } from '../content/site.js'
 import NotFound from './NotFound.jsx'
 
@@ -32,8 +33,8 @@ export default function ServicePage() {
         </div>
       </Sec>
 
-      <Sec eyebrow={s.areasEyebrow} title={s.areasTitle} lead={s.areasLead}>
-        <IconGrid items={s.areas} cols={s.areas.length} />
+      <Sec eyebrow={s.areasEyebrow} title={s.areasTitle}>
+        <StackRows items={s.areas} />
       </Sec>
 
       <JourneySplit items={s.steps} label={s.stepsEyebrow} title={s.stepsTitle} />
@@ -45,8 +46,8 @@ export default function ServicePage() {
         <Questions items={s.questions} />
       </Sec>
 
-      <Sec eyebrow={s.resultEyebrow} title={s.resultTitle} lead={s.resultLead}>
-        <IconGrid items={s.results} cols={5} />
+      <Sec eyebrow={s.resultEyebrow} title={s.resultTitle}>
+        <StackRows items={s.results} />
         <GoldLine>{s.resultLine}</GoldLine>
         {s.note && <p className="small muted">{s.note}</p>}
       </Sec>

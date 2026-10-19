@@ -25,16 +25,15 @@ export default function Leistungen() {
         </div>
       </Sec>
 
-      <Sec eyebrow="Leistungsübersicht" title="Unsere Kernleistungen im Überblick."
-        lead="Jede Leistung erfüllt eine eigene Aufgabe. Zusammen bilden sie die Grundlage für datenbasierte Immobilienstrategie, gezielte Vermarktung und strukturierte Entwicklung.">
+      <Sec eyebrow="Leistungsübersicht" title="Unsere Kernleistungen im Überblick.">
         <HoverList items={SERVICE_LIST.map((s) => ({ t: s.t, d: s.card, img: s.img, icon: s.icon, to: `/leistungen/${s.slug}` }))} />
       </Sec>
 
-                  <Sec eyebrow="Warum es wichtig ist" title="Potenzial entsteht nicht zufällig.">
+      <Sec eyebrow="Warum es wichtig ist" title="Potenzial entsteht nicht zufällig.">
         <StackRows items={BENEFITS} />
       </Sec>
 
-      <Sec eyebrow="Der Unterschied" title="Klassisch betrachtet man Immobilien einzeln. ARVENTAS betrachtet das gesamte Potenzial.">
+      <Sec eyebrow="Der Unterschied" title="Nicht einzeln. Als Ganzes.">
         <Versus {...VERSUS} />
       </Sec>
 

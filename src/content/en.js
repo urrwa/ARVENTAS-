@@ -1365,6 +1365,7 @@ export default {
  "Risiko, Vermarktung und": "risk, marketing and",
  "Entwicklungspotenzial müssen gemeinsam betrachtet werden.": "development potential must be considered together.",
  "Potenzial entsteht nicht zufällig.": "Potential does not arise by chance.",
+ "Nicht einzeln. Als Ganzes.": "Not one by one. As a whole.",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",
