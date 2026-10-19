@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Icon from './Icon.jsx'
 import { SectionHead } from './ui.jsx'
@@ -84,18 +85,35 @@ export function Questions({ items }) {
 export const GoldLine = ({ children }) => <p className="gline rv">{children}</p>
 
 export function Versus({ left, right, line }) {
+  const ref = useRef(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.style.setProperty('--p', 1); return }
+    let raf = 0
+    const run = () => {
+      raf = 0
+      const r = el.getBoundingClientRect(), vh = window.innerHeight
+      el.style.setProperty('--p', Math.min(1, Math.max(0, (vh * 0.9 - r.top) / (vh * 0.6))).toFixed(3))
+    }
+    const on = () => { if (!raf) raf = requestAnimationFrame(run) }
+    run()
+    window.addEventListener('scroll', on, { passive: true })
+    window.addEventListener('resize', on)
+    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
+  }, [])
   return (
-    <div className="versus rv">
-      <div className="vs-col">
-        <h3>{left.t}</h3>
-        <ul className="xl">{left.items.map((x) => <li key={x}>{x}</li>)}</ul>
+    <div className="vs2" ref={ref}>
+      <div className="vs2-l">
+        <p className="vs2-h">{left.t}</p>
+        <ul>{left.items.map((x, i) => <li key={x} style={{ '--i': i }}><span aria-hidden="true">—</span>{x}</li>)}</ul>
       </div>
-      <span className="vs-mid" aria-hidden="true">VS.</span>
-      <div className="vs-col gold">
-        <h3>{right.t}</h3>
-        <ul className="cl">{right.items.map((x) => <li key={x}>{x}</li>)}</ul>
+      <div className="vs2-mid" aria-hidden="true"><span>VS.</span></div>
+      <div className="vs2-r">
+        <h3 className="vs2-h">{right.t}</h3>
+        <ol>{right.items.map((x, i) => <li key={x} style={{ '--i': i + 2 }}><span className="n">({String(i + 1).padStart(2, '0')})</span>{x}</li>)}</ol>
       </div>
-      {line && <p className="gline vs-line">{line}</p>}
+      {line && <p className="vs2-line">{line}</p>}
     </div>
   )
 }
