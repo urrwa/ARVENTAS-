@@ -1347,6 +1347,8 @@ export default {
  "Übersicht": "Overview",
  "Strategische Immobilienentwicklung mit System: Struktur, Marktverständnis und klare Entscheidungen.": "Strategic real estate development with a system: structure, market understanding and clear decisions.",
  "(Über uns)": "(About us)",
+ "Vom Signal": "From signal",
+ "zur Strategie.": "to strategy.",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",
