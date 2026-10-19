@@ -2053,3 +2053,16 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .cta2-in { position: relative; z-index: 1; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: clamp(20px, 4vw, 64px); padding: clamp(24px, 4vw, 64px); }
 .cta2-h { margin: 0; max-width: 16em; font-family: var(--font-head); font-weight: 500; font-size: clamp(24px, 3.1vw, 48px); line-height: 1.15; letter-spacing: -.01em; color: var(--ivory); text-transform: none; text-align: left; }
 @media (max-width: 760px) { .cta2-in { flex-direction: column; align-items: flex-start; } }
+/* Abschlusskarte: Foto öffnet sich beim Scrollen von oben nach unten, feine Goldlinie */
+.cta2 { --q: 0; border-radius: 4px; min-height: clamp(300px, 34vw, 460px); border: 1px solid var(--gold-line); background: transparent; }
+.cta2-pic { position: absolute; inset: 0; clip-path: inset(0 0 calc((1 - var(--q)) * 100%) 0); }
+.cta2-pic .cta2-bg { transform: scale(calc(1.2 - var(--q) * .2)); transform-origin: 50% 0; transition: none; }
+.cta2:hover .cta2-bg { transform: scale(calc(1.2 - var(--q) * .2)); }
+.cta2::after { content: none; }
+.cta2-pic::after { content: ""; position: absolute; inset: 0; background: rgba(14, 14, 14, .5); }
+.cta2-l { display: grid; gap: clamp(12px, 1.6vw, 22px); }
+.cta2-lab { margin: 0; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+.cta2-in { padding: clamp(28px, 5vw, 80px); }
+.cta2-h { font-size: clamp(26px, 3.4vw, 54px); line-height: 1.12; }
+.cta2 .btn { opacity: calc((var(--q) - .55) * 4); }
+@media (prefers-reduced-motion: reduce) { .cta2-pic { clip-path: none; } .cta2-pic .cta2-bg { transform: none; } .cta2 .btn { opacity: 1; } }

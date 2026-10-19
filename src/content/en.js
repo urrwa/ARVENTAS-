@@ -1380,6 +1380,7 @@ export default {
  "Unsere Haltung im Detail": "Our approach in detail",
  "Vier Prinzipien.": "Four principles.",
  "Für Entscheider mit Anspruch.": "For decision-makers with high standards.",
+ "(Nächster Schritt)": "(Next step)",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",
