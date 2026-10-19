@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react'
 import Seo from '../components/Seo.jsx'
 import HomeFilm from '../components/HomeFilm.jsx'
 import HoverList from '../components/HoverList.jsx'
@@ -34,39 +33,6 @@ const FACTS = [
 const FOR = ['Klarere Strukturen für komplexe Entscheidungen.', 'Marktverständnis als Grundlage.', 'Strategien, die Wachstum schaffen.']
 
 // Redaktioneller Abschnitt auf hellem Grund: Beschriftung, großer Blocksatz mit Wort-Reveal, kleines Bild mit Kurztext.
-// Gepinnte Bildbühne: Die Kacheln steigen aus verschiedenen Spalten und mit Versatz von unten ein und setzen sich zu einem Raster.
-// [Bild, Verzögerung] in Leserichtung (4 Spalten, 2 Reihen). Nach dem Setzen scrollt die Bühne weiter.
-const GAL = [[0, 0], [1, .02], [2, 0], [3, 0], [4, .25], [5, .33], [6, .41], [7, .49]]
-function Gallery() {
-  const ref = useRef(null)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.style.setProperty('--p', 1); return }
-    let raf = 0
-    const run = () => {
-      raf = 0
-      const r = el.getBoundingClientRect(), vh = window.innerHeight, lead = vh * 0.85, span = Math.max(1, r.height - vh)
-      // Start schon beim Hereinscrollen der Bühne, damit vor dem Anheften keine leere Fläche steht.
-      el.style.setProperty('--p', Math.min(1, Math.max(0, (lead - r.top) / (span + lead))).toFixed(4))
-    }
-    const on = () => { if (!raf) raf = requestAnimationFrame(run) }
-    run()
-    window.addEventListener('scroll', on, { passive: true })
-    window.addEventListener('resize', on)
-    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
-  }, [])
-  return (
-    <section className="gal-sec" ref={ref} aria-hidden="true">
-      <div className="gal-stick">
-        <div className="gal">
-          {GAL.map(([i, d]) => <div key={i} className={`gal-t${i >= 4 ? ' r2' : ''}`} style={{ '--d': d }}><img src={`/media/gal-${i + 1}.webp`} alt="" loading="lazy" decoding="async" /></div>)}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Editorial() {
   return (
     <section className="edi" aria-label="Über ARVENTAS">
@@ -89,7 +55,6 @@ export default function Home() {
       <Editorial />
 
 
-      <Gallery />
 
       <Sec tone="light" className="feat big-sec">
         <h2 className="big-h ed big-h2"><Letters text="Struktur für bessere" per={30} /><span className="r"><Letters text="Immobilienentscheidungen." per={26} delay={600} /></span></h2>
