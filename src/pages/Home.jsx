@@ -20,7 +20,6 @@ const FACTS = [
   { n: '5', l: 'Schritte', d: 'Vom Markt bis zur Steuerung von Vermarktung und Entwicklung.', img: 'turm', pos: '50% 78%' },
   { n: '1', l: 'System', d: 'Ein klarer Entscheidungsweg statt Einzelmaßnahmen.', img: 'cta-abend-2' },
 ]
-const FOR = ['Klarere Strukturen für komplexe Entscheidungen.', 'Marktverständnis als Grundlage.', 'Strategien, die Wachstum schaffen.']
 
 // Redaktioneller Abschnitt auf hellem Grund: Beschriftung, großer Blocksatz mit Wort-Reveal, kleines Bild mit Kurztext.
 function Editorial() {
@@ -55,9 +54,8 @@ export default function Home() {
 
       <ProcessStack facts={FACTS} links={SERVICE_LIST.map((s) => ({ t: s.t, to: `/leistungen/${s.slug}` }))} steps={CHAIN_CARDS} lead="Wir verbinden Markt, Objekt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg. So entstehen aus Informationen bessere Entscheidungen." />
 
-      <Sec tone="light" eyebrow="Für wen wir arbeiten" title="Für Immobilienentscheider, die Klarheit brauchen.">
-        <ul className="gl big rv">{FOR.map((x) => <li key={x}>{x}</li>)}</ul>
-        <GoldLine>Wir sehen nicht nur heute. Wir bauen Potenziale für morgen.</GoldLine>
+      <Sec tone="light" eyebrow="Für wen wir arbeiten" title="Für Entscheider, die Klarheit brauchen.">
+        <GoldLine>Wir bauen Potenziale für morgen.</GoldLine>
         <AudienceCards items={AUDIENCES} />
       </Sec>
 
