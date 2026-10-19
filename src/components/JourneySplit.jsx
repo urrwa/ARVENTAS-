@@ -31,7 +31,7 @@ export default function JourneySplit({ items, label, title }) {
         {items.map((it, i) => (
           <article key={it.t} className={`js-step${act === i ? ' on' : ''}`} ref={(el) => (blocks.current[i] = el)}>
             <div className="js-top">
-              {i === 0 && <p className="js-label">{label}</p>}
+              {i === 0 && <><p className="js-label">{label}</p><h2 className="js-h2">{title}</h2></>}
               <span className="ring"><Icon name={it.icon} size={20} /></span>
               <h3>{it.t}</h3>
             </div>
