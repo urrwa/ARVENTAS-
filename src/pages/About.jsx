@@ -1,6 +1,7 @@
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
+import AudienceCards from '../components/AudienceCards.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid, GoldLine, Split, Versus } from '../components/blocks.jsx'
 import { ABOUT, VERSUS, AUDIENCES } from '../content/site.js'
@@ -51,7 +52,7 @@ export default function About() {
 
       <Sec eyebrow="Für wen" title="Für Entscheider, die Immobilienpotenziale klarer verstehen wollen."
         lead="ARVENTAS richtet sich an Unternehmen und Partner, die vor wichtigen Immobilienentscheidungen mehr Klarheit, Struktur und strategische Einordnung benötigen.">
-        <IconGrid items={AUDIENCES} cols={5} />
+        <AudienceCards items={AUDIENCES} />
       </Sec>
 
       <Sec eyebrow="Zukunft" title="Moderne Immobilienentwicklung braucht mehr als Erfahrung."

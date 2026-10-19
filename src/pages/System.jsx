@@ -1,8 +1,9 @@
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
+import JourneySplit from '../components/JourneySplit.jsx'
 import { Btn } from '../components/ui.jsx'
-import { Sec, IconGrid, StepsRow, GoldLine, Split, Versus } from '../components/blocks.jsx'
+import { Sec, IconGrid, GoldLine, Split, Versus } from '../components/blocks.jsx'
 import { SYSTEM, VERSUS } from '../content/site.js'
 
 export default function System() {
@@ -23,9 +24,8 @@ export default function System() {
         </Split>
       </Sec>
 
-      <Sec eyebrow="Der Ablauf" title="Wie ARVENTAS Potenziale identifiziert, bewertet und entwickelt."
-        lead="Das ARVENTAS System folgt einer klaren Abfolge. Jeder Schritt baut auf dem vorherigen auf und schafft eine stärkere Grundlage für die nächste Entscheidung.">
-        <StepsRow items={SYSTEM.steps} />
+      <JourneySplit items={SYSTEM.steps} label="Der Ablauf" title="Wie ARVENTAS Potenziale identifiziert, bewertet und entwickelt." />
+      <Sec>
         <GoldLine>{SYSTEM.flow}</GoldLine>
       </Sec>
 

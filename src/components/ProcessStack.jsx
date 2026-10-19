@@ -3,7 +3,7 @@ import Letters from './Letters.jsx'
 import { Btn } from './ui.jsx'
 
 // Gepinnte Prozess-Sektion: Liste baut sich auf, ein großes Bild schiebt sich von unten ein (Vorbild Archter-Process).
-export default function ProcessStack({ steps, lead }) {
+export default function ProcessStack({ steps, lead, active = -1 }) {
   const sec = useRef(null)
   useEffect(() => {
     const s = sec.current
@@ -30,7 +30,7 @@ export default function ProcessStack({ steps, lead }) {
           <div className="ps-mid">
             <ol className="ps-list">
               {steps.map((s, i) => (
-                <li key={s.t} style={{ '--i': i }}><span className="n">({String(i + 1).padStart(2, '0')})</span><b>{s.t}</b></li>
+                <li key={s.t} className={i === active ? 'on' : ''} aria-current={i === active ? 'step' : undefined} style={{ '--i': i }}><span className="n">({String(i + 1).padStart(2, '0')})</span><b>{s.t}</b></li>
               ))}
             </ol>
             <p className="ps-lead">{lead}</p>

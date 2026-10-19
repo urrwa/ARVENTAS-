@@ -1,8 +1,9 @@
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
+import HoverList from '../components/HoverList.jsx'
 import { Btn } from '../components/ui.jsx'
-import { Sec, IconGrid, Split, GoldLine, Versus, ServiceCards } from '../components/blocks.jsx'
+import { Sec, IconGrid, Split, GoldLine, Versus } from '../components/blocks.jsx'
 import { SERVICE_LIST, BENEFITS, VERSUS } from '../content/site.js'
 
 export default function Leistungen() {
@@ -24,7 +25,7 @@ export default function Leistungen() {
 
       <Sec eyebrow="Leistungsübersicht" title="Unsere Kernleistungen im Überblick."
         lead="Jede Leistung erfüllt eine eigene Aufgabe. Zusammen bilden sie die Grundlage für datenbasierte Immobilienstrategie, gezielte Vermarktung und strukturierte Entwicklung.">
-        <ServiceCards items={SERVICE_LIST} />
+        <HoverList items={SERVICE_LIST.map((s) => ({ t: s.t, d: s.card, img: s.img, icon: s.icon, to: `/leistungen/${s.slug}` }))} />
       </Sec>
 
                   <Sec eyebrow="Warum es wichtig ist" title="Immobilienpotenziale entstehen nicht zufällig. Sie werden erkannt, bewertet und strukturiert entwickelt."
