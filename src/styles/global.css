@@ -2359,3 +2359,12 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (prefers-reduced-motion: reduce) { .hf-rv { opacity: 1; transform: none; } }
 .sm-i { mix-blend-mode: multiply; }
 @media (max-width: 860px) { .hf-h { font-size: clamp(24px, 7.2vw, 38px); max-width: 100%; } }
+/* Hero: normaler Abschnitt in Bildschirmhöhe, Film läuft von selbst */
+.hf { height: 100svh; min-height: 560px; --t: 0; --p: 0; }
+.hf + * { margin-top: 0; }
+.hf + .edi { min-height: 0; padding-top: clamp(80px, 12vw, 180px); }
+.hf-stick { position: relative; top: auto; height: 100%; }
+.hf-vid { opacity: 1; background: transparent; }
+.hf-rv { opacity: 1; transform: none; }
+@media (max-width: 860px) { .hf { height: 100svh; } }
+@media (prefers-reduced-motion: reduce) { .hf-vid { opacity: 1; } }

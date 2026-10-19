@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
 
-// Startseiten-Kopf als Scroll-Film: Die Kamera fährt durch die Glastür in die Lounge (aus dem Kundenfoto erzeugt).
-// Der Fortschritt des Scrollens steuert die Videozeit. Text minimal: kurze fette Aussage unten links, Handlungskarte unten rechts.
+// Startseiten-Kopf (Vorbild Rivos): Der Film läuft von selbst in Dauerschleife, Aussage links, Zahlen unten links, Karte unten rechts.
 function CountUp({ to }) {
   const [n, setN] = useState(0)
   useEffect(() => {
@@ -19,41 +18,31 @@ function CountUp({ to }) {
 export default function HomeFilm() {
   const wrap = useRef(null), vid = useRef(null)
   useEffect(() => {
-    const w = wrap.current, v = vid.current
-    if (!w || !v) return
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduce) { w.style.setProperty('--p', 0); return }
+    const v = vid.current
+    if (!v) return
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const mp4 = v.canPlayType('video/mp4; codecs="avc1.42E01E"')
     const src = !mp4 ? '/media/haus-film.webm' : window.innerWidth < 860 ? '/media/haus-film-sm.mp4' : '/media/haus-film.mp4'
     // Die große Videodatei erst nach dem Laden der Seite holen, damit Text, Poster und Bilder zuerst da sind.
-    const start = () => { v.preload = 'auto'; v.src = src; v.load() }
+    const start = () => { v.preload = 'auto'; v.src = src; v.load(); const p = v.play(); p && p.catch(() => {}) }
     let idle = 0, tm = 0
     const go = () => { if ('requestIdleCallback' in window) idle = requestIdleCallback(start, { timeout: 1500 }); else tm = setTimeout(start, 600) }
     if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true })
-    let target = 0, cur = 0, raf = 0
-    const calc = () => {
-      const r = w.getBoundingClientRect(), span = Math.max(1, r.height - 2 * window.innerHeight) // letzte Bildschirmhöhe: nächster Abschnitt schiebt sich über den stehenden Film
-      target = Math.min(1, Math.max(0, -r.top / span))
+    // Beim Schleifen weich aus- und wieder einblenden, damit der Schnitt nicht auffällt.
+    const fade = () => {
+      const d = v.duration
+      if (!d) return
+      v.style.opacity = String(Math.max(0, Math.min(1, v.currentTime / 0.7, (d - v.currentTime) / 0.7)))
     }
-    const tick = () => {
-      raf = 0
-      cur += (target - cur) * 0.18
-      if (Math.abs(target - cur) < 0.0004) cur = target
-      w.style.setProperty('--p', cur.toFixed(4))
-      if (v.readyState >= 2 && v.duration) { const t = cur * (v.duration - 0.05); if (Math.abs(v.currentTime - t) > 0.012) v.currentTime = t }
-      if (cur !== target) raf = requestAnimationFrame(tick)
-    }
-    const on = () => { calc(); if (!raf) raf = requestAnimationFrame(tick) }
-    calc(); cur = target; tick()
-    window.addEventListener('scroll', on, { passive: true })
-    window.addEventListener('resize', on)
-    v.addEventListener('loadeddata', on)
-    return () => { window.removeEventListener('load', go); idle && cancelIdleCallback(idle); clearTimeout(tm); window.removeEventListener('scroll', on); window.removeEventListener('resize', on); v.removeEventListener('loadeddata', on); raf && cancelAnimationFrame(raf) }
+    v.addEventListener('timeupdate', fade)
+    const vis = () => { if (document.hidden) v.pause(); else { const p = v.play(); p && p.catch(() => {}) } }
+    document.addEventListener('visibilitychange', vis)
+    return () => { window.removeEventListener('load', go); idle && cancelIdleCallback(idle); clearTimeout(tm); v.removeEventListener('timeupdate', fade); document.removeEventListener('visibilitychange', vis) }
   }, [])
   return (
     <section className="hf" ref={wrap} aria-label="Einführung">
       <div className="hf-stick">
-        <video ref={vid} className="hf-vid" poster="/media/haus-film-poster.webp" muted playsInline preload="none" aria-hidden="true" />
+        <video ref={vid} className="hf-vid" poster="/media/haus-film-poster.webp" muted loop playsInline autoPlay preload="none" aria-hidden="true" />
         <div className="hf-shade" />
         <div className="hf-rv">
           <h1 className="hf-h" aria-label="Strategische Immobilienentwicklung mit System.">
