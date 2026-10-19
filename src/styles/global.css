@@ -1774,3 +1774,11 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .ps-list li::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--gold-line); transform-origin: 0 50%; transform: scaleX(var(--k)); }
 .ps-lead { margin-top: clamp(10px, 2vh, 20px); }
 @media (prefers-reduced-motion: reduce) { .ps-img.big, .ps-img.small { clip-path: none; transform: none; } .ps-img img { transform: none !important; } .ps-list li::after { transform: none; } }
+/* Leistungsliste (Vorbild Contemo): Bild sitzt in fester Spalte und gleitet zur aktiven Zeile */
+.hl-pic { width: clamp(130px, 12vw, 190px); aspect-ratio: 3 / 4; opacity: 1 !important; transition: none; }
+.hl-row { grid-template-columns: 56px minmax(0, 1fr) clamp(150px, 14vw, 220px) minmax(0, 1fr); }
+.hl-row h3 { font-weight: 400; font-size: clamp(22px, 2.4vw, 38px); letter-spacing: .02em; }
+.hl-row p { grid-column: 4; transition: opacity 400ms ease; }
+.hl-row.act h3 { transform: none; }
+@media (hover: hover) and (min-width: 861px) { .hl.has-act .hl-row:not(.act) { opacity: 1; } .hl.has-act .hl-row:not(.act) p { opacity: .35; } .hl.has-act .hl-row:not(.act) h3 { opacity: .7; } .hl-row h3 { transition: opacity 400ms ease; } }
+@media (max-width: 860px) { .hl-row p { grid-column: 2; } .hl.has-act .hl-row:not(.act) { opacity: 1; } }
