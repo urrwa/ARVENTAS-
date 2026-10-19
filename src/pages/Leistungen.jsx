@@ -5,8 +5,8 @@ import HoverList from '../components/HoverList.jsx'
 import InlineText from '../components/InlineText.jsx'
 import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
-import { Sec, IconGrid, Split, GoldLine, Versus } from '../components/blocks.jsx'
-import { SERVICE_LIST, BENEFITS, VERSUS } from '../content/site.js'
+import { Sec, IconGrid, Split, GoldLine } from '../components/blocks.jsx'
+import { SERVICE_LIST, BENEFITS } from '../content/site.js'
 
 export default function Leistungen() {
   return (
@@ -31,10 +31,6 @@ export default function Leistungen() {
 
       <Sec eyebrow="Warum es wichtig ist" title="Potenzial entsteht nicht zufällig.">
         <StackRows items={BENEFITS} />
-      </Sec>
-
-      <Sec eyebrow="Der Unterschied" title="Nicht einzeln. Als Ganzes.">
-        <Versus {...VERSUS} />
       </Sec>
 
       <CtaBand image="/media/cta-abend-2.webp" title="Bereit, Immobilienpotenziale besser zu verstehen?" text="ARVENTAS unterstützt Sie dabei, Märkte, Objekte und Entwicklungschancen klarer zu bewerten und strategisch zu nutzen." />

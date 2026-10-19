@@ -5,8 +5,8 @@ import AudienceCards from '../components/AudienceCards.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
 import Letters from '../components/Letters.jsx'
 import { Btn } from '../components/ui.jsx'
-import { Sec, Versus } from '../components/blocks.jsx'
-import { ABOUT, VERSUS, AUDIENCES } from '../content/site.js'
+import { Sec } from '../components/blocks.jsx'
+import { ABOUT, AUDIENCES } from '../content/site.js'
 
 // Seitenaufbau nach dem Vorbild Archter-Studio: Studio-Absatz mit Bild, dunkle Haltung, großer Ansatz-Absatz, Mission/Zukunft über Vollbild.
 export default function About() {
@@ -46,10 +46,6 @@ export default function About() {
           <ScrollWords className="ab-big" text="Wir sind keine klassische Makler- oder Baufirma. Unser Ansatz beginnt früher: Wir analysieren Markt und Standort, bewerten Potenziale, ordnen Risiken ein und entwickeln daraus eine klare Strategie." />
         </div>
       </section>
-
-      <Sec>
-        <Versus {...VERSUS} />
-      </Sec>
 
       <section className="ab-mv">
         <img className="ab-mv-bg" src="/media/cta-abend-2.webp" alt="" loading="lazy" decoding="async" />
