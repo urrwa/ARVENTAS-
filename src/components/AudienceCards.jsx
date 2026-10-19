@@ -1,36 +1,50 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-// Ruhige Zielgruppen-Zeile: ein breites Foto öffnet sich beim Scrollen, darunter fünf schlichte Textspalten mit Haarlinie.
+// Zielgruppen als Bühne (Vorbild Vistahaven): Das aktive Foto steht groß, die übrigen Punkte stehen als schmale, senkrechte Reiter daneben.
+// Pfeile, Reiter und der Takt (nur wenn sichtbar) wechseln den Punkt. Fotos sind die vom Auftraggeber gelieferten.
+const IMGS = ['/media/gal-6.webp', '/media/gal-7.webp', '/media/gal-5.webp', '/media/gal-8.webp', '/media/buero-abend-1.webp']
+const nn = (i) => String(i + 1).padStart(2, '0')
+
 export default function AudienceCards({ items }) {
   const root = useRef(null)
+  const [a, setA] = useState(0)
+  const hold = useRef(false), seen = useRef(false)
+  const n = items.length
+  const go = (i) => setA((i + n) % n)
   useEffect(() => {
     const el = root.current
-    if (!el) return
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.style.setProperty('--q', 1); return }
-    let raf = 0
-    const run = () => {
-      raf = 0
-      const r = el.getBoundingClientRect(), vh = window.innerHeight
-      el.style.setProperty('--q', Math.min(1, Math.max(0, (vh * 0.95 - r.top) / (vh * 0.55))).toFixed(3))
-    }
-    const on = () => { if (!raf) raf = requestAnimationFrame(run) }
-    run()
-    window.addEventListener('scroll', on, { passive: true })
-    window.addEventListener('resize', on)
-    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
-  }, [])
+    if (!el || !('IntersectionObserver' in window)) return
+    const io = new IntersectionObserver(([e]) => { seen.current = e.isIntersecting }, { threshold: 0.4 })
+    io.observe(el)
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+    const id = reduce ? 0 : setInterval(() => { if (seen.current && !hold.current) setA((v) => (v + 1) % n) }, 6000)
+    return () => { io.disconnect(); id && clearInterval(id) }
+  }, [n])
+  const it = items[a]
   return (
-    <div className="aud2" ref={root}>
-      <div className="aud2-band" aria-hidden="true"><img src="/media/buero-abend-1.webp" alt="" loading="lazy" decoding="async" /></div>
-      <ol className="aud2-cols">
-        {items.map((it, i) => (
-          <li key={it.t} style={{ '--i': i }}>
-            <span className="n">({String(i + 1).padStart(2, '0')})</span>
-            <h3>{it.t.replace('gesellschaften', '\u00ADgesellschaften')}</h3>
-            <p>{it.d}</p>
-          </li>
-        ))}
-      </ol>
+    <div className="aud3" ref={root} onMouseEnter={() => { hold.current = true }} onMouseLeave={() => { hold.current = false }} onFocus={() => { hold.current = true }} onBlur={() => { hold.current = false }}>
+      <div className="aud3-txt" key={a}>
+        <h3>{it.t.replace('gesellschaften', '\u00ADgesellschaften')}</h3>
+        <p>{it.d}</p>
+      </div>
+      <div className="aud3-stage">
+        <div className="aud3-arrows">
+          <button type="button" onClick={() => go(a - 1)} aria-label="Zurück">←</button>
+          <button type="button" onClick={() => go(a + 1)} aria-label="Weiter">→</button>
+        </div>
+        <div className="aud3-row">
+          {items.map((x, i) => i === a ? (
+            <figure key={x.t} className="aud3-card">
+              {items.map((y, j) => <img key={y.t} src={IMGS[j % IMGS.length]} alt="" className={j === a ? 'on' : ''} loading="lazy" decoding="async" />)}
+              <figcaption><b>{nn(i)}</b><span>{x.t}</span></figcaption>
+            </figure>
+          ) : (
+            <button key={x.t} type="button" className="aud3-tab" onClick={() => go(i)} aria-label={x.t}>
+              <b>{nn(i)}</b><span>{x.t}</span>
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
