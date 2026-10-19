@@ -2294,3 +2294,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .fl-links ul { gap: 12px 20px; flex-wrap: nowrap; }
 .fl-links a { font-size: clamp(13px, 1.08vw, 17px); white-space: nowrap; gap: 8px; }
 @media (max-width: 1100px) { .fl-links ul { flex-wrap: wrap; justify-content: flex-start; gap: 12px 24px; } }
+/* Letzte Karte schiebt sich über die vorletzte: Platz nach der Liste, damit alle Karten oben haften bleiben */
+.fl-cards { padding-bottom: 58svh; }
+.fl-card:last-child { margin-bottom: 0; }
+@media (max-width: 860px) { .fl-cards { padding-bottom: 0; } }
