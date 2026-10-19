@@ -2419,3 +2419,11 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (prefers-reduced-motion: reduce) { .aud3-txt, .aud3-card { animation: none; } .aud3-card img { transition: none; } }
 .aud3-txt h3 { hyphens: manual; overflow-wrap: normal; }
 @media (max-width: 900px) { .aud3-card figcaption span { display: none; } .aud3-card figcaption { padding: 8px 16px; } }
+
+/* Zielgruppen: Bühne bleibt stehen, beim Scrollen öffnet sich ein Punkt nach dem anderen */
+.aud3-pin { height: calc(100svh + (var(--n) - 1) * 55svh); margin-top: clamp(24px, 4vw, 60px); }
+.aud3-pin .aud3 { position: sticky; top: 0; height: 100svh; margin-top: 0; align-items: center; align-content: center; }
+.aud3-pin .aud3-txt { align-self: end; margin-bottom: clamp(8px, 2vh, 24px); }
+.aud3-pin .aud3-row { height: clamp(320px, 62svh, 560px); }
+@media (max-width: 900px) { .aud3-pin .aud3 { align-content: center; } .aud3-pin .aud3-row { height: clamp(240px, 42svh, 380px); } }
+@media (prefers-reduced-motion: reduce) { .aud3-pin { height: auto; } .aud3-pin .aud3 { position: static; height: auto; } }
