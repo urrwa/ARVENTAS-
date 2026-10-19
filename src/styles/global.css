@@ -2208,3 +2208,9 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .fl-p { margin: 0; max-width: 34ch; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.7; color: var(--text-on-dark-soft); }
 @media (max-width: 860px) { .fl-intro { min-height: 56svh; } .fl-body { grid-template-columns: 1fr; } .fl-cards, .fl-photo, .fl-txt { grid-column: 1; } .fl-txt { position: static; height: auto; padding: 0 0 28px; order: -2; } .fl-photo { position: relative; top: auto; height: 36svh; margin: 0 0 20px; order: -1; } .fl-cards { order: 0; grid-row: auto; } .fl-body { display: flex; flex-direction: column; } .fl-p { display: block; } }
 @media (prefers-reduced-motion: reduce) { .fl-card { opacity: 1; transform: none; transition: none; } .fl-photo, .fl-txt { position: static; height: auto; } }
+/* Wortmarke passt komplett in die Breite (wie bei Foreal) */
+.fl-intro { min-height: clamp(380px, 62svh, 620px); }
+.fl-ghost { position: absolute; left: 50%; top: 50%; width: min(86vw, 1500px); height: auto; transform: translate(-50%, -50%) scale(calc(1 + var(--g) * .06)); font-size: 0; }
+.fl-ghost text { font-family: var(--font-head); font-weight: 500; font-size: 168px; fill: rgba(245, 243, 239, .075); }
+.fl-intro p { margin-top: 4vh; }
+@media (max-width: 860px) { .fl-ghost { width: 96vw; } .fl-intro { min-height: 44svh; } }

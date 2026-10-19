@@ -30,7 +30,7 @@ export default function ProcessStack({ steps, lead, active = -1 }) {
   return (
     <section className="fl" ref={root}>
       <div className="fl-intro">
-        <span className="fl-ghost" aria-hidden="true">ΛRVENTΛS</span>
+        <svg className="fl-ghost" viewBox="0 0 1000 190" aria-hidden="true" focusable="false"><text x="40" y="160" textLength="920" lengthAdjust="spacing">ΛRVENTΛS</text></svg>
         <p><small>Über uns</small>Entdecken</p>
       </div>
       <div className="wrap fl-body">
