@@ -8,12 +8,13 @@ export default function CtaBand({ image = '/media/cta-abend-1.webp', title = 'Be
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.style.setProperty('--q', 1); return }
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.style.setProperty('--q', 1); el.style.setProperty('--s', .5); return }
     let raf = 0
     const run = () => {
       raf = 0
       const r = el.getBoundingClientRect(), vh = window.innerHeight
-      el.style.setProperty('--q', Math.min(1, Math.max(0, (vh * 0.95 - r.top) / (vh * 0.62))).toFixed(3))
+      el.style.setProperty('--q', Math.min(1, Math.max(0, (vh * 0.95 - r.top) / (vh * 0.4))).toFixed(3))
+      el.style.setProperty('--s', Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height))).toFixed(3))
     }
     const on = () => { if (!raf) raf = requestAnimationFrame(run) }
     run()
