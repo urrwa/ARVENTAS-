@@ -2013,3 +2013,8 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .sf-img img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(calc(1.2 - var(--f) * .2)); }
 @media (max-width: 760px) { .sf-step { grid-template-columns: 1fr; min-height: 0; padding-left: 20px; } .sf-step::before, .sf-step:last-child::after { display: none; } .sf-step.odd .sf-txt, .sf-step.even .sf-txt { grid-column: 1; grid-row: 1; padding-left: 0; border-left: 2px solid rgba(176, 158, 128, .25); padding-left: 18px; } .sf-step.on .sf-txt { border-left-color: var(--gold); } .sf-step.odd .sf-img, .sf-step.even .sf-img { grid-column: 1; grid-row: 2; margin: 0; } }
 @media (prefers-reduced-motion: reduce) { .sf-txt { opacity: 1; transform: none; } .sf-img { clip-path: none; } .sf-img img { transform: none; } }
+/* CTA-Band und Footer sind getrennte Blöcke, kein Überlagern mehr */
+.ctab-wrap { height: auto; }
+.ctab { position: relative; height: auto; min-height: 78svh; }
+.ftr { margin-top: 0; min-height: 0; }
+@media (max-width: 860px) { .ctab-wrap { height: auto; } .ftr { margin-top: 0; min-height: 0; } .ctab { min-height: 70svh; } }
