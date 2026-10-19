@@ -1806,12 +1806,12 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .phero .lead { max-width: 40ch; font-size: clamp(16px, 1.3vw, 20px); }
 @media (prefers-reduced-motion: reduce) { .phero-img { animation: none; filter: blur(7px); } }
 /* Kontakt: Das Foto steht weich unscharf, das Formular schiebt sich als Glaskarte darüber (Vorbild Fugazi) */
-.sec.stage { background: transparent; }
-.stage .cbox { background: rgba(27, 36, 56, .4); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(245, 243, 239, .22); }
-.stage .cbox .f input[type=text], .stage .cbox .f input[type=email], .stage .cbox .f input[type=tel], .stage .cbox .f input[type=number], .stage .cbox .f select, .stage .cbox .f textarea { background: transparent; border: 0; border-bottom: 1px solid rgba(245, 243, 239, .38); border-radius: 0; padding-inline: 2px; }
-.stage .cbox .f input:focus, .stage .cbox .f select:focus, .stage .cbox .f textarea:focus { border-bottom-color: var(--gold); outline: none; }
-.stage .cbox .f select option { background: var(--marine); color: var(--ivory); }
-.sec.stage { padding-top: clamp(24px, 8vh, 100px); padding-bottom: clamp(72px, 12vh, 150px); }
+.sec.gstage { background: transparent; }
+.gstage .cbox { background: rgba(27, 36, 56, .4); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(245, 243, 239, .22); }
+.gstage .cbox .f input[type=text], .gstage .cbox .f input[type=email], .gstage .cbox .f input[type=tel], .gstage .cbox .f input[type=number], .gstage .cbox .f select, .gstage .cbox .f textarea { background: transparent; border: 0; border-bottom: 1px solid rgba(245, 243, 239, .38); border-radius: 0; padding-inline: 2px; }
+.gstage .cbox .f input:focus, .gstage .cbox .f select:focus, .gstage .cbox .f textarea:focus { border-bottom-color: var(--gold); outline: none; }
+.gstage .cbox .f select option { background: var(--marine); color: var(--ivory); }
+.sec.gstage { padding-top: clamp(24px, 8vh, 100px); padding-bottom: clamp(72px, 12vh, 150px); }
 /* Zielgruppen, ruhige Fassung */
 .aud2 { --q: 0; margin-top: clamp(40px, 6vw, 90px); }
 .aud2-band { height: clamp(220px, 36vw, 520px); overflow: hidden; clip-path: inset(calc((1 - var(--q)) * 50%) calc((1 - var(--q)) * 18%) calc((1 - var(--q)) * 50%) calc((1 - var(--q)) * 18%)); }
@@ -1826,3 +1826,10 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (max-width: 600px) { .aud2-cols { grid-template-columns: 1fr; } .aud2-band { clip-path: none; } }
 @media (prefers-reduced-motion: reduce) { .aud2-band { clip-path: none; } .aud2-band img { transform: none; } .aud2-cols li { opacity: 1; transform: none; } }
 .aud2-cols h3 { hyphens: manual; overflow-wrap: normal; }
+.gstage .contact-grid2 { grid-template-columns: minmax(0, 760px); justify-content: center; }
+.direct-wrap { max-width: 760px; margin-inline: auto; }
+.direct .eyebrow { color: var(--gold); margin: 0; }
+.direct .h3 { margin: 6px 0 24px; color: var(--ivory); text-transform: none; }
+.direct .clist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 32px; }
+.direct .small { margin-top: 28px; }
+@media (max-width: 640px) { .direct .clist { grid-template-columns: 1fr; } }

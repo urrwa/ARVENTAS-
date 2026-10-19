@@ -24,7 +24,7 @@ export default function Contact() {
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns Immobilienpotenziale klarer einordnen: Anfrage senden oder Strategiegespräch anfragen." />
       <PageHero tall fadeOut image="/media/buero-abend-1.webp" eyebrow="Kontakt" title="Lassen Sie uns Immobilienpotenziale klarer einordnen."
         lead="Strukturierte Analyse, klare Einordnung." />
-      <Sec id="anfrage" className="stage">
+      <Sec id="anfrage" className="gstage">
         <div className="contact-grid2">
           <div className="cbox rv">
             <p className="eyebrow">Anfrage senden</p>
@@ -32,7 +32,11 @@ export default function Contact() {
             <p>Teilen Sie uns kurz mit, worum es geht. Wir prüfen Ihre Anfrage und melden uns mit einer ersten Einschätzung.</p>
             <LeadForm key={art} id="k-anfrage" fields={FIELDS} defaults={{ art }} submitLabel="Anfrage absenden" doneTitle="Danke für Ihre Anfrage (Demo)." doneText="In der Live-Version würden wir uns bei Ihnen melden." />
           </div>
-          <aside className="cbox rv" aria-label="Direkter Kontakt">
+        </div>
+      </Sec>
+      <Sec id="direkt">
+        <div className="direct-wrap">
+        <aside className="direct" aria-label="Direkter Kontakt">
             <p className="eyebrow">Direkter Kontakt</p>
             <h2 className="h3">Sie erreichen ARVENTAS direkt.</h2>
             <ul className="clist">
