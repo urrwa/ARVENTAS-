@@ -2130,3 +2130,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .ftr3.in .ftr3-mark text { opacity: 1; transform: none; }
 @media (max-width: 860px) { .ftr3-top { grid-template-columns: 1fr; } .ftr3-photo { max-width: 200px; } .ftr3-legal span { margin-left: 0; width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .ftr3-photo, .ftr3-mid, .ftr3-pages, .ftr3-mark text { opacity: 1; transform: none; transition: none; } }
+/* Seitenliste in zwei Spalten */
+.ftr3-top { grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr) minmax(0, 1fr); }
+.ftr3-pages ul { grid-template-columns: repeat(2, minmax(0, auto)); grid-template-rows: repeat(3, auto); grid-auto-flow: column; column-gap: clamp(28px, 4vw, 64px); row-gap: 12px; }
+@media (max-width: 860px) { .ftr3-top { grid-template-columns: 1fr; } }
