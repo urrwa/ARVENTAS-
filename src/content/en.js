@@ -1384,6 +1384,7 @@ export default {
  "Strategische Immobilienentwicklung": "Strategic real estate development",
  "Klarheit vor jeder Entscheidung.": "Clarity before every decision.",
  "Seiten": "Pages",
+ "(Unsere Haltung im Detail)": "(Our approach in detail)",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",

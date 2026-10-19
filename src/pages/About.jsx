@@ -2,8 +2,8 @@ import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import AudienceCards from '../components/AudienceCards.jsx'
-import StackRows from '../components/StackRows.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
+import Letters from '../components/Letters.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, Versus } from '../components/blocks.jsx'
 import { ABOUT, VERSUS, AUDIENCES } from '../content/site.js'
@@ -65,9 +65,21 @@ export default function About() {
         </div>
       </section>
 
-      <Sec eyebrow="Unsere Haltung im Detail" title="Vier Prinzipien.">
-        <StackRows items={ABOUT.stance} />
-      </Sec>
+      <section className="pr">
+        <div className="wrap">
+          <p className="ab-label">(Unsere Haltung im Detail)</p>
+          <h2 className="pr-h"><Letters text="Vier Prinzipien." per={34} /></h2>
+          <ol className="pr-list">
+            {ABOUT.stance.map((it, i) => (
+              <li key={it.t} style={{ '--i': i }} className="rv">
+                <span className="pr-n">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{it.t}</h3>
+                <p>{it.d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
       <Sec eyebrow="Für wen" title="Für Entscheider mit Anspruch.">
         <AudienceCards items={AUDIENCES} />
