@@ -1385,6 +1385,7 @@ export default {
  "Klarheit vor jeder Entscheidung.": "Clarity before every decision.",
  "Seiten": "Pages",
  "(Unsere Haltung im Detail)": "(Our approach in detail)",
+ "Entdecken": "Discover",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",

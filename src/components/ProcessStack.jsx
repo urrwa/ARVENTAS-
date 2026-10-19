@@ -29,12 +29,13 @@ export default function ProcessStack({ steps, lead, active = -1 }) {
     <section className="pcs" ref={sec} style={{ '--n': n }}>
       <div className="pcs-stick">
         <span className="pcs-ghost" aria-hidden="true">ΛRVENTΛS</span>
+        <p className="pcs-intro"><small>Über uns</small>Entdecken</p>
         <div className="wrap pcs-grid">
           <ol className="pcs-cards">
             {steps.map((s, i) => (
               <li key={s.t} className={i === active ? 'on' : ''} aria-current={i === active ? 'step' : undefined} style={{ '--i': i }}>
-                <span className="pcs-t">{s.t}</span>
-                <span className="pcs-n">{String(i + 1).padStart(2, '0')}</span>
+                <img src={`/media/${IMGS[(i + 2) % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" />
+                <span className="pcs-info"><span className="pcs-t">{s.t}</span><span className="pcs-n">{String(i + 1).padStart(2, '0')}</span></span>
               </li>
             ))}
           </ol>
