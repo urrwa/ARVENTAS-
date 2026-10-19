@@ -7,7 +7,7 @@ import ProcessStack from '../components/ProcessStack.jsx'
 import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, Chain, Questions, GoldLine, Split } from '../components/blocks.jsx'
-import { SERVICES, CHAIN } from '../content/site.js'
+import { SERVICES, CHAIN_CARDS } from '../content/site.js'
 import NotFound from './NotFound.jsx'
 
 // Einheitliche Vorlage für die fünf Leistungsseiten.
@@ -52,7 +52,7 @@ export default function ServicePage() {
         {s.note && <p className="small muted">{s.note}</p>}
       </Sec>
 
-      <ProcessStack steps={CHAIN} lead={s.systemText} active={s.active} />
+      <ProcessStack steps={CHAIN_CARDS} lead={s.systemText} active={s.active} />
 
       <CtaBand image={s.hero === '/media/cta-abend-1.webp' ? '/media/cta-abend-2.webp' : '/media/cta-abend-1.webp'} title={s.ctaTitle} text={s.ctaText} btn={s.ctaBtn} to={q} />
     </>

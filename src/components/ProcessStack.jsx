@@ -2,49 +2,55 @@ import { useEffect, useRef } from 'react'
 import { Btn } from './ui.jsx'
 import Letters from './Letters.jsx'
 
-// Gepinnte Kartenstapel-Sektion (Vorbild Foreal): Dunkle Rundkarten springen links nacheinander auf, die große Foto-Fläche wechselt mit,
-// rechts stehen Aussage, Text und Button. Grund bleibt Marineblau.
-const IMGS = ['cta-abend-1', 'buero-abend-2', 'gal-5', 'buero-abend-1', 'cta-abend-2']
+// Nach Foreal: Intro mit großer Wortmarke, darunter laufen hohe Fotokarten normal durch,
+// während Gebäudefoto und Text rechts stehen bleiben. Grund bleibt Marineblau.
+const IMGS = ['gal-5', 'buero-abend-2', 'cta-abend-2', 'buero-abend-1', 'gal-2']
+const BG = '/media/cta-abend-1.webp'
 
 export default function ProcessStack({ steps, lead, active = -1 }) {
-  const sec = useRef(null)
+  const root = useRef(null)
   useEffect(() => {
-    const s = sec.current
-    if (!s) return
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { s.style.setProperty('--p', 1); return }
+    const el = root.current
+    if (!el) return
+    const cards = [...el.querySelectorAll('.fl-card')]
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { cards.forEach((c) => c.classList.add('in')); return }
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: 0.25 })
+    cards.forEach((c) => io.observe(c))
     let raf = 0
     const run = () => {
       raf = 0
-      const r = s.getBoundingClientRect(), span = Math.max(1, r.height - window.innerHeight)
-      s.style.setProperty('--p', Math.min(1, Math.max(0, -r.top / span)).toFixed(4))
+      const r = el.querySelector('.fl-intro').getBoundingClientRect()
+      el.style.setProperty('--g', Math.min(1, Math.max(0, -r.top / Math.max(1, r.height))).toFixed(3))
     }
     const on = () => { if (!raf) raf = requestAnimationFrame(run) }
     run()
     window.addEventListener('scroll', on, { passive: true })
-    window.addEventListener('resize', on)
-    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
+    return () => { io.disconnect(); window.removeEventListener('scroll', on); raf && cancelAnimationFrame(raf) }
   }, [])
-  const n = steps.length
   return (
-    <section className="pcs" ref={sec} style={{ '--n': n }}>
-      <div className="pcs-stick">
-        <span className="pcs-ghost" aria-hidden="true">ΛRVENTΛS</span>
-        <p className="pcs-intro"><small>Über uns</small>Entdecken</p>
-        <div className="wrap pcs-grid">
-          <ol className="pcs-cards">
-            {steps.map((s, i) => (
-              <li key={s.t} className={i === active ? 'on' : ''} aria-current={i === active ? 'step' : undefined} style={{ '--i': i }}>
-                <img src={`/media/${IMGS[(i + 2) % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" />
-                <span className="pcs-info"><span className="pcs-t">{s.t}</span><span className="pcs-n">{String(i + 1).padStart(2, '0')}</span></span>
-              </li>
-            ))}
-          </ol>
-          <div className="pcs-photo" aria-hidden="true">
-            {steps.map((s, i) => <img key={i} src={`/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" style={{ '--i': i }} />)}
-          </div>
-          <div className="pcs-txt">
-            <h2 className="pcs-h"><Letters text="Nicht einzelne Maßnahmen." per={22} max={700} /><span className="pcs-l2"><Letters text="Ein verbundenes System." per={22} max={700} delay={500} /></span></h2>
-            <p>{lead}</p>
+    <section className="fl" ref={root}>
+      <div className="fl-intro">
+        <span className="fl-ghost" aria-hidden="true">ΛRVENTΛS</span>
+        <p><small>Über uns</small>Entdecken</p>
+      </div>
+      <div className="wrap fl-body">
+        <ol className="fl-cards">
+          {steps.map((s, i) => (
+            <li key={s.t} className={`fl-card${i === active ? ' on' : ''}`} aria-current={i === active ? 'step' : undefined}>
+              <img src={`/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" />
+              <span className="fl-info">
+                <span className="fl-row"><b>{s.t}</b><i>{String(i + 1).padStart(2, '0')}</i></span>
+                {s.d && <span className="fl-d">{s.d}</span>}
+              </span>
+            </li>
+          ))}
+        </ol>
+        <div className="fl-photo" aria-hidden="true"><img src={BG} alt="" loading="lazy" decoding="async" /></div>
+        <div className="fl-txt">
+          <div className="fl-txt-in">
+            <p className="fl-lab">(Unser System)</p>
+            <h2 className="fl-h"><Letters text="Nicht einzelne Maßnahmen." per={22} max={700} /><span className="fl-l2"><Letters text="Ein verbundenes System." per={22} max={700} delay={500} /></span></h2>
+            <p className="fl-p">{lead}</p>
             <Btn to="/kontakt" variant="gold">Potenzial analysieren</Btn>
           </div>
         </div>

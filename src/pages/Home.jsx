@@ -11,7 +11,7 @@ import CardTrack from '../components/CardTrack.jsx'
 import Letters from '../components/Letters.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
 import { Sec, IconGrid, StepsRow, Chain, Split, GoldLine } from '../components/blocks.jsx'
-import { AUDIENCES, CHAIN, SERVICE_LIST, CLAIM } from '../content/site.js'
+import { AUDIENCES, CHAIN_CARDS, SERVICE_LIST, CLAIM } from '../content/site.js'
 
 const PILLARS = [
   { icon: 'target', t: 'Strategisch', d: 'Wir denken über die Immobilie hinaus und fokussieren uns auf langfristiges Potenzial.' },
@@ -100,7 +100,7 @@ export default function Home() {
         <div className="btn-row"><Btn to="/leistungen" variant="marine">Leistungen entdecken</Btn></div>
       </Sec>
 
-      <ProcessStack steps={CHAIN} lead="Wir verbinden Markt, Objekt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg. So entstehen aus Informationen bessere Entscheidungen." />
+      <ProcessStack steps={CHAIN_CARDS} lead="Wir verbinden Markt, Objekt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg. So entstehen aus Informationen bessere Entscheidungen." />
 
       <Sec tone="light" eyebrow="Für wen wir arbeiten" title="Für Immobilienentscheider, die Klarheit brauchen.">
         <ul className="gl big rv">{FOR.map((x) => <li key={x}>{x}</li>)}</ul>

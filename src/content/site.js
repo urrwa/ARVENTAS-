@@ -383,3 +383,6 @@ export const ABOUT = {
 }
 
 export const CONTACT_TYPES = ['Marktanalyse', 'Immobilienbewertung', 'Strategische Analyse', 'Strategische Vermarktung', 'Development Intelligence', 'Strategiegespräch', 'Partnerschaft', 'Sonstiges']
+
+// Schritte der Kette mit der Kurzbeschreibung der zugehörigen Leistung (vorhandener Kundentext).
+export const CHAIN_CARDS = CHAIN.map((c, i) => ({ ...c, d: SERVICE_LIST[i].card }))

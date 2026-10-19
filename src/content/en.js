@@ -1386,6 +1386,7 @@ export default {
  "Seiten": "Pages",
  "(Unsere Haltung im Detail)": "(Our approach in detail)",
  "Entdecken": "Discover",
+ "(Unser System)": "(Our system)",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",
