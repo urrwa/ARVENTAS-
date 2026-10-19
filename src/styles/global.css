@@ -2066,3 +2066,15 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .cta2-h { font-size: clamp(26px, 3.4vw, 54px); line-height: 1.12; }
 .cta2 .btn { opacity: calc((var(--q) - .55) * 4); }
 @media (prefers-reduced-motion: reduce) { .cta2-pic { clip-path: none; } .cta2-pic .cta2-bg { transform: none; } .cta2 .btn { opacity: 1; } }
+/* Schlichter Fuß (Vorbild Rivos), auf gleichem Grund wie die Abschlusskarte */
+.ftr2 { background: var(--marine); color: var(--ivory); padding-block: clamp(24px, 3vw, 48px) clamp(24px, 3vw, 40px); }
+.ftr2-top { display: flex; justify-content: space-between; align-items: flex-start; gap: clamp(24px, 5vw, 80px); padding-bottom: clamp(36px, 6vw, 96px); }
+.ftr2-logo img { width: clamp(100px, 9vw, 140px); height: auto; display: block; margin-left: -4px; }
+.ftr2-brand p { margin: 16px 0 0; max-width: 24ch; font-size: 14px; line-height: 1.55; color: var(--text-on-dark-soft); }
+.ftr2-cols { display: grid; grid-template-columns: repeat(3, minmax(120px, auto)); gap: clamp(28px, 6vw, 96px); }
+.ftr2 ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.ftr2 a, .ftr2 .lk { color: var(--ivory); text-decoration: none; font-size: 14px; background: none; border: 0; padding: 0; cursor: pointer; font-family: inherit; text-align: left; transition: color 300ms ease; }
+.ftr2 a:hover, .ftr2 .lk:hover { color: var(--gold); }
+.ftr2-bot { display: flex; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid var(--gold-line); font-size: 12px; color: var(--text-on-dark-soft); }
+.cta2-wrap { padding-bottom: clamp(20px, 3vw, 40px); }
+@media (max-width: 760px) { .ftr2-top { flex-direction: column; } .ftr2-cols { grid-template-columns: 1fr 1fr; } .ftr2-bot { flex-direction: column; } }

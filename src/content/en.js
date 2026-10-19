@@ -1381,6 +1381,7 @@ export default {
  "Vier Prinzipien.": "Four principles.",
  "Für Entscheider mit Anspruch.": "For decision-makers with high standards.",
  "(Nächster Schritt)": "(Next step)",
+ "Strategische Immobilienentwicklung": "Strategic real estate development",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",
