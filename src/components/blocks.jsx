@@ -100,9 +100,9 @@ export function Versus({ left, right, line }) {
       // Fortschritt 0..1: am Desktop gepinnt über die Scrollstrecke, mobil beim Durchlauf durchs Bild
       const p = pinned ? -r.top / Math.max(1, r.height - vh * 0.7) + 0.05 : (vh * 0.85 - r.top) / (r.height * 0.95)
       const c = Math.min(1, Math.max(0, p))
-      const l = Math.min(nl, Math.floor(Math.min(1, c / 0.78) * (nl + 1)) - 1)
-      const rr = Math.min(nr, Math.floor(Math.min(1, c / 0.42) * (nr + 1)) - 1)
-      const done = c > 0.86
+      const l = Math.min(nl, Math.floor(Math.min(1, c / 0.62) * (nl + 1)) - 1)
+      const rr = Math.min(nr, Math.floor(Math.min(1, c / 0.34) * (nr + 1)) - 1)
+      const done = c > 0.7
       setT((x) => (x.l === l && x.r === rr && x.done === done ? x : { l, r: rr, done }))
     }
     const on = () => { if (!raf) raf = requestAnimationFrame(run) }

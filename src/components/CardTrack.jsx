@@ -16,7 +16,7 @@ export default function CardTrack({ items }) {
     }
     const apply = () => {
       raf = 0
-      cur += (target - cur) * 0.16
+      cur += (target - cur) * 0.28
       if (Math.abs(target - cur) < 0.0005) cur = target
       const vw = window.innerWidth
       const first = cards[0], last = cards[cards.length - 1]
