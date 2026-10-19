@@ -9,6 +9,7 @@
 
 :root {
   --gold: #B09E80;
+  --gold-btn: #D3B382;
   --marine: #192537;
   --ivory: #F5F3EF;
   --black: #0B0B0B;
@@ -92,7 +93,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ---------- Buttons ---------- */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 28px; border: 1px solid transparent; font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background var(--t-ui) ease, color var(--t-ui) ease, border-color var(--t-ui) ease; }
 .btn .arr { transition: transform var(--t-ui) ease; }
-.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold { background: var(--gold-btn); color: var(--black); }
 .btn-gold:hover { background: var(--ivory); }
 .btn-marine { background: var(--marine); color: var(--ivory); }
 .btn-marine:hover { background: var(--black); }
@@ -556,7 +557,7 @@ html.menu-open { overflow: hidden; }
 .btn:has(.arr):hover, .btn:has(.arr):focus-visible, .door:hover .btn:has(.arr), .door:focus-visible .btn:has(.arr) { color: var(--hover-fg); }
 /* Hover-Zustände der alten Buttons nicht mehr nötig */
 .btn-gold:has(.arr):hover, .btn-marine:has(.arr):hover, .btn-line:has(.arr):hover, .door:hover .btn-gold:has(.arr) { border-color: currentColor; }
-.btn-gold:has(.arr):hover { background: var(--gold); } .btn-marine:has(.arr):hover { background: var(--marine); } .btn-line:has(.arr):hover { background: transparent; }
+.btn-gold:has(.arr):hover { background: var(--gold-btn); } .btn-marine:has(.arr):hover { background: var(--marine); } .btn-line:has(.arr):hover { background: transparent; }
 .btn-gold:has(.arr):hover { border-color: transparent; } .btn-marine:has(.arr):hover { border-color: transparent; }
 .dark .btn-line:has(.arr):hover, .black .btn-line:has(.arr):hover, .hero .btn-line:has(.arr):hover, .film .btn-line:has(.arr):hover { border-color: var(--ivory); }
 /* Chip mit zwei Pfeilen */
@@ -601,7 +602,7 @@ b, strong, th { font-weight: 600; }
 /* ---------- Feinschliff: ruhiger, hochwertiger, minimalistischer ---------- */
 /* Header-Button: feine Gold-Kontur statt großer Goldfläche (Gold nur als Akzent) */
 .hdr .nav .btn-gold { background: transparent; color: var(--ivory); border-color: var(--gold); min-height: 44px; padding: 0 22px; }
-.hdr .nav .btn-gold:hover, .hdr .nav .btn-gold:focus-visible { background: var(--gold); color: var(--black); }
+.hdr .nav .btn-gold:hover, .hdr .nav .btn-gold:focus-visible { background: var(--gold-btn); color: var(--black); }
 /* Platzhalter und Hinweise: Haarlinie statt gestrichelter, getönter Kästen */
 .ph { border: 1px solid rgba(25, 37, 55, .28); background: none; }
 .dark .ph, .black .ph { border-color: rgba(176, 158, 128, .45); background: none; }
@@ -683,7 +684,7 @@ b, strong, th { font-weight: 600; }
 .ftr li { margin-bottom: 14px; }
 .ftr-cols a, .ftr-cols .lk { font-family: var(--font-head); font-size: clamp(18px, 1.7vw, 24px); letter-spacing: .01em; }
 .ftr-bot { margin-top: clamp(40px, 5vw, 72px); padding-bottom: 20px; }
-.ftr a.btn { background: var(--gold); color: var(--black); font-family: var(--font-body); font-size: 14px; text-decoration: none; }
+.ftr a.btn { background: var(--gold-btn); color: var(--black); font-family: var(--font-body); font-size: 14px; text-decoration: none; }
 .ftr a.btn:hover { text-decoration: none; color: var(--black); }
 .ftr .lk { text-align: left; white-space: nowrap; }
 
