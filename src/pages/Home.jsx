@@ -5,6 +5,7 @@ import HoverList from '../components/HoverList.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
 import JourneySplit from '../components/JourneySplit.jsx'
+import ProcessStack from '../components/ProcessStack.jsx'
 import CardTrack from '../components/CardTrack.jsx'
 import Letters from '../components/Letters.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
@@ -102,10 +103,7 @@ export default function Home() {
         <div className="btn-row"><Btn to="/leistungen" variant="marine">Leistungen entdecken</Btn></div>
       </Sec>
 
-      <Sec tone="light" eyebrow="Leistungen greifen ineinander" title="Nicht einzelne Maßnahmen. Ein verbundenes System."
-        lead="Wir verbinden Markt, Objekt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg. So entstehen aus Informationen bessere Entscheidungen.">
-        <Chain items={CHAIN} />
-      </Sec>
+      <ProcessStack steps={CHAIN} lead="Wir verbinden Markt, Objekt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg. So entstehen aus Informationen bessere Entscheidungen." />
 
       <Sec tone="light" eyebrow="Für wen wir arbeiten" title="Für Immobilienentscheider, die Klarheit brauchen.">
         <ul className="gl big rv">{FOR.map((x) => <li key={x}>{x}</li>)}</ul>

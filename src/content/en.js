@@ -1349,6 +1349,8 @@ export default {
  "(Über uns)": "(About us)",
  "Vom Signal": "From signal",
  "zur Strategie.": "to strategy.",
+ "Nicht einzelne Maßnahmen.": "Not individual measures.",
+ "Ein verbundenes System.": "A connected system.",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",
