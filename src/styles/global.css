@@ -1649,3 +1649,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (max-width: 860px) { .ct { height: 320vh; } .ct-img { aspect-ratio: 16 / 10; } }
 @media (prefers-reduced-motion: reduce) { .ct { height: auto; } .ct-stick { position: static; height: auto; overflow-x: auto; padding-block: 56px; } .ct-track { padding-inline: var(--gut); } .ct-card { opacity: 1; transform: none; } }
 .page:has(.hf), .page:has(.hf) main { background: var(--marine); }
+.ct-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ct-stick::after { content: ""; position: absolute; inset: 0; background: rgba(25, 37, 55, .55); pointer-events: none; }
+.ct-track { position: relative; z-index: 2; }
+.ct-card:not(.on) { background: rgba(25, 37, 55, .72); }
