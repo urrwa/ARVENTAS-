@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import HoverList from '../components/HoverList.jsx'
 import InlineText from '../components/InlineText.jsx'
+import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid, Split, GoldLine, Versus } from '../components/blocks.jsx'
 import { SERVICE_LIST, BENEFITS, VERSUS } from '../content/site.js'
@@ -31,7 +32,7 @@ export default function Leistungen() {
 
                   <Sec eyebrow="Warum es wichtig ist" title="Immobilienpotenziale entstehen nicht zufällig. Sie werden erkannt, bewertet und strukturiert entwickelt."
         lead="Viele Entscheidungen im Immobilienmarkt basieren auf unvollständigen Informationen. ARVENTAS schafft ein klareres Bild: Wo liegt Potenzial? Welche Risiken bestehen? Wie realistisch ist die Vermarktung? Welche Strategie führt zum besten Ergebnis?">
-        <IconGrid items={BENEFITS} cols={5} />
+        <StackRows items={BENEFITS} />
       </Sec>
 
       <Sec eyebrow="Der Unterschied" title="Klassisch betrachtet man Immobilien einzeln. ARVENTAS betrachtet das gesamte Potenzial.">

@@ -2,6 +2,7 @@ import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import JourneySplit from '../components/JourneySplit.jsx'
+import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid, GoldLine, Split, Versus } from '../components/blocks.jsx'
 import { SYSTEM, VERSUS } from '../content/site.js'
@@ -30,7 +31,7 @@ export default function System() {
 
       <Sec eyebrow="Warum unser Ansatz" title="Warum unser Ansatz mehr Klarheit schafft."
         lead="Der Wert des ARVENTAS Systems liegt in der Verbindung von Analyse, Strategie und Umsetzung. Statt isolierter Einschätzungen erhalten Kunden eine strukturierte Sicht auf das gesamte Potenzial.">
-        <IconGrid items={SYSTEM.why} cols={5} />
+        <StackRows items={SYSTEM.why} />
       </Sec>
 
       <Sec eyebrow="Der Unterschied" title="Klassische Immobilienarbeit betrachtet das Objekt. ARVENTAS betrachtet das volle Potenzial.">
