@@ -2305,3 +2305,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .fl-card:last-child { margin-bottom: 0; }
 .fl-cards::after { content: ""; display: block; height: 58svh; }
 @media (max-width: 860px) { .fl-cards::after { display: none; } }
+/* Faktenkarten schieben sich über den unteren Teil des Gebäudes */
+.fl-body { padding-bottom: 0; }
+.fl-facts { margin-top: clamp(-420px, -46svh, -200px); z-index: 6; }
+@media (max-width: 860px) { .fl-facts { margin-top: 8px; } }
