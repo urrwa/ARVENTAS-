@@ -2,8 +2,8 @@ import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
-import { Sec, IconGrid, Chain, Split, GoldLine, Versus, ServiceCards } from '../components/blocks.jsx'
-import { SERVICE_LIST, CHAIN, AUDIENCES, BENEFITS, VERSUS } from '../content/site.js'
+import { Sec, IconGrid, Split, GoldLine, Versus, ServiceCards } from '../components/blocks.jsx'
+import { SERVICE_LIST, BENEFITS, VERSUS } from '../content/site.js'
 
 export default function Leistungen() {
   return (
@@ -27,18 +27,7 @@ export default function Leistungen() {
         <ServiceCards items={SERVICE_LIST} />
       </Sec>
 
-      <Sec eyebrow="Das ARVENTAS System" title="Jede Leistung erfüllt eine Aufgabe. Gemeinsam entsteht Klarheit."
-        lead="Die einzelnen Leistungsbereiche greifen ineinander. Marktanalyse zeigt Chancen, Immobilienbewertung ordnet Werte ein, Strategische Analyse prüft Risiken und Potenziale, Strategische Vermarktung übersetzt Erkenntnisse in Marktansprache. Development Intelligence verbindet alles zu einem klaren System.">
-        <Chain items={CHAIN} />
-        <GoldLine>Nicht mehr Informationen. Bessere Entscheidungen.</GoldLine>
-      </Sec>
-
-      <Sec eyebrow="Für wen" title="Für Immobilienentscheider, die Klarheit brauchen."
-        lead="ARVENTAS richtet sich an Unternehmen und Partner, die Immobilienpotenziale nicht aus dem Bauchgefühl heraus bewerten wollen, sondern mit Struktur, Marktverständnis und strategischer Einordnung.">
-        <IconGrid items={AUDIENCES} cols={5} />
-      </Sec>
-
-      <Sec eyebrow="Warum es wichtig ist" title="Immobilienpotenziale entstehen nicht zufällig. Sie werden erkannt, bewertet und strukturiert entwickelt."
+                  <Sec eyebrow="Warum es wichtig ist" title="Immobilienpotenziale entstehen nicht zufällig. Sie werden erkannt, bewertet und strukturiert entwickelt."
         lead="Viele Entscheidungen im Immobilienmarkt basieren auf unvollständigen Informationen. ARVENTAS schafft ein klareres Bild: Wo liegt Potenzial? Welche Risiken bestehen? Wie realistisch ist die Vermarktung? Welche Strategie führt zum besten Ergebnis?">
         <IconGrid items={BENEFITS} cols={5} />
       </Sec>

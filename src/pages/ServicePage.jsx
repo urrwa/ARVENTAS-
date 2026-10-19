@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid, StepsRow, Chain, Questions, GoldLine, Split } from '../components/blocks.jsx'
-import { SERVICES, CHAIN, AUDIENCES } from '../content/site.js'
+import { SERVICES, CHAIN } from '../content/site.js'
 import NotFound from './NotFound.jsx'
 
 // Einheitliche Vorlage für die fünf Leistungsseiten.
@@ -35,11 +35,7 @@ export default function ServicePage() {
         <IconGrid items={s.areas} cols={s.areas.length} />
       </Sec>
 
-      <Sec eyebrow="Für wen" title="Für Entscheider, die mehr Klarheit vor dem nächsten Schritt brauchen.">
-        <IconGrid items={AUDIENCES} cols={5} />
-      </Sec>
-
-      <Sec eyebrow={s.stepsEyebrow} title={s.stepsTitle} lead={s.stepsLead}>
+            <Sec eyebrow={s.stepsEyebrow} title={s.stepsTitle} lead={s.stepsLead}>
         <StepsRow items={s.steps} />
         <GoldLine>{s.stepsLine}</GoldLine>
       </Sec>

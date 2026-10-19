@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid, StepsRow, GoldLine, Split, Versus } from '../components/blocks.jsx'
-import { SYSTEM, VERSUS, AUDIENCES } from '../content/site.js'
+import { SYSTEM, VERSUS } from '../content/site.js'
 
 export default function System() {
   return (
@@ -43,12 +43,7 @@ export default function System() {
         <IconGrid items={SYSTEM.principles} cols={5} />
       </Sec>
 
-      <Sec eyebrow="Für wen" title="Für Immobilienentscheider, die Klarheit brauchen."
-        lead="Das ARVENTAS System ist für Unternehmen und Partner entwickelt, die vor Ankauf, Entwicklung, Investment oder Vermarktung bessere Entscheidungen treffen wollen.">
-        <IconGrid items={AUDIENCES} cols={5} />
-      </Sec>
-
-      <Sec eyebrow="Kundenergebnis" title="Was Kunden durch das ARVENTAS System gewinnen."
+            <Sec eyebrow="Kundenergebnis" title="Was Kunden durch das ARVENTAS System gewinnen."
         lead="Am Ende des Prozesses erhalten Kunden keine isolierten Informationen. Sie erhalten einen klareren Blick auf Märkte, Chancen, Risiken und die mögliche strategische Richtung.">
         <IconGrid items={SYSTEM.gains} cols={5} />
         <GoldLine>Nicht mehr Komplexität. Mehr Klarheit.</GoldLine>
