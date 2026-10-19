@@ -2149,3 +2149,23 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .pr-list h3 { margin: 0 0 12px; font-family: var(--font-head); font-weight: 500; font-size: clamp(22px, 2.3vw, 36px); line-height: 1.15; color: var(--ivory); text-transform: none; }
 .pr-list p { margin: 0; max-width: 34ch; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.7; color: var(--text-on-dark-soft); }
 @media (max-width: 760px) { .pr-list { grid-template-columns: 1fr; } }
+/* Kartenstapel-Sektion (Vorbild Foreal), Grund bleibt blau */
+.pcs { --p: 0; height: calc(150vh + var(--n) * 55vh); background: var(--marine); position: relative; }
+.pcs-stick { position: sticky; top: 0; height: 100svh; overflow: hidden; display: flex; align-items: center; padding-top: var(--header-h, 76px); }
+.pcs-ghost { position: absolute; left: 50%; top: calc(var(--header-h, 76px) + 2vh); transform: translateX(-50%); font-family: var(--font-head); font-weight: 500; font-size: clamp(120px, 24vw, 420px); line-height: 1; letter-spacing: -.02em; color: rgba(245, 243, 239, .05); white-space: nowrap; pointer-events: none; user-select: none; opacity: calc(1 - var(--p) * 1.6); }
+.pcs-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(16px, 2.6vw, 44px); align-items: stretch; height: min(72svh, 640px); width: 100%; }
+.pcs-cards { list-style: none; margin: 0; padding: 0; position: relative; height: 100%; }
+.pcs-cards li { --k: clamp(0, (var(--p) * 6.2 - var(--i) * 1 - .2), 1); position: absolute; left: 0; right: 0; top: calc(var(--i) * 19%); height: 17%; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 0 clamp(16px, 1.8vw, 26px); background: rgba(14, 14, 14, .92); color: var(--ivory); border: 1px solid rgba(245, 243, 239, .1); border-radius: clamp(14px, 1.4vw, 22px); opacity: var(--k); transform: translateY(calc((1 - var(--k)) * 140%)) scale(calc(.9 + var(--k) * .1)); transition: border-color 400ms ease; }
+.pcs-cards li.on { border-color: var(--gold); }
+.pcs-t { font-family: var(--font-head); font-weight: 500; font-size: clamp(15px, 1.35vw, 21px); line-height: 1.2; }
+.pcs-n { font-family: var(--font-head); color: var(--gold); font-size: clamp(14px, 1.2vw, 18px); letter-spacing: .08em; flex: none; }
+.pcs-photo { position: relative; overflow: hidden; border-radius: clamp(18px, 2vw, 32px); }
+.pcs-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: clamp(0, (var(--p) * 6.2 - var(--i) * 1 + .8), 1); transform: scale(calc(1.14 - var(--p) * .14)); }
+.pcs-photo::after { content: ""; position: absolute; inset: 0; background: rgba(27, 36, 56, .22); }
+.pcs-txt { display: flex; flex-direction: column; justify-content: center; gap: clamp(14px, 2.4vh, 24px); align-items: flex-start; }
+.pcs-h { margin: 0; font-family: var(--font-head); font-weight: 500; font-size: clamp(24px, 2.7vw, 44px); line-height: 1.12; letter-spacing: -.01em; color: var(--ivory); text-transform: none; }
+.pcs-txt p { margin: 0; max-width: 34ch; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.7; color: var(--text-on-dark-soft); opacity: clamp(0, (var(--p) * 4 - .3), 1); }
+.pcs-txt .btn { opacity: clamp(0, (var(--p) * 5 - 2.4), 1); }
+@media (max-width: 860px) { .pcs { height: calc(120vh + var(--n) * 45vh); } .pcs-grid { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr) auto; height: 82svh; gap: 12px; } .pcs-cards { height: 34svh; order: 2; } .pcs-cards li { height: 17%; } .pcs-photo { order: 1; min-height: 20svh; } .pcs-txt { order: 0; gap: 8px; } .pcs-txt p { display: none; } .pcs-h { font-size: clamp(20px, 6vw, 28px); } .pcs-txt .btn { display: none; } }
+@media (prefers-reduced-motion: reduce) { .pcs { height: auto; } .pcs-stick { position: relative; height: auto; padding-block: 90px 40px; } .pcs-cards li { position: relative; top: auto; height: 64px; margin-bottom: 10px; opacity: 1; transform: none; } .pcs-cards { height: auto; } .pcs-photo img:first-child { opacity: 1; } .pcs-txt p, .pcs-txt .btn { opacity: 1; } }
+.pcs-l2 { display: block; }

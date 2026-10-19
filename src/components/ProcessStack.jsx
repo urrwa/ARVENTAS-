@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react'
-import Letters from './Letters.jsx'
 import { Btn } from './ui.jsx'
+import Letters from './Letters.jsx'
 
-// Gepinnte Prozess-Sektion: Liste baut sich auf, ein großes Bild schiebt sich von unten ein (Vorbild Archter-Process).
+// Gepinnte Kartenstapel-Sektion (Vorbild Foreal): Dunkle Rundkarten springen links nacheinander auf, die große Foto-Fläche wechselt mit,
+// rechts stehen Aussage, Text und Button. Grund bleibt Marineblau.
+const IMGS = ['cta-abend-1', 'buero-abend-2', 'gal-5', 'buero-abend-1', 'cta-abend-2']
+
 export default function ProcessStack({ steps, lead, active = -1 }) {
   const sec = useRef(null)
   useEffect(() => {
@@ -21,22 +24,28 @@ export default function ProcessStack({ steps, lead, active = -1 }) {
     window.addEventListener('resize', on)
     return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
   }, [])
+  const n = steps.length
   return (
-    <section className="ps" ref={sec}>
-      <div className="ps-stick wrap">
-        <h2 className="big-h ed big-h2 ps-h"><Letters text="Nicht einzelne Maßnahmen." per={26} /><span className="r"><Letters text="Ein verbundenes System." per={26} delay={500} /></span></h2>
-        <div className="ps-row">
-          <div className="ps-img big" aria-hidden="true"><img src="/media/gal-5.webp" alt="" loading="lazy" decoding="async" /></div>
-          <div className="ps-mid">
-            <ol className="ps-list">
-              {steps.map((s, i) => (
-                <li key={s.t} className={i === active ? 'on' : ''} aria-current={i === active ? 'step' : undefined} style={{ '--i': i }}><span className="n">({String(i + 1).padStart(2, '0')})</span><b>{s.t}</b></li>
-              ))}
-            </ol>
-            <p className="ps-lead">{lead}</p>
-            <div className="ps-cta"><Btn to="/kontakt" variant="gold">Potenzial analysieren</Btn></div>
+    <section className="pcs" ref={sec} style={{ '--n': n }}>
+      <div className="pcs-stick">
+        <span className="pcs-ghost" aria-hidden="true">ΛRVENTΛS</span>
+        <div className="wrap pcs-grid">
+          <ol className="pcs-cards">
+            {steps.map((s, i) => (
+              <li key={s.t} className={i === active ? 'on' : ''} aria-current={i === active ? 'step' : undefined} style={{ '--i': i }}>
+                <span className="pcs-t">{s.t}</span>
+                <span className="pcs-n">{String(i + 1).padStart(2, '0')}</span>
+              </li>
+            ))}
+          </ol>
+          <div className="pcs-photo" aria-hidden="true">
+            {steps.map((s, i) => <img key={i} src={`/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" style={{ '--i': i }} />)}
           </div>
-          <div className="ps-img small" aria-hidden="true"><img src="/media/gal-2.webp" alt="" loading="lazy" decoding="async" /></div>
+          <div className="pcs-txt">
+            <h2 className="pcs-h"><Letters text="Nicht einzelne Maßnahmen." per={22} max={700} /><span className="pcs-l2"><Letters text="Ein verbundenes System." per={22} max={700} delay={500} /></span></h2>
+            <p>{lead}</p>
+            <Btn to="/kontakt" variant="gold">Potenzial analysieren</Btn>
+          </div>
         </div>
       </div>
     </section>
