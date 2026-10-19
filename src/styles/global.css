@@ -2383,3 +2383,6 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @keyframes fmIn { from { opacity: 0 } }
 @keyframes fmPop { from { opacity: 0; transform: translateY(18px) scale(.97) } }
 @media (max-width: 860px) { .hf-vid { object-position: 68% 50%; } }
+/* Tagesverlauf im Film: Verlauf links, oben und unten hält Text und Menü auch am hellen Tag gut lesbar */
+.hf-shade { background: linear-gradient(90deg, rgba(14, 24, 42, .6), rgba(14, 24, 42, .3) 45%, rgba(14, 24, 42, 0) 78%), linear-gradient(0deg, rgba(14, 24, 42, .55), rgba(14, 24, 42, 0) 36%), linear-gradient(180deg, rgba(14, 24, 42, .45), rgba(14, 24, 42, 0) 22%), rgba(25, 37, 55, .16); }
+@media (max-width: 860px) { .hf-stats { gap: 18px; right: 22px; } .hf-stats b { font-size: clamp(28px, 8vw, 40px); } .hf-stats span { font-size: 12px; } }
