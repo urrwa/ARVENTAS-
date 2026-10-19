@@ -2244,3 +2244,28 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .fl-photo img { height: 100%; }
   .fl-txt { position: static; height: auto; padding: 0 0 24px; }
 }
+/* Gebäude hinter den Karten (breiter, schiebt sich unter die Kartenspalte) und drei Faktenkarten darunter */
+.fl-photo { --pan: 0; margin-left: calc(-1 * clamp(150px, 15vw, 240px)); margin-right: clamp(-60px, -3vw, -20px); width: auto; }
+.fl-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% calc(var(--pan) * 100%); }
+.fl-cards { z-index: 3; }
+.fl-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 22px); margin-top: clamp(-90px, -5vw, -30px); padding-bottom: clamp(60px, 8vw, 120px); position: relative; z-index: 4; }
+.fl-fact { position: relative; overflow: hidden; border-radius: clamp(20px, 2.2vw, 34px); min-height: clamp(260px, 25vw, 380px); padding: clamp(20px, 2.4vw, 36px); display: flex; flex-direction: column; justify-content: space-between; opacity: 0; transform: translateY(50px) scale(.94); transition: opacity 600ms ease, transform 900ms cubic-bezier(.34, 1.3, .64, 1); }
+.fl-fact.in { opacity: 1; transform: none; }
+.fl-fact b { font-family: var(--font-head); font-weight: 400; font-size: clamp(56px, 6.4vw, 104px); line-height: 1; letter-spacing: -.02em; }
+.fl-fl { font-family: var(--font-head); font-size: clamp(18px, 1.5vw, 24px); margin-top: 4px; }
+.fl-fact p { margin: 0; max-width: 20ch; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.55; position: relative; z-index: 1; }
+.fl-fact img { position: absolute; right: 0; bottom: 0; width: 56%; height: 62%; object-fit: cover; border-top-left-radius: clamp(18px, 2vw, 30px); }
+.fl-fact b, .fl-fl { position: relative; z-index: 1; }
+.fl-fact.f1 { background: var(--gold); color: var(--black); }
+.fl-fact.f1 p { color: rgba(14, 14, 14, .75); }
+.fl-fact.f2 { background: var(--ivory); color: var(--marine); }
+.fl-fact.f2 p { color: var(--ink-soft); }
+.fl-fact.f3 { background: var(--black); color: var(--ivory); }
+.fl-fact.f3 img { inset: 0; width: 100%; height: 100%; border-radius: 0; opacity: .42; }
+.fl-fact.f3 p { color: rgba(245, 243, 239, .85); }
+@media (max-width: 860px) { .fl-photo { margin: 0; } .fl-photo img { object-position: 50% 50%; } .fl-facts { grid-template-columns: 1fr; margin-top: 8px; } .fl-fact { min-height: 240px; } }
+@media (prefers-reduced-motion: reduce) { .fl-fact { opacity: 1; transform: none; transition: none; } }
+.fl-fact:not(.f3) img { top: 0; bottom: auto; right: 0; width: 44%; height: 54%; border-top-left-radius: 0; border-bottom-left-radius: clamp(18px, 2vw, 30px); }
+.fl-fact:not(.f3) b { margin-top: 2px; }
+.fl-fact p { max-width: 24ch; margin-top: auto; }
+.fl-fact:not(.f3) .fl-fl { position: relative; }

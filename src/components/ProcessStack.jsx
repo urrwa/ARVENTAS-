@@ -7,12 +7,12 @@ import Letters from './Letters.jsx'
 const IMGS = ['gal-5', 'buero-abend-2', 'cta-abend-2', 'buero-abend-1', 'gal-2']
 const BG = '/media/turm.webp'
 
-export default function ProcessStack({ steps, lead, active = -1 }) {
+export default function ProcessStack({ steps, lead, active = -1, facts }) {
   const root = useRef(null)
   useEffect(() => {
     const el = root.current
     if (!el) return
-    const cards = [...el.querySelectorAll('.fl-card')]
+    const cards = [...el.querySelectorAll('.fl-card, .fl-fact')]
     if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { cards.forEach((c) => c.classList.add('in')); return }
     const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: 0.25 })
     cards.forEach((c) => io.observe(c))
@@ -21,6 +21,8 @@ export default function ProcessStack({ steps, lead, active = -1 }) {
       raf = 0
       const r = el.querySelector('.fl-intro').getBoundingClientRect()
       el.style.setProperty('--g', Math.min(1, Math.max(0, -r.top / Math.max(1, r.height))).toFixed(3))
+      const b = el.querySelector('.fl-body').getBoundingClientRect()
+      el.style.setProperty('--pan', Math.min(1, Math.max(0, -b.top / Math.max(1, b.height - window.innerHeight))).toFixed(3))
     }
     const on = () => { if (!raf) raf = requestAnimationFrame(run) }
     run()
@@ -55,6 +57,18 @@ export default function ProcessStack({ steps, lead, active = -1 }) {
           </div>
         </div>
       </div>
+      {facts && (
+        <div className="wrap fl-facts">
+          {facts.map((f, i) => (
+            <article key={f.l} className={`fl-fact f${i + 1}`}>
+              <b>{f.n}</b>
+              <span className="fl-fl">{f.l}</span>
+              <p>{f.d}</p>
+              <img src={`/media/${f.img}.webp`} alt="" loading="lazy" decoding="async" />
+            </article>
+          ))}
+        </div>
+      )}
     </section>
   )
 }
