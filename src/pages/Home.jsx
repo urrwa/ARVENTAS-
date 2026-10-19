@@ -92,9 +92,13 @@ export default function Home() {
 
       <CardTrack items={PILLARS} />
 
-      <Sec tone="light" className="big-sec gap-sec">
-        <h2 className="big-h ed big-h2"><Letters text="Vom Signal" per={30} /><span className="r"><Letters text="zur Strategie." per={30} delay={500} /></span></h2>
-      </Sec>
+      <section className="gap-sec">
+        <img className="gs-bg" src="/media/cta-abend-2.webp" alt="" loading="lazy" decoding="async" />
+        <div className="wrap">
+          <h2 className="big-h ed big-h2"><Letters text="Vom Signal" per={30} /><span className="r"><Letters text="zur Strategie." per={30} delay={500} /></span></h2>
+          <span className="gs-rule" aria-hidden="true" />
+        </div>
+      </section>
 
       <JourneySplit items={JOURNEY} label="Kundenjourney" title="Vom Marktsignal zur klaren Strategie." />
 
