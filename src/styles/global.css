@@ -1730,3 +1730,4 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .ps-img.small { right: var(--gutter, clamp(20px, 5vw, 72px)); bottom: clamp(24px, 6vh, 70px); width: clamp(110px, 12vw, 190px); aspect-ratio: 3 / 4; opacity: calc((var(--p, 0) - .6) * 5); }
 @media (max-width: 860px) { .ps { height: 300vh; } .ps-body { grid-template-columns: 1fr; } .ps-img.big { width: 62vw; height: 30svh; } .ps-img.small { display: none; } .ps-list li { padding: 9px 0; } }
 @media (prefers-reduced-motion: reduce) { .ps { height: auto; } .ps-stick { position: relative; height: auto; padding-bottom: 40px; } .ps-img { display: none; } .ps-list li { opacity: 1; transform: none; } }
+.feat-lead, .feat-lead * { hyphens: none !important; }
