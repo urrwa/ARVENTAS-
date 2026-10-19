@@ -31,8 +31,8 @@ export default function PageHero({ crumb, eyebrow, title, lead, children, image,
       <div className="wrap" ref={wrapRef}>
         {crumb && <p className="crumbs"><Link to="/">Start</Link> / {crumb}</p>}
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-        <h1 className="h1">{typeof title === 'string' ? <Letters text={title} per={45} /> : title}</h1>
-        {lead && <p className="lead">{typeof lead === 'string' ? <Letters text={lead} per={14} max={1400} delay={500} /> : <Brandify>{lead}</Brandify>}</p>}
+        <h1 className="h1">{typeof title === 'string' ? <Letters text={title} per={45} delay={800} /> : title}</h1>
+        {lead && <p className="lead">{typeof lead === 'string' ? <Letters text={lead} per={14} max={1400} delay={1500} /> : <Brandify>{lead}</Brandify>}</p>}
         {children}
       </div>
     </section>
