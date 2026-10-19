@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import Icon from './Icon.jsx'
 
 // Geteilte Bühne: links bleibt das Bild stehen und wechselt, rechts scrollen die Schritte (Titel oben, Text unten). Vorbild Archter.
 const IMGS = ['gal-1', 'gal-2', 'gal-3', 'gal-5', 'gal-7']
@@ -32,10 +31,10 @@ export default function JourneySplit({ items, label, title }) {
           <article key={it.t} className={`js-step${act === i ? ' on' : ''}`} ref={(el) => (blocks.current[i] = el)}>
             <div className="js-top">
               {i === 0 && <><p className="js-label">{label}</p><h2 className="js-h2">{title}</h2></>}
-              <span className="ring"><Icon name={it.icon} size={20} /></span>
+              <span className="js-n" data-notr>({String(i + 1).padStart(2, '0')})</span>
               <h3>{it.t}</h3>
+              <p className="js-text">{it.d}</p>
             </div>
-            <p className="js-text">{it.d}</p>
           </article>
         ))}
       </div>

@@ -1750,3 +1750,14 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .aud-card:hover .aud-img img { transform: scale(1.05); }
 @media (max-width: 860px) { .aud { grid-template-columns: 1fr; } .aud-card:last-child:nth-child(odd) .aud-img { aspect-ratio: 4 / 3; } }
 .aud-bar p { color: inherit !important; transition: color 450ms ease; }
+/* Journey: ruhiger, mehr Luxus – Text als ein Block, Hierarchie, Goldlinie */
+.js-step { justify-content: center; padding-block: clamp(72px, 12vh, 120px); }
+.js-step:first-child { justify-content: flex-start; }
+.js-top { gap: 0; max-width: 520px; }
+.js-label { color: var(--gold); letter-spacing: .28em; margin-bottom: 18px; }
+.js-h2 { font-weight: 500; font-size: clamp(28px, 3.2vw, 48px); max-width: 18ch; margin-bottom: clamp(48px, 12vh, 140px); }
+.js-n { font-family: var(--font-head); color: var(--gold); font-size: 15px; letter-spacing: .08em; padding-bottom: 18px; border-bottom: 1px solid var(--gold-line); width: 100%; margin-bottom: 26px; }
+.js-step h3 { font-weight: 500; font-size: clamp(26px, 2.6vw, 40px); letter-spacing: -.01em; line-height: 1.12; }
+.js-text { align-self: auto !important; margin-top: 18px; max-width: 40ch; font-size: clamp(15px, 1.1vw, 17px); color: var(--text-on-dark-soft); }
+.js-img::after { content: ""; position: absolute; inset: 0; background: rgba(27, 36, 56, .22); pointer-events: none; }
+.js-count { z-index: 2; color: var(--gold); }
