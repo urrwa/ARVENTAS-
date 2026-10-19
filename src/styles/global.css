@@ -1800,8 +1800,8 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .sw.edi-big { text-align: left !important; font-weight: 500; line-height: 1.28; hyphens: none !important; text-wrap: pretty; }
 .ps-list li.on b { color: var(--gold); }
 .ps-list li.on .n { color: var(--ivory); }
-/* Seitenköpfe: Fokus-Einblendung des Hintergrunds, kurzer Text */
-@keyframes ph-focus { from { filter: blur(16px) brightness(.8); } to { filter: blur(0) brightness(1); } }
-.phero-img { animation: ph-focus 1800ms cubic-bezier(.2, .7, .1, 1) backwards; }
+/* Seitenköpfe: Bild startet scharf und rückt weich in den Fokus-Hintergrund, während der Text einläuft (Vorbild Fugazi) */
+@keyframes ph-focus { from { filter: blur(0); } to { filter: blur(7px); } }
+.phero-img { inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); animation: ph-focus 1600ms cubic-bezier(.2, .7, .1, 1) 300ms both; }
 .phero .lead { max-width: 40ch; font-size: clamp(16px, 1.3vw, 20px); }
-@media (prefers-reduced-motion: reduce) { .phero-img { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .phero-img { animation: none; filter: blur(7px); } }
