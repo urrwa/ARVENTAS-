@@ -33,22 +33,13 @@ export default function Footer() {
               <li><Link to="/ueber-uns">Über uns</Link></li>
               <li><Link to="/kontakt">Kontakt</Link></li>
             </ul></nav>
-            <nav aria-label="Leistungen"><h4>Leistungen</h4><ul>
-              <li><Link to="/leistungen/marktanalyse">Marktanalyse</Link></li>
-              <li><Link to="/leistungen/immobilienbewertung">Immobilienbewertung</Link></li>
-              <li><Link to="/leistungen/strategische-analyse">Strategische Analyse</Link></li>
-              <li><Link to="/leistungen/strategische-vermarktung">Strategische Vermarktung</Link></li>
-              <li><Link to="/leistungen/development-intelligence">Development Intelligence</Link></li>
-            </ul></nav>
-            <nav aria-label="Rechtliches"><h4>Rechtliches</h4><ul>
-              <li><Link to="/impressum">Impressum</Link></li>
-              <li><Link to="/datenschutz">Datenschutz</Link></li>
-              <li><button type="button" className="lk" onClick={openSettings}>Cookie-Einstellungen</button></li>
-            </ul></nav>
           </div>
         </div>
         <div className="ftr-bot">
-          <span><Brand /> · Strategische Immobilienentwicklung mit System.</span>
+          <Link to="/impressum">Impressum</Link>
+          <Link to="/datenschutz">Datenschutz</Link>
+          <button type="button" className="lk" onClick={openSettings}>Cookie-Einstellungen</button>
+          <span className="ftr-brand"><Brand /></span>
         </div>
       </div>
       <svg ref={mark} className="ftr-mark" viewBox="0 0 1000 170" aria-hidden="true" focusable="false">
