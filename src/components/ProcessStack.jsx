@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Letters from './Letters.jsx'
-import ScrollWords from './ScrollWords.jsx'
+import { Btn } from './ui.jsx'
 
 // Gepinnte Prozess-Sektion: Liste baut sich auf, ein großes Bild schiebt sich von unten ein (Vorbild Archter-Process).
 export default function ProcessStack({ steps, lead }) {
@@ -25,18 +25,19 @@ export default function ProcessStack({ steps, lead }) {
     <section className="ps" ref={sec}>
       <div className="ps-stick wrap">
         <h2 className="big-h ed big-h2 ps-h"><Letters text="Nicht einzelne Maßnahmen." per={26} /><span className="r"><Letters text="Ein verbundenes System." per={26} delay={500} /></span></h2>
-        <div className="ps-body">
-          <div className="ps-left">
-            <ScrollWords className="feat-lead" text={lead} />
+        <div className="ps-row">
+          <div className="ps-img big" aria-hidden="true"><img src="/media/gal-5.webp" alt="" loading="lazy" decoding="async" /></div>
+          <div className="ps-mid">
+            <ol className="ps-list">
+              {steps.map((s, i) => (
+                <li key={s.t} style={{ '--i': i }}><span className="n">({String(i + 1).padStart(2, '0')})</span><b>{s.t}</b></li>
+              ))}
+            </ol>
+            <p className="ps-lead">{lead}</p>
+            <div className="ps-cta"><Btn to="/kontakt" variant="gold">Potenzial analysieren</Btn></div>
           </div>
-          <ol className="ps-list">
-            {steps.map((s, i) => (
-              <li key={s.t} style={{ '--i': i }}><span className="n">({String(i + 1).padStart(2, '0')})</span><b>{s.t}</b></li>
-            ))}
-          </ol>
+          <div className="ps-img small" aria-hidden="true"><img src="/media/gal-2.webp" alt="" loading="lazy" decoding="async" /></div>
         </div>
-        <div className="ps-img big" aria-hidden="true"><img src="/media/gal-5.webp" alt="" loading="lazy" decoding="async" /></div>
-        <div className="ps-img small" aria-hidden="true"><img src="/media/gal-2.webp" alt="" loading="lazy" decoding="async" /></div>
       </div>
     </section>
   )
