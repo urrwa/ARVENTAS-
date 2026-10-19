@@ -1382,6 +1382,8 @@ export default {
  "Für Entscheider mit Anspruch.": "For decision-makers with high standards.",
  "(Nächster Schritt)": "(Next step)",
  "Strategische Immobilienentwicklung": "Strategic real estate development",
+ "Klarheit vor jeder Entscheidung.": "Clarity before every decision.",
+ "Seiten": "Pages",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",
