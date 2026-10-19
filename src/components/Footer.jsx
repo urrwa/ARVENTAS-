@@ -18,6 +18,7 @@ export default function Footer() {
     <footer className="ftr">
       <div className="wrap">
         <div className="ftr-top">
+          <div className="ftr-photo" aria-hidden="true"><img src="/media/gal-4.webp" alt="" loading="lazy" decoding="async" /></div>
           <div className="ftr-lead">
             <Link to="/" className="ftr-logo" aria-label="ARVENTAS – zur Startseite"><img src="/media/arventas-logo.png" alt="ARVENTAS" width="300" height="182" loading="lazy" /></Link>
             <p className="ftr-slogan"><span>Strategische Immobilienentwicklung</span> <span className="soft">mit System.</span></p>
