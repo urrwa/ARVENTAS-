@@ -1628,3 +1628,23 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .gal-sec { margin-bottom: -34svh; }
 .gal-sec + .sec { position: relative; z-index: 2; background: var(--marine); padding-top: clamp(36px, 4vw, 72px); }
 @media (max-width: 860px) { .gal-sec { margin-bottom: -22svh; } }
+
+/* Gepinnte seitliche Kartenreihe */
+.feat { padding-bottom: 0; }
+.feat .sec-head { margin-bottom: 0; }
+.ct { height: 360vh; background: var(--marine); }
+.ct-stick { position: sticky; top: 0; height: 100svh; overflow: hidden; display: flex; align-items: center; }
+.ct-track { display: flex; gap: clamp(14px, 2vw, 28px); padding-inline: 50vw; width: max-content; will-change: transform; }
+.ct-card { flex: none; width: min(400px, 74vw); padding: 20px; border: 1px solid var(--gold-line); background: var(--card-bg); color: var(--ivory); display: flex; flex-direction: column; gap: 12px; opacity: .55; transform: scale(.94); transition: background 500ms ease, color 500ms ease, opacity 500ms ease, transform 600ms var(--ease), border-color 500ms ease; }
+.ct-card.on { background: var(--ivory); color: var(--marine); border-color: var(--ivory); opacity: 1; transform: none; }
+.ct-top { display: flex; justify-content: space-between; align-items: center; }
+.ct-n { font-family: var(--font-head); font-weight: 700; font-size: 28px; letter-spacing: -.02em; }
+.ct-card .ring { transition: border-color 500ms ease, color 500ms ease; }
+.ct-card.on .ring { border-color: var(--marine); color: var(--marine); }
+.ct-img { aspect-ratio: 4 / 3; overflow: hidden; }
+.ct-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ct-card h3 { margin: 6px 0 0; font-family: var(--font-head); font-weight: 700; font-size: clamp(20px, 1.8vw, 26px); letter-spacing: -.01em; text-transform: none; color: inherit; }
+.ct-card p { margin: 0; font-size: 14.5px; line-height: 1.55; color: inherit; opacity: .8; }
+.ct-card.on p { color: var(--ink-soft); opacity: 1; }
+@media (max-width: 860px) { .ct { height: 320vh; } .ct-img { aspect-ratio: 16 / 10; } }
+@media (prefers-reduced-motion: reduce) { .ct { height: auto; } .ct-stick { position: static; height: auto; overflow-x: auto; padding-block: 56px; } .ct-track { padding-inline: var(--gut); } .ct-card { opacity: 1; transform: none; } }

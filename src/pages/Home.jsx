@@ -4,6 +4,7 @@ import HomeFilm from '../components/HomeFilm.jsx'
 import HoverList from '../components/HoverList.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
+import CardTrack from '../components/CardTrack.jsx'
 import Letters from '../components/Letters.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
 import { Sec, IconGrid, StepsRow, Chain, Split, GoldLine } from '../components/blocks.jsx'
@@ -83,8 +84,9 @@ export default function Home() {
 
       <Sec tone="light" className="feat" eyebrow="Wofür ARVENTAS steht" title="Struktur für bessere Immobilienentscheidungen."
         lead="ARVENTAS steht für einen klaren, strukturierten und strategischen Ansatz in der Immobilienentwicklung. Wir betrachten Immobilien nicht isoliert, sondern verbinden Markt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsrahmen.">
-        <IconGrid items={PILLARS} cols={4} numbered />
-      </Sec>
+        </Sec>
+
+      <CardTrack items={PILLARS} />
 
       <Sec tone="light" eyebrow="Kundenjourney" title="Vom Marktsignal zur klaren Strategie.">
         <StepsRow items={JOURNEY} />
