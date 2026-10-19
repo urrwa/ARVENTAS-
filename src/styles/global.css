@@ -1805,3 +1805,10 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .phero-img { inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); animation: ph-focus 1500ms cubic-bezier(.2, .7, .1, 1) 800ms both; }
 .phero .lead { max-width: 40ch; font-size: clamp(16px, 1.3vw, 20px); }
 @media (prefers-reduced-motion: reduce) { .phero-img { animation: none; filter: blur(7px); } }
+/* Kontakt: Das Foto steht weich unscharf, das Formular schiebt sich als Glaskarte darüber (Vorbild Fugazi) */
+.sec.stage { background: transparent; }
+.stage .cbox { background: rgba(27, 36, 56, .4); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(245, 243, 239, .22); }
+.stage .cbox .f input[type=text], .stage .cbox .f input[type=email], .stage .cbox .f input[type=tel], .stage .cbox .f input[type=number], .stage .cbox .f select, .stage .cbox .f textarea { background: transparent; border: 0; border-bottom: 1px solid rgba(245, 243, 239, .38); border-radius: 0; padding-inline: 2px; }
+.stage .cbox .f input:focus, .stage .cbox .f select:focus, .stage .cbox .f textarea:focus { border-bottom-color: var(--gold); outline: none; }
+.stage .cbox .f select option { background: var(--marine); color: var(--ivory); }
+.sec.stage { padding-top: clamp(24px, 8vh, 100px); padding-bottom: clamp(72px, 12vh, 150px); }

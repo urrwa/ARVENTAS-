@@ -22,9 +22,9 @@ export default function Contact() {
   return (
     <>
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns Immobilienpotenziale klarer einordnen: Anfrage senden oder Strategiegespräch anfragen." />
-      <PageHero image="/media/buero-abend-1.webp" eyebrow="Kontakt" title="Lassen Sie uns Immobilienpotenziale klarer einordnen."
+      <PageHero tall fadeOut image="/media/buero-abend-1.webp" eyebrow="Kontakt" title="Lassen Sie uns Immobilienpotenziale klarer einordnen."
         lead="Strukturierte Analyse, klare Einordnung." />
-      <Sec id="anfrage">
+      <Sec id="anfrage" className="stage">
         <div className="contact-grid2">
           <div className="cbox rv">
             <p className="eyebrow">Anfrage senden</p>
