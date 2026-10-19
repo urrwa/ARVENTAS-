@@ -6,6 +6,7 @@ import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
 import JourneySplit from '../components/JourneySplit.jsx'
 import ProcessStack from '../components/ProcessStack.jsx'
+import AudienceCards from '../components/AudienceCards.jsx'
 import CardTrack from '../components/CardTrack.jsx'
 import Letters from '../components/Letters.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
@@ -108,7 +109,7 @@ export default function Home() {
       <Sec tone="light" eyebrow="Für wen wir arbeiten" title="Für Immobilienentscheider, die Klarheit brauchen.">
         <ul className="gl big rv">{FOR.map((x) => <li key={x}>{x}</li>)}</ul>
         <GoldLine>Wir sehen nicht nur heute. Wir bauen Potenziale für morgen.</GoldLine>
-        <IconGrid items={AUDIENCES} cols={5} />
+        <AudienceCards items={AUDIENCES} />
       </Sec>
 
       <CtaBand image="/media/cta-abend-1.webp" />

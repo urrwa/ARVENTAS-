@@ -1734,3 +1734,19 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (max-width: 860px) { .ps { height: 300vh; } .ps-row { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; } .ps-mid { grid-column: 1 / -1; grid-row: 1; } .ps-img.big { grid-column: 1; grid-row: 2; } .ps-img.small { grid-column: 2; grid-row: 2; height: 70%; } .ps-lead { display: none; } .ps-cta { margin-top: 14px; } .ps-list li { padding: 7px 0; } }
 @media (prefers-reduced-motion: reduce) { .ps { height: auto; } .ps-stick { position: relative; height: auto; padding-bottom: 40px; } .ps-img { display: none; } .ps-row { display: block; } .ps-lead, .ps-cta, .ps-list li { opacity: 1; transform: none; } }
 .feat-lead, .feat-lead * { hyphens: none !important; }
+/* Zielgruppen-Karten */
+.aud { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 28px); margin-top: clamp(32px, 5vw, 64px); }
+.aud-card { display: flex; flex-direction: column; background: var(--marine); }
+.aud-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.aud-bar { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; align-items: baseline; padding: 14px 16px 16px; background: rgba(245, 243, 239, .06); color: var(--ivory); transition: background 450ms ease, color 450ms ease; }
+.aud-bar .n { font-family: var(--font-head); font-weight: 700; color: var(--gold); transition: color 450ms ease; }
+.aud-bar h3 { margin: 0; font-family: var(--font-head); font-weight: 700; font-size: clamp(18px, 1.6vw, 24px); }
+.aud-bar p { grid-column: 2; margin: 6px 0 0; font-size: 14px; line-height: 1.5; opacity: .8; max-width: 52ch; }
+.aud-img { overflow: hidden; aspect-ratio: 4 / 3; }
+.aud-card:last-child:nth-child(odd) .aud-img { aspect-ratio: 21 / 8; }
+.aud-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1100ms var(--ease); }
+.aud-card:hover .aud-bar { background: var(--ivory); color: var(--marine); }
+.aud-card:hover .aud-bar .n { color: var(--marine); }
+.aud-card:hover .aud-img img { transform: scale(1.05); }
+@media (max-width: 860px) { .aud { grid-template-columns: 1fr; } .aud-card:last-child:nth-child(odd) .aud-img { aspect-ratio: 4 / 3; } }
+.aud-bar p { color: inherit !important; transition: color 450ms ease; }
