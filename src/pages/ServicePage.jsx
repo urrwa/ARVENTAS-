@@ -18,9 +18,8 @@ export default function ServicePage() {
   return (
     <>
       <Seo title={`${s.t} | ARVENTAS`} description={s.lead[0]} />
-      <PageHero image={s.hero} crumb={<><Link to="/leistungen">Leistungen</Link> / {s.t}</>} eyebrow={s.t} title={s.title} lead={s.lead[0]}>
-        <p className="hero-sub">{s.lead[1]}</p>
-        <div className="btn-row"><Btn to={q}>{s.cta}</Btn><Btn to="/kontakt?art=Strategiegespräch" variant="line">Strategiegespräch anfragen</Btn></div>
+      <PageHero image={s.hero} crumb={<><Link to="/leistungen">Leistungen</Link> / {s.t}</>} eyebrow={s.t} title={s.title}>
+        <div className="btn-row"><Btn to={q}>{s.cta}</Btn></div>
       </PageHero>
 
       <Sec eyebrow={s.whyEyebrow} title={s.whyTitle}>

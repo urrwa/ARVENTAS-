@@ -11,8 +11,8 @@ export default function Leistungen() {
     <>
       <Seo title="Leistungen | ARVENTAS" description="Fünf Leistungsbereiche, ein klares System: Marktanalyse, Immobilienbewertung, Strategische Analyse, Strategische Vermarktung und Development Intelligence." />
       <PageHero image="/media/buero-abend-2.webp" eyebrow="Leistungen" title="Fünf Leistungsbereiche. Ein klares System."
-        lead="ARVENTAS verbindet Marktanalyse, Immobilienbewertung, strategische Analyse, Vermarktung und Development Intelligence zu einem strukturierten Ansatz für bessere Immobilienentscheidungen.">
-        <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn><Btn to="/kontakt?art=Strategiegespräch" variant="line">Strategiegespräch anfragen</Btn></div>
+        lead="Von der Marktanalyse bis zur Entwicklung.">
+        <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn></div>
       </PageHero>
 
       <Sec eyebrow="Unser Ansatz" title="Nicht einzelne Leistungen. Ein verbundenes System.">

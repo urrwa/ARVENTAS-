@@ -10,10 +10,9 @@ export default function About() {
   return (
     <>
       <Seo title="Über uns | ARVENTAS" description="ARVENTAS steht für Struktur, Strategie und nachhaltige Immobilienentwicklung." />
-      <PageHero image="/media/buero-abend-2.webp" eyebrow="Über uns" title="ARVENTAS steht für Struktur, Strategie und nachhaltige Immobilienentwicklung."
-        lead="ARVENTAS ist kein klassisches Immobilienunternehmen. Wir verbinden Marktverständnis, Bewertung, strategische Analyse, Vermarktung und Entwicklung zu einem klaren System für bessere Immobilienentscheidungen.">
-        <p className="hero-sub">Unser Anspruch ist es, Immobilienpotenziale nicht zufällig zu erkennen, sondern strukturiert zu bewerten und strategisch weiterzuentwickeln.</p>
-        <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn><Btn to="/kontakt?art=Strategiegespräch" variant="line">Strategiegespräch anfragen</Btn></div>
+      <PageHero image="/media/buero-abend-2.webp" eyebrow="Über uns" title="Struktur. Strategie. Entwicklung."
+        lead="Immobilienpotenziale strukturiert bewerten und entwickeln.">
+        <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn></div>
       </PageHero>
 
       <Sec eyebrow="Übersicht" title="Einblick in ARVENTAS, unsere Haltung und unser Netzwerk."

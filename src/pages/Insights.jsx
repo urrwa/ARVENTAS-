@@ -12,9 +12,8 @@ export default function Insights() {
     <>
       <Seo title="Insights | ARVENTAS" description="Marktverständnis für bessere Immobilienentscheidungen: Einblicke in Märkte, Standorte, Trends und Entwicklungspotenziale." />
       <PageHero image="/media/cta-abend-1.webp" eyebrow="Insights" title="Marktverständnis für bessere Immobilienentscheidungen."
-        lead="ARVENTAS Insights liefert kompakte Einblicke in Märkte, Standorte, Trends und Entwicklungspotenziale – klar, verständlich und strategisch eingeordnet.">
-        <p className="hero-sub">Für Projektentwickler, Investoren, Immobiliengesellschaften und Partner, die Märkte nicht nur beobachten, sondern besser verstehen wollen.</p>
-        <div className="btn-row"><Btn to="/insights/off-market-verstehen">Insights entdecken</Btn><Btn to="/kontakt?art=Strategiegespräch" variant="line">Strategiegespräch anfragen</Btn></div>
+        lead="Märkte nicht nur beobachten, sondern verstehen.">
+        <div className="btn-row"><Btn to="/insights/off-market-verstehen">Insights entdecken</Btn></div>
       </PageHero>
 
       <Sec eyebrow="Übersicht" title="Alle Marktimpulse auf einen Blick."

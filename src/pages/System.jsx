@@ -11,9 +11,8 @@ export default function System() {
     <>
       <Seo title="System | ARVENTAS" description="Ein klares System für bessere Immobilienentscheidungen: vom Marktsignal zur strategischen Einordnung." />
       <PageHero image="/media/cta-abend-2.webp" eyebrow="System" title="Ein klares System für bessere Immobilienentscheidungen."
-        lead="ARVENTAS verbindet Marktverständnis, Immobilienbewertung, strategische Analyse, Vertrieb und Entwicklung in einem strukturierten Prozess.">
-        <p className="hero-sub">Immobilienpotenzial wird selten durch einen einzelnen Faktor sichtbar. ARVENTAS führt die entscheidenden Elemente zusammen und schafft einen klaren Weg vom Marktsignal bis zur strategischen Einordnung.</p>
-        <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn><Btn to="/kontakt?art=Strategiegespräch" variant="line">Strategiegespräch anfragen</Btn></div>
+        lead="Vom Marktsignal zur klaren Strategie.">
+        <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn></div>
       </PageHero>
 
       <Sec eyebrow="Warum ein System" title="Immobilienentscheidungen brauchen Struktur, nicht Vermutungen.">

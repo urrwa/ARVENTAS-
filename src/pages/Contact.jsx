@@ -23,7 +23,7 @@ export default function Contact() {
     <>
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns Immobilienpotenziale klarer einordnen: Anfrage senden oder Strategiegespräch anfragen." />
       <PageHero image="/media/buero-abend-1.webp" eyebrow="Kontakt" title="Lassen Sie uns Immobilienpotenziale klarer einordnen."
-        lead="Sie möchten einen Markt, ein Objekt, ein Grundstück oder Entwicklungspotenzial besser verstehen? ARVENTAS unterstützt Sie mit strukturierter Analyse, strategischer Einordnung und klarer Vorgehensweise." />
+        lead="Strukturierte Analyse, klare Einordnung." />
       <Sec id="anfrage">
         <div className="contact-grid2">
           <div className="cbox rv">

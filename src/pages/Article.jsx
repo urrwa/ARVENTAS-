@@ -13,7 +13,7 @@ export default function Article() {
   return (
     <>
       <Seo title={`${a.title} | Insights | ARVENTAS`} description={a.teaser} />
-      <PageHero image="/media/cta-abend-2.webp" crumb={<><Link to="/insights">Insights</Link> / {a.title}</>} title={a.title} lead={a.teaser}>
+      <PageHero image="/media/cta-abend-2.webp" crumb={<><Link to="/insights">Insights</Link> / {a.title}</>} title={a.title}>
         <p style={{ marginTop: 20 }}><span className="tagd">Entwurf</span></p>
       </PageHero>
       <section className="sec dark">
