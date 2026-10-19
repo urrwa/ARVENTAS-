@@ -4,6 +4,7 @@ import HomeFilm from '../components/HomeFilm.jsx'
 import HoverList from '../components/HoverList.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn } from '../components/ui.jsx'
+import JourneySplit from '../components/JourneySplit.jsx'
 import CardTrack from '../components/CardTrack.jsx'
 import Letters from '../components/Letters.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
@@ -88,9 +89,7 @@ export default function Home() {
 
       <CardTrack items={PILLARS} />
 
-      <Sec tone="light" eyebrow="Kundenjourney" title="Vom Marktsignal zur klaren Strategie.">
-        <StepsRow items={JOURNEY} />
-      </Sec>
+      <JourneySplit items={JOURNEY} label="Kundenjourney" title="Vom Marktsignal zur klaren Strategie." />
 
       <Sec tone="light" className="big-sec">
         <h2 className="big-h ed"><Letters text="Fünf Leistungen." per={30} /><span className="r"><Letters text="Ein System." per={30} delay={500} /></span></h2>

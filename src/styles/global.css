@@ -1653,3 +1653,25 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .ct-stick::after { content: ""; position: absolute; inset: 0; background: rgba(25, 37, 55, .55); pointer-events: none; }
 .ct-track { position: relative; z-index: 2; }
 .ct-card:not(.on) { background: rgba(25, 37, 55, .72); }
+
+/* Geteilte Bühne: Bild links stehend, Schritte rechts */
+.js { display: grid; grid-template-columns: 46% 1fr; background: var(--marine); color: var(--ivory); position: relative; z-index: 2; }
+.js-img { position: sticky; top: 0; height: 100svh; overflow: hidden; background: var(--black); }
+.js-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 900ms ease, transform 1800ms var(--ease); }
+.js-img img.on { opacity: 1; transform: none; }
+.js-count { position: absolute; left: 20px; bottom: 20px; font-size: 12px; letter-spacing: .24em; color: var(--ivory); }
+.js-list { padding-inline: clamp(24px, 4vw, 72px) var(--gut); }
+.js-step { min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; padding-block: clamp(72px, 12vh, 120px) clamp(36px, 8vh, 80px); opacity: .35; transition: opacity 600ms ease; }
+.js-step.on { opacity: 1; }
+.js-top { display: grid; gap: 18px; justify-items: start; }
+.js-label { margin: 0 0 clamp(24px, 6vh, 64px); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+.js-step h3 { margin: 0; font-family: var(--font-head); font-weight: 700; font-size: clamp(30px, 3.6vw, 56px); letter-spacing: -.02em; line-height: 1.05; text-transform: none; color: var(--ivory); }
+.js-text { margin: 0; max-width: 46ch; align-self: flex-end; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: var(--text-on-dark-soft); }
+@media (max-width: 860px) {
+  .js { grid-template-columns: 1fr; }
+  .js-img { height: 42svh; top: var(--header-h); z-index: 1; }
+  .js-list { padding-inline: var(--gut); }
+  .js-step { min-height: 62svh; padding-block: 32px; justify-content: flex-start; gap: 24px; background: var(--marine); position: relative; z-index: 2; }
+  .js-text { align-self: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { .js-img img { transition: none; } }
