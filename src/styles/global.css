@@ -1701,3 +1701,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .ftr > .wrap { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
 .ftr-mark { margin-top: auto; }
 @media (max-width: 860px) { .ftr { min-height: 60svh; } }
+.big-h2 { font-size: clamp(28px, 6vw, 100px); }
+.feat-lead { max-width: 56ch; margin: clamp(8px, 2vw, 24px) 0 0 !important; font-size: clamp(16px, 1.4vw, 21px); line-height: 1.6; color: var(--ivory); font-family: var(--font-body); }
+.feat.big-sec { padding-bottom: clamp(24px, 4vw, 56px); }
+@media (max-width: 860px) { .big-h2 { font-size: clamp(22px, 7.4vw, 44px); } .big-h2 .r { text-align: left; } }

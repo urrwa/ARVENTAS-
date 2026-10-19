@@ -83,9 +83,10 @@ export default function Home() {
 
       <Gallery />
 
-      <Sec tone="light" className="feat" eyebrow="Wofür ARVENTAS steht" title="Struktur für bessere Immobilienentscheidungen."
-        lead="ARVENTAS steht für einen klaren, strukturierten und strategischen Ansatz in der Immobilienentwicklung. Wir betrachten Immobilien nicht isoliert, sondern verbinden Markt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsrahmen.">
-        </Sec>
+      <Sec tone="light" className="feat big-sec">
+        <h2 className="big-h ed big-h2"><Letters text="Struktur für bessere" per={30} /><span className="r"><Letters text="Immobilienentscheidungen." per={26} delay={600} /></span></h2>
+        <ScrollWords className="feat-lead" text="ARVENTAS steht für einen klaren, strukturierten und strategischen Ansatz in der Immobilienentwicklung. Wir betrachten Immobilien nicht isoliert, sondern verbinden Markt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsrahmen." />
+      </Sec>
 
       <CardTrack items={PILLARS} />
 
