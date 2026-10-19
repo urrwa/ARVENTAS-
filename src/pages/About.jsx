@@ -1,12 +1,11 @@
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
-import AudienceCards from '../components/AudienceCards.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
 import Letters from '../components/Letters.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec } from '../components/blocks.jsx'
-import { ABOUT, AUDIENCES } from '../content/site.js'
+import { ABOUT } from '../content/site.js'
 
 // Seitenaufbau nach dem Vorbild Archter-Studio: Studio-Absatz mit Bild, dunkle Haltung, großer Ansatz-Absatz, Mission/Zukunft über Vollbild.
 export default function About() {
@@ -76,10 +75,6 @@ export default function About() {
           </ol>
         </div>
       </section>
-
-      <Sec eyebrow="Für wen" title="Für Entscheider mit Anspruch.">
-        <AudienceCards items={AUDIENCES} />
-      </Sec>
 
       <CtaBand image="/media/cta-abend-2.webp" title="Lassen Sie uns Immobilienpotenziale klarer einordnen." text="ARVENTAS unterstützt Sie dabei, Märkte, Objekte und Entwicklungschancen besser zu verstehen und strategisch nutzbar zu machen." />
     </>

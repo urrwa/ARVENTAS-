@@ -1,9 +1,6 @@
 import Seo from '../components/Seo.jsx'
 import HomeFilm from '../components/HomeFilm.jsx'
-import HoverList from '../components/HoverList.jsx'
 import CtaBand from '../components/CtaBand.jsx'
-import { Btn } from '../components/ui.jsx'
-import JourneySplit from '../components/JourneySplit.jsx'
 import ProcessStack from '../components/ProcessStack.jsx'
 import AudienceCards from '../components/AudienceCards.jsx'
 import CardTrack from '../components/CardTrack.jsx'
@@ -17,13 +14,6 @@ const PILLARS = [
   { icon: 'chart', t: 'Datenbasiert', d: 'Entscheidungen basieren auf Marktinformationen, Bewertungslogik und strukturierter Analyse.' },
   { icon: 'network', t: 'Vernetzt', d: 'Analyse, Strategie und Vermarktung greifen ineinander und bilden ein System.' },
   { icon: 'diamond', t: 'Werteorientiert', d: 'Unser Fokus liegt auf Potenzialen, die nachhaltige Werte schaffen – für Menschen und Projekte.' },
-]
-const JOURNEY = [
-  { icon: 'search', t: 'Den Markt verstehen', d: 'Wir analysieren Standorte, Nachfrage, Preisbewegungen und Marktdynamiken.' },
-  { icon: 'building', t: 'Die Immobilie bewerten', d: 'Wir bewerten die Immobilie, ihren Wert, ihre Risiken und Entwicklungspotenziale.' },
-  { icon: 'target', t: 'Die Chance erkennen', d: 'Wir unterscheiden relevantes Potenzial von Rauschen und definieren den Werttreiber.' },
-  { icon: 'route', t: 'Die Strategie entwickeln', d: 'Wir entwickeln den richtigen Ansatz für Positionierung, Vermarktung und Entwicklung.' },
-  { icon: 'send', t: 'Strukturiert vorgehen', d: 'Wir begleiten die nächsten Schritte mit Klarheit und einer strukturierten Basis.' },
 ]
 const FACTS = [
   { n: '5', l: 'Leistungen', d: 'Von der Marktanalyse bis zur Development Intelligence.', img: 'turm', pos: '50% 30%' },
@@ -62,14 +52,6 @@ export default function Home() {
       </Sec>
 
       <CardTrack items={PILLARS} />
-
-      <JourneySplit items={JOURNEY} label="Kundenjourney" title="Vom Marktsignal zur klaren Strategie." />
-
-      <Sec tone="light" className="big-sec">
-        <h2 className="big-h ed"><Letters text="Fünf Leistungen." per={30} /><span className="r"><Letters text="Ein System." per={30} delay={500} /></span></h2>
-        <HoverList items={SERVICE_LIST.map((s) => ({ t: s.t, d: s.card, img: s.img, icon: s.icon, to: `/leistungen/${s.slug}` }))} />
-        <div className="btn-row"><Btn to="/leistungen" variant="marine">Leistungen entdecken</Btn></div>
-      </Sec>
 
       <ProcessStack facts={FACTS} links={SERVICE_LIST.map((s) => ({ t: s.t, to: `/leistungen/${s.slug}` }))} steps={CHAIN_CARDS} lead="Wir verbinden Markt, Objekt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg. So entstehen aus Informationen bessere Entscheidungen." />
 

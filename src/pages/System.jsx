@@ -2,7 +2,6 @@ import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import JourneySplit from '../components/JourneySplit.jsx'
-import StepsFlow from '../components/StepsFlow.jsx'
 import CaseAccordion from '../components/CaseAccordion.jsx'
 import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
@@ -40,9 +39,8 @@ export default function System() {
         <Versus {...VERSUS} line="Wir reagieren nicht einfach auf den Markt. Wir strukturieren Entscheidungen, bevor sich der Markt bewegt." />
       </Sec>
 
-      <StepsFlow items={SYSTEM.principles} title="Auf klaren Prinzipien aufgebaut." />
 
-            <Sec eyebrow="Kundenergebnis" title="Was Kunden durch das ARVENTAS System gewinnen."
+      <Sec eyebrow="Kundenergebnis" title="Was Kunden durch das ARVENTAS System gewinnen."
         lead="Am Ende des Prozesses erhalten Kunden keine isolierten Informationen. Sie erhalten einen klareren Blick auf Märkte, Chancen, Risiken und die mögliche strategische Richtung.">
         <IconGrid items={SYSTEM.gains} cols={5} />
         <GoldLine>Nicht mehr Komplexität. Mehr Klarheit.</GoldLine>

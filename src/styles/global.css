@@ -2347,7 +2347,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .hf-see { display: inline-flex; align-items: center; gap: 12px; color: var(--ivory); text-decoration: none; font-size: 14px; letter-spacing: .06em; }
 .hf-see i { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(245, 243, 239, .5); font-style: normal; font-size: 9px; padding-left: 2px; transition: background 300ms ease, color 300ms ease; }
 .hf-see:hover i { background: var(--ivory); color: var(--marine); }
-.hf-stats { position: absolute; left: clamp(22px, 4vw, 64px); bottom: clamp(22px, 4vh, 48px); list-style: none; margin: 0; padding: 0; display: flex; gap: clamp(28px, 4vw, 64px); }
+.hf-stats { position: absolute; left: clamp(22px, 4vw, 64px); bottom: clamp(22px, 4vh, 48px); list-style: none; margin: 0; padding: 0; display: flex; gap: clamp(22px, 4vw, 64px); }
 .hf-stats b { display: block; font-family: var(--font-head); font-weight: 400; font-size: clamp(40px, 4.6vw, 76px); line-height: 1; color: var(--ivory); }
 .hf-stats span { display: block; margin-top: 6px; font-size: 13px; letter-spacing: .04em; color: rgba(245, 243, 239, .75); }
 .hf-mini { position: absolute; right: clamp(22px, 4vw, 64px); bottom: clamp(22px, 4vh, 48px); width: min(360px, 40vw); display: grid; grid-template-columns: 76px 1fr; gap: 6px 16px; align-items: center; padding: 12px; border-radius: 18px; background: rgba(245, 243, 239, .14); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid rgba(245, 243, 239, .22); color: var(--ivory); text-decoration: none; }

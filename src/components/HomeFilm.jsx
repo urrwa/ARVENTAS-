@@ -50,8 +50,9 @@ export default function HomeFilm() {
           <p className="hf-sub">Markt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg verbunden.</p>
           <button type="button" className="hf-see" onClick={() => setShow(true)} aria-haspopup="dialog"><i aria-hidden="true">▶</i><span>So entsteht Klarheit</span></button>
           <ul className="hf-stats">
-            <li><b><CountUp to={5} /></b><span>Leistungen</span></li>
-            <li><b><CountUp to={5} /></b><span>Schritte</span></li>
+            <li><b><CountUp to={200} />+</b><span>Abgeschlossene Projekte</span></li>
+            <li><b><CountUp to={70} />+</b><span>Zufriedene Kunden</span></li>
+            <li><b>$<CountUp to={10} />M</b><span>Projektvolumen</span></li>
           </ul>
           <Link to="/leistungen" className="hf-mini">
             <img src="/media/gal-4.webp" alt="" width="120" height="120" loading="lazy" decoding="async" />
