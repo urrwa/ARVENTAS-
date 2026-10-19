@@ -30,8 +30,7 @@ export default function Leistungen() {
         <HoverList items={SERVICE_LIST.map((s) => ({ t: s.t, d: s.card, img: s.img, icon: s.icon, to: `/leistungen/${s.slug}` }))} />
       </Sec>
 
-                  <Sec eyebrow="Warum es wichtig ist" title="Immobilienpotenziale entstehen nicht zufällig. Sie werden erkannt, bewertet und strukturiert entwickelt."
-        lead="Viele Entscheidungen im Immobilienmarkt basieren auf unvollständigen Informationen. ARVENTAS schafft ein klareres Bild: Wo liegt Potenzial? Welche Risiken bestehen? Wie realistisch ist die Vermarktung? Welche Strategie führt zum besten Ergebnis?">
+                  <Sec eyebrow="Warum es wichtig ist" title="Potenzial entsteht nicht zufällig.">
         <StackRows items={BENEFITS} />
       </Sec>
 

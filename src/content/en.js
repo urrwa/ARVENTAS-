@@ -1364,6 +1364,7 @@ export default {
  "Preisentwicklung, Objektqualität,": "price trends, property quality,",
  "Risiko, Vermarktung und": "risk, marketing and",
  "Entwicklungspotenzial müssen gemeinsam betrachtet werden.": "development potential must be considered together.",
+ "Potenzial entsteht nicht zufällig.": "Potential does not arise by chance.",
  "Fünf Leistungen.": "Five services.",
  "Ein System.": "One system.",
  "Prinzip": "Principle",
