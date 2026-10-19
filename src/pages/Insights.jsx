@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
+import ArticleCards from '../components/ArticleCards.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid } from '../components/blocks.jsx'
 import { INSIGHT_AREAS, INSIGHT_WHY } from '../content/site.js'
@@ -22,19 +23,8 @@ export default function Insights() {
         <p className="small muted">Die Bereiche werden schrittweise mit geprüften Inhalten gefüllt. Bis dahin sind die Beiträge unten Entwürfe.</p>
       </Sec>
 
-      <Sec eyebrow="Fachartikel" title="Wissen, das Immobilienentscheidungen verbessert."
-        lead="Unsere Beiträge erklären relevante Entwicklungen im Immobilienmarkt und zeigen, wie Bewertung, Vermarktung und Projektentwicklung strategischer gedacht werden können.">
-        <div className="igrid c3 arts">
-          {ARTICLES.map((a, i) => (
-            <Link key={a.slug} to={`/insights/${a.slug}`} className="icard art-card rv" style={{ '--d': i * 70 }}>
-              <div className="svc-img"><img src={a.img} alt="" loading="lazy" decoding="async" /></div>
-              <span className="tagd">Entwurf</span>
-              <h3>{a.title}</h3>
-              <p>{a.teaser}</p>
-              <span className="more">Beitrag lesen <span aria-hidden="true">→</span></span>
-            </Link>
-          ))}
-        </div>
+      <Sec eyebrow="Fachartikel" title="Wissen, das Immobilienentscheidungen verbessert.">
+        <ArticleCards items={ARTICLES} />
         <p className="small muted">Entwürfe sind gekennzeichnet und keine aktuelle Recherche oder Marktdaten.</p>
       </Sec>
 
