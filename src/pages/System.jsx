@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import JourneySplit from '../components/JourneySplit.jsx'
 import StepsFlow from '../components/StepsFlow.jsx'
+import CaseAccordion from '../components/CaseAccordion.jsx'
 import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, IconGrid, GoldLine, Split, Versus } from '../components/blocks.jsx'
@@ -48,7 +49,7 @@ export default function System() {
       </Sec>
 
       <Sec eyebrow="Anwendungsfälle" title="Wo das System Mehrwert schafft.">
-        <IconGrid items={SYSTEM.cases} cols={5} />
+        <CaseAccordion items={SYSTEM.cases} />
       </Sec>
 
       <CtaBand image="/media/cta-abend-1.webp" title="Bereit, Ihre nächste Immobilienentscheidung zu strukturieren?" text="ARVENTAS unterstützt Sie dabei, Märkte, Immobilien und Entwicklungschancen durch ein klares System zu bewerten – bevor wichtige Entscheidungen getroffen werden." />
