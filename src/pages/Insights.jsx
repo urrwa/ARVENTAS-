@@ -4,8 +4,9 @@ import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import ArticleCards from '../components/ArticleCards.jsx'
 import StairFlow from '../components/StairFlow.jsx'
+import FeatureSlider from '../components/FeatureSlider.jsx'
 import { Btn } from '../components/ui.jsx'
-import { Sec, IconGrid } from '../components/blocks.jsx'
+import { Sec } from '../components/blocks.jsx'
 import { INSIGHT_AREAS, INSIGHT_WHY } from '../content/site.js'
 import { ARTICLES } from '../content/data.js'
 
@@ -31,7 +32,7 @@ export default function Insights() {
 
       <Sec eyebrow="Warum Insights" title="Wer Märkte besser versteht, entscheidet klarer."
         lead="Viele Immobilienentscheidungen entstehen unter Unsicherheit. Gute Insights helfen, Märkte, Standorte, Risiken und Chancen besser zu verstehen, bevor Kapital, Zeit und Ressourcen gebunden werden.">
-        <IconGrid items={INSIGHT_WHY} cols={4} />
+        <FeatureSlider items={INSIGHT_WHY} label="Warum Insights" images={['/media/buero-abend-2.webp', '/media/gal-6.webp', '/media/gal-8.webp', '/media/gal-3.webp']} />
       </Sec>
 
       <CtaBand image="/media/cta-abend-2.webp" title="Sie möchten einen Markt oder Standort genauer verstehen?" text="ARVENTAS unterstützt Sie dabei, Marktinformationen richtig einzuordnen und daraus klare Immobilienstrategien abzuleiten." btn="Potenzial analysieren" />
