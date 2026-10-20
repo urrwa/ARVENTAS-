@@ -5,7 +5,7 @@ import JourneySplit from '../components/JourneySplit.jsx'
 import CaseAccordion from '../components/CaseAccordion.jsx'
 import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
-import { Sec, IconGrid, GoldLine, Split, Versus } from '../components/blocks.jsx'
+import { Sec, GoldLine, Split, Versus } from '../components/blocks.jsx'
 import { SYSTEM, VERSUS } from '../content/site.js'
 
 export default function System() {
@@ -37,13 +37,6 @@ export default function System() {
 
       <Sec eyebrow="Der Unterschied" title="Klassische Immobilienarbeit betrachtet das Objekt. ARVENTAS betrachtet das volle Potenzial.">
         <Versus {...VERSUS} line="Wir reagieren nicht einfach auf den Markt. Wir strukturieren Entscheidungen, bevor sich der Markt bewegt." />
-      </Sec>
-
-
-      <Sec eyebrow="Kundenergebnis" title="Was Kunden durch das ARVENTAS System gewinnen."
-        lead="Am Ende des Prozesses erhalten Kunden keine isolierten Informationen. Sie erhalten einen klareren Blick auf Märkte, Chancen, Risiken und die mögliche strategische Richtung.">
-        <IconGrid items={SYSTEM.gains} cols={5} />
-        <GoldLine>Nicht mehr Komplexität. Mehr Klarheit.</GoldLine>
       </Sec>
 
       <Sec eyebrow="Anwendungsfälle" title="Wo das System Mehrwert schafft.">
