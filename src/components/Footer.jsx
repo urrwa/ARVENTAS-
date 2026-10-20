@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useConsent } from './Consent.jsx'
+import { HOME } from '../content/images.js'
 
 // Fuß nach dem Vorbild Archter: Foto links (springt beim Erscheinen auf), Claim in der Mitte, Seitenliste rechts, große Wortmarke unten.
 export default function Footer() {
@@ -18,7 +19,7 @@ export default function Footer() {
     <footer className="ftr3" ref={root}>
       <div className="wrap">
         <div className="ftr3-top">
-          <div className="ftr3-photo"><img src="/media/real/eingang-stein.webp" alt="" loading="lazy" decoding="async" /></div>
+          <div className="ftr3-photo"><img src={HOME.footer} alt="" loading="lazy" decoding="async" /></div>
           <div className="ftr3-mid">
             <h2 className="ftr3-h">Klarheit vor jeder Entscheidung.</h2>
             <p>Strategische Immobilienentwicklung mit System.</p>

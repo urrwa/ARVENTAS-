@@ -6,19 +6,20 @@ import CaseAccordion from '../components/CaseAccordion.jsx'
 import StackRows from '../components/StackRows.jsx'
 import { Btn } from '../components/ui.jsx'
 import { Sec, GoldLine, Split, Versus } from '../components/blocks.jsx'
+import { PAGES } from '../content/images.js'
 import { SYSTEM, VERSUS } from '../content/site.js'
 
 export default function System() {
   return (
     <>
       <Seo title="System | ARVENTAS" description="Ein klares System für bessere Immobilienentscheidungen: vom Marktsignal zur strategischen Einordnung." />
-      <PageHero image="/media/real/modell-skyline.webp" eyebrow="System" title="Ein klares System für bessere Immobilienentscheidungen."
+      <PageHero image={PAGES.system.hero} eyebrow="System" title="Ein klares System für bessere Immobilienentscheidungen."
         lead="Vom Marktsignal zur klaren Strategie.">
         <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn></div>
       </PageHero>
 
       <Sec eyebrow="Warum ein System" title="Immobilienentscheidungen brauchen Struktur, nicht Vermutungen.">
-        <Split img="/media/real/lounge-fenster.webp" alt="Lounge hinter Glasfassade am Abend">
+        <Split img={PAGES.system.split} alt="Lounge hinter Glasfassade am Abend">
           <p className="rv">Viele Immobilienentscheidungen basieren auf fragmentierten Informationen: einem Standort, einem Preis, einem Kontakt, einem Markttrend oder einer einzelnen Gelegenheit.</p>
           <p className="rv">ARVENTAS betrachtet diese Elemente nicht isoliert. Wir verbinden sie zu einem strukturierten System, das unseren Kunden zeigt, wo Potenzial besteht, wie es bewertet werden sollte und welcher nächste Schritt sinnvoll ist.</p>
           <GoldLine>Struktur ersetzt Zufall.</GoldLine>
@@ -43,7 +44,7 @@ export default function System() {
         <CaseAccordion items={SYSTEM.cases} />
       </Sec>
 
-      <CtaBand image="/media/real/buero-sonnenuntergang.webp" title="Bereit, Ihre nächste Immobilienentscheidung zu strukturieren?" text="ARVENTAS unterstützt Sie dabei, Märkte, Immobilien und Entwicklungschancen durch ein klares System zu bewerten – bevor wichtige Entscheidungen getroffen werden." />
+      <CtaBand image={PAGES.system.cta} title="Bereit, Ihre nächste Immobilienentscheidung zu strukturieren?" text="ARVENTAS unterstützt Sie dabei, Märkte, Immobilien und Entwicklungschancen durch ein klares System zu bewerten – bevor wichtige Entscheidungen getroffen werden." />
     </>
   )
 }

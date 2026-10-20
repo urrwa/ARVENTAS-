@@ -12,7 +12,7 @@ export default function CaseAccordion({ items }) {
     <div className="ca" role="list">
       {items.map((it, i) => {
         const on = open === i
-        const img = `/media/${IMGS[i % IMGS.length]}.webp`
+        const img = it.img || `/media/${IMGS[i % IMGS.length]}.webp`
         return (
           <article key={it.t} role="listitem" className={`ca-item${on ? ' on' : ''}`} onMouseEnter={() => hover(i)} onMouseLeave={() => clearTimeout(tm.current)}>
             <button type="button" className="ca-row" aria-expanded={on} onClick={() => setOpen(i)} onFocus={() => setOpen(i)}>

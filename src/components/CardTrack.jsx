@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Icon from './Icon.jsx'
+import { HOME } from '../content/images.js'
 
 // Gepinnte Kartenreihe: Vertikales Scrollen schiebt die Karten seitlich, die mittlere Karte ist hervorgehoben (Vorbild Contemo).
 export default function CardTrack({ items }) {
@@ -38,12 +39,12 @@ export default function CardTrack({ items }) {
   return (
     <section className="ct" ref={sec}>
       <div className="ct-stick">
-        <img className="ct-bg" src="/media/real/buero-daemmerung.webp" alt="" loading="lazy" decoding="async" />
+        <img className="ct-bg" src={HOME.pillarsBg} alt="" loading="lazy" decoding="async" />
         <div className="ct-track" ref={track}>
           {items.map((it, i) => (
             <article key={it.t} className="ct-card">
               <div className="ct-top"><span className="ring"><Icon name={it.icon} size={20} /></span><span className="ct-n">{String(i + 1).padStart(2, '0')}</span></div>
-              <div className="ct-img"><img src={`/media/gal-${[2, 3, 1, 8][i % 4]}.webp`} alt="" loading="lazy" decoding="async" /></div>
+              <div className="ct-img"><img src={HOME.pillars[i % HOME.pillars.length]} alt="" loading="lazy" decoding="async" /></div>
               <h3>{it.t}</h3>
               <p>{it.d}</p>
             </article>

@@ -7,6 +7,7 @@ import CardTrack from '../components/CardTrack.jsx'
 import Letters from '../components/Letters.jsx'
 import ScrollWords from '../components/ScrollWords.jsx'
 import { Sec, IconGrid, StepsRow, Chain, Split, GoldLine } from '../components/blocks.jsx'
+import { HOME } from '../content/images.js'
 import { AUDIENCES, CHAIN_CARDS, SERVICE_LIST, CLAIM } from '../content/site.js'
 
 const PILLARS = [
@@ -18,7 +19,7 @@ const PILLARS = [
 const FACTS = [
   { n: '5', l: 'Leistungen', d: 'Von der Marktanalyse bis zur Development Intelligence.', img: 'turm', pos: '50% 30%' },
   { n: '5', l: 'Schritte', d: 'Vom Markt bis zur Steuerung von Vermarktung und Entwicklung.', img: 'turm', pos: '50% 78%' },
-  { n: '1', l: 'System', d: 'Ein klarer Entscheidungsweg statt Einzelmaßnahmen.', img: 'real/modell-dunkel' },
+  { n: '1', l: 'System', d: 'Ein klarer Entscheidungsweg statt Einzelmaßnahmen.', img: `p/${HOME.system}` },
 ]
 
 // Redaktioneller Abschnitt auf hellem Grund: Beschriftung, großer Blocksatz mit Wort-Reveal, kleines Bild mit Kurztext.
@@ -59,7 +60,7 @@ export default function Home() {
         <AudienceCards items={AUDIENCES} />
       </Sec>
 
-      <CtaBand image="/media/real/buero-sonnenuntergang.webp" />
+      <CtaBand image={HOME.cta} />
     </>
   )
 }

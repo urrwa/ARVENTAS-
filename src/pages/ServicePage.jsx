@@ -51,7 +51,7 @@ export default function ServicePage() {
         {s.note && <p className="small muted">{s.note}</p>}
       </Sec>
 
-      <CtaBand image={s.hero === '/media/real/buero-sonnenuntergang.webp' ? '/media/real/buero-daemmerung.webp' : '/media/real/buero-sonnenuntergang.webp'} title={s.ctaTitle} text={s.ctaText} btn={s.ctaBtn} to={q} />
+      <CtaBand image={s.ctaImg} title={s.ctaTitle} text={s.ctaText} btn={s.ctaBtn} to={q} />
     </>
   )
 }

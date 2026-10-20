@@ -2,6 +2,8 @@
 // Grundlage sind die vom Auftraggeber gelieferten Seitenentwürfe (Struktur, Stil, Leistungsbereiche).
 // Bewusst weggelassen: Kennzahlen, Kundenzitate, Referenzen, Namen und Kontaktdaten aus den Entwürfen, da nicht bestätigt.
 
+import { SERVICE_IMG, SYSTEM_IMG } from './images.js'
+
 export const CLAIM = 'Strategische Immobilienentwicklung mit System.'
 
 export const SERVICE_NAV = [
@@ -46,7 +48,7 @@ export const VERSUS = {
 // ---------------------------------------------------------------- Leistungen
 export const SERVICES = {
   marktanalyse: {
-    slug: 'marktanalyse', icon: 'chart', t: 'Marktanalyse', img: '/media/real/frankfurt-main.webp', hero: '/media/real/frankfurt-main.webp', active: 0,
+    slug: 'marktanalyse', icon: 'chart', t: 'Marktanalyse', active: 0,
     tag: 'Märkte verstehen. Chancen erkennen.',
     card: 'Wir analysieren Märkte, Standorte, Nachfrage, Preisbewegungen und regionale Potenziale.',
     list: ['Standortanalyse', 'Nachfrageentwicklung', 'Preisbewegungen', 'Marktdynamik', 'regionale Potenziale'],
@@ -94,7 +96,7 @@ export const SERVICES = {
     ctaBtn: 'Marktpotenzial analysieren',
   },
   immobilienbewertung: {
-    slug: 'immobilienbewertung', icon: 'building', t: 'Immobilienbewertung', img: '/media/real/begutachtung-travertin.webp', hero: '/media/real/eingang-stein.webp', active: 1,
+    slug: 'immobilienbewertung', icon: 'building', t: 'Immobilienbewertung', active: 1,
     tag: 'Immobilien realistisch und strategisch bewerten.',
     card: 'Wir bewerten Immobilien, Grundstücke und Lagen realistisch nach aktuellem Wert und Zukunftspotenzial.',
     list: ['Marktwertanalyse', 'Lagebewertung', 'Vergleichsobjekte', 'Chancen & Risiken', 'Entwicklungspotenzial'],
@@ -144,7 +146,7 @@ export const SERVICES = {
     note: 'Eine Bewertung durch ARVENTAS ersetzt kein verbindliches Verkehrswertgutachten eines Sachverständigen.',
   },
   'strategische-analyse': {
-    slug: 'strategische-analyse', icon: 'search', t: 'Strategische Analyse', img: '/media/real/karte.webp', hero: '/media/real/modell-dunkel.webp', active: 2,
+    slug: 'strategische-analyse', icon: 'search', t: 'Strategische Analyse', active: 2,
     tag: 'Potenziale, Risiken und Entscheidungen klar einordnen.',
     card: 'Wir analysieren Chancen, Risiken und Investmentlogik für fundierte Entscheidungen.',
     list: ['Potenzialanalyse', 'Risikoanalyse', 'Investment-Einschätzung', 'Entscheidungsgrundlagen', 'Strategieempfehlung'],
@@ -191,7 +193,7 @@ export const SERVICES = {
     ctaBtn: 'Analyse anfragen',
   },
   'strategische-vermarktung': {
-    slug: 'strategische-vermarktung', icon: 'megaphone', t: 'Strategische Vermarktung', img: '/media/real/besprechungsraum.webp', hero: '/media/real/eingang-travertin.webp', active: 4,
+    slug: 'strategische-vermarktung', icon: 'megaphone', t: 'Strategische Vermarktung', active: 4,
     tag: 'Nachfrage verstehen. Vermarktung gezielt steuern.',
     card: 'Wir entwickeln marktgerechte Vermarktungs- und Vertriebsstrategien auf Basis von Nachfrage und Potenzial.',
     list: ['Verkaufsprognose', 'Nachfrageanalyse', 'Zielgruppenstrategie', 'Vertriebsstrategie', 'Lead Intelligence'],
@@ -240,7 +242,7 @@ export const SERVICES = {
     ctaBtn: 'Vermarktung planen',
   },
   'development-intelligence': {
-    slug: 'development-intelligence', icon: 'cube', t: 'Development Intelligence', img: '/media/real/baulucke.webp', hero: '/media/real/baulucke.webp', active: -1,
+    slug: 'development-intelligence', icon: 'cube', t: 'Development Intelligence', active: -1,
     tag: 'Daten, Marktverständnis und Entwicklung klar verbinden.',
     card: 'Wir verbinden Daten, Analyse, Bewertung und Strategie zu einem klaren Entwicklungsbild.',
     list: ['datenbasierte Entwicklung', 'Markt- & Objektverständnis', 'strategische Steuerung', 'Potenzialerkennung', 'Entwicklung mit System'],
@@ -289,6 +291,13 @@ export const SERVICES = {
     ctaBtn: 'Development Intelligence anfragen',
   },
 }
+// Bilder je Leistung und je Abschnitt kommen aus images.js
+Object.entries(SERVICE_IMG).forEach(([slug, m]) => {
+  const s = SERVICES[slug]
+  s.img = m.card; s.hero = m.hero; s.ctaImg = m.cta
+  ;['areas', 'steps', 'results'].forEach((k) => s[k].forEach((it, i) => { it.img = m[k][i] }))
+})
+
 export const SERVICE_LIST = SERVICE_NAV.map((n) => SERVICES[n.to.split('/').pop()])
 
 // ---------------------------------------------------------------- System
@@ -386,3 +395,5 @@ export const CONTACT_TYPES = ['Marktanalyse', 'Immobilienbewertung', 'Strategisc
 
 // Schritte der Kette mit der Kurzbeschreibung der zugehörigen Leistung (vorhandener Kundentext).
 export const CHAIN_CARDS = CHAIN.map((c, i) => ({ ...c, d: SERVICE_LIST[i].card }))
+
+;['steps', 'why', 'cases'].forEach((k) => SYSTEM[k].forEach((it, i) => { it.img = SYSTEM_IMG[k][i] }))

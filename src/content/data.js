@@ -1,3 +1,4 @@
+import { INSIGHTS_IMG } from './images.js'
 // Inhalte und Auswahllisten. Keine erfundenen Zahlen, Referenzen oder Unternehmensdaten.
 export const REGIONS = [
   { id: 'bw', name: 'Baden-Württemberg' }, { id: 'by', name: 'Bayern' }, { id: 'be', name: 'Berlin' },
@@ -63,7 +64,7 @@ export const REPORT_FAQ = [
 
 export const ARTICLES = [
   {
-    slug: 'off-market-verstehen', cat: 'Off-Market', title: 'Off-Market verstehen', img: '/media/real/eingang-travertin.webp',
+    slug: 'off-market-verstehen', cat: 'Off-Market', title: 'Off-Market verstehen', img: INSIGHTS_IMG.articles['off-market-verstehen'],
     teaser: 'Was Off-Market bedeutet, wie der Zugang funktioniert und worauf Sie achten sollten.',
     sections: [
       { h: 'Was bedeutet Off-Market?', p: ['Off-Market-Immobilien werden nicht über öffentliche Immobilienportale vermarktet. Der Kreis der Interessenten ist begrenzt, die Ansprache erfolgt persönlich.'] },
@@ -73,7 +74,7 @@ export const ARTICLES = [
     steps: 'Wenn Sie wissen möchten, wie ein Objekt eingeordnet werden kann, ist eine Immobilienbewertung der nächste Schritt.',
   },
   {
-    slug: 'immobilien-bewerten', cat: 'Immobilienbewertung', title: 'Immobilien bewerten', img: '/media/real/begutachtung-travertin.webp',
+    slug: 'immobilien-bewerten', cat: 'Immobilienbewertung', title: 'Immobilien bewerten', img: INSIGHTS_IMG.articles['immobilien-bewerten'],
     teaser: 'Marktwerteinschätzung und Gutachten unterscheiden – und typische Bewertungsverfahren einordnen.',
     sections: [
       { h: 'Marktwerteinschätzung ist kein Gutachten', p: ['Eine Marktwerteinschätzung gibt eine fundierte Orientierung. Ein verbindliches Gutachten wird von einem dafür qualifizierten Sachverständigen erstellt und ist eine eigene Leistung.'] },
@@ -83,7 +84,7 @@ export const ARTICLES = [
     steps: 'Bei jeder Bewertung werden Herkunft von Daten und Annahmen nachvollziehbar benannt.',
   },
   {
-    slug: 'potenziale-einordnen', cat: 'Entwicklungspotenziale', title: 'Potenziale einordnen', img: '/media/real/baulucke.webp',
+    slug: 'potenziale-einordnen', cat: 'Entwicklungspotenziale', title: 'Potenziale einordnen', img: INSIGHTS_IMG.articles['potenziale-einordnen'],
     teaser: 'Wie sich Entwicklungspotenziale systematisch und ohne Versprechen einordnen lassen.',
     sections: [
       { h: 'Potenzial ist keine Zusage', p: ['Potenziale beschreiben Möglichkeiten, keine Ergebnisse. Ob sie sich realisieren lassen, hängt von Baurecht, Zustand, Markt und Finanzierung ab.'] },

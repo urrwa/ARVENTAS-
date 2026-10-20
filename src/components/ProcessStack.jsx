@@ -5,7 +5,7 @@ import Letters from './Letters.jsx'
 
 // Nach Foreal: Intro mit großer Wortmarke, darunter laufen hohe Fotokarten normal durch,
 // während Gebäudefoto und Text rechts stehen bleiben. Grund bleibt Marineblau.
-const IMGS = ['real/frankfurt-main', 'real/begutachtung-travertin', 'real/baulucke', 'real/modell-dunkel', 'real/eingang-travertin']
+import { HOME } from '../content/images.js'
 const BG = '/media/turm.webp'
 
 export default function ProcessStack({ steps, lead, active = -1, facts, links }) {
@@ -40,7 +40,7 @@ export default function ProcessStack({ steps, lead, active = -1, facts, links })
         <ol className="fl-cards">
           {steps.map((s, i) => (
             <li key={s.t} className={`fl-card${i === active ? ' on' : ''}`} aria-current={i === active ? 'step' : undefined} style={{ '--i': i }}>
-              <img src={`/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" />
+              <img src={HOME.process[i % HOME.process.length]} alt="" loading="lazy" decoding="async" />
               <span className="fl-info">
                 <span className="fl-row"><b>{s.t}</b><i>{String(i + 1).padStart(2, '0')}</i></span>
                 {s.d && <span className="fl-d">{s.d}</span>}

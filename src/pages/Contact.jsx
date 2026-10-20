@@ -1,3 +1,4 @@
+import { PAGES } from '../content/images.js'
 import { useSearchParams } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
@@ -22,7 +23,7 @@ export default function Contact() {
   return (
     <>
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns Immobilienpotenziale klarer einordnen: Anfrage senden oder Strategiegespräch anfragen." />
-      <PageHero tall fadeOut image="/media/real/besprechungsraum.webp" eyebrow="Kontakt" title="Lassen Sie uns Immobilienpotenziale klarer einordnen."
+      <PageHero tall fadeOut image={PAGES.kontakt.hero} eyebrow="Kontakt" title="Lassen Sie uns Immobilienpotenziale klarer einordnen."
         lead="Strukturierte Analyse, klare Einordnung." />
       <Sec id="anfrage" className="gstage">
         <div className="contact-grid2">
@@ -49,7 +50,7 @@ export default function Contact() {
           </aside>
         </div>
       </Sec>
-      <CtaBand image="/media/real/buero-daemmerung.webp" title="Bereit für eine strukturierte Einschätzung?" text="Senden Sie uns Ihre Anfrage und lassen Sie uns prüfen, welches Potenzial in Ihrem Markt, Objekt oder Projekt steckt." btn="Anfrage senden" to="/kontakt#anfrage" />
+      <CtaBand image={PAGES.kontakt.cta} title="Bereit für eine strukturierte Einschätzung?" text="Senden Sie uns Ihre Anfrage und lassen Sie uns prüfen, welches Potenzial in Ihrem Markt, Objekt oder Projekt steckt." btn="Anfrage senden" to="/kontakt#anfrage" />
     </>
   )
 }

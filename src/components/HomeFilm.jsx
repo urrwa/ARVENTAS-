@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
 import FilmModal from './FilmModal.jsx'
+import { HOME } from '../content/images.js'
 
 // Startseiten-Kopf (Vorbild Rivos): Der Film läuft von selbst in Dauerschleife, Aussage links, Zahlen unten links, Karte unten rechts.
 function CountUp({ to }) {
@@ -55,7 +56,7 @@ export default function HomeFilm() {
             <li><b>$<CountUp to={10} />M</b><span>Projektvolumen</span></li>
           </ul>
           <Link to="/leistungen" className="hf-mini">
-            <img src="/media/real/eingang-stein.webp" alt="" width="120" height="120" loading="lazy" decoding="async" />
+            <img src={HOME.miniCard} alt="" width="120" height="120" loading="lazy" decoding="async" />
             <span>Ein System für bessere Immobilienentscheidungen.</span>
             <em>Leistungen ansehen <i aria-hidden="true">→</i></em>
           </Link>

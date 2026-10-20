@@ -730,6 +730,8 @@ export default {
  "Bewertung, welche Zielgruppen im Markt aktiv sind und welche Nachfrage tatsächlich besteht.": "Assessment of which target groups are active in the market and what demand actually exists.",
  "Bewertungsbereiche": "Areas of valuation",
  "Wohnhaus mit Travertin-Fassade am Abend": "Residential building with travertine facade in the evening",
+ "Beratungstisch mit Gebäudemodell": "Consulting table with a building model",
+ "Gläserner Büroeingang am Abend": "Glass office entrance in the evening",
  "Bürogebäude am Abend": "Office building in the evening",
  "Chancen & Risiken": "Opportunities & risks",
  "Chancen und Grenzen des Vorhabens werden sichtbar gemacht.": "Opportunities and limits of the project are made visible.",
