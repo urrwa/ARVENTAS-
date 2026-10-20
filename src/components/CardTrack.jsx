@@ -38,7 +38,7 @@ export default function CardTrack({ items }) {
   return (
     <section className="ct" ref={sec}>
       <div className="ct-stick">
-        <img className="ct-bg" src="/media/buero-abend-2.webp" alt="" loading="lazy" decoding="async" />
+        <img className="ct-bg" src="/media/real/buero-daemmerung.webp" alt="" loading="lazy" decoding="async" />
         <div className="ct-track" ref={track}>
           {items.map((it, i) => (
             <article key={it.t} className="ct-card">

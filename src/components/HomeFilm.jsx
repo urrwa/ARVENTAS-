@@ -55,7 +55,7 @@ export default function HomeFilm() {
             <li><b>$<CountUp to={10} />M</b><span>Projektvolumen</span></li>
           </ul>
           <Link to="/leistungen" className="hf-mini">
-            <img src="/media/gal-4.webp" alt="" width="120" height="120" loading="lazy" decoding="async" />
+            <img src="/media/real/eingang-stein.webp" alt="" width="120" height="120" loading="lazy" decoding="async" />
             <span>Ein System für bessere Immobilienentscheidungen.</span>
             <em>Leistungen ansehen <i aria-hidden="true">→</i></em>
           </Link>

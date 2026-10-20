@@ -12,13 +12,13 @@ export default function System() {
   return (
     <>
       <Seo title="System | ARVENTAS" description="Ein klares System für bessere Immobilienentscheidungen: vom Marktsignal zur strategischen Einordnung." />
-      <PageHero image="/media/cta-abend-2.webp" eyebrow="System" title="Ein klares System für bessere Immobilienentscheidungen."
+      <PageHero image="/media/real/modell-skyline.webp" eyebrow="System" title="Ein klares System für bessere Immobilienentscheidungen."
         lead="Vom Marktsignal zur klaren Strategie.">
         <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn></div>
       </PageHero>
 
       <Sec eyebrow="Warum ein System" title="Immobilienentscheidungen brauchen Struktur, nicht Vermutungen.">
-        <Split img="/media/buero-abend-2.webp" alt="Besprechungsraum am Abend">
+        <Split img="/media/real/lounge-fenster.webp" alt="Lounge hinter Glasfassade am Abend">
           <p className="rv">Viele Immobilienentscheidungen basieren auf fragmentierten Informationen: einem Standort, einem Preis, einem Kontakt, einem Markttrend oder einer einzelnen Gelegenheit.</p>
           <p className="rv">ARVENTAS betrachtet diese Elemente nicht isoliert. Wir verbinden sie zu einem strukturierten System, das unseren Kunden zeigt, wo Potenzial besteht, wie es bewertet werden sollte und welcher nächste Schritt sinnvoll ist.</p>
           <GoldLine>Struktur ersetzt Zufall.</GoldLine>
@@ -43,7 +43,7 @@ export default function System() {
         <CaseAccordion items={SYSTEM.cases} />
       </Sec>
 
-      <CtaBand image="/media/cta-abend-1.webp" title="Bereit, Ihre nächste Immobilienentscheidung zu strukturieren?" text="ARVENTAS unterstützt Sie dabei, Märkte, Immobilien und Entwicklungschancen durch ein klares System zu bewerten – bevor wichtige Entscheidungen getroffen werden." />
+      <CtaBand image="/media/real/buero-sonnenuntergang.webp" title="Bereit, Ihre nächste Immobilienentscheidung zu strukturieren?" text="ARVENTAS unterstützt Sie dabei, Märkte, Immobilien und Entwicklungschancen durch ein klares System zu bewerten – bevor wichtige Entscheidungen getroffen werden." />
     </>
   )
 }

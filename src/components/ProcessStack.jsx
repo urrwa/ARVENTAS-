@@ -5,7 +5,7 @@ import Letters from './Letters.jsx'
 
 // Nach Foreal: Intro mit großer Wortmarke, darunter laufen hohe Fotokarten normal durch,
 // während Gebäudefoto und Text rechts stehen bleiben. Grund bleibt Marineblau.
-const IMGS = ['gal-5', 'buero-abend-2', 'cta-abend-2', 'buero-abend-1', 'gal-2']
+const IMGS = ['real/frankfurt-main', 'real/begutachtung-travertin', 'real/baulucke', 'real/modell-dunkel', 'real/eingang-travertin']
 const BG = '/media/turm.webp'
 
 export default function ProcessStack({ steps, lead, active = -1, facts, links }) {

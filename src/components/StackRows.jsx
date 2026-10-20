@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 // Nummerierte Zeilen: Zahl, Titel mit Text, Bild rechts. Beim Scrollen öffnet sich das Bild von unten, die Linie zeichnet sich (Vorbild Haven).
-const IMGS = ['gal-2', 'gal-4', 'gal-5', 'gal-6', 'gal-8', 'gal-3', 'gal-7']
+const IMGS = ['real/begutachtung-travertin', 'real/modell-skyline', 'real/eingang-travertin', 'real/karte', 'real/glasfassaden', 'real/modell-dunkel', 'real/baulucke']
 
 export default function StackRows({ items }) {
   const root = useRef(null)

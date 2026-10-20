@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 // Zielgruppen als Bühne (Vorbild Vistahaven): Das aktive Foto steht groß, die übrigen Punkte stehen als schmale, senkrechte Reiter daneben.
 // Beim Scrollen öffnet sich ein Punkt nach dem anderen; Pfeile und Reiter springen direkt dorthin. Fotos sind die vom Auftraggeber gelieferten.
-const IMGS = ['/media/gal-6.webp', '/media/gal-7.webp', '/media/gal-5.webp', '/media/gal-8.webp', '/media/buero-abend-1.webp']
+const IMGS = ['/media/real/baulucke.webp', '/media/real/buero-tag.webp', '/media/real/glasfassaden.webp', '/media/real/eingang-stein.webp', '/media/real/besprechungsraum.webp']
 const nn = (i) => String(i + 1).padStart(2, '0')
 
 export default function AudienceCards({ items }) {

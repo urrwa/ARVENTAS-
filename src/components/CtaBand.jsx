@@ -3,7 +3,7 @@ import { Btn } from './ui.jsx'
 import Letters from './Letters.jsx'
 
 // Abschlusskarte (Vorbild Rivos): Das Foto öffnet sich beim Scrollen von oben nach unten, Aussage links, ein Button rechts.
-export default function CtaBand({ image = '/media/cta-abend-1.webp', title = 'Bereit für bessere Immobilienentscheidungen?', btn = 'Potenzial analysieren', to = '/kontakt' }) {
+export default function CtaBand({ image = '/media/real/buero-sonnenuntergang.webp', title = 'Bereit für bessere Immobilienentscheidungen?', btn = 'Potenzial analysieren', to = '/kontakt' }) {
   const ref = useRef(null)
   useEffect(() => {
     const el = ref.current

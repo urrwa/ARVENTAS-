@@ -12,7 +12,7 @@ export default function About() {
   return (
     <>
       <Seo title="Über uns | ARVENTAS" description="ARVENTAS steht für Struktur, Strategie und nachhaltige Immobilienentwicklung." />
-      <PageHero image="/media/buero-abend-2.webp" eyebrow="Über uns" title="Struktur. Strategie. Entwicklung."
+      <PageHero image="/media/real/lounge-gespraech.webp" eyebrow="Über uns" title="Struktur. Strategie. Entwicklung."
         lead="Immobilienpotenziale strukturiert bewerten und entwickeln.">
         <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn></div>
       </PageHero>
@@ -23,13 +23,13 @@ export default function About() {
           <div className="ab-studio-txt">
             <ScrollWords className="ab-lead" text="Wir schaffen Klarheit, bevor Entscheidungen getroffen werden. Standort, Nachfrage, Preisentwicklung, Risiko, Vermarktung und Entwicklungspotenzial bringen wir in eine klare Struktur. So werden Potenziale sichtbar und Risiken besser einzuordnen." />
           </div>
-          <div className="ab-studio-img"><img src="/media/buero-abend-1.webp" alt="Lounge hinter Glasfassade am Abend" loading="lazy" decoding="async" /></div>
+          <div className="ab-studio-img"><img src="/media/real/lounge-fenster.webp" alt="Lounge hinter Glasfassade am Abend" loading="lazy" decoding="async" /></div>
         </div>
       </section>
 
       <section className="ab-dark">
         <div className="wrap ab-dark-in">
-          <div className="ab-dark-img"><img src="/media/cta-abend-1.webp" alt="Bürogebäude am Abend" loading="lazy" decoding="async" /></div>
+          <div className="ab-dark-img"><img src="/media/real/eingang-travertin.webp" alt="Wohnhaus mit Travertin-Fassade am Abend" loading="lazy" decoding="async" /></div>
           <div className="ab-dark-txt">
             <p className="ab-label">(Unsere Haltung)</p>
             <h2 className="ab-h">Nicht schneller entscheiden. Besser entscheiden.</h2>
@@ -47,7 +47,7 @@ export default function About() {
       </section>
 
       <section className="ab-mv">
-        <img className="ab-mv-bg" src="/media/cta-abend-2.webp" alt="" loading="lazy" decoding="async" />
+        <img className="ab-mv-bg" src="/media/real/frankfurt-nacht.webp" alt="" loading="lazy" decoding="async" />
         <div className="wrap ab-mv-cards">
           <article>
             <h3>Partnernetzwerk</h3>
@@ -76,7 +76,7 @@ export default function About() {
         </div>
       </section>
 
-      <CtaBand image="/media/cta-abend-2.webp" title="Lassen Sie uns Immobilienpotenziale klarer einordnen." text="ARVENTAS unterstützt Sie dabei, Märkte, Objekte und Entwicklungschancen besser zu verstehen und strategisch nutzbar zu machen." />
+      <CtaBand image="/media/real/buero-daemmerung.webp" title="Lassen Sie uns Immobilienpotenziale klarer einordnen." text="ARVENTAS unterstützt Sie dabei, Märkte, Objekte und Entwicklungschancen besser zu verstehen und strategisch nutzbar zu machen." />
     </>
   )
 }

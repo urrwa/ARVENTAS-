@@ -18,7 +18,7 @@ export default function Footer() {
     <footer className="ftr3" ref={root}>
       <div className="wrap">
         <div className="ftr3-top">
-          <div className="ftr3-photo"><img src="/media/gal-4.webp" alt="" loading="lazy" decoding="async" /></div>
+          <div className="ftr3-photo"><img src="/media/real/eingang-stein.webp" alt="" loading="lazy" decoding="async" /></div>
           <div className="ftr3-mid">
             <h2 className="ftr3-h">Klarheit vor jeder Entscheidung.</h2>
             <p>Strategische Immobilienentwicklung mit System.</p>

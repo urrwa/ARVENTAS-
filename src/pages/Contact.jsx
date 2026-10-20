@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <>
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns Immobilienpotenziale klarer einordnen: Anfrage senden oder Strategiegespräch anfragen." />
-      <PageHero tall fadeOut image="/media/buero-abend-1.webp" eyebrow="Kontakt" title="Lassen Sie uns Immobilienpotenziale klarer einordnen."
+      <PageHero tall fadeOut image="/media/real/besprechungsraum.webp" eyebrow="Kontakt" title="Lassen Sie uns Immobilienpotenziale klarer einordnen."
         lead="Strukturierte Analyse, klare Einordnung." />
       <Sec id="anfrage" className="gstage">
         <div className="contact-grid2">
@@ -49,7 +49,7 @@ export default function Contact() {
           </aside>
         </div>
       </Sec>
-      <CtaBand image="/media/cta-abend-2.webp" title="Bereit für eine strukturierte Einschätzung?" text="Senden Sie uns Ihre Anfrage und lassen Sie uns prüfen, welches Potenzial in Ihrem Markt, Objekt oder Projekt steckt." btn="Anfrage senden" to="/kontakt#anfrage" />
+      <CtaBand image="/media/real/buero-daemmerung.webp" title="Bereit für eine strukturierte Einschätzung?" text="Senden Sie uns Ihre Anfrage und lassen Sie uns prüfen, welches Potenzial in Ihrem Markt, Objekt oder Projekt steckt." btn="Anfrage senden" to="/kontakt#anfrage" />
     </>
   )
 }

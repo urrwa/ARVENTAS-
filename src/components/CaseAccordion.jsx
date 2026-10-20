@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { Btn } from './ui.jsx'
 
 // Aufklapp-Liste: Die aktive Zeile öffnet sich zu einem großen Bild mit Titel und Detailkarte, die anderen bleiben schmale Zeilen mit Vorschaubild (Vorbild Showcase-Accordion).
-const IMGS = ['cta-abend-1', 'buero-abend-2', 'cta-abend-2', 'buero-abend-1', 'gal-5']
+const IMGS = ['real/baulucke', 'real/modell-skyline', 'real/eingang-travertin', 'real/glasfassaden', 'real/besprechungsraum']
 
 export default function CaseAccordion({ items }) {
   const [open, setOpen] = useState(0)

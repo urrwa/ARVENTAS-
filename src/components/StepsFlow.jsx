@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 // Schlangenlinie durch die Schritte: Text und Bild wechseln die Seite, die goldene Linie färbt sich beim Scrollen ein (Vorbild steps-flow).
-const IMGS = ['cta-abend-1', 'buero-abend-2', 'gal-5', 'buero-abend-1', 'cta-abend-2']
+const IMGS = ['real/baulucke', 'real/modell-skyline', 'real/karte', 'real/glasfassaden', 'real/besprechungsraum']
 
 export default function StepsFlow({ items, title }) {
   const root = useRef(null)

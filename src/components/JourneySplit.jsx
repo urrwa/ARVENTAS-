@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 // Geteilte Bühne: links bleibt das Bild stehen und wechselt, rechts scrollen die Schritte (Titel oben, Text unten). Vorbild Archter.
-const IMGS = ['gal-1', 'gal-2', 'gal-3', 'gal-5', 'gal-7']
+const IMGS = ['real/frankfurt-main', 'real/begutachtung-travertin', 'real/baulucke', 'real/modell-dunkel', 'real/eingang-travertin']
 export default function JourneySplit({ items, label, title }) {
   const [act, setAct] = useState(0)
   const blocks = useRef([])

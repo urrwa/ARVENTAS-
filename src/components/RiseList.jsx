@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Btn } from './ui.jsx'
 
 // Gepinnte Liste: Zeilen setzen sich nacheinander, ein breiter Bildstreifen wächst von unten und wechselt mit der aktiven Zeile (Vorbild Arlo).
-const IMGS = ['cta-abend-1', 'buero-abend-2', 'cta-abend-2', 'buero-abend-1', 'gal-5']
+const IMGS = ['real/baulucke', 'real/modell-skyline', 'real/eingang-travertin', 'real/glasfassaden', 'real/besprechungsraum']
 
 export default function RiseList({ items, title, cta }) {
   const sec = useRef(null)

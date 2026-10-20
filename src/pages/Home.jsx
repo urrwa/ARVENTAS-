@@ -18,7 +18,7 @@ const PILLARS = [
 const FACTS = [
   { n: '5', l: 'Leistungen', d: 'Von der Marktanalyse bis zur Development Intelligence.', img: 'turm', pos: '50% 30%' },
   { n: '5', l: 'Schritte', d: 'Vom Markt bis zur Steuerung von Vermarktung und Entwicklung.', img: 'turm', pos: '50% 78%' },
-  { n: '1', l: 'System', d: 'Ein klarer Entscheidungsweg statt Einzelmaßnahmen.', img: 'cta-abend-2' },
+  { n: '1', l: 'System', d: 'Ein klarer Entscheidungsweg statt Einzelmaßnahmen.', img: 'real/modell-dunkel' },
 ]
 
 // Redaktioneller Abschnitt auf hellem Grund: Beschriftung, großer Blocksatz mit Wort-Reveal, kleines Bild mit Kurztext.
@@ -59,7 +59,7 @@ export default function Home() {
         <AudienceCards items={AUDIENCES} />
       </Sec>
 
-      <CtaBand image="/media/cta-abend-1.webp" />
+      <CtaBand image="/media/real/buero-sonnenuntergang.webp" />
     </>
   )
 }
