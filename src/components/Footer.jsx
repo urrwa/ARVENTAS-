@@ -6,20 +6,24 @@ import { HOME } from '../content/images.js'
 // Fuß nach dem Vorbild Archter: Foto links (springt beim Erscheinen auf), Claim in der Mitte, Seitenliste rechts, große Wortmarke unten.
 export default function Footer() {
   const { openSettings } = useConsent()
-  const root = useRef(null)
+  const root = useRef(null), photo = useRef(null)
   useEffect(() => {
     const el = root.current
     if (!el) return
     if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { el.classList.add('in'); return }
     const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('in'); io.disconnect() } }, { threshold: 0.18 })
     io.observe(el)
-    return () => io.disconnect()
+    // Foto springt bei jedem Erscheinen neu auf (Pop-up)
+    const ph = photo.current
+    const io2 = ph ? new IntersectionObserver(([e]) => ph.classList.toggle('pop', e.isIntersecting), { threshold: 0.5 }) : null
+    io2 && io2.observe(ph)
+    return () => { io.disconnect(); io2 && io2.disconnect() }
   }, [])
   return (
     <footer className="ftr3" ref={root}>
       <div className="wrap">
         <div className="ftr3-top">
-          <div className="ftr3-photo"><img src={HOME.footer} alt="" loading="lazy" decoding="async" /></div>
+          <div className="ftr3-photo" ref={photo}><img src={HOME.footer} alt="" loading="lazy" decoding="async" /></div>
           <div className="ftr3-mid">
             <h2 className="ftr3-h">Klarheit vor jeder Entscheidung.</h2>
             <p>Strategische Immobilienentwicklung mit System.</p>
