@@ -2488,3 +2488,10 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .fsl-no { white-space: nowrap; }
 .fsl-next button { width: clamp(110px, 11.5vw, 170px); }
 .fsl-next span { hyphens: manual; overflow-wrap: normal; font-size: clamp(11px, .95vw, 13px); }
+
+/* Einheitliche Schrift für Überschriften auf allen Seiten: ruhig, in Groß- und Kleinschreibung, großzügig gesetzt */
+.h1, .phero .h1 { text-transform: none; letter-spacing: -.015em; font-weight: 500; font-size: clamp(34px, 5.2vw, 78px); line-height: 1.04; }
+.h2 { text-transform: none; letter-spacing: -.012em; font-weight: 500; font-size: clamp(28px, 3.5vw, 52px); line-height: 1.1; max-width: 28ch; }
+.sec:not(.light) .sec-head { max-width: 900px; }
+.hl-row h3 { text-transform: none; letter-spacing: -.01em; }
+.eyebrow { letter-spacing: .2em; }
