@@ -2779,3 +2779,10 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .kl-full .kl-row.on small { color: var(--gold-btn); }
 @media (max-width: 760px) { .kl-full { min-height: 0; } .kl-full .kl-list { width: 100%; height: auto; padding-top: 0; } .kl-full .kl-row { padding-block: 22px; } .kl-full .kl-row.on { background: var(--marine); } .kl-full .kl-img { aspect-ratio: 4 / 3; } }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Startseite: ruhigere Abstände, feine Linie zwischen gleichfarbigen Abschnitten */
+.hf ~ .sec { padding-block: clamp(56px, 6vw, 96px); }
+.hf ~ .doors-sec { padding-bottom: 0; }
+.hf ~ .sec.dark + .sec.dark { padding-top: clamp(48px, 5vw, 80px); }
+.hf ~ .sec.dark + .sec.dark::before { content: ""; position: absolute; top: 0; left: var(--gut); right: var(--gut); height: 1px; background: rgba(245, 243, 239, .14); }
+.hf ~ .sec .sec-head { margin-bottom: clamp(28px, 3.6vw, 52px); }
