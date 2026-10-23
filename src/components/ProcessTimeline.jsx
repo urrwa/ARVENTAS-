@@ -1,54 +1,55 @@
 import { useEffect, useRef, useState } from 'react'
 import { OWNER_PROCESS, INVESTOR_PROCESS } from '../content/data.js'
 
-// Zwei nachvollziehbare Prozesse als laufende Schrittfolge: großer Zähler links, rechts die Schritte mit wanderndem Marker und Fortschrittslinie.
-// Wechselt von selbst, solange der Abschnitt sichtbar ist; Klick springt zum Schritt. Ohne Bewegung (reduzierte Bewegung) sind alle Schritte offen.
+// Zwei nachvollziehbare Prozesse als Karten, die beim Scrollen nacheinander einlaufen (links/rechts im Wechsel); frühere Karten bleiben gedimmt stehen.
+// Schmale Bildschirme und reduzierte Bewegung: alle Karten stehen sofort, ohne Fixierung.
+const pic = (k) => `/media/p/${k}.webp`
+const IMG = {
+  owner: ['home.proc.0', 'home.proc.1', 'home.proc.2', 'home.proc.3', 'home.proc.4', 'sys.step.0'].map(pic),
+  investor: ['bw.step.0', 'bw.step.1', 'bw.step.2', 'bw.step.3', 'bw.step.4', 'sa.step.0'].map(pic),
+}
 export default function ProcessTimeline({ initial = 'owner' }) {
   const [who, setWho] = useState(initial)
   const [a, setA] = useState(0)
-  const list = useRef(null), root = useRef(null), live = useRef(false), hold = useRef(false)
+  const [flat, setFlat] = useState(false)
+  const box = useRef(null)
   const steps = who === 'owner' ? OWNER_PROCESS : INVESTOR_PROCESS
   const n = steps.length
-  const reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches
   useEffect(() => {
-    const el = root.current
-    const io = 'IntersectionObserver' in window ? new IntersectionObserver(([e]) => { live.current = e.isIntersecting }, { threshold: 0.3 }) : null
-    io && io.observe(el)
-    return () => io && io.disconnect()
-  }, [])
-  useEffect(() => {
-    if (reduce) return
-    const id = setInterval(() => { if (live.current && !hold.current) setA((v) => (v + 1) % n) }, 3600)
-    return () => clearInterval(id)
-  }, [n, reduce, who])
-  useEffect(() => {
-    const ol = list.current; if (!ol) return
-    const place = () => { const li = ol.children[a + 1]; if (li) ol.style.setProperty('--y', (li.offsetTop + 14) + 'px') }
-    place(); const t = setTimeout(place, 560)
-    addEventListener('resize', place)
-    return () => { clearTimeout(t); removeEventListener('resize', place) }
-  }, [a, who])
+    const mq = matchMedia('(max-width: 860px), (prefers-reduced-motion: reduce), (max-height: 640px)')
+    const el = box.current
+    let raf = 0
+    const calc = () => {
+      raf = 0
+      if (mq.matches) return
+      const r = el.getBoundingClientRect(), span = r.height - innerHeight
+      const p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0
+      setA(Math.min(n - 1, Math.floor(p * n * 0.999)))
+    }
+    const tick = () => { raf = raf || requestAnimationFrame(calc) }
+    const mode = () => { setFlat(mq.matches); tick() }
+    mode()
+    addEventListener('scroll', tick, { passive: true }); addEventListener('resize', mode)
+    return () => { removeEventListener('scroll', tick); removeEventListener('resize', mode); cancelAnimationFrame(raf) }
+  }, [n])
   const pick = (w) => { setWho(w); setA(0) }
   return (
-    <div ref={root}>
-      <div className="toggle" role="tablist" aria-label="Prozess wählen">
-        <button type="button" role="tab" aria-selected={who === 'owner'} onClick={() => pick('owner')}>Für Eigentümer</button>
-        <button type="button" role="tab" aria-selected={who === 'investor'} onClick={() => pick('investor')}>Für Investoren</button>
-      </div>
-      <div className="pj" onMouseEnter={() => { hold.current = true }} onMouseLeave={() => { hold.current = false }}>
-        <div className="pj-count" aria-hidden="true">
-          <b key={who + a}>{String(a + 1).padStart(2, '0')}</b>
-          <span>/ {String(n).padStart(2, '0')}</span>
+    <div ref={box} className={'prc' + (flat ? ' flat' : '')} style={{ '--n': n }}>
+      <div className="prc-stage">
+        <div className="toggle" role="tablist" aria-label="Prozess wählen">
+          <button type="button" role="tab" aria-selected={who === 'owner'} onClick={() => pick('owner')}>Für Eigentümer</button>
+          <button type="button" role="tab" aria-selected={who === 'investor'} onClick={() => pick('investor')}>Für Investoren</button>
         </div>
-        <ol ref={list} className="pj-list" style={{ '--a': a, '--n': n }}>
-          <i className="pj-dot" aria-hidden="true" />
+        <ol className="prc-grid">
           {steps.map((s, i) => (
-            <li key={who + s.t} className={i === a || reduce ? 'on' : i < a ? 'done' : ''} style={{ '--i': i }}>
-              <button type="button" aria-expanded={i === a || reduce} onClick={() => setA(i)}>
-                <small>{String(i + 1).padStart(2, '0')}</small>
+            <li key={who + s.t} className={flat || i < a ? 'seen' : i === a ? 'now' : ''} style={{ '--side': i % 2 ? 1 : -1 }}>
+              <img src={IMG[who][i]} alt="" loading="lazy" />
+              <div>
                 <b>{s.t}</b>
-              </button>
-              <div className="pj-d"><p>{s.d}</p><u key={a} /></div>
+                <p>{s.d}</p>
+                <small>Schritt {String(i + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</small>
+              </div>
+              <span aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
             </li>
           ))}
         </ol>
