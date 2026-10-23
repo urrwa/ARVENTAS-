@@ -2703,3 +2703,11 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @keyframes ehUp { from { opacity: 0; transform: translateY(40px); } }
 @media (max-width: 760px) { .eh-cards { grid-template-columns: 1fr 1fr; } .eh-cards li:nth-child(n+3) { display: none; } .eh-cards li { aspect-ratio: 3 / 4; } }
 @media (prefers-reduced-motion: reduce) { .eh-line, .eh-cards li { animation: none; } }
+/* Seitenkopf kompakter: keine unnötigen Leerflächen, Bilderreihe schon im ersten Bildschirm sichtbar */
+.eh { padding-top: calc(var(--header-h, 76px) + clamp(28px, 4.5vw, 64px)); }
+.eh-eb { margin-bottom: clamp(16px, 2vw, 26px); }
+.eh-h { font-size: clamp(38px, 5.4vw, 82px); }
+.eh-p { margin-top: clamp(16px, 2vw, 26px); }
+.eh .btn-row { margin-top: clamp(18px, 2vw, 26px); }
+.eh-line { margin-top: clamp(28px, 4vw, 52px); }
+.eh-cards { margin-top: clamp(20px, 2.4vw, 32px); }
