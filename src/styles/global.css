@@ -2893,3 +2893,20 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .kl-full .kl-list li { background: var(--marine); border-bottom: 1px solid #33425a; }
 .kl-full .kl-list li:has(.kl-row.on) { background: transparent; border-bottom-color: rgba(245, 243, 239, .25); }
 .kl-full .kl-list li:last-child { border-bottom: 0; }
+
+/* Ablauf: hohe Fotokarten laufen nacheinander von rechts ein und bleiben nebeneinander stehen */
+.prc-grid { display: flex; gap: 0; grid-template-columns: none; overflow: hidden; border-radius: clamp(14px, 1.6vw, 24px); }
+.prc-grid li { display: block; flex: 1 1 0; min-width: 0; height: min(66vh, 560px); padding: 0; border: 0; border-radius: 0; border-left: 1px solid rgba(245, 243, 239, .18); opacity: 0; transform: translateX(70vw); transition: opacity 700ms ease, transform 1100ms cubic-bezier(.2, .7, .2, 1); }
+.prc-grid li:first-child { border-left: 0; }
+.prc-grid li.now, .prc-grid li.seen, .prc.flat .prc-grid li { opacity: 1; transform: none; border-color: rgba(245, 243, 239, .18); }
+.prc-grid li:not(.now):not(.seen) { opacity: 0; transform: translateX(70vw); }
+.prc.flat .prc-grid li { transform: none; opacity: 1; }
+.prc-grid img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.prc-grid li::after { content: ""; position: absolute; inset: 0; background: rgba(11, 11, 11, .5); }
+.prc-grid span { position: absolute; z-index: 1; top: 22px; left: 22px; right: auto; bottom: auto; font-family: var(--font-head); font-size: clamp(44px, 4.6vw, 80px); line-height: 1; color: var(--ivory); }
+.prc-grid li > div { position: absolute; z-index: 1; left: 22px; right: 18px; bottom: 22px; display: flex; flex-direction: column; gap: 10px; }
+.prc-grid b { font-size: clamp(18px, 1.5vw, 24px); }
+.prc-grid p { font-size: clamp(13px, 1vw, 15px); color: rgba(245, 243, 239, .85); }
+.prc-grid small { margin-top: 6px; }
+@media (max-width: 860px) { .prc-grid { flex-direction: column; border-radius: 0; overflow: visible; gap: 10px; } .prc-grid li { height: 190px; border-left: 0; border-radius: 14px; overflow: hidden; } .prc-grid span { font-size: 40px; } }
+.prc-grid b { hyphens: auto; overflow-wrap: break-word; font-size: clamp(16px, 1.3vw, 21px); }
