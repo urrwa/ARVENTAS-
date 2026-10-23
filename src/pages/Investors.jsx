@@ -4,8 +4,14 @@ import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq, Tabs } from '../components/ui.jsx'
+import PanelSlider from '../components/PanelSlider.jsx'
 import { INVESTOR_FAQ } from '../content/data.js'
 
+const STEPS = [
+  { eb: 'Schritt 1', t: 'Suchprofil und Auswahl', d: 'Region, Immobilientyp und Budgetband bilden Ihr Suchprofil. Daraus entsteht eine gezielte Auswahl.', img: '/media/p/u-notizbuch.webp' },
+  { eb: 'Schritt 2', t: 'Objektanalyse', d: 'Wert, Potenzial und Risiken werden nachvollziehbar eingeordnet, mit Quellen und Annahmen.', img: '/media/p/u-architekten-modelle.webp' },
+  { eb: 'Schritt 3', t: 'Persönliche Begleitung', d: 'Ein fester Ansprechpartner begleitet Sie von der Prüfung bis zur Entscheidung.', img: '/media/p/u-handschlag-gold.webp' },
+]
 const MATRIX = [
   { id: 'lage', label: 'Lage', q: ['Wie ist die Mikrolage einzuordnen?', 'Welche Entwicklung ist im Umfeld bekannt?', 'Wie gut sind Anbindung und Versorgung?'] },
   { id: 'miete', label: 'Miete', q: ['Wie ist die Mietstruktur aufgebaut?', 'Welche Vertragslaufzeiten bestehen?', 'Wie ist das Mietniveau im Vergleich zum Umfeld einzuordnen?'] },
@@ -33,11 +39,11 @@ export default function InvestorsPage() {
       <section className="sec ivory" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <SectionHead eyebrow="Vorgehen" title="Suchprofil, Analyse und Begleitung." normal />
-          <div className="cols3 rv">
-            <div><h3 className="h3">Suchprofil und Auswahl</h3><p>Region, Immobilientyp und Budgetband bilden Ihr Suchprofil. Daraus entsteht eine gezielte Auswahl.</p></div>
-            <div><h3 className="h3">Objektanalyse</h3><p>Wert, Potenzial und Risiken werden nachvollziehbar eingeordnet, mit Quellen und Annahmen.</p></div>
-            <div><h3 className="h3">Persönliche Begleitung</h3><p>Ein fester Ansprechpartner begleitet Sie von der Prüfung bis zur Entscheidung.</p></div>
-          </div>
+        </div>
+      </section>
+      <PanelSlider label="Vorgehen" items={STEPS} />
+      <section className="sec ivory" style={{ padding: 0 }}>
+        <div className="wrap">
         </div>
       </section>
 
