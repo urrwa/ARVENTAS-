@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* 04 – Interaktiver Objektreport */}
-      <section className="sec dark" aria-labelledby="h-rep">
+      <section className="sec dark wide-sec" aria-labelledby="h-rep">
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Objektreport</p><h2 id="h-rep" className="h2 rv">Ein klares Bild.</h2><p className="lead rv">Datenbasiert analysiert. Persönlich geprüft.</p></header>
           <div className="rv"><ReportViewer id="muster-home" /></div>
@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* 07 – Investoren und Matching */}
-      <section className="sec dark ink" aria-labelledby="h-match">
+      <section className="sec dark ink wide-sec" aria-labelledby="h-match">
         <div className="wrap">
           <SectionHead eyebrow="Für Investoren" title="Nicht jedes Objekt. Das passende." lead="Suchprofil und Immobilieninformationen sinnvoll zusammenführen." />
           <PropertyDashboard />
@@ -135,21 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 08 – Persönliche Verantwortung */}
-      <section className="sec dark stick-under" aria-labelledby="h-team">
-        <div className="wrap">
-          <header className="sec-head"><p className="eyebrow rv">Menschen</p><h2 id="h-team" className="h2 rv">Daten prüfen.<br />Menschen entscheiden.</h2><p className="lead rv">Persönliche Verantwortung hinter jeder freigegebenen Analyse.</p></header>
-          <div className="team">
-            <div className="portrait rv"><div><b>Porträt folgt</b>Platzhalter für ein echtes Editorial-Porträt mit Fachgebiet. Vor Veröffentlichung ersetzen oder ausblenden.</div></div>
-            <div className="profiles rv">
-              <p className="small muted">Platzhalter – bestätigte Profile folgen. Keine erfundenen Namen oder Rollen.</p>
-              <div className="prof"><div className="av" /><div><b>Profil folgt</b><small>Name, Rolle und Fachgebiet nach Bestätigung</small></div></div>
-              <div className="prof"><div className="av" /><div><b>Profil folgt</b><small>Name, Rolle und Fachgebiet nach Bestätigung</small></div></div>
-            </div>
-          </div>
-          <div className="btn-row"><Btn to="/ueber-uns">Unser Team kennenlernen</Btn></div>
-        </div>
-      </section>
+      {/* 08 – Menschen: ausgeblendet, bis bestätigte Porträts und Profile vorliegen (siehe docs/abgleich-masterprompt.md) */}
 
       {/* 09 – Deutschlandweit */}
       <section className="sec dark cover-next gs-sec" aria-labelledby="h-de">
@@ -157,13 +143,13 @@ export default function Home() {
       </section>
 
       {/* 10 – Wissen als Editorial */}
-      <section className="sec ivory wis-sec" aria-labelledby="h-wis">
+      <section className="sec dark wis-sec" aria-labelledby="h-wis">
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Wissen</p><h2 id="h-wis" className="h2 rv">Hinter die Fassade schauen.</h2></header>
         </div>
         <KnowledgeTabs full cat={wcat} setCat={setWcat} />
         <div className="wrap">
-          <div className="btn-row"><Btn to="/wissen" variant="marine">Wissen entdecken</Btn></div>
+          <div className="btn-row"><Btn to="/wissen">Wissen entdecken</Btn></div>
           <p className="small muted" style={{ marginTop: 16 }}>Entwürfe sind gekennzeichnet und keine aktuelle Recherche oder Marktdaten.</p>
         </div>
       </section>

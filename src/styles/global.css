@@ -2881,3 +2881,11 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .hf ~ .sec .choose-list { margin-inline: auto; }
 .own-note, .hf ~ .wis-sec .btn-row { text-align: center; }
 .gs-head .h2, .hf ~ .sec .sec-head .h2 { margin-inline: auto; }
+
+/* Startseite: breite Szenen für Objektreport und Matching, Wissen dunkel, Ablauf zeigt alle Karten von Anfang an */
+.hf ~ .wide-sec > .wrap { max-width: none; padding-inline: clamp(10px, 1.4vw, 24px); }
+.hf ~ .wide-sec .sec-head { max-width: 900px; }
+.hf ~ .wide-sec .rep { min-height: calc(100svh - 300px); }
+.hf ~ .wide-sec .pd { min-height: calc(100svh - 300px); }
+.prc-grid li:not(.now):not(.seen) { opacity: .16; transform: none; }
+.hf ~ .wis-sec { background: var(--marine); }
