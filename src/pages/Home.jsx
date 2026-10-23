@@ -80,15 +80,15 @@ export default function Home() {
       </section>
 
       {/* 03 – Drei Stärken */}
-      <section className="sec dark" aria-labelledby="h-str">
+      <section className="sec dark ss-sec" aria-labelledby="h-str">
         <div className="wrap">
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
-          <StrengthStack items={[
+        </div>
+        <StrengthStack items={[
             { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/u-altstadt.webp', icon: 'key' },
             { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/u-karte.webp', icon: 'chart' },
             { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/u-handschlag-dunkel.webp', icon: 'hand' },
           ]} />
-        </div>
       </section>
 
       {/* 04 – Interaktiver Objektreport */}
