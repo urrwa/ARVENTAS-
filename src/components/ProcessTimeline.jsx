@@ -17,7 +17,7 @@ export default function ProcessTimeline({ initial = 'owner' }) {
   const steps = who === 'owner' ? OWNER_PROCESS : INVESTOR_PROCESS
   const n = steps.length
   useEffect(() => {
-    const mq = matchMedia('(max-width: 860px), (prefers-reduced-motion: reduce), (max-height: 640px)')
+    const mq = matchMedia('(max-width: 860px), (prefers-reduced-motion: reduce)')
     const el = box.current
     let raf = 0
     const calc = () => {
