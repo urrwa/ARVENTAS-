@@ -2712,3 +2712,11 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .eh-line { margin-top: clamp(28px, 4vw, 52px); }
 .eh-cards { margin-top: clamp(20px, 2.4vw, 32px); }
 .eh-line { margin-bottom: 0; }
+/* Seitenkopf kleiner */
+.eh { padding-top: calc(var(--header-h, 76px) + clamp(16px, 2.4vw, 36px)); }
+.eh-eb { font-size: 11px; margin-bottom: clamp(10px, 1.2vw, 16px); }
+.eh-h { font-size: clamp(30px, 3.8vw, 56px); max-width: 16em; }
+.eh-p { font-size: clamp(14px, 1.05vw, 16px); margin-top: clamp(10px, 1.2vw, 16px); max-width: 46ch; }
+.eh .btn-row { margin-top: clamp(14px, 1.6vw, 20px); }
+.eh-line { margin-top: clamp(20px, 2.6vw, 34px); }
+.eh + .sec { padding-top: clamp(40px, 5vw, 72px); }
