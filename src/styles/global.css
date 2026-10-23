@@ -2820,3 +2820,21 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .os-card button:hover { background: var(--gold-btn); color: var(--black); }
 @media (max-width: 760px) { .os { min-height: 480px; } .os-card img { width: 84px; height: 64px; } }
 @media (prefers-reduced-motion: reduce) { .os-p { transition: none !important; } }
+
+/* Startseite: jeder Abschnitt ist eine volle Bildschirmszene */
+.hf ~ .sec:not(.doors-sec):not(.ss-sec):not(.wis-sec) { min-height: calc(100svh - var(--header-h)); display: flex; flex-direction: column; justify-content: center; }
+.hf ~ .sec:not(.doors-sec):not(.ss-sec) > .wrap { width: 100%; }
+.hf ~ .sec.ink { background: var(--black); }
+.hf ~ .sec.ink .dash, .hf ~ .sec.ink .pd { position: relative; z-index: 1; }
+.hf ~ .wis-sec { padding-bottom: 0; }
+.hf ~ .wis-sec .kl-full { margin-top: 0; }
+.hf ~ .wis-sec .btn-row { padding-block: clamp(28px, 4vw, 56px) 0; }
+.hf ~ .wis-sec > .wrap:last-child { padding-bottom: clamp(56px, 6vw, 96px); }
+/* Kontakt: Foto füllt die ganze Szene, Auswahl liegt darüber */
+.hf ~ .sec.ink { position: relative; overflow: hidden; }
+.hf ~ .sec.ink .choose { display: block; }
+.hf ~ .sec.ink .choose-img { position: absolute; inset: 0; margin: 0; aspect-ratio: auto; height: auto; z-index: 0; }
+.hf ~ .sec.ink .choose-img img { width: 100%; height: 100%; object-fit: cover; }
+.hf ~ .sec.ink .choose-img::after { content: ""; position: absolute; inset: 0; background: rgba(11, 11, 11, .62); }
+.hf ~ .sec.ink > .wrap { position: relative; z-index: 1; }
+.hf ~ .sec.ink .choose-list { max-width: 760px; }

@@ -126,7 +126,7 @@ export default function Home() {
       </section>
 
       {/* 07 – Investoren und Matching */}
-      <section className="sec dark" aria-labelledby="h-match">
+      <section className="sec dark ink" aria-labelledby="h-match">
         <div className="wrap">
           <SectionHead eyebrow="Für Investoren" title="Nicht jedes Objekt. Das passende." lead="Suchprofil und Immobilieninformationen sinnvoll zusammenführen." />
           <PropertyDashboard />
@@ -159,17 +159,20 @@ export default function Home() {
       </section>
 
       {/* 10 – Wissen als Editorial */}
-      <section className="sec ivory" aria-labelledby="h-wis">
+      <section className="sec ivory wis-sec" aria-labelledby="h-wis">
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Wissen</p><h2 id="h-wis" className="h2 rv">Hinter die Fassade schauen.</h2></header>
-          <KnowledgeTabs cat={wcat} setCat={setWcat} />
+        </div>
+        <KnowledgeTabs full cat={wcat} setCat={setWcat} />
+        <div className="wrap">
           <div className="btn-row"><Btn to="/wissen" variant="marine">Wissen entdecken</Btn></div>
           <p className="small muted" style={{ marginTop: 16 }}>Entwürfe sind gekennzeichnet und keine aktuelle Recherche oder Marktdaten.</p>
         </div>
       </section>
 
       {/* 11 – Kontaktentscheidung */}
-      <section className="sec dark" aria-labelledby="h-next">
+      <section className="sec dark ink" aria-labelledby="h-next">
+        <div className="choose-img" aria-hidden="true"><img src="/media/p/u-lounge-fenster.webp" alt="" loading="lazy" style={{ objectPosition: '50% 20%' }} /></div>
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Kontakt</p><h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2></header>
           <div className="choose">
@@ -178,7 +181,6 @@ export default function Home() {
               <Link to="/investorenkreis">Investmentprofil erstellen <span className="arr" aria-hidden="true">→</span></Link>
               <Link to="/partner#anfrage">Partnerschaft besprechen <span className="arr" aria-hidden="true">→</span></Link>
             </nav>
-            <div className="choose-img rv"><img src="/media/p/u-lounge-fenster.webp" alt="" loading="lazy" style={{ objectPosition: '50% 20%' }} /></div>
           </div>
           <p className="small" style={{ marginTop: 20 }}>Die Auswahl führt zum passenden Formular.</p>
         </div>
