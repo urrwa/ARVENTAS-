@@ -27,7 +27,7 @@ export default function HomeFilm() {
     if (!v) return
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const mp4 = v.canPlayType('video/mp4; codecs="avc1.42E01E"')
-    const src = !mp4 ? '/media/haus-film.webm' : window.innerWidth < 860 ? '/media/haus-film-sm.mp4' : '/media/haus-film.mp4'
+    const src = !mp4 ? '/media/haus-film-md.webm' : window.innerWidth < 860 ? '/media/haus-film-sm.mp4' : '/media/haus-film-md.mp4'
     // Die große Videodatei erst nach dem Laden der Seite holen, damit Text, Poster und Bilder zuerst da sind.
     const start = () => { v.preload = 'auto'; v.src = src; v.load(); const p = v.play(); p && p.catch(() => {}) }
     let idle = 0, tm = 0

@@ -62,6 +62,13 @@ export default function Home() {
     window.addEventListener('resize', set)
     return () => window.removeEventListener('resize', set)
   }, [])
+  // Bilder weiter unten sofort nach dem Laden der Seite holen, damit sie beim Scrollen schon da sind (statt erst kurz vor dem Sichtbereich).
+  useEffect(() => {
+    const warm = () => document.querySelectorAll('img[loading="lazy"]').forEach((im) => { im.loading = 'eager' })
+    const go = () => { if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2500 }); else setTimeout(warm, 1200) }
+    if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true })
+    return () => window.removeEventListener('load', go)
+  }, [])
   return (
     <>
       <Seo title="ARVENTAS | Off-Market-Immobilien deutschlandweit" description="Ausgewählte Off-Market-Immobilien, fundierte Objektanalysen und persönliche Begleitung für Eigentümer und Investoren in ganz Deutschland." />
