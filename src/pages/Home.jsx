@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
-import HoverList from '../components/HoverList.jsx'
 import HomeFilm from '../components/HomeFilm.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
+import StrengthStack from '../components/StrengthStack.jsx'
 import PropertyDashboard from '../components/PropertyDashboard.jsx'
 import GermanyRegionSelector from '../components/GermanyRegionSelector.jsx'
 import Brand from '../components/Brand.jsx'
@@ -82,7 +82,7 @@ export default function Home() {
       <section className="sec dark" aria-labelledby="h-str">
         <div className="wrap">
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
-          <HoverList items={[
+          <StrengthStack items={[
             { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/u-altstadt.webp', icon: 'key' },
             { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/u-karte.webp', icon: 'chart' },
             { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/u-handschlag-dunkel.webp', icon: 'hand' },
