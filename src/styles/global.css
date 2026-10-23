@@ -2510,3 +2510,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 @media (max-width: 860px) { .hf-cta { flex-direction: column; align-items: stretch; } .hf-cta .btn { justify-content: center; } .hf-sub { display: block; } .hf-eb { font-size: 11px; letter-spacing: .16em; } }
 .hf-rv { grid-template-rows: none; grid-auto-rows: auto; }
 .hf-cta { align-items: flex-start; }
+/* Abschlussband: Foto ist sofort komplett da (kein Aufdecken), nur die Parallaxe beim Scrollen bleibt */
+.cta2-pic { clip-path: none; }
+.cta2-pic .cta2-bg, .cta2:hover .cta2-bg { transform: translateY(calc((var(--s) - .5) * 30%)) scale(1.1); }
+.cta2 .btn { opacity: 1; }

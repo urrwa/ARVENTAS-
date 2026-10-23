@@ -26,7 +26,7 @@ export default function CtaBand({ image = HOME.cta, title = 'Bereit für bessere
   return (
     <div className="cta2-wrap">
       <section className="cta2" ref={ref} aria-label="Nächster Schritt">
-        <div className="cta2-pic"><img className="cta2-bg" src={image} alt="" loading="lazy" decoding="async" /></div>
+        <div className="cta2-pic"><img className="cta2-bg" src={image} alt="" loading="eager" decoding="async" /></div>
         <div className="cta2-in">
           <div className="cta2-l">
             <p className="cta2-lab">(Nächster Schritt)</p>
