@@ -11,6 +11,7 @@ const IMG = {
 export default function ProcessTimeline({ initial = 'owner' }) {
   const [who, setWho] = useState(initial)
   const [a, setA] = useState(0)
+  const [sh, setSh] = useState(0)
   const [flat, setFlat] = useState(false)
   const box = useRef(null)
   const steps = who === 'owner' ? OWNER_PROCESS : INVESTOR_PROCESS
@@ -32,7 +33,11 @@ export default function ProcessTimeline({ initial = 'owner' }) {
     addEventListener('scroll', tick, { passive: true }); addEventListener('resize', mode)
     return () => { removeEventListener('scroll', tick); removeEventListener('resize', mode); cancelAnimationFrame(raf) }
   }, [n])
-  const pick = (w) => { setWho(w); setA(0) }
+  useEffect(() => {
+    if (sh > a) { setSh(a); return }
+    if (sh < a) { const t = setTimeout(() => setSh(sh + 1), 520); return () => clearTimeout(t) }
+  }, [sh, a])
+  const pick = (w) => { setWho(w); setA(0); setSh(0) }
   return (
     <div ref={box} className={'prc' + (flat ? ' flat' : '')} style={{ '--n': n }}>
       <div className="prc-stage">
@@ -42,7 +47,7 @@ export default function ProcessTimeline({ initial = 'owner' }) {
         </div>
         <ol className="prc-grid">
           {steps.map((s, i) => (
-            <li key={who + s.t} className={flat || i < a ? 'seen' : i === a ? 'now' : ''} style={{ '--side': i % 2 ? 1 : -1 }}>
+            <li key={who + s.t} className={flat || i < sh ? 'seen' : i === sh ? 'now' : ''} style={{ '--side': i % 2 ? 1 : -1 }}>
               <img src={IMG[who][i]} alt="" loading="lazy" />
               <div>
                 <b>{s.t}</b>
