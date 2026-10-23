@@ -23,7 +23,6 @@ const TABS = [
 const IMG = ['/media/p/u-eingang-travertin.webp', '/media/p/u-begutachtung-travertin.webp', '/media/p/u-modell-dunkel.webp']
 const CYCLE = ['bw', 'by', 'nw', 'he', 'sn', 'ni']
 
-const Icon = ({ d }) => <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>
 
 function Donut() {
   const seg = [['Daten', 0, 0.34], ['Standort', 0.36, 0.3], ['Potenzial', 0.68, 0.3]]
@@ -144,7 +143,7 @@ export default function PropertyDashboard() {
   const root = useRef(null), live = useRef(false), hold = useRef(false)
   useEffect(() => {
     const el = root.current
-    const io = 'IntersectionObserver' in window ? new IntersectionObserver(([e]) => { live.current = e.isIntersecting; el.classList.toggle('in', e.isIntersecting) }, { threshold: 0.35 }) : null
+    const io = 'IntersectionObserver' in window ? new IntersectionObserver(([e]) => { live.current = e.isIntersecting; el.classList.toggle('in', e.isIntersecting) }, { threshold: 0.12 }) : null
     io ? io.observe(el) : el.classList.add('in')
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
     const id = reduce ? 0 : setInterval(() => {
@@ -162,10 +161,10 @@ export default function PropertyDashboard() {
   const S = { region, type, budget, setRegion, setType, setBudget }
   return (
     <div className="pd" ref={root} onMouseEnter={() => { hold.current = true }} onMouseLeave={() => { hold.current = false }} onFocus={() => { hold.current = true }} onBlur={() => { hold.current = false }}>
-      <div className="pd-bar" aria-hidden="true"><i /><i /><i /><span>Illustratives Muster – keine Objektbewertung</span></div>
+      <div className="pd-bar" aria-hidden="true"><b>Objektanalyse</b><em>{String(VIEWS.findIndex((x) => x.id === view) + 1).padStart(2, '0')} / 0{VIEWS.length}</em><span>Illustratives Muster – keine Objektbewertung</span><u key={view} /></div>
       <div className="pd-body">
         <nav className="pd-side" aria-label="Dashboard-Ansichten">
-          {VIEWS.map((v) => <button key={v.id} type="button" aria-current={view === v.id ? 'true' : undefined} onClick={() => setView(v.id)}><Icon d={v.icon} /><span>{v.label}</span></button>)}
+          {VIEWS.map((v) => <button key={v.id} type="button" aria-current={view === v.id ? 'true' : undefined} onClick={() => setView(v.id)}><small>0{VIEWS.indexOf(v) + 1}</small><span>{v.label}</span></button>)}
         </nav>
         <div className="pd-stage">
           <div className="pd-view" key={view}>
