@@ -2889,3 +2889,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .hf ~ .wide-sec .pd { min-height: calc(100svh - 300px); }
 .prc-grid li:not(.now):not(.seen) { opacity: .16; transform: none; }
 .hf ~ .wis-sec { background: var(--marine); }
+/* Wissen-Liste: Trennlinien deckend, damit das Foto nicht als helle Splitter zwischen den Zeilen durchscheint */
+.kl-full .kl-list li { background: var(--marine); border-bottom: 1px solid #33425a; }
+.kl-full .kl-list li:has(.kl-row.on) { background: transparent; border-bottom-color: rgba(245, 243, 239, .25); }
+.kl-full .kl-list li:last-child { border-bottom: 0; }
