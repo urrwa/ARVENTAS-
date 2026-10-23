@@ -28,11 +28,6 @@ export default function Owners() {
           <div className="btn-row"><Btn href="#anfrage">Objektreport anfragen</Btn></div>
         </div>
         <div className="eh-line" aria-hidden="true" />
-        <div className="wrap">
-          <ul className="eh-cards" aria-hidden="true">
-            {['u-eingang-travertin', 'u-eingang-stein', 'u-begutachtung-sandstein', 'u-weisse-wohnanlage'].map((k, i) => <li key={k} style={{ '--i': i }}><img src={`/media/p/${k}.webp`} alt="" loading="eager" decoding="async" /></li>)}
-          </ul>
-        </div>
       </section>
 
       <section className="sec dark">

@@ -2711,3 +2711,4 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .eh .btn-row { margin-top: clamp(18px, 2vw, 26px); }
 .eh-line { margin-top: clamp(28px, 4vw, 52px); }
 .eh-cards { margin-top: clamp(20px, 2.4vw, 32px); }
+.eh-line { margin-bottom: 0; }
