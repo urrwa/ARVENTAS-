@@ -6,7 +6,7 @@ import HomeFilm from '../components/HomeFilm.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
-import MatchingIllustration from '../components/MatchingIllustration.jsx'
+import PropertyDashboard from '../components/PropertyDashboard.jsx'
 import GermanyRegionSelector from '../components/GermanyRegionSelector.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
@@ -130,7 +130,7 @@ export default function Home() {
       <section className="sec dark" aria-labelledby="h-match">
         <div className="wrap">
           <SectionHead eyebrow="Für Investoren" title="Nicht jedes Objekt. Das passende." lead="Suchprofil und Immobilieninformationen sinnvoll zusammenführen." />
-          <MatchingIllustration />
+          <PropertyDashboard />
           <div className="btn-row"><Btn to="/investorenkreis" variant="marine">Suchprofil erstellen</Btn></div>
         </div>
       </section>
