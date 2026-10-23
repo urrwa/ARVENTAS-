@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import HoverList from '../components/HoverList.jsx'
@@ -42,37 +42,11 @@ function ConnectSvg() {
   )
 }
 
-// Zugangs-Kachel: beim Überfahren folgt ein kleines Bild dem Cursor und wechselt durch Beispielbilder (nur Maus).
-function Door({ to, img, alt, eyebrow, title, text, cta, d, peek }) {
-  const box = useRef(null), pv = useRef(null)
-  const [on, setOn] = useState(false), [i, setI] = useState(0), [armed, setArmed] = useState(false)
-  const pos = useRef({ x: 0, y: 0, tx: 0, ty: 0, raf: 0 })
-  useEffect(() => {
-    if (!on) return
-    const t = setInterval(() => setI((n) => (n + 1) % peek.length), 750)
-    return () => clearInterval(t)
-  }, [on, peek.length])
-  const loop = () => {
-    const q = pos.current
-    q.x += (q.tx - q.x) * 0.14; q.y += (q.ty - q.y) * 0.14
-    if (pv.current) pv.current.style.transform = `translate3d(${q.x}px, ${q.y}px, 0)`
-    q.raf = Math.abs(q.tx - q.x) + Math.abs(q.ty - q.y) > 0.4 ? requestAnimationFrame(loop) : 0
-  }
-  const move = (e) => {
-    if (e.pointerType !== 'mouse') return
-    const r = box.current.getBoundingClientRect(), q = pos.current
-    q.tx = Math.min(Math.max(e.clientX - r.left, 130), r.width - 130); q.ty = Math.min(Math.max(e.clientY - r.top, 170), r.height - 210)
-    if (!on) { q.x = q.tx; q.y = q.ty; setOn(true); setArmed(true) }
-    if (!q.raf) q.raf = requestAnimationFrame(loop)
-  }
-  const leave = () => { setOn(false); cancelAnimationFrame(pos.current.raf); pos.current.raf = 0 }
+// Zugangs-Kachel: großes Foto mit Text und Aktion (ganze Fläche ist ein Link).
+function Door({ to, img, alt, eyebrow, title, text, cta, d }) {
   return (
-    <Link ref={box} to={to} className="door rv" style={d ? { '--d': d } : undefined} onPointerMove={move} onPointerLeave={leave}>
+    <Link to={to} className="door rv" style={d ? { '--d': d } : undefined}>
       <img src={`/media/${img}.webp`} alt={alt} loading="lazy" />
-      <div className="door-pv" ref={pv} data-on={on ? '1' : '0'} aria-hidden="true">
-        {armed && <div className="door-pv-frame">{peek.map((n, k) => <img key={n} src={`/media/${n}.webp`} alt="" decoding="async" className={k === i ? 'on' : ''} />)}</div>}
-        {armed && <span className="door-pv-n" data-notr>{String(i + 1).padStart(2, '0')} — {String(peek.length).padStart(2, '0')}</span>}
-      </div>
       <div className="door-txt"><p className="eyebrow">{eyebrow}</p><h3>{title}</h3><p>{text}</p><span className="btn btn-gold">{cta} <span className="arr" aria-hidden="true">→</span></span></div>
     </Link>
   )
@@ -99,10 +73,8 @@ export default function Home() {
           <header className="sec-head"><p className="eyebrow rv">Zwei Wege</p><h2 id="h-zug" className="h2 rv">Was möchten Sie bewegen?</h2></header>
         </div>
           <div className="doors">
-            <Door to="/immobilie-verkaufen" img="p/u-eingang-travertin" alt="Wohnhaus mit Naturstein-Fassade (Beispielbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen"
-              peek={['p/u-schluessel', 'p/bw.step.3', 'p/bw.step.2', 'p/bw.area.4', 'p/u-besprechungsraum', 'p/u-eingang-stein']} />
-            <Door to="/kapitalanlage-immobilien" img="p/vm.area.2" alt="Reihenhäuser im Morgenlicht (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120}
-              peek={['p/u-luftbild', 'p/vm.res.1', 'p/u-notizbuch', 'p/ma.area.2', 'p/ma.area.0', 'p/di.area.3']} />
+            <Door to="/immobilie-verkaufen" img="p/u-eingang-travertin" alt="Wohnhaus mit Naturstein-Fassade (Beispielbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen" />
+            <Door to="/kapitalanlage-immobilien" img="p/vm.area.2" alt="Reihenhäuser im Morgenlicht (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120} />
           </div>
       </section>
 
