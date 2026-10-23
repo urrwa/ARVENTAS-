@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
-import { ARTICLES, CATEGORIES } from '../content/data.js'
+import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
+import { ARTICLES } from '../content/data.js'
 
 export default function Knowledge() {
   const [cat, setCat] = useState('Alle')
@@ -15,30 +16,7 @@ export default function Knowledge() {
       <PageHero image="/media/p/u-notizbuch.webp" crumb="Wissen" title="Hinter die Fassade schauen." lead="Off-Market verstehen. Immobilien bewerten. Potenziale einordnen." />
       <section className="sec ivory">
         <div className="wrap">
-          <div className="ktabs">
-            <div className="ktabs-list" role="tablist" aria-label="Kategorien">
-              {CATEGORIES.map((c, ci) => {
-                const a = c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c)
-                const on = cat === c
-                return (
-                  <div key={c} className={`kt${on ? ' on' : ''}`}>
-                    <button type="button" role="tab" aria-selected={on} onClick={() => setCat(c)} onMouseEnter={() => setCat(c)}><span className="kt-no">0{ci + 1}</span>{c}</button>
-                    <div className="kt-body"><div className="kt-in">
-                      <p>{a ? a.teaser : 'In dieser Kategorie sind noch keine Beiträge ausgearbeitet.'}</p>
-                      {a && <Link to={`/wissen/${a.slug}`} className="kt-link" tabIndex={on ? 0 : -1}>Beitrag lesen <span aria-hidden="true">→</span></Link>}
-                    </div></div>
-                  </div>
-                )
-              })}
-            </div>
-            <div className="kframe" aria-hidden="true">
-              <span className="kf-cap">{cat}</span>
-              {CATEGORIES.map((c) => {
-                const a = c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c)
-                return <img key={c} className={cat === c ? 'on' : ''} src={a ? a.img : '/media/p/ma.res.3.webp'} alt="" loading="lazy" />
-              })}
-            </div>
-          </div>
+          <KnowledgeTabs cat={cat} setCat={setCat} />
           {lead ? (
             <>
               <ul className="alist">

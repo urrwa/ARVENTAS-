@@ -9,6 +9,7 @@ import ProcessTimeline from '../components/ProcessTimeline.jsx'
 import MatchingIllustration from '../components/MatchingIllustration.jsx'
 import GermanyRegionSelector from '../components/GermanyRegionSelector.jsx'
 import Brand from '../components/Brand.jsx'
+import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 
 function DocSvg() {
   return (
@@ -78,6 +79,7 @@ function Door({ to, img, alt, eyebrow, title, text, cta, d, peek }) {
 }
 
 export default function Home() {
+  const [wcat, setWcat] = useState('Alle')
   // Sticky-Cover: Abschnitt bleibt stehen, sobald sein Unterkante den unteren Bildrand erreicht (top negativ bei hohen Abschnitten).
   useEffect(() => {
     const els = Array.from(document.querySelectorAll('.stick-under'))
@@ -186,17 +188,11 @@ export default function Home() {
       </section>
 
       {/* 10 – Wissen als Editorial */}
-      <section className="sec dark" aria-labelledby="h-wis">
+      <section className="sec ivory" aria-labelledby="h-wis">
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Wissen</p><h2 id="h-wis" className="h2 rv">Hinter die Fassade schauen.</h2></header>
-          <div className="know rv">
-            <Link className="know-main" to="/wissen/off-market-verstehen"><img src="/media/p/ma.res.2.webp" alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>Off-Market verstehen.</h3></div></Link>
-            <div className="know-col">
-              <Link className="know-sm" to="/wissen/immobilien-bewerten"><img src="/media/p/bw.area.3.webp" alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>Immobilien bewerten.</h3></div></Link>
-              <Link className="know-sm" to="/wissen/potenziale-einordnen"><img src="/media/p/di.area.3.webp" alt="" loading="lazy" /><div className="t"><span className="tagd">Entwurf</span><h3>Potenziale einordnen.</h3></div></Link>
-            </div>
-          </div>
-          <div className="btn-row"><Btn to="/wissen">Wissen entdecken</Btn></div>
+          <KnowledgeTabs cat={wcat} setCat={setWcat} />
+          <div className="btn-row"><Btn to="/wissen" variant="marine">Wissen entdecken</Btn></div>
           <p className="small muted" style={{ marginTop: 16 }}>Entwürfe sind gekennzeichnet und keine aktuelle Recherche oder Marktdaten.</p>
         </div>
       </section>
