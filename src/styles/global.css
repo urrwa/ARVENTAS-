@@ -2802,7 +2802,8 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 /* Eigentümer: zwei Bildhälften mit Karte */
 .own-sec { background: var(--marine); }
 .own-note { color: rgba(245, 243, 239, .7); margin: 0; padding: 14px var(--gut); text-align: center; }
-.os { position: relative; height: clamp(560px, 88svh, 820px); overflow: hidden; background: var(--black); }
+.os-scroll { height: calc(100svh * (var(--n) * .6 + .5)); }
+.os { position: sticky; top: var(--header-h); height: calc(100svh - var(--header-h)); min-height: 520px; overflow: hidden; background: var(--black); }
 .os-bg { position: absolute; inset: 0; }
 .os-p { position: absolute; top: 0; bottom: 0; width: 50%; transition: left 1000ms cubic-bezier(.7, 0, .2, 1); overflow: hidden; }
 .os-p img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -2817,5 +2818,5 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .os-card b { font-family: var(--font-head); font-weight: 400; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.15; }
 .os-card button { width: 44px; height: 44px; border: 0; background: var(--marine); color: var(--ivory); font-size: 18px; cursor: pointer; transition: background 300ms ease; }
 .os-card button:hover { background: var(--gold-btn); color: var(--black); }
-@media (max-width: 760px) { .os { height: 640px; } .os-card img { width: 84px; height: 64px; } }
+@media (max-width: 760px) { .os { min-height: 480px; } .os-card img { width: 84px; height: 64px; } }
 @media (prefers-reduced-motion: reduce) { .os-p { transition: none !important; } }
