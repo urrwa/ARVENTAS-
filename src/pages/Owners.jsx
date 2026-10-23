@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom'
 import StepRows from '../components/StepRows.jsx'
 import Seo from '../components/Seo.jsx'
-import PageHero from '../components/PageHero.jsx'
+import Letters from '../components/Letters.jsx'
 import { Btn, SectionHead, Tabs, Faq, Placeholder } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
@@ -20,9 +20,20 @@ export default function Owners() {
   return (
     <>
       <Seo title="Immobilie verkaufen | ARVENTAS" description="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen – persönlich begleitet, deutschlandweit." />
-      <PageHero crumb="Für Eigentümer" title="Ihre Immobilie. Unser Marktverständnis." lead="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.">
-        <div className="btn-row"><Btn href="#anfrage">Objektreport anfragen</Btn></div>
-      </PageHero>
+      <section className="eh">
+        <div className="wrap">
+          <p className="eh-eb"><i aria-hidden="true" />Für Eigentümer</p>
+          <h1 className="eh-h"><Letters text="Ihre Immobilie. Unser Marktverständnis." per={30} max={1300} delay={200} /></h1>
+          <p className="eh-p">Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.</p>
+          <div className="btn-row"><Btn href="#anfrage">Objektreport anfragen</Btn></div>
+        </div>
+        <div className="eh-line" aria-hidden="true" />
+        <div className="wrap">
+          <ul className="eh-cards" aria-hidden="true">
+            {['u-eingang-travertin', 'u-eingang-stein', 'u-begutachtung-sandstein', 'u-weisse-wohnanlage'].map((k, i) => <li key={k} style={{ '--i': i }}><img src={`/media/p/${k}.webp`} alt="" loading="eager" decoding="async" /></li>)}
+          </ul>
+        </div>
+      </section>
 
       <section className="sec dark">
         <div className="wrap">
