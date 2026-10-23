@@ -6,10 +6,8 @@ import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
 import OwnerShowcase from '../components/OwnerShowcase.jsx'
-import GermanyScene from '../components/GermanyScene.jsx'
 import StrengthStack from '../components/StrengthStack.jsx'
 import PropertyDashboard from '../components/PropertyDashboard.jsx'
-import GermanyRegionSelector from '../components/GermanyRegionSelector.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 
@@ -137,10 +135,7 @@ export default function Home() {
 
       {/* 08 – Menschen: ausgeblendet, bis bestätigte Porträts und Profile vorliegen (siehe docs/abgleich-masterprompt.md) */}
 
-      {/* 09 – Deutschlandweit */}
-      <section className="sec dark cover-next gs-sec" aria-labelledby="h-de">
-        <GermanyScene />
-      </section>
+      {/* 09 – Deutschlandweit: auf Wunsch entfernt (Komponente GermanyScene bleibt im Projekt) */}
 
       {/* 10 – Wissen als Editorial */}
       <section className="sec dark wis-sec" aria-labelledby="h-wis">
