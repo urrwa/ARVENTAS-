@@ -7,9 +7,9 @@ const FALLBACK = { Kapitalanlage: '/media/p/vm.area.2.webp', Entwicklungspotenzi
 const article = (c) => (c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c))
 const pic = (c) => { const a = article(c); return a ? a.img : FALLBACK[c] || '/media/p/ma.res.3.webp' }
 
-export default function KnowledgeTabs({ cat, setCat }) {
+export default function KnowledgeTabs({ cat, setCat, full }) {
   return (
-    <div className="kl" onMouseLeave={() => setCat('Alle')}>
+    <div className={'kl' + (full ? ' kl-full' : '')} onMouseLeave={() => setCat('Alle')}>
       <div className="kl-img" aria-hidden="true">
         {CATEGORIES.map((c) => <img key={c} className={cat === c ? 'on' : ''} src={pic(c)} alt="" loading="lazy" decoding="async" />)}
       </div>

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
-import PageHero from '../components/PageHero.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import { ARTICLES } from '../content/data.js'
 
@@ -13,10 +12,10 @@ export default function Knowledge() {
   return (
     <>
       <Seo title="Wissen | ARVENTAS" description="Wissen und Marktinformationen: Off-Market verstehen, Immobilien bewerten, Potenziale einordnen." />
-      <PageHero image="/media/p/u-notizbuch.webp" crumb="Wissen" title="Hinter die Fassade schauen." lead="Off-Market verstehen. Immobilien bewerten. Potenziale einordnen." />
+      <h1 className="sr-only">Wissen: Hinter die Fassade schauen.</h1>
+      <KnowledgeTabs full cat={cat} setCat={setCat} />
       <section className="sec ivory">
         <div className="wrap">
-          <KnowledgeTabs cat={cat} setCat={setCat} />
           {lead ? (
             <>
               <ul className="alist">
