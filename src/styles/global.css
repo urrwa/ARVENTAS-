@@ -2918,3 +2918,15 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .proc-sec .prc-grid { box-shadow: none; }
 @media (max-width: 860px), (hover: none) { .hf ~ .proc-sec { background-attachment: scroll; } }
 .prc-grid b { font-size: clamp(14px, 1.1vw, 17px); hyphens: manual; } .prc-grid li > div { left: 18px; right: 10px; }
+
+/* Mobil: Fuß einspaltig, Ablauf-Karten höher mit sauber getrenntem Zähler */
+@media (max-width: 860px) {
+  .ftr3-top { grid-template-columns: 1fr; }
+  .ftr3-photo { max-width: 160px; }
+  .ftr3-pages ul { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); }
+  .prc .prc-grid li { height: 230px; min-height: 230px; }
+  .prc .prc-grid span { top: 16px; left: 18px; font-size: 34px; }
+  .prc .prc-grid li > div { left: 18px; right: 14px; bottom: 18px; }
+  .prc .prc-grid b { font-size: 19px; }
+  .prc .prc-grid p { font-size: 14px; }
+}
