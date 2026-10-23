@@ -2514,3 +2514,28 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .cta2-pic { clip-path: none; }
 .cta2-pic .cta2-bg, .cta2:hover .cta2-bg { transform: translateY(calc((var(--s) - .5) * 30%)) scale(1.1); }
 .cta2 .btn { opacity: 1; }
+/* Wissen: weiße Liste über großem Foto, Zeile öffnet sich beim Überfahren zum Foto */
+.kl { position: relative; border-radius: clamp(16px, 2vw, 28px); overflow: hidden; min-height: clamp(440px, 64svh, 660px); display: flex; background: var(--marine); margin-top: clamp(20px, 3vw, 40px); }
+.kl-img { position: absolute; inset: 0; }
+.kl-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 520ms ease; }
+.kl-img img.on { opacity: 1; }
+.kl-list { position: relative; z-index: 1; list-style: none; margin: 0; padding: 0; width: min(38%, 440px); display: flex; flex-direction: column; }
+.kl-list li { flex: 1 1 0; display: flex; border-bottom: 1px solid rgba(25, 37, 55, .1); }
+.kl-list li:last-child { border-bottom: 0; }
+.kl-row { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 6px; position: relative; padding: 0 clamp(20px, 2.6vw, 36px); background: #FFFFFF; color: var(--marine); text-align: left; text-decoration: none; border: 0; font: inherit; cursor: pointer; transition: background 380ms ease, color 380ms ease; }
+.kl-row small { font-size: 11px; letter-spacing: .16em; color: rgba(25, 37, 55, .45); transition: color 380ms ease; }
+.kl-row span { font-family: var(--font-head); font-weight: 400; font-size: clamp(20px, 1.9vw, 30px); line-height: 1.15; }
+.kl-row i { position: absolute; right: clamp(18px, 2.4vw, 32px); top: 50%; font-style: normal; font-size: 20px; opacity: 0; transform: translate(-8px, -50%); transition: opacity 380ms ease, transform 380ms ease; }
+.kl-row.on { background: transparent; color: #FFFFFF; }
+.kl-row.on small { color: rgba(255, 255, 255, .75); }
+.kl-row.on i { opacity: 1; transform: translate(0, -50%); }
+.kl-row:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }
+@media (max-width: 760px) {
+  .kl { flex-direction: column; min-height: 0; }
+  .kl-img { position: relative; inset: auto; aspect-ratio: 4 / 3; }
+  .kl-list { width: 100%; }
+  .kl-list li { flex: none; }
+  .kl-row { padding-block: 18px; }
+  .kl-row.on { background: var(--marine); }
+}
+@media (prefers-reduced-motion: reduce) { .kl-row, .kl-row small, .kl-row i, .kl-img img { transition: none; } }
