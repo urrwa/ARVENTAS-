@@ -34,7 +34,7 @@ export default function MatchingIllustration() {
     { k: 'Immobilientyp', v: type, y: 290, broad: false },
   ]
   const info = [
-    { k: 'Lage', y: 70 }, { k: 'Größe & Zustand', y: 180 }, { k: 'Wirtschaftlichkeit', y: 290 },
+    { k: 'Lage', y: 45 }, { k: 'Objektart & Zustand', y: 132 }, { k: 'Wirtschaftlichkeit', y: 228 }, { k: 'Potenzial', y: 315 },
   ]
   return (
     <div className="match" ref={root}>
@@ -46,33 +46,32 @@ export default function MatchingIllustration() {
       <div>
         <div className="mviz">
           <svg viewBox="0 0 640 360" role="img" aria-label={`Prinzipdarstellung: Ihr Suchprofil mit Region ${region}, Budgetband ${budget} und Immobilientyp ${type} wird mit Immobilieninformationen abgeglichen.`}>
-            <rect x="0" y="0" width="640" height="360" fill="#fff" />
-            {/* Linien Kriterien -> Profil */}
-            {crit.map((c, i) => <path key={'a' + i} className="ml la" pathLength="1" d={`M170 ${c.y} C 230 ${c.y}, 240 180, 290 180`} fill="none" stroke="#192537" strokeWidth={c.broad ? 1.5 : 3} strokeOpacity={c.broad ? 0.45 : 1} />)}
+                        {/* Linien Kriterien -> Profil */}
+            {crit.map((c, i) => <path key={'a' + i} className="ml la" pathLength="1" d={`M170 ${c.y} C 220 ${c.y}, 230 180, 270 180`} fill="none" stroke="#F5F3EF" strokeWidth={c.broad ? 1 : 2} strokeOpacity={c.broad ? 0.45 : 1} />)}
             {/* Linien Profil -> Immobilieninformationen */}
-            {info.map((n, i) => <path key={'b' + i} className="ml lb" pathLength="1" d={`M350 180 C 400 180, 410 ${n.y}, 470 ${n.y}`} fill="none" stroke="#B09E80" strokeWidth={3} />)}
+            {info.map((n, i) => <path key={'b' + i} className="ml lb" pathLength="1" d={`M370 180 C 420 180, 420 ${n.y}, 470 ${n.y}`} fill="none" stroke="#B09E80" strokeWidth={3} />)}
             {/* Profil-Knoten */}
-            <g className="mp"><rect x="290" y="150" width="60" height="60" fill="#192537" /><text x="320" y="186" textAnchor="middle" fill="#F5F3EF" fontSize="11" letterSpacing="1">PROFIL</text></g>
+            <g className="mp"><rect x="270" y="150" width="100" height="60" fill="#B09E80" /><text x="320" y="176" textAnchor="middle" fill="#192537" fontSize="10" letterSpacing="1.2">IHR</text><text x="320" y="192" textAnchor="middle" fill="#192537" fontSize="11" fontWeight="600" letterSpacing="1.2">SUCHPROFIL</text></g>
             {/* Kriterien */}
             {crit.map((c, i) => (
               <g key={'c' + i} className="mn mc" style={{ '--k': i }}>
-                <rect x="14" y={c.y - 28} width="156" height="56" fill="none" stroke="#192537" strokeWidth="1.2" />
-                <text x="26" y={c.y - 8} fontSize="10" fill="#0B0B0B" fillOpacity=".72" letterSpacing="1.4">{c.k.toUpperCase()}</text>
-                <text x="26" y={c.y + 12} fontSize="13" fontWeight="600" fill="#0B0B0B">{c.v.length > 20 ? c.v.slice(0, 19) + '…' : c.v}</text>
+                <rect x="14" y={c.y - 28} width="156" height="56" fill="none" stroke="#F5F3EF" strokeOpacity=".7" strokeWidth="1" />
+                <text x="26" y={c.y - 8} fontSize="10" fill="#F5F3EF" fillOpacity=".6" letterSpacing="1.4">{c.k.toUpperCase()}</text>
+                <text x="26" y={c.y + 12} fontSize="13" fontWeight="600" fill="#F5F3EF">{c.v.length > 20 ? c.v.slice(0, 19) + '…' : c.v}</text>
               </g>
             ))}
             {/* Immobilieninformationen */}
             {info.map((n, i) => (
               <g key={'d' + i} className="mn md" style={{ '--k': i }}>
-                <rect x="470" y={n.y - 28} width="156" height="56" fill="none" stroke="#B09E80" strokeWidth="1.4" />
-                <text x="482" y={n.y - 8} fontSize="10" fill="#0B0B0B" fillOpacity=".72" letterSpacing="1.4">INFORMATION</text>
-                <text x="482" y={n.y + 12} fontSize="13" fontWeight="600" fill="#0B0B0B">{n.k}</text>
+                <rect x="470" y={n.y - 28} width="156" height="56" fill="none" stroke="#B09E80" strokeWidth="1.2" />
+                <text x="482" y={n.y - 8} fontSize="10" fill="#B09E80" letterSpacing="1.4">OBJEKTDATEN</text>
+                <text x="482" y={n.y + 12} fontSize="13" fontWeight="600" fill="#F5F3EF">{n.k}</text>
               </g>
             ))}
             {/* Puls entlang der Verbindungen */}
             {info.map((n, i) => (
               <circle key={'p' + i} className="mdot" r="4" fill="#B09E80">
-                <animateMotion dur="3.2s" begin={`${i * 0.5}s`} repeatCount="indefinite" path={`M350 180 C 400 180, 410 ${n.y}, 470 ${n.y}`} />
+                <animateMotion dur="3.2s" begin={`${i * 0.5}s`} repeatCount="indefinite" path={`M370 180 C 420 180, 420 ${n.y}, 470 ${n.y}`} />
               </circle>
             ))}
           </svg>

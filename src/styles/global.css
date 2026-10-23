@@ -2543,3 +2543,16 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 /* Hero: vollflächig beim Laden, beim Scrollen zum Rahmen */
 .hf { --k: 0; --fr: calc(var(--k) * clamp(10px, 1.2vw, 18px)); }
 .hf-vid, .hf-shade { border-radius: calc(var(--k) * clamp(20px, 2.2vw, 32px)); }
+
+/* Matching: dunkle Darstellung ohne weiße Fläche, kompaktere Auswahl */
+.mviz { background: transparent; border: 1px solid var(--gold-line); border-radius: 4px; padding: clamp(12px, 2vw, 28px); }
+.match { grid-template-columns: 300px 1fr; }
+@media (max-width: 860px) { .match { grid-template-columns: 1fr; } }
+.match .chip { padding: 8px 12px; font-size: 13px; }
+.match .chips { gap: 6px; }
+.match .mctl fieldset { margin-bottom: 14px; }
+.mnote { color: var(--text-on-dark-soft); }
+
+.mviz .md { transition-delay: calc(var(--k, 0) * 160ms + 1700ms); }
+.mviz .lb { transition-delay: 1300ms; }
+.mviz .mdot { transition-delay: 3000ms; }
