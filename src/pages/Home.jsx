@@ -6,6 +6,7 @@ import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
 import OwnerShowcase from '../components/OwnerShowcase.jsx'
+import GermanyScene from '../components/GermanyScene.jsx'
 import StrengthStack from '../components/StrengthStack.jsx'
 import PropertyDashboard from '../components/PropertyDashboard.jsx'
 import GermanyRegionSelector from '../components/GermanyRegionSelector.jsx'
@@ -151,11 +152,8 @@ export default function Home() {
       </section>
 
       {/* 09 – Deutschlandweit */}
-      <section className="sec dark cover-next" aria-labelledby="h-de">
-        <div className="wrap">
-          <SectionHead eyebrow="Deutschlandweit" title="Regional verstehen. Deutschlandweit verbinden." lead="Immobilienkompetenz für Eigentümer und Investoren in ganz Deutschland." />
-          <GermanyRegionSelector />
-        </div>
+      <section className="sec dark cover-next gs-sec" aria-labelledby="h-de">
+        <GermanyScene />
       </section>
 
       {/* 10 – Wissen als Editorial */}
