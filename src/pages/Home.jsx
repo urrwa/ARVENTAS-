@@ -5,6 +5,7 @@ import HomeFilm from '../components/HomeFilm.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
+import OwnerShowcase from '../components/OwnerShowcase.jsx'
 import StrengthStack from '../components/StrengthStack.jsx'
 import PropertyDashboard from '../components/PropertyDashboard.jsx'
 import GermanyRegionSelector from '../components/GermanyRegionSelector.jsx'
@@ -112,18 +113,16 @@ export default function Home() {
       </section>
 
       {/* 06 – Eigentümer */}
-      <section className="sec dark" aria-labelledby="h-own">
-        <div className="wrap">
-          <header className="sec-head"><p className="eyebrow rv">Für Eigentümer</p><h2 id="h-own" className="h2 rv">Ihr Eigentum.<br />Kein öffentliches Schaufenster.</h2><p className="lead rv">Wert, Potenziale und Verkaufswege klären – mit einem persönlichen Ansprechpartner.</p></header>
-          <div className="windows rv" aria-hidden="true">
-            <div><img src="/media/p/bw.step.0.webp" alt="" loading="lazy" /></div>
-            <div><img src="/media/p/bw.area.0.webp" alt="" loading="lazy" /></div>
-            <div><img src="/media/p/bw.res.2.webp" alt="" loading="lazy" /></div>
-          </div>
-          <ul className="labels rv"><li><span>01</span>Wert verstehen.</li><li><span>02</span>Optionen prüfen.</li><li><span>03</span>Diskret vermarkten.</li></ul>
+      <section className="own-sec" aria-labelledby="h-own">
+        <OwnerShowcase items={[
+          { t: 'Wert verstehen.', img: '/media/p/bw.step.0.webp' },
+          { t: 'Optionen prüfen.', img: '/media/p/bw.area.0.webp' },
+          { t: 'Diskret vermarkten.', img: '/media/p/bw.res.2.webp' },
+        ]}>
+          <header className="sec-head"><p className="eyebrow">Für Eigentümer</p><h2 id="h-own" className="h2">Ihr Eigentum.<br />Kein öffentliches Schaufenster.</h2><p className="lead">Wert, Potenziale und Verkaufswege klären – mit einem persönlichen Ansprechpartner.</p></header>
           <div className="btn-row"><Btn to="/immobilie-verkaufen#anfrage">Objektprüfung anfragen</Btn></div>
-          <p className="small muted" style={{ marginTop: 16 }}>Beispielbilder, keine Objekte von <Brand />. Es werden keine vertraulichen Adressen gezeigt.</p>
-        </div>
+        </OwnerShowcase>
+        <p className="small muted own-note">Beispielbilder, keine Objekte von <Brand />. Es werden keine vertraulichen Adressen gezeigt.</p>
       </section>
 
       {/* 07 – Investoren und Matching */}
