@@ -5,18 +5,6 @@ import FilmModal from './FilmModal.jsx'
 import { HOME } from '../content/images.js'
 
 // Startseiten-Kopf (Vorbild Rivos): Der Film läuft von selbst in Dauerschleife, Aussage links, Zahlen unten links, Karte unten rechts.
-function CountUp({ to }) {
-  const [n, setN] = useState(0)
-  useEffect(() => {
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setN(to); return }
-    let raf = 0, t0 = 0
-    const tick = (t) => { if (!t0) t0 = t; const k = Math.min(1, (t - t0) / 1600); setN(Math.round(to * (1 - Math.pow(1 - k, 3)))); if (k < 1) raf = requestAnimationFrame(tick) }
-    const id = setTimeout(() => { raf = requestAnimationFrame(tick) }, 900)
-    return () => { clearTimeout(id); cancelAnimationFrame(raf) }
-  }, [to])
-  return n
-}
-
 export default function HomeFilm() {
   const wrap = useRef(null), vid = useRef(null)
   const [show, setShow] = useState(false)
@@ -43,22 +31,21 @@ export default function HomeFilm() {
         <video ref={vid} className="hf-vid" poster="/media/haus-film-poster.webp" muted loop playsInline autoPlay preload="none" aria-hidden="true" />
         <div className="hf-shade" />
         <div className="hf-rv">
-          <h1 className="hf-h" aria-label="Strategische Immobilienentwicklung mit System.">
-            <span className="hf-ln"><Letters text="Strategische" per={38} max={900} delay={200} /></span>
-            <span className="hf-ln"><Letters text="Immobilienentwicklung" per={38} max={1000} delay={450} /></span>
-            <span className="hf-ln"><Letters text="mit System." per={50} max={700} delay={900} /></span>
+          <p className="hf-eb">Off-Market Immobilien · Deutschlandweit</p>
+          <h1 className="hf-h" aria-label="Immobilien mit Potenzial. Zugang mit Vorsprung.">
+            <span className="hf-ln"><Letters text="Immobilien mit Potenzial." per={34} max={1100} delay={200} /></span>
+            <span className="hf-ln"><Letters text="Zugang mit Vorsprung." per={34} max={1000} delay={650} /></span>
           </h1>
-          <p className="hf-sub">Markt, Bewertung, Strategie und Vermarktung zu einem klaren Entscheidungsweg verbunden.</p>
+          <p className="hf-sub">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet.</p>
+          <div className="hf-cta">
+            <Link to="/immobilie-verkaufen" className="btn btn-gold">Immobilie verkaufen <span className="arr" aria-hidden="true">→</span></Link>
+            <Link to="/kapitalanlage-immobilien" className="btn btn-line">Immobilien entdecken <span className="arr" aria-hidden="true">→</span></Link>
+          </div>
           <button type="button" className="hf-see" onClick={() => setShow(true)} aria-haspopup="dialog"><i aria-hidden="true">▶</i><span>So entsteht Klarheit</span></button>
-          <ul className="hf-stats">
-            <li><b><CountUp to={200} />+</b><span>Abgeschlossene Projekte</span></li>
-            <li><b><CountUp to={70} />+</b><span>Zufriedene Kunden</span></li>
-            <li><b>$<CountUp to={10} />M</b><span>Projektvolumen</span></li>
-          </ul>
-          <Link to="/leistungen" className="hf-mini">
+          <Link to="/objektreport" className="hf-mini">
             <img src={HOME.miniCard} alt="" width="120" height="120" loading="lazy" decoding="async" />
-            <span>Ein System für bessere Immobilienentscheidungen.</span>
-            <em>Leistungen ansehen <i aria-hidden="true">→</i></em>
+            <span>Objektreport: datenbasiert analysiert, persönlich geprüft.</span>
+            <em>Objektreport ansehen <i aria-hidden="true">→</i></em>
           </Link>
         </div>
       </div>

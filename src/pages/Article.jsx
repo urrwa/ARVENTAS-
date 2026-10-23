@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, Placeholder } from '../components/ui.jsx'
@@ -8,12 +8,14 @@ import NotFound from './NotFound.jsx'
 // Beitragsvorlage: Überschriften, Quellen, Annahmen und nächste Schritte. Entwurfsinhalte sind gekennzeichnet.
 export default function Article() {
   const { slug } = useParams()
+  const wissen = useLocation().pathname.startsWith('/wissen')
+  const base = wissen ? '/wissen' : '/insights', baseT = wissen ? 'Wissen' : 'Insights'
   const a = ARTICLES.find((x) => x.slug === slug)
   if (!a) return <NotFound />
   return (
     <>
-      <Seo title={`${a.title} | Insights | ARVENTAS`} description={a.teaser} />
-      <PageHero image={a.img} crumb={<><Link to="/insights">Insights</Link> / {a.title}</>} title={a.title}>
+      <Seo title={`${a.title} | ${baseT} | ARVENTAS`} description={a.teaser} />
+      <PageHero image={a.img} crumb={<><Link to={base}>{baseT}</Link> / {a.title}</>} title={a.title}>
         <p style={{ marginTop: 20 }}><span className="tagd">Entwurf</span></p>
       </PageHero>
       <section className="sec dark">
@@ -25,7 +27,7 @@ export default function Article() {
             <p>Quellen: noch zu ergänzen. Annahmen: werden im ausgearbeiteten Beitrag je Aussage benannt.</p>
             <h2>Nächster Schritt</h2>
             <p>{a.steps}</p>
-            <div className="btn-row"><Btn to="/kontakt" variant="gold">Potenzial analysieren</Btn><Btn to="/insights" variant="line">Alle Beiträge</Btn></div>
+            <div className="btn-row"><Btn to={wissen ? '/objektreport' : '/kontakt'} variant="gold">{wissen ? 'Zum Objektreport' : 'Potenzial analysieren'}</Btn><Btn to={base} variant="line">Alle Beiträge</Btn></div>
           </article>
         </div>
       </section>

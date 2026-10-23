@@ -12,6 +12,12 @@ const System = lazy(() => import('./pages/System.jsx'))
 const Insights = lazy(() => import('./pages/Insights.jsx'))
 const About = lazy(() => import('./pages/About.jsx'))
 const Article = lazy(() => import('./pages/Article.jsx'))
+const Owners = lazy(() => import('./pages/Owners.jsx'))
+const Investors = lazy(() => import('./pages/Investors.jsx'))
+const InvestorCircle = lazy(() => import('./pages/InvestorCircle.jsx'))
+const ReportPage = lazy(() => import('./pages/ReportPage.jsx'))
+const Partners = lazy(() => import('./pages/Partners.jsx'))
+const Knowledge = lazy(() => import('./pages/Knowledge.jsx'))
 const Contact = lazy(() => import('./pages/Contact.jsx'))
 const Impressum = lazy(() => import('./pages/Legal.jsx').then((m) => ({ default: m.Impressum })))
 const Datenschutz = lazy(() => import('./pages/Legal.jsx').then((m) => ({ default: m.Datenschutz })))
@@ -120,6 +126,13 @@ function Shell() {
         <Suspense fallback={<div style={{ minHeight: '100svh' }} />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/immobilie-verkaufen" element={<Owners />} />
+          <Route path="/kapitalanlage-immobilien" element={<Investors />} />
+          <Route path="/investorenkreis" element={<InvestorCircle />} />
+          <Route path="/objektreport" element={<ReportPage />} />
+          <Route path="/partner" element={<Partners />} />
+          <Route path="/wissen" element={<Knowledge />} />
+          <Route path="/wissen/:slug" element={<Article />} />
           <Route path="/leistungen" element={<Leistungen />} />
           <Route path="/leistungen/:slug" element={<ServicePage />} />
           <Route path="/system" element={<System />} />

@@ -71,7 +71,7 @@ export const ARTICLES = [
       { h: 'Warum entscheiden sich Eigentümer dafür?', p: ['Typische Beweggründe sind Diskretion, Planbarkeit und ein kontrollierter Kreis von Interessenten. Welche Gründe im Einzelfall überwiegen, ist individuell verschieden.'] },
       { h: 'Worauf sollten Investoren achten?', p: ['Auch bei Off-Market-Objekten gilt: Informationen prüfen, Annahmen hinterfragen, Unterlagen vollständig sichten. Ein nicht öffentliches Angebot ist kein Qualitätsmerkmal an sich.'] },
     ],
-    steps: 'Wenn Sie wissen möchten, wie ein Objekt eingeordnet werden kann, ist eine Immobilienbewertung der nächste Schritt.',
+    steps: 'Wenn Sie wissen möchten, wie ein Objekt eingeordnet werden kann, ist der Objektreport der nächste Schritt.',
   },
   {
     slug: 'immobilien-bewerten', cat: 'Immobilienbewertung', title: 'Immobilien bewerten', img: INSIGHTS_IMG.articles['immobilien-bewerten'],
@@ -81,7 +81,7 @@ export const ARTICLES = [
       { h: 'Typische Verfahren', p: ['In Deutschland sind das Vergleichswertverfahren, das Ertragswertverfahren und das Sachwertverfahren gebräuchlich. Welches Verfahren geeignet ist, hängt von der Objektart ab.'] },
       { h: 'Annahmen sichtbar machen', p: ['Jede Bewertung beruht auf Annahmen. Ein guter Bericht benennt Datenquellen, Stand und Annahmen, damit Sie die Ergebnisse nachvollziehen können.'] },
     ],
-    steps: 'Bei jeder Bewertung werden Herkunft von Daten und Annahmen nachvollziehbar benannt.',
+    steps: 'Im Objektreport werden Herkunft von Daten und Annahmen je Baustein ausgewiesen.',
   },
   {
     slug: 'potenziale-einordnen', cat: 'Entwicklungspotenziale', title: 'Potenziale einordnen', img: INSIGHTS_IMG.articles['potenziale-einordnen'],
@@ -91,7 +91,7 @@ export const ARTICLES = [
       { h: 'Typische Fragestellungen', p: ['Bestandsoptimierung, Nachverdichtung oder Nutzungsänderung sind gängige Überlegungen. Jede davon braucht eine eigene rechtliche und wirtschaftliche Prüfung.'] },
       { h: 'Vorprüfung statt Entscheidung', p: ['Rechtliche Vorprüfungen dienen der Orientierung. Sie ersetzen keine verbindliche Auskunft der zuständigen Stellen.'] },
     ],
-    steps: 'In einer strategischen Analyse werden offene Punkte und Prüfhinweise benannt.',
+    steps: 'Im Objektreport finden Sie Prüfhinweise, die offene Punkte benennen.',
   },
 ]
 export const CATEGORIES = ['Alle', 'Off-Market', 'Immobilienbewertung', 'Kapitalanlage', 'Entwicklungspotenziale', 'Marktinformationen']

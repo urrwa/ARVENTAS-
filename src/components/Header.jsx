@@ -4,12 +4,11 @@ import LangToggle from './LangToggle.jsx'
 import { useMenu } from './MenuContext.jsx'
 
 export const NAV = [
-  { to: '/', label: 'Startseite', end: true },
-  { to: '/leistungen', label: 'Leistungen' },
-  { to: '/system', label: 'System' },
-  { to: '/insights', label: 'Insights' },
+  { to: '/immobilie-verkaufen', label: 'Für Eigentümer' },
+  { to: '/kapitalanlage-immobilien', label: 'Für Investoren' },
+  { to: '/objektreport', label: 'Objektreport' },
   { to: '/ueber-uns', label: 'Über uns' },
-  { to: '/kontakt', label: 'Kontakt' },
+  { to: '/wissen', label: 'Wissen' },
 ]
 
 export default function Header() {
@@ -38,7 +37,7 @@ export default function Header() {
         </Link>
         <nav className="nav" aria-label="Hauptnavigation">
           {NAV.map((l) => <NavLink key={l.to} to={l.to} end={l.end} className="nl">{l.label}</NavLink>)}
-          <Link to="/kontakt" className="btn btn-gold">Potenzial analysieren</Link>
+          <Link to="/kontakt" className="btn btn-gold">Beratung anfragen</Link>
         </nav>
         <LangToggle />
         <button ref={burger} className="burger" type="button" aria-expanded={open} aria-controls="push-menu" aria-label="Menü öffnen" onClick={() => setOpen(true)}>

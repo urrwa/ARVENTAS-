@@ -5,7 +5,7 @@ import { useMenu } from './MenuContext.jsx'
 import { useConsent } from './Consent.jsx'
 
 import { NAV } from './Header.jsx'
-const items = NAV
+const items = [...NAV, { to: '/partner', label: 'Partner' }, { to: '/kontakt', label: 'Kontakt' }]
 
 // Push-Menü: Seitenpanel von rechts, die Seite wird nach links geschoben. Links erscheinen gestaffelt,
 // beim Hover läuft ein Balken hinter dem Link durch.
@@ -45,7 +45,7 @@ export default function MenuPanel() {
             ))}
           </ul>
         </nav>
-        <Link to="/kontakt" className="btn btn-marine panel-cta">Strategiegespräch anfragen <span className="arr" aria-hidden="true">→</span></Link>
+        <Link to="/kontakt" className="btn btn-marine panel-cta">Beratung anfragen <span className="arr" aria-hidden="true">→</span></Link>
         <div className="panel-bot">
           <div>
             <h4>Rechtliches</h4>

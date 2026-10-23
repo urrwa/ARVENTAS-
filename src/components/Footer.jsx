@@ -25,18 +25,19 @@ export default function Footer() {
         <div className="ftr3-top">
           <div className="ftr3-photo" ref={photo}><img src={HOME.footer} alt="" loading="lazy" decoding="async" /></div>
           <div className="ftr3-mid">
-            <h2 className="ftr3-h">Klarheit vor jeder Entscheidung.</h2>
-            <p>Strategische Immobilienentwicklung mit System.</p>
-            <Link to="/kontakt" className="ftr3-mail">Potenzial analysieren <span aria-hidden="true">→</span></Link>
+            <h2 className="ftr3-h">Werte schaffen. Zukunft bauen.</h2>
+            <p>Off-Market-Immobilien deutschlandweit.</p>
+            <Link to="/kontakt" className="ftr3-mail">Beratung anfragen <span aria-hidden="true">→</span></Link>
           </div>
           <nav className="ftr3-pages" aria-label="Seiten">
             <h3>Seiten</h3>
             <ul>
-              <li><Link to="/">Startseite</Link></li>
-              <li><Link to="/leistungen">Leistungen</Link></li>
-              <li><Link to="/system">System</Link></li>
-              <li><Link to="/insights">Insights</Link></li>
+              <li><Link to="/immobilie-verkaufen">Eigentümer</Link></li>
+              <li><Link to="/kapitalanlage-immobilien">Investoren</Link></li>
+              <li><Link to="/objektreport">Objektreport</Link></li>
               <li><Link to="/ueber-uns">Über uns</Link></li>
+              <li><Link to="/partner">Partner</Link></li>
+              <li><Link to="/wissen">Wissen</Link></li>
               <li><Link to="/kontakt">Kontakt</Link></li>
             </ul>
           </nav>

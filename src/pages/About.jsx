@@ -1,83 +1,89 @@
 import Seo from '../components/Seo.jsx'
-import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
-import ScrollWords from '../components/ScrollWords.jsx'
-import Letters from '../components/Letters.jsx'
-import { Btn } from '../components/ui.jsx'
-import { Sec } from '../components/blocks.jsx'
-import { PAGES } from '../content/images.js'
-import { ABOUT } from '../content/site.js'
+import PageHero from '../components/PageHero.jsx'
+import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
+import Brand from '../components/Brand.jsx'
+import RevealText from '../components/RevealText.jsx'
+import ScrollZoom from '../components/ScrollZoom.jsx'
+import HScroll from '../components/HScroll.jsx'
 
-// Seitenaufbau nach dem Vorbild Archter-Studio: Studio-Absatz mit Bild, dunkle Haltung, großer Ansatz-Absatz, Mission/Zukunft über Vollbild.
 export default function About() {
   return (
     <>
-      <Seo title="Über uns | ARVENTAS" description="ARVENTAS steht für Struktur, Strategie und nachhaltige Immobilienentwicklung." />
-      <PageHero image={PAGES.about.hero} eyebrow="Über uns" title="Struktur. Strategie. Entwicklung."
-        lead="Immobilienpotenziale strukturiert bewerten und entwickeln.">
-        <div className="btn-row"><Btn to="/kontakt">Potenzial analysieren</Btn></div>
-      </PageHero>
+      <Seo title="Über uns | ARVENTAS" description="Wer ARVENTAS ist: aktuelles Off-Market-Geschäftsmodell, Mission und Arbeitsweise, Werte und deutschlandweiter Tätigkeitsbereich." />
+      <PageHero tall image="/media/p/u-lounge-gespraech.webp" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
 
-      <section className="ab-studio">
-        <div className="wrap ab-studio-in">
-          <p className="ab-label">(Unsere Mission)</p>
-          <div className="ab-studio-txt">
-            <ScrollWords className="ab-lead" text="Wir schaffen Klarheit, bevor Entscheidungen getroffen werden. Standort, Nachfrage, Preisentwicklung, Risiko, Vermarktung und Entwicklungspotenzial bringen wir in eine klare Struktur. So werden Potenziale sichtbar und Risiken besser einzuordnen." />
-          </div>
-          <div className="ab-studio-img"><img src={PAGES.about.studio} alt="Beratungstisch mit Gebäudemodell" loading="lazy" decoding="async" /></div>
-        </div>
-      </section>
-
-      <section className="ab-dark">
-        <div className="wrap ab-dark-in">
-          <div className="ab-dark-img"><img src={PAGES.about.dark} alt="Gläserner Büroeingang am Abend" loading="lazy" decoding="async" /></div>
-          <div className="ab-dark-txt">
-            <p className="ab-label">(Unsere Haltung)</p>
-            <h2 className="ab-h">Nicht schneller entscheiden. Besser entscheiden.</h2>
-            <p>Wir glauben an Marktverständnis, klare Analyse, realistische Bewertung und strategische Umsetzung.</p>
-            <div className="btn-row"><Btn to="/kontakt" variant="gold">Mit uns arbeiten</Btn></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ab-approach">
+      <div className="cover-over">
+      <section className="sec ivory about-big-sec">
         <div className="wrap">
-          <p className="ab-label">(Unser Unterschied)</p>
-          <ScrollWords className="ab-big" text="Wir sind keine klassische Makler- oder Baufirma. Unser Ansatz beginnt früher: Wir analysieren Markt und Standort, bewerten Potenziale, ordnen Risiken ein und entwickeln daraus eine klare Strategie." />
-        </div>
-      </section>
-
-      <section className="ab-mv">
-        <img className="ab-mv-bg" src={PAGES.about.mv} alt="" loading="lazy" decoding="async" />
-        <div className="wrap ab-mv-cards">
-          <article>
-            <h3>Partnernetzwerk</h3>
-            <p>Starke Ergebnisse entstehen durch passende Partner. Qualität, Verlässlichkeit, Struktur und Langfristigkeit.</p>
-          </article>
-          <article>
-            <h3>Zukunft</h3>
-            <p>Moderne Immobilienentwicklung braucht mehr als Erfahrung. Früher erkennen, besser bewerten, gezielter handeln.</p>
-          </article>
-        </div>
-      </section>
-
-      <section className="pr">
-        <div className="wrap">
-          <p className="ab-label">(Unsere Haltung im Detail)</p>
-          <h2 className="pr-h"><Letters text="Vier Prinzipien." per={34} /></h2>
-          <ol className="pr-list">
-            {ABOUT.stance.map((it, i) => (
-              <li key={it.t} style={{ '--i': i }} className="rv">
-                <span className="pr-n">{String(i + 1).padStart(2, '0')}</span>
-                <h3>{it.t}</h3>
-                <p>{it.d}</p>
-              </li>
+          <p className="eyebrow">Wer wir sind</p>
+          <RevealText className="about-big" text="Die Marke steht für zeitlose Eleganz, unaufdringliche Stärke, Präzision, Zurückhaltung und Vertrauen. Dieser Anspruch prägt unsere Arbeit: ruhig, klar und sorgfältig." />
+          <hr className="hair" />
+          <div className="vals">
+            {['Präzision', 'Zurückhaltung', 'Vertrauen', 'Seriosität'].map((v, i) => (
+              <div key={v} className="val rv" style={{ '--d': i * 90 }}><span>0{i + 1}</span><strong>{v}</strong></div>
             ))}
-          </ol>
+          </div>
+          <p className="rv about-name"><b>Der Name.</b> Der Markenname geht auf die Ideen „Assets“, „Architecture“ und „Ventures“ zurück (Brandbook).</p>
         </div>
       </section>
 
-      <CtaBand image={PAGES.about.cta} title="Lassen Sie uns Immobilienpotenziale klarer einordnen." text="ARVENTAS unterstützt Sie dabei, Märkte, Objekte und Entwicklungschancen besser zu verstehen und strategisch nutzbar zu machen." />
+      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/p/u-holzhaus-rechner.webp" />
+
+      <section className="sec ivory">
+        <div className="wrap">
+          <SectionHead eyebrow="Aktuelles Geschäftsmodell" title="Zugang, Analyse, Matching, Begleitung." normal />
+        </div>
+        <HScroll items={[
+          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/u-altstadt.webp' },
+          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/u-karte.webp' },
+          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/p/u-modelle-charts.webp' },
+          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/p/u-schluessel.webp' },
+        ]} />
+        <div className="wrap"><p className="rv" style={{ marginTop: 24, maxWidth: '62ch' }}>Die interne KI-Technologie unterstützt Objektanalysen und Prozesse. Sie ist kein öffentlich verkauftes Softwareprodukt.</p></div>
+      </section>
+
+      <section className="sec dark">
+        <div className="wrap two">
+          <div>
+            <SectionHead eyebrow="Mission und Arbeitsweise" title="Daten prüfen. Menschen entscheiden." normal />
+            <p className="rv">Jede freigegebene Analyse hat eine verantwortliche Person. Wir benennen Annahmen, trennen Einschätzung von Gutachten und machen offene Punkte sichtbar.</p>
+          </div>
+          <div>
+            <p className="rv" style={{ marginTop: 0, fontFamily: 'var(--font-head)', fontSize: 'clamp(20px,2vw,26px)', color: 'var(--ivory)' }}>Elegant. Selten. Zeitlos. Scharfsinnig.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="sec ivory">
+        <div className="wrap two">
+          <div>
+            <SectionHead eyebrow="Unternehmensstruktur" title="Tatsächliche Struktur und Verantwortung." normal />
+            <p className="rv">Die Dachmarke und das Zusammenspiel spezialisierter Unternehmen werden hier erklärt. Wer Leistungen erbringt und Vertragspartner wird, stellen wir anhand der bestätigten Unternehmensstruktur transparent dar.</p>
+            <div className="struct rv" aria-label="Reduziertes Strukturdiagramm (Platzhalter)">
+              <svg viewBox="0 0 520 180" width="100%" role="img" aria-label="Reduziertes Strukturdiagramm als Platzhalter">
+                <rect x="170" y="10" width="180" height="46" fill="none" stroke="#192537" strokeWidth="1.5" /><text x="260" y="38" textAnchor="middle" fontSize="13" fill="#0B0B0B">Dachmarke</text>
+                <path d="M260 56 V80 M90 80 H430 M90 80 V104 M260 80 V104 M430 80 V104" stroke="#B09E80" strokeWidth="2" fill="none" />
+                {[[10, 'Gesellschaft A'], [180, 'Gesellschaft B'], [350, 'Gesellschaft C']].map(([x, t]) => (<g key={x}><rect x={x} y="104" width="160" height="46" fill="none" stroke="#192537" strokeDasharray="5 4" /><text x={x + 80} y="132" textAnchor="middle" fontSize="12" fill="#0B0B0B" fillOpacity=".72">{t}</text></g>))}
+              </svg>
+              <p className="small" style={{ marginTop: 8 }}>Platzhalter: Bezeichnungen und Beziehungen werden nach Bestätigung der Unternehmensstruktur ergänzt. Keine pauschale Behauptung einer rechtlichen Risikotrennung oder Haftungsfreiheit.</p>
+            </div>
+          </div>
+          <div>
+            <SectionHead eyebrow="Ansprechpartner" title="Echte Ansprechpartner." normal />
+            <Placeholder title="Platzhalter – Team">Hier erscheinen bestätigte Profile mit Name, Rolle und Fachgebiet sowie ein authentisches Porträt. Vor Veröffentlichung ersetzen oder ausblenden. Keine erfundenen Namen, Rollen, Erfahrungsjahre oder Teamfotos.</Placeholder>
+          </div>
+        </div>
+      </section>
+
+      <section className="sec dark">
+        <div className="wrap">
+          <SectionHead eyebrow="Tätigkeitsbereich" title="Deutschlandweit." lead="Immobilienkompetenz für Eigentümer und Investoren in ganz Deutschland. ARVENTAS agiert ausschließlich deutschlandweit." />
+          <div className="btn-row"><Btn to="/kontakt">Kontakt aufnehmen</Btn></div>
+        </div>
+      </section>
+      </div>
+      <CtaBand image="/media/p/u-glasfassaden.webp" />
     </>
   )
 }

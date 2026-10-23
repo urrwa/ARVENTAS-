@@ -29,3 +29,10 @@ Kurzfazit: Die Website ist gestalterisch weit, folgt aber inhaltlich einem ander
 | Übergabe | Seiten-/Komponentenübersicht, Integrationspunkte, offene Daten, Teststatus | nur docs/bildzuordnung.md |
 | Technik | React + TypeScript | React (JavaScript) |
 | Sprache | alles Deutsch | zusätzlich EN-Umschalter |
+
+
+## Stand nach Umbau (23.10.)
+- Neu bzw. wiederhergestellt: Routen /immobilie-verkaufen, /kapitalanlage-immobilien, /investorenkreis, /objektreport, /partner, /wissen, /wissen/[slug]; Startseite mit den 12 Sektionen; Über uns und Kontakt (drei Zugänge) nach Masterprompt; Navigation, Menü und Footer nach Vorgabe; Titel/Meta und Slogan angepasst; erfundene Kennzahlen im Hero entfernt.
+- Unverändert gelassen (nicht beauftragt): Hero-Film, Header-/Footer-Animationen, Menü-Panel, EN-Umschalter, Gestaltung mit Schatten/Verläufen/Glas, Bilder.
+- Die frühere Fassung (Leistungen, System, Insights) ist weiter über ihre URLs erreichbar, aber nicht mehr verlinkt; die alten Seiten Startseite/Über uns/Kontakt liegen unter `internal/leistungen-version/`.
+- Offen: Übersetzung neuer Texte ins Englische prüfen, Kontaktdaten, Team-Porträts, Partnerfreigaben, Medienverzeichnis aktualisieren, Mobil-Prüfung aller Sektionen.
