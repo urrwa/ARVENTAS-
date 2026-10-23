@@ -9,6 +9,19 @@ export default function HomeFilm() {
   const wrap = useRef(null), vid = useRef(null)
   const [show, setShow] = useState(false)
   const close = useCallback(() => setShow(false), [])
+  // Beim Laden füllt der Film den ganzen Bildschirm; beim Scrollen zieht er sich zum gerundeten Rahmen zusammen (--k: 0 bis 1).
+  useEffect(() => {
+    const el = wrap.current
+    if (!el) return
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.style.setProperty('--k', 1); return }
+    let raf = 0
+    const run = () => { raf = 0; el.style.setProperty('--k', Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * 0.45))).toFixed(3)) }
+    const on = () => { if (!raf) raf = requestAnimationFrame(run) }
+    run()
+    window.addEventListener('scroll', on, { passive: true })
+    window.addEventListener('resize', on)
+    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
+  }, [])
   useEffect(() => {
     const v = vid.current
     if (!v) return

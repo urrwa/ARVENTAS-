@@ -2539,3 +2539,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .kl-row.on { background: var(--marine); }
 }
 @media (prefers-reduced-motion: reduce) { .kl-row, .kl-row small, .kl-row i, .kl-img img { transition: none; } }
+
+/* Hero: vollflächig beim Laden, beim Scrollen zum Rahmen */
+.hf { --k: 0; --fr: calc(var(--k) * clamp(10px, 1.2vw, 18px)); }
+.hf-vid, .hf-shade { border-radius: calc(var(--k) * clamp(20px, 2.2vw, 32px)); }
