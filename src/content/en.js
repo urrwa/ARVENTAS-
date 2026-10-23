@@ -1412,4 +1412,7 @@ export default {
  "Strategische": "Strategic",
  "Immobilienentwicklung": "Real estate development",
  "Struktur, Marktverständnis und klare Entscheidungen.": "Structure, market understanding and clear decisions.",
+ "Der Ablauf.": "The process.",
+ "Deutschlandweit verbinden.": "Connecting across Germany.",
+ "Ihr nächster Schritt.": "Your next step.",
 }

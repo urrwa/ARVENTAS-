@@ -30,7 +30,7 @@ export default function GermanyScene() {
     <div ref={root} className="gs" onMouseEnter={() => { hold.current = true }} onMouseLeave={() => { hold.current = false }}>
       <div className="gs-head">
         <p className="eyebrow">Deutschlandweit</p>
-        <h2 id="h-de" className="h2">Regional verstehen. Deutschlandweit verbinden.</h2>
+        <h2 id="h-de" className="h2">Deutschlandweit verbinden.</h2>
       </div>
       <div className="gs-stage" aria-hidden="true">
         <div className="gs-plane" style={{ aspectRatio: `${VW} / ${VH}` }}>

@@ -95,7 +95,7 @@ export default function Home() {
       {/* 04 – Interaktiver Objektreport */}
       <section className="sec dark" aria-labelledby="h-rep">
         <div className="wrap">
-          <header className="sec-head"><p className="eyebrow rv">Objektreport</p><h2 id="h-rep" className="h2 rv">Nicht nur ein Wert.<br />Ein klares Bild.</h2><p className="lead rv">Datenbasiert analysiert. Persönlich geprüft.</p></header>
+          <header className="sec-head"><p className="eyebrow rv">Objektreport</p><h2 id="h-rep" className="h2 rv">Ein klares Bild.</h2><p className="lead rv">Datenbasiert analysiert. Persönlich geprüft.</p></header>
           <div className="rv"><ReportViewer id="muster-home" /></div>
           <div className="btn-row">
             <Btn to="/objektreport#muster" variant="line">Muster ansehen</Btn>
@@ -108,7 +108,7 @@ export default function Home() {
       {/* 05 – Zwei nachvollziehbare Prozesse */}
       <section className="sec dark" aria-labelledby="h-proc">
         <div className="wrap">
-          <SectionHead eyebrow="Ablauf" title="Vom ersten Gespräch zum nächsten Schritt." />
+          <SectionHead eyebrow="Ablauf" title="Der Ablauf." />
           <ProcessTimeline />
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function Home() {
           { t: 'Optionen prüfen.', img: '/media/p/bw.area.0.webp' },
           { t: 'Diskret vermarkten.', img: '/media/p/bw.res.2.webp' },
         ]}>
-          <header className="sec-head"><p className="eyebrow">Für Eigentümer</p><h2 id="h-own" className="h2">Ihr Eigentum.<br />Kein öffentliches Schaufenster.</h2><p className="lead">Wert, Potenziale und Verkaufswege klären – mit einem persönlichen Ansprechpartner.</p></header>
+          <header className="sec-head"><p className="eyebrow">Für Eigentümer</p><h2 id="h-own" className="h2">Kein öffentliches Schaufenster.</h2><p className="lead">Wert, Potenziale und Verkaufswege klären – mit einem persönlichen Ansprechpartner.</p></header>
           <div className="btn-row"><Btn to="/immobilie-verkaufen#anfrage">Objektprüfung anfragen</Btn></div>
         </OwnerShowcase>
         <p className="small muted own-note">Beispielbilder, keine Objekte von <Brand />. Es werden keine vertraulichen Adressen gezeigt.</p>
@@ -172,7 +172,7 @@ export default function Home() {
       <section className="sec dark ink" aria-labelledby="h-next">
         <div className="choose-img" aria-hidden="true"><img src="/media/p/u-lounge-fenster.webp" alt="" loading="lazy" style={{ objectPosition: '50% 20%' }} /></div>
         <div className="wrap">
-          <header className="sec-head"><p className="eyebrow rv">Kontakt</p><h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2></header>
+          <header className="sec-head"><p className="eyebrow rv">Kontakt</p><h2 id="h-next" className="h2 rv">Ihr nächster Schritt.</h2></header>
           <div className="choose">
             <nav className="choose-list rv" aria-label="Nächster Schritt">
               <Link to="/immobilie-verkaufen#anfrage">Immobilie prüfen lassen <span className="arr" aria-hidden="true">→</span></Link>

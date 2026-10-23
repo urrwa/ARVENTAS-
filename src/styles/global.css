@@ -2857,3 +2857,22 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .gs-foot a:hover { color: var(--gold-btn); }
 @media (max-width: 760px) { .gs-plane { height: 62%; transform: rotateX(48deg) rotateZ(-10deg); } .gs-pill { padding: 7px 12px; } }
 @media (prefers-reduced-motion: reduce) { .gs-pill, .gs-top path { transition: none; } }
+
+/* Startseite: Überschriften und Texte mittig */
+.hf ~ .sec .sec-head { text-align: center; margin-inline: auto; max-width: 900px; }
+.hf ~ .sec .sec-head .eyebrow { justify-content: center; }
+.hf ~ .sec .sec-head .eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--gold); flex: none; }
+.hf ~ .sec .sec-head .lead { margin-inline: auto; }
+.hf ~ .sec .btn-row { justify-content: center; }
+.hf ~ .sec > .wrap > p.small { text-align: center; }
+.prc-stage .toggle { align-self: center; }
+.os-top { margin-inline: auto; text-align: center; max-width: 860px; }
+.os-top .eyebrow { justify-content: center; }
+.os-top .eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--gold); flex: none; }
+.os-top .btn-row { justify-content: center; }
+.gs-head { left: 0; right: 0; margin-inline: auto; text-align: center; max-width: none; }
+.gs-head .eyebrow { justify-content: center; }
+.gs-head .eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--gold); flex: none; }
+.hf ~ .sec .choose-list { margin-inline: auto; }
+.own-note, .hf ~ .wis-sec .btn-row { text-align: center; }
+.gs-head .h2, .hf ~ .sec .sec-head .h2 { margin-inline: auto; }
