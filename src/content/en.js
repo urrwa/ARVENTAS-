@@ -1415,4 +1415,6 @@ export default {
  "Der Ablauf.": "The process.",
  "Deutschlandweit verbinden.": "Connecting across Germany.",
  "Ihr nächster Schritt.": "Your next step.",
+ "Anbindung": "Connections",
+ "Versorgung": "Amenities",
 }

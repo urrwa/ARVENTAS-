@@ -2839,25 +2839,30 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .hf ~ .sec.ink > .wrap { position: relative; z-index: 1; }
 .hf ~ .sec.ink .choose-list { max-width: 760px; }
 
-/* Deutschlandweit: schräge Karte als Vollbildszene */
+/* Deutschlandweit: isometrischer Stadtplan als Vollbildszene */
 .hf ~ .gs-sec { padding: 0; display: block; min-height: 0; overflow: hidden; }
-.gs { position: relative; height: calc(100svh - var(--header-h)); min-height: 560px; }
-.gs-head { position: absolute; z-index: 2; top: clamp(28px, 5vh, 64px); left: var(--gut); max-width: 640px; }
-.gs-head .h2 { font-size: clamp(26px, 3.2vw, 48px); }
-.gs-stage { position: absolute; inset: 0; display: grid; place-items: center; perspective: 1600px; }
-.gs-plane { position: relative; height: min(94%, 940px); transform-style: preserve-3d; transform: rotateX(54deg) rotateZ(-14deg) translateY(4%); }
-.gs-layer { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.gs-layer path { fill: #0e1826; stroke: rgba(245, 243, 239, .08); stroke-width: .6; }
-.gs-top path { fill: rgba(245, 243, 239, .24); stroke: rgba(245, 243, 239, .5); stroke-width: .8; transition: fill 500ms ease; }
-.gs-top path.on { fill: var(--gold-btn); }
-.gs-pill { position: absolute; transform: translate(-50%, -50%) translateZ(34px) rotateZ(14deg) rotateX(-54deg); transform-origin: 50% 100%; padding: 9px 18px; border: 0; border-radius: 999px; background: var(--ivory); color: var(--black); font: 500 clamp(12px, 1vw, 15px)/1 var(--font-body); white-space: nowrap; cursor: pointer; transition: background 400ms ease, color 400ms ease; }
+.gs { position: relative; height: calc(100svh - var(--header-h)); min-height: 600px; }
+.gs-head { position: absolute; z-index: 2; top: clamp(24px, 4.5vh, 56px); left: 0; right: 0; text-align: center; }
+.gs-head .h2 { font-size: clamp(26px, 3vw, 44px); margin-inline: auto; }
+.gs-head .eyebrow { justify-content: center; margin-bottom: 12px; }
+.gs-head .eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--gold); flex: none; }
+.gs-stage { position: absolute; inset: clamp(120px, 20vh, 190px) 0 clamp(56px, 9vh, 90px); display: grid; place-items: center; }
+.gs-map { position: relative; height: 100%; max-width: 96%; }
+.gs-map svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.gs-t { fill: rgba(245, 243, 239, .26); stroke: rgba(245, 243, 239, .3); stroke-width: .5; }
+.gs-l { fill: rgba(245, 243, 239, .13); }
+.gs-r { fill: rgba(245, 243, 239, .06); }
+.gs-park { fill: rgba(245, 243, 239, .07); stroke: rgba(245, 243, 239, .2); stroke-width: .5; }
+.gs-key .gs-t { fill: var(--gold-btn); stroke: none; }
+.gs-key .gs-l { fill: #a88f63; }
+.gs-key .gs-r { fill: #7d6a48; }
+.gs-pill { position: absolute; transform: translate(-50%, -100%); padding: 9px 18px; border: 0; border-radius: 999px; background: var(--ivory); color: var(--black); font: 500 clamp(12px, 1vw, 15px)/1 var(--font-body); white-space: nowrap; cursor: pointer; transition: background 400ms ease, color 400ms ease; }
 .gs-pill.on { background: var(--black); color: var(--ivory); }
-.gs-foot { position: absolute; z-index: 2; left: var(--gut); right: var(--gut); bottom: clamp(20px, 4vh, 44px); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: rgba(245, 243, 239, .8); }
+.gs-foot { position: absolute; z-index: 2; left: var(--gut); right: var(--gut); bottom: clamp(18px, 3.5vh, 40px); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: rgba(245, 243, 239, .8); }
 .gs-foot a { color: var(--ivory); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
 .gs-foot a:hover { color: var(--gold-btn); }
-@media (max-width: 760px) { .gs-plane { height: 62%; transform: rotateX(48deg) rotateZ(-10deg); } .gs-pill { padding: 7px 12px; } }
-@media (prefers-reduced-motion: reduce) { .gs-pill, .gs-top path { transition: none; } }
-
+@media (max-width: 760px) { .gs-map { max-width: 100%; } .gs-pill { padding: 7px 12px; } }
+@media (prefers-reduced-motion: reduce) { .gs-pill { transition: none; } }
 /* Startseite: Überschriften und Texte mittig */
 .hf ~ .sec .sec-head { text-align: center; margin-inline: auto; max-width: 900px; }
 .hf ~ .sec .sec-head .eyebrow { justify-content: center; }
