@@ -3006,3 +3006,16 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .pic-open img { transform: scale(1.18); transition: transform 2600ms cubic-bezier(.2, .6, .1, 1); }
 .pic-open.in img { transform: none; }
 @media (prefers-reduced-motion: reduce) { .pic-open, .pic-open img { clip-path: none; transform: none; transition: none; } }
+/* (siehe unten) Eröffnung wie im Vorbild: erst Überschrift, dann erscheint der Text, zuletzt öffnet sich das Foto dahinter von oben nach unten */
+.ow-card { animation: owFade 900ms ease both 1000ms; z-index: 2; }
+.ow-pic { animation: owOpen 1700ms cubic-bezier(.65, 0, .2, 1) both 2000ms; }
+.ow-pic > img { animation: owZoom 2800ms cubic-bezier(.2, .6, .1, 1) both 2000ms; }
+.ow-pic { overflow: visible; }
+.ow-pic > img { clip-path: none; }
+
+.ow-pic { animation: none; }
+.ow-pic > img { animation: owOpen 1700ms cubic-bezier(.65, 0, .2, 1) both 2000ms; transform-origin: 50% 0; }
+@media (prefers-reduced-motion: reduce) { .ow-pic > img { animation: none; } }
+.ow-card::before { animation: owBox 900ms ease both 2300ms; }
+@keyframes owBox { from { background: rgba(11, 11, 11, 0); } to { background: rgba(11, 11, 11, .55); } }
+@media (prefers-reduced-motion: reduce) { .ow-card::before { animation: none; } }
