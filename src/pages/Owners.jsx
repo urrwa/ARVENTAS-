@@ -64,15 +64,6 @@ export default function Owners() {
         </div>
       </section>
 
-      <section className="sec dark">
-        <div className="wrap two">
-          <div><SectionHead eyebrow="Diskreter Verkaufsansatz" title="Kein öffentliches Schaufenster." normal />
-            <p className="rv">Ihr Objekt wird nicht über öffentliche Portale beworben. Der Kreis der Interessenten wird gezielt ausgewählt. Konkrete Adressen werden nicht öffentlich gezeigt.</p>
-            <div className="btn-row"><Btn to="/objektreport">Objektreport ansehen</Btn></div></div>
-          <div className="imgf pic-open" style={{ aspectRatio: '4/3' }}><img src="/media/p/u-eingang-travertin.webp" alt="Altbaufassade (Beispielbild)" loading="lazy" /></div>
-        </div>
-      </section>
-
       <section className="sec dark pp-sec">
         <ProcessPinned eyebrow="Ablauf" title="So läuft es ab." steps={OWNER_PROCESS} images={PROCESS_IMG} />
       </section>
