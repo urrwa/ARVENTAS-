@@ -20,14 +20,17 @@ export default function Owners() {
   return (
     <>
       <Seo title="Immobilie verkaufen | ARVENTAS" description="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen – persönlich begleitet, deutschlandweit." />
-      <section className="eh">
-        <div className="wrap">
-          <p className="eh-eb"><i aria-hidden="true" />Für Eigentümer</p>
-          <h1 className="eh-h"><Letters text="Ihre Immobilie. Unser Marktverständnis." per={30} max={1300} delay={200} /></h1>
-          <p className="eh-p">Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.</p>
-          <div className="btn-row"><Btn href="#anfrage">Objektreport anfragen</Btn></div>
+      <section className="ow-op">
+        <p className="ow-eb">Für Eigentümer</p>
+        <h1 className="ow-h"><Letters text="Ihre Immobilie." per={30} max={900} delay={200} /><br /><Letters text="Unser Marktverständnis." per={30} max={1300} delay={700} /></h1>
+        <div className="ow-pic">
+          <img src="/media/p/u-eingang-travertin.webp" alt="" decoding="async" fetchpriority="high" />
+          <div className="ow-card">
+            <p>Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.</p>
+            <span>Diskret. Strukturiert. Persönlich.</span>
+            <Btn href="#anfrage">Objektreport anfragen</Btn>
+          </div>
         </div>
-        <div className="eh-line" aria-hidden="true" />
       </section>
 
       <section className="sec dark">
