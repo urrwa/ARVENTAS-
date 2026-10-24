@@ -2990,3 +2990,12 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .sl-item small { font-size: 10px; margin-bottom: 6px; }
 .sl-item h3 { font-size: clamp(16px, 1.45vw, 21px); margin-bottom: 8px; }
 .sl-item p { font-size: clamp(13px, 1vw, 15px); line-height: 1.55; }
+/* Eigentümer-Eröffnung: erst Überschrift, dann öffnet sich das Foto von oben nach unten, zuletzt erscheint der Text */
+.ow-eb { animation: owFade 700ms ease both 100ms; }
+.ow-pic { animation: owOpen 1500ms cubic-bezier(.65, 0, .2, 1) both 900ms; }
+.ow-pic > img { animation: owZoom 2600ms cubic-bezier(.2, .6, .1, 1) both 900ms; }
+.ow-card { animation: owFade 900ms ease both 2100ms; }
+@keyframes owOpen { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes owZoom { from { transform: scale(1.18); } to { transform: none; } }
+@keyframes owFade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ow-eb, .ow-pic, .ow-pic > img, .ow-card { animation: none; } }
