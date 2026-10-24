@@ -15,7 +15,7 @@ export default function StepRows({ items }) {
     <div className="step-rows" ref={root}>
       {items.map((s, i) => (
         <Link key={s.title} to={s.to} className="step-row">
-          <img src={s.img} alt="" loading="lazy" />
+          <img src={s.img} alt="" loading="eager" decoding="async" />
           <span className="sr-no">{i + 1}</span>
           <span className="sr-text">{s.text}</span>
           <span className="sr-title">{s.title}</span>
