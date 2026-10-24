@@ -5,7 +5,7 @@ import SituationList from '../components/SituationList.jsx'
 import StepRows from '../components/StepRows.jsx'
 import Seo from '../components/Seo.jsx'
 import Letters from '../components/Letters.jsx'
-import { Btn, SectionHead, Tabs, Faq, Placeholder } from '../components/ui.jsx'
+import { Btn, SectionHead, Tabs, Faq } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
@@ -75,14 +75,6 @@ export default function Owners() {
 
       <section className="sec dark pp-sec">
         <ProcessPinned eyebrow="Ablauf" title="So läuft es ab." steps={OWNER_PROCESS} images={PROCESS_IMG} />
-      </section>
-
-      <section className="sec ivory" style={{ paddingTop: 0 }}>
-        <div className="wrap two">
-          <div><SectionHead eyebrow="Persönliche Zuständigkeit" title="Ein Ansprechpartner für Ihr Anliegen." normal />
-            <p className="rv">Ihr Anliegen wird von einer festen Person betreut. Wer das ist, zeigen wir hier, sobald bestätigte Profile vorliegen.</p></div>
-          <Placeholder title="Platzhalter – Ansprechpartner">Name, Rolle und Fachgebiet nach Bestätigung ergänzen oder diesen Bereich vor Veröffentlichung ausblenden.</Placeholder>
-        </div>
       </section>
 
       <section className="sec ivory" style={{ paddingTop: 0 }}>
