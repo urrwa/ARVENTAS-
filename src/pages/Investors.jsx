@@ -2,7 +2,6 @@ import { useState } from 'react'
 import WordZoom from '../components/WordZoom.jsx'
 import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
-import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq, Tabs } from '../components/ui.jsx'
 import PanelSlider from '../components/PanelSlider.jsx'
 import { INVESTOR_FAQ } from '../content/data.js'
@@ -24,9 +23,7 @@ export default function InvestorsPage() {
   return (
     <>
       <Seo title="Kapitalanlage-Immobilien | ARVENTAS" description="Ausgewählte Off-Market-Immobilien für Investoren: Suchprofil, Objektanalyse, Chancen und Risiken – persönlich begleitet, deutschlandweit." />
-      <PageHero image="/media/p/u-buero-tag.webp" crumb="Für Investoren" title="Investieren beginnt mit dem richtigen Zugang." lead="Passende Immobilien finden und Entscheidungen auf Grundlage nachvollziehbarer Informationen treffen.">
-        <div className="btn-row"><Btn to="/investorenkreis">Suchprofil erstellen</Btn></div>
-      </PageHero>
+      <h1 className="sr-only">Investieren beginnt mit dem richtigen Zugang.</h1>
 
       <WordZoom left="Off-Market" right="verständlich erklärt." images={['/media/p/vm.area.2.webp', '/media/p/u-luftbild.webp', '/media/p/u-weisse-wohnanlage.webp', '/media/p/vm.res.1.webp']} />
       <section className="sec ivory wz-after">
