@@ -47,7 +47,7 @@ export default function Owners() {
 
       <section className="sec ivory sl-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} />
+          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img="/media/p/u-holzhaeuser.webp" />
         </div>
       </section>
 

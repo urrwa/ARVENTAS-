@@ -1,39 +1,54 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
-// Links bleibt ein Foto stehen (wechselt mit dem Abschnitt in der Mitte), rechts steht die Überschrift fest und die Situationen laufen darunter durch.
-// Große, helle Ziffern wie im Vorbild; auf schmalen Bildschirmen steht das Foto oben und die Liste folgt.
-export default function SituationList({ items, eyebrow, title }) {
-  const [a, setA] = useState(0)
-  const root = useRef(null)
+// Der Abschnitt bleibt beim Scrollen stehen: links ein festes Foto, rechts eine feste Überschrift. Die Situationen laufen darunter nach oben durch
+// und blenden am oberen Rand aus. Schmal: normale Liste ohne Fixierung.
+export default function SituationList({ items, eyebrow, title, img }) {
+  const box = useRef(null), view = useRef(null), track = useRef(null)
   useEffect(() => {
-    if (!('IntersectionObserver' in window)) return
-    const rows = Array.from(root.current.querySelectorAll('.sl-item'))
-    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) setA(Number(e.target.dataset.i)) }), { rootMargin: '-45% 0px -45% 0px' })
-    rows.forEach((r) => io.observe(r))
-    return () => io.disconnect()
+    const mq = matchMedia('(max-width: 860px), (prefers-reduced-motion: reduce)')
+    let raf = 0
+    const calc = () => {
+      raf = 0
+      const t = track.current, v = view.current
+      if (!t || !v) return
+      const rows = Array.from(t.children)
+      if (mq.matches) { t.style.transform = ''; rows.forEach((r) => { r.style.opacity = '' }); return }
+      const r = box.current.getBoundingClientRect(), span = r.height - innerHeight
+      const p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0
+      const max = Math.max(0, t.offsetHeight - v.clientHeight)
+      const y = -p * max
+      t.style.transform = `translate3d(0, ${y}px, 0)`
+      rows.forEach((row) => { const top = row.offsetTop + y; row.style.opacity = Math.min(1, Math.max(0, 1 + top / (row.offsetHeight * 0.7))).toFixed(3) })
+    }
+    const tick = () => { raf = raf || requestAnimationFrame(calc) }
+    tick()
+    addEventListener('scroll', tick, { passive: true }); addEventListener('resize', tick)
+    return () => { removeEventListener('scroll', tick); removeEventListener('resize', tick); cancelAnimationFrame(raf) }
   }, [])
   return (
-    <div className="sl" ref={root}>
-      <div className="sl-pic" aria-hidden="true">
-        {items.map((it, i) => <img key={it.id} src={it.img} alt="" loading="lazy" decoding="async" className={i === a ? 'on' : ''} />)}
-      </div>
-      <div className="sl-main">
-        <header className="sl-head">
-          <p className="eyebrow">{eyebrow}</p>
-          <h2 className="h2">{title}</h2>
-        </header>
-        <ol className="sl-list">
-          {items.map((it, i) => (
-            <li key={it.id} className={'sl-item' + (i === a ? ' on' : '')} data-i={i}>
-              <span className="sl-no" aria-hidden="true">{i + 1}</span>
-              <div>
-                <small>{it.label}</small>
-                <h3>{it.t}</h3>
-                <p>{it.p}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+    <div className="sl" ref={box}>
+      <div className="sl-stage">
+        <div className="sl-pic" aria-hidden="true"><img src={img} alt="" loading="lazy" decoding="async" /></div>
+        <div className="sl-main">
+          <header className="sl-head">
+            <p className="eyebrow">{eyebrow}</p>
+            <h2 className="h2">{title}</h2>
+          </header>
+          <div className="sl-view" ref={view}>
+            <ol className="sl-list" ref={track}>
+              {items.map((it, i) => (
+                <li key={it.id} className="sl-item">
+                  <span className="sl-no" aria-hidden="true">{i + 1}</span>
+                  <div>
+                    <small>{it.label}</small>
+                    <h3>{it.t}</h3>
+                    <p>{it.p}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
       </div>
     </div>
   )
