@@ -2959,3 +2959,9 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 /* Schrittzeilen: Foto deckt schneller auf, damit es nicht halb geladen wirkt */
 .step-row img { transition: clip-path 900ms cubic-bezier(.65, 0, .25, 1), transform 1600ms cubic-bezier(.2, .6, .1, 1); }
 .step-row::after { transition: clip-path 900ms cubic-bezier(.65, 0, .25, 1); }
+/* Eigentümer: alle Abschnitte nach der stehenden Eröffnung liegen darüber (sonst verschwinden sie dahinter) */
+@media (min-width: 761px) {
+  .ow-op ~ * { position: relative; z-index: 1; }
+  .ow-op ~ .sec.dark { background: var(--marine); }
+  .ow-op ~ .sec.ivory { background: var(--ivory); }
+}
