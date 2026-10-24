@@ -28,7 +28,7 @@ export default function SituationList({ items, eyebrow, title, img }) {
   return (
     <div className="sl" ref={box}>
       <div className="sl-stage">
-        <div className="sl-pic" aria-hidden="true"><img src={img} alt="" loading="lazy" decoding="async" /></div>
+        <div className="sl-pic pic-open" aria-hidden="true"><img src={img} alt="" loading="lazy" decoding="async" /></div>
         <div className="sl-main">
           <header className="sl-head">
             <p className="eyebrow">{eyebrow}</p>

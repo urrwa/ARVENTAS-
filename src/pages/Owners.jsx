@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import SituationList from '../components/SituationList.jsx'
 import StepRows from '../components/StepRows.jsx'
@@ -18,6 +19,15 @@ const SITUATIONS = [
 
 export default function Owners() {
   const [sp] = useSearchParams()
+  // Fotos öffnen sich beim Erscheinen von oben nach unten (wie in der Eröffnung)
+  useEffect(() => {
+    const els = Array.from(document.querySelectorAll('.pic-open'))
+    if (!('IntersectionObserver' in window)) { els.forEach((e) => e.classList.add('in')); return }
+    // Beobachtet wird der Elternknoten, weil ein beschnittenes Element selbst nie als sichtbar gilt.
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.firstElementChild && els.forEach((p) => { if (p.parentElement === e.target) p.classList.add('in') }); io.unobserve(e.target) } }), { threshold: 0.25 })
+    els.forEach((e) => io.observe(e.parentElement))
+    return () => io.disconnect()
+  }, [])
   return (
     <>
       <Seo title="Immobilie verkaufen | ARVENTAS" description="Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen – persönlich begleitet, deutschlandweit." />
@@ -56,7 +66,7 @@ export default function Owners() {
           <div><SectionHead eyebrow="Diskreter Verkaufsansatz" title="Kein öffentliches Schaufenster." normal />
             <p className="rv">Ihr Objekt wird nicht über öffentliche Portale beworben. Der Kreis der Interessenten wird gezielt ausgewählt. Konkrete Adressen werden nicht öffentlich gezeigt.</p>
             <div className="btn-row"><Btn to="/objektreport">Objektreport ansehen</Btn></div></div>
-          <div className="imgf rv" style={{ aspectRatio: '4/3' }}><img src="/media/p/u-eingang-travertin.webp" alt="Altbaufassade (Beispielbild)" loading="lazy" /></div>
+          <div className="imgf pic-open" style={{ aspectRatio: '4/3' }}><img src="/media/p/u-eingang-travertin.webp" alt="Altbaufassade (Beispielbild)" loading="lazy" /></div>
         </div>
       </section>
 
