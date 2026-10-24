@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import ProcessPinned from '../components/ProcessPinned.jsx'
 import SituationList from '../components/SituationList.jsx'
 import StepRows from '../components/StepRows.jsx'
 import Seo from '../components/Seo.jsx'
@@ -8,6 +9,8 @@ import { Btn, SectionHead, Tabs, Faq, Placeholder } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
+
+const PROCESS_IMG = ['home.proc.0', 'home.proc.1', 'home.proc.2', 'home.proc.3', 'home.proc.4', 'sys.step.0'].map((k) => `/media/p/${k}.webp`)
 
 const SITUATIONS = [
   { id: 'privat', img: '/media/p/u-holzhaeuser.webp', label: 'Private Eigentümer', t: 'Wert verstehen, bevor Sie entscheiden.', p: 'Als privater Immobilienbesitzer möchten Sie wissen, was Ihre Immobilie wert ist und welche Optionen es gibt. Eine sachliche Einordnung hilft, ohne dass Sie sich festlegen müssen.' },
@@ -70,11 +73,8 @@ export default function Owners() {
         </div>
       </section>
 
-      <section className="sec ivory">
-        <div className="wrap">
-          <SectionHead eyebrow="Ablauf" title="So läuft es ab." />
-          <SimpleTimeline steps={OWNER_PROCESS} />
-        </div>
+      <section className="sec dark pp-sec">
+        <ProcessPinned eyebrow="Ablauf" title="So läuft es ab." steps={OWNER_PROCESS} images={PROCESS_IMG} />
       </section>
 
       <section className="sec ivory" style={{ paddingTop: 0 }}>
