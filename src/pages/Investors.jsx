@@ -26,20 +26,20 @@ export default function InvestorsPage() {
       <h1 className="sr-only">Investieren beginnt mit dem richtigen Zugang.</h1>
 
       <WordZoom left="Off-Market" right="verständlich erklärt." images={['/media/p/vm.area.2.webp', '/media/p/u-luftbild.webp', '/media/p/u-weisse-wohnanlage.webp', '/media/p/vm.res.1.webp']} />
-      <section className="sec ivory wz-after">
+      <section className="sec dark wz-after">
         <div className="wrap">
           <p className="eyebrow">Off-Market</p>
           <p className="rv">Off-Market-Immobilien werden nicht über öffentliche Portale angeboten. Sie werden gezielt an passende Interessenten vermittelt. Das bedeutet nicht, dass sie automatisch besser sind. Entscheidend bleibt eine sorgfältige Prüfung.</p>
         </div>
       </section>
 
-      <section className="sec ivory" style={{ paddingTop: 0 }}>
+      <section className="sec dark" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <SectionHead eyebrow="Vorgehen" title="Suchprofil, Analyse und Begleitung." normal />
         </div>
       </section>
       <PanelSlider label="Vorgehen" items={STEPS} />
-      <section className="sec ivory" style={{ padding: 0 }}>
+      <section className="sec dark" style={{ padding: 0 }}>
         <div className="wrap">
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="sec ivory">
+      <section className="sec dark">
         <div className="wrap two">
           <div><SectionHead eyebrow="Investorenkreis" title="Ausgewählte Immobilien. Auf Ihre Ziele abgestimmt." normal />
             <p className="rv">Im Investorenkreis hinterlegen Sie Ihr Suchprofil. Die Informationsseiten können Sie ohne Registrierung lesen.</p>

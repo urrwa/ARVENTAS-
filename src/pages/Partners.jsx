@@ -15,7 +15,7 @@ export default function Partners() {
         <div className="btn-row"><Btn href="#anfrage">Partnerschaft anfragen</Btn></div>
       </PageHero>
 
-      <section className="sec ivory over-photo pc-sec">
+      <section className="sec dark over-photo pc-sec">
         <div className="wrap">
           <ParallaxCards inside items={[
             { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: '/media/p/u-architekten-modelle.webp', ratio: '4 / 5', speed: 1 },
@@ -25,7 +25,7 @@ export default function Partners() {
         </div>
       </section>
 
-      <section className="sec ivory" style={{ paddingTop: 0 }}>
+      <section className="sec dark" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <SectionHead eyebrow="So beginnt die Zusammenarbeit" title="Anfrage, Kennenlernen, Rollen, Vereinbarung." normal />
           <SimpleTimeline steps={PARTNER_PROCESS} />

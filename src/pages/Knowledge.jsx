@@ -14,7 +14,7 @@ export default function Knowledge() {
       <Seo title="Wissen | ARVENTAS" description="Wissen und Marktinformationen: Off-Market verstehen, Immobilien bewerten, Potenziale einordnen." />
       <h1 className="sr-only">Wissen: Hinter die Fassade schauen.</h1>
       <KnowledgeTabs full cat={cat} setCat={setCat} />
-      <section className="sec ivory">
+      <section className="sec dark">
         <div className="wrap">
           {lead ? (
             <>

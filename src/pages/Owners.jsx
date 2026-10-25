@@ -58,7 +58,7 @@ export default function Owners() {
         </div>
       </section>
 
-      <section className="sec ivory sl-sec" style={{ paddingTop: 0 }}>
+      <section className="sec dark sl-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img="/media/p/u-holzhaeuser.webp" />
         </div>
@@ -68,7 +68,7 @@ export default function Owners() {
         <ProcessPinned eyebrow="Ablauf" title="So läuft es ab." steps={OWNER_PROCESS} images={PROCESS_IMG} />
       </section>
 
-      <section className="sec ivory" style={{ paddingTop: 0 }}>
+      <section className="sec dark" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <SectionHead eyebrow="FAQ" title="Häufige Fragen" normal />
           <Faq items={OWNER_FAQ} />

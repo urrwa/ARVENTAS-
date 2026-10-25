@@ -14,7 +14,7 @@ export default function About() {
       <PageHero tall image="/media/p/u-lounge-gespraech.webp" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
 
       <div className="cover-over">
-      <section className="sec ivory about-big-sec">
+      <section className="sec dark about-big-sec">
         <div className="wrap">
           <p className="eyebrow">Wer wir sind</p>
           <RevealText className="about-big" text="Die Marke steht für zeitlose Eleganz, unaufdringliche Stärke, Präzision, Zurückhaltung und Vertrauen. Dieser Anspruch prägt unsere Arbeit: ruhig, klar und sorgfältig." />
@@ -30,7 +30,7 @@ export default function About() {
 
       <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/p/u-holzhaus-rechner.webp" />
 
-      <section className="sec ivory">
+      <section className="sec dark">
         <div className="wrap">
           <SectionHead eyebrow="Aktuelles Geschäftsmodell" title="Zugang, Analyse, Matching, Begleitung." normal />
         </div>
@@ -55,7 +55,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="sec ivory">
+      <section className="sec dark">
         <div className="wrap two">
           <div>
             <SectionHead eyebrow="Unternehmensstruktur" title="Tatsächliche Struktur und Verantwortung." normal />

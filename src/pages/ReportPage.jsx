@@ -31,7 +31,7 @@ export default function ReportPage() {
         <div className="btn-row"><Btn href="#muster" variant="line">Muster ansehen</Btn><Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 
-      <section className="sec ivory over-photo pc-sec">
+      <section className="sec dark over-photo pc-sec">
         <div className="wrap">
           <SectionHead eyebrow="Analysebausteine" title="Sechs Bausteine, ein Bild." normal />
           <ParallaxCards inside items={BLOCKS.map(([title, text, img], i) => ({ title, text, img, ratio: i % 3 === 1 ? '3 / 4' : '4 / 5', speed: [1, 1.7, 0.8, 1.3, 0.9, 1.6][i] }))} />
@@ -45,7 +45,7 @@ export default function ReportPage() {
         </div>
       </section>
 
-      <section className="sec ivory">
+      <section className="sec dark">
         <div className="wrap two">
           <div><SectionHead eyebrow="Herkunft von Daten und Annahmen" title="Nachvollziehbar statt behauptet." normal />
             <p className="rv">Im Bericht wird je Baustein ausgewiesen, welche Quelle, welcher Stand und welche Annahmen zugrunde liegen. Annahmen sind als solche gekennzeichnet.</p></div>
@@ -54,14 +54,14 @@ export default function ReportPage() {
         </div>
       </section>
 
-      <section className="sec ivory" style={{ paddingTop: 0 }}>
+      <section className="sec dark" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <SectionHead eyebrow="Ablauf" title="Vom Anliegen zum Bericht." normal />
           <SimpleTimeline steps={FLOW} />
         </div>
       </section>
 
-      <section className="sec ivory" style={{ paddingTop: 0 }}>
+      <section className="sec dark" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <SectionHead eyebrow="FAQ" title="Häufige Fragen" normal />
           <Faq items={REPORT_FAQ} />

@@ -19,7 +19,7 @@ export default function Contact() {
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns über Ihre Möglichkeiten sprechen: getrennte Zugänge für Eigentümer, Investoren und Partner." />
       <PageHero fadeOut image="/media/p/u-frankfurt-nacht.webp" crumb="Kontakt" title="Lassen Sie uns über Ihre Möglichkeiten sprechen." lead="Wählen Sie den passenden Zugang. Eigentümer, Investoren und Partner haben getrennte Wege." />
       <div className="cover-over">
-      <section className="sec ivory over-photo">
+      <section className="sec dark over-photo">
         <div className="wrap contact-grid">
           <div className="contact-intro">
             <RevealText className="contact-statement" text="Schreiben Sie uns. Wir antworten persönlich und vertraulich." />
@@ -36,13 +36,13 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <section className="sec ivory" style={{ paddingTop: 0 }}>
+      <section className="sec dark" style={{ paddingTop: 0 }}>
         <div className="wrap two">
           <div><SectionHead eyebrow="Termin" title="Termin anfragen." normal /><p className="rv">Einen Termin vereinbaren wir persönlich mit Ihnen. Eine Online-Buchung ist derzeit nicht eingerichtet; deshalb bitten wir um eine Terminanfrage über eines der Formulare.</p></div>
           <Placeholder title="Platzhalter – Kontaktdaten">Verifizierte Telefon-, E-Mail- und Unternehmensdaten werden vor Veröffentlichung ergänzt. Es werden keine Daten aus alten Website-Mockups übernommen.</Placeholder>
         </div>
       </section>
-      <section className="sec ivory" style={{ paddingTop: 0 }}>
+      <section className="sec dark" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <SectionHead eyebrow="FAQ" title="Häufige Fragen" normal />
           <Faq items={CONTACT_FAQ} />
