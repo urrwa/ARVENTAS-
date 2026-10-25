@@ -40,6 +40,9 @@ export default function ProcessTimeline({ initial = 'owner' }) {
       const rx = A[0] + (B[0] - A[0]) * f + (seg === 0 ? bump * -38 : 0)
       const ry = A[1] + (B[1] - A[1]) * f + bump * (seg === 0 ? 30 : -14)
       const rz = bump * (seg === 0 ? -12 : -9)
+      const fx = `translate3d(${x.toFixed(1)}px, 0, 0)`
+      el.querySelector('.pck-glow').style.transform = fx
+      el.querySelector('.pck-floor').style.transform = `${fx} scale(${(1 - bump * 0.18).toFixed(3)})`
       el.querySelector('.pck-scene').style.transform = `translate3d(${x.toFixed(1)}px, 12px, 0) scale(${(1 + bump * 0.22).toFixed(3)})`
       el.querySelector('.pck-cube').style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) rotateZ(${rz.toFixed(2)}deg)`
       el.querySelectorAll('.pck-copy').forEach((c, i) => {
@@ -79,6 +82,8 @@ export default function ProcessTimeline({ initial = 'owner' }) {
       <div className="pck-pin">
         <div className="pck-top">{toggle}</div>
         <div className="pck-stage">
+          <span className="pck-glow" aria-hidden="true" />
+          <span className="pck-floor" aria-hidden="true" />
           <div className="pck-scene" aria-hidden="true">
             <div className="pck-cube">
               {FACES.map((f, i) => <i key={f} className={'pck-f pck-f--' + f} style={{ backgroundImage: `url(${IMG[who][i]})` }} />)}
@@ -86,8 +91,9 @@ export default function ProcessTimeline({ initial = 'owner' }) {
           </div>
           {steps.map((s, i) => (
             <div key={who + s.t} className={'pck-copy ' + (i % 2 ? 'r' : 'l')}>
-              <span className="pck-n">{String(i + 1).padStart(2, '0')}</span>
+              <span className="pck-n"><b>{String(i + 1).padStart(2, '0')}</b> / {String(n).padStart(2, '0')}</span>
               <h3 lang="de">{s.t}</h3>
+              <i className="pck-rule" aria-hidden="true" />
               <p>{s.d}</p>
             </div>
           ))}
