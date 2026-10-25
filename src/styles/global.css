@@ -3077,3 +3077,10 @@ body { font-size: clamp(16.5px, .4vw + 13.5px, 19px); line-height: 1.65; }
 .ivory .btn-line, .sec.ivory .btn-line { border-color: rgba(7, 19, 33, .3); }
 /* Karten und Fotos: Radien 24 / 16 */
 :root { --radius-xl: 28px; --radius-lg: 24px; --radius-md: 16px; --radius-sm: 12px; --gold-deep: #a88957; --line: rgba(233, 217, 188, .13); --line-strong: rgba(233, 217, 188, .3); }
+
+/* Feinabgleich mit der Landingpage: zweite Heldenzeile kursiv in hellem Champagner, Eyebrow-Linie 22 px, Button 12,5 px */
+.hf-ln:nth-child(2) { font-style: italic; color: var(--champagne-light, #e9d9bc); }
+.eyebrow { font-weight: 650; }
+.eyebrow::before { width: 22px; opacity: .7; }
+.btn { font-size: 12.5px; letter-spacing: .12em; }
+:root { --champagne-light: #e9d9bc; --navy-950: #040b14; --fs-small: 15px; }
