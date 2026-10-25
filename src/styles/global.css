@@ -3106,3 +3106,40 @@ body { font-size: clamp(16.5px, .4vw + 13.5px, 19px); line-height: 1.65; }
 .doors-sec .door img { clip-path: inset(0 round 20px); }
 .doors-sec .door:not(.in) img { clip-path: inset(30% 32% 30% 32% round 20px); }
 .doors-sec .door img, .doors-sec .door:hover img, .doors-sec .door.in img { scale: 1; translate: 0 0; transform: none; }
+
+/* ===== Landingpage-Theme: Ambient-Hintergrund, schwebende Glas-Leiste, Flächen mit Verlauf ===== */
+:root { --surface-grad: linear-gradient(162deg, rgba(20, 53, 80, .52) 0%, rgba(12, 32, 54, .62) 46%, rgba(7, 19, 33, .78) 100%); --inset-hi: inset 0 1px 0 rgba(255, 255, 255, .07); --hair: rgba(233, 217, 188, .18); --text-2: #bdc8d3; }
+html { background: #040b14; }
+body { background: transparent; }
+.ambient { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; contain: strict; }
+.amb-base { position: absolute; inset: 0; background: radial-gradient(120% 70% at 78% -8%, rgba(20, 53, 80, .85) 0%, rgba(12, 32, 54, .35) 38%, transparent 64%), radial-gradient(90% 70% at 0% 100%, rgba(12, 32, 54, .9) 0%, transparent 60%), linear-gradient(180deg, #071321 0%, #06111f 52%, #040b14 100%); }
+.amb-f { position: absolute; border-radius: 50%; will-change: transform; animation: ambA 46s cubic-bezier(.65, 0, .35, 1) infinite alternate; }
+.amb-blue { width: 92vmax; height: 86vmax; top: 4vmax; right: 6vmax; background: radial-gradient(closest-side, rgba(58, 104, 140, .62), rgba(49, 89, 120, .26) 46%, rgba(49, 89, 120, 0) 74%); }
+.amb-steel { width: 104vmax; height: 92vmax; bottom: 0; left: -4vmax; background: radial-gradient(closest-side, rgba(80, 112, 140, .44), rgba(70, 102, 127, .14) 52%, rgba(70, 102, 127, 0) 76%); animation-duration: 58s; animation-name: ambB; }
+.amb-champ { width: 64vmax; height: 46vmax; top: 46%; left: 26%; background: radial-gradient(closest-side, rgba(200, 173, 128, .15), rgba(200, 173, 128, .05) 52%, rgba(200, 173, 128, 0) 76%); animation-duration: 66s; animation-name: ambC; }
+.amb-deep { width: 70vmax; height: 60vmax; top: 30%; left: 18%; background: radial-gradient(closest-side, rgba(4, 11, 20, .55), rgba(4, 11, 20, 0) 72%); animation-duration: 52s; animation-name: ambC; animation-direction: alternate-reverse; }
+@keyframes ambA { to { transform: translate3d(-6vmax, 5vmax, 0) scale(1.06); } }
+@keyframes ambB { to { transform: translate3d(7vmax, -4vmax, 0) scale(1.08); } }
+@keyframes ambC { to { transform: translate3d(4vmax, 3vmax, 0) scale(1.1); } }
+@media (prefers-reduced-motion: reduce) { .amb-f { animation: none; } }
+/* Dunkle Abschnitte lassen den Hintergrund durch */
+.dark, .page:has(.hf), .page:has(.hf) main { background: transparent; }
+.sec.dark.ink { background: transparent; }
+.hf ~ .sec.ink, .hf ~ .wis-sec { background: transparent; }
+.pp-sec, .own-sec { background: transparent; }
+.ow-op { background: transparent; }
+.ow-op ~ .sec.dark { background: #06111f; }
+.page:has(.doors-sec) .ftr { background: transparent; }
+/* Schwebende Leiste */
+.hdr { position: sticky; top: 0; background: transparent !important; height: var(--header-h); pointer-events: none; }
+.hdr.clear { background: transparent !important; }
+.hdr-in { pointer-events: auto; max-width: min(1320px, calc(100% - 2 * var(--gut))); height: 64px; margin: 8px auto 0; padding: 0 12px 0 20px; border-radius: 20px; border: 1px solid rgba(233, 217, 188, .1); background: linear-gradient(180deg, rgba(12, 32, 54, .55), rgba(7, 19, 33, .62)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); }
+.nav a.nl { font-size: 13.5px; letter-spacing: .1em; font-weight: 700; color: var(--text-on-dark); }
+.nav a.nl[aria-current=page] { color: var(--text-on-dark); }
+.hdr .nav .btn-gold { display: inline-flex; align-items: center; gap: 10px; background: transparent !important; color: var(--text-on-dark) !important; border: 1px solid rgba(233, 217, 188, .34) !important; border-radius: 999px; font-size: 13px; font-weight: 700; letter-spacing: .1em; min-height: 44px; padding: 0 22px; }
+.hdr .nav .btn-gold::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); position: static; transform: none; margin: 0; }
+.hdr .nav .btn-gold:hover { background: rgba(200, 173, 128, .14) !important; }
+/* Flächen mit Verlauf */
+.doors-sec .door { background: var(--surface-grad); box-shadow: var(--inset-hi); }
+.pd { background: var(--surface-grad) !important; box-shadow: var(--inset-hi); border-color: var(--hair) !important; }
+.ftr3 { background: linear-gradient(180deg, rgba(4, 11, 20, 0), rgba(4, 11, 20, .6)); border-top: 1px solid rgba(233, 217, 188, .13); }

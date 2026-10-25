@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { lazy, Suspense, useEffect, useRef } from 'react'
+import Ambient from './components/Ambient.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { ConsentProvider } from './components/Consent.jsx'
@@ -120,6 +121,7 @@ function Shell() {
   return (
     <>
       <a className="skip" href="#main">Zum Inhalt springen</a>
+      <Ambient />
       <Header />
       <div className="page" inert={open || undefined}>
       <main id="main" ref={main} tabIndex={-1} style={{ outline: 'none' }}>
