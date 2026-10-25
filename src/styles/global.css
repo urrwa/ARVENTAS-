@@ -3254,3 +3254,14 @@ body { background: #050d18; }
 .pcx-dash i { width: 28px; height: 2px; background: rgba(233, 217, 188, .25); transition: background 400ms ease; }
 .pcx-dash i.on { background: var(--gold); }
 @media (prefers-reduced-motion: reduce) { .pcx-txt { animation: none; } .pcx-cube { transition: none; } }
+
+/* Ablauf: schlicht, Liste mit Linien */
+.hf ~ .proc-sec { background-image: none !important; }
+.hf ~ .proc-sec::after { display: none; }
+.pls .toggle { margin-bottom: clamp(24px, 4vw, 48px); }
+.pls-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(233, 217, 188, .16); }
+.pls-list li { display: grid; grid-template-columns: 72px minmax(160px, 1fr) minmax(0, 1.6fr); gap: clamp(12px, 3vw, 40px); align-items: baseline; padding: clamp(18px, 2.4vw, 30px) 0; border-bottom: 1px solid rgba(233, 217, 188, .16); }
+.pls-list span { font-size: 12px; letter-spacing: .2em; color: var(--gold); }
+.pls-list b { font-family: var(--font-head); font-weight: 400; font-size: clamp(24px, 2.6vw, 38px); line-height: 1.1; color: var(--ivory); hyphens: auto; }
+.pls-list p { margin: 0; color: var(--text-2); max-width: 52ch; }
+@media (max-width: 760px) { .pls-list li { grid-template-columns: 40px 1fr; } .pls-list p { grid-column: 2; } }
