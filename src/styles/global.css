@@ -3303,3 +3303,17 @@ body { background: #050d18; }
 .pck-copy p { font-size: clamp(15px, 1.15vw, 18px); color: var(--text-on-dark-soft); max-width: 24em; }
 .pck-dots { left: 50%; transform: translateX(-50%); }
 .pck-dots i { width: 28px; }
+
+/* Würfel in Ruhe wie ein großes Bild (Vorderseite, ARVENTAS-Marke), gekippt wird nur beim Wechsel */
+.pck-cube { --s: clamp(240px, 27vw, 440px); }
+.pck-floor { display: none; }
+.pck-f { border: 1px solid rgba(233, 217, 188, .3); box-shadow: none; filter: saturate(.95) brightness(.98); }
+.pck-f::after { content: "ARVENTAS"; position: absolute; right: 14px; top: 14px; padding: 6px 12px; background: var(--ivory); color: var(--marine); font-size: 11px; font-weight: 700; letter-spacing: .2em; }
+.pck-copy h3 { font-size: clamp(40px, 6vw, 108px); line-height: .92; letter-spacing: -.02em; }
+.pck-copy h3.long { font-size: clamp(30px, 3.8vw, 64px); }
+.pck-n { font-size: 13px; letter-spacing: .2em; margin-bottom: 14px; }
+.pck-rule { display: none; }
+.pck-copy p { position: relative; margin-top: 18px; padding-left: 22px; font-size: clamp(15px, 1.25vw, 19px); color: var(--ivory); }
+.pck-copy.r p { padding-left: 0; padding-right: 22px; }
+.pck-copy p::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+.pck-copy.r p::before { left: auto; right: 0; }
