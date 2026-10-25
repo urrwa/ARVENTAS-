@@ -31,12 +31,13 @@ export default function ProcessTimeline({ initial = 'owner' }) {
       const p = clamp(((t - 0.08) / 0.84) * (n - 1), 0, n - 1)
       let seg = Math.min(n - 2, Math.floor(p)), fr = p - seg
       if (p >= n - 1) { seg = n - 2; fr = 1 }
-      const f = ease(clamp((fr - 0.18) / 0.64, 0, 1)), bump = Math.sin(Math.PI * f)
+      const f = ease(clamp((fr - 0.3) / 0.4, 0, 1)), bump = Math.sin(Math.PI * f)
       const A = POSE[seg], B = POSE[seg + 1]
       const xa = seg % 2 ? -0.21 : 0.21, xb = (seg + 1) % 2 ? -0.21 : 0.21
       const stage = el.querySelector('.pck-stage')
       const w = stage.clientWidth
       const x = (xa + (xb - xa) * f) * w
+      stage.style.perspectiveOrigin = `${(50 + (x / w) * 100).toFixed(2)}% 50%`
       const rx = A[0] + (B[0] - A[0]) * f + (seg === 0 ? bump * -38 : 0)
       const ry = A[1] + (B[1] - A[1]) * f + bump * (seg === 0 ? 30 : -14)
       const rz = bump * (seg === 0 ? -12 : -9)
@@ -46,7 +47,7 @@ export default function ProcessTimeline({ initial = 'owner' }) {
       el.querySelector('.pck-scene').style.transform = `translate3d(${x.toFixed(1)}px, 12px, 0) scale(${(1 + bump * 0.18).toFixed(3)})`
       el.querySelector('.pck-cube').style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) rotateZ(${rz.toFixed(2)}deg)`
       el.querySelectorAll('.pck-copy').forEach((c, i) => {
-        const dd = i - p, o = Math.max(0, 1 - Math.max(0, Math.abs(dd) - 0.12) * 3.2)
+        const dd = i - p, o = Math.max(0, 1 - Math.max(0, Math.abs(dd) - 0.3) * 5)
         c.style.opacity = o.toFixed(3)
         c.style.transform = `translate3d(0, calc(-50% + ${(dd * 46).toFixed(2)}vh), 0)`
       })
