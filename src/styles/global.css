@@ -3265,3 +3265,27 @@ body { background: #050d18; }
 .pls-list b { font-family: var(--font-head); font-weight: 400; font-size: clamp(24px, 2.6vw, 38px); line-height: 1.1; color: var(--ivory); hyphens: auto; }
 .pls-list p { margin: 0; color: var(--text-2); max-width: 52ch; }
 @media (max-width: 760px) { .pls-list li { grid-template-columns: 40px 1fr; } .pls-list p { grid-column: 2; } }
+
+/* Ablauf: Würfel wie in der Landingpage, scroll-gesteuert */
+.pck { height: calc(100vh * (var(--n) * .7 + .7)); }
+.pck-pin { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; overflow: visible; clip-path: inset(0); }
+.pck-top { padding-top: calc(var(--header-h) + 28px); display: flex; justify-content: center; position: relative; z-index: 5; }
+.pck-stage { position: relative; flex: 1; width: 100%; perspective: 1500px; }
+.pck-scene { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; will-change: transform; }
+.pck-cube { --s: clamp(230px, 28vw, 420px); position: absolute; left: 0; top: 0; width: 0; height: 0; transform-style: preserve-3d; will-change: transform; }
+.pck-f { position: absolute; left: calc(var(--s) / -2); top: calc(var(--s) / -2); width: var(--s); height: var(--s); background-size: cover; background-position: center; border: 1px solid rgba(233, 217, 188, .35); backface-visibility: hidden; filter: saturate(.92) brightness(.94); background-color: #0a1a2c; }
+.pck-f--front { transform: translateZ(calc(var(--s) / 2)); }
+.pck-f--right { transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
+.pck-f--back { transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+.pck-f--left { transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
+.pck-f--top { transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
+.pck-f--bottom { transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+.pck-copy { position: absolute; z-index: 3; top: 50%; width: min(46%, 640px); min-width: 0; display: grid; gap: 12px; opacity: 0; transform: translate3d(0, -50%, 0); pointer-events: none; }
+.pck-copy.l { left: 0; }
+.pck-copy.r { right: 0; text-align: right; justify-items: end; }
+.pck-n { font-size: 13px; font-weight: 700; letter-spacing: .2em; color: var(--gold); }
+.pck-copy h3 { margin: 0; font-family: var(--font-head); font-weight: 400; font-size: clamp(30px, 3.6vw, 60px); line-height: .96; letter-spacing: -.01em; text-transform: uppercase; color: var(--ivory); hyphens: auto; overflow-wrap: anywhere; min-width: 0; max-width: 100%; text-shadow: 0 2px 30px rgba(4, 11, 20, .6); }
+.pck-copy p { margin: 0; max-width: 26em; color: var(--text-2); font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; }
+.pck-dots { position: absolute; left: 0; bottom: clamp(24px, 5vh, 56px); display: flex; gap: 8px; z-index: 4; }
+.pck-dots i { width: 36px; height: 2px; background: rgba(233, 217, 188, .25); transition: background 400ms; }
+.pck-dots i.on { background: var(--gold); }
