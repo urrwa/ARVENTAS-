@@ -3174,3 +3174,9 @@ body { background: transparent; }
 @media (max-width: 860px) { .sf-mark { font-size: 21vw; margin-bottom: -.2em; } }
 .sf-mark { font-size: clamp(110px, 24vw, 400px); line-height: .76; margin-bottom: -.3em; }
 @media (max-width: 860px) { .sf-mark { font-size: 23vw; margin-bottom: -.26em; } }
+
+/* Glas-Blau: marineblaue Flächen mit Verlauf statt flachem Block */
+:root { --glass-blue: linear-gradient(165deg, rgba(24, 52, 86, .82) 0%, rgba(10, 24, 42, .9) 50%, rgba(5, 13, 24, .96) 100%); }
+body { background: #050d18; }
+.dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo { background: var(--glass-blue); }
+.sec.dark.ink { background: transparent; }
