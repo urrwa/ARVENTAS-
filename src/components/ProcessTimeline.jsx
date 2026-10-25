@@ -8,6 +8,8 @@ const IMG = {
   owner: ['u-lounge-gespraech', 'u-notizbuch', 'u-diagramme', 'u-grundrisse', 'u-paar-grundriss', 'u-handschlag-gold'].map(pic),
   investor: ['u-karte', 'u-besprechungsraum', 'u-modellhaus-besp', 'u-begutachtung-sandstein', 'u-handschlag-dunkel', 'u-schluessel'].map(pic),
 }
+// Bildausschnitt je Foto (Standard: Mitte); das Lounge-Foto hat links einen dunklen Pfeiler.
+const POS = { 'u-lounge-gespraech': '78% 50%', 'u-handschlag-gold': '45% 50%' }
 const FACES = ['front', 'right', 'back', 'left', 'top', 'bottom']
 const POSE = [[0, 0], [0, -90], [0, -180], [0, -270], [-90, -360], [90, -360]]
 const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2)
@@ -87,7 +89,7 @@ export default function ProcessTimeline({ initial = 'owner' }) {
           <span className="pck-floor" aria-hidden="true" />
           <div className="pck-scene" aria-hidden="true">
             <div className="pck-cube">
-              {FACES.map((f, i) => <i key={f} className={'pck-f pck-f--' + f} style={{ backgroundImage: `url(${IMG[who][i]})` }} />)}
+              {FACES.map((f, i) => <i key={f} className={'pck-f pck-f--' + f} style={{ backgroundImage: `url(${IMG[who][i]})`, backgroundPosition: POS[IMG[who][i].split('/').pop().replace('.webp', '')] || 'center' }} />)}
             </div>
           </div>
           {steps.map((s, i) => (
