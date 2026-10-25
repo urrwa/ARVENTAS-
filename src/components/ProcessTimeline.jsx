@@ -43,7 +43,7 @@ export default function ProcessTimeline({ initial = 'owner' }) {
       const fx = `translate3d(${x.toFixed(1)}px, 0, 0)`
       el.querySelector('.pck-glow').style.transform = fx
       el.querySelector('.pck-floor').style.transform = `${fx} scale(${(1 - bump * 0.18).toFixed(3)})`
-      el.querySelector('.pck-scene').style.transform = `translate3d(${x.toFixed(1)}px, 12px, 0) scale(${(1 + bump * 0.22).toFixed(3)})`
+      el.querySelector('.pck-scene').style.transform = `translate3d(${x.toFixed(1)}px, 12px, 0) scale(${(1 + bump * 0.18).toFixed(3)}) rotateX(-16deg) rotateY(${(24 * (x / (0.21 * w))).toFixed(1)}deg)`
       el.querySelector('.pck-cube').style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) rotateZ(${rz.toFixed(2)}deg)`
       el.querySelectorAll('.pck-copy').forEach((c, i) => {
         const dd = i - p, o = Math.max(0, 1 - Math.max(0, Math.abs(dd) - 0.12) * 3.2)

@@ -3293,7 +3293,7 @@ body { background: #050d18; }
 /* Würfel-Ablauf feiner: Lichtschein, Bodenschatten, Glaskanten, ruhigere Schrift */
 .pck-glow { position: absolute; left: 50%; top: 50%; width: min(70vw, 900px); aspect-ratio: 1; margin: calc(min(70vw, 900px) / -2) 0 0 calc(min(70vw, 900px) / -2); border-radius: 50%; background: radial-gradient(closest-side, rgba(70, 120, 180, .34), rgba(40, 80, 130, .14) 55%, transparent 100%); filter: blur(10px); pointer-events: none; will-change: transform; }
 .pck-floor { position: absolute; left: 50%; top: 50%; width: calc(var(--s, 380px)); width: clamp(230px, 28vw, 420px); height: 34px; margin: calc(clamp(230px, 28vw, 420px) / 2 + 36px) 0 0 calc(clamp(230px, 28vw, 420px) / -2); border-radius: 50%; background: radial-gradient(closest-side, rgba(0, 0, 0, .55), transparent); filter: blur(8px); pointer-events: none; will-change: transform; }
-.pck-cube { --s: clamp(220px, 26vw, 390px); }
+.pck-cube { --s: clamp(200px, 22vw, 340px); }
 .pck-f { border: 1px solid rgba(233, 217, 188, .3); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06), inset 0 -60px 80px -40px rgba(4, 11, 20, .55); filter: saturate(.88) contrast(1.02) brightness(.95); }
 .pck-copy { gap: 0; }
 .pck-n { font-size: 12px; font-weight: 600; letter-spacing: .26em; color: var(--text-2); margin-bottom: 18px; }
