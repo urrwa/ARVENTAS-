@@ -1,36 +1,20 @@
-import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useConsent } from './Consent.jsx'
-import { HOME } from '../content/images.js'
 
-// Fuß nach dem Vorbild Archter: Foto links (springt beim Erscheinen auf), Claim in der Mitte, Seitenliste rechts, große Wortmarke unten.
+// Fuß wie in der Landingpage: links die Einladung zum Gespräch, rechts Navigation und Rechtliches, unten die Leiste mit Pfeil nach oben
+// und eine sehr große, blasse Wortmarke, die unten angeschnitten ist.
 export default function Footer() {
   const { openSettings } = useConsent()
-  const root = useRef(null), photo = useRef(null)
-  useEffect(() => {
-    const el = root.current
-    if (!el) return
-    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { el.classList.add('in'); return }
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('in'); io.disconnect() } }, { threshold: 0.18 })
-    io.observe(el)
-    // Foto springt bei jedem Erscheinen neu auf (Pop-up)
-    const ph = photo.current
-    const io2 = ph ? new IntersectionObserver(([e]) => ph.classList.toggle('pop', e.isIntersecting), { threshold: 0.5 }) : null
-    io2 && io2.observe(ph)
-    return () => { io.disconnect(); io2 && io2.disconnect() }
-  }, [])
   return (
-    <footer className="ftr3" ref={root}>
-      <div className="wrap">
-        <div className="ftr3-top">
-          <div className="ftr3-photo" ref={photo}><img src={HOME.footer} alt="" loading="lazy" decoding="async" /></div>
-          <div className="ftr3-mid">
-            <h2 className="ftr3-h">Werte schaffen. Zukunft bauen.</h2>
-            <p>Off-Market-Immobilien deutschlandweit.</p>
-            <Link to="/kontakt" className="ftr3-mail">Beratung anfragen <span aria-hidden="true">→</span></Link>
+    <footer className="sf">
+      <div className="sf-in">
+        <div className="sf-top">
+          <div className="sf-cta">
+            <h2>Eine Immobilie im Blick?<br />Gestalten wir den nächsten Schritt.</h2>
+            <Link to="/kontakt" className="sf-btn"><i aria-hidden="true" />Gespräch beginnen</Link>
           </div>
-          <nav className="ftr3-pages" aria-label="Seiten">
-            <h3>Seiten</h3>
+          <nav className="sf-col" aria-label="Seiten">
+            <h3>Navigation</h3>
             <ul>
               <li><Link to="/immobilie-verkaufen">Eigentümer</Link></li>
               <li><Link to="/kapitalanlage-immobilien">Investoren</Link></li>
@@ -41,17 +25,21 @@ export default function Footer() {
               <li><Link to="/kontakt">Kontakt</Link></li>
             </ul>
           </nav>
+          <div className="sf-col">
+            <h3>Rechtliches</h3>
+            <ul>
+              <li><Link to="/impressum">Impressum</Link></li>
+              <li><Link to="/datenschutz">Datenschutz</Link></li>
+              <li><button type="button" onClick={openSettings}>Cookie-Einstellungen</button></li>
+            </ul>
+          </div>
         </div>
-        <div className="ftr3-legal">
-          <Link to="/impressum">Impressum</Link>
-          <Link to="/datenschutz">Datenschutz</Link>
-          <button type="button" className="lk" onClick={openSettings}>Cookie-Einstellungen</button>
+        <div className="sf-bot">
           <span>© 2026 ARVENTAS</span>
+          <button type="button" className="sf-up" aria-label="Nach oben" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>↑</button>
         </div>
       </div>
-      <svg className="ftr3-mark" viewBox="0 0 1000 170" aria-hidden="true" focusable="false">
-        <text x="40" y="150" textLength="920" lengthAdjust="spacing">ΛRVENTΛS</text>
-      </svg>
+      <div className="sf-mark" aria-hidden="true">ARVENTAS</div>
     </footer>
   )
 }

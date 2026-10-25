@@ -1417,4 +1417,8 @@ export default {
  "Ihr nächster Schritt.": "Your next step.",
  "Anbindung": "Connections",
  "Versorgung": "Amenities",
+ "Eine Immobilie im Blick?": "Have a property in mind?",
+ "Gestalten wir den nächsten Schritt.": "Let’s shape what comes next.",
+ "Gespräch beginnen": "Start the conversation",
+ "Nach oben": "Back to top",
 }
