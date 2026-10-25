@@ -3143,3 +3143,11 @@ body { background: transparent; }
 .doors-sec .door { background: var(--surface-grad); box-shadow: var(--inset-hi); }
 .pd { background: var(--surface-grad) !important; box-shadow: var(--inset-hi); border-color: var(--hair) !important; }
 .ftr3 { background: linear-gradient(180deg, rgba(4, 11, 20, 0), rgba(4, 11, 20, .6)); border-top: 1px solid rgba(233, 217, 188, .13); }
+
+/* Feinabgleich Hintergrund: Körnung wie in der Landingpage und kräftigere Lichtfelder */
+.ambient::after { content: ""; position: absolute; inset: 0; background: url('/media/grain.png') repeat; background-size: 240px; opacity: .55; mix-blend-mode: soft-light; pointer-events: none; }
+.amb-blue { background: radial-gradient(closest-side, rgba(58, 104, 140, .78), rgba(49, 89, 120, .34) 46%, rgba(49, 89, 120, 0) 74%); }
+.amb-steel { background: radial-gradient(closest-side, rgba(80, 112, 140, .56), rgba(70, 102, 127, .2) 52%, rgba(70, 102, 127, 0) 76%); }
+/* Boxen und Karten auf hellem Grund bleiben, dunkle Boxen erhalten die Verlaufsfläche */
+.icard, .rep, .choose-list, .prc-grid li:not(.now) { box-shadow: var(--inset-hi); }
+.rep { background: var(--surface-grad); border-color: var(--hair); }
