@@ -3308,7 +3308,6 @@ body { background: #050d18; }
 .pck-cube { --s: clamp(240px, 27vw, 440px); }
 .pck-floor { display: none; }
 .pck-f { border: 1px solid rgba(233, 217, 188, .3); box-shadow: none; filter: saturate(.95) brightness(.98); }
-.pck-f::after { content: "ARVENTAS"; position: absolute; right: 14px; top: 14px; padding: 6px 12px; background: var(--ivory); color: var(--marine); font-size: 11px; font-weight: 700; letter-spacing: .2em; }
 .pck-copy h3 { font-size: clamp(40px, 6vw, 108px); line-height: .92; letter-spacing: -.02em; }
 .pck-copy h3.long { font-size: clamp(30px, 3.8vw, 64px); }
 .pck-n { font-size: 13px; letter-spacing: .2em; margin-bottom: 14px; }

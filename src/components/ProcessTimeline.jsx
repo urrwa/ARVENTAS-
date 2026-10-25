@@ -5,8 +5,8 @@ import { OWNER_PROCESS, INVESTOR_PROCESS } from '../content/data.js'
 // und der Text wechselt mit. Schmale Bildschirme und reduzierte Bewegung: schlichte nummerierte Liste.
 const pic = (k) => `/media/p/${k}.webp`
 const IMG = {
-  owner: ['home.proc.0', 'home.proc.1', 'home.proc.2', 'home.proc.3', 'home.proc.4', 'sys.step.0'].map(pic),
-  investor: ['bw.step.0', 'bw.step.1', 'bw.step.2', 'bw.step.3', 'bw.step.4', 'sa.step.0'].map(pic),
+  owner: ['u-lounge-gespraech', 'u-notizbuch', 'u-diagramme', 'u-grundrisse', 'u-paar-grundriss', 'u-handschlag-gold'].map(pic),
+  investor: ['u-karte', 'u-besprechungsraum', 'u-modellhaus-besp', 'u-begutachtung-sandstein', 'u-handschlag-dunkel', 'u-schluessel'].map(pic),
 }
 const FACES = ['front', 'right', 'back', 'left', 'top', 'bottom']
 const POSE = [[0, 0], [0, -90], [0, -180], [0, -270], [-90, -360], [90, -360]]
