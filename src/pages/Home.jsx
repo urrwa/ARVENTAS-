@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import HomeFilm from '../components/HomeFilm.jsx'
@@ -54,6 +54,23 @@ function Door({ to, img, alt, eyebrow, title, text, cta, d }) {
 
 export default function Home() {
   const [wcat, setWcat] = useState('Alle')
+  const doorsRef = useRef(null)
+  // Zwei Wege: beim Hereinscrollen wächst die linke Karte auf volle Größe, die rechte hebt sich in die Reihe.
+  useEffect(() => {
+    const el = doorsRef.current
+    if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    let raf = 0
+    const tick = () => {
+      raf = 0
+      const r = el.getBoundingClientRect()
+      const p = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight * 0.75)))
+      el.style.setProperty('--dp', p.toFixed(3))
+    }
+    const on = () => { if (!raf) raf = requestAnimationFrame(tick) }
+    tick()
+    addEventListener('scroll', on, { passive: true }); addEventListener('resize', on)
+    return () => { removeEventListener('scroll', on); removeEventListener('resize', on); cancelAnimationFrame(raf) }
+  }, [])
   // Sticky-Cover: Abschnitt bleibt stehen, sobald sein Unterkante den unteren Bildrand erreicht (top negativ bei hohen Abschnitten).
   useEffect(() => {
     const els = Array.from(document.querySelectorAll('.stick-under'))
@@ -78,11 +95,11 @@ export default function Home() {
       <section id="zugaenge" className="sec dark doors-sec" aria-labelledby="h-zug">
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Zwei Wege</p><h2 id="h-zug" className="h2 rv">Was möchten Sie bewegen?</h2></header>
-        </div>
-          <div className="doors">
+          <div className="doors" ref={doorsRef}>
             <Door to="/immobilie-verkaufen" img="p/u-eingang-travertin" alt="Wohnhaus mit Naturstein-Fassade (Beispielbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen" />
             <Door to="/kapitalanlage-immobilien" img="p/vm.area.2" alt="Reihenhäuser im Morgenlicht (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120} />
           </div>
+        </div>
       </section>
 
       {/* 03 – Drei Stärken */}

@@ -3212,3 +3212,22 @@ body { background: #050d18; }
   .kx-list a { grid-template-columns: 1fr auto; }
   .kx-list small { grid-column: 1 / -1; }
 }
+
+/* Zwei Wege wie in der Landingpage: zentrierte Überschrift, zwei Karten im Raster; Hover weitet die Karte und blendet die andere ab */
+.doors-sec .sec-head { text-align: center; margin-inline: auto; max-width: none; margin-bottom: clamp(32px, 5vw, 72px); }
+.doors-sec .sec-head .eyebrow { justify-content: center; }
+.doors-sec .sec-head .h2 { font-size: clamp(40px, 5.4vw, 84px); line-height: 1; text-transform: none; letter-spacing: -.015em; font-family: var(--font-head); font-weight: 400; }
+.doors-sec { padding-bottom: clamp(72px, 9vw, 140px); }
+.doors-sec .doors { --dp: 0; padding: 0; gap: 20px; transition: grid-template-columns 900ms var(--ease); align-items: stretch; }
+.doors-sec .door { min-height: 0; height: min(76vh, 720px); border-radius: 28px; padding: 0; transition: filter 600ms var(--ease), opacity 600ms var(--ease), border-color 500ms; }
+.doors-sec .door img { inset: 0; width: 100%; height: 100%; border-radius: 0; clip-path: inset(0 round 28px); }
+.doors-sec .door::after { inset: 0; border-radius: 0; }
+.doors-sec .door:first-child { transform: scale(calc(.9 + var(--dp) * .1)); transform-origin: 50% 100%; }
+.doors-sec .door:last-child { transform: translateY(calc((1 - var(--dp)) * 90px)); }
+.door-pv { display: none !important; }
+@media (min-width: 861px) and (hover: hover) {
+  .doors-sec .doors:has(.door:first-child:hover) { grid-template-columns: 1.3fr .7fr; }
+  .doors-sec .doors:has(.door:last-child:hover) { grid-template-columns: .7fr 1.3fr; }
+  .doors-sec .doors:hover .door:not(:hover) { filter: blur(6px); opacity: .5; }
+}
+@media (max-width: 860px) { .doors-sec .door { height: 70svh; } .doors-sec .door:first-child, .doors-sec .door:last-child { transform: none; } }
