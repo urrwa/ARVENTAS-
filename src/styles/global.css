@@ -3316,3 +3316,11 @@ body { background: #050d18; }
 .pck-copy.r p { padding-left: 0; padding-right: 22px; }
 .pck-copy p::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
 .pck-copy.r p::before { left: auto; right: 0; }
+
+/* Ablauf: Inhalt mittig im Bildschirm, enger zusammen */
+.pck-pin { display: block; }
+.pck-top { position: absolute; left: 0; right: 0; top: 0; }
+.pck-stage { position: absolute; inset: 0; margin-inline: auto; width: min(100%, 1180px); flex: none; }
+.pck-copy { width: min(44%, 520px); }
+.pck-dots { bottom: clamp(28px, 6vh, 64px); }
+.pck-copy h3.long { font-size: clamp(24px, 2.9vw, 44px); }
