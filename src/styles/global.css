@@ -3180,3 +3180,11 @@ body { background: transparent; }
 body { background: #050d18; }
 .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo { background: var(--glass-blue); }
 .sec.dark.ink { background: transparent; }
+
+/* Wortmarke im Footer: kräftiger, Buchstaben steigen nacheinander auf, danach läuft ein leiser Glanz durch */
+.sf-mark { color: transparent; background: linear-gradient(100deg, rgba(233, 217, 188, .13) 0%, rgba(233, 217, 188, .13) 40%, rgba(233, 217, 188, .34) 50%, rgba(233, 217, 188, .13) 60%, rgba(233, 217, 188, .13) 100%) 0 0 / 250% 100%; -webkit-background-clip: text; background-clip: text; }
+.sf-mark span { display: inline-block; opacity: 0; transform: translateY(40%); transition: opacity 900ms var(--ease), transform 1100ms var(--ease); transition-delay: calc(var(--i) * 90ms); }
+.sf-mark.on span { opacity: 1; transform: none; }
+.sf-mark.on { animation: sf-sheen 7s ease-in-out 1.6s infinite; }
+@keyframes sf-sheen { 0% { background-position: 100% 0; } 55%, 100% { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { .sf-mark span { opacity: 1; transform: none; transition: none; } .sf-mark.on { animation: none; } }

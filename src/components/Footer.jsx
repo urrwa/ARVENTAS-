@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useConsent } from './Consent.jsx'
 
@@ -5,6 +6,14 @@ import { useConsent } from './Consent.jsx'
 // und eine sehr große, blasse Wortmarke, die unten angeschnitten ist.
 export default function Footer() {
   const { openSettings } = useConsent()
+  const mark = useRef(null)
+  useEffect(() => {
+    const el = mark.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('on'); io.disconnect() } }, { threshold: 0.25 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   return (
     <footer className="sf">
       <div className="sf-in">
@@ -39,7 +48,7 @@ export default function Footer() {
           <button type="button" className="sf-up" aria-label="Nach oben" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>↑</button>
         </div>
       </div>
-      <div className="sf-mark" aria-hidden="true">ARVENTAS</div>
+      <div className="sf-mark" ref={mark} aria-hidden="true">{[...'ARVENTAS'].map((c, i) => <span key={i} style={{ '--i': i }}>{c}</span>)}</div>
     </footer>
   )
 }
