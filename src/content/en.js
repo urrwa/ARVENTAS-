@@ -1421,4 +1421,6 @@ export default {
  "Gestalten wir den nächsten Schritt.": "Let’s shape what comes next.",
  "Gespräch beginnen": "Start the conversation",
  "Nach oben": "Back to top",
+ "Für Partner": "For partners",
+ "Illustrationsbild": "Illustrative image",
 }

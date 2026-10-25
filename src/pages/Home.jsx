@@ -157,18 +157,18 @@ export default function Home() {
       </section>
 
       {/* 11 – Kontaktentscheidung */}
-      <section className="sec dark ink" aria-labelledby="h-next">
-        <div className="choose-img" aria-hidden="true"><img src="/media/p/u-lounge-fenster.webp" alt="" loading="lazy" style={{ objectPosition: '50% 20%' }} /></div>
-        <div className="wrap">
-          <header className="sec-head"><p className="eyebrow rv">Kontakt</p><h2 id="h-next" className="h2 rv">Ihr nächster Schritt.</h2></header>
-          <div className="choose">
-            <nav className="choose-list rv" aria-label="Nächster Schritt">
-              <Link to="/immobilie-verkaufen#anfrage">Immobilie prüfen lassen <span className="arr" aria-hidden="true">→</span></Link>
-              <Link to="/investorenkreis">Investmentprofil erstellen <span className="arr" aria-hidden="true">→</span></Link>
-              <Link to="/partner#anfrage">Partnerschaft besprechen <span className="arr" aria-hidden="true">→</span></Link>
+      <section className="sec dark kx" aria-labelledby="h-next">
+        <div className="wrap kx-in">
+          <figure className="kx-pic"><img src="/media/p/u-eingang-stein.webp" alt="" loading="lazy" /><figcaption>Illustrationsbild</figcaption></figure>
+          <div className="kx-card">
+            <p className="eyebrow rv">Kontakt</p>
+            <h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2>
+            <nav className="kx-list rv" aria-label="Nächster Schritt">
+              <Link to="/immobilie-verkaufen#anfrage"><small>Für Eigentümer</small><b>Immobilie prüfen lassen</b><span className="kx-go" aria-hidden="true">→</span></Link>
+              <Link to="/investorenkreis"><small>Für Investoren</small><b>Investmentprofil erstellen</b><span className="kx-go" aria-hidden="true">→</span></Link>
+              <Link to="/partner#anfrage"><small>Für Partner</small><b>Partnerschaft besprechen</b><span className="kx-go" aria-hidden="true">→</span></Link>
             </nav>
           </div>
-          <p className="small" style={{ marginTop: 20 }}>Die Auswahl führt zum passenden Formular.</p>
         </div>
       </section>
     </>
