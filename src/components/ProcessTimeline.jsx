@@ -8,6 +8,9 @@ const IMG = {
   owner: ['home.proc.0', 'home.proc.1', 'home.proc.2', 'home.proc.3', 'home.proc.4', 'sys.step.0'].map(pic),
   investor: ['bw.step.0', 'bw.step.1', 'bw.step.2', 'bw.step.3', 'bw.step.4', 'sa.step.0'].map(pic),
 }
+// Sechs Würfelseiten für sechs Schritte: jede Seite wird nach vorn gedreht.
+const FACES = ['f0', 'f1', 'f2', 'f3', 'f4', 'f5']
+const POSE = [[0, 0], [0, -90], [0, -180], [0, -270], [-90, -360], [90, -360]]
 export default function ProcessTimeline({ initial = 'owner' }) {
   const [who, setWho] = useState(initial)
   const [a, setA] = useState(0)
@@ -45,7 +48,24 @@ export default function ProcessTimeline({ initial = 'owner' }) {
           <button type="button" role="tab" aria-selected={who === 'owner'} onClick={() => pick('owner')}>Für Eigentümer</button>
           <button type="button" role="tab" aria-selected={who === 'investor'} onClick={() => pick('investor')}>Für Investoren</button>
         </div>
-        <ol className="prc-grid">
+        {!flat && (
+          <div className="pcx" style={{ '--ax': POSE[a][0] + 'deg', '--ay': POSE[a][1] + 'deg' }}>
+            <div className="pcx-txt" key={who + a}>
+              <span className="pcx-n">{String(a + 1).padStart(2, '0')}</span>
+              <h3 lang="de">{steps[a].t}</h3>
+              <p>{steps[a].d}</p>
+            </div>
+            <div className="pcx-scene" aria-hidden="true">
+              <div className="pcx-cube">
+                {FACES.map((f, i) => (
+                  <figure key={f} className={'pcx-f ' + f}><img src={IMG[who][i]} alt="" loading="lazy" /><figcaption>ARVENTAS</figcaption></figure>
+                ))}
+              </div>
+            </div>
+            <div className="pcx-dash" aria-hidden="true">{steps.map((_, i) => <i key={i} className={i <= a ? 'on' : ''} />)}</div>
+          </div>
+        )}
+        {flat && <ol className="prc-grid">
           {steps.map((s, i) => (
             <li key={who + s.t} className={flat || i < sh ? 'seen' : i === sh ? 'now' : ''} style={{ '--side': i % 2 ? 1 : -1 }}>
               <img src={IMG[who][i]} alt="" loading="lazy" />
@@ -57,7 +77,7 @@ export default function ProcessTimeline({ initial = 'owner' }) {
               <span aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
             </li>
           ))}
-        </ol>
+        </ol>}
       </div>
     </div>
   )

@@ -3231,3 +3231,26 @@ body { background: #050d18; }
   .doors-sec .doors:hover .door:not(:hover) { filter: blur(6px); opacity: .5; }
 }
 @media (max-width: 860px) { .doors-sec .door { height: 70svh; } .doors-sec .door:first-child, .doors-sec .door:last-child { transform: none; } }
+
+/* Ablauf als drehender Würfel: links Schritt und Text, rechts ein Würfel, dessen sechs Seiten die sechs Schritte zeigen */
+.pcx { --ax: 0deg; --ay: 0deg; position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(24px, 5vw, 80px); min-height: min(62vh, 560px); padding-inline: clamp(8px, 3vw, 48px); }
+.pcx-txt { animation: pcx-in 700ms var(--ease) both; }
+@keyframes pcx-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.pcx-n { display: block; font-size: 12px; letter-spacing: .24em; color: var(--gold); margin-bottom: 14px; }
+.pcx-txt h3 { margin: 0; hyphens: auto; overflow-wrap: break-word; font-family: var(--font-head); font-weight: 400; font-size: clamp(38px, 5vw, 84px); line-height: .98; letter-spacing: -.02em; text-transform: none; color: var(--ivory); }
+.pcx-txt p { margin: clamp(16px, 2vw, 28px) 0 0; max-width: 34ch; font-size: clamp(15px, 1.25vw, 19px); line-height: 1.6; color: var(--text-2); }
+.pcx-scene { --s: clamp(220px, 26vw, 380px); perspective: 1400px; display: grid; place-items: center; height: calc(var(--s) * 1.5); }
+.pcx-cube { position: relative; width: var(--s); height: var(--s); transform-style: preserve-3d; transform: rotateZ(-5deg) rotateX(var(--ax)) rotateY(var(--ay)); transition: transform 1300ms cubic-bezier(.65, 0, .2, 1); }
+.pcx-f { position: absolute; inset: 0; margin: 0; overflow: hidden; border-radius: 6px; backface-visibility: hidden; border: 1px solid rgba(233, 217, 188, .25); background: #0a1a2c; }
+.pcx-f img { width: 100%; height: 100%; object-fit: cover; }
+.pcx-f figcaption { position: absolute; right: 10px; top: 10px; padding: 4px 8px; background: var(--ivory); color: var(--marine); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+.pcx-f.f0 { transform: translateZ(calc(var(--s) / 2)); }
+.pcx-f.f1 { transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
+.pcx-f.f2 { transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+.pcx-f.f3 { transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
+.pcx-f.f4 { transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
+.pcx-f.f5 { transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+.pcx-dash { position: absolute; left: clamp(8px, 3vw, 48px); bottom: 0; display: flex; gap: 8px; }
+.pcx-dash i { width: 28px; height: 2px; background: rgba(233, 217, 188, .25); transition: background 400ms ease; }
+.pcx-dash i.on { background: var(--gold); }
+@media (prefers-reduced-motion: reduce) { .pcx-txt { animation: none; } .pcx-cube { transition: none; } }
