@@ -3884,3 +3884,6 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 .il-card i { display: block; width: 100%; height: auto; }
 .il-card i img { position: static; }
 .il-chips em { white-space: nowrap; }
+/* Gespräch beginnen: grüner Live-Punkt wie beim Kontakt-Button in der Kopfzeile */
+.sf-btn i { width: 8px; height: 8px; background: #3ddc84; box-shadow: 0 0 0 0 rgba(61, 220, 132, .6); animation: liveDot 1.8s ease-out infinite; }
+.sf-btn:hover i, .sf-btn:focus-visible i { background: #3ddc84; transform: none; animation: liveDot 1.8s ease-out infinite; }
