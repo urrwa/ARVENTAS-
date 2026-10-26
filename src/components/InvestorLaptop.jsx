@@ -6,6 +6,12 @@ import { STATES, MAP_VIEWBOX } from '../content/germany.js'
 // die Karte hebt die Region hervor, rechts erscheinen Platzhalter-Treffer. Keine Zahlen, keine echten Objekte, keine Trefferzahlen.
 const NAME = (id) => STATES.find((s) => s.id === id)
 const TYPES = ['Mehrfamilienhaus', 'Wohn- und Geschäftshaus', 'Gewerbeimmobilie', 'Grundstück']
+const IMG = [
+  ['ablauf-wohnhaus', 'zugang-investor', 'ablauf-fassade'],
+  ['ablauf-strasse', 'ablauf-eingang', 'ablauf-fassade'],
+  ['zugang-investor', 'ablauf-fassade', 'ablauf-luftbild'],
+  ['h-entwicklung', 'ablauf-luftbild', 'ablauf-strasse'],
+]
 const BUDGET = ['bis 500.000 €', '500.000 – 2 Mio. €', '2 – 5 Mio. €', 'ab 5 Mio. €']
 const ICON = {
   pin: 'M12 21s-7-6-7-11a7 7 0 1 1 14 0c0 5-7 11-7 11zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z',
@@ -49,8 +55,8 @@ export default function InvestorLaptop() {
               <p className="il-h">Passende Objekte</p>
               {[0, 1, 2].map((k) => (
                 <div className="il-card" key={k} style={{ '--k': k }}>
-                  <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d={TI[type]} /></svg></i>
-                  <div><b /><b className="s" /><span className="il-chips"><em>{TYPES[type]}</em><em>{st.name}</em></span></div>
+                  <i><img src={`/media/p/${IMG[type][k]}.webp`} alt=""/></i>
+                  <div><b /><b className="s" /><span className="il-chips"><em>{TYPES[type]}</em><em>{st.name}</em><em>{BUDGET[bud]}</em></span></div>
                 </div>
               ))}
               <p className="il-n">Beispielansicht, keine echten Objekte.</p>

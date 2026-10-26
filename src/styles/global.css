@@ -3877,3 +3877,10 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 .il-map path { cursor: pointer; }
 .il-map path:hover:not(.on) { fill: rgba(200, 173, 128, .35); }
 .il-ping { pointer-events: none; }
+.il-card { grid-template-columns: 38% 1fr; }
+.il-card i { padding: 0; overflow: hidden; min-height: 0; aspect-ratio: 4 / 3; }
+.il-card i img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.il-card b { margin-top: .55em; }
+.il-card i { display: block; width: 100%; height: auto; }
+.il-card i img { position: static; }
+.il-chips em { white-space: nowrap; }
