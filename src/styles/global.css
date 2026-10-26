@@ -4187,3 +4187,5 @@ body .btn.btn-line:hover::after { animation: arrowSwap 620ms cubic-bezier(.22, 1
 .bk-strip img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.9); }
 .bk-flat .bk-strip { min-height: 120px; flex: none; }
 .bk-strip { display: none; }
+/* Textrolle zurückgenommen */
+.btn .bt { display: contents; }
