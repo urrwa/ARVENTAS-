@@ -3365,3 +3365,11 @@ body { background: #050d18; }
 .rh-frame, .rh-pane { display: none; }
 @media (max-width: 860px) { .rh.hf { height: 320vh; } }
 @media (prefers-reduced-motion: reduce) { .rh.hf { height: 100svh; } }
+/* Kamerafahrt mit zwei Fotos */
+.rh.hf { height: 400vh; }
+.rh-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 52% 52%; transform-origin: 52% 46%; will-change: transform, opacity; }
+.rh-out { opacity: 0; }
+.rh-grain { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: url('/media/grain.png'); opacity: .09; mix-blend-mode: overlay; }
+.rh-shade { background: linear-gradient(180deg, rgba(4, 11, 20, .35) 0%, rgba(4, 11, 20, 0) 32%, rgba(4, 11, 20, .5) 100%); }
+@media (max-width: 860px) { .rh.hf { height: 340vh; } }
+@media (prefers-reduced-motion: reduce) { .rh.hf { height: 100svh; } }
