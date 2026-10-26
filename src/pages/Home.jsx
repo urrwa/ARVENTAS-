@@ -6,7 +6,7 @@ import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportStack from '../components/ReportStack.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
 import StrengthStack from '../components/StrengthStack.jsx'
-import PropertyDashboard from '../components/PropertyDashboard.jsx'
+import InvestorLaptop from '../components/InvestorLaptop.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import GermanyMap from '../components/GermanyMap.jsx'
@@ -131,12 +131,8 @@ export default function Home() {
       {/* Für Eigentümer: entfällt, weil Zwei Wege und Ablauf den Eigentümer schon abdecken */}
 
       {/* 07 – Investoren und Matching */}
-      <section className="sec dark ink wide-sec" aria-labelledby="h-match">
-        <div className="wrap">
-          <SectionHead eyebrow="Für Investoren" title="Nicht jedes Objekt. Das passende." lead="Suchprofil und Immobilieninformationen sinnvoll zusammenführen." />
-          <PropertyDashboard />
-          <div className="btn-row"><Btn to="/investorenkreis" variant="marine">Suchprofil erstellen</Btn></div>
-        </div>
+      <section className="sec dark ink wide-sec il-sec" aria-labelledby="h-match">
+        <div className="wrap"><InvestorLaptop /></div>
       </section>
 
       {/* 08 – Menschen: ausgeblendet, bis bestätigte Porträts und Profile vorliegen (siehe docs/abgleich-masterprompt.md) */}
