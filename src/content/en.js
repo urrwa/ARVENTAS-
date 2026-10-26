@@ -43,6 +43,7 @@ export default {
  "Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt.": "Selected. Analysed. Tailored to your profile.",
  "Ausgewählte Immobilien. Auf Ihre Ziele abgestimmt.": "Selected properties. Tailored to your goals.",
  "Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet.": "Selected properties. Sound analysis. Personally supported.",
+ "Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet, deutschlandweit.": "Selected properties. Sound analysis. Personally supported, nationwide.",
  "Ausgewählte Off-Market-Immobilien für Investoren: Suchprofil, Objektanalyse, Chancen und Risiken – persönlich begleitet, deutschlandweit.": "Selected off-market properties for investors: search profile, property analysis, opportunities and risks – personally supported, across Germany.",
  "Ausgewählte Off-Market-Immobilien, fundierte Objektanalysen und persönliche Begleitung für Eigentümer und Investoren in ganz Deutschland.": "Selected off-market properties, sound property analyses and personal support for owners and investors throughout Germany.",
  "Auswahl speichern": "Save selection",

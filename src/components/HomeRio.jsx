@@ -75,8 +75,8 @@ export default function HomeRio() {
         <ul className="rh-kw" aria-label="Leistungen"><li>Eigentümer</li><li>Investoren</li><li>Objektreport</li></ul>
         <p className="rh-sub">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet, deutschlandweit.</p>
         <h1 className="rh-h" aria-label="ARVENTAS Immobilien. Kennen Deutschland.">
-          <span className="rh-ln l" aria-hidden="true">ARVENTAS<br />IMMOBILIEN</span>
-          <span className="rh-ln r" aria-hidden="true">KENNEN<br />DEUTSCHLAND</span>
+          <span className="rh-ln l" aria-hidden="true">Arventas<br />Immobilien</span>
+          <span className="rh-ln r" aria-hidden="true">Kennen<br />Deutschland.</span>
         </h1>
       </div>
     </section>
