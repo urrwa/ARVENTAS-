@@ -3657,3 +3657,16 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 .gm-go { min-width: 200px; padding: 11px 16px; }
 .gm-go b { font-size: clamp(18px, 1.5vw, 22px); }
 .gm-go i { width: 34px; height: 34px; font-size: 14px; }
+
+/* Dunkle Seite: Texte bleiben hell, auch beim Überfahren und im aktiven Zustand (nichts wird schwarz) */
+.sec.dark .faq-q button:hover, .sec.dark .faq-q button, .sec.dark .kt:hover > button, .sec.dark .kt.on > button, .sec.dark .reg-list button:hover, .sec.dark .reg-list button[aria-pressed=true], .sec.dark .reg-more summary { color: var(--ivory); }
+.sec.dark .faq-item, .sec.dark .faq-item .faq-a, .sec.dark .faq-a p { color: var(--ivory); }
+.sl-item h3, .sl-item:hover h3 { color: var(--ivory); }
+.sl-item p { color: var(--text-2); }
+.sl-no { color: rgba(233, 217, 188, .3); }
+.sl-item small { color: var(--gold); }
+.sl-item:hover h3, .sl-item:hover p { color: var(--ivory); }
+.sl-head .h2 { color: var(--ivory); }
+.sec.dark .step-row:hover, .sec.dark .step-row:hover h3, .sec.dark .step-row:hover p { color: var(--ivory); }
+.sec.dark .icard:hover, .sec.dark .icard:hover * { color: var(--ivory); }
+.sec.dark a:hover:not(.btn):not([class*="btn"]), .sec.dark button:hover:not(.btn):not([class*="btn"]):not(.gm-chip):not([class*="chip"]) { color: var(--gold); }
