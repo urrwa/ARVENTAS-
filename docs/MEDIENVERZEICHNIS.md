@@ -24,4 +24,4 @@ Die Bundesländer-Karte (`src/content/germany.js`) nutzt vereinfachte Umrisse na
 
 ## Startseiten-Kamerafahrt (generiert)
 `fahrt/d2/*.webp` und `fahrt/m2/*.webp` (Bildfolge der Kamerafahrt aus einem Kling-3.0-Film) und `fahrt-innen*.webp` (Startbild, Nano Banana 2, 4K) wurden mit Higgsfield erzeugt. Ohne Personen, Text oder Logos. Das Video ist keyframe-dicht kodiert und wird per Scrollen abgespielt. Im Bildnachweis als generiert angeben.
-Das Bild `report-photo.webp` (Objektreport-Hefte auf dem Schreibtisch) basiert auf einem vom Auftraggeber gelieferten KI-Bild (GPT). Überlagerter Text sowie erfundene Zahlen (Preisspanne, Wohnfläche, Baujahr, Einheiten) wurden mit Nano Banana 2 entfernt bzw. unleserlich gemacht. Als generiertes Bild kennzeichnen.
+Das Bild `report-desk.webp` (dunkler Schreibtisch ohne Papier, Text oder Logos) wurde mit Nano Banana 2 (Higgsfield) erzeugt und dient als Bühne hinter den wechselnden Report-Seiten im Objektreport-Abschnitt. Als generiertes Bild kennzeichnen.
