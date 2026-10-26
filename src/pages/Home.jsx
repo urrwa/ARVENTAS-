@@ -107,9 +107,9 @@ export default function Home() {
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
         </div>
         <StrengthStack items={[
-            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/u-altstadt.webp', icon: 'key' },
-            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/u-karte.webp', icon: 'chart' },
-            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/ablauf-tuer.webp', icon: 'hand' },
+            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/ablauf-luftbild.webp', icon: 'key' },
+            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/ablauf-modell.webp', icon: 'chart' },
+            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/ablauf-besprechung.webp', icon: 'hand' },
           ]} />
       </section>
 
