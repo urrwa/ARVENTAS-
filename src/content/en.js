@@ -1484,4 +1484,5 @@ export default {
  "Vom Markt zum Objekt": "From the market to the property",
  "Allgemeine Informationen werden erst nützlich, wenn sie auf ein konkretes Objekt und seinen Standort bezogen werden. Dafür braucht es Unterlagen und eine persönliche Prüfung.": "General information only becomes useful when related to a specific property and its location. That takes documents and a personal review.",
  "Im Objektreport werden Standort und Nachfrage je Baustein mit Quelle und Stand eingeordnet.": "In the property report, location and demand are assessed per building block with source and date.",
+ "Keine automatischen Kaufempfehlungen oder Renditezusagen.": "No automatic purchase recommendations or return guarantees.",
 }

@@ -2,8 +2,8 @@ import { useState } from 'react'
 import WordZoom from '../components/WordZoom.jsx'
 import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
-import { Btn, SectionHead, Faq, Tabs } from '../components/ui.jsx'
-import PanelSlider from '../components/PanelSlider.jsx'
+import { Btn, SectionHead, Faq } from '../components/ui.jsx'
+import ScrollTrack from '../components/ScrollTrack.jsx'
 import { INVESTOR_FAQ } from '../content/data.js'
 
 const STEPS = [
@@ -33,26 +33,9 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="sec dark" style={{ paddingTop: 0 }}>
-        <div className="wrap">
-          <SectionHead eyebrow="Vorgehen" title="Suchprofil, Analyse und Begleitung." normal />
-        </div>
-      </section>
-      <PanelSlider label="Vorgehen" items={STEPS} />
-      <section className="sec dark" style={{ padding: 0 }}>
-        <div className="wrap">
-        </div>
-      </section>
-
-      <section className="sec dark">
-        <div className="wrap">
-          <SectionHead eyebrow="Prüfmatrix" title="Chancen und Risiken prüfen." lead="Fünf Bereiche, die vor jeder Entscheidung betrachtet werden sollten. Die Matrix zeigt Prüffragen, keine Empfehlungen." />
-          <div className="rv on-ivory" style={{ color: 'var(--ink)' }}>
-            <Tabs label="Prüfmatrix" items={MATRIX} className="matrix" listClass="matrix-l" panelClass="matrix-r" vertical
-              renderPanel={(m) => (<><h3 className="h3" style={{ marginBottom: 14 }}>{m.label}</h3><ul>{m.q.map((x) => <li key={x}>{x}</li>)}</ul><p className="small" style={{ marginTop: 18, color: 'var(--ink-soft)' }}>Keine automatischen Kaufempfehlungen oder Renditegarantien.</p></>)} />
-          </div>
-        </div>
-      </section>
+      <ScrollTrack id="h-vorgehen" eyebrow="Vorgehen" title="Suchprofil, Analyse und Begleitung." items={STEPS.map((x) => ({ t: x.t, d: x.d, img: x.img }))} />
+      <ScrollTrack id="h-matrix" eyebrow="Prüfmatrix" title="Chancen und Risiken prüfen." lead="Fünf Bereiche, die vor jeder Entscheidung betrachtet werden sollten. Die Matrix zeigt Prüffragen, keine Empfehlungen."
+        items={MATRIX.map((m) => ({ t: m.label, list: m.q, note: 'Keine automatischen Kaufempfehlungen oder Renditezusagen.' }))} />
 
       <section className="sec dark">
         <div className="wrap two">
