@@ -16,9 +16,12 @@ export default function Header() {
   const burger = useRef(null)
   const isHome = useLocation().pathname === '/'
   const [top, setTop] = useState(true)
-  // Startseite: Leiste liegt zunächst klar über dem Foto und wird beim Scrollen flächig.
+  // Startseite: Leiste liegt über dem Film offen; nach dem ersten Abschnitt wird sie zur schwebenden Kapsel.
   useEffect(() => {
-    const f = () => setTop(window.scrollY < 40)
+    const f = () => {
+      const hero = document.querySelector('.hv')
+      setTop(window.scrollY < (hero ? hero.offsetHeight - 90 : 40))
+    }
     f()
     window.addEventListener('scroll', f, { passive: true })
     return () => window.removeEventListener('scroll', f)
