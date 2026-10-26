@@ -181,7 +181,7 @@ export function InvestorWizard() {
   if (status === 'done') return <Done title="Ihr Suchprofil ist angelegt (Demo)." text="In der Live-Version würden wir Ihre Angaben prüfen und uns über Ihren gewählten Kontaktweg melden." onReset={() => { setStatus('idle'); setStep(0); setAck(false); setMk(false) }} />
   const rows = [['Region', v.region], ['Immobilientyp', v.typ], ['Budgetband', v.budget], ['Erfahrung', v.erfahrung], ['Zeithorizont', v.horizont], ['Name', v.name], ['E-Mail', v.email], ['Kontaktweg', v.weg + (v.phone ? ' (' + v.phone + ')' : '')]]
   return (
-    <div className="form">
+    <div className="form form-dark">
       <DemoNotice />
       <p className="prog-l" ref={head} tabIndex={-1} style={{ outline: 'none' }}>Schritt {step + 1} von 4 · {STEPS[step]}</p>
       <div className="prog" aria-hidden="true">{STEPS.map((s, i) => <i key={s} className={i <= step ? 'on' : ''} />)}</div>

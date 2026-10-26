@@ -3740,3 +3740,11 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 .pd-sum .btn { margin-bottom: 10px; }
 .sec.dark .pd-range button[aria-checked=true], .sec.dark .pd-range button[aria-checked=true]:hover { color: var(--marine); }
 .sec.dark .pd-chips button:hover, .sec.dark .pd-side button:hover { color: inherit; }
+
+/* Investorenkreis-Formular steht auf dunklem Grund: Beschriftungen, Prüfansicht und Einwilligungen hell */
+.form-dark label, .form-dark legend, .form-dark .lbl, .form-dark dt, .form-dark .check, .form-dark .check span, .form-dark p, .form-dark small { color: var(--ivory) !important; }
+.form-dark dt { opacity: .7; }
+.form-dark .check a { color: var(--gold); }
+.form-dark .check input { accent-color: var(--gold); }
+.form-dark .btn-line { color: var(--ivory) !important; border-color: rgba(233, 217, 188, .4); }
+
