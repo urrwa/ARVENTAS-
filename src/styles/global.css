@@ -3386,3 +3386,5 @@ body { background: #050d18; }
 .rh-ln.r { transform: translate3d(calc(var(--t) * 70vw), 0, 0); }
 .rh-eb, .rh-cta { display: none; }
 @media (max-width: 860px) { .rh-h { font-size: clamp(30px, 10.5vw, 64px); top: 58%; } .rh-sub { display: none; } }
+.rh-img { transform: none !important; opacity: 1 !important; background: var(--marine); }
+.rh.hf { height: 380vh; }
