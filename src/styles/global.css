@@ -3869,3 +3869,11 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 .il-map { position: relative; }
 .il-map svg { position: absolute; inset: 3%; width: 94%; height: 94%; }
 .il-card i { width: 100%; align-self: stretch; }
+.il-sel { position: relative; display: block; padding: 0; }
+.il-sel select { width: 100%; appearance: none; background: transparent; border: 0; color: #f3ede0; font: inherit; font-size: 1em; padding: .75em 2.2em .75em .9em; cursor: pointer; }
+.il-sel select option { background: #0b1a2d; color: #f3ede0; }
+.il-sel::after { content: ""; position: absolute; right: 1em; top: 50%; width: .5em; height: .5em; border-right: 1.5px solid #c8ad80; border-bottom: 1.5px solid #c8ad80; transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+.il-sel:hover { border-color: #c8ad80; }
+.il-map path { cursor: pointer; }
+.il-map path:hover:not(.on) { fill: rgba(200, 173, 128, .35); }
+.il-ping { pointer-events: none; }
