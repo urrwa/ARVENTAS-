@@ -75,7 +75,6 @@ export default function ReportStack() {
   return (
     <div className="rp" ref={box}>
       <div className="rp-stick">
-        <div className="rp-bg" aria-hidden="true"><img src="/media/p/report-desk.webp" alt="" loading="lazy" /></div>
         <div className="wrap rp-grid">
           <div className="rp-left">
             {head}
