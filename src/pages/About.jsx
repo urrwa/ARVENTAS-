@@ -35,9 +35,9 @@ export default function About() {
           <SectionHead eyebrow="Aktuelles Geschäftsmodell" title="Zugang, Analyse, Matching, Begleitung." normal />
         </div>
         <HScroll items={[
-          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/u-altstadt.webp' },
-          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/u-karte.webp' },
-          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/p/u-modelle-charts.webp' },
+          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/ablauf-luftbild.webp' },
+          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/ablauf-modell.webp' },
+          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/p/ablauf-schreibtisch.webp' },
           { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/p/ablauf-eingang.webp' },
         ]} />
         <div className="wrap"><p className="rv" style={{ marginTop: 24, maxWidth: '62ch' }}>Die interne KI-Technologie unterstützt Objektanalysen und Prozesse. Sie ist kein öffentlich verkauftes Softwareprodukt.</p></div>
