@@ -3400,3 +3400,8 @@ body { background: #050d18; }
 .sf-btn:active { transform: scale(.98); }
 @keyframes sf-dot { 0%, 100% { box-shadow: 0 0 0 0 rgba(7, 19, 33, .35); } 50% { box-shadow: 0 0 0 7px rgba(7, 19, 33, 0); } }
 @media (prefers-reduced-motion: reduce) { .sf-btn i { animation: none; } .sf-btn::before { transition: none; } }
+
+/* Ein durchgehender Hintergrund: keine Nähte zwischen den Abschnitten */
+:root { --glass-blue: #0a1a2e; --page-bg: #0a1a2e; }
+body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .ss-sec, .doors-sec, .proc-sec { background: var(--page-bg); }
+.sec.dark.ink, .kx { background: transparent; }
