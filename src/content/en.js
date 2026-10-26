@@ -1454,4 +1454,6 @@ export default {
  "Umfeld, Erreichbarkeit und Nutzungsmix. Jeder Baustein nennt Quelle und Stand.": "Surroundings, accessibility and mix of uses. Every building block names its source and date.",
  "Eine Marktwerteinschätzung ist kein verbindliches Gutachten.": "A market value estimate is not a binding expert valuation.",
  "Prüfpunkte": "Points to check",
+ "Gepflegte Stadtvilla in der Abenddämmerung (Beispielbild)": "Well-kept city villa at dusk (sample image)",
+ "Modernes Mehrfamilienhaus mit Natursteinfassade (Beispielbild)": "Modern apartment building with natural stone facade (sample image)",
 }

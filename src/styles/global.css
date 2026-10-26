@@ -3437,3 +3437,4 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .rh-kw li { display: flex; align-items: center; gap: 12px; }
 .rh-kw li::before { content: ''; width: 22px; height: 1px; background: var(--gold); }
 @media (max-width: 860px) { .rh-h { font-size: clamp(40px, 12vw, 72px); } }
+.doors-sec .door::after { background: linear-gradient(180deg, rgba(7, 19, 33, 0) 22%, rgba(7, 19, 33, .5) 52%, rgba(7, 19, 33, .88) 100%); }
