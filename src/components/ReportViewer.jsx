@@ -6,7 +6,7 @@ const STAMP = 'Illustratives Muster – keine Objektbewertung'
 const Row = ({ label, children }) => <div className="rep-row"><b>{label}</b><div>{children}</div></div>
 const Bar = ({ w, l, band }) => <div className={`bar${band ? ' band' : ''}`} style={{ '--w': w, '--l': l }}><i /></div>
 
-const PANELS = [
+export const PANELS = [
   { id: 'wert', img: 'marktwert', label: 'Marktwert', small: '01', render: () => (
     <>
       <h3>Marktwert einordnen</h3>

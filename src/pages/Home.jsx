@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import HomeVideo from '../components/HomeVideo.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
-import ReportViewer from '../components/ReportViewer.jsx'
+import ReportStack from '../components/ReportStack.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
 import StrengthStack from '../components/StrengthStack.jsx'
 import PropertyDashboard from '../components/PropertyDashboard.jsx'
@@ -114,17 +114,9 @@ export default function Home() {
           ]} />
       </section>
 
-      {/* 04 – Interaktiver Objektreport */}
-      <section className="sec dark wide-sec" aria-labelledby="h-rep">
-        <div className="wrap">
-          <header className="sec-head"><p className="eyebrow rv">Objektreport</p><h2 id="h-rep" className="h2 rv">Ein klares Bild.</h2><p className="lead rv">Datenbasiert analysiert. Persönlich geprüft.</p></header>
-          <div className="rv"><ReportViewer id="muster-home" /></div>
-          <div className="btn-row">
-            <Btn to="/objektreport#muster" variant="line">Muster ansehen</Btn>
-            <Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn>
-          </div>
-          <p className="small" style={{ marginTop: 18 }}>Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen.</p>
-        </div>
+      {/* 04 – Objektreport als Blätterstapel */}
+      <section className="sec dark rp-sec" aria-labelledby="h-rep">
+        <ReportStack />
       </section>
 
       {/* 05 – Zwei nachvollziehbare Prozesse */}

@@ -1464,4 +1464,6 @@ export default {
  "Geodaten: Natural Earth": "Geodata: Natural Earth",
  "Karte Deutschlands mit den 16 Bundesländern": "Map of Germany with the 16 federal states",
  "Bundesländer": "Federal states",
+ "Sechs Ebenen der Analyse, einzeln bewertet. Illustratives Muster – keine Objektbewertung.": "Six layers of analysis, each assessed separately. Illustrative sample – not a property valuation.",
+ "Analyseebenen": "Analysis layers",
 }
