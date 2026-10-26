@@ -18,6 +18,7 @@ Es werden keine erfundenen Zahlen, Kundenzitate, Namen oder Kontaktdaten angezei
 Die elf Bilder `ablauf-*.webp` in `public/media/p/` wurden mit Nano Banana 2 (Higgsfield) erzeugt: Architektur und Innenräume, ohne Personen, Text oder Logos. Im Bildnachweis als generierte Bilder angeben; kein Hinweis auf dem Bild selbst.
 Die Bilder `zugang-eigentuemer.webp` (Stadtvilla) und `zugang-investor.webp` (Mehrfamilienhaus) für die Karten „Wie können wir Ihnen helfen?" entstanden ebenfalls mit Nano Banana 2 (4K, ohne Personen, Text oder Logos).
 Der Hero-Film `hero/montage.mp4` und `.webm` (Schwarzweiß-Montage mit Navy-Ton aus vier Kling-3.0-Clips: Hände auf Grundriss, Frankfurt, Hände mit Report, Luftbild) und `hero/poster.webp` entstanden mit Higgsfield (Nano Banana 2 für die Startbilder). Ohne erkennbare Gesichter, Text oder Logos. Im Bildnachweis als generiert angeben.
+Das Bild `h-analyse.webp` (Schreibtisch mit Grundrissen, ohne Text und Zahlen) basiert auf einem vom Auftraggeber gelieferten KI-Bild; Überschrift und erfundene Kennzahlen wurden entfernt.
 Die Personenbilder `h-p-*.webp` (Erstgespräch, Besprechung, Vertragsunterzeichnung, Investorengespräch, Objektprüfung, Entscheidung, Begleitung) sind ebenfalls mit Nano Banana 2 erzeugte, frei erfundene Personen. Sie zeigen keine realen Kunden oder Mitarbeitenden und müssen als generierte Bilder gekennzeichnet bleiben; vor Livegang mit dem Auftraggeber abstimmen.
 Die Bundesländer-Karte (`src/content/germany.js`) nutzt vereinfachte Umrisse nach Natural Earth (gemeinfrei), übernommen aus der Landingpage.
 

@@ -36,7 +36,7 @@ export default function About() {
         </div>
         <HScroll items={[
           { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/h-zugang.webp' },
-          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/ablauf-modell.webp' },
+          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/h-analyse.webp' },
           { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/p/h-matching.webp' },
           { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/p/h-p-begleitung.webp' },
         ]} />
