@@ -93,7 +93,7 @@ export default function Home() {
       {/* 02 – Zwei visuelle Zugänge */}
       <section id="zugaenge" className="sec dark doors-sec" aria-labelledby="h-zug">
         <div className="wrap">
-          <header className="sec-head"><p className="eyebrow rv">Zwei Wege</p><h2 id="h-zug" className="h2 rv">Was möchten Sie bewegen?</h2></header>
+          <header className="sec-head"><p className="eyebrow rv">Ihr Einstieg</p><h2 id="h-zug" className="h2 rv">Wie können wir Ihnen helfen?</h2></header>
           <div className="doors" ref={doorsRef}>
             <Door to="/immobilie-verkaufen" img="p/ablauf-eingang" alt="Wohnhaus mit Naturstein-Fassade (Beispielbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen" />
             <Door to="/kapitalanlage-immobilien" img="p/ablauf-wohnhaus" alt="Reihenhäuser im Morgenlicht (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120} />
