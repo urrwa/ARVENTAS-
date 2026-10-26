@@ -4189,3 +4189,5 @@ body .btn.btn-line:hover::after { animation: arrowSwap 620ms cubic-bezier(.22, 1
 .bk-strip { display: none; }
 /* Textrolle zurückgenommen */
 .btn .bt { display: contents; }
+/* Footer und Inhalt: derselbe feste Hintergrund, kein Absatz dazwischen */
+body:not(:has(.hv)) .sf { background: var(--cover-bg) !important; background-attachment: fixed !important; background-color: #06111f !important; }
