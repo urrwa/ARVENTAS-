@@ -3959,3 +3959,18 @@ body .btn.btn-gold:active { transform: scale(.97); }
 :root { --cover-bg: url('/media/ambient-lines.svg') center / cover no-repeat, radial-gradient(60% 55% at 72% 24%, rgba(58, 104, 140, .55) 0%, rgba(49, 89, 120, .2) 50%, transparent 78%), radial-gradient(70% 60% at 12% 92%, rgba(80, 112, 140, .4) 0%, rgba(70, 102, 127, .12) 55%, transparent 80%), radial-gradient(45% 35% at 40% 55%, rgba(200, 173, 128, .09) 0%, transparent 76%), radial-gradient(140% 105% at 50% 38%, transparent 58%, rgba(2, 6, 12, .5) 100%), linear-gradient(180deg, #071321 0%, #06111f 52%, #040b14 100%); }
 main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background: var(--cover-bg) !important; background-attachment: fixed !important; background-color: #06111f !important; }
 main:not(:has(.hv)) .cover-over, main:not(:has(.hv)) .cover-over :is(.sec.dark, .ps) { background: transparent !important; }
+
+/* Zweite Schaltfläche („Muster ansehen“) im selben ruhigen Stil wie die Hauptschaltfläche */
+body .btn.btn-line, body .btn.btn-line:has(.arr), body .btn.btn-line:hover, body .btn.btn-line:has(.arr):hover {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 18px 0 20px; border: 1px solid rgba(233, 217, 188, .55); border-radius: 999px; background: transparent; color: var(--ivory); overflow: visible; isolation: auto;
+  font: 500 11.5px/1 var(--font-body); letter-spacing: .16em; text-transform: uppercase; transition: background 380ms cubic-bezier(.22, 1, .36, 1), border-color 380ms ease;
+}
+body .btn.btn-line::before, body .btn.btn-line:hover::before, body .btn.btn-line:has(.arr)::before, body .btn.btn-line:has(.arr):hover::before { content: none !important; display: none !important; }
+body .btn.btn-line::after { content: "→"; font-size: 1.25em; font-weight: 400; display: inline-block !important; position: static; }
+body .btn.btn-line .arr { display: none; }
+body .btn.btn-line:hover, body .btn.btn-line:has(.arr):hover { background: rgba(233, 217, 188, .14); border-color: var(--gold); color: var(--ivory); }
+body .btn.btn-line:hover::after { animation: arrowSwap 620ms cubic-bezier(.22, 1, .36, 1); }
+.sec:not(.dark) .btn.btn-line { color: var(--ink, #071321); border-color: rgba(7, 19, 33, .45); }
+.btn-row { gap: 12px; }
+/* Hinweiszeile unter den Schaltflächen: klein, ruhig, kein Großbuchstaben-Block */
+.rp-left .rp-note, .rp-note { margin-top: 18px; font-size: 13px; letter-spacing: .02em; text-transform: none; font-weight: 400; color: rgba(233, 228, 216, .62); }

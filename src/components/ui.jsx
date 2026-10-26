@@ -12,7 +12,7 @@ export function Roll({ children }) {
 }
 
 export function Btn({ to, href, variant = 'gold', children: kids, ...rest }) {
-  const children = variant === 'gold' && typeof kids === 'string' ? <Roll>{kids}</Roll> : kids
+  const children = (variant === 'gold' || variant === 'line') && typeof kids === 'string' ? <Roll>{kids}</Roll> : kids
   const cls = `btn btn-${variant}`
   if (to) return <Link to={to} className={cls} {...rest}>{children}<Arrow /></Link>
   if (href) return <a href={href} className={cls} {...rest}>{children}<Arrow /></a>

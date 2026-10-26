@@ -68,7 +68,7 @@ export default function ReportStack() {
         <Btn to="/objektreport#muster" variant="line">Muster ansehen</Btn>
         <Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn>
       </div>
-      <p className="small" style={{ marginTop: 18 }}>Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen.</p>
+      <p className="small rp-note">Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen.</p>
     </>
   )
   if (flat) return <div className="wrap">{head}<ReportViewer id="muster-home" />{cta}</div>
