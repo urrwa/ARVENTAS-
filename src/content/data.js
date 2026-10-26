@@ -93,6 +93,26 @@ export const ARTICLES = [
     ],
     steps: 'Im Objektreport finden Sie Prüfhinweise, die offene Punkte benennen.',
   },
+  {
+    slug: 'kapitalanlage-einordnen', cat: 'Kapitalanlage', title: 'Kapitalanlage einordnen', img: INSIGHTS_IMG.articles['kapitalanlage-einordnen'],
+    teaser: 'Wie ein Suchprofil hilft, aus vielen Möglichkeiten die passende Immobilie zu finden.',
+    sections: [
+      { h: 'Suchprofil statt Zufall', p: ['Region, Immobilientyp und Budgetband bilden die Grundlage. Aus ihnen entsteht eine gezielte Auswahl, statt viele Angebote nebeneinander zu sichten.'] },
+      { h: 'Was vor einer Entscheidung zu prüfen ist', p: ['Unterlagen, Zustand, Mietverhältnisse und rechtliche Rahmenbedingungen gehören zur Prüfung. Auch bei ausgewählten Objekten gilt: Informationen sichten und Annahmen hinterfragen.'] },
+      { h: 'Entscheidung auf nachvollziehbarer Grundlage', p: ['Eine Kapitalanlage ist eine persönliche Entscheidung. Eine Analyse zeigt, welche Punkte offen sind, sie ersetzt keine Anlageberatung und gibt keine Renditezusage.'] },
+    ],
+    steps: 'Mit einem Suchprofil im Investorenkreis legen Sie fest, welche Immobilien zu Ihren Zielen passen.',
+  },
+  {
+    slug: 'marktinformationen-einordnen', cat: 'Marktinformationen', title: 'Marktinformationen einordnen', img: INSIGHTS_IMG.articles['marktinformationen-einordnen'],
+    teaser: 'Was Marktinformationen aussagen können und worauf es bei Quelle und Stand ankommt.',
+    sections: [
+      { h: 'Information ist keine Prognose', p: ['Marktinformationen beschreiben, was zu einem bestimmten Zeitpunkt bekannt ist. Sie sagen nichts über zukünftige Entwicklungen aus.'] },
+      { h: 'Quelle und Stand zählen', p: ['Jede Angabe sollte nennen, woher sie stammt und wie aktuell sie ist. Nur dann lässt sich beurteilen, wie belastbar sie für ein einzelnes Objekt ist.'] },
+      { h: 'Vom Markt zum Objekt', p: ['Allgemeine Informationen werden erst nützlich, wenn sie auf ein konkretes Objekt und seinen Standort bezogen werden. Dafür braucht es Unterlagen und eine persönliche Prüfung.'] },
+    ],
+    steps: 'Im Objektreport werden Standort und Nachfrage je Baustein mit Quelle und Stand eingeordnet.',
+  },
 ]
-// Nur die im Briefing genannten Themen (Off-Market verstehen, Immobilien bewerten, Potenziale einordnen); Kategorien ohne ausgearbeiteten Beitrag werden nicht gezeigt.
-export const CATEGORIES = ['Alle', 'Off-Market', 'Immobilienbewertung', 'Entwicklungspotenziale']
+// Alle Beiträge sind als Entwurf gekennzeichnet (keine Daten, Zitate oder Veröffentlichungsdaten).
+export const CATEGORIES = ['Alle', 'Off-Market', 'Immobilienbewertung', 'Kapitalanlage', 'Entwicklungspotenziale', 'Marktinformationen']
