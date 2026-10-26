@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import HomeVideo from '../components/HomeVideo.jsx'
-import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
+import { Btn, SectionHead, Placeholder, Roll } from '../components/ui.jsx'
 import ReportStack from '../components/ReportStack.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
 import StrengthStack from '../components/StrengthStack.jsx'
@@ -47,7 +47,7 @@ function Door({ to, img, alt, eyebrow, title, text, cta, d }) {
   return (
     <Link to={to} className="door rv" style={d ? { '--d': d } : undefined}>
       <img src={`/media/${img}.webp`} alt={alt} loading="lazy" />
-      <div className="door-txt"><p className="eyebrow">{eyebrow}</p><h3>{title}</h3><p>{text}</p><span className="btn btn-gold">{cta} <span className="arr" aria-hidden="true">→</span></span></div>
+      <div className="door-txt"><p className="eyebrow">{eyebrow}</p><h3>{title}</h3><p>{text}</p><span className="btn btn-gold"><Roll>{cta}</Roll> <span className="arr" aria-hidden="true">→</span></span></div>
     </Link>
   )
 }

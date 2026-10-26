@@ -1,3 +1,4 @@
+import { Roll } from './ui.jsx'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
@@ -51,7 +52,7 @@ export default function HomeFilm() {
           </h1>
           <p className="hf-sub">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet.</p>
           <div className="hf-cta">
-            <Link to="/immobilie-verkaufen" className="btn btn-gold">Immobilie verkaufen <span className="arr" aria-hidden="true">→</span></Link>
+            <Link to="/immobilie-verkaufen" className="btn btn-gold"><Roll>Immobilie verkaufen</Roll> <span className="arr" aria-hidden="true">→</span></Link>
             <Link to="/kapitalanlage-immobilien" className="btn btn-line">Immobilien entdecken <span className="arr" aria-hidden="true">→</span></Link>
           </div>
           <button type="button" className="hf-see" onClick={() => setShow(true)} aria-haspopup="dialog"><i aria-hidden="true">▶</i><span>So entsteht Klarheit</span></button>

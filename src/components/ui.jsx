@@ -6,7 +6,13 @@ import Letters from './Letters.jsx'
 
 export const Arrow = () => <span className="arr" aria-hidden="true">→</span>
 
-export function Btn({ to, href, variant = 'gold', children, ...rest }) {
+// Beschriftung doppelt gesetzt: beim Hover rollt der Text nach oben und der zweite Text rückt nach (Framer-Stil).
+export function Roll({ children }) {
+  return <span className="bt"><span>{children}</span><span aria-hidden="true">{children}</span></span>
+}
+
+export function Btn({ to, href, variant = 'gold', children: kids, ...rest }) {
+  const children = variant === 'gold' && typeof kids === 'string' ? <Roll>{kids}</Roll> : kids
   const cls = `btn btn-${variant}`
   if (to) return <Link to={to} className={cls} {...rest}>{children}<Arrow /></Link>
   if (href) return <a href={href} className={cls} {...rest}>{children}<Arrow /></a>

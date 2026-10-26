@@ -1,3 +1,4 @@
+import { Roll } from './ui.jsx'
 import { memo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { STATES, MAP_VIEWBOX } from '../content/germany.js'
@@ -60,7 +61,7 @@ export default function GermanyMap() {
                 <button type="button" className="gm-reset" onClick={() => setRegion('')}>Auswahl zurücksetzen</button>
               </>
             ) : (
-              <button type="button" className="btn btn-gold" onClick={pick}>Region auswählen <span className="arr" aria-hidden="true">→</span></button>
+              <button type="button" className="btn btn-gold" onClick={pick}><Roll>Region auswählen</Roll> <span className="arr" aria-hidden="true">→</span></button>
             )}
           </div>
         </div>

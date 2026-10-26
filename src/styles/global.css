@@ -3945,3 +3945,10 @@ body .btn.btn-gold:hover::after, body .btn.btn-gold:focus-visible::after, .door:
 body .btn.btn-gold:active { transform: scale(.97); }
 @keyframes arrowSwap { 0% { transform: translateX(0); opacity: 1; } 45% { transform: translateX(12px); opacity: 0; } 46% { transform: translateX(-12px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { body .btn.btn-gold:hover::after { animation: none; } }
+
+/* Framer-Textrolle: Beschriftung rollt beim Hover nach oben, der zweite Text rückt von unten nach */
+.btn .bt { position: relative; display: inline-block; overflow: hidden; height: 1.3em; line-height: 1.3em; vertical-align: middle; }
+.btn .bt > span { display: block; transition: transform 520ms cubic-bezier(.22, 1, .36, 1); }
+.btn .bt > span + span { position: absolute; left: 0; top: 100%; white-space: nowrap; }
+.btn:hover .bt > span, .btn:focus-visible .bt > span, .door:hover .btn .bt > span { transform: translateY(-100%); }
+@media (prefers-reduced-motion: reduce) { .btn .bt > span { transition: none; } }
