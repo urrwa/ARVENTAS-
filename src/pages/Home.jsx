@@ -9,6 +9,7 @@ import StrengthStack from '../components/StrengthStack.jsx'
 import PropertyDashboard from '../components/PropertyDashboard.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
+import GermanyMap from '../components/GermanyMap.jsx'
 
 function DocSvg() {
   return (
@@ -148,7 +149,10 @@ export default function Home() {
 
       {/* 08 – Menschen: ausgeblendet, bis bestätigte Porträts und Profile vorliegen (siehe docs/abgleich-masterprompt.md) */}
 
-      {/* 09 – Deutschlandweit: auf Wunsch entfernt (Komponente GermanyScene bleibt im Projekt) */}
+      {/* 09 – Deutschlandweit: Karte der Bundesländer mit Regionsauswahl */}
+      <section id="regionen" className="sec dark gm-sec" aria-labelledby="h-de">
+        <div className="wrap"><GermanyMap /></div>
+      </section>
 
       {/* 10 – Wissen als Editorial */}
       <section className="sec dark wis-sec" aria-labelledby="h-wis">

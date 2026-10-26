@@ -1458,4 +1458,10 @@ export default {
  "Modernes Mehrfamilienhaus mit Natursteinfassade (Beispielbild)": "Modern apartment building with natural stone facade (sample image)",
  "Arventas Immobilien": "Arventas Real Estate",
  "Kennen Deutschland.": "We know Germany.",
+ "Ausgewählte Region": "Selected region",
+ "Wählen Sie ein Bundesland auf der Karte oder in der Liste. Ohne Auswahl gilt Ihre Anfrage deutschlandweit.": "Choose a state on the map or in the list. Without a selection your request applies Germany-wide.",
+ "Auswahl zurücksetzen": "Reset selection",
+ "Geodaten: Natural Earth": "Geodata: Natural Earth",
+ "Karte Deutschlands mit den 16 Bundesländern": "Map of Germany with the 16 federal states",
+ "Bundesländer": "Federal states",
 }

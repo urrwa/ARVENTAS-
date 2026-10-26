@@ -16,6 +16,7 @@ const RULES = [
   [/^Prinzipdarstellung: Ihr Suchprofil mit Region (.+), Budgetband (.+) und Immobilientyp (.+) wird mit Immobilieninformationen abgeglichen\.$/,
     (m) => `Schematic illustration: your search profile with region ${EN[m[1]] || m[1]}, budget range ${EN[m[2]] || m[2]} and property type ${EN[m[3]] || m[3]} is matched against property information.`],
   [/^(E-Mail|Telefon|Rückruf)( \(.*\))?$/, (m) => PHONE[m[1]] + (m[2] || '')],
+  [/^Ihre Anfrage wird mit dem Bezug (.+) vorbereitet – für Eigentümer und Investoren\.$/, (m) => `Your request is prepared with reference to ${EN[m[1]] || m[1]} – for owners and investors.`],
 ]
 
 function translate(s) {
