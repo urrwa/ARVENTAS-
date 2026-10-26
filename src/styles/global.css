@@ -3925,3 +3925,8 @@ body .btn.btn-gold:hover::after, body .btn.btn-gold:focus-visible::after, .door:
 .il-cta .btn.btn-gold { font-size: 12.5px; }
 .sec:not(.dark) .btn.btn-gold, .sec.light .btn.btn-gold { color: var(--ink, #071321); border-color: rgba(7, 19, 33, .45); }
 .sec:not(.dark) .btn.btn-gold:hover, .sec.light .btn.btn-gold:hover { background: rgba(7, 19, 33, .06); color: var(--ink, #071321); border-color: var(--ink, #071321); }
+/* Outline-Pille mit sichtbarer, ruhiger Füllung */
+body .btn.btn-gold, body .btn.btn-gold:has(.arr) { background: rgba(233, 217, 188, .2); border-color: rgba(233, 217, 188, .7); }
+body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn-gold, .door:hover .btn.btn-gold:has(.arr), body .btn.btn-gold:has(.arr):hover { background: rgba(233, 217, 188, .36); border-color: var(--gold); }
+.sec:not(.dark) .btn.btn-gold, .sec.light .btn.btn-gold { background: rgba(7, 19, 33, .08); }
+.sec:not(.dark) .btn.btn-gold:hover, .sec.light .btn.btn-gold:hover { background: rgba(7, 19, 33, .16); }
