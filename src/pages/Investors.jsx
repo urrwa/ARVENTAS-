@@ -4,6 +4,7 @@ import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import { Btn, SectionHead, Faq } from '../components/ui.jsx'
 import ScrollTrack from '../components/ScrollTrack.jsx'
+import ScrollList from '../components/ScrollList.jsx'
 import { INVESTOR_FAQ } from '../content/data.js'
 
 const STEPS = [
@@ -33,7 +34,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <ScrollTrack id="h-vorgehen" eyebrow="Vorgehen" title="Suchprofil, Analyse und Begleitung." items={STEPS.map((x) => ({ t: x.t, d: x.d, img: x.img }))} />
+      <ScrollList id="h-vorgehen" eyebrow="Vorgehen" title="Suchprofil, Analyse und Begleitung." items={STEPS.map((x) => ({ t: x.t, d: x.d, img: x.img }))} />
       <ScrollTrack id="h-matrix" eyebrow="Prüfmatrix" title="Chancen und Risiken prüfen." lead="Fünf Bereiche, die vor jeder Entscheidung betrachtet werden sollten. Die Matrix zeigt Prüffragen, keine Empfehlungen."
         items={MATRIX.map((m) => ({ t: m.label, list: m.q, note: 'Keine automatischen Kaufempfehlungen oder Renditezusagen.' }))} />
 
