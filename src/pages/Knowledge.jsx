@@ -1,20 +1,27 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
-import { ARTICLES } from '../content/data.js'
+import { ARTICLES, CATEGORIES } from '../content/data.js'
 
 export default function Knowledge() {
-  const [cat, setCat] = useState('Alle')
+  const [sp] = useSearchParams()
+  const fromUrl = CATEGORIES.includes(sp.get('thema')) ? sp.get('thema') : 'Alle'
+  const [cat, setCat] = useState(fromUrl)
+  // Aufruf von der Startseite oder per Link: Kategorie aus der Adresse übernehmen und zur Beitragsliste springen.
+  useEffect(() => {
+    setCat(fromUrl)
+    if (window.location.hash === '#beitraege') setTimeout(() => { const el = document.getElementById('beitraege'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) }, 80)
+  }, [fromUrl])
   const list = ARTICLES.filter((a) => cat === 'Alle' || a.cat === cat)
   const lead = list[0]
   return (
     <>
       <Seo title="Wissen | ARVENTAS" description="Wissen und Marktinformationen: Off-Market verstehen, Immobilien bewerten, Potenziale einordnen." />
       <h1 className="sr-only">Wissen: Hinter die Fassade schauen.</h1>
-      <KnowledgeTabs full cat={cat} setCat={setCat} />
-      <section className="sec dark">
+      <KnowledgeTabs full cat={cat} setCat={setCat} base={fromUrl} />
+      <section className="sec dark" id="beitraege">
         <div className="wrap">
           {lead ? (
             <>

@@ -7,9 +7,9 @@ const FALLBACK = { Kapitalanlage: '/media/p/zugang-investor.webp', Entwicklungsp
 const article = (c) => (c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c))
 const pic = (c) => { const a = article(c); return a ? a.img : FALLBACK[c] || '/media/p/ablauf-bibliothek.webp' }
 
-export default function KnowledgeTabs({ cat, setCat, full }) {
+export default function KnowledgeTabs({ cat, setCat, full, base = 'Alle' }) {
   return (
-    <div className={'kl' + (full ? ' kl-full' : '')} onMouseLeave={() => setCat('Alle')}>
+    <div className={'kl' + (full ? ' kl-full' : '')} onMouseLeave={() => setCat(base)}>
       <div className="kl-img" aria-hidden="true">
         {CATEGORIES.map((c) => <img key={c} className={cat === c ? 'on' : ''} src={pic(c)} alt="" loading="lazy" decoding="async" />)}
       </div>
@@ -21,7 +21,7 @@ export default function KnowledgeTabs({ cat, setCat, full }) {
           const common = { className: `kl-row${on ? ' on' : ''}`, onMouseEnter: () => setCat(c), onFocus: () => setCat(c) }
           return (
             <li key={c}>
-              {a ? <Link to={`/wissen/${a.slug}`} {...common}>{inner}</Link> : <button type="button" {...common} onClick={() => setCat(c)}>{inner}</button>}
+              <Link to={a ? `/wissen/${a.slug}` : `/wissen?thema=${encodeURIComponent(c)}#beitraege`} {...common}>{inner}</Link>
             </li>
           )
         })}
