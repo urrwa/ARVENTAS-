@@ -3409,3 +3409,14 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .kx-list a:hover .kx-go, .kx-list a:focus-visible .kx-go { background: transparent; border-color: var(--ivory); color: var(--marine); transform: none; }
 .kx-list a:hover .kx-go::before, .kx-list a:focus-visible .kx-go::before { transform: scale(1.1); }
 .kx-list a:hover .kx-go::after, .kx-list a:focus-visible .kx-go::after { transform: translateX(6px); }
+
+/* Pfeil-Buttons exakt nach Vorbild: Chip mit Pfeil nach oben rechts. Beim Überfahren schiebt sich die Fläche aus dem Chip nach links durch den ganzen Button
+   (runde Kante vorn), die Schrift wird gegenläufig, der Pfeil dreht sich von ↗ nach →. Beim Verlassen läuft alles rückwärts. */
+.btn:has(.arr)::before { transition: transform 460ms cubic-bezier(.7, 0, .2, 1); }
+.btn:has(.arr) { transition: color 320ms ease, border-color 320ms ease, background-color 320ms ease; }
+.btn:has(.arr) .arr { transition: none; }
+.btn:has(.arr) .arr::after { display: none; }
+.btn:has(.arr) .arr::before { transform: rotate(-45deg); transition: transform 380ms cubic-bezier(.7, 0, .2, 1) 60ms; }
+.btn:has(.arr):is(:hover, :focus-visible) .arr::before, .door:hover .btn:has(.arr) .arr::before, .door:focus-visible .btn:has(.arr) .arr::before { transform: rotate(0deg); }
+.btn:has(.arr):hover .arr, .btn:has(.arr):focus-visible .arr { color: var(--chip-fg); }
+@media (prefers-reduced-motion: reduce) { .btn:has(.arr) .arr::before { transition-duration: 1ms !important; } }
