@@ -34,6 +34,10 @@ export default function InvestorLaptop() {
   const to = `/investorenkreis?region=${encodeURIComponent(st.name)}&typ=${encodeURIComponent(TYPES[type] === 'Grundstück' ? 'Grundstück / Entwicklungsobjekt' : TYPES[type])}&budget=${encodeURIComponent(BUDGET[bud])}`
   return (
     <div className="il" ref={root}>
+      <div className="il-copy">
+        <p className="eyebrow">Für Investoren</p>
+        <h2 className="h2" id="h-match">Nicht jede Immobilie. Die richtige.</h2>
+      </div>
       <div className="il-dev" >
         <div className="il-lap">
           <div className="il-scr">
