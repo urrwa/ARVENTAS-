@@ -3908,3 +3908,6 @@ body .btn.btn-gold::after { display: none; }
 .cover-over { position: relative; isolation: isolate; }
 .cover-amb { position: absolute; inset: 0; z-index: -1; clip-path: inset(0); pointer-events: none; }
 main:not(:has(.hv)) .cover-over, main:not(:has(.hv)) .cover-over :is(.sec.dark, .ps) { background: transparent !important; background-image: none !important; }
+/* Hover des Textlinks: Pfeil rückt leicht nach oben rechts, kein Kreis mehr */
+body .btn.btn-gold::before, body .btn.btn-gold:hover::before, body .btn.btn-gold:focus-visible::before, body .btn.btn-gold:has(.arr):hover::before, .door:hover .btn.btn-gold:has(.arr)::before { background: none !important; width: auto !important; height: auto !important; border-radius: 0 !important; transform: none !important; transition: transform 300ms var(--ease) !important; }
+body .btn.btn-gold:hover::before, body .btn.btn-gold:focus-visible::before, .door:hover .btn.btn-gold::before, .door:hover .btn.btn-gold:has(.arr)::before { transform: translate(2px, -2px) !important; }
