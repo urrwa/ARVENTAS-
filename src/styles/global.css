@@ -3984,3 +3984,29 @@ body .btn.btn-line:hover::after { animation: arrowSwap 620ms cubic-bezier(.22, 1
 /* Schreibtisch-Hintergrund zurückgenommen */
 .rp-bg { display: none; }
 .rp-stage { background: radial-gradient(120% 90% at 30% 20%, rgba(46, 90, 128, .32), rgba(7, 19, 33, .92) 70%), #071321; border: 1px solid var(--hair); }
+
+/* Objektreport als technische Explosionszeichnung (Isometrie, Goldlinien, nummerierte Beschriftung) */
+.rp-scene { perspective: none; }
+.rp-bp { position: absolute; left: 3%; top: 10%; width: 58%; height: 84%; overflow: visible; }
+.bp-plate { transition: transform 700ms cubic-bezier(.22, 1, .36, 1); }
+.bp-top { fill: #0c2036; }
+.bp-edge { fill: none; stroke: #c8ad80; stroke-opacity: .4; stroke-width: 1.2; vector-effect: non-scaling-stroke; transition: stroke-opacity 500ms, stroke-width 500ms; }
+.bp-plate.on .bp-top { fill: #12304f; }
+.bp-plate.on .bp-edge { stroke-opacity: 1; stroke-width: 2; filter: drop-shadow(0 0 14px rgba(200, 173, 128, .45)); }
+.bp-art line, .bp-art path, .bp-art circle, .bp-art rect { vector-effect: none; }
+.bp-art [stroke="#071321"] { stroke: #c8ad80; }
+.bp-art [fill="#071321"] { fill: #c8ad80; }
+.bp-art { filter: brightness(1.4) saturate(.8); }
+.bp-lab { transition: transform 700ms cubic-bezier(.22, 1, .36, 1); }
+.bp-lead { stroke: #c8ad80; stroke-opacity: .35; stroke-width: 1; stroke-dasharray: 3 4; fill: none; }
+.bp-lab circle { fill: #0b1a2d; stroke: #c8ad80; stroke-opacity: .5; }
+.bp-n { font: 700 11px var(--font-body); fill: #c8ad80; }
+.bp-t { font: 600 11px var(--font-body); letter-spacing: .14em; text-transform: uppercase; fill: rgba(233, 228, 216, .55); transition: fill 400ms; }
+.bp-lab.on .bp-lead { stroke-opacity: 1; stroke-dasharray: none; }
+.bp-lab.on circle { fill: #c8ad80; stroke-opacity: 1; }
+.bp-lab.on .bp-n { fill: #071321; }
+.bp-lab.on .bp-t { fill: #f3ede0; }
+@media (prefers-reduced-motion: reduce) { .bp-plate, .bp-lab { transition: none; } }
+.rp-bp { left: 2%; top: 14%; width: 60%; height: 80%; }
+.rp-bp { left: 2%; width: 55%; }
+.rp-bp { left: -1%; width: 52%; }
