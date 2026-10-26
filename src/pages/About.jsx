@@ -28,17 +28,17 @@ export default function About() {
         </div>
       </section>
 
-      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/p/ablauf-modell.webp" />
+      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/p/h-entwicklung.webp" />
 
       <section className="sec dark">
         <div className="wrap">
           <SectionHead eyebrow="Aktuelles Geschäftsmodell" title="Zugang, Analyse, Matching, Begleitung." normal />
         </div>
         <HScroll items={[
-          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/ablauf-luftbild.webp' },
+          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/h-zugang.webp' },
           { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/ablauf-modell.webp' },
-          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/p/ablauf-schreibtisch.webp' },
-          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/p/ablauf-eingang.webp' },
+          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/p/h-matching.webp' },
+          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/p/h-p-begleitung.webp' },
         ]} />
         <div className="wrap"><p className="rv" style={{ marginTop: 24, maxWidth: '62ch' }}>Die interne KI-Technologie unterstützt Objektanalysen und Prozesse. Sie ist kein öffentlich verkauftes Softwareprodukt.</p></div>
       </section>

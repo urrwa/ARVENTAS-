@@ -10,13 +10,13 @@ import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
 
-const PROCESS_IMG = ['ablauf-eingang', 'ablauf-schreibtisch', 'ablauf-modell', 'ablauf-besprechung', 'ablauf-strasse', 'ablauf-tuer'].map((k) => `/media/p/${k}.webp`)
+const PROCESS_IMG = ['h-p-erstgespraech', 'ablauf-schreibtisch', 'ablauf-modell', 'h-p-besprechung', 'h-kaeufer', 'h-p-abschluss'].map((k) => `/media/p/${k}.webp`)
 
 const SITUATIONS = [
-  { id: 'privat', img: '/media/p/ablauf-strasse.webp', label: 'Private Eigentümer', t: 'Wert verstehen, bevor Sie entscheiden.', p: 'Als privater Immobilienbesitzer möchten Sie wissen, was Ihre Immobilie wert ist und welche Optionen es gibt. Eine sachliche Einordnung hilft, ohne dass Sie sich festlegen müssen.' },
+  { id: 'privat', img: '/media/p/h-p-besprechung.webp', label: 'Private Eigentümer', t: 'Wert verstehen, bevor Sie entscheiden.', p: 'Als privater Immobilienbesitzer möchten Sie wissen, was Ihre Immobilie wert ist und welche Optionen es gibt. Eine sachliche Einordnung hilft, ohne dass Sie sich festlegen müssen.' },
   { id: 'mfh', img: '/media/p/u-weisse-wohnanlage.webp', label: 'Mehrfamilienhaus', t: 'Bestand strukturiert einordnen.', p: 'Bei Mehrfamilienhäusern spielen Mieterstruktur, Zustand und Potenziale zusammen. Wir ordnen diese Punkte nachvollziehbar ein, bevor ein Verkaufsweg gewählt wird.' },
-  { id: 'erbe', img: '/media/p/u-notizbuch.webp', label: 'Erbengemeinschaft', t: 'Eine gemeinsame Gesprächsgrundlage.', p: 'Mehrere Eigentümer haben oft unterschiedliche Interessen. Eine neutrale Einordnung von Wert und Optionen kann eine gemeinsame Grundlage für Entscheidungen schaffen.' },
-  { id: 'verwalter', img: '/media/p/u-papiermodell.webp', label: 'Nachlass- und Insolvenzverwalter', t: 'Zuverlässig und diskret.', p: 'Verwalter benötigen belastbare Informationen und einen verlässlichen Ansprechpartner. Wir prüfen Objekte sachlich und stimmen das weitere Vorgehen mit Ihnen ab.' },
+  { id: 'erbe', img: '/media/p/h-p-begleitung.webp', label: 'Erbengemeinschaft', t: 'Eine gemeinsame Gesprächsgrundlage.', p: 'Mehrere Eigentümer haben oft unterschiedliche Interessen. Eine neutrale Einordnung von Wert und Optionen kann eine gemeinsame Grundlage für Entscheidungen schaffen.' },
+  { id: 'verwalter', img: '/media/p/h-p-abschluss.webp', label: 'Nachlass- und Insolvenzverwalter', t: 'Zuverlässig und diskret.', p: 'Verwalter benötigen belastbare Informationen und einen verlässlichen Ansprechpartner. Wir prüfen Objekte sachlich und stimmen das weitere Vorgehen mit Ihnen ab.' },
   { id: 'bestand', img: '/media/p/u-luftbild.webp', label: 'Professionelle Bestandshalter', t: 'Portfolio gezielt betrachten.', p: 'Wenn einzelne Objekte aus einem Bestand zur Disposition stehen, hilft eine strukturierte Einordnung von Wert, Potenzial und Verkaufsoptionen.' },
 ]
 
@@ -38,7 +38,7 @@ export default function Owners() {
         <p className="ow-eb">Für Eigentümer</p>
         <h1 className="ow-h"><Letters text="Ihre Immobilie." per={30} max={900} delay={200} /><br /><Letters text="Unser Marktverständnis." per={30} max={1300} delay={700} /></h1>
         <div className="ow-pic">
-          <img src="/media/p/u-eingang-travertin.webp" alt="" decoding="async" fetchpriority="high" />
+          <img src="/media/p/zugang-eigentuemer.webp" alt="" decoding="async" fetchpriority="high" />
           <div className="ow-card">
             <p>Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.</p>
             <span>Diskret. Strukturiert. Persönlich.</span>
@@ -51,16 +51,16 @@ export default function Owners() {
         <div className="wrap">
           <SectionHead eyebrow="Erzählstruktur" title="Drei Schritte zur Klarheit." />
           <StepRows items={[
-            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/p/u-besprechungsraum.webp' },
+            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/p/h-p-erstgespraech.webp' },
             { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', img: '/media/p/ablauf-modell.webp' },
-            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/p/ablauf-tuer.webp' },
+            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/p/h-p-entscheidung.webp' },
           ]} />
         </div>
       </section>
 
       <section className="sec dark sl-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img="/media/p/ablauf-strasse.webp" />
+          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img="/media/p/h-p-besprechung.webp" />
         </div>
       </section>
 
