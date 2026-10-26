@@ -28,7 +28,7 @@ export default function About() {
         </div>
       </section>
 
-      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/p/u-holzhaus-rechner.webp" />
+      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/p/ablauf-modell.webp" />
 
       <section className="sec dark">
         <div className="wrap">
@@ -38,7 +38,7 @@ export default function About() {
           { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/u-altstadt.webp' },
           { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/u-karte.webp' },
           { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/p/u-modelle-charts.webp' },
-          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/p/u-schluessel.webp' },
+          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/p/ablauf-eingang.webp' },
         ]} />
         <div className="wrap"><p className="rv" style={{ marginTop: 24, maxWidth: '62ch' }}>Die interne KI-Technologie unterstützt Objektanalysen und Prozesse. Sie ist kein öffentlich verkauftes Softwareprodukt.</p></div>
       </section>

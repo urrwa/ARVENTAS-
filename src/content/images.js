@@ -18,7 +18,7 @@ export const HOME = {
 // ---- Seitenköpfe und Abschlussbänder
 export const PAGES = {
   leistungen: { hero: p('u-frankfurt-nacht'), cta: p('u-skyline-nacht') },
-  system: { hero: p('u-lounge-gespraech'), split: p('u-glasfassaden'), cta: p('u-handschlag-gold') },
+  system: { hero: p('u-lounge-gespraech'), split: p('u-glasfassaden'), cta: p('ablauf-tuer') },
   insights: { hero: p('sa.area.0'), cta: p('u-holzhaeuser') },
   about: { hero: p('u-buero-tag'), studio: p('u-holzhaus-rechner'), dark: p('bw.res.2'), mv: p('sa.res.2'), cta: p('vm.res.0') },
   kontakt: { hero: p('vm.area.3'), cta: p('bw.res.4') },
@@ -51,7 +51,7 @@ export const SERVICE_IMG = {
     results: ['vm.res.0', 'vm.res.1', 'vm.res.2', 'vm.res.3', 'vm.res.4'].map(p),
   },
   'development-intelligence': {
-    card: p('u-modell-skyline'), hero: p('u-baulucke'), cta: p('u-handschlag-dunkel'),
+    card: p('u-modell-skyline'), hero: p('u-baulucke'), cta: p('ablauf-besprechung'),
     areas: ['di.area.0', 'di.area.1', 'di.area.2', 'di.area.3', 'di.area.4'].map(p),
     steps: ['di.step.0', 'di.step.1', 'di.step.2', 'di.step.3', 'di.step.4'].map(p),
     results: ['di.res.0', 'di.res.1', 'di.res.2', 'di.res.3', 'di.res.4'].map(p),
@@ -65,7 +65,7 @@ export const INLINE = ['u-altstadt', 'u-aquarell', 'u-modelle-unscharf', 'u-holz
 export const SYSTEM_IMG = {
   steps: ['sys.step.0', 'sys.step.1', 'sys.step.2', 'sys.step.3', 'sys.step.4'].map(p),
   why: ['sys.why.0', 'sys.why.1', 'u-modelle-charts', 'u-grundrisse', 'u-paar-grundriss'].map(p),
-  cases: ['u-schluessel', 'di.step.3', 'vm.res.1', 'di.area.0', 'u-modellhaus-besp'].map(p),
+  cases: ['ablauf-eingang', 'di.step.3', 'vm.res.1', 'di.area.0', 'u-modellhaus-besp'].map(p),
 }
 
 // ---- Insights

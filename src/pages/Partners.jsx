@@ -11,7 +11,7 @@ export default function Partners() {
   return (
     <>
       <Seo title="Partnernetzwerk | ARVENTAS" description="Kompetenzen verbinden, Zusammenarbeit gestalten: Partneranfrage für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren." />
-      <PageHero fadeOut blur image="/media/p/u-handschlag-dunkel.webp" crumb="Partner" title="Kompetenzen verbinden. Zusammenarbeit gestalten." lead="Für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren.">
+      <PageHero fadeOut blur image="/media/p/ablauf-besprechung.webp" crumb="Partner" title="Kompetenzen verbinden. Zusammenarbeit gestalten." lead="Für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren.">
         <div className="btn-row"><Btn href="#anfrage">Partnerschaft anfragen</Btn></div>
       </PageHero>
 

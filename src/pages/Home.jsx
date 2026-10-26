@@ -110,7 +110,7 @@ export default function Home() {
         <StrengthStack items={[
             { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/u-altstadt.webp', icon: 'key' },
             { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/u-karte.webp', icon: 'chart' },
-            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/u-handschlag-dunkel.webp', icon: 'hand' },
+            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/ablauf-tuer.webp', icon: 'hand' },
           ]} />
       </section>
 
