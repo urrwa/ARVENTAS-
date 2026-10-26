@@ -18,4 +18,4 @@ Es werden keine erfundenen Zahlen, Kundenzitate, Namen oder Kontaktdaten angezei
 Die elf Bilder `ablauf-*.webp` in `public/media/p/` wurden mit Nano Banana 2 (Higgsfield) erzeugt: Architektur und Innenräume, ohne Personen, Text oder Logos. Im Bildnachweis als generierte Bilder angeben; kein Hinweis auf dem Bild selbst.
 
 ## Startseiten-Kamerafahrt (generiert)
-`fahrt.mp4`, `fahrt-sm.mp4` (Kamerafahrt, Kling 3.0) und `fahrt-innen*.webp` (Startbild, Nano Banana 2, 4K) wurden mit Higgsfield erzeugt. Ohne Personen, Text oder Logos. Das Video ist keyframe-dicht kodiert und wird per Scrollen abgespielt. Im Bildnachweis als generiert angeben.
+`fahrt/d/*.webp` und `fahrt/m/*.webp` (Bildfolge der Kamerafahrt aus einem Kling-3.0-Film) und `fahrt-innen*.webp` (Startbild, Nano Banana 2, 4K) wurden mit Higgsfield erzeugt. Ohne Personen, Text oder Logos. Das Video ist keyframe-dicht kodiert und wird per Scrollen abgespielt. Im Bildnachweis als generiert angeben.

@@ -3388,3 +3388,4 @@ body { background: #050d18; }
 @media (max-width: 860px) { .rh-h { font-size: clamp(30px, 10.5vw, 64px); top: 58%; } .rh-sub { display: none; } }
 .rh-img { transform: none !important; opacity: 1 !important; background: var(--marine); }
 .rh.hf { height: 380vh; }
+.rh-cv { background: var(--marine) url("/media/fahrt-innen.webp") center / cover no-repeat; }
