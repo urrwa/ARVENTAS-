@@ -3373,3 +3373,16 @@ body { background: #050d18; }
 .rh-shade { background: linear-gradient(180deg, rgba(4, 11, 20, .35) 0%, rgba(4, 11, 20, 0) 32%, rgba(4, 11, 20, .5) 100%); }
 @media (max-width: 860px) { .rh.hf { height: 340vh; } }
 @media (prefers-reduced-motion: reduce) { .rh.hf { height: 100svh; } }
+
+/* Startseite exakt nach dem Vorbild: sehr große, fette Grotesk in Versalien, links und rechts, kleine Texte in den Ecken */
+.rh-grain { display: none; }
+.rh-shade { background: linear-gradient(180deg, rgba(4, 11, 20, .25) 0%, rgba(4, 11, 20, 0) 40%, rgba(4, 11, 20, .3) 100%); }
+.rh-kw { position: absolute; z-index: 3; left: var(--gut); top: calc(var(--header-h) + clamp(22px, 5vh, 56px)); margin: 0; padding: 0; list-style: none; display: grid; gap: 3px; font: 700 11px/1.4 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ivory); opacity: calc(1 - var(--t) * 1.6); }
+.rh-sub { top: calc(var(--header-h) + clamp(22px, 5vh, 56px)); right: var(--gut); max-width: 34ch; text-align: left; font: 700 11px/1.5 var(--font-body); letter-spacing: .12em; color: var(--ivory); }
+.rh-h { top: 56%; left: 0; right: 0; padding-inline: var(--gut); transform: translateY(-50%); align-items: flex-start; font-family: var(--font-body); font-weight: 800; font-size: clamp(30px, 6.1vw, 130px); line-height: .94; letter-spacing: -.005em; text-transform: uppercase; }
+.rh-ln { max-width: none; white-space: nowrap; }
+.rh-ln.r { text-align: right; }
+.rh-ln.l { transform: translate3d(calc(var(--t) * -70vw), 0, 0); }
+.rh-ln.r { transform: translate3d(calc(var(--t) * 70vw), 0, 0); }
+.rh-eb, .rh-cta { display: none; }
+@media (max-width: 860px) { .rh-h { font-size: clamp(30px, 10.5vw, 64px); top: 58%; } .rh-sub { display: none; } }

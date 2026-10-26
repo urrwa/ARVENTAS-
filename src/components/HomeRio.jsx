@@ -1,6 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import Letters from './Letters.jsx'
 
 // Startseiten-Kopf: Die Kamera fährt durch die Glasfront eines Büros hinaus auf die Stadt.
 // Zwei scharfe Fotos, vom Scrollen gesteuert (p: 0 bis 1): Das Innenbild wächst auf, die Rahmen ziehen zu den Seiten weg,
@@ -43,17 +41,12 @@ export default function HomeRio() {
         <img className="rh-img rh-out" src="/media/fahrt-aussen.webp" srcSet="/media/fahrt-aussen-sm.webp 1440w, /media/fahrt-aussen.webp 2880w" sizes="100vw" alt="Blick über Main und Skyline von Frankfurt in der Abenddämmerung (Illustrationsbild)" decoding="async" />
         <img className="rh-img rh-in" src="/media/fahrt-innen.webp" srcSet="/media/fahrt-innen-sm.webp 1440w, /media/fahrt-innen.webp 2880w" sizes="100vw" alt="" fetchpriority="high" decoding="async" />
         <div className="rh-shade" />
-        <div className="rh-grain" aria-hidden="true" />
-        <p className="rh-eb">Off-Market Immobilien · Deutschlandweit</p>
-        <p className="rh-sub">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet.</p>
-        <h1 className="rh-h" aria-label="Immobilien mit Potenzial. Zugang mit Vorsprung.">
-          <span className="rh-ln l"><Letters text="Immobilien mit Potenzial." per={30} max={1000} delay={200} /></span>
-          <span className="rh-ln r"><Letters text="Zugang mit Vorsprung." per={30} max={900} delay={600} /></span>
+        <ul className="rh-kw" aria-label="Leistungen"><li>Eigentümer</li><li>Investoren</li><li>Objektreport</li></ul>
+        <p className="rh-sub">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet, deutschlandweit.</p>
+        <h1 className="rh-h" aria-label="ARVENTAS Immobilien. Kennen Deutschland.">
+          <span className="rh-ln l" aria-hidden="true">ARVENTAS<br />IMMOBILIEN</span>
+          <span className="rh-ln r" aria-hidden="true">KENNEN<br />DEUTSCHLAND</span>
         </h1>
-        <div className="rh-cta">
-          <Link to="/immobilie-verkaufen" className="btn btn-gold">Immobilie verkaufen <span className="arr" aria-hidden="true">→</span></Link>
-          <Link to="/kapitalanlage-immobilien" className="btn btn-line">Immobilien entdecken <span className="arr" aria-hidden="true">→</span></Link>
-        </div>
       </div>
     </section>
   )
