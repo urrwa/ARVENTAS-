@@ -109,7 +109,7 @@ export default function Home() {
         <StrengthStack items={[
             { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/h-zugang.webp', icon: 'key' },
             { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/ablauf-modell.webp', icon: 'chart' },
-            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/ablauf-besprechung.webp', icon: 'hand' },
+            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/h-p-begleitung.webp', icon: 'hand' },
           ]} />
       </section>
 
