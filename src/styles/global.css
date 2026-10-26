@@ -3822,3 +3822,50 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 .il { gap: 40px; }
 .il-copy { text-align: center; }
 .il-copy .h2 { margin-bottom: 0; }
+
+/* Laptop-Oberfläche im Markenstil: Marine, Champagner-Gold */
+.il-lap { background: #05090f; padding: 12px 12px 16px; }
+.il-scr { font-size: clamp(9.5px, .98vw, 14px); grid-template-columns: 27% 41% 32%; aspect-ratio: 16 / 9.6; background: linear-gradient(160deg, #0b1a2d, #071321); color: #e9e4d8; }
+.il-l { background: transparent; padding: 5% 5.5%; gap: .5em; justify-content: flex-start; border-right: 1px solid rgba(200, 173, 128, .18); }
+.il-scr .il-h { color: #c8ad80; font-size: .72em; letter-spacing: .18em; margin: 1em 0 .3em; }
+.il-l .il-h:first-child { margin-top: 0; }
+.il-sel { background: rgba(255, 255, 255, .06); border: 1px solid rgba(200, 173, 128, .35); color: #f3ede0; font-size: 1em; padding: .65em .8em; border-radius: 6px; }
+.il-sel i { color: #c8ad80; font-style: normal; }
+.il-regs { gap: .5em; margin-top: .2em; }
+.il-regs button { width: .75em; height: .75em; background: rgba(255, 255, 255, .22); }
+.il-regs button.on { background: #c8ad80; }
+.il-bud { gap: .5em; }
+.il-bud button { font-size: .88em; padding: .7em .4em; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .14); color: #d9d3c5; border-radius: 6px; }
+.il-bud button.on { background: #c8ad80; border-color: #c8ad80; color: #071321; font-weight: 700; }
+.il-types { gap: .5em; }
+.il-types button { padding: .75em .3em; gap: .35em; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .14); border-radius: 6px; }
+.il-types svg { width: 1.7em; height: 1.7em; stroke: #c8ad80; }
+.il-types span { font-size: .8em; color: #d9d3c5; }
+.il-types button.on { background: rgba(200, 173, 128, .16); border-color: #c8ad80; box-shadow: none; }
+.il-map { background: radial-gradient(ellipse at 50% 45%, rgba(200, 173, 128, .08), transparent 70%); padding: 3%; }
+.il-map path { fill: rgba(255, 255, 255, .09); stroke: #0b1a2d; stroke-width: 1.2; }
+.il-map path.on { fill: #c8ad80; }
+.il-ping circle { fill: #071321; }
+.il-ping .r { stroke: #071321; }
+.il-r { background: rgba(255, 255, 255, .03); border-left: 1px solid rgba(200, 173, 128, .18); padding: 5% 5.5%; gap: .8em; }
+.il-r .il-h { margin: 0 0 .2em; }
+.il-card { grid-template-columns: 30% 1fr; gap: .9em; padding: .8em; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .1); border-radius: 8px; }
+.il-card i { display: grid; place-items: center; background: linear-gradient(135deg, #1a2d47, #0e1f35); border-radius: 5px; min-height: 4.2em; }
+.il-card i svg { width: 2em; height: 2em; fill: none; stroke: #c8ad80; stroke-width: 1.4; stroke-linejoin: round; }
+.il-card b { height: .55em; background: rgba(255, 255, 255, .28); margin-top: .5em; border-radius: 3px; }
+.il-card b.s { width: 65%; background: rgba(255, 255, 255, .14); }
+.il-chips { display: flex; flex-wrap: wrap; gap: .4em; margin-top: .8em; }
+.il-chips em { font-style: normal; font-size: .78em; padding: .25em .6em; border: 1px solid rgba(200, 173, 128, .5); border-radius: 99px; color: #c8ad80; }
+.il-scr .il-n { color: #8f98a6; font-size: .75em; margin: auto 0 0; }
+.il-sum { margin: .2em 0 0; font-size: .8em; color: #c8ad80; }
+.il-cta { margin-top: 34px; }
+@media (max-width: 1000px) {
+  .il-scr { grid-template-columns: 1fr; font-size: 13px; aspect-ratio: auto; }
+  .il-l { border-right: 0; border-bottom: 1px solid rgba(200, 173, 128, .18); }
+  .il-map { height: 320px; }
+  .il-r { display: flex; border-left: 0; border-top: 1px solid rgba(200, 173, 128, .18); }
+  .il-lap { padding: 8px 8px 10px; }
+}
+.il-map { position: relative; }
+.il-map svg { position: absolute; inset: 3%; width: 94%; height: 94%; }
+.il-card i { width: 100%; align-self: stretch; }

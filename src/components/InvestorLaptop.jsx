@@ -57,18 +57,22 @@ export default function InvestorLaptop() {
                 {STATES.map((s) => <path key={s.id} d={s.d} className={s.id === regId ? 'on' : ''} />)}
                 <g key={regId} className="il-ping" transform={`translate(${st.cx} ${st.cy})`}><circle r="5" /><circle r="5" className="r" /></g>
               </svg>
-              <div className="il-tip" key={'t' + regId}>{st.name}<small>Passende Objekte</small></div>
             </div>
             <div className="il-r" key={'r' + regId + type + bud}>
               <p className="il-h">Passende Objekte</p>
               {[0, 1, 2].map((k) => (
-                <div className="il-card" key={k} style={{ '--k': k }}><i /><div><b /><b className="s" /><b className="xs" /></div></div>
+                <div className="il-card" key={k} style={{ '--k': k }}>
+                  <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d={TI[type]} /></svg></i>
+                  <div><b /><b className="s" /><span className="il-chips"><em>{TYPES[type]}</em><em>{st.name}</em></span></div>
+                </div>
               ))}
               <p className="il-n">Beispielansicht, keine echten Objekte.</p>
+              <p className="il-sum">{st.name} · {BUDGET[bud]}</p>
             </div>
           </div>
         </div>
         <div className="il-base" aria-hidden="true" />
+        <div className="il-cta"><Link to={to} className="btn btn-gold">Suchprofil erstellen <span className="arr" aria-hidden="true">→</span></Link></div>
       </div>
     </div>
   )
