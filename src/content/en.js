@@ -314,6 +314,7 @@ export default {
  "Nein. Rechtliche Vorprüfungen sind Hinweise zur Orientierung und keine rechtsverbindliche Entscheidung.": "No. Legal preliminary checks are guidance for orientation and not a legally binding decision.",
  "Neue Eingabe": "New entry",
  "Nicht jedes Objekt. Das passende.": "Not every property. The right one.",
+ "Budget": "Budget",
  "Nicht jede Immobilie. Die richtige.": "Not every property. The right one.",
  "Gezielt nach Standorten.": "Targeted by location.",
  "Passende Investitionsspanne.": "A fitting investment range.",
