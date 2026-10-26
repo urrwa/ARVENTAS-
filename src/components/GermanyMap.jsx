@@ -1,4 +1,4 @@
-import { memo, useState } from 'react'
+import { memo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { STATES, MAP_VIEWBOX } from '../content/germany.js'
 
@@ -33,7 +33,9 @@ export default function GermanyMap() {
   const [region, setRegion] = useState('')
   const [hover, setHover] = useState(null)
   const cur = STATES.find((s) => s.id === region)
-  const to = cur ? `/kontakt?region=${encodeURIComponent(cur.name)}` : '/kontakt'
+  const list = useRef(null)
+  // Ohne Auswahl springt „Region auswählen“ zur Liste der Bundesländer.
+  const pick = () => { const b = list.current && list.current.querySelector('button'); if (b) { b.scrollIntoView({ behavior: 'smooth', block: 'center' }); b.focus({ preventScroll: true }) } }
   return (
     <div className="gm">
       <div className="gm-mapwrap">
@@ -51,11 +53,18 @@ export default function GermanyMap() {
           <p className="gm-name" key={region || 'de'}>{cur ? cur.name : 'Deutschlandweit'}</p>
           <p className="gm-text">{cur ? `Ihre Anfrage wird mit dem Bezug ${cur.name} vorbereitet – für Eigentümer und Investoren.` : 'Wählen Sie ein Bundesland auf der Karte oder in der Liste. Ohne Auswahl gilt Ihre Anfrage deutschlandweit.'}</p>
           <div className="gm-actions">
-            <Link to={to} className="btn btn-gold">Region auswählen <span className="arr" aria-hidden="true">→</span></Link>
-            {cur && <button type="button" className="gm-reset" onClick={() => setRegion('')}>Auswahl zurücksetzen</button>}
+            {cur ? (
+              <>
+                <Link to={`/immobilie-verkaufen?region=${encodeURIComponent(cur.name)}#anfrage`} className="gm-go"><small>Für Eigentümer</small><b>Immobilie prüfen lassen</b><i aria-hidden="true">→</i></Link>
+                <Link to={`/investorenkreis?region=${encodeURIComponent(cur.name)}`} className="gm-go"><small>Für Investoren</small><b>Suchprofil erstellen</b><i aria-hidden="true">→</i></Link>
+                <button type="button" className="gm-reset" onClick={() => setRegion('')}>Auswahl zurücksetzen</button>
+              </>
+            ) : (
+              <button type="button" className="btn btn-gold" onClick={pick}>Region auswählen <span className="arr" aria-hidden="true">→</span></button>
+            )}
           </div>
         </div>
-        <ul className="gm-list" aria-label="Bundesländer">
+        <ul className="gm-list" aria-label="Bundesländer" ref={list}>
           {STATES.map((s) => (
             <li key={s.id}>
               <button type="button" className={'gm-chip' + (s.id === region ? ' is-active' : '')} aria-pressed={s.id === region} onClick={() => setRegion(s.id === region ? '' : s.id)} onFocus={() => setHover(s.id)} onBlur={() => setHover(null)} onPointerEnter={() => setHover(s.id)} onPointerLeave={() => setHover(null)}>
