@@ -94,4 +94,5 @@ export const ARTICLES = [
     steps: 'Im Objektreport finden Sie Prüfhinweise, die offene Punkte benennen.',
   },
 ]
-export const CATEGORIES = ['Alle', 'Off-Market', 'Immobilienbewertung', 'Kapitalanlage', 'Entwicklungspotenziale', 'Marktinformationen']
+// Nur die im Briefing genannten Themen (Off-Market verstehen, Immobilien bewerten, Potenziale einordnen); Kategorien ohne ausgearbeiteten Beitrag werden nicht gezeigt.
+export const CATEGORIES = ['Alle', 'Off-Market', 'Immobilienbewertung', 'Entwicklungspotenziale']

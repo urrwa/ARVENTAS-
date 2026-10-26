@@ -3,7 +3,7 @@ import { ARTICLES, CATEGORIES } from '../content/data.js'
 
 // Kategorien als weiße Liste links über einem großen Foto (Vorbild Marketplace): Beim Überfahren öffnet sich die Zeile zum Foto,
 // Text wird weiß, ein Pfeil erscheint, das Foto wechselt. Gilt für Startseite und Wissen-Seite.
-const FALLBACK = { Kapitalanlage: '/media/p/zugang-investor.webp', Entwicklungspotenziale: '/media/p/h-entwicklung.webp', Marktinformationen: '/media/p/ablauf-luftbild.webp' }
+const FALLBACK = { Entwicklungspotenziale: '/media/p/h-entwicklung.webp' }
 const article = (c) => (c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c))
 const pic = (c) => { const a = article(c); return a ? a.img : FALLBACK[c] || '/media/p/ablauf-bibliothek.webp' }
 
@@ -21,7 +21,7 @@ export default function KnowledgeTabs({ cat, setCat, full, base = 'Alle' }) {
           const common = { className: `kl-row${on ? ' on' : ''}`, onMouseEnter: () => setCat(c), onFocus: () => setCat(c) }
           return (
             <li key={c}>
-              <Link to={a ? `/wissen/${a.slug}` : `/wissen?thema=${encodeURIComponent(c)}#beitraege`} {...common}>{inner}</Link>
+              <Link to={c === 'Alle' ? '/wissen' : a ? `/wissen/${a.slug}` : `/wissen?thema=${encodeURIComponent(c)}#beitraege`} {...common}>{inner}</Link>
             </li>
           )
         })}
