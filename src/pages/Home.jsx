@@ -169,7 +169,7 @@ export default function Home() {
       {/* 11 – Kontaktentscheidung */}
       <section className="sec dark kx" aria-labelledby="h-next">
         <div className="wrap kx-in">
-          <figure className="kx-pic"><img src="/media/p/h-kontakt.webp" alt="" loading="lazy" /><figcaption>Illustrationsbild</figcaption></figure>
+          <figure className="kx-pic"><img src="/media/p/kontakt-treppe.webp" alt="" loading="lazy" /><figcaption>Illustrationsbild</figcaption></figure>
           <div className="kx-card">
             <p className="eyebrow rv">Kontakt</p>
             <h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2>

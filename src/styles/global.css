@@ -3539,3 +3539,13 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .gm-iso { flex: none; width: 24px; font-size: 10.5px; font-weight: 800; letter-spacing: .06em; color: var(--gold); }
 .gm-chip.is-active .gm-iso { color: rgba(4, 11, 20, .65); }
 @media (max-width: 1023px) { .gm-map { max-width: 420px; } .gm-side { display: contents; } .gm-head { order: 1; } .gm-mapwrap { order: 2; } .gm-panel { order: 3; } .gm-list { order: 4; } }
+
+/* Kontakt-Liste wie in der Landingpage: Zeile hellt auf, Titel rückt ein, Pfeilkreis füllt sich golden */
+.kx-list a { border-radius: 4px; }
+.kx-list a:hover, .kx-list a:focus-visible { background: rgba(233, 217, 188, .08); }
+.kx-list a:hover b, .kx-list a:focus-visible b { transform: translateX(12px); color: #f1e6d0; }
+.kx-list a:hover small, .kx-list a:focus-visible small { color: var(--gold); }
+.kx-list a:hover .kx-go, .kx-list a:focus-visible .kx-go { background: transparent; border-color: var(--gold); color: var(--marine); transform: none; }
+.kx-go::before { background: var(--gold); }
+.kx-list a:hover .kx-go::before, .kx-list a:focus-visible .kx-go::before { transform: scale(1.05); }
+.kx-list a:hover .kx-go::after, .kx-list a:focus-visible .kx-go::after { transform: none; }
