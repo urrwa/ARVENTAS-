@@ -95,8 +95,8 @@ export default function Home() {
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Zwei Wege</p><h2 id="h-zug" className="h2 rv">Was möchten Sie bewegen?</h2></header>
           <div className="doors" ref={doorsRef}>
-            <Door to="/immobilie-verkaufen" img="p/u-eingang-travertin" alt="Wohnhaus mit Naturstein-Fassade (Beispielbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen" />
-            <Door to="/kapitalanlage-immobilien" img="p/vm.area.2" alt="Reihenhäuser im Morgenlicht (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120} />
+            <Door to="/immobilie-verkaufen" img="p/ablauf-eingang" alt="Wohnhaus mit Naturstein-Fassade (Beispielbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen" />
+            <Door to="/kapitalanlage-immobilien" img="p/ablauf-wohnhaus" alt="Reihenhäuser im Morgenlicht (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120} />
           </div>
         </div>
       </section>
