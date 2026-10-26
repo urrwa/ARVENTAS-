@@ -1,3 +1,4 @@
+import Ambient from '../components/Ambient.jsx'
 import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
@@ -14,6 +15,7 @@ export default function About() {
       <PageHero tall image="/media/p/u-lounge-gespraech.webp" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
 
       <div className="cover-over">
+      <div className="cover-amb"><Ambient /></div>
       <section className="sec dark about-big-sec">
         <div className="wrap">
           <p className="eyebrow">Wer wir sind</p>

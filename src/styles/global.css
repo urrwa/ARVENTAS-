@@ -3903,3 +3903,8 @@ body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn
 body .btn.btn-gold::after { display: none; }
 .il-cta .btn.btn-gold { font-size: 14px; }
 .sec:not(.dark) .btn.btn-gold, .sec.light .btn.btn-gold { color: var(--ink, #071321); }
+
+/* Inhalt, der über das Seitenbild fährt: eigener Ambient-Hintergrund (Verlauf, Lichtfelder, Linien) statt einer einfarbigen Fläche */
+.cover-over { position: relative; isolation: isolate; }
+.cover-amb { position: absolute; inset: 0; z-index: -1; clip-path: inset(0); pointer-events: none; }
+main:not(:has(.hv)) .cover-over, main:not(:has(.hv)) .cover-over :is(.sec.dark, .ps) { background: transparent !important; background-image: none !important; }

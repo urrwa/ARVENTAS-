@@ -1,5 +1,6 @@
 import { useSearchParams, Link } from 'react-router-dom'
 import RevealText from '../components/RevealText.jsx'
+import Ambient from '../components/Ambient.jsx'
 import Seo from '../components/Seo.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { SectionHead, Tabs, Placeholder, Faq } from '../components/ui.jsx'
@@ -19,6 +20,7 @@ export default function Contact() {
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns über Ihre Möglichkeiten sprechen: getrennte Zugänge für Eigentümer, Investoren und Partner." />
       <PageHero fadeOut image="/media/p/u-frankfurt-nacht.webp" crumb="Kontakt" title="Lassen Sie uns über Ihre Möglichkeiten sprechen." lead="Wählen Sie den passenden Zugang. Eigentümer, Investoren und Partner haben getrennte Wege." />
       <div className="cover-over">
+      <div className="cover-amb"><Ambient /></div>
       <section className="sec dark over-photo">
         <div className="wrap contact-grid">
           <div className="contact-intro">
