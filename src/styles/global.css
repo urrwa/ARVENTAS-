@@ -3930,3 +3930,6 @@ body .btn.btn-gold, body .btn.btn-gold:has(.arr) { background: rgba(233, 217, 18
 body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn-gold, .door:hover .btn.btn-gold:has(.arr), body .btn.btn-gold:has(.arr):hover { background: rgba(233, 217, 188, .36); border-color: var(--gold); }
 .sec:not(.dark) .btn.btn-gold, .sec.light .btn.btn-gold { background: rgba(7, 19, 33, .08); }
 .sec:not(.dark) .btn.btn-gold:hover, .sec.light .btn.btn-gold:hover { background: rgba(7, 19, 33, .16); }
+/* Outline-Pille mit voller Markenfarbe (Champagner) */
+body .btn.btn-gold, body .btn.btn-gold:has(.arr), .sec:not(.dark) .btn.btn-gold, .sec.light .btn.btn-gold { background: var(--gold-btn, #c8ad80); border-color: var(--gold-btn, #c8ad80); color: #071321; }
+body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn-gold, .door:hover .btn.btn-gold:has(.arr), body .btn.btn-gold:has(.arr):hover, .sec:not(.dark) .btn.btn-gold:hover, .sec.light .btn.btn-gold:hover { background: #eadfc6; border-color: #eadfc6; color: #071321; }
