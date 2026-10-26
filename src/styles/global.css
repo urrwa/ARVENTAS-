@@ -3457,9 +3457,9 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .hdr .nav { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); gap: clamp(16px, 1.9vw, 30px); }
 .hdr .nav a.nl { font-size: 12.5px; }
 .hdr-cta { padding: 0 20px; }
-@media (max-width: 1430px) { .hdr-in { grid-template-columns: 1fr auto; } .hdr .nav { display: none; } }
+@media (max-width: 1180px) { .hdr-in { grid-template-columns: 1fr auto; } .hdr .nav { display: none; } }
 .hdr .logo { grid-column: 1; } .hdr-r { grid-column: 3; }
-@media (max-width: 1430px) { .hdr-r { grid-column: 2; } }
+@media (max-width: 1180px) { .hdr-r { grid-column: 2; } }
 .hdr .nav { gap: clamp(14px, 1.45vw, 24px); }
 .hdr .nav a.nl { font-size: 12px; letter-spacing: .1em; }
 .hdr-cta { padding: 0 18px; font-size: 11.5px; letter-spacing: .12em; }
@@ -3496,3 +3496,12 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .hdr:not(.clear) .hdr-cta:hover, .hdr:not(.clear) .hdr-cta:focus-visible { background: rgba(200, 173, 128, .16); color: var(--ivory); }
 .hdr:not(.clear) .lang button[aria-pressed=true] { color: var(--ivory); box-shadow: inset 0 -1px 0 var(--ivory); }
 @media (max-width: 860px) { .hdr:not(.clear) .hdr-in { padding: 0 8px 0 20px; } }
+
+/* Mittlere Breiten: Navigation und Knopf enger setzen, damit nichts überlappt */
+@media (max-width: 1430px) {
+  .hdr .nav { gap: clamp(10px, 1.1vw, 16px); }
+  .hdr .nav a.nl { font-size: 11.5px; letter-spacing: .06em; }
+  .hdr-cta { padding: 0 14px; font-size: 10.5px; letter-spacing: .08em; min-height: 38px; }
+  .hdr-r { gap: 8px; }
+  .hdr .logo img { height: 46px; }
+}

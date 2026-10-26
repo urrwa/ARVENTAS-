@@ -42,7 +42,7 @@ export default function Header() {
           {NAV.map((l) => <NavLink key={l.to} to={l.to} end={l.end} className="nl">{l.label}</NavLink>)}
         </nav>
         <div className="hdr-r">
-          <Link to="/kontakt" className="hdr-cta">Beratung anfragen</Link>
+          <Link to="/kontakt" className="hdr-cta">Kontakt</Link>
           <LangToggle />
           <button ref={burger} className="burger" type="button" aria-expanded={open} aria-controls="push-menu" aria-label="Menü öffnen" onClick={() => setOpen(true)}>
             <span /><span /><span />
