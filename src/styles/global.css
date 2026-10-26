@@ -4191,3 +4191,11 @@ body .btn.btn-line:hover::after { animation: arrowSwap 620ms cubic-bezier(.22, 1
 .btn .bt { display: contents; }
 /* Footer und Inhalt: derselbe feste Hintergrund, kein Absatz dazwischen */
 body:not(:has(.hv)) .sf { background: var(--cover-bg) !important; background-attachment: fixed !important; background-color: #06111f !important; }
+
+/* Unterseiten: der feste Hintergrund hinter allem ist exakt derselbe wie der Hintergrund der Flächen darüber, damit nirgends ein Absatz entsteht */
+body:not(:has(.hv)) .ambient { background: var(--cover-bg); background-color: #06111f; }
+body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display: none; }
+.cta2-wrap { background: transparent; }
+/* Große Blöcke ohne eigene Vollfläche, damit der gemeinsame Hintergrund durchgeht */
+.kl.kl-full, .fsl, .js, .sr-row, .rep2, .pc-img { background-color: transparent; }
+.kl-row:not(.on) { background: rgba(6, 17, 31, .58) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
