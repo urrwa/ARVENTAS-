@@ -3606,3 +3606,18 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .rp-card .rep-row div { font-size: 13px; color: var(--marine); }
 .rp-sheets { left: 12%; top: 16%; width: min(360px, 46%); }
 .rp-cap { text-transform: none; letter-spacing: 0; }
+
+/* Gemeinsamer Hintergrund wie in der Landingpage: fest, still, ohne Übergänge zwischen Abschnitten */
+:root { --page-bg: transparent; --glass-blue: transparent; }
+html, body { background: #040b14; }
+body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .ss-sec, .doors-sec, .proc-sec, .sec.dark.ink, .kx, .rh.hf, .page, main { background: transparent; }
+.amb-f { animation: none !important; will-change: auto; }
+.amb-lines { position: absolute; inset: -12% -6%; width: 112%; height: 124%; }
+.amb-lines path { fill: none; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.amb-up path { stroke: rgba(170, 196, 220, .62); }
+.amb-lo path { stroke: rgba(222, 200, 160, .52); }
+.amb-vig { position: absolute; inset: 0; background: radial-gradient(140% 105% at 50% 38%, transparent 58%, rgba(2, 6, 12, .5) 100%); }
+/* Hero-Film blendet unten in den Hintergrund aus */
+.hv { background: transparent; }
+.hv-vid, .hv-shade { -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%); mask-image: linear-gradient(180deg, #000 72%, transparent 100%); }
+.hv-shade { background: linear-gradient(180deg, rgba(7, 19, 33, .45) 0%, rgba(7, 19, 33, .1) 30%, rgba(7, 19, 33, .5) 72%, rgba(7, 19, 33, .6) 100%), linear-gradient(90deg, rgba(7, 19, 33, .55) 0%, rgba(7, 19, 33, 0) 60%); }
