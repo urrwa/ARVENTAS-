@@ -3629,3 +3629,10 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .sf-mark svg.gS { stroke-linecap: butt; stroke-linejoin: round; }
 .sf-mark svg.gE, .sf-mark svg.gT, .sf-mark svg.gN, .sf-mark svg.gR { stroke-linejoin: miter; }
 .sf-mark { margin-bottom: -1.5vw; }
+
+/* Wortmarke reicht bis an den unteren Rand und blendet nach oben weich aus */
+.sf { padding-bottom: 0; }
+.sf-mark { margin-top: clamp(8px, 2vw, 32px); margin-bottom: -2.2vw; -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .55) 38%, #000 100%); mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .55) 38%, #000 100%); }
+.sf-mark svg { stroke: rgba(233, 217, 188, .2); stroke-width: 12; }
+.sf-mark { margin-bottom: 0; -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, .35) 0%, #000 55%); mask-image: linear-gradient(180deg, rgba(0, 0, 0, .35) 0%, #000 55%); }
+.sf-mark svg { stroke: rgba(233, 217, 188, .22); }

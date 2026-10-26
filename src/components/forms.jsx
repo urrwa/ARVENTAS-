@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { DemoNotice } from './ui.jsx'
 import Brand from './Brand.jsx'
 import { REGIONS, PROPERTY_TYPES } from '../content/data.js'
@@ -132,7 +132,10 @@ export const PARTNER_FIELDS = [
 const STEPS = ['Suchprofil', 'Ziele', 'Kontakt', 'Prüfung']
 export function InvestorWizard() {
   const [step, setStep] = useState(0)
-  const [v, setV] = useState({ region: '', typ: '', budget: '', erfahrung: '', horizont: '', name: '', email: '', weg: 'E-Mail', phone: '' })
+  // Region aus der Deutschlandkarte (?region=Bundesland) vorbelegen, nur wenn es ein bekanntes Bundesland ist.
+  const [sp] = useSearchParams()
+  const pre = REGIONS.some((r) => r.name === sp.get('region')) ? sp.get('region') : ''
+  const [v, setV] = useState({ region: pre, typ: '', budget: '', erfahrung: '', horizont: '', name: '', email: '', weg: 'E-Mail', phone: '' })
   const [errs, setErrs] = useState({})
   const [ack, setAck] = useState(false)
   const [mk, setMk] = useState(false)

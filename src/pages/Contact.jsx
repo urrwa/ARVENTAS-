@@ -30,7 +30,7 @@ export default function Contact() {
           {region && <p className="small" style={{ marginBottom: 20 }}>Vorgewählte Region: <b>{region}</b></p>}
           <Tabs label="Zugang wählen" items={items} panelClass="tabs-panel" renderPanel={(t) => (
             t.id === 'eig' ? <LeadForm key="eig" id="k-eig" fields={OWNER_FIELDS} submitLabel="Anfrage absenden" defaults={{ ort: region }} doneTitle="Danke für Ihre Anfrage (Demo)." doneText="In der Live-Version würden wir uns bei Ihnen melden." />
-            : t.id === 'inv' ? (<div><h3 className="h3">Suchprofil für Investoren</h3><p>Für Investoren gibt es ein eigenes, mehrstufiges Formular.</p><div className="btn-row"><Link className="btn btn-marine" to="/investorenkreis">Suchprofil erstellen <span className="arr" aria-hidden="true">→</span></Link></div></div>)
+            : t.id === 'inv' ? (<div><h3 className="h3">Suchprofil für Investoren</h3><p>Für Investoren gibt es ein eigenes, mehrstufiges Formular.</p><div className="btn-row"><Link className="btn btn-marine" to={region ? `/investorenkreis?region=${encodeURIComponent(region)}` : '/investorenkreis'}>Suchprofil erstellen <span className="arr" aria-hidden="true">→</span></Link></div></div>)
             : <LeadForm key="par" id="k-par" fields={PARTNER_FIELDS} submitLabel="Anfrage absenden" doneTitle="Danke für Ihre Partneranfrage (Demo)." doneText="In der Live-Version würden wir uns bei Ihnen melden." />
           )} />
           </div>
