@@ -4147,3 +4147,21 @@ body .btn.btn-line:hover::after { animation: arrowSwap 620ms cubic-bezier(.22, 1
 @media (prefers-reduced-motion: reduce) { .bk-leaf, .bk-book { transition: none; } }
 .bk-head .lead { text-transform: none; letter-spacing: 0; font-weight: 400; font-size: clamp(16px, 1.3vw, 19px); }
 .bk-c .rep-row > :last-child, .bk-c .rep-row span, .bk-c .rep-row b { text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 12.5px; }
+
+/* Heft: Farben, Linien und Radien wie im Rest der Seite */
+.bk-face { background: var(--ivory); box-shadow: 0 30px 70px rgba(0, 0, 0, .45), inset 0 0 0 1px rgba(200, 173, 128, .35); }
+.bk-face.front { background-image: linear-gradient(90deg, rgba(7, 19, 33, .12), transparent 6%); border-radius: 0 14px 14px 0; }
+.bk-face.back { background-image: linear-gradient(270deg, rgba(7, 19, 33, .12), transparent 6%); border-radius: 14px 0 0 14px; }
+.bk-leaf:first-child .bk-face.front { background: linear-gradient(160deg, #12304f, #071321 70%); box-shadow: 0 30px 70px rgba(0, 0, 0, .5), inset 0 0 0 1px rgba(200, 173, 128, .45); }
+.bk-leaf:first-child .bk-face.front::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(200, 173, 128, .35); border-radius: 8px; pointer-events: none; }
+.bk-cover img { width: 96px; mix-blend-mode: screen; }
+.bk-cover b { letter-spacing: .06em; text-transform: uppercase; font-size: clamp(22px, 2.2vw, 32px); }
+.bk-q b { color: var(--gold); }
+.bk-q h3, .bk-c h3 { color: var(--marine); }
+.bk-q small, .bk-q em, .bk-c .rp-sec { color: #8a7242; }
+.bk-c .rep-row { border-color: rgba(7, 19, 33, .12); }
+.bk-head .h2 { font-size: clamp(34px, 3.8vw, 58px); }
+.bk-steps { border-top: 1px solid var(--hair); padding-top: 4px; width: min(940px, 100%); margin-inline: auto; justify-content: space-between; }
+.bk-steps button { border-bottom: 0; position: relative; padding: 10px 4px; }
+.bk-steps button::after { content: ""; position: absolute; left: 0; right: 0; top: -5px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 500ms var(--ease); }
+.bk-steps button.on::after { transform: none; }
