@@ -17,6 +17,7 @@ Es werden keine erfundenen Zahlen, Kundenzitate, Namen oder Kontaktdaten angezei
 ## Ablauf-Bilder (generiert)
 Die elf Bilder `ablauf-*.webp` in `public/media/p/` wurden mit Nano Banana 2 (Higgsfield) erzeugt: Architektur und Innenräume, ohne Personen, Text oder Logos. Im Bildnachweis als generierte Bilder angeben; kein Hinweis auf dem Bild selbst.
 Die Bilder `zugang-eigentuemer.webp` (Stadtvilla) und `zugang-investor.webp` (Mehrfamilienhaus) für die Karten „Wie können wir Ihnen helfen?" entstanden ebenfalls mit Nano Banana 2 (4K, ohne Personen, Text oder Logos).
+Der Hero-Film `hero/montage.mp4` und `.webm` (Schwarzweiß-Montage mit Navy-Ton aus vier Kling-3.0-Clips: Hände auf Grundriss, Frankfurt, Hände mit Report, Luftbild) und `hero/poster.webp` entstanden mit Higgsfield (Nano Banana 2 für die Startbilder). Ohne erkennbare Gesichter, Text oder Logos. Im Bildnachweis als generiert angeben.
 
 ## Startseiten-Kamerafahrt (generiert)
 `fahrt/d2/*.webp` und `fahrt/m2/*.webp` (Bildfolge der Kamerafahrt aus einem Kling-3.0-Film) und `fahrt-innen*.webp` (Startbild, Nano Banana 2, 4K) wurden mit Higgsfield erzeugt. Ohne Personen, Text oder Logos. Das Video ist keyframe-dicht kodiert und wird per Scrollen abgespielt. Im Bildnachweis als generiert angeben.

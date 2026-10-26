@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
-import HomeRio from '../components/HomeRio.jsx'
+import HomeVideo from '../components/HomeVideo.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
@@ -88,7 +88,7 @@ export default function Home() {
   return (
     <>
       <Seo title="ARVENTAS | Off-Market-Immobilien deutschlandweit" description="Ausgewählte Off-Market-Immobilien, fundierte Objektanalysen und persönliche Begleitung für Eigentümer und Investoren in ganz Deutschland." />
-      <HomeRio />
+      <HomeVideo />
 
       {/* 02 – Zwei visuelle Zugänge */}
       <section id="zugaenge" className="sec dark doors-sec" aria-labelledby="h-zug">
