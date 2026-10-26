@@ -3555,3 +3555,4 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .hdr .nav { position: static; transform: none; justify-self: center; }
 .hdr .logo { grid-column: 1; } .hdr-r { grid-column: 3; }
 @media (max-width: 1180px) { .hdr-in { grid-template-columns: 1fr auto; } .hdr-r { grid-column: 2; } }
+.hv-card .hv-go { margin: 0 8px; font-size: 12px; }

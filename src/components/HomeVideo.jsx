@@ -21,12 +21,12 @@ export default function HomeVideo() {
       <div className="hv-copy">
         <h1 className="hv-h"><span>Arventas Immobilien</span><span>Kennen Deutschland.</span></h1>
         <p className="hv-sub">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet, deutschlandweit.</p>
-        <Link to="/immobilie-verkaufen#anfrage" className="btn btn-gold">Objektreport anfragen <span className="arr" aria-hidden="true">→</span></Link>
+        <Link to="/immobilie-verkaufen#anfrage" className="hv-go"><span aria-hidden="true">↗</span> Objektreport anfragen</Link>
       </div>
       <aside className="hv-card">
         <img src="/media/p/ablauf-modell.webp" alt="" loading="lazy" />
         <p>Datenbasiert analysiert. Persönlich geprüft.</p>
-        <Link to="/objektreport#muster" className="btn btn-gold">Muster ansehen <span className="arr" aria-hidden="true">→</span></Link>
+        <Link to="/objektreport#muster" className="hv-go"><span aria-hidden="true">↗</span> Muster ansehen</Link>
       </aside>
       <span className="hv-mouse" aria-hidden="true"><i /></span>
     </section>
