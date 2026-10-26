@@ -3933,3 +3933,15 @@ body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn
 /* Outline-Pille mit voller Markenfarbe (Champagner) */
 body .btn.btn-gold, body .btn.btn-gold:has(.arr), .sec:not(.dark) .btn.btn-gold, .sec.light .btn.btn-gold { background: var(--gold-btn, #c8ad80); border-color: var(--gold-btn, #c8ad80); color: #071321; }
 body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn-gold, .door:hover .btn.btn-gold:has(.arr), body .btn.btn-gold:has(.arr):hover, .sec:not(.dark) .btn.btn-gold:hover, .sec.light .btn.btn-gold:hover { background: #eadfc6; border-color: #eadfc6; color: #071321; }
+
+/* Minimalistischer Button im Framer-Stil: klein, ruhig, Pfeil gleitet beim Hover hinaus und kommt von links zurück */
+body .btn.btn-gold, body .btn.btn-gold:has(.arr), body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, body .btn.btn-gold:has(.arr):hover, .door:hover .btn.btn-gold, .door:hover .btn.btn-gold:has(.arr) {
+  min-height: 40px; padding: 0 18px 0 20px; gap: 10px; border: 0; font: 500 11.5px/1 var(--font-body); letter-spacing: .16em;
+  transition: background 380ms cubic-bezier(.22, 1, .36, 1), transform 380ms cubic-bezier(.22, 1, .36, 1);
+}
+body .btn.btn-gold::after { font-size: 1.25em; font-weight: 400; transition: none; }
+body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn-gold { transform: translateY(-1px); }
+body .btn.btn-gold:hover::after, body .btn.btn-gold:focus-visible::after, .door:hover .btn.btn-gold::after { transform: none; animation: arrowSwap 620ms cubic-bezier(.22, 1, .36, 1); }
+body .btn.btn-gold:active { transform: scale(.97); }
+@keyframes arrowSwap { 0% { transform: translateX(0); opacity: 1; } 45% { transform: translateX(12px); opacity: 0; } 46% { transform: translateX(-12px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { body .btn.btn-gold:hover::after { animation: none; } }
