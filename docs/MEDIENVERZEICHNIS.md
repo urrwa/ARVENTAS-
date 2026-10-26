@@ -13,3 +13,6 @@ Alle Dateien liegen in `public/media/`. Status „Platzhalter“ bedeutet: vor V
 Entfernt: alle KI-generierten Bilder (Hero-Haus/Himmel/Wolken, Objektreport-Bausteine, Kontakt-Haus) und die Deutschlandkarte.
 Es werden keine erfundenen Zahlen, Kundenzitate, Namen oder Kontaktdaten angezeigt.
 - haus-film-md.mp4, haus-film-md.webm, haus-film-sm.mp4, haus-film-poster.webp (die 1080p-Originale wurden entfernt, um Ladezeit zu sparen): Startseiten-Scroll-Film. KI-Videogenerierung (Higgsfield/Kling) aus dem Kundenfoto buero-abend-1; vor Livegang prüfen oder kennzeichnen.
+
+## Ablauf-Bilder (generiert)
+Die elf Bilder `ablauf-*.webp` in `public/media/p/` wurden mit Nano Banana 2 (Higgsfield) erzeugt: Architektur und Innenräume, ohne Personen, Text oder Logos. Im Bildnachweis als generierte Bilder angeben; kein Hinweis auf dem Bild selbst.
