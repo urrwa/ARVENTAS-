@@ -69,7 +69,6 @@ export default function InvestorLaptop() {
           </div>
         </div>
         <div className="il-base" aria-hidden="true" />
-        <div className="il-cta"><Link to={to} className="btn btn-gold">Suchprofil erstellen <span className="arr" aria-hidden="true">→</span></Link></div>
       </div>
     </div>
   )
