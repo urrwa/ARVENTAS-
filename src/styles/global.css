@@ -3952,3 +3952,5 @@ body .btn.btn-gold:active { transform: scale(.97); }
 .btn .bt > span + span { position: absolute; left: 0; top: 100%; white-space: nowrap; }
 .btn:hover .bt > span, .btn:focus-visible .bt > span, .door:hover .btn .bt > span { transform: translateY(-100%); }
 @media (prefers-reduced-motion: reduce) { .btn .bt > span { transition: none; } }
+/* Wissen-Seite: nur noch Hinweiszeile unter der Kategorieliste */
+#beitraege.sec { padding-block: 28px 8px; }
