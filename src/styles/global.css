@@ -3911,3 +3911,17 @@ main:not(:has(.hv)) .cover-over, main:not(:has(.hv)) .cover-over :is(.sec.dark, 
 /* Hover des Textlinks: Pfeil rückt leicht nach oben rechts, kein Kreis mehr */
 body .btn.btn-gold::before, body .btn.btn-gold:hover::before, body .btn.btn-gold:focus-visible::before, body .btn.btn-gold:has(.arr):hover::before, .door:hover .btn.btn-gold:has(.arr)::before { background: none !important; width: auto !important; height: auto !important; border-radius: 0 !important; transform: none !important; transition: transform 300ms var(--ease) !important; }
 body .btn.btn-gold:hover::before, body .btn.btn-gold:focus-visible::before, .door:hover .btn.btn-gold::before, .door:hover .btn.btn-gold:has(.arr)::before { transform: translate(2px, -2px) !important; }
+
+/* Gold-Schaltflächen: dünne Outline-Pille, leicht und ruhig (ersetzt Textlink mit Linie) */
+body .btn.btn-gold, body .btn.btn-gold:has(.arr), body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, body .btn.btn-gold:has(.arr):hover, .door:hover .btn.btn-gold, .door:hover .btn.btn-gold:has(.arr) {
+  display: inline-flex; align-items: center; gap: 12px; min-height: 44px; height: auto; padding: 0 22px; border: 1px solid rgba(233, 217, 188, .55); border-radius: 999px; background: transparent; color: var(--ivory); overflow: visible; isolation: auto;
+  font: 600 12px/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; transition: background 300ms ease, border-color 300ms ease, color 300ms ease;
+}
+body .btn.btn-gold::before, body .btn.btn-gold:hover::before, body .btn.btn-gold:focus-visible::before, body .btn.btn-gold:has(.arr)::before, body .btn.btn-gold:has(.arr):hover::before, .door:hover .btn.btn-gold::before, .door:hover .btn.btn-gold:has(.arr)::before { content: none !important; display: none !important; }
+body .btn.btn-gold::after { content: "→"; display: inline-block !important; position: static; font-size: 1.15em; line-height: 1; transition: transform 300ms var(--ease); }
+body .btn.btn-gold .arr { display: none; }
+body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn-gold, .door:hover .btn.btn-gold:has(.arr) { background: rgba(233, 217, 188, .14); border-color: var(--gold); color: var(--ivory); }
+body .btn.btn-gold:hover::after, body .btn.btn-gold:focus-visible::after, .door:hover .btn.btn-gold::after { transform: translateX(4px); }
+.il-cta .btn.btn-gold { font-size: 12.5px; }
+.sec:not(.dark) .btn.btn-gold, .sec.light .btn.btn-gold { color: var(--ink, #071321); border-color: rgba(7, 19, 33, .45); }
+.sec:not(.dark) .btn.btn-gold:hover, .sec.light .btn.btn-gold:hover { background: rgba(7, 19, 33, .06); color: var(--ink, #071321); border-color: var(--ink, #071321); }
