@@ -37,12 +37,14 @@ export default function Header() {
         </Link>
         <nav className="nav" aria-label="Hauptnavigation">
           {NAV.map((l) => <NavLink key={l.to} to={l.to} end={l.end} className="nl">{l.label}</NavLink>)}
-          <Link to="/kontakt" className="btn btn-gold">Beratung anfragen</Link>
         </nav>
-        <LangToggle />
-        <button ref={burger} className="burger" type="button" aria-expanded={open} aria-controls="push-menu" aria-label="Menü öffnen" onClick={() => setOpen(true)}>
-          <span /><span /><span />
-        </button>
+        <div className="hdr-r">
+          <Link to="/kontakt" className="hdr-cta">Beratung anfragen</Link>
+          <LangToggle />
+          <button ref={burger} className="burger" type="button" aria-expanded={open} aria-controls="push-menu" aria-label="Menü öffnen" onClick={() => setOpen(true)}>
+            <span /><span /><span />
+          </button>
+        </div>
       </div>
     </header>
   )
