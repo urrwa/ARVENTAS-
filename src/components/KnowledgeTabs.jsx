@@ -3,7 +3,7 @@ import { ARTICLES, CATEGORIES } from '../content/data.js'
 
 // Kategorien als weiße Liste links über einem großen Foto (Vorbild Marketplace): Beim Überfahren öffnet sich die Zeile zum Foto,
 // Text wird weiß, ein Pfeil erscheint, das Foto wechselt. Gilt für Startseite und Wissen-Seite.
-const FALLBACK = { Kapitalanlage: '/media/p/ablauf-wohnhaus.webp', Entwicklungspotenziale: '/media/p/ablauf-fassade.webp', Marktinformationen: '/media/p/ablauf-luftbild.webp' }
+const FALLBACK = { Kapitalanlage: '/media/p/zugang-investor.webp', Entwicklungspotenziale: '/media/p/h-entwicklung.webp', Marktinformationen: '/media/p/ablauf-luftbild.webp' }
 const article = (c) => (c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c))
 const pic = (c) => { const a = article(c); return a ? a.img : FALLBACK[c] || '/media/p/ablauf-bibliothek.webp' }
 

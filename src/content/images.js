@@ -72,5 +72,5 @@ export const SYSTEM_IMG = {
 export const INSIGHTS_IMG = {
   stair: ['ma.area.2', 'ma.area.0', 'vm.area.0', 'bw.res.3', 'ma.res.3'].map(p),   // Marktberichte, Standortanalysen, Trends, Fachartikel, Archiv
   slider: ['vm.step.2', 'bw.step.2', 'di.step.0', 'sa.area.3'].map(p), // Warum Insights
-  articles: { 'off-market-verstehen': p('ma.res.2'), 'immobilien-bewerten': p('bw.res.0'), 'potenziale-einordnen': p('di.area.3') },
+  articles: { 'off-market-verstehen': p('h-zugang'), 'immobilien-bewerten': p('h-bewertung'), 'potenziale-einordnen': p('h-entwicklung') },
 }

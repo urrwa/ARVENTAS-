@@ -107,7 +107,7 @@ export default function Home() {
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
         </div>
         <StrengthStack items={[
-            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/ablauf-luftbild.webp', icon: 'key' },
+            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/h-zugang.webp', icon: 'key' },
             { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/ablauf-modell.webp', icon: 'chart' },
             { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/ablauf-besprechung.webp', icon: 'hand' },
           ]} />
@@ -165,7 +165,7 @@ export default function Home() {
       {/* 11 – Kontaktentscheidung */}
       <section className="sec dark kx" aria-labelledby="h-next">
         <div className="wrap kx-in">
-          <figure className="kx-pic"><img src="/media/p/u-eingang-stein.webp" alt="" loading="lazy" /><figcaption>Illustrationsbild</figcaption></figure>
+          <figure className="kx-pic"><img src="/media/p/h-kontakt.webp" alt="" loading="lazy" /><figcaption>Illustrationsbild</figcaption></figure>
           <div className="kx-card">
             <p className="eyebrow rv">Kontakt</p>
             <h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2>
