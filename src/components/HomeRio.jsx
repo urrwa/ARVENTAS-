@@ -3,10 +3,10 @@ import { useEffect, useRef } from 'react'
 // Startseiten-Kopf: Die Kamera fährt durch die Glasfront eines Büros hinaus auf die Stadt.
 // Die Fahrt liegt als Bildfolge vor und wird auf eine Zeichenfläche gelegt, vom Scrollen gesteuert (vor und zurück, in jedem Browser gleich).
 // Die beiden Zeilen ziehen dabei nach links und rechts weg (--t).
-const N = 121
+const N = 145
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
 const ease = (x) => x * x * (3 - 2 * x)
-const src = (dir, i) => `/media/fahrt/${dir}/f${String(i + 1).padStart(3, '0')}.webp`
+const src = (dir, i) => `/media/fahrt/${dir}2/f${String(i + 1).padStart(3, '0')}.webp`
 export default function HomeRio() {
   const box = useRef(null), cv = useRef(null)
   useEffect(() => {
