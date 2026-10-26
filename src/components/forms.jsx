@@ -134,8 +134,12 @@ export function InvestorWizard() {
   const [step, setStep] = useState(0)
   // Region aus der Deutschlandkarte (?region=Bundesland) vorbelegen, nur wenn es ein bekanntes Bundesland ist.
   const [sp] = useSearchParams()
-  const pre = REGIONS.some((r) => r.name === sp.get('region')) ? sp.get('region') : ''
-  const [v, setV] = useState({ region: pre, typ: '', budget: '', erfahrung: '', horizont: '', name: '', email: '', weg: 'E-Mail', phone: '' })
+  const rq = sp.get('region')
+  const pre = rq === 'Bundesweit' || REGIONS.some((r) => r.name === rq) ? rq : ''
+  const tq = sp.get('typ'), bq = sp.get('budget')
+  const preT = PROPERTY_TYPES.includes(tq) ? tq : ''
+  const preB = ['bis 500.000 €', '500.000 – 2 Mio. €', '2 – 5 Mio. €', 'ab 5 Mio. €'].includes(bq) ? bq : ''
+  const [v, setV] = useState({ region: pre, typ: preT, budget: preB, erfahrung: '', horizont: '', name: '', email: '', weg: 'E-Mail', phone: '' })
   const [errs, setErrs] = useState({})
   const [ack, setAck] = useState(false)
   const [mk, setMk] = useState(false)

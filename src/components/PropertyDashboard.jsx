@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import map from '@svg-maps/germany'
+import { Link } from 'react-router-dom'
 import { REGIONS } from '../content/data.js'
 
 // Animiertes Dashboard als Prinzipdarstellung (Vorbild: dunkle Property-Dashboards). Alle Inhalte sind schematisch:
@@ -8,10 +8,9 @@ const VIEWS = [
   { id: 'uebersicht', label: 'Übersicht', icon: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z' },
   { id: 'wert', label: 'Marktwert', icon: 'M3 17l5-6 4 3 8-9' },
   { id: 'profil', label: 'Suchprofil', icon: 'M4 6h16M7 12h10M10 18h4' },
-  { id: 'karte', label: 'Karte', icon: 'M12 21s-7-6-7-11a7 7 0 1 1 14 0c0 5-7 11-7 11zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' },
   { id: 'objekt', label: 'Objektdaten', icon: 'M4 21V9l8-6 8 6v12zM9 21v-6h6v6' },
 ]
-const REGION_CH = ['Bundesweit', 'Süddeutschland', 'Westdeutschland', 'Norddeutschland', 'Ostdeutschland']
+const REGION_CH = ['Bundesweit', ...REGIONS.map((r) => r.name)]
 const TYPE_CH = ['Mehrfamilienhaus', 'Wohn- und Geschäftshaus', 'Gewerbeimmobilie', 'Grundstück']
 const BUDGET = ['bis 500.000 €', '500.000 – 2 Mio. €', '2 – 5 Mio. €', 'ab 5 Mio. €']
 const TABS = [
@@ -21,7 +20,6 @@ const TABS = [
   ['Prüfpunkte', 'Offene Punkte vor einer Entscheidung, mit menschlicher Freigabe.'],
 ]
 const IMG = ['/media/p/u-eingang-travertin.webp', '/media/p/u-begutachtung-travertin.webp', '/media/p/u-modell-dunkel.webp']
-const CYCLE = ['bw', 'by', 'nw', 'he', 'sn', 'ni']
 
 
 function Donut() {
@@ -93,30 +91,9 @@ function Profile({ s }) {
         <dl>
           {[['Region', region], ['Typ', type], ['Budget', budget]].map(([k, v], i) => <div key={k} style={{ '--i': i }}><dt>{k}</dt><dd key={v}>{v}</dd></div>)}
         </dl>
+        <p className="pd-res">Ihre Auswahl ist notiert. Im nächsten Schritt ergänzen Sie Ihre Ziele und Ihren Kontakt; wir stimmen passende Immobilien persönlich mit Ihnen ab.</p>
+        <Link className="btn btn-gold" to={`/investorenkreis?region=${encodeURIComponent(region)}&typ=${encodeURIComponent(type === 'Grundstück' ? 'Grundstück / Entwicklungsobjekt' : type)}&budget=${encodeURIComponent(budget)}`}>Suchprofil weiterführen <span className="arr" aria-hidden="true">→</span></Link>
         <p className="pd-note">Prinzipdarstellung. Keine Live-Abfrage, keine Trefferzahlen.</p>
-      </div>
-    </div>
-  )
-}
-
-function MapView({ sel, setSel }) {
-  const [c, setC] = useState(null)
-  const refs = useRef({})
-  useEffect(() => { const p = refs.current[sel]; if (p) { const b = p.getBBox(); setC([b.x + b.width / 2, b.y + b.height / 2]) } }, [sel])
-  const name = REGIONS.find((r) => r.id === sel)?.name
-  return (
-    <div className="pd-map">
-      <div className="pd-panel pd-mapbox">
-        <svg viewBox={map.viewBox} role="group" aria-label="Deutschlandkarte">
-          {map.locations.map((l) => <path key={l.id} ref={(e) => { refs.current[l.id] = e }} d={l.path} className={sel === l.id ? 'on' : ''} onClick={() => setSel(l.id)} />)}
-          {c && <g className="pd-ping" key={sel} transform={`translate(${c[0]} ${c[1]})`}><circle r="4" fill="#B09E80" /><circle r="4" fill="none" stroke="#B09E80" className="r1" /><circle r="4" fill="none" stroke="#B09E80" className="r2" /></g>}
-        </svg>
-      </div>
-      <div className="pd-panel pd-sum">
-        <h4>Bundesland</h4>
-        <p className="pd-big" key={sel}>{name}</p>
-        <ul className="pd-list">{REGIONS.slice(0, 8).map((r) => <li key={r.id}><button type="button" aria-pressed={sel === r.id} onClick={() => setSel(r.id)}>{r.name}</button></li>)}</ul>
-        <p className="pd-note">Keine Standortangabe, keine Nachfrage.</p>
       </div>
     </div>
   )
@@ -139,28 +116,16 @@ function ObjectView() {
 export default function PropertyDashboard() {
   const [view, setView] = useState('uebersicht')
   const [region, setRegion] = useState(REGION_CH[0]), [type, setType] = useState(TYPE_CH[0]), [budget, setBudget] = useState(BUDGET[1])
-  const [sel, setSel] = useState('by')
-  const root = useRef(null), live = useRef(false), hold = useRef(false)
+  const root = useRef(null), live = useRef(false)
   useEffect(() => {
     const el = root.current
     const io = 'IntersectionObserver' in window ? new IntersectionObserver(([e]) => { live.current = e.isIntersecting; el.classList.toggle('in', e.isIntersecting) }, { threshold: 0.12 }) : null
     io ? io.observe(el) : el.classList.add('in')
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
-    const id = reduce ? 0 : setInterval(() => {
-      if (!live.current || hold.current) return
-      setView((v) => VIEWS[(VIEWS.findIndex((x) => x.id === v) + 1) % VIEWS.length].id)
-    }, 6500)
-    return () => { io && io.disconnect(); id && clearInterval(id) }
+    return () => { io && io.disconnect() }
   }, [])
-  useEffect(() => {
-    if (view !== 'karte' || matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    let i = 0
-    const id = setInterval(() => { if (!hold.current) { i = (i + 1) % CYCLE.length; setSel(CYCLE[i]) } }, 1600)
-    return () => clearInterval(id)
-  }, [view])
   const S = { region, type, budget, setRegion, setType, setBudget }
   return (
-    <div className="pd" ref={root} onMouseEnter={() => { hold.current = true }} onMouseLeave={() => { hold.current = false }} onFocus={() => { hold.current = true }} onBlur={() => { hold.current = false }}>
+    <div className="pd" ref={root}>
       <div className="pd-bar" aria-hidden="true"><b>Objektanalyse</b><em>{String(VIEWS.findIndex((x) => x.id === view) + 1).padStart(2, '0')} / 0{VIEWS.length}</em><span>Illustratives Muster – keine Objektbewertung</span><u key={view} /></div>
       <div className="pd-body">
         <nav className="pd-side" aria-label="Dashboard-Ansichten">
@@ -171,7 +136,6 @@ export default function PropertyDashboard() {
             {view === 'uebersicht' && <Overview />}
             {view === 'wert' && <Value />}
             {view === 'profil' && <Profile s={S} />}
-            {view === 'karte' && <MapView sel={sel} setSel={setSel} />}
             {view === 'objekt' && <ObjectView />}
           </div>
         </div>

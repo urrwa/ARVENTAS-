@@ -3736,3 +3736,7 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 .sl2-flat small { display: block; color: var(--gold); font: 700 11px var(--font-body); letter-spacing: .16em; }
 .sl2-flat h3 { font: 400 28px/1.1 var(--font-head); margin: 6px 0; }
 .sl2-flat p { color: var(--text-2); margin: 0; }
+.pd-res { margin: 16px 0 14px; font-size: 14px; line-height: 1.55; color: var(--ivory); }
+.pd-sum .btn { margin-bottom: 10px; }
+.sec.dark .pd-range button[aria-checked=true], .sec.dark .pd-range button[aria-checked=true]:hover { color: var(--marine); }
+.sec.dark .pd-chips button:hover, .sec.dark .pd-side button:hover { color: inherit; }
