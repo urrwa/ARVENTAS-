@@ -23,43 +23,6 @@ const Art = ({ id }) => {
   }
 }
 
-// Technische Explosionszeichnung des Berichts: sechs Ebenen als Platten im Isometrie-Raster, die aktive hebt sich ab und wird beschriftet.
-const ISO = 'matrix(.675 .39 -.675 .39 0 0)'
-function Blueprint({ a }) {
-  const CX = 300, Y0 = 108, GAP = 64
-  return (
-    <svg className="rp-bp" viewBox="-30 40 470 480" role="img" aria-label="Sechs Analyseebenen als schematische Explosionszeichnung">
-      <defs>
-        <pattern id="bpgrid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#c8ad80" strokeOpacity=".07" /></pattern>
-      </defs>
-      <rect x="-30" y="40" width="470" height="480" fill="url(#bpgrid)" />
-      {[...PANELS].map((p, k) => ({ p, k })).reverse().map(({ p, k }) => {
-        const on = k === a, y = Y0 + k * GAP
-        return (
-          <g key={p.id} className={'bp-plate' + (on ? ' on' : '')} style={{ transform: `translate(${CX}px, ${y - (on ? 22 : 0)}px)` }}>
-            <g transform={ISO}>
-              <rect x="-120" y="-55" width="240" height="110" rx="4" className="bp-top" />
-              <rect x="-120" y="-55" width="240" height="110" rx="4" className="bp-edge" />
-              <g transform="translate(-100 -30) scale(1 .9)" opacity={on ? 1 : .55}><g className="bp-art"><Art id={p.id} /></g></g>
-            </g>
-          </g>
-        )
-      })}
-      {PANELS.map((p, k) => {
-        const on = k === a, y = Y0 + k * GAP - (on ? 22 : 0)
-        return (
-          <g key={p.id} className={'bp-lab' + (on ? ' on' : '')} style={{ transform: `translateY(${y}px)` }}>
-            <path d="M162 0H186" className="bp-lead" />
-            <circle cx="150" cy="0" r="10" />
-            <text x="150" y="4" textAnchor="middle" className="bp-n">{k + 1}</text>
-            <text x="130" y="4" textAnchor="end" className="bp-t">{p.label}</text>
-          </g>
-        )
-      })}
-    </svg>
-  )
-}
-
 export default function ReportStack() {
   const box = useRef(null)
   const [flat, setFlat] = useState(false)
@@ -124,7 +87,19 @@ export default function ReportStack() {
           </div>
           <div className="rp-stage">
             <p className="rp-num" key={a}><b>{PANELS[a].small}</b><span>{PANELS[a].label}</span></p>
-            <div className="rp-scene"><Blueprint a={a} /></div>
+            <div className="rp-scene" aria-hidden="true">
+              <div className="rp-sheets">
+                {PANELS.map((p, k) => (
+                  <div key={p.id} className={'rp-sheet ' + (k < a ? 'gone' : k === a ? 'on' : 'under')} style={{ '--z': (N - 1 - k) * 22, '--d': Math.abs(k - a) }}>
+                    <div className="rp-sh-top"><small>{p.small}</small><span>{p.label}</span></div>
+                    <svg viewBox="0 0 200 64" className="rp-art"><Art id={p.id} /></svg>
+                    <i /><i /><i className="s" />
+                    <svg viewBox="0 0 200 64" className="rp-art b"><Art id={PANELS[(k + 2) % N].id} /></svg>
+                    <i /><i className="s" />
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="rp-card" role="region" aria-live="polite" aria-label={'Abschnitt ' + PANELS[a].label} key={PANELS[a].id}>
               <small className="rp-sec">{`Abschnitt ${PANELS[a].small} von 0${N}`}</small>
               {PANELS[a].render()}
