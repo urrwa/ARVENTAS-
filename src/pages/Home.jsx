@@ -5,7 +5,6 @@ import HomeRio from '../components/HomeRio.jsx'
 import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
-import OwnerShowcase from '../components/OwnerShowcase.jsx'
 import StrengthStack from '../components/StrengthStack.jsx'
 import PropertyDashboard from '../components/PropertyDashboard.jsx'
 import Brand from '../components/Brand.jsx'
@@ -136,17 +135,7 @@ export default function Home() {
       </section>
 
       {/* 06 – Eigentümer */}
-      <section className="own-sec" aria-labelledby="h-own">
-        <OwnerShowcase items={[
-          { t: 'Wert verstehen.', img: '/media/p/bw.step.0.webp' },
-          { t: 'Optionen prüfen.', img: '/media/p/bw.area.0.webp' },
-          { t: 'Diskret vermarkten.', img: '/media/p/bw.res.2.webp' },
-        ]}>
-          <header className="sec-head"><p className="eyebrow">Für Eigentümer</p><h2 id="h-own" className="h2">Kein öffentliches Schaufenster.</h2><p className="lead">Wert, Potenziale und Verkaufswege klären – mit einem persönlichen Ansprechpartner.</p></header>
-          <div className="btn-row"><Btn to="/immobilie-verkaufen#anfrage">Objektprüfung anfragen</Btn></div>
-        </OwnerShowcase>
-        <p className="small muted own-note">Beispielbilder, keine Objekte von <Brand />. Es werden keine vertraulichen Adressen gezeigt.</p>
-      </section>
+      {/* Für Eigentümer: entfällt, weil Zwei Wege und Ablauf den Eigentümer schon abdecken */}
 
       {/* 07 – Investoren und Matching */}
       <section className="sec dark ink wide-sec" aria-labelledby="h-match">
