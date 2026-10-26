@@ -16,16 +16,37 @@ const QA = {
 }
 
 const N = PANELS.length
+const STAGES = N + 1 // 0 = geschlossener Bericht, 1..N = aufgeschlagene Kapitel
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v))
 
-// Beim Scrollen wechseln die Seiten des Berichts: Die vorderste Seite gleitet weg, die nächste rückt nach vorn; links ändern sich Kapitel, Frage und Antwort.
-// Schmale Bildschirme und reduzierte Bewegung: ruhige Ansicht ohne Scroll-Bühne, Kapitel per Klick.
+const QPage = ({ k }) => {
+  const p = PANELS[k]
+  const [q, ans] = QA[p.id]
+  return (
+    <div className="bk-q">
+      <small>Frage</small>
+      <b>{p.small}</b>
+      <h3>{q}</h3>
+      <p>{ans}</p>
+      <em>{p.label}</em>
+    </div>
+  )
+}
+const CPage = ({ k }) => (
+  <div className="bk-c">
+    <small className="rp-sec">{`Objektreport · ${PANELS[k].small} ${PANELS[k].label}`}</small>
+    {PANELS[k].render()}
+  </div>
+)
+
+// Der Bericht blättert sich beim Scrollen auf: links die Frage des Kapitels, rechts die Seite mit der Antwort.
+// Schmale Bildschirme und reduzierte Bewegung: alle Kapitel untereinander.
 export default function ReportStack() {
   const box = useRef(null)
   const [flat, setFlat] = useState(false)
   const [a, setA] = useState(0)
   useEffect(() => {
-    const mq = matchMedia('(max-width: 860px), (prefers-reduced-motion: reduce)')
+    const mq = matchMedia('(max-width: 900px), (prefers-reduced-motion: reduce)')
     const sync = () => setFlat(mq.matches)
     sync(); mq.addEventListener('change', sync)
     return () => mq.removeEventListener('change', sync)
@@ -39,7 +60,7 @@ export default function ReportStack() {
       if (!el) return
       const r = el.getBoundingClientRect()
       const t = clamp(-r.top / Math.max(1, el.offsetHeight - innerHeight), 0, 0.9999)
-      setA(Math.floor(t * N))
+      setA(Math.floor(t * STAGES))
     }
     const on = () => { if (!raf) raf = requestAnimationFrame(tick) }
     tick()
@@ -47,47 +68,59 @@ export default function ReportStack() {
     return () => { removeEventListener('scroll', on); removeEventListener('resize', on); cancelAnimationFrame(raf) }
   }, [flat])
   const jump = (k) => {
-    if (flat) { setA(k); return }
     const el = box.current
     if (!el) return
     const top = el.getBoundingClientRect().top + scrollY
-    scrollTo({ top: top + (el.offsetHeight - innerHeight) * ((k + 0.5) / N), behavior: 'smooth' })
+    scrollTo({ top: top + (el.offsetHeight - innerHeight) * ((k + 0.5) / STAGES), behavior: 'smooth' })
   }
-  const [q, ans] = QA[PANELS[a].id]
+  const head = (
+    <header className="bk-head">
+      <div>
+        <p className="eyebrow rv">Objektreport</p>
+        <h2 id="h-rep" className="h2 rv">Ein klares Bild.</h2>
+        <p className="lead rv">Datenbasiert analysiert. Persönlich geprüft.</p>
+      </div>
+      <div className="bk-cta">
+        <div className="btn-row">
+          <Btn to="/objektreport#muster" variant="line">Muster ansehen</Btn>
+          <Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn>
+        </div>
+        <p className="small rp-note">Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen. Muster, keine Objektbewertung.</p>
+      </div>
+    </header>
+  )
+  if (flat) {
+    return (
+      <div className="wrap">
+        {head}
+        <div className="bk-flat">
+          {PANELS.map((p, k) => (<div key={p.id} className="bk-flat-i"><QPage k={k} /><CPage k={k} /></div>))}
+        </div>
+      </div>
+    )
+  }
   return (
-    <div className={'rps' + (flat ? ' flat' : '')} ref={box}>
-      <div className="rps-stick">
-        <div className="rps-bg" aria-hidden="true"><img src="/media/p/report-desk.webp" alt="" loading="lazy" /></div>
-        <div className="wrap rps-in">
-          <div className="rps-left">
-            <header className="sec-head rp-head">
-              <p className="eyebrow rv">Objektreport</p>
-              <h2 id="h-rep" className="h2 rv">Ein klares Bild.</h2>
-              <p className="lead rv">Datenbasiert analysiert. Persönlich geprüft.</p>
-            </header>
-            <ol className="rpx-list" aria-label="Analyseebenen">
-              {PANELS.map((p, k) => (
-                <li key={p.id}><button type="button" className={k === a ? 'on' : ''} aria-current={k === a ? 'true' : undefined} onClick={() => jump(k)}><small>{p.small}</small><span>{p.label}</span></button></li>
-              ))}
-            </ol>
-            <div className="rpx-qa" key={a} aria-live="polite">
-              <p className="rpx-q">{q}</p>
-              <p className="rpx-a">{ans}</p>
-            </div>
-            <div className="btn-row">
-              <Btn to="/objektreport#muster" variant="line">Muster ansehen</Btn>
-              <Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn>
-            </div>
-            <p className="small rp-note">Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen. Muster, keine Objektbewertung.</p>
-          </div>
-          <div className="rps-pages" role="region" aria-live="polite" aria-label={'Abschnitt ' + PANELS[a].label}>
-            {PANELS.map((p, k) => (
-              <article key={p.id} className={'rps-page ' + (k < a ? 'gone' : k === a ? 'on' : 'next')} style={{ '--o': Math.max(0, k - a) }} aria-hidden={k === a ? undefined : 'true'}>
-                <small className="rp-sec">{`Objektreport · ${p.small} ${p.label}`}</small>
-                {p.render()}
-              </article>
+    <div className="bk" ref={box}>
+      <div className="bk-stick">
+        <div className="wrap bk-in">
+          {head}
+          <div className={'bk-book' + (a === 0 ? ' closed' : '')} role="region" aria-live="polite" aria-label={a === 0 ? 'Objektreport, geschlossen' : 'Kapitel ' + PANELS[a - 1].label}>
+            {Array.from({ length: N + 1 }, (_, i) => (
+              <div key={i} className={'bk-leaf' + (i < a ? ' turned' : '')} style={{ zIndex: i < a ? i + 1 : N + 1 - i }}>
+                <div className="bk-face front">
+                  {i === 0 ? (
+                    <div className="bk-cover"><img src="/media/arventas-logo.png" alt="" /><b>Objektreport</b><span>Muster</span></div>
+                  ) : <CPage k={i - 1} />}
+                </div>
+                <div className="bk-face back">{i < N ? <QPage k={i} /> : null}</div>
+              </div>
             ))}
           </div>
+          <ol className="bk-steps" aria-label="Kapitel">
+            {PANELS.map((p, k) => (
+              <li key={p.id}><button type="button" className={a === k + 1 ? 'on' : ''} onClick={() => jump(k + 1)}><small>{p.small}</small><span>{p.label}</span></button></li>
+            ))}
+          </ol>
         </div>
       </div>
     </div>
