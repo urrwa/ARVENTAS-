@@ -23,41 +23,14 @@ const Art = ({ id }) => {
   }
 }
 
-// Technische Explosionszeichnung des Berichts: sechs Ebenen als Platten im Isometrie-Raster, die aktive hebt sich ab und wird beschriftet.
-const ISO = 'matrix(.675 .39 -.675 .39 0 0)'
-function Blueprint({ a }) {
-  const CX = 300, Y0 = 108, GAP = 64
-  return (
-    <svg className="rp-bp" viewBox="-30 40 470 480" role="img" aria-label="Sechs Analyseebenen als schematische Explosionszeichnung">
-      <defs>
-        <pattern id="bpgrid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#c8ad80" strokeOpacity=".07" /></pattern>
-      </defs>
-      <rect x="-30" y="40" width="470" height="480" fill="url(#bpgrid)" />
-      {[...PANELS].map((p, k) => ({ p, k })).reverse().map(({ p, k }) => {
-        const on = k === a, y = Y0 + k * GAP
-        return (
-          <g key={p.id} className={'bp-plate' + (on ? ' on' : '')} style={{ transform: `translate(${CX}px, ${y - (on ? 22 : 0)}px)` }}>
-            <g transform={ISO}>
-              <rect x="-120" y="-55" width="240" height="110" rx="4" className="bp-top" />
-              <rect x="-120" y="-55" width="240" height="110" rx="4" className="bp-edge" />
-              <g transform="translate(-100 -30) scale(1 .9)" opacity={on ? 1 : .55}><g className="bp-art"><Art id={p.id} /></g></g>
-            </g>
-          </g>
-        )
-      })}
-      {PANELS.map((p, k) => {
-        const on = k === a, y = Y0 + k * GAP - (on ? 22 : 0)
-        return (
-          <g key={p.id} className={'bp-lab' + (on ? ' on' : '')} style={{ transform: `translateY(${y}px)` }}>
-            <path d="M162 0H186" className="bp-lead" />
-            <circle cx="150" cy="0" r="10" />
-            <text x="150" y="4" textAnchor="middle" className="bp-n">{k + 1}</text>
-            <text x="130" y="4" textAnchor="end" className="bp-t">{p.label}</text>
-          </g>
-        )
-      })}
-    </svg>
-  )
+// Jede Ebene beantwortet eine einfache Frage; die Seite rechts zeigt, wie die Antwort im Report aussieht.
+const QA = {
+  wert: ['Was ist die Immobilie ungefähr wert?', 'Mehrere Bewertungsverfahren nebeneinander, als Spanne und nicht als Einzelzahl.'],
+  standort: ['Wie ist der Standort einzuordnen?', 'Lage, Umfeld und Anbindung verständlich zusammengefasst.'],
+  potenzial: ['Was wäre möglich?', 'Modernisierung, Ausbau oder Umnutzung, mit Chancen und Grenzen.'],
+  wirtschaft: ['Rechnet sich das Objekt?', 'Verschiedene Szenarien im Vergleich, ohne Renditezusage.'],
+  hinweise: ['Was sollte vor einer Entscheidung geprüft werden?', 'Offene Punkte und Hinweise, nach Wichtigkeit geordnet.'],
+  nachfrage: ['Wer könnte sich dafür interessieren?', 'Einschätzung, welche Interessentengruppen zum Objekt passen.'],
 }
 
 export default function ReportStack() {
@@ -122,12 +95,18 @@ export default function ReportStack() {
             </ol>
             {cta}
           </div>
-          <div className="rp-stage">
-            <p className="rp-num" key={a}><b>{PANELS[a].small}</b><span>{PANELS[a].label}</span></p>
-            <div className="rp-scene"><Blueprint a={a} /></div>
-            <div className="rp-card" role="region" aria-live="polite" aria-label={'Abschnitt ' + PANELS[a].label} key={PANELS[a].id}>
-              <small className="rp-sec">{`Abschnitt ${PANELS[a].small} von 0${N}`}</small>
-              {PANELS[a].render()}
+          <div className="rp-stage rp-qa">
+            <div className="rp-info" key={'q' + a}>
+              <p className="rp-step"><span>Frage</span><b>{a + 1} / {N}</b></p>
+              <h3 className="rp-q">{QA[PANELS[a].id][0]}</h3>
+              <p className="rp-a">{QA[PANELS[a].id][1]}</p>
+              <div className="rp-dots" aria-hidden="true">{PANELS.map((p, k) => <i key={p.id} className={k === a ? 'on' : ''} />)}</div>
+            </div>
+            <div className="rp-page" key={PANELS[a].id}>
+              <div className="rp-card" role="region" aria-live="polite" aria-label={'Abschnitt ' + PANELS[a].label}>
+                <small className="rp-sec">{`Objektreport · ${PANELS[a].small} ${PANELS[a].label}`}</small>
+                {PANELS[a].render()}
+              </div>
             </div>
             <p className="rp-cap">Sechs Ebenen der Analyse, einzeln bewertet. Illustratives Muster – keine Objektbewertung.</p>
           </div>

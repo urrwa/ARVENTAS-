@@ -4010,3 +4010,29 @@ body .btn.btn-line:hover::after { animation: arrowSwap 620ms cubic-bezier(.22, 1
 .rp-bp { left: 2%; top: 14%; width: 60%; height: 80%; }
 .rp-bp { left: 2%; width: 55%; }
 .rp-bp { left: -1%; width: 52%; }
+
+/* Objektreport verständlich: links die Frage, rechts die Report-Seite mit der Antwort */
+.rp-qa { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: clamp(20px, 3vw, 44px); align-items: center; padding: clamp(24px, 3vw, 40px); }
+.rp-qa .rp-scene, .rp-qa .rp-num { display: none; }
+.rp-info { animation: rpIn 500ms var(--ease) both; }
+.rp-step { margin: 0 0 18px; display: flex; align-items: baseline; gap: 12px; font: 700 11.5px var(--font-body); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.rp-step b { font: 400 clamp(34px, 3.6vw, 54px)/1 var(--font-head); letter-spacing: 0; color: var(--ivory); }
+.rp-q { margin: 0 0 14px; font: 400 clamp(26px, 2.6vw, 40px)/1.08 var(--font-head); color: var(--ivory); }
+.rp-a { margin: 0 0 24px; font-size: 14.5px; line-height: 1.55; color: rgba(233, 228, 216, .72); }
+.rp-dots { display: flex; gap: 8px; }
+.rp-dots i { width: 22px; height: 3px; border-radius: 2px; background: rgba(233, 217, 188, .22); transition: background 400ms, width 400ms; }
+.rp-dots i.on { width: 38px; background: var(--gold); }
+.rp-page { position: relative; animation: rpIn 500ms var(--ease) both; }
+.rp-page::before, .rp-page::after { content: ""; position: absolute; inset: 0; border-radius: 14px; background: #e9e2d3; z-index: 0; }
+.rp-page::before { transform: translate(14px, 12px) rotate(1.4deg); opacity: .55; }
+.rp-page::after { transform: translate(7px, 6px) rotate(.7deg); opacity: .8; }
+.rp-qa .rp-card { position: relative; z-index: 1; right: auto; bottom: auto; width: 100%; max-height: none; padding: 26px 28px 20px; }
+.rp-qa .rp-cap { left: 28px; right: 28px; max-width: none; bottom: 12px; }
+@media (max-width: 1100px) { .rp-qa { grid-template-columns: 1fr; } }
+.rp-qa { grid-template-columns: minmax(0, 3.6fr) minmax(0, 6.4fr); }
+.rp-qa .rp-a { text-transform: none; letter-spacing: .01em; font-weight: 400; font-size: 15px; }
+.rp-qa .rp-card { padding: 32px 34px 24px; }
+.rp-qa .rp-card h3 { font-size: clamp(26px, 2.4vw, 36px); margin-bottom: 12px; }
+.rp-qa .rp-card p { font-size: 14.5px; }
+.rp-qa .rp-card .rep-row { padding: 12px 0; font-size: 13.5px; }
+.rp-qa .rp-card p.rep-note { font-size: 12px; color: #5a6676; }
