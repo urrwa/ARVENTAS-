@@ -16,3 +16,6 @@ Es werden keine erfundenen Zahlen, Kundenzitate, Namen oder Kontaktdaten angezei
 
 ## Ablauf-Bilder (generiert)
 Die elf Bilder `ablauf-*.webp` in `public/media/p/` wurden mit Nano Banana 2 (Higgsfield) erzeugt: Architektur und Innenräume, ohne Personen, Text oder Logos. Im Bildnachweis als generierte Bilder angeben; kein Hinweis auf dem Bild selbst.
+
+## Startseiten-Kamerafahrt (generiert)
+`rio-scrub.mp4`, `rio-scrub-sm.mp4` und `rio-poster.webp` entstanden mit Higgsfield (Nano Banana 2 für Start- und Endbild, Seedance 2.0 Mini für die Fahrt). Ohne Personen, Text oder Logos. Alle Bilder sind keyframe-dicht kodiert, damit sie sich per Scrollen vor und zurück abspielen lassen. Im Bildnachweis als generiert angeben.

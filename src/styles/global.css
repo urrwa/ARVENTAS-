@@ -3359,3 +3359,9 @@ body { background: #050d18; }
 .rh-pane.r { background: linear-gradient(270deg, rgba(4, 11, 20, .55), rgba(7, 19, 33, .28)); }
 .rh-pane::before { background: repeating-linear-gradient(90deg, transparent 0, transparent calc(33.33% - 8px), rgba(4, 11, 20, .92) calc(33.33% - 8px), rgba(4, 11, 20, .92) 33.33%); }
 .rh-pane::after { background: rgba(4, 11, 20, .92); }
+/* HomeRio als Kamerafahrt: Film statt Foto und Rahmen */
+.rh.hf { height: 380vh; }
+.rh-photo { transform: none; background: var(--marine); }
+.rh-frame, .rh-pane { display: none; }
+@media (max-width: 860px) { .rh.hf { height: 320vh; } }
+@media (prefers-reduced-motion: reduce) { .rh.hf { height: 100svh; } }

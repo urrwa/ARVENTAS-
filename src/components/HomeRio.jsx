@@ -2,31 +2,47 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
 
-// Startseiten-Kopf: Ein ruhiges Foto hinter einem Fensterrahmen. Beim Scrollen gleitet der Rahmen auseinander,
-// das Foto öffnet sich zur ganzen Stadt und die beiden Zeilen ziehen nach links und rechts weg (--t: 0 bis 1).
+// Startseiten-Kopf: Die Kamera fährt durch die Glasfront eines Büros hinaus auf die Stadt.
+// Der Film wird vom Scrollen gesteuert (--p: 0 bis 1); die beiden Zeilen ziehen dabei nach links und rechts weg (--t).
 export default function HomeRio() {
-  const el = useRef(null)
+  const box = useRef(null), vid = useRef(null)
   useEffect(() => {
-    const box = el.current
-    if (!box) return
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { box.style.setProperty('--t', 1); return }
-    let raf = 0
-    const run = () => {
-      raf = 0
-      const span = Math.max(1, box.offsetHeight - innerHeight)
-      box.style.setProperty('--t', Math.min(1, Math.max(0, scrollY / (span * 0.7))).toFixed(3))
+    const el = box.current, v = vid.current
+    if (!el || !v) return
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches
+    const small = innerWidth < 860
+    v.src = small ? '/media/rio-scrub-sm.mp4' : '/media/rio-scrub.mp4'
+    let target = 0, cur = 0, raf = 0, last = -1
+    const ease = (x) => x * x * (3 - 2 * x)
+    const read = () => {
+      const span = Math.max(1, el.offsetHeight - innerHeight)
+      target = Math.min(1, Math.max(0, scrollY / (span * 0.92)))
     }
-    const on = () => { if (!raf) raf = requestAnimationFrame(run) }
-    run()
+    const draw = () => {
+      raf = 0
+      cur += (target - cur) * 0.14
+      if (Math.abs(target - cur) < 0.0005) cur = target
+      const t = ease(Math.min(1, cur / 0.45))
+      el.style.setProperty('--t', t.toFixed(3))
+      if (v.duration && Math.abs(cur - last) > 0.0005) {
+        last = cur
+        const tm = cur * v.duration
+        if (v.fastSeek) v.fastSeek(tm); else v.currentTime = tm
+      }
+      if (cur !== target) raf = requestAnimationFrame(draw)
+    }
+    const on = () => { read(); if (!raf) raf = requestAnimationFrame(draw) }
+    const meta = () => { if (calm) { v.currentTime = v.duration; el.style.setProperty('--t', 1) } else on() }
+    v.addEventListener('loadedmetadata', meta)
+    read(); if (!calm) { cur = target; el.style.setProperty('--t', 0) }
     addEventListener('scroll', on, { passive: true }); addEventListener('resize', on)
-    return () => { removeEventListener('scroll', on); removeEventListener('resize', on); cancelAnimationFrame(raf) }
+    return () => { v.removeEventListener('loadedmetadata', meta); removeEventListener('scroll', on); removeEventListener('resize', on); cancelAnimationFrame(raf) }
   }, [])
   return (
-    <section className="hf rh" ref={el} aria-label="Einführung">
+    <section className="hf rh" ref={box} aria-label="Einführung">
       <div className="rh-stick">
-        <img className="rh-photo" src="/media/rio-stadt.webp" srcSet="/media/rio-stadt-sm.webp 1200w, /media/rio-stadt.webp 2400w" sizes="100vw" alt="Blick über eine deutsche Stadt in der Abenddämmerung (Illustrationsbild)" fetchpriority="high" decoding="async" />
+        <video ref={vid} className="rh-photo" poster="/media/rio-poster.webp" muted playsInline preload="auto" aria-hidden="true" />
         <div className="rh-shade" />
-        <div className="rh-frame" aria-hidden="true"><i className="rh-pane l" /><i className="rh-pane r" /></div>
         <p className="rh-eb">Off-Market Immobilien · Deutschlandweit</p>
         <p className="rh-sub">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet.</p>
         <h1 className="rh-h" aria-label="Immobilien mit Potenzial. Zugang mit Vorsprung.">
