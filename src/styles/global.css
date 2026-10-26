@@ -3549,3 +3549,9 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .kx-go::before { background: var(--gold); }
 .kx-list a:hover .kx-go::before, .kx-list a:focus-visible .kx-go::before { transform: scale(1.05); }
 .kx-list a:hover .kx-go::after, .kx-list a:focus-visible .kx-go::after { transform: none; }
+
+/* Navigation mittig zwischen Logo und rechtem Block (gleiche Abstände links und rechts) */
+.hdr-in { grid-template-columns: auto 1fr auto; }
+.hdr .nav { position: static; transform: none; justify-self: center; }
+.hdr .logo { grid-column: 1; } .hdr-r { grid-column: 3; }
+@media (max-width: 1180px) { .hdr-in { grid-template-columns: 1fr auto; } .hdr-r { grid-column: 2; } }
