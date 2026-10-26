@@ -3891,3 +3891,15 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 .hdr-cta::before, .hdr:not(.clear) .hdr-cta::before { background: #e6cfa8; box-shadow: 0 0 0 0 rgba(230, 207, 168, .6); animation: liveDotSkin 1.8s ease-out infinite; }
 .sf-btn i, .sf-btn:hover i, .sf-btn:focus-visible i { background: #d4b48a; box-shadow: 0 0 0 0 rgba(212, 180, 138, .65); animation: liveDotSkin 1.8s ease-out infinite; }
 @keyframes liveDotSkin { 0% { box-shadow: 0 0 0 0 rgba(212, 180, 138, .65); opacity: 1; } 70% { box-shadow: 0 0 0 8px rgba(212, 180, 138, 0); opacity: .55; } 100% { box-shadow: 0 0 0 0 rgba(212, 180, 138, 0); opacity: 1; } }
+
+/* Gold-Schaltflächen als schlanker Textlink mit Pfeil und Linie (wie „Objektreport anfragen“ im Hero) */
+body .btn.btn-gold, body .btn.btn-gold:has(.arr), body .btn.btn-gold:hover, body .btn.btn-gold:has(.arr):hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn-gold, .door:hover .btn.btn-gold:has(.arr) {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 0; height: auto; padding: 0 0 6px; border: 0; border-bottom: 1px solid currentColor; border-radius: 0; background: transparent; color: var(--ivory); overflow: visible; isolation: auto;
+  font: 700 13px/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; transition: color 300ms ease;
+}
+body .btn.btn-gold::before, body .btn.btn-gold:has(.arr)::before { content: "↗"; position: static; inset: auto; width: auto; height: auto; margin: 0; border-radius: 0; background: none; transform: none; z-index: auto; order: -1; font-size: 1em; }
+body .btn.btn-gold .arr { display: none; }
+body .btn.btn-gold:hover, body .btn.btn-gold:focus-visible, .door:hover .btn.btn-gold { color: var(--gold); background: transparent; }
+body .btn.btn-gold::after { display: none; }
+.il-cta .btn.btn-gold { font-size: 14px; }
+.sec:not(.dark) .btn.btn-gold, .sec.light .btn.btn-gold { color: var(--ink, #071321); }
