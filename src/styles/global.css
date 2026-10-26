@@ -3621,3 +3621,11 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .hv { background: transparent; }
 .hv-vid, .hv-shade { -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%); mask-image: linear-gradient(180deg, #000 72%, transparent 100%); }
 .hv-shade { background: linear-gradient(180deg, rgba(7, 19, 33, .45) 0%, rgba(7, 19, 33, .1) 30%, rgba(7, 19, 33, .5) 72%, rgba(7, 19, 33, .6) 100%), linear-gradient(90deg, rgba(7, 19, 33, .55) 0%, rgba(7, 19, 33, 0) 60%); }
+
+/* Footer-Wortmarke als Linienbuchstaben nach dem Logo (statt Serifenschrift) */
+.sf-mark { background: none; -webkit-background-clip: border-box; background-clip: border-box; animation: none !important; display: flex; justify-content: space-between; align-items: flex-end; gap: clamp(6px, 1.6vw, 28px); width: min(100%, 1680px); margin: 0 auto; padding-inline: var(--gut); box-sizing: border-box; font-size: 0; line-height: 0; margin-bottom: 0; }
+.sf-mark span { flex: 1 1 0; display: block; }
+.sf-mark svg { display: block; width: 100%; height: auto; overflow: visible; fill: none; stroke: rgba(233, 217, 188, .16); stroke-width: 13; stroke-linejoin: miter; stroke-linecap: butt; }
+.sf-mark svg.gS { stroke-linecap: butt; stroke-linejoin: round; }
+.sf-mark svg.gE, .sf-mark svg.gT, .sf-mark svg.gN, .sf-mark svg.gR { stroke-linejoin: miter; }
+.sf-mark { margin-bottom: -1.5vw; }

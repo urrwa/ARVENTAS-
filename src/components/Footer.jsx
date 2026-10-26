@@ -4,6 +4,16 @@ import { useConsent } from './Consent.jsx'
 
 // Fuß wie in der Landingpage: links die Einladung zum Gespräch, rechts Navigation und Rechtliches, unten die Leiste mit Pfeil nach oben
 // und eine sehr große, blasse Wortmarke, die unten angeschnitten ist.
+// Wortmarke aus den Buchstabenformen des Logos (weit gesetzte, geometrische Versalien; das A ohne Querstrich).
+const GLYPH = {
+  A: 'M2 100 L40 0 L78 100',
+  R: 'M8 100 V0 H46 C76 0 76 50 46 50 H8 M44 50 L76 100',
+  V: 'M2 0 L40 100 L78 0',
+  E: 'M72 0 H8 V100 H72 M8 50 H62',
+  N: 'M8 100 V0 L72 100 V0',
+  T: 'M0 0 H80 M40 0 V100',
+  S: 'M72 18 C60 -4 10 -4 10 26 C10 54 72 46 72 76 C72 106 20 104 6 80',
+}
 export default function Footer() {
   const { openSettings } = useConsent()
   const mark = useRef(null)
@@ -48,7 +58,7 @@ export default function Footer() {
           <button type="button" className="sf-up" aria-label="Nach oben" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>↑</button>
         </div>
       </div>
-      <div className="sf-mark" ref={mark} aria-hidden="true">{[...'ARVENTAS'].map((c, i) => <span key={i} style={{ '--i': i }}>{c}</span>)}</div>
+      <div className="sf-mark" ref={mark} aria-hidden="true">{[...'ARVENTAS'].map((c, i) => <span key={i} style={{ '--i': i }}><svg viewBox="-9 -9 98 118" className={'g' + c}><path d={GLYPH[c]} /></svg></span>)}</div>
     </footer>
   )
 }
