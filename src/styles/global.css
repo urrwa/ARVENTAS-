@@ -3644,8 +3644,6 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .gm-go:hover i, .gm-go:focus-visible i { background: var(--gold); border-color: var(--gold); color: var(--marine); }
 
 /* Unterseiten: Kopfbild bleibt nicht mehr hinter dem Inhalt stehen (der Inhalt ist jetzt durchsichtig über dem gemeinsamen Hintergrund) */
-.phero.has-img { position: relative; top: auto; z-index: auto; }
-.cover-over { background: transparent; }
 
 /* Unterseiten mit angehefteten Szenen: Abschnitte decken die Szene wieder ab, mit dem gleichen festen Verlauf wie der Hintergrund (keine sichtbare Kante) */
 :root { --cover-bg: radial-gradient(120% 70% at 78% -8%, rgba(20, 53, 80, .85) 0%, rgba(12, 32, 54, .35) 38%, transparent 64%), radial-gradient(90% 70% at 0% 100%, rgba(12, 32, 54, .9) 0%, transparent 60%), linear-gradient(180deg, #071321 0%, #06111f 52%, #040b14 100%); }
