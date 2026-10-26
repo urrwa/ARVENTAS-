@@ -3887,3 +3887,7 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 /* Gespräch beginnen: grüner Live-Punkt wie beim Kontakt-Button in der Kopfzeile */
 .sf-btn i { width: 8px; height: 8px; background: #3ddc84; box-shadow: 0 0 0 0 rgba(61, 220, 132, .6); animation: liveDot 1.8s ease-out infinite; }
 .sf-btn:hover i, .sf-btn:focus-visible i { background: #3ddc84; transform: none; animation: liveDot 1.8s ease-out infinite; }
+/* Live-Punkt in Hautton (Champagner) statt Grün */
+.hdr-cta::before, .hdr:not(.clear) .hdr-cta::before { background: #e6cfa8; box-shadow: 0 0 0 0 rgba(230, 207, 168, .6); animation: liveDotSkin 1.8s ease-out infinite; }
+.sf-btn i, .sf-btn:hover i, .sf-btn:focus-visible i { background: #d4b48a; box-shadow: 0 0 0 0 rgba(212, 180, 138, .65); animation: liveDotSkin 1.8s ease-out infinite; }
+@keyframes liveDotSkin { 0% { box-shadow: 0 0 0 0 rgba(212, 180, 138, .65); opacity: 1; } 70% { box-shadow: 0 0 0 8px rgba(212, 180, 138, 0); opacity: .55; } 100% { box-shadow: 0 0 0 0 rgba(212, 180, 138, 0); opacity: 1; } }
