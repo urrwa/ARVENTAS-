@@ -3389,3 +3389,14 @@ body { background: #050d18; }
 .rh-img { transform: none !important; opacity: 1 !important; background: var(--marine); }
 .rh.hf { height: 380vh; }
 .rh-cv { background: var(--marine) url("/media/fahrt-innen.webp") center / cover no-repeat; }
+
+/* Footer-Button: Marine-Fläche fährt von links ein, Punkt pulsiert, beim Überfahren wächst er zum Pfeil-Kreis */
+.sf-btn { position: relative; overflow: hidden; isolation: isolate; transition: color 420ms var(--ease), box-shadow 420ms var(--ease), transform 420ms var(--ease); }
+.sf-btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: #0a1a2c; border-radius: inherit; transform: translateX(-101%); transition: transform 520ms var(--ease); }
+.sf-btn i { position: relative; flex: none; transition: transform 420ms var(--ease), background 420ms var(--ease); animation: sf-dot 2.4s ease-in-out infinite; }
+.sf-btn:hover, .sf-btn:focus-visible { background: #eadfc6; color: var(--ivory); box-shadow: inset 0 0 0 1px rgba(233, 217, 188, .5), 0 8px 28px rgba(0, 0, 0, .25); }
+.sf-btn:hover::before, .sf-btn:focus-visible::before { transform: none; }
+.sf-btn:hover i, .sf-btn:focus-visible i { background: var(--gold); transform: scale(1.5); animation: none; }
+.sf-btn:active { transform: scale(.98); }
+@keyframes sf-dot { 0%, 100% { box-shadow: 0 0 0 0 rgba(7, 19, 33, .35); } 50% { box-shadow: 0 0 0 7px rgba(7, 19, 33, 0); } }
+@media (prefers-reduced-motion: reduce) { .sf-btn i { animation: none; } .sf-btn::before { transition: none; } }
