@@ -16,16 +16,14 @@ const ICON = {
 const TI = ['M5 20V8l7-4 7 4v12zM9 20v-5h6v5', 'M4 20V10l5-3v13zM9 20V6l6-2v16zM15 20v-8l5 2v6z', 'M3 20V9h8v11zM13 20V4h8v16z', 'M3 18l5-8 4 5 3-4 6 7z']
 
 export default function InvestorLaptop() {
-  const [i, setI] = useState(0)
+  const [i] = useState(0)
   const [manual, setManual] = useState(null)
-  const hold = useRef(false), live = useRef(false), root = useRef(null)
+  const live = useRef(false), root = useRef(null)
   useEffect(() => {
     const el = root.current
     const io = new IntersectionObserver(([e]) => { live.current = e.isIntersecting }, { threshold: 0.25 })
     io.observe(el)
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
-    const id = reduce ? 0 : setInterval(() => { if (live.current && !hold.current) { setManual(null); setI((v) => (v + 1) % REG.length) } }, 2600)
-    return () => { io.disconnect(); id && clearInterval(id) }
+    return () => io.disconnect()
   }, [])
   const m = manual || {}
   const regId = m.reg || REG[i]
@@ -36,18 +34,7 @@ export default function InvestorLaptop() {
   const to = `/investorenkreis?region=${encodeURIComponent(st.name)}&typ=${encodeURIComponent(TYPES[type] === 'Grundstück' ? 'Grundstück / Entwicklungsobjekt' : TYPES[type])}&budget=${encodeURIComponent(BUDGET[bud])}`
   return (
     <div className="il" ref={root}>
-      <div className="il-copy">
-        <p className="eyebrow">Für Investoren</p>
-        <h2 className="h2" id="h-match">Nicht jede Immobilie. Die richtige.</h2>
-        <p className="lead">Suchprofil und Immobilieninformationen sinnvoll zusammenführen.</p>
-        <ul className="il-feat">
-          {[['pin', 'Region', 'Gezielt nach Standorten.'], ['coins', 'Budget', 'Passende Investitionsspanne.'], ['house', 'Immobilientyp', 'Fokus auf das richtige Segment.']].map(([ic, t, d]) => (
-            <li key={t}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={ICON[ic]} /></svg><div><b>{t}</b><span>{d}</span></div></li>
-          ))}
-        </ul>
-        <Link to={to} className="btn btn-gold">Suchprofil erstellen <span className="arr" aria-hidden="true">→</span></Link>
-      </div>
-      <div className="il-dev" onMouseEnter={() => { hold.current = true }} onMouseLeave={() => { hold.current = false }}>
+      <div className="il-dev" >
         <div className="il-lap">
           <div className="il-scr">
             <div className="il-l">
@@ -78,6 +65,7 @@ export default function InvestorLaptop() {
           </div>
         </div>
         <div className="il-base" aria-hidden="true" />
+        <div className="il-cta"><Link to={to} className="btn btn-gold">Suchprofil erstellen <span className="arr" aria-hidden="true">→</span></Link></div>
       </div>
     </div>
   )

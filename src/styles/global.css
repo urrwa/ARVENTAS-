@@ -3811,3 +3811,11 @@ main:not(:has(.hv)) :is(.sec.dark, .cover-over, .ps) { background-color: #06111f
 .il-l { padding: 4% 5%; gap: 4px; justify-content: center; }
 .il-card i { min-height: 22px; }
 .il-card b { background: #bdb4a0; }
+/* Laptop ohne Begleittext, volle Breite, ohne Selbstlauf */
+.il { grid-template-columns: 1fr; }
+.il-dev { width: min(1180px, 100%); margin: 0 auto; }
+.il-lap { transform: none; }
+.il-base { transform: none; }
+.il-cta { display: flex; justify-content: center; margin-top: 36px; }
+.il-scr { aspect-ratio: 16 / 9.2; }
+@media (max-width: 1000px) { .il-scr { aspect-ratio: auto; min-height: 380px; } }
