@@ -4304,3 +4304,8 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
   #main { position: relative; z-index: 1; background: var(--cover-bg); background-color: #06111f; background-attachment: fixed; }
   .sf { position: sticky !important; bottom: 0; z-index: 0; }
 }
+@media (max-width: 900px) {
+  .bk-chips { grid-template-columns: 1fr 1fr; }
+  .bk-flat-i .bk-c { overflow: visible; }
+  .bk-pic { min-height: 180px; }
+}
