@@ -28,7 +28,7 @@ export default function HomeVideo() {
       </video>
       <div className="hv-shade" />
       <div className="hv-copy">
-        <h1 className="hv-h"><span>Arventas Immobilien</span><span>Kennen Deutschland.</span></h1>
+        <h1 className="hv-h"><span>Die richtige Immobilie.</span><span>Diskret vermittelt.</span></h1>
         <p className="hv-sub">Ausgewählte Immobilien. Fundierte Analysen. Persönlich begleitet, deutschlandweit.</p>
         <Link to="/immobilie-verkaufen#anfrage" className="hv-go"><span aria-hidden="true">↗</span> Objektreport anfragen</Link>
       </div>

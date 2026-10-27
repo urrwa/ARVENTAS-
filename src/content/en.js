@@ -1490,6 +1490,8 @@ export default {
  "Prüfpunkte": "Points to check",
  "Gepflegte Stadtvilla in der Abenddämmerung (Beispielbild)": "Well-kept city villa at dusk (sample image)",
  "Modernes Mehrfamilienhaus mit Natursteinfassade (Beispielbild)": "Modern apartment building with natural stone facade (sample image)",
+ "Die richtige Immobilie.": "The right property.",
+ "Diskret vermittelt.": "Discreetly brokered.",
  "Arventas Immobilien": "Arventas Real Estate",
  "Kennen Deutschland.": "We know Germany.",
  "Ausgewählte Region": "Selected region",

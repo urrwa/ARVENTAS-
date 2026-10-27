@@ -6,28 +6,28 @@ const p = (k) => `/media/p/${k}.webp`
 // ---- Startseite
 export const HOME = {
   pillars: ['home.pil.0', 'home.pil.1', 'home.pil.2', 'home.pil.3'].map(p), // "Strategisch / Datenbasiert / Vernetzt / Werteorientiert"
-  pillarsBg: p('u-buero-daemmerung'),                                       // Hintergrund hinter den Karten
+  pillarsBg: p('ablauf-luftbild'),                                       // Hintergrund hinter den Karten
   process: ['home.proc.0', 'home.proc.1', 'home.proc.2', 'home.proc.3', 'home.proc.4'].map(p), // Markt verstehen … Vermarktung & Entwicklung steuern
   system: 'u-modelle-tisch',                                                // Kachel "1 System"
   audience: ['aud.0', 'aud.1', 'u-weisse-wohnanlage', 'aud.3', 'u-lounge-fenster'].map(p), // Projektentwickler, Investoren, Gesellschaften, Eigentümer, Partner
   miniCard: p('home.mini'),                                                 // kleine Karte unten rechts im Kopf
   footer: p('u-eingang-stein'),                                             // Fußzeile (darf sich wiederholen)
-  cta: p('u-buero-sonnenuntergang'),
+  cta: p('ablauf-wohnhaus'),
 }
 
 // ---- Seitenköpfe und Abschlussbänder
 export const PAGES = {
-  leistungen: { hero: p('u-frankfurt-nacht'), cta: p('u-skyline-nacht') },
-  system: { hero: p('u-lounge-gespraech'), split: p('u-glasfassaden'), cta: p('ablauf-tuer') },
+  leistungen: { hero: p('ablauf-strasse'), cta: p('mfh-balkone') },
+  system: { hero: p('owner-situation'), split: p('hero-card-mfh'), cta: p('ablauf-tuer') },
   insights: { hero: p('sa.area.0'), cta: p('u-holzhaeuser') },
-  about: { hero: p('u-buero-tag'), studio: p('u-holzhaus-rechner'), dark: p('bw.res.2'), mv: p('sa.res.2'), cta: p('vm.res.0') },
+  about: { hero: p('home-unterlagen'), studio: p('u-holzhaus-rechner'), dark: p('bw.res.2'), mv: p('sa.res.2'), cta: p('vm.res.0') },
   kontakt: { hero: p('vm.area.3'), cta: p('bw.res.4') },
 }
 
 // ---- Leistungsseiten (je Bereich: Karte in der Liste, Kopf, Abschluss, dazu Fachgebiete / Ablauf / Ergebnis in Reihenfolge)
 export const SERVICE_IMG = {
   marktanalyse: {
-    card: p('u-luftbild'), hero: p('u-frankfurt-main'), cta: p('u-architekten-modelle'),
+    card: p('u-luftbild'), hero: p('ablauf-luftbild'), cta: p('u-architekten-modelle'),
     areas: ['ma.area.0', 'ma.area.1', 'ma.area.2', 'ma.area.3', 'ma.area.4'].map(p),
     steps: ['ma.step.0', 'ma.step.1', 'ma.step.2', 'ma.step.3'].map(p),
     results: ['ma.res.0', 'ma.res.1', 'ma.res.2', 'ma.res.3', 'ma.res.4'].map(p),

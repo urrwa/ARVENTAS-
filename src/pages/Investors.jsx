@@ -46,7 +46,7 @@ export default function InvestorsPage() {
           <div><SectionHead eyebrow="FAQ" title="Häufige Fragen" normal /><Faq items={INVESTOR_FAQ} /></div>
         </div>
       </section>
-      <CtaBand image="/media/p/u-buero-daemmerung.webp" />
+      <CtaBand image="/media/p/mfh-balkone.webp" />
     </>
   )
 }

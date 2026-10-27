@@ -85,7 +85,7 @@ export default function About() {
         </div>
       </section>
       </div>
-      <CtaBand image="/media/p/u-glasfassaden.webp" />
+      <CtaBand image="/media/p/hero-card-mfh.webp" />
     </>
   )
 }

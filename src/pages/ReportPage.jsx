@@ -57,7 +57,7 @@ export default function ReportPage() {
           <div className="btn-row"><Btn to="/immobilie-verkaufen#anfrage" variant="marine">Objektreport anfragen</Btn></div>
         </div>
       </section>
-      <CtaBand image="/media/p/u-buero-sonnenuntergang.webp" />
+      <CtaBand image="/media/p/ablauf-wohnhaus.webp" />
     </>
   )
 }
