@@ -39,10 +39,10 @@ const Ic = ({ n }) => <svg viewBox="0 0 24 24" aria-hidden="true"><path d={ICON[
 const VIS = {
   wert: { img: 'ablauf-wohnhaus', img2: 'ablauf-fassade', icon: 'scale', chips: [['scale', 'Vergleich'], ['coins', 'Ertrag'], ['house', 'Substanz']] },
   standort: { img: 'ablauf-luftbild', img2: 'ablauf-strasse', icon: 'pin', chips: [['pin', 'Mikrolage'], ['route', 'Anbindung'], ['trend', 'Entwicklung']] },
-  potenzial: { img: 'h-entwicklung', img2: 'ablauf-modell', icon: 'layers', chips: [['house', 'Bestand'], ['layers', 'Verdichtung'], ['swap', 'Nutzung']] },
+  potenzial: { img: 'u-baulucke', img2: 'di.step.4', icon: 'layers', chips: [['house', 'Bestand'], ['layers', 'Verdichtung'], ['swap', 'Nutzung']] },
   wirtschaft: { img: 'h-analyse', img2: 'ablauf-bibliothek', icon: 'chart', chips: [['chart', 'Basis'], ['trend', 'Chancen'], ['shield', 'Risiken']] },
-  hinweise: { img: 'ablauf-schreibtisch', img2: 'ablauf-fenster', icon: 'shield', chips: [['doc', 'Unterlagen'], ['wrench', 'Zustand'], ['scale', 'Recht']] },
-  nachfrage: { img: 'ablauf-strasse', img2: 'ablauf-eingang', icon: 'people', chips: [['people', 'Profile'], ['pin', 'Region'], ['coins', 'Budget']] },
+  hinweise: { img: 'home-unterlagen', img2: 'ablauf-schreibtisch', icon: 'shield', chips: [['doc', 'Unterlagen'], ['wrench', 'Zustand'], ['scale', 'Recht']] },
+  nachfrage: { img: 'investor-matching', img2: 'partner-fachleute', icon: 'people', chips: [['people', 'Profile'], ['pin', 'Region'], ['coins', 'Budget']] },
 }
 
 const QPage = ({ k }) => {
