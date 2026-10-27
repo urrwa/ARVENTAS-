@@ -38,7 +38,7 @@ const Ic = ({ n }) => <svg viewBox="0 0 24 24" aria-hidden="true"><path d={ICON[
 // Bild und Symbole je Kapitel (Beispielbilder, keine echten Objekte, keine Zahlen).
 const VIS = {
   wert: { img: 'ablauf-wohnhaus', img2: 'ablauf-fassade', icon: 'scale', chips: [['scale', 'Vergleich'], ['coins', 'Ertrag'], ['house', 'Substanz']] },
-  standort: { img: 'ablauf-luftbild', img2: 'ablauf-strasse', icon: 'pin', chips: [['pin', 'Mikrolage'], ['route', 'Anbindung'], ['trend', 'Entwicklung']] },
+  standort: { img: 'standort-muenchen', img2: 'ablauf-strasse', icon: 'pin', chips: [['pin', 'Mikrolage'], ['route', 'Anbindung'], ['trend', 'Entwicklung']] },
   potenzial: { img: 'u-baulucke', img2: 'di.step.4', icon: 'layers', chips: [['house', 'Bestand'], ['layers', 'Verdichtung'], ['swap', 'Nutzung']] },
   wirtschaft: { img: 'h-analyse', img2: 'ablauf-bibliothek', icon: 'chart', chips: [['chart', 'Basis'], ['trend', 'Chancen'], ['shield', 'Risiken']] },
   hinweise: { img: 'home-unterlagen', img2: 'ablauf-schreibtisch', icon: 'shield', chips: [['doc', 'Unterlagen'], ['wrench', 'Zustand'], ['scale', 'Recht']] },

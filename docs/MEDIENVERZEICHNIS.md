@@ -39,3 +39,4 @@ Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus
 - zugang-eigentuemer-haus: vom Nutzer bereitgestellt (Foto, Quelle/Lizenz pruefen)
 - investor-begleitung: KI-generiert; fachwerk-hof: vom Nutzer bereitgestellt, Lizenz pruefen (600px)
 - zugang-investor-altbau: vom Nutzer bereitgestellt (Foto, Berliner Altbau-Fassaden), Quelle/Lizenz pruefen
+- standort-muenchen: vom Nutzer bereitgestellt (Foto Muenchen Marienplatz, 500px), Lizenz pruefen. NICHT genutzt: Cesky Krumlov und Prag (nicht Deutschland)
