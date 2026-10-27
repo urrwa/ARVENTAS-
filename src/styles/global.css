@@ -4278,3 +4278,5 @@ body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display:
 @media (prefers-reduced-motion: reduce) { .ss2-card { transition: none; } }
 .ss2-head .h2 { color: var(--ivory) !important; }
 .ss2-head .lead { color: var(--text-2); }
+/* Flächen unter dem festen Hero-Bild: deckender Markenhintergrund statt durchscheinendem Bild */
+.ss2, .bk, .cta2-wrap, .rp-over + * { background: var(--cover-bg) !important; background-color: #06111f !important; background-attachment: fixed !important; }
