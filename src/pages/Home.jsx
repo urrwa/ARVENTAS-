@@ -10,7 +10,6 @@ import InvestorLaptop from '../components/InvestorLaptop.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import GermanyMap from '../components/GermanyMap.jsx'
-import { HOMEPAGE_IMAGES } from '../content/homepageImages.js'
 
 function DocSvg() {
   return (
@@ -44,10 +43,10 @@ function ConnectSvg() {
 }
 
 // Zugangs-Kachel: großes Foto mit Text und Aktion (ganze Fläche ist ein Link).
-function Door({ to, src, alt, eyebrow, title, text, cta, d }) {
+function Door({ to, img, alt, eyebrow, title, text, cta, d }) {
   return (
     <Link to={to} className="door rv" style={d ? { '--d': d } : undefined}>
-      <img src={src} alt={alt} loading="lazy" />
+      <img src={`/media/${img}.webp`} alt={alt} loading="lazy" />
       <div className="door-txt"><p className="eyebrow">{eyebrow}</p><h3>{title}</h3><p>{text}</p><span className="btn btn-gold"><Roll>{cta}</Roll> <span className="arr" aria-hidden="true">→</span></span></div>
     </Link>
   )
@@ -97,8 +96,8 @@ export default function Home() {
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Ihr Einstieg</p><h2 id="h-zug" className="h2 rv">Wie können wir Ihnen helfen?</h2></header>
           <div className="doors" ref={doorsRef}>
-            <Door to="/immobilie-verkaufen" src={HOMEPAGE_IMAGES.ownerEntry} alt="Gepflegtes Mehrfamilienhaus mit Balkonen an einer Wohnstraße (Illustrationsbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen" />
-            <Door to="/kapitalanlage-immobilien" src={HOMEPAGE_IMAGES.investorEntry} alt="Modernes Mehrfamilienhaus mit verputzter Fassade und Balkonen (Illustrationsbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120} />
+            <Door to="/immobilie-verkaufen" img="p/zugang-eigentuemer" alt="Gepflegte Stadtvilla in der Abenddämmerung (Beispielbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen" />
+            <Door to="/kapitalanlage-immobilien" img="p/zugang-investor" alt="Modernes Mehrfamilienhaus mit Natursteinfassade (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120} />
           </div>
         </div>
       </section>
@@ -109,9 +108,9 @@ export default function Home() {
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
         </div>
         <StrengthStack items={[
-            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: HOMEPAGE_IMAGES.strengths.access, icon: 'key' },
-            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: HOMEPAGE_IMAGES.strengths.analysis, icon: 'chart' },
-            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: HOMEPAGE_IMAGES.strengths.transaction, icon: 'hand' },
+            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/h-zugang.webp', icon: 'key' },
+            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/h-analyse.webp', icon: 'chart' },
+            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/h-p-begleitung.webp', icon: 'hand' },
           ]} />
       </section>
 
@@ -124,7 +123,7 @@ export default function Home() {
       <section className="sec dark proc-sec" aria-labelledby="h-proc">
         <div className="wrap">
           <SectionHead eyebrow="Ablauf" title="Der Ablauf." />
-          <ProcessTimeline images={HOMEPAGE_IMAGES.process} />
+          <ProcessTimeline />
         </div>
       </section>
 
@@ -148,7 +147,7 @@ export default function Home() {
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Wissen</p><h2 id="h-wis" className="h2 rv">Hinter die Fassade schauen.</h2></header>
         </div>
-        <KnowledgeTabs full cat={wcat} setCat={setWcat} images={HOMEPAGE_IMAGES.knowledge} />
+        <KnowledgeTabs full cat={wcat} setCat={setWcat} />
         <div className="wrap">
           <div className="btn-row"><Btn to="/wissen">Wissen entdecken</Btn></div>
           <p className="small muted" style={{ marginTop: 16 }}>Entwürfe sind gekennzeichnet und keine aktuelle Recherche oder Marktdaten.</p>
@@ -158,7 +157,7 @@ export default function Home() {
       {/* 11 – Kontaktentscheidung */}
       <section className="sec dark kx" aria-labelledby="h-next">
         <div className="wrap kx-in">
-          <figure className="kx-pic"><img src={HOMEPAGE_IMAGES.contact} alt="" loading="lazy" /><figcaption>Illustrationsbild</figcaption></figure>
+          <figure className="kx-pic"><img src="/media/p/kontakt-treppe.webp" alt="" loading="lazy" /><figcaption>Illustrationsbild</figcaption></figure>
           <div className="kx-card">
             <p className="eyebrow rv">Kontakt</p>
             <h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2>

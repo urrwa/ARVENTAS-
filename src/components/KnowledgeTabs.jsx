@@ -7,11 +7,11 @@ const FALLBACK = { Entwicklungspotenziale: '/media/p/h-entwicklung.webp' }
 const article = (c) => (c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c))
 const pic = (c) => { const a = article(c); return a ? a.img : FALLBACK[c] || '/media/p/ablauf-bibliothek.webp' }
 
-export default function KnowledgeTabs({ cat, setCat, full, base = 'Alle', images }) {
+export default function KnowledgeTabs({ cat, setCat, full, base = 'Alle' }) {
   return (
     <div className={'kl' + (full ? ' kl-full' : '')} onMouseLeave={() => setCat(base)}>
       <div className="kl-img" aria-hidden="true">
-        {CATEGORIES.map((c) => <img key={c} className={cat === c ? 'on' : ''} src={images?.[c] || pic(c)} alt="" loading="lazy" decoding="async" />)}
+        {CATEGORIES.map((c) => <img key={c} className={cat === c ? 'on' : ''} src={pic(c)} alt="" loading="lazy" decoding="async" />)}
       </div>
       <ol className="kl-list" aria-label="Kategorien">
         {CATEGORIES.map((c, i) => {
