@@ -11,7 +11,7 @@ export default function Partners() {
   return (
     <>
       <Seo title="Partnernetzwerk | ARVENTAS" description="Kompetenzen verbinden, Zusammenarbeit gestalten: Partneranfrage für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren." />
-      <PageHero fadeOut blur image="/media/p/h-p-begleitung.webp" crumb="Partner" title="Kompetenzen verbinden. Zusammenarbeit gestalten." lead="Für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren.">
+      <PageHero fadeOut blur image="/media/p/u-altstadt.webp" crumb="Partner" title="Kompetenzen verbinden. Zusammenarbeit gestalten." lead="Für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren.">
         <div className="btn-row"><Btn href="#anfrage">Partnerschaft anfragen</Btn></div>
       </PageHero>
 
@@ -20,7 +20,7 @@ export default function Partners() {
           <ParallaxCards inside items={[
             { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: '/media/p/partner-gewerbe.webp', ratio: '4 / 5', speed: 1 },
             { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', img: '/media/p/partner-quartier.webp', ratio: '3 / 4', speed: 1.8 },
-            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/p/u-papiermodell.webp', ratio: '21 / 9', speed: 0.7, wide: true },
+            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/p/partner-wohnbau.webp', ratio: '21 / 9', speed: 0.7, wide: true },
           ]} />
         </div>
       </section>
