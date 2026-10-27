@@ -4290,3 +4290,11 @@ body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display:
 /* Seiten mit weichgezeichnetem Hero-Bild (Objektreport, Kontakt, Partner): Inhalt läuft über das ruhende Bild, keine deckende Fläche */
 main:has(.phero-blur) :is(.sec.dark, .cover-over, .ps, .cover-over .sec) { background: transparent !important; background-image: none !important; }
 main:has(.phero-blur) .cover-over { background: transparent !important; }
+
+/* Mobil und Leistung: keine festen Hintergründe, keine teuren Filter */
+@media (max-width: 900px) {
+  main :is(.sec.dark, .cover-over, .ps), .sf, .ss2, .bk, .cta2-wrap { background-attachment: scroll !important; }
+  .kl-row:not(.on), .ab-card, .rg-modal, .hdr, .hdr-in { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+  .phero-img { filter: none !important; }
+  .ambient::after { display: none; }
+}

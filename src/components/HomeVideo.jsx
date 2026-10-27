@@ -7,13 +7,14 @@ export default function HomeVideo() {
   useEffect(() => {
     const v = vid.current
     if (!v) return
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { v.pause(); return }
+    const save = navigator.connection && navigator.connection.saveData
+    if (save || matchMedia('(prefers-reduced-motion: reduce)').matches) { v.pause(); v.removeAttribute('autoplay'); v.querySelectorAll('source').forEach((x) => x.remove()); v.load(); return }
     const p = v.play()
     if (p && p.catch) p.catch(() => {})
   }, [])
   return (
     <section className="hv" aria-label="Einführung">
-      <video ref={vid} className="hv-vid" autoPlay muted loop playsInline preload="auto" poster="/media/hero/poster.webp" aria-hidden="true">
+      <video ref={vid} className="hv-vid" autoPlay muted loop playsInline preload="metadata" poster="/media/hero/poster.webp" aria-hidden="true">
         <source src="/media/hero/montage.webm" type="video/webm" />
         <source src="/media/hero/montage.mp4" type="video/mp4" />
       </video>

@@ -81,7 +81,7 @@ export default function Home() {
   }, [])
   // Bilder weiter unten sofort nach dem Laden der Seite holen, damit sie beim Scrollen schon da sind (statt erst kurz vor dem Sichtbereich).
   useEffect(() => {
-    const warm = () => document.querySelectorAll('img[loading="lazy"]').forEach((im) => { im.loading = 'eager' })
+    const warm = () => innerWidth > 900 && document.querySelectorAll('img[loading="lazy"]').forEach((im) => { im.loading = 'eager' })
     const go = () => { if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2500 }); else setTimeout(warm, 1200) }
     if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true })
     return () => window.removeEventListener('load', go)

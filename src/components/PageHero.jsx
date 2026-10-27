@@ -13,7 +13,7 @@ function useFadeOut(on, ref, blur) {
       const k = Math.min(1, window.scrollY / (window.innerHeight * 0.55))
       el.style.opacity = String(1 - k)
       el.style.transform = `translateY(${(-k * 40).toFixed(1)}px)`
-      if (blur) { const im = el.parentElement.querySelector('.phero-img'); if (im) im.style.filter = `blur(${(Math.min(1, window.scrollY / (window.innerHeight * 0.7)) * 18).toFixed(1)}px)` }
+      if (blur && window.innerWidth > 900) { const im = el.parentElement.querySelector('.phero-img'); if (im) im.style.filter = `blur(${(Math.min(1, window.scrollY / (window.innerHeight * 0.7)) * 18).toFixed(1)}px)` }
     }
     const onS = () => { if (!raf) raf = requestAnimationFrame(run) }
     run()
