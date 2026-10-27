@@ -33,7 +33,7 @@ export default function HomeVideo() {
         <Link to="/immobilie-verkaufen#anfrage" className="hv-go"><span aria-hidden="true">↗</span> Objektreport anfragen</Link>
       </div>
       <aside className="hv-card">
-        <img src="/media/p/hero-card-analyse.webp" alt="" loading="lazy" />
+        <img src="/media/p/hero-card-daten.webp" alt="" loading="lazy" />
         <p>Datenbasiert analysiert. Persönlich geprüft.</p>
         <Link to="/objektreport#muster" className="hv-go"><span aria-hidden="true">↗</span> Muster ansehen</Link>
       </aside>

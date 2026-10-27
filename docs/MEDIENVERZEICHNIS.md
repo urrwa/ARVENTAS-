@@ -45,3 +45,4 @@ Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus
 - wissen-kapitalanlage / wissen-offmarket / wissen-bewertung / wissen-markt: vom Nutzer bereitgestellt (Unsplash-Fotos), Lizenz/Ort pruefen; wissen-markt wirkt niederlaendisch (Luftbild Wohnviertel)
 - besichtigung: vom Nutzer bereitgestellt (Stockfoto Klemmbrett Inspektion; enthaelt englisches Logo Real Estate und FOR-SALE-Schild), Lizenz pruefen
 - offmarket-strasse / offmarket-gartentor / offmarket-gespraech: KI-generiert (Beispielbilder, Investoren Off-Market-Titel)
+- hero-card-daten: vom Nutzer bereitgestellt (Foto Hand/Rechner/Geldscheine, 600px; Waehrung der Scheine wirkt nicht Euro), Lizenz pruefen
