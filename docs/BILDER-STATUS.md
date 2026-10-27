@@ -398,12 +398,12 @@ Status: `offen` = noch nicht bearbeitet. Menschen- und KI-Bilder bleiben vorerst
 | `/media/p/ablauf-eingang.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | — | offen |
 | `/media/p/ablauf-fassade.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | Investors.jsx | offen |
 | `/media/p/ablauf-fenster.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | — | offen |
-| `/media/p/ablauf-luftbild.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | — | offen |
+| `/media/p/ablauf-luftbild.webp` | neu (KI, realistisch, deutsch) | — | offen |
 | `/media/p/ablauf-modell.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | HomeVideo.jsx, Owners.jsx | offen |
 | `/media/p/ablauf-schreibtisch.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | ReportPage.jsx | offen |
 | `/media/p/ablauf-strasse.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | — | offen |
 | `/media/p/ablauf-tuer.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | — | offen |
-| `/media/p/ablauf-wohnhaus.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | — | offen |
+| `/media/p/ablauf-wohnhaus.webp` | neu (KI, realistisch, deutsch) | — | offen |
 | `/media/p/aud.0.webp` | Mensch / KI behalten (später) | — | offen |
 | `/media/p/aud.1.webp` | Mensch / KI behalten (später) | — | offen |
 | `/media/p/aud.3.webp` | Mensch / KI behalten (später) | — | offen |
@@ -440,7 +440,7 @@ Status: `offen` = noch nicht bearbeitet. Menschen- und KI-Bilder bleiben vorerst
 | `/media/p/h-abschluss.webp` | Mensch / KI behalten (später) | — | offen |
 | `/media/p/h-analyse.webp` | prüfen | About.jsx, Home.jsx, Investors.jsx | offen |
 | `/media/p/h-bewertung.webp` | prüfen | — | offen |
-| `/media/p/h-entwicklung.webp` | prüfen | About.jsx, KnowledgeTabs.jsx | offen |
+| `/media/p/h-entwicklung.webp` | neu (KI, realistisch, deutsch) | About.jsx, KnowledgeTabs.jsx | offen |
 | `/media/p/h-erstkontakt.webp` | prüfen | — | offen |
 | `/media/p/h-kaeufer.webp` | Mensch / KI behalten (später) | — | offen |
 | `/media/p/h-kontakt.webp` | prüfen | — | offen |
@@ -453,7 +453,7 @@ Status: `offen` = noch nicht bearbeitet. Menschen- und KI-Bilder bleiben vorerst
 | `/media/p/h-p-investor.webp` | Mensch / KI behalten (später) | Investors.jsx | offen |
 | `/media/p/h-p-objekt.webp` | Mensch / KI behalten (später) | Investors.jsx | offen |
 | `/media/p/h-suchprofil.webp` | prüfen | Investors.jsx | offen |
-| `/media/p/h-zugang.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | About.jsx, Home.jsx, Investors.jsx | offen |
+| `/media/p/h-zugang.webp` | neu (KI, realistisch, deutsch) | About.jsx, Home.jsx, Investors.jsx | offen |
 | `/media/p/home.mini.webp` | prüfen | — | offen |
 | `/media/p/home.pil.0.webp` | prüfen | — | offen |
 | `/media/p/home.pil.1.webp` | prüfen | — | offen |
@@ -553,8 +553,8 @@ Status: `offen` = noch nicht bearbeitet. Menschen- und KI-Bilder bleiben vorerst
 | `/media/p/vm.step.2.webp` | prüfen | — | offen |
 | `/media/p/vm.step.3.webp` | prüfen | — | offen |
 | `/media/p/vm.step.4.webp` | prüfen | — | offen |
-| `/media/p/zugang-eigentuemer.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | Owners.jsx | offen |
-| `/media/p/zugang-investor.webp` | Mensch / KI behalten (später) | Investors.jsx | offen |
+| `/media/p/zugang-eigentuemer.webp` | neu (KI, realistisch, deutsch) | Owners.jsx | offen |
+| `/media/p/zugang-investor.webp` | neu (KI, realistisch, deutsch) | Investors.jsx | offen |
 | `/media/planunterlagen.webp` | prüfen | — | offen |
 | `/media/schluessel-modell.webp` | prüfen | — | offen |
 | `/media/stadt-luftbild.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | — | offen |
