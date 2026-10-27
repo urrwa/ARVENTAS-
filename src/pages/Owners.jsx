@@ -38,7 +38,7 @@ export default function Owners() {
         <p className="ow-eb">Für Eigentümer</p>
         <h1 className="ow-h"><Letters text="Ihre Immobilie." per={30} max={900} delay={200} /><br /><Letters text="Unser Marktverständnis." per={30} max={1300} delay={700} /></h1>
         <div className="ow-pic">
-          <img src="/media/p/zugang-eigentuemer.webp" alt="" decoding="async" fetchpriority="high" />
+          <img src="/media/p/zugang-eigentuemer-haus.webp" alt="" decoding="async" fetchpriority="high" />
           <div className="ow-card">
             <p>Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.</p>
             <span>Diskret. Strukturiert. Persönlich.</span>

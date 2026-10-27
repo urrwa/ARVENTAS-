@@ -36,3 +36,4 @@ Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus
 - hero-card-analyse: KI-generiert (Beispielbild, Startseite Hero-Karte)
 - mfh-balkone: KI-generiert; altstadt-luftbild-de, villa-nacht: vom Nutzer bereitgestellt, Lizenz/Quelle pruefen (niedrige Aufloesung 600px)
 - owner-analyse-bericht / owner-analyse-karte / owner-entscheidung / owner-unterlagen / owner-besprechung: KI-generiert (Beispielbilder, Eigentuemer- und Investorenseite)
+- zugang-eigentuemer-haus: vom Nutzer bereitgestellt (Foto, Quelle/Lizenz pruefen)
