@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq } from '../components/ui.jsx'
 import StillCover from '../components/StillCover.jsx'
 import ParallaxCards from '../components/ParallaxCards.jsx'
-import ReportViewer from '../components/ReportViewer.jsx'
+import ReportStack from '../components/ReportStack.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { REPORT_FAQ } from '../content/data.js'
 
@@ -36,11 +36,8 @@ export default function ReportPage() {
         <ParallaxCards inside items={BLOCKS.map(([title, text, img], i) => ({ title, text, img, ratio: i % 3 === 1 ? '3 / 4' : '4 / 5', speed: [1, 1.7, 0.8, 1.3, 0.9, 1.6][i] }))} />
       </StillCover>
 
-      <section className="sec dark" id="muster">
-        <div className="wrap">
-          <SectionHead eyebrow="Interaktive Musteransicht" title="So kann ein Objektreport aussehen." lead="Wählen Sie eine Analyseebene. Das Muster ist rein illustrativ." />
-          <div className="rv"><ReportViewer id="muster-page" /></div>
-        </div>
+      <section id="muster" className="sec dark" style={{ padding: 0 }} aria-labelledby="h-muster">
+        <ReportStack eyebrow="Interaktive Musteransicht" title="So kann ein Objektreport aussehen." lead="Blättern Sie durch das Muster. Es ist rein illustrativ." hid="h-muster" />
       </section>
 
       <section className="sec dark">
