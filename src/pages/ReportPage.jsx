@@ -32,7 +32,7 @@ export default function ReportPage() {
         <div className="btn-row"><Btn href="#muster" variant="line">Muster ansehen</Btn><Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 
-      <StillCover id="h-bausteine" image="/media/p/h-analyse.webp" eyebrow="Analysebausteine" title="Sechs Bausteine, ein Bild.">
+      <StillCover id="h-bausteine" image="/media/p/u-diagramme.webp" eyebrow="Analysebausteine" title="Sechs Bausteine, ein Bild.">
         <ParallaxCards inside items={BLOCKS.map(([title, text, img], i) => ({ title, text, img, ratio: i % 3 === 1 ? '3 / 4' : '4 / 5', speed: [1, 1.7, 0.8, 1.3, 0.9, 1.6][i] }))} />
       </StillCover>
 
