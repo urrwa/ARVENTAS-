@@ -27,7 +27,6 @@ export default function CtaBand({ image = HOME.cta, title = 'Bereit für bessere
     <div className="cta2-wrap">
       <section className="cta2" ref={ref} aria-label="Nächster Schritt">
         <div className="cta2-pic"><img className="cta2-bg" src={image} alt="" loading="eager" decoding="async" /></div>
-        <div className="cta2-marq" aria-hidden="true"><div>{[0, 1].map((k) => <span key={k}>Off-Market · Analyse · Diskretion · Persönlich · Deutschlandweit · Off-Market · Analyse · Diskretion · Persönlich · Deutschlandweit ·&nbsp;</span>)}</div></div>
         <div className="cta2-in">
           <div className="cta2-l">
             <p className="cta2-lab">(Nächster Schritt)</p>
