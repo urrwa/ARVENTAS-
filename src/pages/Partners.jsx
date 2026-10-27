@@ -2,7 +2,7 @@ import Seo from '../components/Seo.jsx'
 import Brand from '../components/Brand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import ParallaxCards from '../components/ParallaxCards.jsx'
-import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
+import { Btn, SectionHead } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, PARTNER_FIELDS } from '../components/forms.jsx'
 import { PARTNER_PROCESS } from '../content/data.js'
@@ -29,7 +29,6 @@ export default function Partners() {
         <div className="wrap">
           <SectionHead eyebrow="So beginnt die Zusammenarbeit" title="Anfrage, Kennenlernen, Rollen, Vereinbarung." normal />
           <SimpleTimeline steps={PARTNER_PROCESS} />
-          <div style={{ marginTop: 40, maxWidth: 720 }}><Placeholder title="Partnerlogos">Partnerlogos erscheinen nur aus freigegebenen Originaldateien und erst nach Bestätigung der Beziehung und Nutzungsfreigabe. Derzeit werden keine Partner genannt.</Placeholder></div>
         </div>
       </section>
 
