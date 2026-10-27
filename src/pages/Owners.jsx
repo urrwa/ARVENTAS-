@@ -10,7 +10,7 @@ import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
 
-const PROCESS_IMG = ['h-p-erstgespraech', 'ablauf-schreibtisch', 'ablauf-modell', 'h-p-besprechung', 'h-kaeufer', 'h-p-abschluss'].map((k) => `/media/p/${k}.webp`)
+const PROCESS_IMG = ['owner-beratung', 'ablauf-schreibtisch', 'ablauf-modell', 'h-p-besprechung', 'h-kaeufer', 'h-p-abschluss'].map((k) => `/media/p/${k}.webp`)
 
 const SITUATIONS = [
   { id: 'privat', img: '/media/p/h-p-besprechung.webp', label: 'Private Eigentümer', t: 'Wert verstehen, bevor Sie entscheiden.', p: 'Als privater Immobilienbesitzer möchten Sie wissen, was Ihre Immobilie wert ist und welche Optionen es gibt. Eine sachliche Einordnung hilft, ohne dass Sie sich festlegen müssen.' },
