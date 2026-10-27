@@ -26,7 +26,7 @@ export default function InvestorsPage() {
       <Seo title="Kapitalanlage-Immobilien | ARVENTAS" description="Ausgewählte Off-Market-Immobilien für Investoren: Suchprofil, Objektanalyse, Chancen und Risiken – persönlich begleitet, deutschlandweit." />
       <h1 className="sr-only">Investieren beginnt mit dem richtigen Zugang.</h1>
 
-      <WordZoom left="Off-Market" right="verständlich erklärt." images={['/media/p/zugang-investor.webp', '/media/p/h-zugang.webp', '/media/p/ablauf-fassade.webp', '/media/p/h-p-objekt.webp']} />
+      <WordZoom left="Off-Market" right="verständlich erklärt." images={['/media/p/zugang-eigentuemer.webp', '/media/p/h-zugang.webp', '/media/p/ablauf-wohnhaus.webp', '/media/p/zugang-investor.webp']} />
       <section className="sec dark wz-after">
         <div className="wrap">
           <p className="eyebrow">Off-Market</p>
