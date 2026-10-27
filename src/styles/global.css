@@ -4298,3 +4298,9 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
   .phero-img { filter: none !important; }
   .ambient::after { display: none; }
 }
+
+/* Footer bleibt unten stehen, der Inhalt scrollt darüber und gibt ihn frei */
+@media (min-width: 901px) and (min-height: 640px) {
+  #main { position: relative; z-index: 1; background: var(--cover-bg); background-color: #06111f; background-attachment: fixed; }
+  .sf { position: sticky !important; bottom: 0; z-index: 0; }
+}
