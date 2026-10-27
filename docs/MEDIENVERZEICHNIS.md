@@ -32,3 +32,4 @@ Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus
 - owner-beratung: KI-generiert (Beispielbild, Beratung Eigentuemer; Startseite + Eigentuemer-Seite)
 - kontakt-buero: KI-generiert (Beispielbild, Buero-Empfang; Startseite Kontakt + Kontakt-Seite)
 - wissen-fassade / investor-matching / abschluss-beratung: KI-generiert (Beispielbilder)
+- owner-situation / owner-einfamilienhaus: KI-generiert (Beispielbilder, Eigentuemer-Seite)

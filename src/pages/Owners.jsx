@@ -51,7 +51,7 @@ export default function Owners() {
         <div className="wrap">
           <SectionHead eyebrow="Erzählstruktur" title="Drei Schritte zur Klarheit." />
           <StepRows items={[
-            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/p/h-p-erstgespraech.webp' },
+            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/p/owner-situation.webp' },
             { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', img: '/media/p/ablauf-modell.webp' },
             { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/p/h-p-entscheidung.webp' },
           ]} />
@@ -60,7 +60,7 @@ export default function Owners() {
 
       <section className="sec dark sl-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img="/media/p/h-p-besprechung.webp" />
+          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img="/media/p/owner-einfamilienhaus.webp" />
         </div>
       </section>
 
