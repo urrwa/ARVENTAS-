@@ -2,6 +2,7 @@ import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq } from '../components/ui.jsx'
+import StillCover from '../components/StillCover.jsx'
 import ParallaxCards from '../components/ParallaxCards.jsx'
 import ReportViewer from '../components/ReportViewer.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
@@ -31,12 +32,9 @@ export default function ReportPage() {
         <div className="btn-row"><Btn href="#muster" variant="line">Muster ansehen</Btn><Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 
-      <section className="sec dark over-photo pc-sec">
-        <div className="wrap">
-          <SectionHead eyebrow="Analysebausteine" title="Sechs Bausteine, ein Bild." normal />
-          <ParallaxCards inside items={BLOCKS.map(([title, text, img], i) => ({ title, text, img, ratio: i % 3 === 1 ? '3 / 4' : '4 / 5', speed: [1, 1.7, 0.8, 1.3, 0.9, 1.6][i] }))} />
-        </div>
-      </section>
+      <StillCover id="h-bausteine" image="/media/p/h-analyse.webp" eyebrow="Analysebausteine" title="Sechs Bausteine, ein Bild.">
+        <ParallaxCards inside items={BLOCKS.map(([title, text, img], i) => ({ title, text, img, ratio: i % 3 === 1 ? '3 / 4' : '4 / 5', speed: [1, 1.7, 0.8, 1.3, 0.9, 1.6][i] }))} />
+      </StillCover>
 
       <section className="sec dark" id="muster">
         <div className="wrap">

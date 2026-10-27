@@ -4236,3 +4236,5 @@ body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display:
 @media (max-width: 760px) { .rg-grid { grid-template-columns: 1fr; } .rg-sheet { grid-template-columns: 1fr; } .rg-pg + .rg-pg { border-left: 0; border-top: 1px solid rgba(7, 19, 33, .12); } .rg-cap em { max-height: 90px; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .rg-title { filter: none; transform: none; } }
 .rg-wrap { padding-top: 104svh; }
+.rg-free { max-width: none; }
+.rg-free > * { max-width: 1180px; margin-inline: auto; }
