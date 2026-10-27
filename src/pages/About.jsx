@@ -58,22 +58,21 @@ export default function About() {
       </section>
 
       <section className="sec dark">
-        <div className="wrap two about-cards">
-          <div className="ab-card">
+        <div className="wrap two">
+          <div>
             <SectionHead eyebrow="Unternehmensstruktur" title="Tatsächliche Struktur und Verantwortung." normal />
             <p className="rv">Die Dachmarke und das Zusammenspiel spezialisierter Unternehmen werden hier erklärt. Wer Leistungen erbringt und Vertragspartner wird, stellen wir anhand der bestätigten Unternehmensstruktur transparent dar.</p>
             <div className="struct rv" aria-label="Reduziertes Strukturdiagramm (Platzhalter)">
               <svg viewBox="0 0 520 180" width="100%" role="img" aria-label="Reduziertes Strukturdiagramm als Platzhalter">
-                <rect x="170" y="10" width="180" height="46" fill="none" stroke="#c8ad80" strokeWidth="1.5" /><text x="260" y="38" textAnchor="middle" fontSize="13" fill="#f3ede0">Dachmarke</text>
+                <rect x="170" y="10" width="180" height="46" fill="none" stroke="#192537" strokeWidth="1.5" /><text x="260" y="38" textAnchor="middle" fontSize="13" fill="#0B0B0B">Dachmarke</text>
                 <path d="M260 56 V80 M90 80 H430 M90 80 V104 M260 80 V104 M430 80 V104" stroke="#B09E80" strokeWidth="2" fill="none" />
-                {[[10, 'Gesellschaft A'], [180, 'Gesellschaft B'], [350, 'Gesellschaft C']].map(([x, t]) => (<g key={x}><rect x={x} y="104" width="160" height="46" fill="none" stroke="#c8ad80" strokeOpacity=".6" strokeDasharray="5 4" /><text x={x + 80} y="132" textAnchor="middle" fontSize="12" fill="#f3ede0" fillOpacity=".8">{t}</text></g>))}
+                {[[10, 'Gesellschaft A'], [180, 'Gesellschaft B'], [350, 'Gesellschaft C']].map(([x, t]) => (<g key={x}><rect x={x} y="104" width="160" height="46" fill="none" stroke="#192537" strokeDasharray="5 4" /><text x={x + 80} y="132" textAnchor="middle" fontSize="12" fill="#0B0B0B" fillOpacity=".72">{t}</text></g>))}
               </svg>
               <p className="small" style={{ marginTop: 8 }}>Platzhalter: Bezeichnungen und Beziehungen werden nach Bestätigung der Unternehmensstruktur ergänzt. Keine pauschale Behauptung einer rechtlichen Risikotrennung oder Haftungsfreiheit.</p>
             </div>
           </div>
-          <div className="ab-card">
+          <div>
             <SectionHead eyebrow="Ansprechpartner" title="Echte Ansprechpartner." normal />
-            <div className="ab-ppl" aria-hidden="true">{[0, 1, 2].map((k) => <span key={k}><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4" /><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" /></svg></span>)}</div>
             <Placeholder title="Platzhalter – Team">Hier erscheinen bestätigte Profile mit Name, Rolle und Fachgebiet sowie ein authentisches Porträt. Vor Veröffentlichung ersetzen oder ausblenden. Keine erfundenen Namen, Rollen, Erfahrungsjahre oder Teamfotos.</Placeholder>
           </div>
         </div>
