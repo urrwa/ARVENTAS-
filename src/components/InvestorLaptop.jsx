@@ -2,17 +2,13 @@ import { Roll } from './ui.jsx'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { STATES, MAP_VIEWBOX } from '../content/germany.js'
+import { HOMEPAGE_IMAGES } from '../content/homepageImages.js'
 
 // Matching als Prinzipdarstellung auf einem Laptop-Bildschirm: Region, Budget und Immobilientyp wechseln langsam von selbst (pausiert beim Überfahren),
 // die Karte hebt die Region hervor, rechts erscheinen Platzhalter-Treffer. Keine Zahlen, keine echten Objekte, keine Trefferzahlen.
 const NAME = (id) => STATES.find((s) => s.id === id)
 const TYPES = ['Mehrfamilienhaus', 'Wohn- und Geschäftshaus', 'Gewerbeimmobilie', 'Grundstück']
-const IMG = [
-  ['ablauf-wohnhaus', 'zugang-investor', 'ablauf-fassade'],
-  ['ablauf-strasse', 'ablauf-eingang', 'ablauf-fassade'],
-  ['zugang-investor', 'ablauf-fassade', 'ablauf-luftbild'],
-  ['h-entwicklung', 'ablauf-luftbild', 'ablauf-strasse'],
-]
+const IMG = HOMEPAGE_IMAGES.matching
 const BUDGET = ['bis 500.000 €', '500.000 – 2 Mio. €', '2 – 5 Mio. €', 'ab 5 Mio. €']
 const ICON = {
   pin: 'M12 21s-7-6-7-11a7 7 0 1 1 14 0c0 5-7 11-7 11zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z',
@@ -56,7 +52,7 @@ export default function InvestorLaptop() {
               <p className="il-h">Passende Objekte</p>
               {[0, 1, 2].map((k) => (
                 <div className="il-card" key={k} style={{ '--k': k }}>
-                  <i><img src={`/media/p/${IMG[type][k]}.webp`} alt=""/></i>
+                  <i><img src={IMG[type][k]} alt=""/></i>
                   <div><b /><b className="s" /><span className="il-chips"><em>{TYPES[type]}</em><em>{st.name}</em><em>{BUDGET[bud]}</em></span></div>
                 </div>
               ))}

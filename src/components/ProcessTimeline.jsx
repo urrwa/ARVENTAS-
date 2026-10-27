@@ -13,7 +13,7 @@ const POSE = [[0, 0], [0, -90], [0, -180], [0, -270], [-90, -360], [90, -360]]
 const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2)
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v))
 
-export default function ProcessTimeline({ initial = 'owner' }) {
+export default function ProcessTimeline({ initial = 'owner', images = IMG }) {
   const [who, setWho] = useState(initial)
   const [flat, setFlat] = useState(false)
   const box = useRef(null)
@@ -87,7 +87,7 @@ export default function ProcessTimeline({ initial = 'owner' }) {
           <span className="pck-floor" aria-hidden="true" />
           <div className="pck-scene" aria-hidden="true">
             <div className="pck-cube">
-              {FACES.map((f, i) => <i key={f} className={'pck-f pck-f--' + f} style={{ backgroundImage: `url(${IMG[who][i]})` }} />)}
+              {FACES.map((f, i) => <i key={f} className={'pck-f pck-f--' + f} style={{ backgroundImage: `url(${images[who][i]})` }} />)}
             </div>
           </div>
           {steps.map((s, i) => (
