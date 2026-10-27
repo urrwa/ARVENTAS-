@@ -57,24 +57,37 @@ export default function About() {
         </div>
       </section>
 
-      <section className="sec dark">
-        <div className="wrap two">
-          <div>
+      <section className="sec dark org-sec">
+        <div className="wrap">
+          <div className="org-head">
             <SectionHead eyebrow="Unternehmensstruktur" title="Tatsächliche Struktur und Verantwortung." normal />
             <p className="rv">Die Dachmarke und das Zusammenspiel spezialisierter Unternehmen werden hier erklärt. Wer Leistungen erbringt und Vertragspartner wird, stellen wir anhand der bestätigten Unternehmensstruktur transparent dar.</p>
-            <div className="struct rv" aria-label="Reduziertes Strukturdiagramm (Platzhalter)">
-              <svg viewBox="0 0 520 180" width="100%" role="img" aria-label="Reduziertes Strukturdiagramm als Platzhalter">
-                <rect x="170" y="10" width="180" height="46" fill="none" stroke="#192537" strokeWidth="1.5" /><text x="260" y="38" textAnchor="middle" fontSize="13" fill="#0B0B0B">Dachmarke</text>
-                <path d="M260 56 V80 M90 80 H430 M90 80 V104 M260 80 V104 M430 80 V104" stroke="#B09E80" strokeWidth="2" fill="none" />
-                {[[10, 'Gesellschaft A'], [180, 'Gesellschaft B'], [350, 'Gesellschaft C']].map(([x, t]) => (<g key={x}><rect x={x} y="104" width="160" height="46" fill="none" stroke="#192537" strokeDasharray="5 4" /><text x={x + 80} y="132" textAnchor="middle" fontSize="12" fill="#0B0B0B" fillOpacity=".72">{t}</text></g>))}
-              </svg>
-              <p className="small" style={{ marginTop: 8 }}>Platzhalter: Bezeichnungen und Beziehungen werden nach Bestätigung der Unternehmensstruktur ergänzt. Keine pauschale Behauptung einer rechtlichen Risikotrennung oder Haftungsfreiheit.</p>
+          </div>
+          <div className="org rv" role="img" aria-label="Reduziertes Strukturdiagramm als Platzhalter">
+            <div className="org-top"><span>Dachmarke</span></div>
+            <div className="org-bar" aria-hidden="true" />
+            <div className="org-row">
+              {['Gesellschaft A', 'Gesellschaft B', 'Gesellschaft C'].map((t) => (<div key={t} className="org-co"><i aria-hidden="true" /><span>{t}</span></div>))}
             </div>
+            <p className="small org-note">Platzhalter: Bezeichnungen und Beziehungen werden nach Bestätigung der Unternehmensstruktur ergänzt. Keine pauschale Behauptung einer rechtlichen Risikotrennung oder Haftungsfreiheit.</p>
           </div>
-          <div>
+
+          <div className="org-head org-head2">
             <SectionHead eyebrow="Ansprechpartner" title="Echte Ansprechpartner." normal />
-            <Placeholder title="Platzhalter – Team">Hier erscheinen bestätigte Profile mit Name, Rolle und Fachgebiet sowie ein authentisches Porträt. Vor Veröffentlichung ersetzen oder ausblenden. Keine erfundenen Namen, Rollen, Erfahrungsjahre oder Teamfotos.</Placeholder>
           </div>
+          <div className="team rv">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="team-card">
+                <span className="team-pic" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" strokeWidth="1.2"><circle cx="12" cy="8.5" r="3.6" /><path d="M4.5 20c.8-4 3.6-6 7.5-6s6.7 2 7.5 6" /></svg></span>
+                <dl>
+                  <div><dt>Name</dt><dd /></div>
+                  <div><dt>Rolle</dt><dd /></div>
+                  <div><dt>Fachgebiet</dt><dd /></div>
+                </dl>
+              </div>
+            ))}
+          </div>
+          <Placeholder title="Platzhalter – Team">Hier erscheinen bestätigte Profile mit Name, Rolle und Fachgebiet sowie ein authentisches Porträt. Vor Veröffentlichung ersetzen oder ausblenden. Keine erfundenen Namen, Rollen, Erfahrungsjahre oder Teamfotos.</Placeholder>
         </div>
       </section>
 

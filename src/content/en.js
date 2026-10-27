@@ -306,6 +306,8 @@ export default {
  "Nachverdichtung": "Densification",
  "Nachvollziehbar statt behauptet.": "Comprehensible instead of claimed.",
  "Name": "Name",
+ "Rolle": "Role",
+ "Fachgebiet": "Field of expertise",
  "Name, Rolle und Fachgebiet nach Bestätigung": "Name, role and field of expertise after confirmation",
  "Name, Rolle und Fachgebiet nach Bestätigung ergänzen oder diesen Bereich vor Veröffentlichung ausblenden.": "Add name, role and field of expertise after confirmation or hide this area before publication.",
  "Nein. ARVENTAS gibt keine automatischen Kaufempfehlungen und keine Renditegarantien. Sie erhalten nachvollziehbare Informationen für Ihre eigene Entscheidung.": "No. ARVENTAS gives no automatic purchase recommendations and no guarantees of returns. You receive comprehensible information for your own decision.",

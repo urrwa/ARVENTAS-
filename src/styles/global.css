@@ -4309,3 +4309,35 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
   .bk-flat-i .bk-c { overflow: visible; }
   .bk-pic { min-height: 180px; }
 }
+
+/* Über uns: Struktur und Ansprechpartner – dunkle, ruhige Darstellung statt weißer Karte */
+.org-sec .org-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 80px); align-items: end; margin-bottom: clamp(28px, 4vw, 52px); }
+.org-sec .org-head > p { margin: 0; color: var(--text-on-dark-soft); }
+.org-sec .org-head2 { margin-top: clamp(56px, 8vw, 110px); grid-template-columns: 1fr; }
+.org { position: relative; padding: clamp(24px, 4vw, 48px); border: 1px solid rgba(200, 173, 128, .22); border-radius: 18px; background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)); }
+.org-top { display: flex; justify-content: center; }
+.org-top span { padding: 14px 34px; border: 1px solid var(--gold); border-radius: 999px; font-family: 'Instrument Serif', serif; font-size: clamp(20px, 2.2vw, 28px); color: var(--ivory); background: rgba(200, 173, 128, .08); }
+.org { --g: clamp(12px, 2vw, 24px); }
+.org-bar { position: relative; height: 38px; margin: 0 calc((100% - 2 * var(--g)) / 6); border: 1px solid rgba(200, 173, 128, .55); border-bottom: 0; border-radius: 12px 12px 0 0; margin-top: 0; }
+.org-bar::before { content: ''; position: absolute; left: 50%; top: -1px; height: 0; }
+.org-top::after { content: ''; display: block; }
+.org-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--g); }
+.org-co { position: relative; padding: 22px 18px; text-align: center; border: 1px dashed rgba(200, 173, 128, .45); border-radius: 12px; color: var(--text-on-dark-soft); font-size: 15px; letter-spacing: .02em; }
+.org-co i { position: absolute; left: 50%; top: -40px; width: 0; height: 40px; border-left: 1px solid rgba(200, 173, 128, .55); }
+.org-note { margin: 22px 0 0; color: var(--text-on-dark-soft); opacity: .8; }
+.team { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 2vw, 24px); margin-bottom: 26px; }
+.team-card { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; align-items: center; padding: 22px; border: 1px dashed rgba(200, 173, 128, .4); border-radius: 14px; background: rgba(255,255,255,.025); }
+.team-pic { display: grid; place-items: center; width: 76px; aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(200, 173, 128, .45); color: var(--gold); }
+.team-card dl { margin: 0; display: grid; gap: 10px; }
+.team-card dl > div { display: grid; gap: 4px; }
+.team-card dt { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.team-card dd { margin: 0; height: 8px; border-radius: 6px; background: rgba(255,255,255,.14); }
+.team-card dl > div:nth-child(2) dd { width: 70%; } .team-card dl > div:nth-child(3) dd { width: 85%; }
+@media (max-width: 900px) {
+  .org-sec .org-head { grid-template-columns: 1fr; align-items: start; }
+  .org-bar { display: none; }
+  .org-row { grid-template-columns: 1fr; gap: 28px; margin-top: 22px; }
+  .org-co i { top: -28px; height: 28px; }
+  .org-top span { padding: 12px 24px; }
+  .team { grid-template-columns: 1fr; }
+}
