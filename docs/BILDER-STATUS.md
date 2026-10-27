@@ -560,3 +560,4 @@ Status: `offen` = noch nicht bearbeitet. Menschen- und KI-Bilder bleiben vorerst
 | `/media/stadt-luftbild.webp` | Haus/Stadt: durch echtes deutsches Foto ersetzen | — | offen |
 | `/media/turm.webp` | prüfen | ProcessStack.jsx | offen |
 | `/media/vertrag-unterzeichnung.webp` | prüfen | — | offen |
+| `/media/p/hero-card-mfh.webp` | neu (KI, realistisch) | HomeVideo | erledigt |
