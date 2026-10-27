@@ -8,8 +8,8 @@ import { STATES, MAP_VIEWBOX } from '../content/germany.js'
 const NAME = (id) => STATES.find((s) => s.id === id)
 const TYPES = ['Mehrfamilienhaus', 'Wohn- und Geschäftshaus', 'Gewerbeimmobilie', 'Grundstück']
 const IMG = [
-  ['ablauf-wohnhaus', 'zugang-investor', 'ablauf-fassade'],
-  ['ablauf-strasse', 'ablauf-eingang', 'ablauf-fassade'],
+  ['mfh-balkone', 'ablauf-wohnhaus', 'zugang-investor'],
+  ['altstadt-luftbild-de', 'ablauf-strasse', 'ablauf-eingang'],
   ['zugang-investor', 'ablauf-fassade', 'ablauf-luftbild'],
   ['h-entwicklung', 'ablauf-luftbild', 'ablauf-strasse'],
 ]
