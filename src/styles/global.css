@@ -4367,3 +4367,9 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
 /* Eingangskarten: Text auch über detailreichen Fassaden gut lesbar */
 .door-txt h3, .door-txt p { text-shadow: 0 2px 20px rgba(7, 19, 33, .85), 0 0 2px rgba(7, 19, 33, .5); }
 .door-txt { z-index: 1; }
+
+/* Prozess-Umschalter: inaktiver Reiter klar lesbar, Abstand zum Bild */
+.pck .toggle, .pls .toggle { background: rgba(7, 19, 33, .72); border-color: var(--gold); margin-bottom: 20px; }
+.pck .toggle button:not([aria-selected=true]), .pls .toggle button:not([aria-selected=true]) { color: #fff; background: rgba(255, 255, 255, .08); font-weight: 600; }
+.pck .toggle button:not([aria-selected=true]):hover { background: rgba(200, 173, 128, .25); }
+.pck-top { padding-bottom: 18px; }
