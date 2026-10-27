@@ -3437,7 +3437,7 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .rh-kw li { display: flex; align-items: center; gap: 12px; }
 .rh-kw li::before { content: ''; width: 22px; height: 1px; background: var(--gold); }
 @media (max-width: 860px) { .rh-h { font-size: clamp(40px, 12vw, 72px); } }
-.doors-sec .door::after { background: linear-gradient(180deg, rgba(7, 19, 33, 0) 22%, rgba(7, 19, 33, .5) 52%, rgba(7, 19, 33, .88) 100%); }
+.doors-sec .door::after { background: linear-gradient(180deg, rgba(7, 19, 33, .1) 0%, rgba(7, 19, 33, .62) 50%, rgba(7, 19, 33, .88) 100%); }
 
 /* Kopfleiste: offen über dem Bild, Logo links, Navigation mittig, heller Knopf rechts, feine Linie darunter */
 .hdr-in { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; max-width: none; height: 78px; margin: 0; padding: 0 var(--gut); border-radius: 0; border: 0; box-shadow: none; background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; position: relative; transition: background 400ms ease, backdrop-filter 400ms ease; }
@@ -4363,3 +4363,7 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
   .bk-c .checks { margin-top: 4px; }
   .bk-c .checks li { padding-top: 3px; padding-bottom: 3px; }
 }
+
+/* Eingangskarten: Text auch über detailreichen Fassaden gut lesbar */
+.door-txt h3, .door-txt p { text-shadow: 0 2px 20px rgba(7, 19, 33, .85), 0 0 2px rgba(7, 19, 33, .5); }
+.door-txt { z-index: 1; }

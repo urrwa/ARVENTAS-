@@ -38,3 +38,4 @@ Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus
 - owner-analyse-bericht / owner-analyse-karte / owner-entscheidung / owner-unterlagen / owner-besprechung: KI-generiert (Beispielbilder, Eigentuemer- und Investorenseite)
 - zugang-eigentuemer-haus: vom Nutzer bereitgestellt (Foto, Quelle/Lizenz pruefen)
 - investor-begleitung: KI-generiert; fachwerk-hof: vom Nutzer bereitgestellt, Lizenz pruefen (600px)
+- zugang-investor-altbau: vom Nutzer bereitgestellt (Foto, Berliner Altbau-Fassaden), Quelle/Lizenz pruefen

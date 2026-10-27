@@ -96,7 +96,7 @@ export default function Home() {
           <header className="sec-head"><p className="eyebrow rv">Ihr Einstieg</p><h2 id="h-zug" className="h2 rv">Wie können wir Ihnen helfen?</h2></header>
           <div className="doors" ref={doorsRef}>
             <Door to="/immobilie-verkaufen" img="p/zugang-eigentuemer-haus" alt="Gepflegte Stadtvilla in der Abenddämmerung (Beispielbild)" eyebrow="Für Eigentümer" title="Meine Immobilie verkaufen." text="Diskret. Strukturiert. Persönlich." cta="Objektreport anfragen" />
-            <Door to="/kapitalanlage-immobilien" img="p/zugang-investor" alt="Modernes Mehrfamilienhaus mit Natursteinfassade (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120} />
+            <Door to="/kapitalanlage-immobilien" img="p/zugang-investor-altbau" alt="Modernes Mehrfamilienhaus mit Natursteinfassade (Beispielbild)" eyebrow="Für Investoren" title="Passende Immobilien finden." text="Ausgewählt. Analysiert. Auf Ihr Profil abgestimmt." cta="Suchprofil erstellen" d={120} />
           </div>
         </div>
       </section>
