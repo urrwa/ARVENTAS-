@@ -4238,3 +4238,9 @@ body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display:
 .rg-wrap { padding-top: 104svh; }
 .rg-free { max-width: none; }
 .rg-free > * { max-width: 1180px; margin-inline: auto; }
+/* Objektreport-Seite: Bausteine laufen direkt über das Hero-Bild, kein zweites Bild und keine eigene Fläche */
+.rp-over { position: relative; background: transparent !important; padding-block: clamp(40px, 8vh, 90px) clamp(60px, 9vw, 120px); }
+.rp-over .sec-head { margin-bottom: clamp(24px, 4vh, 48px); }
+.rp-over { color: var(--ivory); padding-top: clamp(220px, 52svh, 520px); }
+.rp-over .h2 { color: var(--ivory); }
+.rp-over .eyebrow { color: var(--gold); }

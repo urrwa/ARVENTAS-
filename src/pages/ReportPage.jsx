@@ -2,7 +2,6 @@ import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq } from '../components/ui.jsx'
-import StillCover from '../components/StillCover.jsx'
 import ParallaxCards from '../components/ParallaxCards.jsx'
 import ReportStack from '../components/ReportStack.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
@@ -32,9 +31,12 @@ export default function ReportPage() {
         <div className="btn-row"><Btn href="#muster" variant="line">Muster ansehen</Btn><Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 
-      <StillCover id="h-bausteine" image="/media/p/u-diagramme.webp" eyebrow="Analysebausteine" title="Sechs Bausteine, ein Bild.">
-        <ParallaxCards inside items={BLOCKS.map(([title, text, img], i) => ({ title, text, img, ratio: i % 3 === 1 ? '3 / 4' : '4 / 5', speed: [1, 1.7, 0.8, 1.3, 0.9, 1.6][i] }))} />
-      </StillCover>
+      <section className="rp-over" aria-labelledby="h-bausteine">
+        <div className="wrap">
+          <header className="sec-head"><p className="eyebrow rv">Analysebausteine</p><h2 id="h-bausteine" className="h2 rv">Sechs Bausteine, ein Bild.</h2></header>
+          <ParallaxCards inside items={BLOCKS.map(([title, text, img], i) => ({ title, text, img, ratio: i % 3 === 1 ? '3 / 4' : '4 / 5', speed: [1, 1.7, 0.8, 1.3, 0.9, 1.6][i] }))} />
+        </div>
+      </section>
 
       <section id="muster" className="sec dark" style={{ padding: 0 }} aria-labelledby="h-muster">
         <ReportStack eyebrow="Interaktive Musteransicht" title="So kann ein Objektreport aussehen." lead="Blättern Sie durch das Muster. Es ist rein illustrativ." hid="h-muster" />
