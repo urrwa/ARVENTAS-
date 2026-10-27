@@ -4244,3 +4244,37 @@ body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display:
 .rp-over { color: var(--ivory); padding-top: clamp(220px, 52svh, 520px); }
 .rp-over .h2 { color: var(--ivory); }
 .rp-over .eyebrow { color: var(--gold); }
+
+/* Gepinnte Szene mit übereinander gleitenden Bildkarten (Referenz-Video) */
+.ss2-stick { position: sticky; top: 0; height: 100svh; display: flex; align-items: center; padding-top: var(--header-h); box-sizing: border-box; }
+.ss2-grid { display: grid; grid-template-columns: minmax(280px, 4.2fr) 7fr; gap: clamp(28px, 4vw, 72px); align-items: center; width: 100%; }
+.ss2-head .h2 { font-size: clamp(34px, 3.8vw, 58px); margin: 6px 0 14px; }
+.ss2-head .lead { margin: 0 0 20px; }
+.ss2-list { list-style: none; margin: clamp(24px, 6vh, 64px) 0 0; padding: 0; max-width: 360px; }
+.ss2-list button { display: block; width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid rgba(233, 217, 188, .14); padding: 14px 0; cursor: pointer; color: rgba(233, 228, 216, .55); font: 500 15px var(--font-body); transition: color 300ms, padding 300ms; position: relative; }
+.ss2-list button::before { content: ""; position: absolute; left: 0; top: 50%; width: 7px; height: 7px; margin-top: -3px; background: var(--gold); transform: scale(0); transition: transform 300ms; }
+.ss2-list button.on { color: var(--gold); padding-left: 18px; }
+.ss2-list button.on::before { transform: none; }
+.ss2-list button:hover { color: var(--ivory); }
+.ss2-stack { position: relative; height: min(74svh, 660px); }
+.ss2-card { position: absolute; inset: 0; border-radius: 22px; overflow: hidden; background: #0b1a2d; color: var(--ivory); transition: transform 900ms cubic-bezier(.22, 1, .36, 1), opacity 700ms ease, filter 700ms; box-shadow: 0 30px 70px rgba(0, 0, 0, .45); }
+.ss2-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ss2-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 12, 22, .25) 0%, transparent 28%, rgba(5, 12, 22, .88) 100%); }
+.ss2-card.on { transform: none; z-index: 5; }
+.ss2-card.next { transform: translateY(104%); z-index: 6; }
+.ss2-card.under { transform: scale(calc(1 - var(--d) * .03)) translateY(calc(var(--d) * -14px)); filter: brightness(.6); z-index: 1; }
+.ss2-ic { position: absolute; z-index: 2; left: 22px; top: 22px; width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: rgba(245, 243, 239, .92); }
+.ss2-ic svg { width: 24px; height: 24px; fill: none; stroke: #8a7242; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.ss2-no { position: absolute; z-index: 2; right: 26px; top: 14px; font: 400 clamp(44px, 5vw, 76px)/1 var(--font-head); }
+.ss2-cap { position: absolute; z-index: 2; left: 28px; right: 28px; bottom: 26px; }
+.ss2-cap h3 { margin: 0 0 10px; font: 400 clamp(26px, 2.6vw, 38px)/1.1 var(--font-head); }
+.ss2-cap p { margin: 0; max-width: 560px; font-size: 14.5px; line-height: 1.55; color: rgba(245, 243, 239, .86); text-transform: none; letter-spacing: 0; }
+.ss2-cap ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ss2-cap li { display: grid; grid-template-columns: minmax(130px, 200px) 1fr; gap: 14px; align-items: baseline; padding-top: 8px; border-top: 1px solid rgba(245, 243, 239, .2); }
+.ss2-cap li b { font: 700 12px var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.ss2-cap li span { font-size: 13.5px; color: rgba(245, 243, 239, .88); }
+.ss2-flat .ss2-stack { height: auto; display: grid; gap: 16px; margin-top: 24px; }
+.ss2-flat .ss2-card { position: relative; inset: auto; min-height: 420px; }
+@media (prefers-reduced-motion: reduce) { .ss2-card { transition: none; } }
+.ss2-head .h2 { color: var(--ivory) !important; }
+.ss2-head .lead { color: var(--text-2); }

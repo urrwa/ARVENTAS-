@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq } from '../components/ui.jsx'
 import ParallaxCards from '../components/ParallaxCards.jsx'
 import ReportStack from '../components/ReportStack.jsx'
-import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
+import StackScene from '../components/StackScene.jsx'
 import { REPORT_FAQ } from '../content/data.js'
 
 const BLOCKS = [
@@ -21,6 +21,12 @@ const FLOW = [
   { t: 'Analyse', d: 'Bausteine werden erarbeitet.' },
   { t: 'Menschliche Freigabe', d: 'Jede Analyse wird persönlich geprüft.' },
   { t: 'Besprechung', d: 'Sie erhalten den Bericht und besprechen ihn.' },
+]
+
+const SCENE = [
+  { label: 'Herkunft von Daten und Annahmen', icon: 'doc', img: '/media/p/ablauf-bibliothek.webp', title: 'Nachvollziehbar statt behauptet.', text: 'Im Bericht wird je Baustein ausgewiesen, welche Quelle, welcher Stand und welche Annahmen zugrunde liegen. Annahmen sind als solche gekennzeichnet.' },
+  { label: 'Einordnung', icon: 'scale', img: '/media/p/ablauf-schreibtisch.webp', title: 'Marktwerteinschätzung und Gutachten.', text: 'Eine Marktwerteinschätzung ist kein verbindliches Gutachten. Rechtliche Vorprüfungen sind keine rechtsverbindliche Entscheidung. Wirtschaftliche Szenarien sind keine Renditegarantie.' },
+  { label: 'Ablauf', icon: 'route', img: '/media/p/ablauf-besprechung.webp', title: 'Vom Anliegen zum Bericht.', steps: FLOW },
 ]
 
 export default function ReportPage() {
@@ -42,21 +48,7 @@ export default function ReportPage() {
         <ReportStack eyebrow="Interaktive Musteransicht" title="So kann ein Objektreport aussehen." lead="Blättern Sie durch das Muster. Es ist rein illustrativ." hid="h-muster" />
       </section>
 
-      <section className="sec dark">
-        <div className="wrap two">
-          <div><SectionHead eyebrow="Herkunft von Daten und Annahmen" title="Nachvollziehbar statt behauptet." normal />
-            <p className="rv">Im Bericht wird je Baustein ausgewiesen, welche Quelle, welcher Stand und welche Annahmen zugrunde liegen. Annahmen sind als solche gekennzeichnet.</p></div>
-          <div><SectionHead eyebrow="Einordnung" title="Marktwerteinschätzung und Gutachten." normal />
-            <p className="rv">Eine Marktwerteinschätzung ist kein verbindliches Gutachten. Rechtliche Vorprüfungen sind keine rechtsverbindliche Entscheidung. Wirtschaftliche Szenarien sind keine Renditegarantie.</p></div>
-        </div>
-      </section>
-
-      <section className="sec dark" style={{ paddingTop: 0 }}>
-        <div className="wrap">
-          <SectionHead eyebrow="Ablauf" title="Vom Anliegen zum Bericht." normal />
-          <SimpleTimeline steps={FLOW} />
-        </div>
-      </section>
+      <StackScene id="h-transparenz" title="Nachvollziehbar statt behauptet." items={SCENE} />
 
       <section className="sec dark" style={{ paddingTop: 0 }}>
         <div className="wrap">
