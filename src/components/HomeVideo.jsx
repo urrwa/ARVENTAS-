@@ -9,12 +9,20 @@ export default function HomeVideo() {
     if (!v) return
     const save = navigator.connection && navigator.connection.saveData
     if (save || matchMedia('(prefers-reduced-motion: reduce)').matches) { v.pause(); v.removeAttribute('autoplay'); v.querySelectorAll('source').forEach((x) => x.remove()); v.load(); return }
+    if (innerWidth <= 900) {
+      // Mobil: Video erst nach dem Laden der Seite holen, damit Bild und Text zuerst erscheinen
+      const srcs = [...v.querySelectorAll('source')].map((x) => [x.src, x.type])
+      v.querySelectorAll('source').forEach((x) => x.remove())
+      const go = () => setTimeout(() => { srcs.forEach(([src, type]) => { const el = document.createElement('source'); el.src = src; el.type = type; v.appendChild(el) }); v.load(); const q = v.play(); if (q && q.catch) q.catch(() => {}) }, 1500)
+      if (document.readyState === 'complete') go(); else addEventListener('load', go, { once: true })
+      return
+    }
     const p = v.play()
     if (p && p.catch) p.catch(() => {})
   }, [])
   return (
     <section className="hv" aria-label="Einführung">
-      <video ref={vid} className="hv-vid" autoPlay muted loop playsInline preload="metadata" poster="/media/hero/poster.webp" aria-hidden="true">
+      <video ref={vid} className="hv-vid" autoPlay muted loop playsInline preload="metadata" poster={typeof window !== 'undefined' && window.innerWidth <= 900 ? '/media/hero/poster-sm.webp' : '/media/hero/poster.webp'} aria-hidden="true">
         <source src="/media/hero/montage.webm" type="video/webm" />
         <source src="/media/hero/montage.mp4" type="video/mp4" />
       </video>
