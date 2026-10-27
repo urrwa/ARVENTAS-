@@ -43,3 +43,4 @@ Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus
 - potenzial-umbau: vom Nutzer bereitgestellt (Foto Buerogebaeude mit Kran/Geruest, 600px), Lizenz pruefen
 - wirtschaft-euro: vom Nutzer bereitgestellt (Foto Euro-Muenzen und Scheine), Lizenz pruefen
 - wissen-kapitalanlage / wissen-offmarket / wissen-bewertung / wissen-markt: vom Nutzer bereitgestellt (Unsplash-Fotos), Lizenz/Ort pruefen; wissen-markt wirkt niederlaendisch (Luftbild Wohnviertel)
+- besichtigung: vom Nutzer bereitgestellt (Stockfoto Klemmbrett Inspektion; enthaelt englisches Logo Real Estate und FOR-SALE-Schild), Lizenz pruefen
