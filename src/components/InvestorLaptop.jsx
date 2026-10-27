@@ -10,8 +10,8 @@ const TYPES = ['Mehrfamilienhaus', 'Wohn- und Geschäftshaus', 'Gewerbeimmobilie
 const IMG = [
   ['mfh-balkone', 'ablauf-wohnhaus', 'zugang-investor'],
   ['altstadt-luftbild-de', 'ablauf-strasse', 'ablauf-eingang'],
-  ['zugang-investor', 'ablauf-fassade', 'ablauf-luftbild'],
-  ['h-entwicklung', 'ablauf-luftbild', 'ablauf-strasse'],
+  ['u-glasfassaden', 'wissen-fassade', 'u-frankfurt-main'],
+  ['di.step.0', 'u-baulucke', 'di.area.3'],
 ]
 const BUDGET = ['bis 500.000 €', '500.000 – 2 Mio. €', '2 – 5 Mio. €', 'ab 5 Mio. €']
 const ICON = {
