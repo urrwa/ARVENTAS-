@@ -67,90 +67,75 @@ const CPage = ({ k }) => (
   </div>
 )
 
-// Der Bericht blättert sich beim Scrollen auf: links die Frage des Kapitels, rechts die Seite mit der Antwort.
-// Schmale Bildschirme und reduzierte Bewegung: alle Kapitel untereinander.
+// Objektreport als Kartenraster über einem weichgezeichneten Bild: Die Überschrift blendet beim Scrollen aus, die sechs Kapitel schieben sich als große Bildkarten darüber.
+// Ein Klick öffnet die Report-Seite des Kapitels (Frage und Antwort).
 export default function ReportStack() {
-  const box = useRef(null)
-  const [flat, setFlat] = useState(false)
-  const [a, setA] = useState(0)
+  const root = useRef(null)
+  const [open, setOpen] = useState(null)
   useEffect(() => {
-    const mq = matchMedia('(max-width: 900px), (prefers-reduced-motion: reduce)')
-    const sync = () => setFlat(mq.matches)
-    sync(); mq.addEventListener('change', sync)
-    return () => mq.removeEventListener('change', sync)
-  }, [])
-  useEffect(() => {
-    if (flat) return
+    const el = root.current
+    if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches) return
     let raf = 0
     const tick = () => {
       raf = 0
-      const el = box.current
-      if (!el) return
       const r = el.getBoundingClientRect()
-      const t = clamp(-r.top / Math.max(1, el.offsetHeight - innerHeight), 0, 0.9999)
-      setA(Math.floor(t * STAGES))
+      const p = Math.min(1, Math.max(0, (-r.top) / (innerHeight * 0.7)))
+      el.style.setProperty('--p', p.toFixed(3))
     }
     const on = () => { if (!raf) raf = requestAnimationFrame(tick) }
     tick()
     addEventListener('scroll', on, { passive: true }); addEventListener('resize', on)
     return () => { removeEventListener('scroll', on); removeEventListener('resize', on); cancelAnimationFrame(raf) }
-  }, [flat])
-  const jump = (k) => {
-    const el = box.current
-    if (!el) return
-    const top = el.getBoundingClientRect().top + scrollY
-    scrollTo({ top: top + (el.offsetHeight - innerHeight) * ((k + 0.5) / STAGES), behavior: 'smooth' })
-  }
-  const head = (
-    <header className="bk-head">
-      <div>
-        <p className="eyebrow rv">Objektreport</p>
-        <h2 id="h-rep" className="h2 rv">Ein klares Bild.</h2>
-        <p className="lead rv">Datenbasiert analysiert. Persönlich geprüft.</p>
-      </div>
-      <div className="bk-cta">
-        <div className="btn-row">
-          <Btn to="/objektreport#muster" variant="line">Muster ansehen</Btn>
-          <Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn>
-        </div>
-        <p className="small rp-note">Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen. Muster, keine Objektbewertung.</p>
-      </div>
-    </header>
-  )
-  if (flat) {
-    return (
-      <div className="wrap">
-        {head}
-        <div className="bk-flat">
-          {PANELS.map((p, k) => (<div key={p.id} className="bk-flat-i"><QPage k={k} /><CPage k={k} /></div>))}
-        </div>
-      </div>
-    )
-  }
+  }, [])
+  useEffect(() => {
+    if (open == null) return
+    const key = (e) => { if (e.key === 'Escape') setOpen(null) }
+    addEventListener('keydown', key)
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { removeEventListener('keydown', key); document.body.style.overflow = prev }
+  }, [open])
   return (
-    <div className="bk" ref={box}>
-      <div className="bk-stick">
-        <div className="wrap bk-in">
-          {head}
-          <div className={'bk-book' + (a === 0 ? ' closed' : '')} role="region" aria-live="polite" aria-label={a === 0 ? 'Objektreport, geschlossen' : 'Kapitel ' + PANELS[a - 1].label}>
-            {Array.from({ length: N + 1 }, (_, i) => (
-              <div key={i} className={'bk-leaf' + (i < a ? ' turned' : '')} style={{ zIndex: i < a ? i + 1 : N + 1 - i }}>
-                <div className="bk-face front">
-                  {i === 0 ? (
-                    <div className="bk-cover"><img src="/media/arventas-logo.png" alt="" /><b>Objektreport</b><span>Muster</span></div>
-                  ) : <CPage k={i - 1} />}
-                </div>
-                <div className="bk-face back">{i < N ? <QPage k={i} /> : null}</div>
-              </div>
-            ))}
+    <div className="rg" ref={root}>
+      <div className="rg-bg" aria-hidden="true"><img src="/media/p/ablauf-bibliothek.webp" alt="" loading="lazy" /></div>
+      <div className="rg-title">
+        <p className="eyebrow">Objektreport</p>
+        <h2 id="h-rep">Ein klares Bild.</h2>
+        <p className="lead">Datenbasiert analysiert. Persönlich geprüft.</p>
+      </div>
+      <div className="wrap rg-wrap">
+        <ul className="rg-grid">
+          {PANELS.map((p, k) => {
+            const v = VIS[p.id]
+            return (
+              <li key={p.id}>
+                <button type="button" className="rg-card" onClick={() => setOpen(k)} aria-label={`${p.small} ${p.label}: ${QA[p.id][0]}`}>
+                  <img src={`/media/p/${v.img}.webp`} alt="" loading="lazy" />
+                  <span className="rg-no">{p.small} · {p.label}</span>
+                  <span className="bk-badge rg-ic"><Ic n={v.icon} /></span>
+                  <span className="rg-cap"><b>{QA[p.id][0]}</b><em>{QA[p.id][1]}</em><i>Report-Seite ansehen <u aria-hidden="true">→</u></i></span>
+                </button>
+              </li>
+            )
+          })}
+        </ul>
+        <div className="rg-cta">
+          <div className="btn-row">
+            <Btn to="/objektreport#muster" variant="line">Muster ansehen</Btn>
+            <Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn>
           </div>
-          <ol className="bk-steps" aria-label="Kapitel">
-            {PANELS.map((p, k) => (
-              <li key={p.id}><button type="button" className={a === k + 1 ? 'on' : ''} onClick={() => jump(k + 1)}><small>{p.small}</small><span>{p.label}</span></button></li>
-            ))}
-          </ol>
+          <p className="small rp-note">Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen. Beispielbilder und Muster, keine Objektbewertung.</p>
         </div>
       </div>
+      {open != null && (
+        <div className="rg-modal" role="dialog" aria-modal="true" aria-label={PANELS[open].label} onClick={() => setOpen(null)}>
+          <div className="rg-sheet" onClick={(e) => e.stopPropagation()}>
+            <button type="button" className="rg-x" onClick={() => setOpen(null)} aria-label="Schließen">×</button>
+            <div className="rg-pg"><QPage k={open} /></div>
+            <div className="rg-pg"><CPage k={open} /></div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
