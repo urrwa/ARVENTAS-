@@ -30,3 +30,4 @@ Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus
 - partner-hero / partner-fachleute / partner-ergaenzung / partner-besprechung: KI-generiert (Beispielbilder, Partner-Seite)
 - home-zugang-tor / home-analyse-hand / home-unterlagen: KI-generiert (Beispielbilder, Startseite)
 - owner-beratung: KI-generiert (Beispielbild, Beratung Eigentuemer; Startseite + Eigentuemer-Seite)
+- kontakt-buero: KI-generiert (Beispielbild, Buero-Empfang; Startseite Kontakt + Kontakt-Seite)
