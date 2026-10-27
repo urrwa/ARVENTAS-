@@ -67,11 +67,50 @@ const CPage = ({ k }) => (
   </div>
 )
 
-// Objektreport als Kartenraster über einem weichgezeichneten Bild: Die Überschrift blendet beim Scrollen aus, die sechs Kapitel schieben sich als große Bildkarten darüber.
-// Ein Klick öffnet die Report-Seite des Kapitels (Frage und Antwort).
+// Kartenraster der sechs Kapitel mit Report-Seite im Popup (Klick). Wird auf der Startseite und auf der Objektreport-Seite verwendet.
+export function ReportCards() {
+  const [open, setOpen] = useState(null)
+  useEffect(() => {
+    if (open == null) return
+    const key = (e) => { if (e.key === 'Escape') setOpen(null) }
+    addEventListener('keydown', key)
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { removeEventListener('keydown', key); document.body.style.overflow = prev }
+  }, [open])
+  return (
+    <>
+      <ul className="rg-grid">
+        {PANELS.map((p, k) => {
+          const v = VIS[p.id]
+          return (
+            <li key={p.id}>
+              <button type="button" className="rg-card" onClick={() => setOpen(k)} aria-label={`${p.small} ${p.label}: ${QA[p.id][0]}`}>
+                <img src={`/media/p/${v.img}.webp`} alt="" loading="lazy" />
+                <span className="rg-no">{p.small} · {p.label}</span>
+                <span className="bk-badge rg-ic"><Ic n={v.icon} /></span>
+                <span className="rg-cap"><b>{QA[p.id][0]}</b><em>{QA[p.id][1]}</em><i>Report-Seite ansehen <u aria-hidden="true">→</u></i></span>
+              </button>
+            </li>
+          )
+        })}
+      </ul>
+      {open != null && (
+        <div className="rg-modal" role="dialog" aria-modal="true" aria-label={PANELS[open].label} onClick={() => setOpen(null)}>
+          <div className="rg-sheet" onClick={(e) => e.stopPropagation()}>
+            <button type="button" className="rg-x" onClick={() => setOpen(null)} aria-label="Schließen">×</button>
+            <div className="rg-pg"><QPage k={open} /></div>
+            <div className="rg-pg"><CPage k={open} /></div>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
+
+// Objektreport auf der Startseite: Kartenraster über einem weichgezeichneten Bild, die Überschrift blendet beim Scrollen aus.
 export default function ReportStack() {
   const root = useRef(null)
-  const [open, setOpen] = useState(null)
   useEffect(() => {
     const el = root.current
     if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -87,14 +126,6 @@ export default function ReportStack() {
     addEventListener('scroll', on, { passive: true }); addEventListener('resize', on)
     return () => { removeEventListener('scroll', on); removeEventListener('resize', on); cancelAnimationFrame(raf) }
   }, [])
-  useEffect(() => {
-    if (open == null) return
-    const key = (e) => { if (e.key === 'Escape') setOpen(null) }
-    addEventListener('keydown', key)
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => { removeEventListener('keydown', key); document.body.style.overflow = prev }
-  }, [open])
   return (
     <div className="rg" ref={root}>
       <div className="rg-bg" aria-hidden="true"><img src="/media/p/ablauf-bibliothek.webp" alt="" loading="lazy" /></div>
@@ -104,21 +135,7 @@ export default function ReportStack() {
         <p className="lead">Datenbasiert analysiert. Persönlich geprüft.</p>
       </div>
       <div className="wrap rg-wrap">
-        <ul className="rg-grid">
-          {PANELS.map((p, k) => {
-            const v = VIS[p.id]
-            return (
-              <li key={p.id}>
-                <button type="button" className="rg-card" onClick={() => setOpen(k)} aria-label={`${p.small} ${p.label}: ${QA[p.id][0]}`}>
-                  <img src={`/media/p/${v.img}.webp`} alt="" loading="lazy" />
-                  <span className="rg-no">{p.small} · {p.label}</span>
-                  <span className="bk-badge rg-ic"><Ic n={v.icon} /></span>
-                  <span className="rg-cap"><b>{QA[p.id][0]}</b><em>{QA[p.id][1]}</em><i>Report-Seite ansehen <u aria-hidden="true">→</u></i></span>
-                </button>
-              </li>
-            )
-          })}
-        </ul>
+        <ReportCards />
         <div className="rg-cta">
           <div className="btn-row">
             <Btn to="/objektreport#muster" variant="line">Muster ansehen</Btn>
@@ -127,15 +144,6 @@ export default function ReportStack() {
           <p className="small rp-note">Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen. Beispielbilder und Muster, keine Objektbewertung.</p>
         </div>
       </div>
-      {open != null && (
-        <div className="rg-modal" role="dialog" aria-modal="true" aria-label={PANELS[open].label} onClick={() => setOpen(null)}>
-          <div className="rg-sheet" onClick={(e) => e.stopPropagation()}>
-            <button type="button" className="rg-x" onClick={() => setOpen(null)} aria-label="Schließen">×</button>
-            <div className="rg-pg"><QPage k={open} /></div>
-            <div className="rg-pg"><CPage k={open} /></div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
