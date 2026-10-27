@@ -28,3 +28,4 @@ Das Bild `hero-card-mfh.webp` (Mehrfamilienhaus, deutsche Wohnstraße, ohne Pers
 Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus`, `ablauf-luftbild` und `h-entwicklung` wurden durch realistische, mit Nano Banana 2 (Higgsfield) erzeugte Aufnahmen deutscher Wohnhäuser und Straßen ersetzt (ohne Personen, Text, Logos). Als generierte Bilder kennzeichnen.
 
 - partner-hero / partner-fachleute / partner-ergaenzung / partner-besprechung: KI-generiert (Beispielbilder, Partner-Seite)
+- home-zugang-tor / home-analyse-hand / home-unterlagen: KI-generiert (Beispielbilder, Startseite)
