@@ -5,7 +5,7 @@ import { ARTICLES, CATEGORIES } from '../content/data.js'
 // Text wird weiß, ein Pfeil erscheint, das Foto wechselt. Gilt für Startseite und Wissen-Seite.
 const FALLBACK = { Entwicklungspotenziale: '/media/p/h-entwicklung.webp' }
 const article = (c) => (c === 'Alle' ? ARTICLES[0] : ARTICLES.find((x) => x.cat === c))
-const pic = (c, full) => { if (full && c === 'Alle') return '/media/p/wissen-fassade.webp'; const a = article(c); return a ? a.img : FALLBACK[c] || '/media/p/ablauf-bibliothek.webp' }
+const pic = (c, full) => { if (full && c === 'Alle') return '/media/p/u-eingang-stein.webp'; const a = article(c); return a ? a.img : FALLBACK[c] || '/media/p/ablauf-bibliothek.webp' }
 
 export default function KnowledgeTabs({ cat, setCat, full, base = 'Alle' }) {
   return (
