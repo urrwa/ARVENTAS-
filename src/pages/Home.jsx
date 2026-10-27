@@ -6,7 +6,6 @@ import { Btn, SectionHead, Placeholder, Roll } from '../components/ui.jsx'
 import ReportStack from '../components/ReportStack.jsx'
 import ProcessTimeline from '../components/ProcessTimeline.jsx'
 import StrengthStack from '../components/StrengthStack.jsx'
-import InvestorLaptop from '../components/InvestorLaptop.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import GermanyMap from '../components/GermanyMap.jsx'
@@ -129,11 +128,6 @@ export default function Home() {
 
       {/* 06 – Eigentümer */}
       {/* Für Eigentümer: entfällt, weil Zwei Wege und Ablauf den Eigentümer schon abdecken */}
-
-      {/* 07 – Investoren und Matching */}
-      <section className="sec dark ink wide-sec il-sec" aria-labelledby="h-match">
-        <div className="wrap"><InvestorLaptop /></div>
-      </section>
 
       {/* 08 – Menschen: ausgeblendet, bis bestätigte Porträts und Profile vorliegen (siehe docs/abgleich-masterprompt.md) */}
 

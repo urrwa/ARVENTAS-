@@ -59,19 +59,6 @@ export default function About() {
 
       <section className="sec dark org-sec">
         <div className="wrap">
-          <div className="org-head">
-            <SectionHead eyebrow="Unternehmensstruktur" title="Tatsächliche Struktur und Verantwortung." normal />
-            <p className="rv">Die Dachmarke und das Zusammenspiel spezialisierter Unternehmen werden hier erklärt. Wer Leistungen erbringt und Vertragspartner wird, stellen wir anhand der bestätigten Unternehmensstruktur transparent dar.</p>
-          </div>
-          <div className="org rv" role="img" aria-label="Reduziertes Strukturdiagramm als Platzhalter">
-            <div className="org-top"><span>Dachmarke</span></div>
-            <div className="org-bar" aria-hidden="true" />
-            <div className="org-row">
-              {['Gesellschaft A', 'Gesellschaft B', 'Gesellschaft C'].map((t) => (<div key={t} className="org-co"><i aria-hidden="true" /><span>{t}</span></div>))}
-            </div>
-            <p className="small org-note">Platzhalter: Bezeichnungen und Beziehungen werden nach Bestätigung der Unternehmensstruktur ergänzt. Keine pauschale Behauptung einer rechtlichen Risikotrennung oder Haftungsfreiheit.</p>
-          </div>
-
           <div className="org-head org-head2">
             <SectionHead eyebrow="Ansprechpartner" title="Echte Ansprechpartner." normal />
           </div>
