@@ -9,8 +9,8 @@ import { INVESTOR_FAQ } from '../content/data.js'
 
 const STEPS = [
   { eb: 'Schritt 1', t: 'Suchprofil und Auswahl', d: 'Region, Immobilientyp und Budgetband bilden Ihr Suchprofil. Daraus entsteht eine gezielte Auswahl.', img: '/media/p/h-suchprofil.webp' },
-  { eb: 'Schritt 2', t: 'Objektanalyse', d: 'Wert, Potenzial und Risiken werden nachvollziehbar eingeordnet, mit Quellen und Annahmen.', img: '/media/p/h-analyse.webp' },
-  { eb: 'Schritt 3', t: 'Persönliche Begleitung', d: 'Ein fester Ansprechpartner begleitet Sie von der Prüfung bis zur Entscheidung.', img: '/media/p/h-p-investor.webp' },
+  { eb: 'Schritt 2', t: 'Objektanalyse', d: 'Wert, Potenzial und Risiken werden nachvollziehbar eingeordnet, mit Quellen und Annahmen.', img: '/media/p/owner-analyse-karte.webp' },
+  { eb: 'Schritt 3', t: 'Persönliche Begleitung', d: 'Ein fester Ansprechpartner begleitet Sie von der Prüfung bis zur Entscheidung.', img: '/media/p/owner-besprechung.webp' },
 ]
 const MATRIX = [
   { id: 'lage', label: 'Lage', q: ['Wie ist die Mikrolage einzuordnen?', 'Welche Entwicklung ist im Umfeld bekannt?', 'Wie gut sind Anbindung und Versorgung?'] },

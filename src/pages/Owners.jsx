@@ -10,7 +10,7 @@ import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
 
-const PROCESS_IMG = ['owner-beratung', 'ablauf-schreibtisch', 'ablauf-modell', 'partner-ergaenzung', 'h-kaeufer', 'abschluss-beratung'].map((k) => `/media/p/${k}.webp`)
+const PROCESS_IMG = ['owner-beratung', 'owner-unterlagen', 'owner-analyse-karte', 'owner-besprechung', 'h-kaeufer', 'abschluss-beratung'].map((k) => `/media/p/${k}.webp`)
 
 const SITUATIONS = [
   { id: 'privat', img: '/media/p/h-p-besprechung.webp', label: 'Private Eigentümer', t: 'Wert verstehen, bevor Sie entscheiden.', p: 'Als privater Immobilienbesitzer möchten Sie wissen, was Ihre Immobilie wert ist und welche Optionen es gibt. Eine sachliche Einordnung hilft, ohne dass Sie sich festlegen müssen.' },
@@ -52,8 +52,8 @@ export default function Owners() {
           <SectionHead eyebrow="Erzählstruktur" title="Drei Schritte zur Klarheit." />
           <StepRows items={[
             { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/p/owner-situation.webp' },
-            { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', img: '/media/p/ablauf-modell.webp' },
-            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/p/h-p-entscheidung.webp' },
+            { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', img: '/media/p/owner-analyse-bericht.webp' },
+            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/p/owner-entscheidung.webp' },
           ]} />
         </div>
       </section>
