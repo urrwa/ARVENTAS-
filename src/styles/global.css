@@ -4295,3 +4295,15 @@ body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display:
 .ss2-cap small { display: block; margin-bottom: 8px; font: 700 11px var(--font-body); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
 .ss2-cap ol, .ss2-cap li { list-style: none; counter-reset: none; }
 .ss2-cap li::before, .ss2-cap li::marker { content: none; }
+
+/* Über uns: Struktur und Ansprechpartner als zwei ruhige Glaskarten */
+.about-cards { align-items: stretch; gap: clamp(16px, 2vw, 28px); }
+.ab-card { padding: clamp(24px, 3vw, 44px); border-radius: clamp(18px, 2vw, 28px); border: 1px solid rgba(233, 217, 188, .22); background: linear-gradient(160deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .02)); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.ab-card .h2 { font-size: clamp(30px, 3.2vw, 48px); }
+.ab-card .struct { background: rgba(6, 17, 31, .55); border: 1px solid rgba(233, 217, 188, .2); border-radius: 16px; padding: 22px 22px 14px; margin-top: 22px; }
+.ab-card .struct .small { color: rgba(233, 228, 216, .65); }
+.ab-ppl { display: flex; gap: 14px; margin: 22px 0 18px; }
+.ab-ppl span { width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; border: 1px dashed rgba(233, 217, 188, .5); background: rgba(200, 173, 128, .08); }
+.ab-ppl svg { width: 34px; height: 34px; fill: none; stroke: #c8ad80; stroke-width: 1.4; stroke-linecap: round; }
+.ab-card .ph, .ab-card [class*="placeholder"] { border-radius: 16px; }
+@media (max-width: 860px) { .about-cards { grid-template-columns: 1fr; } }
