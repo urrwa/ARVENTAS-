@@ -3,7 +3,7 @@ import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead, Faq } from '../components/ui.jsx'
 import ParallaxCards from '../components/ParallaxCards.jsx'
-import { ReportCards } from '../components/ReportStack.jsx'
+import ReportViewer from '../components/ReportViewer.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { REPORT_FAQ } from '../content/data.js'
 
@@ -40,9 +40,8 @@ export default function ReportPage() {
 
       <section className="sec dark" id="muster">
         <div className="wrap">
-          <SectionHead eyebrow="Interaktive Musteransicht" title="So kann ein Objektreport aussehen." lead="Wählen Sie ein Kapitel und öffnen Sie die Report-Seite. Das Muster ist rein illustrativ." />
-          <div className="rv"><ReportCards /></div>
-          <p className="small muted" style={{ marginTop: 20 }}>Beispielbilder und Muster, keine Objektbewertung.</p>
+          <SectionHead eyebrow="Interaktive Musteransicht" title="So kann ein Objektreport aussehen." lead="Wählen Sie eine Analyseebene. Das Muster ist rein illustrativ." />
+          <div className="rv"><ReportViewer id="muster-page" /></div>
         </div>
       </section>
 
