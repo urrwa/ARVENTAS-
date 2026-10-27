@@ -4287,3 +4287,6 @@ body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display:
 /* Kontakt: Inhalt schiebt sich wie auf der Objektreport-Seite deckend über das ruhende, weichgezeichnete Hero-Bild */
 .cover-over { background: var(--cover-bg) !important; background-color: #06111f !important; background-attachment: fixed !important; }
 .cover-over :is(.sec.dark, .ps) { background: transparent !important; }
+/* Seiten mit weichgezeichnetem Hero-Bild (Objektreport, Kontakt, Partner): Inhalt läuft über das ruhende Bild, keine deckende Fläche */
+main:has(.phero-blur) :is(.sec.dark, .cover-over, .ps, .cover-over .sec) { background: transparent !important; background-image: none !important; }
+main:has(.phero-blur) .cover-over { background: transparent !important; }

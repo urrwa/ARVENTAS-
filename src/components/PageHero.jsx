@@ -26,7 +26,7 @@ export default function PageHero({ crumb, eyebrow, title, lead, children, image,
   const wrapRef = useRef(null)
   useFadeOut(fadeOut, wrapRef, blur)
   return (
-    <section className={`phero dark${image ? ' has-img' : ''}${tall ? ' tall' : ''}`}>
+    <section className={`phero dark${image ? ' has-img' : ''}${tall ? ' tall' : ''}${blur ? ' phero-blur' : ''}`}>
       {image && <img className="phero-img" src={image} alt="" loading="eager" />}
       <div className="wrap" ref={wrapRef}>
         {crumb && <p className="crumbs"><Link to="/">Start</Link> / {crumb}</p>}
