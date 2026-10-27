@@ -72,5 +72,5 @@ export const SYSTEM_IMG = {
 export const INSIGHTS_IMG = {
   stair: ['ma.area.2', 'ma.area.0', 'vm.area.0', 'bw.res.3', 'ma.res.3'].map(p),   // Marktberichte, Standortanalysen, Trends, Fachartikel, Archiv
   slider: ['vm.step.2', 'bw.step.2', 'di.step.0', 'sa.area.3'].map(p), // Warum Insights
-  articles: { 'off-market-verstehen': p('u-eingang-travertin'), 'immobilien-bewerten': p('u-begutachtung-sandstein'), 'potenziale-einordnen': p('u-baulucke'), 'kapitalanlage-einordnen': p('mfh-balkone'), 'marktinformationen-einordnen': p('u-altstadt') },
+  articles: { 'off-market-verstehen': p('wissen-offmarket'), 'immobilien-bewerten': p('wissen-bewertung'), 'potenziale-einordnen': p('u-baulucke'), 'kapitalanlage-einordnen': p('wissen-kapitalanlage'), 'marktinformationen-einordnen': p('wissen-markt') },
 }

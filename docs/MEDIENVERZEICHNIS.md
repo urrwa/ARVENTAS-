@@ -42,3 +42,4 @@ Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus
 - standort-muenchen: vom Nutzer bereitgestellt (Foto Muenchen Marienplatz, 500px), Lizenz pruefen. NICHT genutzt: Cesky Krumlov und Prag (nicht Deutschland)
 - potenzial-umbau: vom Nutzer bereitgestellt (Foto Buerogebaeude mit Kran/Geruest, 600px), Lizenz pruefen
 - wirtschaft-euro: vom Nutzer bereitgestellt (Foto Euro-Muenzen und Scheine), Lizenz pruefen
+- wissen-kapitalanlage / wissen-offmarket / wissen-bewertung / wissen-markt: vom Nutzer bereitgestellt (Unsplash-Fotos), Lizenz/Ort pruefen; wissen-markt wirkt niederlaendisch (Luftbild Wohnviertel)
