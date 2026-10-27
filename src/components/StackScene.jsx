@@ -45,7 +45,7 @@ export default function StackScene({ eyebrow, title, lead, items, id }) {
   const head = (
     <header className="ss2-head">
       {eyebrow && <p className="eyebrow rv">{eyebrow}</p>}
-      <h2 id={id} className="h2 rv">{title}</h2>
+      <h2 id={id} className="sr-only">{title}</h2>
       {lead && <p className="lead rv">{lead}</p>}
     </header>
   )
@@ -55,9 +55,10 @@ export default function StackScene({ eyebrow, title, lead, items, id }) {
       <span className="ss2-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={ICON[it.icon]} /></svg></span>
       <span className="ss2-no">{String(k + 1).padStart(2, '0')}</span>
       <div className="ss2-cap">
+        <small>{it.label}</small>
         <h3>{it.title}</h3>
         {it.text && <p>{it.text}</p>}
-        {it.steps && <ol>{it.steps.map((s, i) => <li key={i}><b>{i + 1}. {s.t}</b><span>{s.d}</span></li>)}</ol>}
+        {it.steps && <ol>{it.steps.map((s, i) => <li key={i}><b>{s.t}</b><span>{s.d}</span></li>)}</ol>}
       </div>
     </article>
   )

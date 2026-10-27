@@ -4292,3 +4292,6 @@ body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display:
 .cta2-marq span { font: 700 12px var(--font-body); letter-spacing: .28em; text-transform: uppercase; color: rgba(245, 243, 239, .7); }
 @keyframes ctaMarq { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .cta2-marq div { animation: none; } }
+.ss2-cap small { display: block; margin-bottom: 8px; font: 700 11px var(--font-body); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.ss2-cap ol, .ss2-cap li { list-style: none; counter-reset: none; }
+.ss2-cap li::before, .ss2-cap li::marker { content: none; }
