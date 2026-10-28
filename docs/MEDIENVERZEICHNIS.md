@@ -128,3 +128,7 @@ Der Abschnitt „Was ist Ihr nächster Schritt?“ verwendet entsprechend der ge
 ## Startseite / Wissen – gleiche Fotos wie auf der Wissen-Seite, 29.10.2026
 
 Die sechs Kategorien unter „Hinter die Fassade schauen“ verwenden jetzt dieselbe zentrale Bildzuordnung `KNOWLEDGE_CATEGORY_PHOTOS` wie `/wissen`: Backsteinhaus, Wohnhäuser mit grünen Hügeln, Team bei der Bewertung am Bildschirm, Wohngebäude mit Balkonen, Baustelle mit Kränen und Wohnviertel aus der Vogelperspektive. Die vorhandenen responsiven WebP-Varianten und die Bildausrichtung für Immobilienbewertung gelten damit auf beiden Seiten. Kategorien laden beim ersten Anwählen; die sichtbare Aufnahme bleibt bis zum Laden der nächsten erhalten.
+
+## Startseite / Kontaktentscheidung – neues Motiv aus dem Bestand, 29.10.2026
+
+Auf Wunsch des Auftraggebers ersetzt das vorhandene hochformatige Eingangsmotiv `public/media/p/h-kontakt.webp` das Betongebäude im Kontaktabschnitt. Der beleuchtete Eingang passt zur Einladung „Was ist Ihr nächster Schritt?“ und bleibt links neben der überlappenden Karte sichtbar. Verwendet wird die bestehende Bilddatei; Layout und drei Linkziele bleiben erhalten.
