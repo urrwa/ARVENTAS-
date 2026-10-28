@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import Photo from './Photo.jsx'
 
 // Gepinnte Szene: links Überschrift und Liste, rechts große Bildkarten, die beim Scrollen eine nach der anderen von unten über die vorige gleiten.
 // Schmale Bildschirme und reduzierte Bewegung: Karten untereinander.
@@ -51,7 +52,7 @@ export default function StackScene({ eyebrow, title, lead, items, id }) {
   )
   const card = (it, k) => (
     <article key={k} className={'ss2-card' + (flat ? '' : k < a ? ' under' : k === a ? ' on' : ' next')} style={flat ? undefined : { '--d': a - k }} aria-hidden={!flat && k !== a ? 'true' : undefined}>
-      <img src={it.img} alt="" loading="lazy" />
+      <Photo image={it.photo || it.img} sizes="(max-width: 900px) 92vw, 64vw" />
       <span className="ss2-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={ICON[it.icon]} /></svg></span>
       <span className="ss2-no">{String(k + 1).padStart(2, '0')}</span>
       <div className="ss2-cap">

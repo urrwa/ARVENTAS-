@@ -4443,3 +4443,14 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
 .pp-col:has(img[src^="/media/team/"]) { height: auto; aspect-ratio: 2752 / 1536; align-self: center; }
 .pp-pic:has(img[src^="/media/team/"]) { height: auto; max-height: none; aspect-ratio: 2752 / 1536; }
 .pp-flat img[src^="/media/team/"] { display: block; height: auto; aspect-ratio: auto; }
+
+/* Objektreport: Arbeitsmotive passend zum Inhalt, mit lesbaren Bildunterschriften. */
+.ss2-card::after { background: linear-gradient(180deg, rgba(5, 12, 22, .28), rgba(5, 12, 22, .06) 32%, rgba(5, 12, 22, .86) 68%, rgba(5, 12, 22, .97)); }
+.ss2 .ss2-card:has(.ss2-cap ol)::after { background: linear-gradient(180deg, rgba(5, 12, 22, .28), rgba(5, 12, 22, .12) 24%, rgba(5, 12, 22, .92) 54%, rgba(5, 12, 22, .98)); }
+.ss2-flat .ss2-card { min-height: 0; }
+.ss2-flat .ss2-card img { position: relative; inset: auto; height: auto; }
+.ss2-flat .ss2-card::after { inset: 0 0 auto; height: 130px; background: linear-gradient(180deg, rgba(5, 12, 22, .5), transparent); pointer-events: none; }
+.ss2-flat .ss2-cap { position: relative; inset: auto; padding: clamp(20px, 4vw, 32px); }
+@media (max-width: 600px) { .ss2-flat .ss2-cap li { grid-template-columns: 1fr; gap: 4px; } }
+
+.ss2-card:has(img[src^="/media/team/"]) img { object-fit: contain; object-position: center top; }

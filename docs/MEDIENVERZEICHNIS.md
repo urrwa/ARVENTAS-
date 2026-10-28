@@ -132,3 +132,7 @@ Die sechs Kategorien unter „Hinter die Fassade schauen“ verwenden jetzt dies
 ## Startseite / Kontaktentscheidung – neues Motiv aus dem Bestand, 29.10.2026
 
 Auf Wunsch des Auftraggebers ersetzt das vorhandene hochformatige Eingangsmotiv `public/media/p/h-kontakt.webp` das Betongebäude im Kontaktabschnitt. Der beleuchtete Eingang passt zur Einladung „Was ist Ihr nächster Schritt?“ und bleibt links neben der überlappenden Karte sichtbar. Verwendet wird die bestehende Bilddatei; Layout und drei Linkziele bleiben erhalten.
+
+## Objektreport / Transparenzkarten – 29.10.2026
+
+Die drei Karten verwenden jetzt zur jeweiligen Aussage passende Arbeitsmotive: `home-unterlagen.webp` zeigt die Prüfung von Objektunterlagen und Grundrissen für „Herkunft von Daten und Annahmen“; `h-bewertung.webp` zeigt Rechner, Diagramme und ein Immobilienmodell für „Marktwerteinschätzung und Gutachten“; `TEAM_PHOTOS.documents` zeigt die vom Auftraggeber gelieferte gemeinsame Dokumentenprüfung für „Vom Anliegen zum Bericht“. Die responsive Teamaufnahme wird über `Photo` ausgegeben. Auf schmalen Bildschirmen und bei reduzierter Bewegung steht die vollständige Aufnahme über dem Text. Im gestapelten Desktop-Layout sorgen dunkle Verläufe hinter den Bildunterschriften für Lesbarkeit. Aussagen zu Gutachten, Vorprüfungen und Szenarien sowie alle fünf Prozessschritte bleiben erhalten.

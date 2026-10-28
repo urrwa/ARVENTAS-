@@ -25,9 +25,9 @@ const FLOW = [
 ]
 
 const SCENE = [
-  { label: 'Herkunft von Daten und Annahmen', icon: 'doc', img: '/media/p/ablauf-bibliothek.webp', title: 'Nachvollziehbar statt behauptet.', text: 'Im Bericht wird je Baustein ausgewiesen, welche Quelle, welcher Stand und welche Annahmen zugrunde liegen. Annahmen sind als solche gekennzeichnet.' },
-  { label: 'Einordnung', icon: 'scale', img: '/media/p/ablauf-schreibtisch.webp', title: 'Marktwerteinschätzung und Gutachten.', text: 'Eine Marktwerteinschätzung ist kein verbindliches Gutachten. Rechtliche Vorprüfungen sind keine rechtsverbindliche Entscheidung. Wirtschaftliche Szenarien sind keine Renditegarantie.' },
-  { label: 'Ablauf', icon: 'route', img: '/media/p/ablauf-besprechung.webp', title: 'Vom Anliegen zum Bericht.', steps: FLOW },
+  { label: 'Herkunft von Daten und Annahmen', icon: 'doc', img: '/media/p/home-unterlagen.webp', title: 'Nachvollziehbar statt behauptet.', text: 'Im Bericht wird je Baustein ausgewiesen, welche Quelle, welcher Stand und welche Annahmen zugrunde liegen. Annahmen sind als solche gekennzeichnet.' },
+  { label: 'Einordnung', icon: 'scale', img: '/media/p/h-bewertung.webp', title: 'Marktwerteinschätzung und Gutachten.', text: 'Eine Marktwerteinschätzung ist kein verbindliches Gutachten. Rechtliche Vorprüfungen sind keine rechtsverbindliche Entscheidung. Wirtschaftliche Szenarien sind keine Renditegarantie.' },
+  { label: 'Ablauf', icon: 'route', photo: TEAM_PHOTOS.documents, title: 'Vom Anliegen zum Bericht.', steps: FLOW },
 ]
 
 export default function ReportPage() {
