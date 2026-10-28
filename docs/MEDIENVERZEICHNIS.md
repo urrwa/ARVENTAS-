@@ -99,3 +99,24 @@ Der Ablauf auf `/immobilie-verkaufen` verwendet gelieferte Teamfotos: persönlic
 ## Investoren / Off-Market verständlich erklärt – 29.10.2026
 
 Die drei vom Auftraggeber für diese Überschrift gelieferten Fotos ersetzen die bisherigen Beispielbilder im WordZoom auf `/kapitalanlage-immobilien`: Wohnviertel aus der Vogelperspektive, farbige Fachwerkfassaden und eine Wohnstraße mit Fachwerkhäusern. Dateien: `public/media/investors/off-market-wohnviertel.webp` (600 × 450), `off-market-fassaden.webp` (600 × 900), `off-market-wohnstrasse.webp` (600 × 415). Reihenfolge und Bildinhalt beibehalten; hochwertige WebP-Konvertierung in der gelieferten Auflösung, ohne generative Bearbeitung. Die bestehende Bildwechsel- und Scrollanimation bleibt erhalten. Keine Standort- oder Objektbehauptungen ergänzt.
+
+## Startseite / Ablauf – gezielte Rückkehr zu früheren Motiven, 29.10.2026
+
+Auf ausdrücklichen Wunsch des Auftraggebers bleiben nur die inhaltlich passenden neuen Teamfotos im gezeigten Prozessabschnitt. Die übrigen Schritte verwenden wieder ihre vorherigen Bilder.
+
+| Zugang | Schritt | Aktuelles Motiv |
+|---|---|---|
+| Eigentümer | Erstkontakt | Team im persönlichen Gespräch (beibehalten) |
+| Eigentümer | Unterlagen | Team prüft Unterlagen (beibehalten) |
+| Eigentümer | Analyse | Team bei der Bildschirm-Analyse (beibehalten) |
+| Eigentümer | Besprechung | `owner-situation`: persönliches Ergebnisgespräch (wiederhergestellt) |
+| Eigentümer | Käuferauswahl | `h-kaeufer`: Auswahlmappen und Objektfotos (wiederhergestellt) |
+| Eigentümer | Transaktionsbegleitung | `abschluss-beratung`: Begleitung bei der Unterschrift (wiederhergestellt) |
+| Investoren | Suchprofil | `h-suchprofil`: Karte und Notizen zur Region (wiederhergestellt) |
+| Investoren | Qualifizierung | Team im persönlichen Gespräch (beibehalten) |
+| Investoren | Matching | `investor-matching`: gemeinsamer Abgleich von Objektunterlagen (wiederhergestellt) |
+| Investoren | Objektprüfung | Team prüft Unterlagen (beibehalten) |
+| Investoren | Entscheidung | `partner-fachleute`: Beratung am Objekt (wiederhergestellt) |
+| Investoren | Transaktionsbegleitung | `abschluss-beratung`: Begleitung bei der Unterschrift (wiederhergestellt) |
+
+Dies ersetzt die frühere ausschließliche Verwendung von Teamaufnahmen in diesem Abschnitt. Die Zuordnung gilt für den Prozess mit den beiden Reitern auf der Startseite; andere Seiten und ihre Bildauswahl bleiben bestehen.

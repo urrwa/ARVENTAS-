@@ -32,8 +32,23 @@ export const TEAM_PORTRAITS = Array.from({ length: 6 }, (_, i) => {
   }
 })
 
-// Startseite / Ablauf: ausschließlich die vom Auftraggeber gelieferten Teamaufnahmen.
+// Startseite / Ablauf: passende Teamaufnahmen behalten, sonst das frühere Schrittmotiv.
+const originalProcessPhoto = (name) => ({ src: `/media/p/${name}.webp` })
 export const TEAM_PROCESS_PHOTOS = {
-  owner: [TEAM_PHOTOS.conversation, TEAM_PHOTOS.documents, TEAM_PHOTOS.analysis, TEAM_PHOTOS.planning, TEAM_PHOTOS.strategy, TEAM_PHOTOS.guidance],
-  investor: [TEAM_PHOTOS.strategy, TEAM_PHOTOS.conversation, TEAM_PHOTOS.market, TEAM_PHOTOS.documents, TEAM_PHOTOS.planning, TEAM_PHOTOS.guidance],
+  owner: [
+    TEAM_PHOTOS.conversation,                         // Erstkontakt
+    TEAM_PHOTOS.documents,                            // Unterlagen
+    TEAM_PHOTOS.analysis,                             // Analyse
+    originalProcessPhoto('owner-situation'),           // Ergebnis besprechen
+    originalProcessPhoto('h-kaeufer'),                 // Käuferauswahl
+    originalProcessPhoto('abschluss-beratung'),        // Transaktionsbegleitung
+  ],
+  investor: [
+    originalProcessPhoto('h-suchprofil'),              // Region und Suchkriterien
+    TEAM_PHOTOS.conversation,                         // Ziele und Erfahrung besprechen
+    originalProcessPhoto('investor-matching'),         // Profil und Objekt abgleichen
+    TEAM_PHOTOS.documents,                            // Unterlagen gemeinsam prüfen
+    originalProcessPhoto('partner-fachleute'),         // Entscheidung am Objekt
+    originalProcessPhoto('abschluss-beratung'),        // Transaktionsbegleitung
+  ],
 }
