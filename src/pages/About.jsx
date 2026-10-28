@@ -2,17 +2,19 @@ import Ambient from '../components/Ambient.jsx'
 import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
-import { Btn, SectionHead, Placeholder } from '../components/ui.jsx'
+import { Btn, SectionHead } from '../components/ui.jsx'
 import Brand from '../components/Brand.jsx'
 import RevealText from '../components/RevealText.jsx'
 import ScrollZoom from '../components/ScrollZoom.jsx'
 import HScroll from '../components/HScroll.jsx'
+import Photo from '../components/Photo.jsx'
+import { TEAM_PHOTOS } from '../content/team.js'
 
 export default function About() {
   return (
     <>
       <Seo title="Über uns | ARVENTAS" description="Wer ARVENTAS ist: aktuelles Off-Market-Geschäftsmodell, Mission und Arbeitsweise, Werte und deutschlandweiter Tätigkeitsbereich." />
-      <PageHero tall image="/media/p/u-lounge-gespraech.webp" crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
+      <PageHero tall image={TEAM_PHOTOS.guidance} crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
 
       <div className="cover-over">
       <div className="cover-amb"><Ambient /></div>
@@ -38,9 +40,9 @@ export default function About() {
         </div>
         <HScroll items={[
           { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/h-zugang.webp' },
-          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/h-analyse.webp' },
-          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', img: '/media/p/h-matching.webp' },
-          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', img: '/media/p/h-p-begleitung.webp' },
+          { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', photo: TEAM_PHOTOS.analysis },
+          { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', photo: TEAM_PHOTOS.market },
+          { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', photo: TEAM_PHOTOS.conversation },
         ]} />
         <div className="wrap"><p className="rv" style={{ marginTop: 24, maxWidth: '62ch' }}>Die interne KI-Technologie unterstützt Objektanalysen und Prozesse. Sie ist kein öffentlich verkauftes Softwareprodukt.</p></div>
       </section>
@@ -51,30 +53,27 @@ export default function About() {
             <SectionHead eyebrow="Mission und Arbeitsweise" title="Daten prüfen. Menschen entscheiden." normal />
             <p className="rv">Jede freigegebene Analyse hat eine verantwortliche Person. Wir benennen Annahmen, trennen Einschätzung von Gutachten und machen offene Punkte sichtbar.</p>
           </div>
-          <div>
-            <p className="rv" style={{ marginTop: 0, fontFamily: 'var(--font-head)', fontSize: 'clamp(20px,2vw,26px)', color: 'var(--ivory)' }}>Elegant. Selten. Zeitlos. Scharfsinnig.</p>
-          </div>
+          <figure className="team-planning rv">
+            <Photo image={TEAM_PHOTOS.planning} sizes="(max-width: 860px) 100vw, 50vw" />
+            <figcaption>Gemeinsam prüfen. Möglichkeiten besprechen.</figcaption>
+          </figure>
         </div>
       </section>
 
-      <section className="sec dark org-sec">
+      <section className="sec dark team-story" aria-labelledby="h-team">
         <div className="wrap">
-          <div className="org-head org-head2">
-            <SectionHead eyebrow="Ansprechpartner" title="Echte Ansprechpartner." normal />
+          <div className="team-story-head">
+            <header className="sec-head">
+              <p className="eyebrow rv">Unser Team</p>
+              <h2 id="h-team" className="h2 rv">Menschen hinter den Entscheidungen.</h2>
+            </header>
+            <p className="rv">Wir prüfen Unterlagen, besprechen Möglichkeiten und begleiten den nächsten Schritt persönlich. So verbinden wir Analyse und Austausch.</p>
           </div>
-          <div className="team rv">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="team-card">
-                <span className="team-pic" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" strokeWidth="1.2"><circle cx="12" cy="8.5" r="3.6" /><path d="M4.5 20c.8-4 3.6-6 7.5-6s6.7 2 7.5 6" /></svg></span>
-                <dl>
-                  <div><dt>Name</dt><dd /></div>
-                  <div><dt>Rolle</dt><dd /></div>
-                  <div><dt>Fachgebiet</dt><dd /></div>
-                </dl>
-              </div>
-            ))}
-          </div>
-          <Placeholder title="Platzhalter – Team">Hier erscheinen bestätigte Profile mit Name, Rolle und Fachgebiet sowie ein authentisches Porträt. Vor Veröffentlichung ersetzen oder ausblenden. Keine erfundenen Namen, Rollen, Erfahrungsjahre oder Teamfotos.</Placeholder>
+          <figure className="team-story-photo rv">
+            <Photo image={TEAM_PHOTOS.strategy} />
+            <figcaption>Immobilien gemeinsam betrachten. Entscheidungen persönlich begleiten.</figcaption>
+          </figure>
+          <div className="btn-row"><Btn to="/kontakt">Kontakt aufnehmen</Btn></div>
         </div>
       </section>
 

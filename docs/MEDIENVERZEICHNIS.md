@@ -46,3 +46,19 @@ Die Bilder `zugang-eigentuemer`, `zugang-investor`, `h-zugang`, `ablauf-wohnhaus
 - besichtigung: vom Nutzer bereitgestellt (Stockfoto Klemmbrett Inspektion; enthaelt englisches Logo Real Estate und FOR-SALE-Schild), Lizenz pruefen
 - offmarket-strasse / offmarket-gartentor / offmarket-gespraech: KI-generiert (Beispielbilder, Investoren Off-Market-Titel)
 - hero-card-daten: vom Nutzer bereitgestellt (Foto Hand/Rechner/Geldscheine, 600px; Waehrung der Scheine wirkt nicht Euro), Lizenz pruefen
+
+## Teamaufnahmen – 28.10.2026
+
+Sieben vom Auftraggeber als Aufnahmen seines Teams bereitgestellte Bilder. Bildinhalt beibehalten; ausschließlich proportional verkleinert und als WebP optimiert. Jeweils 800 und 1800 Pixel breit, gemeinsam rund 1,24 MB. Responsive Zuordnung und beschreibende Alt-Texte: `src/content/team.js`.
+
+| Datei unter `public/media/team/` (jeweils `-800.webp` / `-1800.webp`) | Passender Text / Einsatz |
+|---|---|
+| `team-strategie` | Über uns: Menschen hinter den Entscheidungen; gemeinsamer Blick auf Immobilienprojekte |
+| `team-unterlagen` | Eigentümer: Immobilie analysieren; strukturierte Prüfung der Unterlagen |
+| `team-objektanalyse` | Start: Analyse; Über uns: Analyse; Objektreport: Datenbasiert analysiert, persönlich geprüft |
+| `team-projektplanung` | Über uns: Daten prüfen, Menschen entscheiden; Eigentümer: Verkaufsweg entscheiden |
+| `team-marktabgleich` | Investoren: Objektanalyse; Über uns: Matching |
+| `team-erstgespraech` | Kontakt; Start: nächster Schritt; Eigentümer: Situation verstehen; Über uns: Begleitung |
+| `team-begleitung` | Start: Abwicklung; Über uns: persönliche Erfahrung; Investoren: persönliche Begleitung |
+
+Die bisherigen Team-Platzhalter auf Über uns werden durch eine Gruppenaufnahme mit passendem Text ersetzt. Es werden keine Namen, Rollen oder Qualifikationen ergänzt. Die neu hinzugefügten Texte und Alt-Texte sind auch im englischen Wörterbuch enthalten. Demo-Formulare und `noindex` bleiben unverändert.

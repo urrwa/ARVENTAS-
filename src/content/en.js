@@ -1521,4 +1521,18 @@ export default {
  "Allgemeine Informationen werden erst nützlich, wenn sie auf ein konkretes Objekt und seinen Standort bezogen werden. Dafür braucht es Unterlagen und eine persönliche Prüfung.": "General information only becomes useful when related to a specific property and its location. That takes documents and a personal review.",
  "Im Objektreport werden Standort und Nachfrage je Baustein mit Quelle und Stand eingeordnet.": "In the property report, location and demand are assessed per building block with source and date.",
  "Keine automatischen Kaufempfehlungen oder Renditezusagen.": "No automatic purchase recommendations or return guarantees.",
+
+ // Teamaufnahmen und zugehörige Texte.
+ "Unser Team": "Our team",
+ "Menschen hinter den Entscheidungen.": "The people behind the decisions.",
+ "Wir prüfen Unterlagen, besprechen Möglichkeiten und begleiten den nächsten Schritt persönlich. So verbinden wir Analyse und Austausch.": "We review documents, discuss possibilities and personally support the next step. This brings analysis and conversation together.",
+ "Gemeinsam prüfen. Möglichkeiten besprechen.": "Review together. Discuss possibilities.",
+ "Immobilien gemeinsam betrachten. Entscheidungen persönlich begleiten.": "Review properties together. Support decisions personally.",
+ "Das ARVENTAS-Team bespricht Immobilienprojekte vor einer Präsentation.": "The ARVENTAS team discusses property projects in front of a presentation.",
+ "Das ARVENTAS-Team prüft gemeinsam Objektunterlagen und Grundrisse.": "The ARVENTAS team reviews property documents and floor plans together.",
+ "Das ARVENTAS-Team vergleicht Immobilieninformationen, Grundrisse und Analysen am Bildschirm.": "The ARVENTAS team compares property information, floor plans and analysis on screen.",
+ "Das ARVENTAS-Team bespricht Grundrisse und mögliche nächste Schritte am Planungstisch.": "The ARVENTAS team discusses floor plans and possible next steps at a planning table.",
+ "Das ARVENTAS-Team gleicht Objektunterlagen mit Standort- und Marktdaten am Bildschirm ab.": "The ARVENTAS team cross-checks property documents against location and market data on screen.",
+ "Mitglieder des ARVENTAS-Teams im persönlichen Gespräch mit einem Tablet.": "Members of the ARVENTAS team in a personal discussion with a tablet.",
+ "Mitglieder des ARVENTAS-Teams besprechen gemeinsam Immobilienfragen in einer Sitzgruppe.": "Members of the ARVENTAS team discuss property questions in a seating area.",
 }

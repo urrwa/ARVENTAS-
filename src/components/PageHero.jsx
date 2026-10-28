@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Letters from './Letters.jsx'
 import { Brandify } from './Brand.jsx'
+import Photo from './Photo.jsx'
 
 function useFadeOut(on, ref, blur) {
   useEffect(() => {
@@ -26,8 +27,8 @@ export default function PageHero({ crumb, eyebrow, title, lead, children, image,
   const wrapRef = useRef(null)
   useFadeOut(fadeOut, wrapRef, blur)
   return (
-    <section className={`phero dark${image ? ' has-img' : ''}${tall ? ' tall' : ''}${blur ? ' phero-blur' : ''}`}>
-      {image && <img className="phero-img" src={image} alt="" loading="eager" />}
+    <section className={`phero dark${image ? ' has-img' : ''}${image?.srcSet ? ' has-team-photo' : ''}${tall ? ' tall' : ''}${blur ? ' phero-blur' : ''}`}>
+      {image && <Photo className="phero-img" image={image} loading="eager" fetchPriority="high" />}
       <div className="wrap" ref={wrapRef}>
         {crumb && <p className="crumbs"><Link to="/">Start</Link> / {crumb}</p>}
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}

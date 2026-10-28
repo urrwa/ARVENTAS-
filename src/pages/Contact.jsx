@@ -6,6 +6,7 @@ import PageHero from '../components/PageHero.jsx'
 import { SectionHead, Tabs, Placeholder, Faq } from '../components/ui.jsx'
 import { CONTACT_FAQ } from '../content/data.js'
 import { LeadForm, OWNER_FIELDS, PARTNER_FIELDS } from '../components/forms.jsx'
+import { TEAM_PHOTOS } from '../content/team.js'
 
 export default function Contact() {
   const [sp] = useSearchParams()
@@ -18,7 +19,7 @@ export default function Contact() {
   return (
     <>
       <Seo title="Kontakt | ARVENTAS" description="Lassen Sie uns über Ihre Möglichkeiten sprechen: getrennte Zugänge für Eigentümer, Investoren und Partner." />
-      <PageHero fadeOut blur image="/media/p/owner-besprechung.webp" crumb="Kontakt" title="Lassen Sie uns über Ihre Möglichkeiten sprechen." lead="Wählen Sie den passenden Zugang. Eigentümer, Investoren und Partner haben getrennte Wege." />
+      <PageHero fadeOut blur image={TEAM_PHOTOS.conversation} crumb="Kontakt" title="Lassen Sie uns über Ihre Möglichkeiten sprechen." lead="Wählen Sie den passenden Zugang. Eigentümer, Investoren und Partner haben getrennte Wege." />
       <div className="cover-over">
       <section className="sec dark over-photo">
         <div className="wrap contact-grid">

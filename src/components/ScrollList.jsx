@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import Photo from './Photo.jsx'
 
 // Angeheftete Szene: links nummerierte Zeilen, die aktive öffnet sich mit Text; rechts wechselt das große Bild. Scrollen oder Anklicken schaltet weiter.
 // Schmale Bildschirme und reduzierte Bewegung: Zeilen untereinander, je mit Bild.
@@ -41,7 +42,7 @@ export default function ScrollList({ eyebrow, title, items, id }) {
       <div className="wrap sl2-flat">
         <p className="eyebrow">{eyebrow}</p><h2 className="h2" id={id}>{title}</h2>
         <ol>{items.map((it, k) => (
-          <li key={it.t}>{it.img && <img src={it.img} alt="" loading="lazy" decoding="async" />}<small>{String(k + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</small><h3>{it.t}</h3><p>{it.d}</p></li>
+          <li key={it.t}>{(it.photo || it.img) && <Photo image={it.photo || it.img} sizes="(max-width: 860px) 100vw, 50vw" />}<small>{String(k + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</small><h3>{it.t}</h3><p>{it.d}</p></li>
         ))}</ol>
       </div>
     )
@@ -67,7 +68,7 @@ export default function ScrollList({ eyebrow, title, items, id }) {
             </ol>
           </div>
           <div className="sl2-pic" aria-hidden="true">
-            {items.map((it, k) => <img key={it.t} src={it.img} alt="" loading="lazy" decoding="async" className={k === a ? 'on' : ''} />)}
+            {items.map((it, k) => <Photo key={it.t} image={it.photo || it.img} sizes="50vw" className={k === a ? 'on' : ''} />)}
             <span className="sl2-no">{String(a + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</span>
           </div>
           <div className="sl2-lvl" aria-hidden="true"><i style={{ transform: `scaleY(${(a + 1) / n})` }} /><span>{`Schritt ${a + 1}`}</span></div>

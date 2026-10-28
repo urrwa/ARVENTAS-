@@ -4377,3 +4377,51 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
 /* Prozess-Würfel: sichtbarer Abstand zwischen Umschalter und Bild */
 .pck-scene { top: calc(50% + 56px); }
 @media (min-width: 901px) { .pck-copy h3 { font-size: clamp(34px, 4.2vw, 76px); overflow-wrap: normal; hyphens: manual; } .pck-copy h3.long { font-size: clamp(28px, 3.2vw, 56px); } }
+
+/* Teamaufnahmen: volle Bildbreite bewahrt die Gruppe; Text bleibt außerhalb der Gesichter. */
+.team-story-head { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(24px, 5vw, 80px); align-items: end; margin-bottom: 32px; }
+.team-story-head .sec-head { margin-bottom: 0; }
+.team-story-head > p { margin: 0; max-width: 48ch; color: var(--text-2); }
+.team-story-photo, .team-planning { margin: 0; }
+.team-story-photo img, .team-planning img { display: block; width: 100%; height: auto; border-radius: 18px; }
+.team-story-photo figcaption, .team-planning figcaption { margin-top: 14px; font-size: 13px; line-height: 1.5; color: var(--text-2); }
+.team-story .btn-row { margin-top: 28px; }
+.phero.has-team-photo .phero-img { object-position: 50% 35%; }
+.kx-in:has(.kx-team) { grid-template-columns: 1.15fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.kx-pic.kx-team { grid-column: 1; grid-row: auto; align-self: start; min-height: 0; aspect-ratio: 2752 / 1536; }
+.kx-team + .kx-card { grid-column: 2; grid-row: auto; margin: 0; padding: clamp(24px, 3vw, 44px); }
+.kx-team + .kx-card .kx-list a { grid-template-columns: 1fr auto; }
+.kx-team + .kx-card .kx-list small { grid-column: 1; }
+.kx-team + .kx-card .kx-list b { grid-column: 1; font-size: clamp(25px, 2.5vw, 36px); }
+.kx-team + .kx-card .kx-go { grid-column: 2; grid-row: span 2; }
+@media (max-width: 900px) {
+  .team-story-head { grid-template-columns: 1fr; gap: 20px; }
+  .team-story-photo img, .team-planning img { border-radius: 12px; }
+  .kx-in:has(.kx-team) { grid-template-columns: 1fr; }
+  .kx-pic.kx-team, .kx-team + .kx-card { grid-column: 1; }
+  .phero.has-team-photo { min-height: 0; display: block; padding: calc(var(--header-h) + 24px) 0 44px; }
+  .phero.has-team-photo .phero-img { position: relative; inset: auto; width: calc(100% - 2 * var(--gut)); height: auto; margin: 0 var(--gut) 28px; border-radius: 12px; animation: none; filter: none; }
+  .phero.has-team-photo::after { display: none; }
+  .ss-row.ss-team { position: relative; top: auto; height: auto; min-height: 0; }
+  .ss-team .ss-img { position: relative; aspect-ratio: 2752 / 1536; }
+  .ss-team .ss-img::after { display: none; }
+  .ss-team .ss-txt { height: auto; padding: 24px; }
+  .ss-team .ss-txt h3 { margin-top: 28px; }
+}
+
+/* Gruppenaufnahmen bleiben auch in Karten und Schrittzeilen vollständig erkennbar. */
+.phero.has-team-photo .phero-img { animation: none; filter: none; }
+.hs-track:has(img[src^="/media/team/"]) .hs-img { aspect-ratio: 2752 / 1536; }
+.sl2-pic:has(img[src^="/media/team/"]) { aspect-ratio: 2752 / 1536; align-self: center; max-height: none; }
+.sl2-flat img[src^="/media/team/"] { aspect-ratio: 2752 / 1536; height: auto; }
+.kx-in:has(.kx-team) { display: grid; }
+.kx-team + .kx-card .kx-go { grid-row: 1 / span 2; }
+@media (max-width: 860px) {
+  .step-row:has(img[src^="/media/team/"]) { padding-top: 0; padding-bottom: 24px; row-gap: 16px; }
+  .step-row:has(img[src^="/media/team/"]) img { position: relative; inset: auto; grid-column: 1 / -1; grid-row: 1; height: auto; aspect-ratio: 2752 / 1536; clip-path: none; transform: none; scale: 1; translate: none; z-index: 0; border-radius: 12px; }
+  .step-row:has(img[src^="/media/team/"])::after { display: none; }
+  .step-row:has(img[src^="/media/team/"]) :is(.sr-title, .sr-no, .sr-arr) { grid-row: 2; transform: none; }
+  .step-row:has(img[src^="/media/team/"]) .sr-text { grid-row: 3; }
+}
+.sl2-flat:has(img[src^="/media/team/"]) h3 { color: var(--ivory); }
+.kx-pic.kx-team { align-self: center; }

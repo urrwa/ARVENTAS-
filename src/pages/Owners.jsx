@@ -9,6 +9,7 @@ import { Btn, SectionHead, Tabs, Faq } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
+import { TEAM_PHOTOS } from '../content/team.js'
 
 const PROCESS_IMG = ['owner-beratung', 'owner-unterlagen', 'owner-analyse-karte', 'owner-besprechung', 'h-kaeufer', 'abschluss-beratung'].map((k) => `/media/p/${k}.webp`)
 
@@ -51,9 +52,9 @@ export default function Owners() {
         <div className="wrap">
           <SectionHead eyebrow="Erzählstruktur" title="Drei Schritte zur Klarheit." />
           <StepRows items={[
-            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/p/owner-situation.webp' },
-            { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', img: '/media/p/owner-analyse-bericht.webp' },
-            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/p/owner-entscheidung.webp' },
+            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', photo: TEAM_PHOTOS.conversation },
+            { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', photo: TEAM_PHOTOS.documents },
+            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', photo: TEAM_PHOTOS.planning },
           ]} />
         </div>
       </section>

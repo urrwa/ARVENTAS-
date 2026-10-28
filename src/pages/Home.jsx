@@ -9,6 +9,8 @@ import StrengthStack from '../components/StrengthStack.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import GermanyMap from '../components/GermanyMap.jsx'
+import Photo from '../components/Photo.jsx'
+import { TEAM_PHOTOS } from '../content/team.js'
 
 function DocSvg() {
   return (
@@ -108,8 +110,8 @@ export default function Home() {
         </div>
         <StrengthStack items={[
             { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/home-zugang-tor.webp', icon: 'key' },
-            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/home-analyse-hand.webp', icon: 'chart' },
-            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/owner-beratung.webp', icon: 'hand' },
+            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', photo: TEAM_PHOTOS.analysis, icon: 'chart' },
+            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', photo: TEAM_PHOTOS.guidance, icon: 'hand' },
           ]} />
       </section>
 
@@ -151,7 +153,7 @@ export default function Home() {
       {/* 11 – Kontaktentscheidung */}
       <section className="sec dark kx" aria-labelledby="h-next">
         <div className="wrap kx-in">
-          <figure className="kx-pic"><img src="/media/p/kontakt-buero.webp" alt="" loading="lazy" /><figcaption>Illustrationsbild</figcaption></figure>
+          <figure className="kx-pic kx-team"><Photo image={TEAM_PHOTOS.conversation} sizes="(max-width: 900px) 100vw, 50vw" /></figure>
           <div className="kx-card">
             <p className="eyebrow rv">Kontakt</p>
             <h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2>
