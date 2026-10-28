@@ -1553,4 +1553,8 @@ export default {
 
  "Gemeinsame Besprechung eines Architekturmodells, von Grundrissen und Materialmustern.": "Joint discussion of an architectural model, floor plans and material samples.",
  "Gemeinsame Prüfung und Besprechung von Grundrissen am Planungstisch.": "Joint review and discussion of floor plans at the planning table.",
+
+ "Modernes Wohngebäude mit Balkonen und klarer Fassade.": "Modern residential building with balconies and a clean facade.",
+ "Wohnviertel mit Straßen, Gärten und Wasserwegen aus der Vogelperspektive.": "Aerial view of a residential district with streets, gardens and waterways.",
+ "Frankfurter Skyline am Main in der Abenddämmerung.": "Frankfurt skyline on the Main at dusk.",
 }

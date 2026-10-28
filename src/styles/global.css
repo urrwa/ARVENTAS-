@@ -4441,3 +4441,7 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
   .sz-team .sz-img { position: relative; left: auto; top: auto; width: 100%; height: auto; transform: none; border-radius: 12px; }
   .sz-team .sz-img img { display: block; height: auto; }
 }
+
+/* Wissen: Fotos bleiben bei Kategorie-Wechseln auf ihrer tatsächlichen Darstellungsgröße. */
+.kl-full:has(img[src^="/media/knowledge/hq/"]) .kl-img img { transform: none; transition: opacity 450ms ease; }
+@media (prefers-reduced-motion: reduce) { .kl-full:has(img[src^="/media/knowledge/hq/"]) .kl-img img { transition: none; } }

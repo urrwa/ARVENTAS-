@@ -1,0 +1,77 @@
+{
+  "method": "Built-in image_gen restorations for All, Off-Market and Development potential; original sources retained for people and the other photographs. Resampling creates delivery sizes, not recovered original measurements.",
+  "widths": [
+    640,
+    1280,
+    1920,
+    2560,
+    3840
+  ],
+  "images": [
+    {
+      "category": "Alle",
+      "method": "ImageGen restoration",
+      "sourceWidth": 1330,
+      "sourceHeight": 1183,
+      "master": "source/knowledge-restored/all.png",
+      "deliveryPrefix": "public/media/knowledge/hq/all",
+      "bytes": 5729866
+    },
+    {
+      "category": "Off-Market",
+      "method": "ImageGen restoration",
+      "sourceWidth": 1086,
+      "sourceHeight": 1448,
+      "master": "source/knowledge-restored/off-market.png",
+      "deliveryPrefix": "public/media/knowledge/hq/off-market",
+      "bytes": 6412736
+    },
+    {
+      "category": "Immobilienbewertung",
+      "method": "Original photo, responsive delivery",
+      "sourceWidth": 1332,
+      "sourceHeight": 757,
+      "deliveryPrefix": "public/media/knowledge/hq/valuation",
+      "bytes": 1561156
+    },
+    {
+      "category": "Kapitalanlage",
+      "method": "Original photo, responsive delivery",
+      "sourceWidth": 1800,
+      "sourceHeight": 2587,
+      "deliveryPrefix": "public/media/knowledge/hq/investment",
+      "bytes": 3255274
+    },
+    {
+      "category": "Entwicklungspotenziale",
+      "method": "ImageGen restoration",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "master": "source/knowledge-restored/development.png",
+      "deliveryPrefix": "public/media/knowledge/hq/development",
+      "bytes": 3870186
+    },
+    {
+      "category": "Marktinformationen",
+      "method": "Original photo, responsive delivery",
+      "sourceWidth": 1800,
+      "sourceHeight": 2693,
+      "deliveryPrefix": "public/media/knowledge/hq/market",
+      "bytes": 12399736
+    },
+    {
+      "category": "cta",
+      "method": "Higher resolution original, responsive delivery",
+      "sourceWidth": 2000,
+      "sourceHeight": 1116,
+      "deliveryPrefix": "public/media/knowledge/hq/skyline",
+      "bytes": 1568714
+    }
+  ],
+  "restorationTool": "Built-in image_gen",
+  "restorationPrompts": {
+    "Alle": "Use case: precise-object-edit. Asset type: restored website photograph. Edit target: the attached existing photograph. Primary request: noncreative high resolution restoration and super-resolution of the exact red brick apartment building behind the stone wall and trees, original near-square aspect ratio 953:847, target long edge around 3200 pixels. Remove visible pixelation, blockiness, compression artifacts and coarse noise; restore natural, clean photographic edge definition, fine foliage and material texture without oversharpening. Preserve the EXACT photographed scene, camera viewpoint, framing, composition, building geometry, rooflines, window layout, number and positions of structures and cranes, tree positions, lighting, colors and time of day. This is a faithful restoration, not a redesign or new photograph. Do not crop, outpaint, add or remove elements. Keep every identifiable architectural landmark the same. No added lettering, overlays, logos, border or watermark. Deliver one single enhanced photo only, at the requested high resolution.",
+    "Off-Market": "Use case: precise-object-edit. Asset type: restored website photograph. Edit target: the attached existing photograph. Primary request: noncreative high resolution restoration and super-resolution of the exact residential rooftops and forested hillside photograph, portrait 3:4, target 2400 x 3200 pixels. Remove visible pixelation, blockiness, compression artifacts and coarse noise; restore natural, clean photographic edge definition, fine foliage and material texture without oversharpening. Preserve the EXACT photographed scene, camera viewpoint, framing, composition, building geometry, rooflines, window layout, number and positions of structures and cranes, tree positions, lighting, colors and time of day. This is a faithful restoration, not a redesign or new photograph. Do not crop, outpaint, add or remove elements. Keep every identifiable architectural landmark the same. No added lettering, overlays, logos, border or watermark. Deliver one single enhanced photo only, at the requested high resolution.",
+    "Entwicklungspotenziale": "Use case: precise-object-edit. Asset type: restored website photograph. Edit target: the attached existing photograph. Primary request: noncreative high resolution restoration and super-resolution of the exact construction site with several tower cranes and buildings, original landscape 4:3 composition, target 3200 x 2400 pixels. Remove visible pixelation, blockiness, compression artifacts and coarse noise; restore natural, clean photographic edge definition, fine foliage and material texture without oversharpening. Preserve the EXACT photographed scene, camera viewpoint, framing, composition, building geometry, rooflines, window layout, number and positions of structures and cranes, tree positions, lighting, colors and time of day. This is a faithful restoration, not a redesign or new photograph. Do not crop, outpaint, add or remove elements. Keep every identifiable architectural landmark the same. No added lettering, overlays, logos, border or watermark. Deliver one single enhanced photo only, at the requested high resolution."
+  }
+}
