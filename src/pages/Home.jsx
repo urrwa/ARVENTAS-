@@ -10,6 +10,7 @@ import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import GermanyMap from '../components/GermanyMap.jsx'
 import { TEAM_PHOTOS } from '../content/team.js'
+import { KNOWLEDGE_CATEGORY_PHOTOS } from '../content/knowledgePhotos.js'
 
 function DocSvg() {
   return (
@@ -142,7 +143,7 @@ export default function Home() {
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Wissen</p><h2 id="h-wis" className="h2 rv">Hinter die Fassade schauen.</h2></header>
         </div>
-        <KnowledgeTabs full cat={wcat} setCat={setWcat} />
+        <KnowledgeTabs full cat={wcat} setCat={setWcat} images={KNOWLEDGE_CATEGORY_PHOTOS} loadOnDemand />
         <div className="wrap">
           <div className="btn-row"><Btn to="/wissen">Wissen entdecken</Btn></div>
           <p className="small muted" style={{ marginTop: 16 }}>Entwürfe sind gekennzeichnet und keine aktuelle Recherche oder Marktdaten.</p>

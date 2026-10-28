@@ -124,3 +124,7 @@ Dies ersetzt die frühere ausschließliche Verwendung von Teamaufnahmen in diese
 ## Startseite / Kontaktentscheidung – Screenshot-Vorlage wiederhergestellt, 29.10.2026
 
 Der Abschnitt „Was ist Ihr nächster Schritt?“ verwendet entsprechend der gelieferten Referenz wieder ein hohes Gebäudefoto links mit einer überlappenden dunkelblauen Karte rechts. Das passende vorhandene Foto ist `public/media/p/kontakt-treppe.webp`. Die bisherigen Teamfoto-Anpassungen für diesen Abschnitt entfallen. Goldene Zielgruppenlabels, große Serifentitel, Trennlinien und runde Pfeile führen weiterhin zu den drei vorgesehenen Zielen (Eigentümer-Anfrage, Investorenkreis, Partner-Anfrage). Auf schmalen Bildschirmen folgen Foto und leicht überlappende Karte untereinander. Abschnittsanker: `#naechster-schritt`.
+
+## Startseite / Wissen – gleiche Fotos wie auf der Wissen-Seite, 29.10.2026
+
+Die sechs Kategorien unter „Hinter die Fassade schauen“ verwenden jetzt dieselbe zentrale Bildzuordnung `KNOWLEDGE_CATEGORY_PHOTOS` wie `/wissen`: Backsteinhaus, Wohnhäuser mit grünen Hügeln, Team bei der Bewertung am Bildschirm, Wohngebäude mit Balkonen, Baustelle mit Kränen und Wohnviertel aus der Vogelperspektive. Die vorhandenen responsiven WebP-Varianten und die Bildausrichtung für Immobilienbewertung gelten damit auf beiden Seiten. Kategorien laden beim ersten Anwählen; die sichtbare Aufnahme bleibt bis zum Laden der nächsten erhalten.
