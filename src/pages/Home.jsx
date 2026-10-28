@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* 05 – Zwei nachvollziehbare Prozesse */}
-      <section className="sec dark proc-sec" aria-labelledby="h-proc">
+      <section id="ablauf" className="sec dark proc-sec" aria-labelledby="h-proc">
         <div className="wrap">
           <SectionHead eyebrow="Ablauf" title="Der Ablauf." />
           <ProcessTimeline />

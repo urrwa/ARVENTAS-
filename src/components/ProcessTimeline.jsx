@@ -1,13 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { OWNER_PROCESS, INVESTOR_PROCESS } from '../content/data.js'
+import { TEAM_PROCESS_PHOTOS } from '../content/team.js'
 
 // Ablauf: Würfel wie in der Landingpage. Beim Scrollen kippt und dreht er sich von Schritt zu Schritt (Seite nach vorn), wechselt die Seite
 // und der Text wechselt mit. Schmale Bildschirme und reduzierte Bewegung: schlichte nummerierte Liste.
-const pic = (k) => `/media/p/${k}.webp`
-const IMG = {
-  owner: ['owner-beratung', 'home-unterlagen', 'home-analyse-hand', 'owner-situation', 'h-kaeufer', 'abschluss-beratung'].map(pic),
-  investor: ['h-suchprofil', 'partner-ergaenzung', 'investor-matching', 'besichtigung', 'partner-fachleute', 'abschluss-beratung'].map(pic),
-}
 const FACES = ['front', 'right', 'back', 'left', 'top', 'bottom']
 const POSE = [[0, 0], [0, -90], [0, -180], [0, -270], [-90, -360], [90, -360]]
 const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2)
@@ -87,7 +83,7 @@ export default function ProcessTimeline({ initial = 'owner' }) {
           <span className="pck-floor" aria-hidden="true" />
           <div className="pck-scene" aria-hidden="true">
             <div className="pck-cube">
-              {FACES.map((f, i) => <i key={f} className={'pck-f pck-f--' + f} style={{ backgroundImage: `url(${IMG[who][i]})` }} />)}
+              {FACES.map((f, i) => <i key={f} className={'pck-f pck-f--' + f} style={{ backgroundImage: `url(${TEAM_PROCESS_PHOTOS[who][i].src})` }} />)}
             </div>
           </div>
           {steps.map((s, i) => (

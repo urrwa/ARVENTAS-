@@ -28,3 +28,9 @@ export const TEAM_PORTRAITS = Array.from({ length: 6 }, (_, i) => {
     alt: `Porträt eines Mitglieds des ARVENTAS-Teams (${i + 1}).`,
   }
 })
+
+// Startseite / Ablauf: ausschließlich die vom Auftraggeber gelieferten Teamaufnahmen.
+export const TEAM_PROCESS_PHOTOS = {
+  owner: [TEAM_PHOTOS.conversation, TEAM_PHOTOS.documents, TEAM_PHOTOS.analysis, TEAM_PHOTOS.planning, TEAM_PHOTOS.strategy, TEAM_PHOTOS.guidance],
+  investor: [TEAM_PHOTOS.strategy, TEAM_PHOTOS.conversation, TEAM_PHOTOS.market, TEAM_PHOTOS.documents, TEAM_PHOTOS.planning, TEAM_PHOTOS.guidance],
+}

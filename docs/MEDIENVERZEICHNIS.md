@@ -66,3 +66,11 @@ Die bisherigen Team-Platzhalter auf Über uns werden durch eine Gruppenaufnahme 
 ## Einzelporträts – 28.10.2026
 
 Sechs zusätzliche, vom Auftraggeber gelieferte quadratische Team-Porträts in unveränderter Reihenfolge. Dateien: `public/media/team/team-portrait-01` bis `team-portrait-06`, jeweils `-480.webp` und `-1000.webp`. Einsatz: Über uns, direkt unter der gemeinsamen Teamaufnahme. Bildinhalt beibehalten; proportional verkleinert und in WebP umgewandelt. Keine Namen oder Rollen: Der Auftraggeber hat ausdrücklich gebeten, diese wegzulassen. Alt-Texte und Beschriftung der Galerie sind auch auf Englisch verfügbar.
+
+## Startseite / Ablauf – Teamaufnahmen in beiden Zugängen
+
+Alle zwölf Bildzuordnungen im Ablauf für Eigentümer und Investoren verwenden jetzt ausschließlich die sieben vom Auftraggeber gelieferten Teamaufnahmen aus `public/media/team/`. Erstkontakt und Qualifizierung: Gespräch; Unterlagen und Objektprüfung: Dokumentenprüfung; Analyse und Matching: Bildschirmarbeit; Besprechung und Entscheidung: Planungstisch; Käuferauswahl und Suchprofil: Projektbesprechung; Transaktionsbegleitung: persönliche Begleitung. Zentrale Zuordnung: `TEAM_PROCESS_PHOTOS` in `src/content/team.js`. Die bisherigen Beispielbilder sind in dieser Komponente nicht mehr referenziert. Die bestehende Würfel-Animation und ihre Bildflächen bleiben erhalten.
+
+## Wissen / Kategorien – 28.10.2026
+
+Auf ausdrücklichen Wunsch des Auftraggebers zeigt „Alle“ auf `/wissen` das gelieferte Backsteinhaus-Foto (`public/media/knowledge/wissen-alle.webp`) und „Off-Market“ den gelieferten Blick über Wohnhäuser und grüne Hügel (`wissen-off-market.webp`). Jeweils mit kleiner WebP-Variante, ohne Hochskalierung. Zuordnung: `src/content/knowledgePhotos.js`. Diese Auswahl gilt für die Wissen-Seite; die übrigen Kategorien und die Wissensvorschau auf der Startseite behalten ihre Bilder.

@@ -1544,4 +1544,7 @@ export default {
  "Porträt eines Mitglieds des ARVENTAS-Teams (4).": "Portrait of a member of the ARVENTAS team (4).",
  "Porträt eines Mitglieds des ARVENTAS-Teams (5).": "Portrait of a member of the ARVENTAS team (5).",
  "Porträt eines Mitglieds des ARVENTAS-Teams (6).": "Portrait of a member of the ARVENTAS team (6).",
+
+ "Backstein-Wohnhaus hinter einer Natursteinmauer und Bäumen.": "Brick residential building behind a stone wall and trees.",
+ "Blick über Wohnhäuser und begrünte Hügel.": "View over residential buildings and green hills.",
 }

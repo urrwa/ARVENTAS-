@@ -4,6 +4,7 @@ import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import { CATEGORIES } from '../content/data.js'
+import { KNOWLEDGE_CATEGORY_PHOTOS } from '../content/knowledgePhotos.js'
 
 export default function Knowledge() {
   const [sp] = useSearchParams()
@@ -18,7 +19,7 @@ export default function Knowledge() {
     <>
       <Seo title="Wissen | ARVENTAS" description="Wissen und Marktinformationen: Off-Market verstehen, Immobilien bewerten, Potenziale einordnen." />
       <h1 className="sr-only">Wissen: Hinter die Fassade schauen.</h1>
-      <KnowledgeTabs full cat={cat} setCat={setCat} base={fromUrl} />
+      <KnowledgeTabs full cat={cat} setCat={setCat} base={fromUrl} images={KNOWLEDGE_CATEGORY_PHOTOS} />
       <section className="sec dark" id="beitraege">
         <div className="wrap">
           <p className="small muted">Alle Beiträge sind Entwürfe und stellen keine aktuelle Recherche und keine Marktdaten dar. Veröffentlichungsdaten und Expertenzitate werden erst nach redaktioneller Freigabe ergänzt.</p>
