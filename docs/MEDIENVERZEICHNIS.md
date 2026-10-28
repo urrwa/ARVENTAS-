@@ -62,3 +62,7 @@ Sieben vom Auftraggeber als Aufnahmen seines Teams bereitgestellte Bilder. Bildi
 | `team-begleitung` | Start: Abwicklung; Über uns: persönliche Erfahrung; Investoren: persönliche Begleitung |
 
 Die bisherigen Team-Platzhalter auf Über uns werden durch eine Gruppenaufnahme mit passendem Text ersetzt. Es werden keine Namen, Rollen oder Qualifikationen ergänzt. Die neu hinzugefügten Texte und Alt-Texte sind auch im englischen Wörterbuch enthalten. Demo-Formulare und `noindex` bleiben unverändert.
+
+## Einzelporträts – 28.10.2026
+
+Sechs zusätzliche, vom Auftraggeber gelieferte quadratische Team-Porträts in unveränderter Reihenfolge. Dateien: `public/media/team/team-portrait-01` bis `team-portrait-06`, jeweils `-480.webp` und `-1000.webp`. Einsatz: Über uns, direkt unter der gemeinsamen Teamaufnahme. Bildinhalt beibehalten; proportional verkleinert und in WebP umgewandelt. Keine Namen oder Rollen: Der Auftraggeber hat ausdrücklich gebeten, diese wegzulassen. Alt-Texte und Beschriftung der Galerie sind auch auf Englisch verfügbar.

@@ -8,7 +8,7 @@ import RevealText from '../components/RevealText.jsx'
 import ScrollZoom from '../components/ScrollZoom.jsx'
 import HScroll from '../components/HScroll.jsx'
 import Photo from '../components/Photo.jsx'
-import { TEAM_PHOTOS } from '../content/team.js'
+import { TEAM_PHOTOS, TEAM_PORTRAITS } from '../content/team.js'
 
 export default function About() {
   return (
@@ -73,6 +73,13 @@ export default function About() {
             <Photo image={TEAM_PHOTOS.strategy} />
             <figcaption>Immobilien gemeinsam betrachten. Entscheidungen persönlich begleiten.</figcaption>
           </figure>
+          <ul id="team-portraets" className="team-portraits" aria-label="Porträts unseres Teams">
+            {TEAM_PORTRAITS.map((portrait, i) => (
+              <li key={portrait.src} className="team-portrait rv" style={{ '--d': (i % 3) * 70 }}>
+                <Photo image={portrait} sizes="(max-width: 900px) 50vw, 33vw" />
+              </li>
+            ))}
+          </ul>
           <div className="btn-row"><Btn to="/kontakt">Kontakt aufnehmen</Btn></div>
         </div>
       </section>

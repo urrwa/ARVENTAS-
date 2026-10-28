@@ -1535,4 +1535,13 @@ export default {
  "Das ARVENTAS-Team gleicht Objektunterlagen mit Standort- und Marktdaten am Bildschirm ab.": "The ARVENTAS team cross-checks property documents against location and market data on screen.",
  "Mitglieder des ARVENTAS-Teams im persönlichen Gespräch mit einem Tablet.": "Members of the ARVENTAS team in a personal discussion with a tablet.",
  "Mitglieder des ARVENTAS-Teams besprechen gemeinsam Immobilienfragen in einer Sitzgruppe.": "Members of the ARVENTAS team discuss property questions in a seating area.",
+
+ // Einzelporträts des Teams.
+ "Porträts unseres Teams": "Portraits of our team",
+ "Porträt eines Mitglieds des ARVENTAS-Teams (1).": "Portrait of a member of the ARVENTAS team (1).",
+ "Porträt eines Mitglieds des ARVENTAS-Teams (2).": "Portrait of a member of the ARVENTAS team (2).",
+ "Porträt eines Mitglieds des ARVENTAS-Teams (3).": "Portrait of a member of the ARVENTAS team (3).",
+ "Porträt eines Mitglieds des ARVENTAS-Teams (4).": "Portrait of a member of the ARVENTAS team (4).",
+ "Porträt eines Mitglieds des ARVENTAS-Teams (5).": "Portrait of a member of the ARVENTAS team (5).",
+ "Porträt eines Mitglieds des ARVENTAS-Teams (6).": "Portrait of a member of the ARVENTAS team (6).",
 }
