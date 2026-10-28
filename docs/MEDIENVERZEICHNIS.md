@@ -120,3 +120,7 @@ Auf ausdrücklichen Wunsch des Auftraggebers bleiben nur die inhaltlich passende
 | Investoren | Transaktionsbegleitung | `abschluss-beratung`: Begleitung bei der Unterschrift (wiederhergestellt) |
 
 Dies ersetzt die frühere ausschließliche Verwendung von Teamaufnahmen in diesem Abschnitt. Die Zuordnung gilt für den Prozess mit den beiden Reitern auf der Startseite; andere Seiten und ihre Bildauswahl bleiben bestehen.
+
+## Startseite / Kontaktentscheidung – Screenshot-Vorlage wiederhergestellt, 29.10.2026
+
+Der Abschnitt „Was ist Ihr nächster Schritt?“ verwendet entsprechend der gelieferten Referenz wieder ein hohes Gebäudefoto links mit einer überlappenden dunkelblauen Karte rechts. Das passende vorhandene Foto ist `public/media/p/kontakt-treppe.webp`. Die bisherigen Teamfoto-Anpassungen für diesen Abschnitt entfallen. Goldene Zielgruppenlabels, große Serifentitel, Trennlinien und runde Pfeile führen weiterhin zu den drei vorgesehenen Zielen (Eigentümer-Anfrage, Investorenkreis, Partner-Anfrage). Auf schmalen Bildschirmen folgen Foto und leicht überlappende Karte untereinander. Abschnittsanker: `#naechster-schritt`.

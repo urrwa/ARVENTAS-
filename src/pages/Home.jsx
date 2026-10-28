@@ -9,7 +9,6 @@ import StrengthStack from '../components/StrengthStack.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import GermanyMap from '../components/GermanyMap.jsx'
-import Photo from '../components/Photo.jsx'
 import { TEAM_PHOTOS } from '../content/team.js'
 
 function DocSvg() {
@@ -151,9 +150,9 @@ export default function Home() {
       </section>
 
       {/* 11 – Kontaktentscheidung */}
-      <section className="sec dark kx" aria-labelledby="h-next">
+      <section id="naechster-schritt" className="sec dark kx" aria-labelledby="h-next">
         <div className="wrap kx-in">
-          <figure className="kx-pic kx-team"><Photo image={TEAM_PHOTOS.conversation} sizes="(max-width: 900px) 100vw, 50vw" /></figure>
+          <figure className="kx-pic"><img src="/media/p/kontakt-treppe.webp" alt="" loading="lazy" decoding="async" /></figure>
           <div className="kx-card">
             <p className="eyebrow rv">Kontakt</p>
             <h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2>
