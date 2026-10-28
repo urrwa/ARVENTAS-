@@ -4445,3 +4445,6 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
 /* Wissen: Fotos bleiben bei Kategorie-Wechseln auf ihrer tatsächlichen Darstellungsgröße. */
 .kl-full:has(img[src^="/media/knowledge/hq/"]) .kl-img img { transform: none; transition: opacity 450ms ease; }
 @media (prefers-reduced-motion: reduce) { .kl-full:has(img[src^="/media/knowledge/hq/"]) .kl-img img { transition: none; } }
+
+/* Wissen / Immobilienbewertung: Computer im freien rechten Bildbereich zeigen. */
+.kl-full .kl-img img[data-category="Immobilienbewertung"][src^="/media/knowledge/hq/"] { transform: scaleX(-1); object-position: left center; }

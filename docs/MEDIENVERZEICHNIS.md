@@ -86,3 +86,6 @@ Zwei weitere vom Auftraggeber gelieferte Motive: `public/media/team/team-modellp
 ## Wissen / Bildqualität – 28.10.2026
 
 Die kleinen Originale für Alle (953 px), Off-Market (600 px) und Entwicklungspotenziale (612 px) wurden mit dem integrierten ImageGen bildgestützt restauriert. Die restaurierten PNG-Master liegen in `source/knowledge-restored/`; Detailrekonstruktionen sind keine verifizierten Objektdaten. Personenbilder wurden nicht generativ verändert. Für alle sechs Kategorien und das Abschlussbild gibt es WebP-Ausgaben mit 640, 1280, 1920, 2560 und 3840 Pixeln Breite (`public/media/knowledge/hq/`, Qualität 94). Diese sind Ausgabegrößen, nicht die ursprüngliche Sensorauflösung. Das Abschlussbild verwendet die vorhandene höher aufgelöste Original-JPEG-Datei. Neue Kategorien werden auf der Wissen-Seite erst beim ersten Anwählen geladen; die bereits geladenen Bilder bleiben für den Wechsel erhalten. Der zusätzliche Foto-Zoom wurde hier entfernt. Herkunft, Abmessungen und Verarbeitung: `docs/knowledge-image-quality.json`.
+
+## Wissen / Immobilienbewertung – Bildausrichtung
+Auf Wunsch des Auftraggebers wird das Bewertungsfoto im Browser horizontal gespiegelt und links fokussiert, damit der Computer im sichtbaren rechten Bereich liegt. Die Bilddateien und ihre Auflösung bleiben unverändert; die Regel gilt nur für diese Kategorie auf der Wissen-Seite.
