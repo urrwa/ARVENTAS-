@@ -8,6 +8,7 @@ const photo = (name, alt, width = 1800, height = 1005) => ({
 })
 
 export const TEAM_PHOTOS = {
+  exchange: photo('team-austausch', 'Mitglieder des ARVENTAS-Teams im persönlichen Austausch bei einer Tasse Kaffee.', 1352, 747),
   strategy: photo('team-strategie', 'Das ARVENTAS-Team bespricht Immobilienprojekte vor einer Präsentation.'),
   documents: photo('team-unterlagen', 'Das ARVENTAS-Team prüft gemeinsam Objektunterlagen und Grundrisse.'),
   analysis: photo('team-objektanalyse', 'Das ARVENTAS-Team vergleicht Immobilieninformationen, Grundrisse und Analysen am Bildschirm.'),

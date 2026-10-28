@@ -2986,7 +2986,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .sl-item small { display: block; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(7, 19, 33, .55); margin-bottom: 8px; }
 .sl-item h3 { margin: 0 0 10px; font-family: var(--font-head); font-weight: 400; font-size: clamp(20px, 2vw, 30px); line-height: 1.15; color: var(--marine); }
 .sl-item p { margin: 0; max-width: 46ch; color: var(--ink-soft); line-height: 1.6; }
-@media (max-width: 860px) { .sl { height: auto; } .sl-stage { position: static; height: auto; grid-template-columns: 1fr; } .sl-pic { aspect-ratio: 16 / 10; height: auto; } .sl-view { overflow: visible; } .sl-item { padding: 28px 0; } }
+@media (max-width: 860px), (prefers-reduced-motion: reduce) { .sl { height: auto; } .sl-stage { position: static; height: auto; grid-template-columns: 1fr; } .sl-pic { aspect-ratio: 16 / 10; height: auto; } .sl-view { overflow: visible; } .sl-item { padding: 28px 0; } }
 .sl-head .h2 { max-width: none; font-size: clamp(26px, 2.9vw, 44px); overflow-wrap: normal; hyphens: manual; }
 /* Situationen: kleinere Schrift */
 .sl-head .h2 { font-size: clamp(22px, 2.1vw, 32px); }
@@ -3041,7 +3041,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .pp-now p { margin: 0; max-width: 40ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(245, 243, 239, .8); }
 @keyframes ppIn { from { opacity: 0; transform: translateY(18px); } }
 .pp-flat { display: none; list-style: none; margin: 0; padding: 0; }
-@media (max-width: 860px) {
+@media (max-width: 860px), (prefers-reduced-motion: reduce) {
   .pp { height: auto; padding: clamp(48px, 10vw, 80px) var(--gut); }
   .pp-stage { position: static; height: auto; display: block; padding: 0 0 28px; }
   .pp-col { display: none; }
@@ -4448,3 +4448,9 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
 
 /* Wissen / Immobilienbewertung: Computer im freien rechten Bildbereich zeigen. */
 .kl-full .kl-img img[data-category="Immobilienbewertung"][src^="/media/knowledge/hq/"] { transform: scaleX(-1); object-position: left center; }
+
+/* Eigentümer: breite Teamfotos zeigen Personen, Unterlagen und Modelle zusammen. */
+.sl-pic:has(img[src^="/media/team/"]) { height: auto; aspect-ratio: 2752 / 1536; align-self: center; }
+.pp-col:has(img[src^="/media/team/"]) { height: auto; aspect-ratio: 2752 / 1536; align-self: center; }
+.pp-pic:has(img[src^="/media/team/"]) { height: auto; max-height: none; aspect-ratio: 2752 / 1536; }
+.pp-flat img[src^="/media/team/"] { display: block; height: auto; aspect-ratio: auto; }

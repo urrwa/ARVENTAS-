@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import Photo from './Photo.jsx'
 
 // Abschnitt bleibt stehen: links gleiten hohe Fotos nacheinander nach oben, rechts wechselt der Text zum jeweiligen Schritt.
 // Schmale Bildschirme und reduzierte Bewegung: Schritte stehen untereinander, jeweils mit Foto.
@@ -30,7 +31,7 @@ export default function ProcessPinned({ steps, images, eyebrow, title }) {
       <div className="pp-stage">
         <div className="pp-col" aria-hidden="true">
           <div className="pp-track" ref={track}>
-            {steps.map((s, i) => <div key={s.t} className="pp-pic"><img src={images[i % images.length]} alt="" loading="lazy" decoding="async" /></div>)}
+            {steps.map((s, i) => <div key={s.t} className="pp-pic"><Photo image={images[i % images.length]} sizes="42vw" alt="" /></div>)}
           </div>
         </div>
         <div className="pp-txt">
@@ -45,7 +46,7 @@ export default function ProcessPinned({ steps, images, eyebrow, title }) {
       </div>
       <ol className="pp-flat">
         {steps.map((s, i) => (
-          <li key={s.t}><img src={images[i % images.length]} alt="" loading="lazy" decoding="async" /><div><span>{String(i + 1).padStart(2, '0')}</span><h3>{s.t}</h3><p>{s.d}</p></div></li>
+          <li key={s.t}><Photo image={images[i % images.length]} sizes="(max-width: 860px) 92vw, 42vw" /><div><span>{String(i + 1).padStart(2, '0')}</span><h3>{s.t}</h3><p>{s.d}</p></div></li>
         ))}
       </ol>
     </div>

@@ -89,3 +89,9 @@ Die kleinen Originale für Alle (953 px), Off-Market (600 px) und Entwicklungspo
 
 ## Wissen / Immobilienbewertung – Bildausrichtung
 Auf Wunsch des Auftraggebers wird das Bewertungsfoto im Browser horizontal gespiegelt und links fokussiert, damit der Computer im sichtbaren rechten Bereich liegt. Die Bilddateien und ihre Auflösung bleiben unverändert; die Regel gilt nur für diese Kategorie auf der Wissen-Seite.
+
+## Eigentümer / Situationen und Ablauf – 29.10.2026
+
+Die vom Auftraggeber zusätzlich gelieferte Aufnahme beim Kaffee (`team-austausch`) begleitet „Typische Eigentümersituationen“: persönliche Ausgangslage verstehen und Möglichkeiten besprechen. Proportional optimierte WebP-Varianten mit 800 und 1352 Pixeln Breite; Bildinhalt beibehalten.
+
+Der Ablauf auf `/immobilie-verkaufen` verwendet gelieferte Teamfotos: persönliches Gespräch beim Erstkontakt, gemeinsame Dokumentenprüfung bei Unterlagen, Bildschirm und Standortdaten bei Analyse, Architekturmodell und Planung bei Besprechung, Projektpräsentation bei Käuferauswahl sowie persönlicher Austausch bei Transaktionsbegleitung. Für die erneut gelieferten Motive werden die vorhandenen höher aufgelösten Dateien verwendet. Breite Bildflächen erhalten die Gruppe und die zum Text passenden Arbeitsmittel. Alt-Texte sind auch auf Englisch verfügbar; keine Namen oder Rollen ergänzt.

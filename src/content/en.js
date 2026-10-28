@@ -1523,6 +1523,7 @@ export default {
  "Keine automatischen Kaufempfehlungen oder Renditezusagen.": "No automatic purchase recommendations or return guarantees.",
 
  // Teamaufnahmen und zugehörige Texte.
+ "Mitglieder des ARVENTAS-Teams im persönlichen Austausch bei einer Tasse Kaffee.": "Members of the ARVENTAS team in a personal conversation over coffee.",
  "Unser Team": "Our team",
  "Menschen hinter den Entscheidungen.": "The people behind the decisions.",
  "Wir prüfen Unterlagen, besprechen Möglichkeiten und begleiten den nächsten Schritt persönlich. So verbinden wir Analyse und Austausch.": "We review documents, discuss possibilities and personally support the next step. This brings analysis and conversation together.",

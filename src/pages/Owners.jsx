@@ -11,7 +11,14 @@ import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
 import { TEAM_PHOTOS } from '../content/team.js'
 
-const PROCESS_IMG = ['owner-beratung', 'owner-unterlagen', 'owner-analyse-karte', 'owner-besprechung', 'h-kaeufer', 'abschluss-beratung'].map((k) => `/media/p/${k}.webp`)
+const PROCESS_IMG = [
+  TEAM_PHOTOS.conversation,
+  TEAM_PHOTOS.documents,
+  TEAM_PHOTOS.market,
+  TEAM_PHOTOS.development,
+  TEAM_PHOTOS.strategy,
+  TEAM_PHOTOS.guidance,
+]
 
 const SITUATIONS = [
   { id: 'privat', img: '/media/p/h-p-besprechung.webp', label: 'Private Eigentümer', t: 'Wert verstehen, bevor Sie entscheiden.', p: 'Als privater Immobilienbesitzer möchten Sie wissen, was Ihre Immobilie wert ist und welche Optionen es gibt. Eine sachliche Einordnung hilft, ohne dass Sie sich festlegen müssen.' },
@@ -61,7 +68,7 @@ export default function Owners() {
 
       <section className="sec dark sl-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img="/media/p/owner-einfamilienhaus.webp" />
+          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img={TEAM_PHOTOS.exchange} />
         </div>
       </section>
 
