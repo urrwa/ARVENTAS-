@@ -74,3 +74,7 @@ Alle zwölf Bildzuordnungen im Ablauf für Eigentümer und Investoren verwenden 
 ## Wissen / Kategorien – 28.10.2026
 
 Auf ausdrücklichen Wunsch des Auftraggebers zeigt „Alle“ auf `/wissen` das gelieferte Backsteinhaus-Foto (`public/media/knowledge/wissen-alle.webp`) und „Off-Market“ den gelieferten Blick über Wohnhäuser und grüne Hügel (`wissen-off-market.webp`). Jeweils mit kleiner WebP-Variante, ohne Hochskalierung. Zuordnung: `src/content/knowledgePhotos.js`. Diese Auswahl gilt für die Wissen-Seite; die übrigen Kategorien und die Wissensvorschau auf der Startseite behalten ihre Bilder.
+
+## Wissen / Entwicklungspotenziale und Immobilienbewertung – 28.10.2026
+
+„Entwicklungspotenziale“ auf `/wissen` nutzt das vom Auftraggeber gelieferte Baustellenfoto mit Baukränen (`public/media/knowledge/wissen-entwicklungspotenziale.webp`). „Immobilienbewertung“ nutzt die gelieferte gemeinsame Objektprüfung am Bildschirm (`wissen-immobilienbewertung.webp`). Beide mit kleiner WebP-Variante und ohne Hochskalierung; die Auswahl ist in `src/content/knowledgePhotos.js` hinterlegt.

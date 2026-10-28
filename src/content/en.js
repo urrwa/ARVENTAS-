@@ -1547,4 +1547,7 @@ export default {
 
  "Backstein-Wohnhaus hinter einer Natursteinmauer und Bäumen.": "Brick residential building behind a stone wall and trees.",
  "Blick über Wohnhäuser und begrünte Hügel.": "View over residential buildings and green hills.",
+
+ "Baustelle eines Gebäudekomplexes mit Baukränen.": "Building complex under construction with tower cranes.",
+ "Gemeinsame Prüfung von Objektinformationen und Grundrissen am Bildschirm.": "Joint review of property information and floor plans on screen.",
 }
