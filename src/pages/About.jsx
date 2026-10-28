@@ -32,7 +32,7 @@ export default function About() {
         </div>
       </section>
 
-      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image="/media/p/h-entwicklung.webp" />
+      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image={TEAM_PHOTOS.development} />
 
       <section className="sec dark">
         <div className="wrap">
@@ -54,7 +54,7 @@ export default function About() {
             <p className="rv">Jede freigegebene Analyse hat eine verantwortliche Person. Wir benennen Annahmen, trennen Einschätzung von Gutachten und machen offene Punkte sichtbar.</p>
           </div>
           <figure className="team-planning rv">
-            <Photo image={TEAM_PHOTOS.planning} sizes="(max-width: 860px) 100vw, 50vw" />
+            <Photo image={TEAM_PHOTOS.review} sizes="(max-width: 860px) 100vw, 50vw" />
             <figcaption>Gemeinsam prüfen. Möglichkeiten besprechen.</figcaption>
           </figure>
         </div>

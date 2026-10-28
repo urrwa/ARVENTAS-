@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Letters from './Letters.jsx'
+import Photo from './Photo.jsx'
 
 // Scroll-Zoom: Das Foto wächst von einem kleinen Rahmen zwischen zwei Wörtern auf Vollbild.
 export default function ScrollZoom({ left, right, image }) {
@@ -22,10 +23,10 @@ export default function ScrollZoom({ left, right, image }) {
     return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); raf && cancelAnimationFrame(raf) }
   }, [])
   return (
-    <section className="sz" ref={wrap}>
+    <section className={`sz${image?.srcSet ? ' sz-team' : ''}`} ref={wrap}>
       <div className="sz-stick">
         <span className="sz-word sz-l"><Letters text={left} /></span>
-        <div className="sz-img"><img src={image} alt="" loading="lazy" /></div>
+        <div className="sz-img"><Photo image={image} /></div>
         <span className="sz-word sz-r"><Letters text={right} /></span>
       </div>
     </section>

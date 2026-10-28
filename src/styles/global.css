@@ -4431,3 +4431,13 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
 .team-portrait { margin: 0; min-width: 0; overflow: hidden; border: 1px solid rgba(200, 173, 128, .22); border-radius: 16px; background: var(--marine); }
 .team-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1; }
 @media (max-width: 900px) { .team-portraits { grid-template-columns: repeat(2, minmax(0, 1fr)); } .team-portrait { border-radius: 12px; } }
+
+/* Modellbesprechung auf Mobilgeräten: vollständiges Gruppenfoto zwischen den beiden Aussagen. */
+@media (max-width: 860px) {
+  .sz.sz-team { height: auto; }
+  .sz-team .sz-stick { position: relative; height: auto; display: flex; flex-direction: column; gap: 20px; padding: 40px var(--gut); }
+  .sz-team .sz-word { display: block; position: static; top: auto; left: auto; right: auto; transform: none; opacity: 1; white-space: normal; align-self: flex-start; }
+  .sz-team .sz-r { align-self: flex-end; }
+  .sz-team .sz-img { position: relative; left: auto; top: auto; width: 100%; height: auto; transform: none; border-radius: 12px; }
+  .sz-team .sz-img img { display: block; height: auto; }
+}

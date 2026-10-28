@@ -78,3 +78,7 @@ Auf ausdrücklichen Wunsch des Auftraggebers zeigt „Alle“ auf `/wissen` das 
 ## Wissen / Entwicklungspotenziale und Immobilienbewertung – 28.10.2026
 
 „Entwicklungspotenziale“ auf `/wissen` nutzt das vom Auftraggeber gelieferte Baustellenfoto mit Baukränen (`public/media/knowledge/wissen-entwicklungspotenziale.webp`). „Immobilienbewertung“ nutzt die gelieferte gemeinsame Objektprüfung am Bildschirm (`wissen-immobilienbewertung.webp`). Beide mit kleiner WebP-Variante und ohne Hochskalierung; die Auswahl ist in `src/content/knowledgePhotos.js` hinterlegt.
+
+## Über uns / Modellplanung und Planprüfung – 28.10.2026
+
+Zwei weitere vom Auftraggeber gelieferte Motive: `public/media/team/team-modellplanung-*` illustriert „Werte schaffen. Zukunft bauen.“; `team-planpruefung-*` steht bei „Daten prüfen. Menschen entscheiden.“. Beide proportional als WebP optimiert, jeweils mit 800-Pixel-Variante. Bildinhalt beibehalten. Zentrale Zuordnung: `TEAM_PHOTOS.development` und `TEAM_PHOTOS.review`. Mobil wird das Modellfoto vollständig zwischen den beiden Aussagen angezeigt; am Desktop bleibt die bestehende Zoom-Darstellung erhalten.

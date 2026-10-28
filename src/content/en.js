@@ -1550,4 +1550,7 @@ export default {
 
  "Baustelle eines Gebäudekomplexes mit Baukränen.": "Building complex under construction with tower cranes.",
  "Gemeinsame Prüfung von Objektinformationen und Grundrissen am Bildschirm.": "Joint review of property information and floor plans on screen.",
+
+ "Gemeinsame Besprechung eines Architekturmodells, von Grundrissen und Materialmustern.": "Joint discussion of an architectural model, floor plans and material samples.",
+ "Gemeinsame Prüfung und Besprechung von Grundrissen am Planungstisch.": "Joint review and discussion of floor plans at the planning table.",
 }
