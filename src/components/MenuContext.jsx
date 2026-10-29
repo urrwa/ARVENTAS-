@@ -11,6 +11,13 @@ export function MenuProvider({ children }) {
   const { pathname } = useLocation()
   useEffect(() => { setOpen(false) }, [pathname])
   useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1261px)')
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false) }
+    closeOnDesktop()
+    desktop.addEventListener('change', closeOnDesktop)
+    return () => desktop.removeEventListener('change', closeOnDesktop)
+  }, [])
+  useEffect(() => {
     document.documentElement.classList.toggle('menu-open', open)
     return () => document.documentElement.classList.remove('menu-open')
   }, [open])
