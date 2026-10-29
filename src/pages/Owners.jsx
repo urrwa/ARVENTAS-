@@ -9,11 +9,14 @@ import { Btn, SectionHead, Tabs, Faq } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
+import Photo from '../components/Photo.jsx'
+import { OWNER_HOUSE_PHOTO } from '../content/ownerHouse.js'
+import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 
 const PROCESS_IMG = ['owner-beratung', 'owner-unterlagen', 'owner-analyse-karte', 'owner-besprechung', 'h-kaeufer', 'abschluss-beratung'].map((name) => `/media/p/${name}.webp`)
 
 const SITUATIONS = [
-  { id: 'privat', img: '/media/p/h-p-besprechung.webp', label: 'Private Eigentümer', t: 'Wert verstehen, bevor Sie entscheiden.', p: 'Als privater Immobilienbesitzer möchten Sie wissen, was Ihre Immobilie wert ist und welche Optionen es gibt. Eine sachliche Einordnung hilft, ohne dass Sie sich festlegen müssen.' },
+  { id: 'privat', img: PROVIDED_PHOTOS.consultation.src, label: 'Private Eigentümer', t: 'Wert verstehen, bevor Sie entscheiden.', p: 'Als privater Immobilienbesitzer möchten Sie wissen, was Ihre Immobilie wert ist und welche Optionen es gibt. Eine sachliche Einordnung hilft, ohne dass Sie sich festlegen müssen.' },
   { id: 'mfh', img: '/media/p/u-weisse-wohnanlage.webp', label: 'Mehrfamilienhaus', t: 'Bestand strukturiert einordnen.', p: 'Bei Mehrfamilienhäusern spielen Mieterstruktur, Zustand und Potenziale zusammen. Wir ordnen diese Punkte nachvollziehbar ein, bevor ein Verkaufsweg gewählt wird.' },
   { id: 'erbe', img: '/media/p/h-p-begleitung.webp', label: 'Erbengemeinschaft', t: 'Eine gemeinsame Gesprächsgrundlage.', p: 'Mehrere Eigentümer haben oft unterschiedliche Interessen. Eine neutrale Einordnung von Wert und Optionen kann eine gemeinsame Grundlage für Entscheidungen schaffen.' },
   { id: 'verwalter', img: '/media/p/h-p-abschluss.webp', label: 'Nachlass- und Insolvenzverwalter', t: 'Zuverlässig und diskret.', p: 'Verwalter benötigen belastbare Informationen und einen verlässlichen Ansprechpartner. Wir prüfen Objekte sachlich und stimmen das weitere Vorgehen mit Ihnen ab.' },
@@ -38,7 +41,7 @@ export default function Owners() {
         <p className="ow-eb">Für Eigentümer</p>
         <h1 className="ow-h"><Letters text="Ihre Immobilie." per={30} max={900} delay={200} /><br /><Letters text="Unser Marktverständnis." per={30} max={1300} delay={700} /></h1>
         <div className="ow-pic">
-          <img src="/media/p/owner-brown-house.png" alt="" width="600" height="400" decoding="async" fetchpriority="high" />
+          <Photo image={OWNER_HOUSE_PHOTO} sizes="(max-width: 760px) 150vh, 100vw" loading="eager" fetchPriority="high" />
           <div className="ow-card">
             <p>Immobilienwert verstehen, Optionen prüfen und gegebenenfalls diskret verkaufen.</p>
             <span>Diskret. Strukturiert. Persönlich.</span>
@@ -60,7 +63,7 @@ export default function Owners() {
 
       <section className="sec dark sl-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img="/media/p/h-p-besprechung.webp" />
+          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img={PROVIDED_PHOTOS.consultation} />
         </div>
       </section>
 
