@@ -1,6 +1,11 @@
 // Englische Leseversion (Lesehilfe für die Abnahme). Schlüssel = deutscher Originaltext, Wert = englische Übersetzung.
 // Ein Wert, der mit "^" beginnt, entfernt das führende Leerzeichen des Originals.
 export default {
+ "Die bestätigten Unternehmens- und Kontaktdaten sind eingetragen. Gegebenenfalls erforderliche Steuer-, Erlaubnis- und Aufsichtsangaben sind noch zu bestätigen.": "The confirmed company and contact details have been entered. Any applicable tax, licensing and supervisory details still need to be confirmed.",
+ "Telefon:": "Phone:",
+ "Für eine tatsächliche Kontaktaufnahme nutzen Sie bitte die angegebene E-Mail-Adresse oder Telefonnummer. Die Website-Formulare sind derzeit als Demo gekennzeichnet und versenden keine Anfragen.": "To contact us, please use the email address or phone number provided. The website forms are currently labelled as demos and do not send enquiries.",
+ "5. Kontaktaufnahme per E-Mail oder Telefon": "5. Contact by email or phone",
+ "Wenn Sie uns unmittelbar per E-Mail oder Telefon kontaktieren, verarbeiten wir die mitgeteilten Angaben zur Bearbeitung Ihres Anliegens. Vertragsbezogene Anfragen richten sich nach Art. 6 Abs. 1 Buchst. b DSGVO, sonstige Korrespondenz nach Art. 6 Abs. 1 Buchst. f DSGVO. Wir bewahren diese Angaben nur so lange auf, wie sie für die Bearbeitung oder aufgrund anwendbarer gesetzlicher Aufbewahrungspflichten erforderlich sind.": "If you contact us directly by email or phone, we process the information you provide to handle your request. Contract-related enquiries are processed under Article 6(1)(b) GDPR; other correspondence is processed under Article 6(1)(f) GDPR. We retain this information only for as long as needed to handle the request or to meet applicable statutory retention obligations.",
  "Unternehmens- und Kontaktangaben der ARVENTAS GmbH, Am Grund 11, 86489 Deisenhausen.": "Company and contact details of ARVENTAS GmbH, Am Grund 11, 86489 Deisenhausen.",
  "Unternehmens- und Kontaktangaben.": "Company and contact details.",
  "Stand: 30. Oktober 2026": "Last updated: 30 October 2026",

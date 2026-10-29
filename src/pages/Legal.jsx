@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero.jsx'
 import { useConsent } from '../components/Consent.jsx'
 
 function CompanyAddress() {
-  return <address className="legal-address"><strong>ARVENTAS GmbH</strong><br />Am Grund 11<br />86489 Deisenhausen<br /><span>Deutschland</span><br /><a href="mailto:info@arventas.de">info@arventas.de</a></address>
+  return <address className="legal-address"><strong>ARVENTAS GmbH</strong><br />Am Grund 11<br />86489 Deisenhausen<br /><span>Deutschland</span><br /><a href="mailto:info@arventas.de">info@arventas.de</a><br /><a href="tel:+49828260299090">08282 60299090</a></address>
 }
 
 export function Impressum() {
@@ -13,7 +13,7 @@ export function Impressum() {
       <PageHero crumb="Impressum" title="Impressum" lead="Unternehmens- und Kontaktangaben." />
       <section className="sec dark"><div className="wrap legal legal-document">
         <p className="legal-date">Stand: 30. Oktober 2026</p>
-        <aside className="legal-note"><strong>Entwurf zur Abstimmung</strong><p>Die bestätigten Unternehmensdaten sind eingetragen. Eine weitere unmittelbar erreichbare Kontaktmöglichkeit sowie gegebenenfalls erforderliche Steuer-, Erlaubnis- und Aufsichtsangaben sind noch zu bestätigen.</p></aside>
+        <aside className="legal-note"><strong>Entwurf zur Abstimmung</strong><p>Die bestätigten Unternehmens- und Kontaktdaten sind eingetragen. Gegebenenfalls erforderliche Steuer-, Erlaubnis- und Aufsichtsangaben sind noch zu bestätigen.</p></aside>
         <h2>Angaben gemäß § 5 DDG</h2>
         <CompanyAddress />
         <h2>Vertretung</h2>
@@ -21,8 +21,8 @@ export function Impressum() {
         <h2>Handelsregister</h2>
         <dl className="legal-facts"><div><dt>Registergericht</dt><dd>Amtsgericht Memmingen</dd></div><div><dt>Registernummer</dt><dd>HRB 22526</dd></div></dl>
         <h2>Kontakt</h2>
-        <p><span>E-Mail:</span> <a href="mailto:info@arventas.de">info@arventas.de</a><br /><span>Website:</span> <a href="https://www.arventas.de">www.arventas.de</a></p>
-        <p>Für eine tatsächliche Kontaktaufnahme nutzen Sie bitte die angegebene E-Mail-Adresse. Die Website-Formulare sind derzeit als Demo gekennzeichnet und versenden keine Anfragen.</p>
+        <p><span>E-Mail:</span> <a href="mailto:info@arventas.de">info@arventas.de</a><br /><span>Telefon:</span> <a href="tel:+49828260299090">08282 60299090</a><br /><span>Website:</span> <a href="https://www.arventas.de">www.arventas.de</a></p>
+        <p>Für eine tatsächliche Kontaktaufnahme nutzen Sie bitte die angegebene E-Mail-Adresse oder Telefonnummer. Die Website-Formulare sind derzeit als Demo gekennzeichnet und versenden keine Anfragen.</p>
       </div></section>
     </>
   )
@@ -52,8 +52,8 @@ export function Datenschutz() {
         <h2>4. Formulare und Suchprofil</h2>
         <p>Die Website-Formulare und das Suchprofil laufen derzeit im Demo-Modus. Der Website-Code verarbeitet Eingaben im Arbeitsspeicher Ihres Browsers, übermittelt sie nicht an ARVENTAS und legt sie weder auf einem Server noch im Local Storage ab. Eine angezeigte Bestätigung simuliert einen Versand.</p>
         <p>Nutzen Sie die Demo-Formulare nicht für eine tatsächlich zu übermittelnde oder fristgebundene Anfrage. Für eine direkte Kontaktaufnahme steht Ihnen info@arventas.de zur Verfügung. Vor Einrichtung eines tatsächlichen Formularversands werden diese Hinweise angepasst.</p>
-        <h2>5. Kontaktaufnahme per E-Mail</h2>
-        <p>Wenn Sie uns unmittelbar per E-Mail kontaktieren, verarbeiten wir die mitgeteilten Angaben zur Bearbeitung Ihres Anliegens. Vertragsbezogene Anfragen richten sich nach Art. 6 Abs. 1 Buchst. b DSGVO, sonstige Korrespondenz nach Art. 6 Abs. 1 Buchst. f DSGVO. Wir bewahren diese Angaben nur so lange auf, wie sie für die Bearbeitung oder aufgrund anwendbarer gesetzlicher Aufbewahrungspflichten erforderlich sind.</p>
+        <h2>5. Kontaktaufnahme per E-Mail oder Telefon</h2>
+        <p>Wenn Sie uns unmittelbar per E-Mail oder Telefon kontaktieren, verarbeiten wir die mitgeteilten Angaben zur Bearbeitung Ihres Anliegens. Vertragsbezogene Anfragen richten sich nach Art. 6 Abs. 1 Buchst. b DSGVO, sonstige Korrespondenz nach Art. 6 Abs. 1 Buchst. f DSGVO. Wir bewahren diese Angaben nur so lange auf, wie sie für die Bearbeitung oder aufgrund anwendbarer gesetzlicher Aufbewahrungspflichten erforderlich sind.</p>
         <h2>6. Schriftarten und Medien</h2>
         <p>Schriftarten, Bilder und Videos werden über das Hosting dieser Website ausgeliefert. Der Website-Code lädt dafür keine Inhalte direkt von Google Fonts, YouTube oder Unsplash nach. Bildquellenangaben sind keine Einbindung externer Tracking-Dienste.</p>
         <h2>7. Ihre Rechte</h2>
