@@ -7,7 +7,6 @@ import ReportStack from '../components/ReportStack.jsx'
 import StackScene from '../components/StackScene.jsx'
 import { REPORT_FAQ } from '../content/data.js'
 import { TEAM_PHOTOS } from '../content/team.js'
-import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 
 const BLOCKS = [
   ['Marktwert', 'Einordnung des Werts anhand nachvollziehbarer Verfahren.', '/media/baustein-marktwert.webp'],
@@ -35,7 +34,7 @@ export default function ReportPage() {
   return (
     <>
       <Seo title="Objektreport | ARVENTAS" description="Immobilien verstehen, Entscheidungen fundieren: der Objektreport mit Marktwerteinschätzung, Standort, Potenzial und Prüfhinweisen." />
-      <PageHero fadeOut blur image={PROVIDED_PHOTOS.report} crumb="Objektreport" title="Immobilien verstehen. Entscheidungen fundieren." lead="Datenbasiert analysiert. Persönlich geprüft.">
+      <PageHero fadeOut blur image={TEAM_PHOTOS.analysis} crumb="Objektreport" title="Immobilien verstehen. Entscheidungen fundieren." lead="Datenbasiert analysiert. Persönlich geprüft.">
         <div className="btn-row"><Btn href="#muster" variant="line">Muster ansehen</Btn><Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 

@@ -8,14 +8,13 @@ import RevealText from '../components/RevealText.jsx'
 import ScrollZoom from '../components/ScrollZoom.jsx'
 import HScroll from '../components/HScroll.jsx'
 import Photo from '../components/Photo.jsx'
-import { TEAM_PHOTOS } from '../content/team.js'
-import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
+import { TEAM_PHOTOS, TEAM_PORTRAITS } from '../content/team.js'
 
 export default function About() {
   return (
     <>
       <Seo title="Über uns | ARVENTAS" description="Wer ARVENTAS ist: aktuelles Off-Market-Geschäftsmodell, Mission und Arbeitsweise, Werte und deutschlandweiter Tätigkeitsbereich." />
-      <PageHero tall image={TEAM_PHOTOS.conversation} crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
+      <PageHero tall image={TEAM_PHOTOS.guidance} crumb="Über uns" title="Persönliche Erfahrung. Gemeinsame Werte." lead="ARVENTAS verbindet ausgewählte Off-Market-Immobilien mit passenden Investoren – durch fundierte Analysen, persönliche Erfahrung und diskrete Transaktionsbegleitung." />
 
       <div className="cover-over">
       <div className="cover-amb"><Ambient /></div>
@@ -40,7 +39,7 @@ export default function About() {
           <SectionHead eyebrow="Aktuelles Geschäftsmodell" title="Zugang, Analyse, Matching, Begleitung." normal />
         </div>
         <HScroll items={[
-          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', photo: PROVIDED_PHOTOS.city },
+          { t: 'Zugang', p: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/h-zugang.webp' },
           { t: 'Analyse', p: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', photo: TEAM_PHOTOS.analysis },
           { t: 'Matching', p: 'Suchprofil und Immobilieninformationen zusammenführen.', photo: TEAM_PHOTOS.market },
           { t: 'Begleitung', p: 'Persönliche Transaktionsbegleitung.', photo: TEAM_PHOTOS.conversation },
@@ -74,6 +73,13 @@ export default function About() {
             <Photo image={TEAM_PHOTOS.strategy} />
             <figcaption>Immobilien gemeinsam betrachten. Entscheidungen persönlich begleiten.</figcaption>
           </figure>
+          <ul id="team-portraets" className="team-portraits" aria-label="Porträts unseres Teams">
+            {TEAM_PORTRAITS.map((portrait, i) => (
+              <li key={portrait.src} className="team-portrait rv" style={{ '--d': (i % 3) * 70 }}>
+                <Photo image={portrait} sizes="(max-width: 900px) 50vw, 33vw" />
+              </li>
+            ))}
+          </ul>
           <div className="btn-row"><Btn to="/kontakt">Kontakt aufnehmen</Btn></div>
         </div>
       </section>

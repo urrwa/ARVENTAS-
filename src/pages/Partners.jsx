@@ -6,22 +6,21 @@ import { Btn, SectionHead } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, PARTNER_FIELDS } from '../components/forms.jsx'
 import { PARTNER_PROCESS } from '../content/data.js'
-import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 
 export default function Partners() {
   return (
     <>
       <Seo title="Partnernetzwerk | ARVENTAS" description="Kompetenzen verbinden, Zusammenarbeit gestalten: Partneranfrage für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren." />
-      <PageHero fadeOut blur image={PROVIDED_PHOTOS.handover} crumb="Partner" title="Kompetenzen verbinden. Zusammenarbeit gestalten." lead="Für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren.">
+      <PageHero fadeOut blur image="/media/p/partner-hero.webp" crumb="Partner" title="Kompetenzen verbinden. Zusammenarbeit gestalten." lead="Für geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren.">
         <div className="btn-row"><Btn href="#anfrage">Partnerschaft anfragen</Btn></div>
       </PageHero>
 
       <section className="sec dark over-photo pc-sec">
         <div className="wrap">
           <ParallaxCards inside items={[
-            { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', photo: PROVIDED_PHOTOS.consultation, ratio: '4 / 3', speed: 1 },
-            { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', photo: PROVIDED_PHOTOS.matching, ratio: '4 / 3', speed: 1.8 },
-            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', photo: PROVIDED_PHOTOS.documents, ratio: '16 / 9', speed: 0.7, wide: true },
+            { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: '/media/p/partner-fachleute.webp', ratio: '4 / 5', speed: 1 },
+            { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', img: '/media/p/partner-ergaenzung.webp', ratio: '3 / 4', speed: 1.8 },
+            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/p/partner-besprechung.webp', ratio: '21 / 9', speed: 0.7, wide: true },
           ]} />
         </div>
       </section>

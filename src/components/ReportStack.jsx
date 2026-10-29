@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Btn } from './ui.jsx'
 import { PANELS } from './ReportViewer.jsx'
-import { imagePath } from '../content/imageReplacements.js'
 
 // Objektreport als Blätterstapel: Beim Scrollen heben sich die Seiten des Berichts nacheinander ab, rechts erscheint der passende Abschnitt.
 // Schmale Bildschirme und reduzierte Bewegung: die ruhige Reiteransicht (ReportViewer).
@@ -55,7 +54,7 @@ const QPage = ({ k }) => {
       <div className="bk-qtop"><div><small>Frage</small><b>{p.small}</b></div><span className="bk-badge"><Ic n={v.icon} /></span></div>
       <h3>{q}</h3>
       <p>{ans}</p>
-      <figure className="bk-pic"><img src={imagePath(`/media/p/${v.img}.webp`)} alt="" loading="lazy" /><figcaption>Beispielbild</figcaption></figure>
+      <figure className="bk-pic"><img src={`/media/p/${v.img}.webp`} alt="" loading="lazy" /><figcaption>Beispielbild</figcaption></figure>
     </div>
   )
 }
@@ -64,7 +63,7 @@ const CPage = ({ k }) => (
     <small className="rp-sec">{`Objektreport · ${PANELS[k].small} ${PANELS[k].label}`}</small>
     {PANELS[k].render()}
     <ul className="bk-chips">{VIS[PANELS[k].id].chips.map(([ic, t]) => <li key={t}><Ic n={ic} /><span>{t}</span></li>)}</ul>
-    <figure className="bk-strip"><img src={imagePath(`/media/p/${VIS[PANELS[k].id].img2}.webp`)} alt="" loading="lazy" /></figure>
+    <figure className="bk-strip"><img src={`/media/p/${VIS[PANELS[k].id].img2}.webp`} alt="" loading="lazy" /></figure>
   </div>
 )
 

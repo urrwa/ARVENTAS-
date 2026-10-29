@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { imagePath } from '../content/imageReplacements.js'
 import { Link } from 'react-router-dom'
 import { REGIONS } from '../content/data.js'
 
@@ -20,7 +19,7 @@ const TABS = [
   ['Potenzial', 'Möglichkeiten erscheinen als Prüffragen, nicht als Zusage.'],
   ['Prüfpunkte', 'Offene Punkte vor einer Entscheidung, mit menschlicher Freigabe.'],
 ]
-const IMG = ['/media/p/u-eingang-travertin.webp', '/media/p/u-begutachtung-travertin.webp', '/media/p/u-modell-dunkel.webp'].map(imagePath)
+const IMG = ['/media/p/u-eingang-travertin.webp', '/media/p/u-begutachtung-travertin.webp', '/media/p/u-modell-dunkel.webp']
 
 
 function Donut() {

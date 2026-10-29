@@ -1,5 +1,4 @@
 // Responsive Knowledge photographs, including restored low-resolution sources.
-import { PROVIDED_PHOTOS } from './providedPhotos.js'
 export const KNOWLEDGE_CATEGORY_PHOTOS = {
   "Alle": {
     "src": "/media/knowledge/hq/all-1920.webp",
@@ -15,7 +14,13 @@ export const KNOWLEDGE_CATEGORY_PHOTOS = {
     "height": 2560,
     "alt": "Blick über Wohnhäuser und begrünte Hügel."
   },
-  "Immobilienbewertung": PROVIDED_PHOTOS.valuation,
+  "Immobilienbewertung": {
+    "src": "/media/knowledge/hq/valuation-1920.webp",
+    "srcSet": "/media/knowledge/hq/valuation-640.webp 640w, /media/knowledge/hq/valuation-1280.webp 1280w, /media/knowledge/hq/valuation-1920.webp 1920w, /media/knowledge/hq/valuation-2560.webp 2560w, /media/knowledge/hq/valuation-3840.webp 3840w",
+    "width": 1920,
+    "height": 1091,
+    "alt": "Gemeinsame Prüfung von Objektinformationen und Grundrissen am Bildschirm."
+  },
   "Kapitalanlage": {
     "src": "/media/knowledge/hq/investment-1920.webp",
     "srcSet": "/media/knowledge/hq/investment-640.webp 640w, /media/knowledge/hq/investment-1280.webp 1280w, /media/knowledge/hq/investment-1920.webp 1920w, /media/knowledge/hq/investment-2560.webp 2560w, /media/knowledge/hq/investment-3840.webp 3840w",

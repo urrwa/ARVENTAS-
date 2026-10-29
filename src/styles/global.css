@@ -3478,7 +3478,7 @@ body, .dark, .sec.dark, .sz, .wz, .strip, .sf, .sec.dark.over-photo, .hf + *, .s
 .hv-go { display: inline-flex; align-items: center; gap: 10px; font: 700 13px/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ivory); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 6px; transition: color 300ms ease; }
 .hv-go:hover, .hv-go:focus-visible { color: var(--gold); }
 .hv-card { position: absolute; z-index: 2; right: var(--gut); bottom: clamp(48px, 9vh, 96px); width: min(380px, 28vw); padding: 10px 10px 20px; border-radius: 16px; border: 1px solid rgba(233, 217, 188, .16); background: rgba(7, 19, 33, .55); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
-.hv-card img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
+.hv-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
 .hv-card p { margin: 0 8px 16px; font: 500 15px/1.5 var(--font-body); }
 .hv-card .btn { margin: 0 8px; }
 .hv-mouse { position: absolute; z-index: 2; left: 50%; bottom: 24px; width: 24px; height: 40px; margin-left: -12px; border: 1.5px solid rgba(245, 241, 232, .8); border-radius: 14px; display: flex; justify-content: center; padding-top: 7px; box-sizing: border-box; }
@@ -4459,5 +4459,3 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
 @media (max-width: 600px) { .ss2-flat .ss2-cap li { grid-template-columns: 1fr; gap: 4px; } }
 
 .ss2-card:has(img[src^="/media/team/"]) img { object-fit: contain; object-position: center top; }
-.appointment-photo { margin: 24px 0; overflow: hidden; border-radius: 14px; }
-.appointment-photo img { display: block; width: 100%; height: auto; }

@@ -7,8 +7,6 @@ import { SectionHead, Tabs, Placeholder, Faq } from '../components/ui.jsx'
 import { CONTACT_FAQ } from '../content/data.js'
 import { LeadForm, OWNER_FIELDS, PARTNER_FIELDS } from '../components/forms.jsx'
 import { TEAM_PHOTOS } from '../content/team.js'
-import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
-import Photo from '../components/Photo.jsx'
 
 export default function Contact() {
   const [sp] = useSearchParams()
@@ -42,7 +40,7 @@ export default function Contact() {
       </section>
       <section className="sec dark" style={{ paddingTop: 0 }}>
         <div className="wrap two">
-          <div><SectionHead eyebrow="Termin" title="Termin anfragen." normal /><figure className="appointment-photo rv"><Photo image={PROVIDED_PHOTOS.timing} sizes="(max-width: 860px) 100vw, 50vw" /></figure><p className="rv">Einen Termin vereinbaren wir persönlich mit Ihnen. Eine Online-Buchung ist derzeit nicht eingerichtet; deshalb bitten wir um eine Terminanfrage über eines der Formulare.</p></div>
+          <div><SectionHead eyebrow="Termin" title="Termin anfragen." normal /><p className="rv">Einen Termin vereinbaren wir persönlich mit Ihnen. Eine Online-Buchung ist derzeit nicht eingerichtet; deshalb bitten wir um eine Terminanfrage über eines der Formulare.</p></div>
           <Placeholder title="Platzhalter – Kontaktdaten">Verifizierte Telefon-, E-Mail- und Unternehmensdaten werden vor Veröffentlichung ergänzt. Es werden keine Daten aus alten Website-Mockups übernommen.</Placeholder>
         </div>
       </section>

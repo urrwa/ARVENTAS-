@@ -1,8 +1,7 @@
 // Zentrale Bildzuordnung der Website: Jede Zeile nennt Seite, Abschnitt und Bild.
 // Bilder liegen unter public/media/p/. Namen mit "u-" sind vom Auftraggeber gelieferte Fotos, alle anderen sind mit KI erzeugte Fotos.
 // Eine Stelle ändern heißt nur: hier den Dateinamen austauschen.
-import { imagePath } from './imageReplacements.js'
-const p = (k) => imagePath(`/media/p/${k}.webp`)
+const p = (k) => `/media/p/${k}.webp`
 
 // ---- Startseite
 export const HOME = {
