@@ -1,12 +1,8 @@
-// Responsive Knowledge photographs, including restored low-resolution sources.
+import { EDITORIAL_PHOTOS } from './editorialPhotos.js'
+
+// Responsive Knowledge photographs selected for each topic.
 export const KNOWLEDGE_CATEGORY_PHOTOS = {
-  "Alle": {
-    "src": "/media/knowledge/hq/all-1920.webp",
-    "srcSet": "/media/knowledge/hq/all-640.webp 640w, /media/knowledge/hq/all-1280.webp 1280w, /media/knowledge/hq/all-1920.webp 1920w, /media/knowledge/hq/all-2560.webp 2560w, /media/knowledge/hq/all-3840.webp 3840w",
-    "width": 1920,
-    "height": 1708,
-    "alt": "Backstein-Wohnhaus hinter einer Natursteinmauer und Bäumen."
-  },
+  "Alle": EDITORIAL_PHOTOS.knowledgeOverview,
   "Off-Market": {
     "src": "/media/knowledge/hq/off-market-1920.webp",
     "srcSet": "/media/knowledge/hq/off-market-640.webp 640w, /media/knowledge/hq/off-market-1280.webp 1280w, /media/knowledge/hq/off-market-1920.webp 1920w, /media/knowledge/hq/off-market-2560.webp 2560w, /media/knowledge/hq/off-market-3840.webp 3840w",
@@ -44,10 +40,4 @@ export const KNOWLEDGE_CATEGORY_PHOTOS = {
   }
 }
 
-export const KNOWLEDGE_CTA_PHOTO = {
-  "src": "/media/knowledge/hq/skyline-1920.webp",
-  "srcSet": "/media/knowledge/hq/skyline-640.webp 640w, /media/knowledge/hq/skyline-1280.webp 1280w, /media/knowledge/hq/skyline-1920.webp 1920w, /media/knowledge/hq/skyline-2560.webp 2560w, /media/knowledge/hq/skyline-3840.webp 3840w",
-  "width": 1920,
-  "height": 1071,
-  "alt": "Frankfurter Skyline am Main in der Abenddämmerung."
-}
+export const KNOWLEDGE_CTA_PHOTO = EDITORIAL_PHOTOS.residentialNeighborhood

@@ -6,6 +6,7 @@ import { Btn, SectionHead } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, PARTNER_FIELDS } from '../components/forms.jsx'
 import { PARTNER_PROCESS } from '../content/data.js'
+import { EDITORIAL_PHOTOS } from '../content/editorialPhotos.js'
 
 export default function Partners() {
   return (
@@ -20,7 +21,7 @@ export default function Partners() {
           <ParallaxCards inside items={[
             { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: '/media/p/partner-fachleute.webp', ratio: '4 / 5', speed: 1 },
             { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', img: '/media/p/partner-ergaenzung.webp', ratio: '3 / 4', speed: 1.8 },
-            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/p/partner-besprechung.webp', ratio: '21 / 9', speed: 0.7, wide: true },
+            { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: EDITORIAL_PHOTOS.partnerRoles.src, ratio: '21 / 9', speed: 0.7, wide: true },
           ]} />
         </div>
       </section>
@@ -35,7 +36,7 @@ export default function Partners() {
       <section className="sec dark" id="anfrage">
         <div className="wrap two">
           <div><SectionHead eyebrow="Partneranfrage" title="Partnerschaft anfragen." lead="Beschreiben Sie kurz Ihr Unternehmen und die gewünschte Zusammenarbeit." /></div>
-          <div style={{ background: 'var(--ivory)', color: 'var(--ink)', padding: 'clamp(20px,3vw,40px)' }} className="on-ivory">
+          <div className="form-panel">
             <LeadForm id="par" fields={PARTNER_FIELDS} submitLabel="Anfrage absenden" doneTitle="Danke für Ihre Partneranfrage (Demo)." doneText="In der Live-Version würden wir uns bei Ihnen melden, um ein Kennenlernen zu vereinbaren." />
           </div>
         </div>

@@ -50,7 +50,7 @@ function Done({ title, text, onReset }) {
       <h3>{title}</h3>
       <p>{text}</p>
       <p className="small">Demo-Bestätigung: Es wurde nichts versendet und nichts gespeichert.</p>
-      <button type="button" className="btn btn-line" style={{ color: 'var(--marine)' }} onClick={onReset}>Neue Eingabe</button>
+      <button type="button" className="btn btn-line" onClick={onReset}>Neue Eingabe</button>
     </div>
   )
 }
@@ -91,14 +91,14 @@ export function LeadForm({ id, fields, submitLabel, doneTitle, doneText, intro, 
       <fieldset disabled={status === 'sending'}>
         {fields.map((f) => <Field key={f.name} f={f} id={id + '-' + f.name} value={vals[f.name]} error={errs[f.name]} onChange={set} />)}
         <div className="f">
-          <label className="check" style={{ textTransform: 'none', letterSpacing: 0, fontSize: 14, fontWeight: 400, color: 'var(--ink)' }}>
+          <label className="check">
             <input id={id + '-consent'} type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); setErrs((x) => ({ ...x, __consent: '' })) }} aria-invalid={errs.__consent ? 'true' : undefined} />
             <span>Ich habe den <Link to="/datenschutz">Datenschutzhinweis</Link> zur Kenntnis genommen.</span>
           </label>
           {errs.__consent && <div className="err" role="alert">⚠ {errs.__consent}</div>}
         </div>
         {marketing && (
-          <label className="check" style={{ textTransform: 'none', letterSpacing: 0, fontSize: 14, fontWeight: 400, color: 'var(--ink)' }}>
+          <label className="check">
             <input type="checkbox" checked={mk} onChange={(e) => setMk(e.target.checked)} />
             <span>Optional und getrennt von Ihrer Anfrage: Ich möchte Marketingkommunikation von <Brand /> erhalten. Die Einwilligung ist freiwillig und jederzeit widerrufbar.</span>
           </label>
@@ -192,7 +192,7 @@ export function InvestorWizard() {
           <div className="f" role="radiogroup" aria-labelledby="weg-l">
             <span className="lbl" id="weg-l">Bevorzugter Kontaktweg</span>
             {['E-Mail', 'Telefon', 'Rückruf'].map((w) => (
-              <label key={w} className="check" style={{ textTransform: 'none', letterSpacing: 0, fontSize: 15, fontWeight: 400, color: 'var(--ink)', marginBottom: 8 }}>
+              <label key={w} className="check" style={{ marginBottom: 8 }}>
                 <input type="radio" name="weg" checked={v.weg === w} onChange={() => set('weg', w)} /><span>{w}</span>
               </label>
             ))}
@@ -203,20 +203,20 @@ export function InvestorWizard() {
             <p className="small">Bitte prüfen Sie Ihre Angaben.</p>
             <dl className="sum">{rows.map(([k, val]) => <div key={k}><dt>{k}</dt><dd>{val || '–'}</dd></div>)}</dl>
             <div className="f">
-              <label className="check" style={{ textTransform: 'none', letterSpacing: 0, fontSize: 14, fontWeight: 400, color: 'var(--ink)' }}>
+              <label className="check">
                 <input id="iw-ack" type="checkbox" checked={ack} onChange={(e) => { setAck(e.target.checked); setErrs({}) }} aria-invalid={errs.ack ? 'true' : undefined} />
                 <span>Ich habe den <Link to="/datenschutz">Datenschutzhinweis</Link> zur Kenntnis genommen.</span>
               </label>
               {errs.ack && <div className="err" role="alert">⚠ {errs.ack}</div>}
             </div>
-            <label className="check" style={{ textTransform: 'none', letterSpacing: 0, fontSize: 14, fontWeight: 400, color: 'var(--ink)' }}>
+            <label className="check">
               <input type="checkbox" checked={mk} onChange={(e) => setMk(e.target.checked)} />
               <span>Optional und getrennt von Ihrem Suchprofil: Ich möchte Marketingkommunikation von <Brand /> erhalten. Die Einwilligung ist freiwillig und jederzeit widerrufbar.</span>
             </label>
           </>
         )}
         <div className="btn-row" style={{ marginTop: 12 }}>
-          {step > 0 && <button type="button" className="btn btn-line" style={{ color: 'var(--marine)' }} onClick={() => go(step - 1)}>← Zurück</button>}
+          {step > 0 && <button type="button" className="btn btn-line" onClick={() => go(step - 1)}>← Zurück</button>}
           {step < 3 && <button type="button" className="btn btn-marine" onClick={next}>Weiter <span className="arr" aria-hidden="true">→</span></button>}
           {step === 3 && <button type="button" className="btn btn-marine" onClick={submit} disabled={status === 'sending'}>{status === 'sending' ? <><span className="spin" aria-hidden="true" /> Wird verarbeitet …</> : <>Suchprofil anlegen <span className="arr" aria-hidden="true">→</span></>}</button>}
         </div>

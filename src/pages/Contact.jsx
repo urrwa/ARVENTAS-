@@ -27,7 +27,7 @@ export default function Contact() {
             <hr className="hair" />
             <p className="rv">Wählen Sie den passenden Zugang und senden Sie uns Ihr Anliegen über das Formular.</p>
           </div>
-          <div className="contact-card">
+          <div className="contact-card form-panel">
           {region && <p className="small" style={{ marginBottom: 20 }}>Vorgewählte Region: <b>{region}</b></p>}
           <Tabs label="Zugang wählen" items={items} panelClass="tabs-panel" renderPanel={(t) => (
             t.id === 'eig' ? <LeadForm key="eig" id="k-eig" fields={OWNER_FIELDS} submitLabel="Anfrage absenden" defaults={{ ort: region }} doneTitle="Danke für Ihre Anfrage (Demo)." doneText="In der Live-Version würden wir uns bei Ihnen melden." />

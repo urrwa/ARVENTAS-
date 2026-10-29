@@ -4491,3 +4491,57 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
 @media (max-width: 600px) { .ss2-flat .ss2-cap li { grid-template-columns: 1fr; gap: 4px; } }
 
 .ss2-card:has(img[src^="/media/team/"]) img { object-fit: contain; object-position: center top; }
+
+/* Einheitliche, abgerundete Formularflächen in Marineblau. */
+.form-panel { --form-error: #f0b3a9; min-width: 0; padding: clamp(20px, 3vw, 36px); border: 1px solid rgba(200, 173, 128, .35); border-radius: 24px; background: #0b1e2d; color: var(--ivory); color-scheme: dark; }
+.form-panel-wizard { max-width: 720px; margin-inline: auto; }
+.form-panel .form { max-width: none; }
+.form-panel p, .form-panel .small, .form-panel .state p { color: var(--text-on-dark-soft); }
+.form-panel h2, .form-panel h3, .form-panel .state h3 { color: var(--ivory); }
+.form-panel .form .f { margin-bottom: 16px; }
+.form-panel .form .f label, .form-panel .form .f .lbl { color: var(--ivory); font-size: 11px; letter-spacing: .1em; margin-bottom: 7px; }
+.form-panel .form .f label i, .form-panel .form .f .help { color: var(--text-2); }
+.form-panel .form .f .help { font-size: 12px; line-height: 1.5; margin-top: 7px; }
+.form-panel .form .f :is(input[type=text], input[type=email], input[type=tel], input[type=number], select, textarea) { min-height: 46px; padding: 11px 13px; border: 1px solid rgba(245, 243, 239, .25); border-radius: 10px; background: var(--marine); color: var(--ivory); font-size: 15px; line-height: 1.5; transition: border-color var(--t-ui) ease, background var(--t-ui) ease; }
+.form-panel .form .f textarea { min-height: 112px; }
+.form-panel .form .f select option { background: var(--marine); color: var(--ivory); }
+.form-panel .form .f :is(input, select, textarea)::placeholder { color: var(--text-3); opacity: 1; }
+.form-panel .form .f :is(input[type=text], input[type=email], input[type=tel], input[type=number], select, textarea):hover { border-color: rgba(200, 173, 128, .7); }
+.form-panel .form .f :is(input, select, textarea):focus { border-color: var(--gold); outline: 2px solid var(--gold); outline-offset: 2px; }
+.form-panel .form .f [aria-invalid=true], .form-panel .form .f [aria-invalid=true]:hover { border-color: var(--form-error); }
+.form-panel .form .f .err { color: var(--form-error); font-size: 12px; line-height: 1.5; margin-top: 7px; }
+.form-panel .form .check, .form-panel .form .f label.check { display: flex; align-items: flex-start; gap: 10px; color: var(--ivory); text-transform: none; letter-spacing: 0; font-size: 13px; line-height: 1.55; font-weight: 400; }
+.form-panel .form .check span { color: var(--ivory); }
+.form-panel .form .check input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--gold); flex: none; }
+.form-panel .check a { color: var(--gold); text-underline-offset: 3px; }
+.form-panel .form .demo { margin-bottom: 20px; padding: 8px 12px; border: 0; border-left: 2px solid var(--gold); background: rgba(200, 173, 128, .06); color: var(--text-on-dark-soft); font-size: 12px; line-height: 1.6; }
+.form-panel .demo b { color: var(--gold); }
+.form-panel .state { padding: 22px; margin: 0; border: 1px solid rgba(200, 173, 128, .35); border-radius: 14px; background: var(--marine); color: var(--ivory); }
+.form-panel .form .state { margin-bottom: 20px; }
+.form-panel .state.error { border-color: var(--form-error); }
+.form-panel .btn-line { color: var(--ivory); border-color: rgba(200, 173, 128, .6); border-radius: 999px; }
+.form-panel .btn-line:hover { background: var(--gold); border-color: var(--gold); color: var(--marine); }
+.form-panel .form-dark .btn-line:hover { color: var(--marine) !important; }
+.form-panel .btn-marine { --chip: var(--marine); --chip-fg: var(--ivory); --hover-fg: var(--ivory); background: var(--gold); border-color: var(--gold); color: var(--marine); }
+.form-panel .btn-marine:has(.arr) { --chip: var(--marine); --chip-fg: var(--ivory); --hover-fg: var(--ivory); }
+.form-panel .btn-marine:hover, .form-panel .btn-marine:focus-visible { background: var(--marine); border-color: var(--gold); color: var(--ivory); }
+.form-panel .form .btn { min-height: 46px; }
+.form-panel .form fieldset:disabled { opacity: .65; }
+.form-panel .form .prog { margin-bottom: 24px; gap: 7px; }
+.form-panel .form .prog i { height: 3px; border-radius: 3px; background: rgba(245, 243, 239, .18); }
+.form-panel .form .prog i.on { background: var(--gold); }
+.form-panel .form .prog-l { margin-bottom: 12px; color: var(--gold); font-size: 12px; line-height: 1.6; }
+.form-panel .form .sum { border-color: rgba(245, 243, 239, .18); }
+.form-panel .form .sum div { border-color: rgba(245, 243, 239, .18); overflow-wrap: anywhere; }
+.form-panel .form .sum dt { color: var(--text-2); }
+.form-panel .form .sum dd { color: var(--ivory); }
+.form-panel .tabs { border-color: rgba(245, 243, 239, .18); }
+.form-panel .tabs-list { border-color: rgba(245, 243, 239, .18); }
+.form-panel .tabs-list button { color: var(--text-2); }
+.form-panel .tabs-list button[aria-selected=true] { color: var(--gold); }
+.form-panel .tabs-list button::after { background: var(--gold); }
+.form-panel :focus-visible { outline-color: var(--gold); }
+@media (max-width: 860px) {
+  .form-panel { border-radius: 20px; }
+  .form-panel .form .f :is(input[type=text], input[type=email], input[type=tel], input[type=number], select, textarea) { font-size: 16px; }
+}

@@ -78,7 +78,7 @@ export default function Owners() {
       <section className="sec dark" id="anfrage">
         <div className="wrap two">
           <div><SectionHead eyebrow="Anfrage" title="Objektreport anfragen." lead="Schildern Sie kurz Ihr Anliegen. Umfang und Bearbeitungszeit nach Prüfung Ihrer Unterlagen." /></div>
-          <div style={{ background: 'var(--ivory)', color: 'var(--ink)', padding: 'clamp(20px,3vw,40px)' }} className="on-ivory">
+          <div className="form-panel">
             <LeadForm id="eig" fields={OWNER_FIELDS} submitLabel="Anfrage absenden" defaults={{ ort: sp.get('region') || '' }}
               doneTitle="Danke für Ihre Anfrage (Demo)." doneText="In der Live-Version würden wir Ihre Anfrage prüfen und uns bei Ihnen melden." />
           </div>
