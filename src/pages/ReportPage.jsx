@@ -6,8 +6,6 @@ import ParallaxCards from '../components/ParallaxCards.jsx'
 import ReportStack from '../components/ReportStack.jsx'
 import StackScene from '../components/StackScene.jsx'
 import { REPORT_FAQ } from '../content/data.js'
-import { TEAM_PHOTOS } from '../content/team.js'
-import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 
 const BLOCKS = [
   ['Marktwert', 'Einordnung des Werts anhand nachvollziehbarer Verfahren.', '/media/baustein-marktwert.webp'],
@@ -15,7 +13,7 @@ const BLOCKS = [
   ['Potenzial', 'Möglichkeiten als Prüffragen, nicht als Zusage.', '/media/baustein-potenzial.webp'],
   ['Wirtschaftlichkeit', 'Szenarien, die den Einfluss von Annahmen zeigen.', '/media/baustein-rentabilitaet.webp'],
   ['Prüfhinweise', 'Offene Punkte, die vor einer Entscheidung zu klären sind.', '/media/baustein-pruefhinweise.webp'],
-  ['Nachfrage', 'Passende Suchprofile, ohne Käuferzahlen.', PROVIDED_PHOTOS.matching.src],
+  ['Nachfrage', 'Passende Suchprofile, ohne Käuferzahlen.', '/media/baustein-nachfrage.webp'],
 ]
 const FLOW = [
   { t: 'Anfrage', d: 'Sie schildern Ihr Anliegen.' },
@@ -26,16 +24,16 @@ const FLOW = [
 ]
 
 const SCENE = [
-  { label: 'Herkunft von Daten und Annahmen', icon: 'doc', img: '/media/p/home-unterlagen.webp', title: 'Nachvollziehbar statt behauptet.', text: 'Im Bericht wird je Baustein ausgewiesen, welche Quelle, welcher Stand und welche Annahmen zugrunde liegen. Annahmen sind als solche gekennzeichnet.' },
-  { label: 'Einordnung', icon: 'scale', img: '/media/p/h-bewertung.webp', title: 'Marktwerteinschätzung und Gutachten.', text: 'Eine Marktwerteinschätzung ist kein verbindliches Gutachten. Rechtliche Vorprüfungen sind keine rechtsverbindliche Entscheidung. Wirtschaftliche Szenarien sind keine Renditegarantie.' },
-  { label: 'Ablauf', icon: 'route', photo: TEAM_PHOTOS.documents, title: 'Vom Anliegen zum Bericht.', steps: FLOW },
+  { label: 'Herkunft von Daten und Annahmen', icon: 'doc', img: '/media/p/ablauf-bibliothek.webp', title: 'Nachvollziehbar statt behauptet.', text: 'Im Bericht wird je Baustein ausgewiesen, welche Quelle, welcher Stand und welche Annahmen zugrunde liegen. Annahmen sind als solche gekennzeichnet.' },
+  { label: 'Einordnung', icon: 'scale', img: '/media/p/ablauf-schreibtisch.webp', title: 'Marktwerteinschätzung und Gutachten.', text: 'Eine Marktwerteinschätzung ist kein verbindliches Gutachten. Rechtliche Vorprüfungen sind keine rechtsverbindliche Entscheidung. Wirtschaftliche Szenarien sind keine Renditegarantie.' },
+  { label: 'Ablauf', icon: 'route', img: '/media/p/ablauf-besprechung.webp', title: 'Vom Anliegen zum Bericht.', steps: FLOW },
 ]
 
 export default function ReportPage() {
   return (
     <>
       <Seo title="Objektreport | ARVENTAS" description="Immobilien verstehen, Entscheidungen fundieren: der Objektreport mit Marktwerteinschätzung, Standort, Potenzial und Prüfhinweisen." />
-      <PageHero fadeOut blur image={TEAM_PHOTOS.analysis} crumb="Objektreport" title="Immobilien verstehen. Entscheidungen fundieren." lead="Datenbasiert analysiert. Persönlich geprüft.">
+      <PageHero fadeOut blur image="/media/p/u-diagramme.webp" crumb="Objektreport" title="Immobilien verstehen. Entscheidungen fundieren." lead="Datenbasiert analysiert. Persönlich geprüft.">
         <div className="btn-row"><Btn href="#muster" variant="line">Muster ansehen</Btn><Btn to="/immobilie-verkaufen#anfrage">Objektreport anfragen</Btn></div>
       </PageHero>
 

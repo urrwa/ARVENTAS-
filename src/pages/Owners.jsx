@@ -9,17 +9,8 @@ import { Btn, SectionHead, Tabs, Faq } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
-import { TEAM_PHOTOS } from '../content/team.js'
-import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 
-const PROCESS_IMG = [
-  TEAM_PHOTOS.conversation,
-  PROVIDED_PHOTOS.documents,
-  TEAM_PHOTOS.market,
-  PROVIDED_PHOTOS.consultation,
-  TEAM_PHOTOS.strategy,
-  PROVIDED_PHOTOS.handover,
-]
+const PROCESS_IMG = ['owner-beratung', 'owner-unterlagen', 'owner-analyse-karte', 'owner-besprechung', 'h-kaeufer', 'abschluss-beratung'].map((name) => `/media/p/${name}.webp`)
 
 const SITUATIONS = [
   { id: 'privat', img: '/media/p/h-p-besprechung.webp', label: 'Private Eigentümer', t: 'Wert verstehen, bevor Sie entscheiden.', p: 'Als privater Immobilienbesitzer möchten Sie wissen, was Ihre Immobilie wert ist und welche Optionen es gibt. Eine sachliche Einordnung hilft, ohne dass Sie sich festlegen müssen.' },
@@ -60,16 +51,16 @@ export default function Owners() {
         <div className="wrap">
           <SectionHead eyebrow="Erzählstruktur" title="Drei Schritte zur Klarheit." />
           <StepRows items={[
-            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', photo: TEAM_PHOTOS.conversation },
-            { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', photo: TEAM_PHOTOS.documents },
-            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', photo: TEAM_PHOTOS.planning },
+            { title: 'Situation verstehen.', text: 'Wir hören zu und ordnen Ihre Ausgangslage ein.', to: '/kontakt', img: '/media/p/owner-situation.webp' },
+            { title: 'Immobilie analysieren.', text: 'Daten und Unterlagen werden strukturiert geprüft.', to: '/objektreport', img: '/media/p/owner-analyse-bericht.webp' },
+            { title: 'Verkaufsweg entscheiden.', text: 'Gemeinsam wägen wir die Optionen ab, ohne Druck.', to: '/kontakt', img: '/media/p/owner-entscheidung.webp' },
           ]} />
         </div>
       </section>
 
       <section className="sec dark sl-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img={TEAM_PHOTOS.exchange} />
+          <SituationList eyebrow="Situationen" title="Typische Eigentümersituationen" items={SITUATIONS} img="/media/p/h-p-besprechung.webp" />
         </div>
       </section>
 

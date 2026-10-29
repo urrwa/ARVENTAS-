@@ -9,7 +9,6 @@ import StrengthStack from '../components/StrengthStack.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import GermanyMap from '../components/GermanyMap.jsx'
-import { TEAM_PHOTOS } from '../content/team.js'
 import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 import { KNOWLEDGE_CATEGORY_PHOTOS } from '../content/knowledgePhotos.js'
 
@@ -111,8 +110,8 @@ export default function Home() {
         </div>
         <StrengthStack items={[
             { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', photo: PROVIDED_PHOTOS.city, icon: 'key' },
-            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', photo: TEAM_PHOTOS.analysis, icon: 'chart' },
-            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', photo: TEAM_PHOTOS.guidance, icon: 'hand' },
+            { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/home-analyse-hand.webp', icon: 'chart' },
+            { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/owner-beratung.webp', icon: 'hand' },
           ]} />
       </section>
 

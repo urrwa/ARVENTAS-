@@ -1,5 +1,3 @@
-import { PROVIDED_PHOTOS } from './providedPhotos.js'
-
 // Vom Auftraggeber bereitgestellte Teamaufnahmen, passend zur gezeigten Tätigkeit.
 const photo = (name, alt, width = 1800, height = 1005) => ({
   src: `/media/team/${name}-${width}.webp`,
@@ -34,23 +32,9 @@ export const TEAM_PORTRAITS = Array.from({ length: 6 }, (_, i) => {
   }
 })
 
-// Startseite / Ablauf: passende Teamaufnahmen behalten, sonst das frühere Schrittmotiv.
+// Startseite / Ablauf: ursprüngliche, zum jeweiligen Schritt passende Illustrationsbilder.
 const originalProcessPhoto = (name) => ({ src: `/media/p/${name}.webp` })
 export const TEAM_PROCESS_PHOTOS = {
-  owner: [
-    TEAM_PHOTOS.conversation,                         // Erstkontakt
-    PROVIDED_PHOTOS.documents,                        // Unterlagen
-    TEAM_PHOTOS.analysis,                             // Analyse
-    PROVIDED_PHOTOS.consultation,                     // Ergebnis besprechen
-    originalProcessPhoto('h-kaeufer'),                 // Käuferauswahl
-    PROVIDED_PHOTOS.handover,                         // Transaktionsbegleitung
-  ],
-  investor: [
-    PROVIDED_PHOTOS.location,                         // Region und Suchkriterien
-    TEAM_PHOTOS.conversation,                         // Ziele und Erfahrung besprechen
-    PROVIDED_PHOTOS.matching,                         // Profil und Objekt abgleichen
-    TEAM_PHOTOS.documents,                            // Unterlagen gemeinsam prüfen
-    PROVIDED_PHOTOS.market,                           // Entscheidung am Objekt
-    PROVIDED_PHOTOS.handover,                         // Transaktionsbegleitung
-  ],
+  owner: ['owner-beratung', 'home-unterlagen', 'home-analyse-hand', 'owner-situation', 'h-kaeufer', 'abschluss-beratung'].map(originalProcessPhoto),
+  investor: ['h-suchprofil', 'partner-ergaenzung', 'investor-matching', 'besichtigung', 'partner-fachleute', 'abschluss-beratung'].map(originalProcessPhoto),
 }

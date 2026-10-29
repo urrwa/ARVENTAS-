@@ -32,29 +32,19 @@ export default function About() {
           <figure className="about-values rv" aria-labelledby="about-values-title">
             <figcaption className="about-values-heading">
               <h2 id="about-values-title">Unsere Werte</h2>
-              <span aria-hidden="true">01 — 04</span>
             </figcaption>
-            <div className="about-values-diagram">
-              <svg className="about-values-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-                <path className="about-values-lines-wide" d="M35 24H43L57 76H65M65 24H57L43 76H35" />
-                <path className="about-values-lines-small" d="M25 24V38L75 62V76M75 24V38L25 62V76" />
-              </svg>
-              <div className="about-values-hub" aria-hidden="true">
-                <img src="/media/arventas-logo.png" alt="" width="132" height="80" />
-              </div>
-              <ul className="about-values-list">
-                {VALUES.map((value, i) => (
-                  <li key={value.title} className="about-value">
-                    <div className="about-value-top">
-                      <span className="about-value-icon"><Icon name={value.icon} size={28} /></span>
-                      <span className="about-value-number" aria-hidden="true">0{i + 1}</span>
-                    </div>
+            <ul className="about-values-list">
+              {VALUES.map((value, i) => (
+                <li key={value.title} className="about-value" style={{ '--value-delay': `${160 + i * 110}ms` }}>
+                  <span className="about-value-icon"><Icon name={value.icon} size={24} /></span>
+                  <div className="about-value-copy">
+                    <span className="about-value-number" aria-hidden="true">0{i + 1}</span>
                     <h3>{value.title}</h3>
                     <p>{value.detail}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </figure>
           <p className="rv about-name"><b>Der Name.</b> Der Markenname geht auf die Ideen „Assets“, „Architecture“ und „Ventures“ zurück (Brandbook).</p>
         </div>
