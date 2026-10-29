@@ -10,6 +10,7 @@ import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import GermanyMap from '../components/GermanyMap.jsx'
 import { TEAM_PHOTOS } from '../content/team.js'
+import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 import { KNOWLEDGE_CATEGORY_PHOTOS } from '../content/knowledgePhotos.js'
 
 function DocSvg() {
@@ -109,7 +110,7 @@ export default function Home() {
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
         </div>
         <StrengthStack items={[
-            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/home-zugang-tor.webp', icon: 'key' },
+            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', photo: PROVIDED_PHOTOS.city, icon: 'key' },
             { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', photo: TEAM_PHOTOS.analysis, icon: 'chart' },
             { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', photo: TEAM_PHOTOS.guidance, icon: 'hand' },
           ]} />

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
+import Photo from './Photo.jsx'
+import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 
 // Startseiten-Kopf: stiller Schwarzweiß-Film (Hände auf Plänen, Frankfurt, Luftbild) als Hintergrund, Überschrift links unten, kleine Karte rechts unten.
 export default function HomeVideo() {
@@ -33,7 +35,7 @@ export default function HomeVideo() {
         <Link to="/immobilie-verkaufen#anfrage" className="hv-go"><span aria-hidden="true">↗</span> Objektreport anfragen</Link>
       </div>
       <aside className="hv-card">
-        <img src="/media/p/hero-card-daten.webp" alt="" loading="lazy" />
+        <Photo image={PROVIDED_PHOTOS.report} sizes="320px" />
         <p>Datenbasiert analysiert. Persönlich geprüft.</p>
         <Link to="/objektreport#muster" className="hv-go"><span aria-hidden="true">↗</span> Muster ansehen</Link>
       </aside>
