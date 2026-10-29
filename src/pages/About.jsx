@@ -3,7 +3,6 @@ import Seo from '../components/Seo.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import PageHero from '../components/PageHero.jsx'
 import { Btn, SectionHead } from '../components/ui.jsx'
-import Icon from '../components/Icon.jsx'
 import RevealText from '../components/RevealText.jsx'
 import ScrollZoom from '../components/ScrollZoom.jsx'
 import HScroll from '../components/HScroll.jsx'
@@ -17,6 +16,37 @@ const VALUES = [
   { title: 'Seriosität', icon: 'scale', detail: 'Verantwortlich entscheiden.' },
 ]
 
+function ValueDiagram({ kind }) {
+  return <svg className={`about-value-diagram about-value-diagram-${kind}`} viewBox="0 0 200 160" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true" focusable="false">
+    {kind === 'target' && <>
+      <path className="value-guide" d="M100 8v32m0 80v32M28 80h32m80 0h32" />
+      <circle className="value-guide" cx="100" cy="80" r="58" />
+      <circle className="value-trace" pathLength="1" cx="100" cy="80" r="38" />
+      <path className="value-trace" pathLength="1" d="M100 60v40M80 80h40" />
+      <circle className="value-dot" cx="100" cy="80" r="3" />
+    </>}
+    {kind === 'lock' && <>
+      <path className="value-guide" d="M30 138h140M44 128V24h112v104" />
+      <path className="value-trace" pathLength="1" d="M64 128V38h29v90M107 128V38h29v90" />
+      <path className="value-guide" d="M78 50v66m44-66v66M100 14v12" />
+      <circle className="value-dot" cx="100" cy="83" r="3" />
+    </>}
+    {kind === 'handshake' && <>
+      <path className="value-guide" d="M22 80h28m100 0h28M100 16v22m0 84v22" />
+      <circle className="value-trace" pathLength="1" cx="78" cy="80" r="42" />
+      <circle className="value-trace" pathLength="1" cx="122" cy="80" r="42" />
+      <path className="value-guide" d="M100 44v72" />
+      <circle className="value-dot" cx="100" cy="80" r="3" />
+    </>}
+    {kind === 'scale' && <>
+      <path className="value-guide" d="M24 138h152M100 16v16" />
+      <path className="value-trace" pathLength="1" d="M100 38v92M74 130h52M42 54h116" />
+      <path className="value-trace" pathLength="1" d="M54 54l-22 48h44L54 54Zm92 0-22 48h44l-22-48Z" />
+      <circle className="value-dot" cx="100" cy="54" r="3" />
+    </>}
+  </svg>
+}
+
 export default function About() {
   return (
     <>
@@ -29,16 +59,16 @@ export default function About() {
         <div className="wrap">
           <p className="eyebrow">Wer wir sind</p>
           <RevealText className="about-big" text="Die Marke steht für zeitlose Eleganz, unaufdringliche Stärke, Präzision, Zurückhaltung und Vertrauen. Dieser Anspruch prägt unsere Arbeit: ruhig, klar und sorgfältig." />
-          <figure className="about-values rv" aria-labelledby="about-values-title">
+          <figure className="about-values" aria-labelledby="about-values-title">
             <figcaption className="about-values-heading">
               <h2 id="about-values-title">Unsere Werte</h2>
             </figcaption>
             <ul className="about-values-list">
               {VALUES.map((value, i) => (
-                <li key={value.title} className="about-value" style={{ '--value-delay': `${160 + i * 110}ms` }}>
-                  <span className="about-value-icon"><Icon name={value.icon} size={24} /></span>
+                <li key={value.title} className="about-value rv" style={{ '--d': (i % 2) * 100 }}>
+                  <span className="about-value-number" aria-hidden="true">0{i + 1}</span>
+                  <ValueDiagram kind={value.icon} />
                   <div className="about-value-copy">
-                    <span className="about-value-number" aria-hidden="true">0{i + 1}</span>
                     <h3>{value.title}</h3>
                     <p>{value.detail}</p>
                   </div>
