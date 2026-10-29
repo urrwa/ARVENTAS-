@@ -1,6 +1,9 @@
 // Englische Leseversion (Lesehilfe für die Abnahme). Schlüssel = deutscher Originaltext, Wert = englische Übersetzung.
 // Ein Wert, der mit "^" beginnt, entfernt das führende Leerzeichen des Originals.
 export default {
+ "Cookie-Einstellungen schließen": "Close cookie settings",
+ "Einstellungen": "Settings",
+ "Zurück": "Back",
  "Dokumentenmappe, Grundrisse und Schlüssel auf einem Besprechungstisch.": "Document folder, floor plans and keys on a meeting table.",
  "Immobilienmodelle, Grundrisse und ein Taschenrechner auf einem Arbeitstisch.": "Property models, floor plans and a calculator on a work table.",
  "Wohngebäude mit Balkonen, Vorgärten und einer ruhigen Wohnstraße.": "Residential building with balconies, front gardens and a quiet residential street.",

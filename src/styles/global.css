@@ -4545,3 +4545,37 @@ main:has(.phero-blur) .cover-over { background: transparent !important; }
   .form-panel { border-radius: 20px; }
   .form-panel .form .f :is(input[type=text], input[type=email], input[type=tel], input[type=number], select, textarea) { font-size: 16px; }
 }
+
+/* Cookie-Hinweis: erste Auswahl beim Besuch, wieder aufrufbar über Rechtliches. */
+.cookie-backdrop { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 24px; overflow-y: auto; background: rgba(3, 10, 18, .76); }
+.cookie-dialog { width: min(100%, 600px); max-height: calc(100dvh - 48px); padding: clamp(22px, 4vw, 38px); overflow-y: auto; overscroll-behavior: contain; border: 1px solid rgba(200, 173, 128, .4); border-radius: 24px; background: var(--marine); color: var(--ivory); color-scheme: dark; }
+.cookie-dialog:focus { outline: none; }
+.cookie-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.cookie-top > img { width: 108px; height: auto; }
+.cookie-close { display: grid; place-items: center; flex: none; width: 42px; height: 42px; padding: 0; border: 1px solid rgba(200, 173, 128, .35); border-radius: 50%; background: transparent; color: var(--ivory); cursor: pointer; font-size: 30px; line-height: 1; }
+.cookie-close:hover { color: var(--gold); border-color: var(--gold); }
+.cookie-dialog h2 { margin: 0 0 16px; color: var(--ivory); font-size: clamp(28px, 6vw, 38px); line-height: 1.1; overflow-wrap: anywhere; }
+.cookie-dialog > p { margin: 0; color: var(--text-on-dark-soft); font-size: 14px; line-height: 1.7; }
+.cookie-options { margin-top: 24px; border-top: 1px solid rgba(200, 173, 128, .25); }
+.cookie-option { display: flex; align-items: flex-start; justify-content: space-between; gap: 22px; padding: 16px 0; border-bottom: 1px solid rgba(200, 173, 128, .2); }
+.cookie-option b { color: var(--ivory); font-size: 14px; font-weight: 600; }
+.cookie-option p { margin: 4px 0 0; color: var(--text-2); font-size: 13px; line-height: 1.5; }
+.cookie-option input { flex: none; width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--gold); }
+.cookie-option.is-inactive input { opacity: .5; }
+.cookie-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.cookie-actions .btn { flex: 1 1 180px; min-height: 48px; padding-inline: 20px; border-radius: 999px; font-size: 12px; }
+body .cookie-actions .btn.btn-gold { min-height: 48px; background: var(--gold); border: 1px solid var(--gold); color: var(--marine); font-size: 12px; }
+body .cookie-actions .btn.btn-gold:hover, body .cookie-actions .btn.btn-gold:focus-visible { background: var(--ivory); border-color: var(--ivory); color: var(--marine); }
+.cookie-actions .btn-line { border-color: rgba(200, 173, 128, .55); color: var(--ivory); }
+.cookie-actions .btn-line:hover { background: var(--gold); border-color: var(--gold); color: var(--marine); }
+.cookie-legal { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(200, 173, 128, .2); }
+.cookie-legal a { color: var(--text-2); font-size: 12px; text-underline-offset: 4px; }
+.cookie-legal a:hover { color: var(--gold); }
+.cookie-dialog :focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+@media (max-width: 560px) {
+  .cookie-backdrop { padding: 12px; }
+  .cookie-dialog { max-height: calc(100dvh - 24px); border-radius: 20px; }
+  .cookie-top { margin-bottom: 20px; }
+  .cookie-actions { flex-direction: column; }
+  .cookie-actions .btn { flex: none; width: 100%; }
+}
