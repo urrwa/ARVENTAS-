@@ -10,14 +10,15 @@ import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, OWNER_FIELDS } from '../components/forms.jsx'
 import { OWNER_PROCESS, OWNER_FAQ } from '../content/data.js'
 import { TEAM_PHOTOS } from '../content/team.js'
+import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 
 const PROCESS_IMG = [
   TEAM_PHOTOS.conversation,
-  TEAM_PHOTOS.documents,
+  PROVIDED_PHOTOS.documents,
   TEAM_PHOTOS.market,
-  TEAM_PHOTOS.development,
+  PROVIDED_PHOTOS.consultation,
   TEAM_PHOTOS.strategy,
-  TEAM_PHOTOS.guidance,
+  PROVIDED_PHOTOS.handover,
 ]
 
 const SITUATIONS = [

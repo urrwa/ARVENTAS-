@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Btn } from './ui.jsx'
 import { PANELS } from './ReportViewer.jsx'
+import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 
 // Objektreport als Blätterstapel: Beim Scrollen heben sich die Seiten des Berichts nacheinander ab, rechts erscheint der passende Abschnitt.
 // Schmale Bildschirme und reduzierte Bewegung: die ruhige Reiteransicht (ReportViewer).
@@ -42,7 +43,7 @@ const VIS = {
   potenzial: { img: 'potenzial-umbau', img2: 'di.step.4', icon: 'layers', chips: [['house', 'Bestand'], ['layers', 'Verdichtung'], ['swap', 'Nutzung']] },
   wirtschaft: { img: 'wirtschaft-euro', img2: 'ablauf-bibliothek', icon: 'chart', chips: [['chart', 'Basis'], ['trend', 'Chancen'], ['shield', 'Risiken']] },
   hinweise: { img: 'home-unterlagen', img2: 'ablauf-schreibtisch', icon: 'shield', chips: [['doc', 'Unterlagen'], ['wrench', 'Zustand'], ['scale', 'Recht']] },
-  nachfrage: { img: 'investor-matching', img2: 'partner-fachleute', icon: 'people', chips: [['people', 'Profile'], ['pin', 'Region'], ['coins', 'Budget']] },
+  nachfrage: { photo: PROVIDED_PHOTOS.matching, icon: 'people', chips: [['people', 'Profile'], ['pin', 'Region'], ['coins', 'Budget']] },
 }
 
 const QPage = ({ k }) => {
@@ -54,7 +55,7 @@ const QPage = ({ k }) => {
       <div className="bk-qtop"><div><small>Frage</small><b>{p.small}</b></div><span className="bk-badge"><Ic n={v.icon} /></span></div>
       <h3>{q}</h3>
       <p>{ans}</p>
-      <figure className="bk-pic"><img src={`/media/p/${v.img}.webp`} alt="" loading="lazy" /><figcaption>Beispielbild</figcaption></figure>
+      <figure className="bk-pic"><img src={v.photo?.src || `/media/p/${v.img}.webp`} alt={v.photo?.alt || ''} loading="lazy" /><figcaption>Beispielbild</figcaption></figure>
     </div>
   )
 }
@@ -63,7 +64,7 @@ const CPage = ({ k }) => (
     <small className="rp-sec">{`Objektreport · ${PANELS[k].small} ${PANELS[k].label}`}</small>
     {PANELS[k].render()}
     <ul className="bk-chips">{VIS[PANELS[k].id].chips.map(([ic, t]) => <li key={t}><Ic n={ic} /><span>{t}</span></li>)}</ul>
-    <figure className="bk-strip"><img src={`/media/p/${VIS[PANELS[k].id].img2}.webp`} alt="" loading="lazy" /></figure>
+    <figure className="bk-strip"><img src={VIS[PANELS[k].id].photo?.src || `/media/p/${VIS[PANELS[k].id].img2}.webp`} alt="" loading="lazy" /></figure>
   </div>
 )
 

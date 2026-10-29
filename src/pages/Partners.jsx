@@ -6,6 +6,7 @@ import { Btn, SectionHead } from '../components/ui.jsx'
 import { SimpleTimeline } from '../components/ProcessTimeline.jsx'
 import { LeadForm, PARTNER_FIELDS } from '../components/forms.jsx'
 import { PARTNER_PROCESS } from '../content/data.js'
+import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
 
 export default function Partners() {
   return (
@@ -18,8 +19,8 @@ export default function Partners() {
       <section className="sec dark over-photo pc-sec">
         <div className="wrap">
           <ParallaxCards inside items={[
-            { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: '/media/p/partner-fachleute.webp', ratio: '4 / 5', speed: 1 },
-            { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', img: '/media/p/partner-ergaenzung.webp', ratio: '3 / 4', speed: 1.8 },
+            { title: 'Welche Partner angesprochen werden', text: 'Geeignete Immobilienunternehmen, Verwalter und fachliche Multiplikatoren, die Eigentümer oder Investoren betreuen.', img: PROVIDED_PHOTOS.consultation.src, ratio: '4 / 5', speed: 1 },
+            { title: <>Was <Brand /> ergänzt</>, text: 'Zugang, fundierte Analyse, Matching und persönliche Transaktionsbegleitung.', img: PROVIDED_PHOTOS.matching.src, ratio: '3 / 4', speed: 1.8 },
             { title: 'Wie Zuständigkeiten geklärt werden', text: 'Rollen und Schnittstellen werden vor einer Zusammenarbeit besprochen und festgehalten. Vergütungsfragen werden individuell geklärt; es gibt keine automatischen Vergütungsversprechen.', img: '/media/p/partner-besprechung.webp', ratio: '21 / 9', speed: 0.7, wide: true },
           ]} />
         </div>
