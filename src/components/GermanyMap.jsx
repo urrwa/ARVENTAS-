@@ -41,7 +41,6 @@ export default function GermanyMap() {
     <div className="gm">
       <div className="gm-mapwrap">
         <Map selected={region} hovered={hover} onHover={setHover} onSelect={setRegion} />
-        <p className="gm-src">Geodaten: Natural Earth</p>
       </div>
       <div className="gm-side">
         <header className="sec-head gm-head">

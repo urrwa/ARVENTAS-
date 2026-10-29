@@ -1,6 +1,11 @@
 // Englische Leseversion (Lesehilfe für die Abnahme). Schlüssel = deutscher Originaltext, Wert = englische Übersetzung.
 // Ein Wert, der mit "^" beginnt, entfernt das führende Leerzeichen des Originals.
 export default {
+ "Unsere Werte": "Our values",
+ "Sorgfältig prüfen.": "Review carefully.",
+ "Diskret handeln.": "Act discreetly.",
+ "Persönlich begleiten.": "Support personally.",
+ "Verantwortlich entscheiden.": "Decide responsibly.",
  "(optional)": "(optional)",
  "01 — Zugang": "01 — Access",
  "02 — Analyse": "02 — Analysis",
