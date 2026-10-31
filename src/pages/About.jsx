@@ -120,7 +120,7 @@ export default function About() {
             <p className="rv">Wir prüfen Unterlagen, besprechen Möglichkeiten und begleiten den nächsten Schritt persönlich. So verbinden wir Analyse und Austausch.</p>
           </div>
           <figure className="team-story-photo rv">
-            <Photo image={TEAM_PHOTOS.strategy} />
+            <Photo image={TEAM_PHOTOS.documents} />
             <figcaption>Immobilien gemeinsam betrachten. Entscheidungen persönlich begleiten.</figcaption>
           </figure>
           <ul id="team-portraets" className="team-portraits" aria-label="Porträts unseres Teams">
