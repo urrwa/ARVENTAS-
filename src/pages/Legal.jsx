@@ -12,7 +12,7 @@ export function Impressum() {
   return (
     <>
       <Seo title="Impressum | ARVENTAS" description="Unternehmens- und Kontaktangaben der ARVENTAS GmbH, Am Grund 11, 86489 Deisenhausen." />
-      <PageHero crumb="Impressum" title="Impressum" lead="Unternehmens- und Kontaktangaben." />
+      <PageHero crumb="Impressum" title="Impressum" lead="Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)" />
       <section className="sec dark"><div className="wrap legal legal-document">
         <p className="legal-date">Stand: 31. Oktober 2026</p>
         <h2>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</h2>
