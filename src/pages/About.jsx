@@ -9,6 +9,7 @@ import HScroll from '../components/HScroll.jsx'
 import Photo from '../components/Photo.jsx'
 import { TEAM_PHOTOS, TEAM_PORTRAITS } from '../content/team.js'
 import { EDITORIAL_PHOTOS } from '../content/editorialPhotos.js'
+import { ABOUT_PHOTOS } from '../content/aboutPhotos.js'
 
 const VALUES = [
   { title: 'Präzision', icon: 'target', detail: 'Sorgfältig prüfen.' },
@@ -103,7 +104,7 @@ export default function About() {
             <p className="rv">Jede freigegebene Analyse hat eine verantwortliche Person. Wir benennen Annahmen, trennen Einschätzung von Gutachten und machen offene Punkte sichtbar.</p>
           </div>
           <figure className="team-planning rv">
-            <Photo image={TEAM_PHOTOS.review} sizes="(max-width: 860px) 100vw, 50vw" />
+            <Photo image={ABOUT_PHOTOS.review} sizes="(max-width: 860px) 100vw, 50vw" />
             <figcaption>Gemeinsam prüfen. Möglichkeiten besprechen.</figcaption>
           </figure>
         </div>
