@@ -1235,7 +1235,7 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 /* Echte Wolken: durchscheinende Schleier driften langsam, steigen beim Scrollen und verhüllen das Haus */
 .hz-stick { --m1: clamp(0, calc((var(--p) - .3) / .4), 1); --m2: clamp(0, calc((var(--p) - .4) / .4), 1); --m3: clamp(0, calc((var(--p) - .5) / .4), 1); --hz: clamp(0, calc((var(--p) - .34) / .46), 1); }
 .hz-cloud-front { display: none; }
-.hz-house { filter: blur(calc(var(--hz) * 3px)) brightness(calc(1 + var(--hz) * .25)) saturate(calc(1 - var(--hz) * .5)); }
+.hz-house { filter: brightness(calc(1 + var(--hz) * .25)) saturate(calc(1 - var(--hz) * .5)); }
 .hz-haze { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: #fff; opacity: calc(var(--hz) * .55); -webkit-mask-image: linear-gradient(to top, #000 0, #000 30%, transparent 85%); mask-image: linear-gradient(to top, #000 0, #000 30%, transparent 85%); transform: translateY(calc((1 - var(--hz)) * 40vh)); }
 .hz-mist { position: absolute; left: -25%; width: 150%; z-index: 3; pointer-events: none; will-change: transform; }
 .hz-mist img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -1844,11 +1844,10 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .sw.edi-big { text-align: left !important; font-weight: 500; line-height: 1.28; hyphens: none !important; text-wrap: pretty; }
 .ps-list li.on b { color: var(--gold); }
 .ps-list li.on .n { color: var(--ivory); }
-/* Seitenköpfe: Bild startet scharf und rückt weich in den Fokus-Hintergrund, während der Text einläuft (Vorbild Fugazi) */
-@keyframes ph-focus { from { filter: blur(0); } to { filter: blur(7px); } }
-.phero-img { inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); animation: ph-focus 1500ms cubic-bezier(.2, .7, .1, 1) 800ms both; }
+/* Seitenkopffotos bleiben auch nach dem Einblenden scharf. */
+.phero-img { inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); filter: none; }
 .phero .lead { max-width: 40ch; font-size: clamp(16px, 1.3vw, 20px); }
-@media (prefers-reduced-motion: reduce) { .phero-img { animation: none; filter: blur(7px); } }
+@media (prefers-reduced-motion: reduce) { .phero-img { animation: none; filter: none; } }
 /* Kontakt: Das Foto steht weich unscharf, das Formular schiebt sich als Glaskarte darüber (Vorbild Fugazi) */
 .sec.gstage { background: transparent; }
 .gstage .cbox { background: rgba(27, 36, 56, .4); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(245, 243, 239, .22); }
@@ -3263,7 +3262,7 @@ body { background: #050d18; }
 @media (min-width: 861px) and (hover: hover) {
   .doors-sec .doors:has(.door:first-child:hover) { grid-template-columns: 1.3fr .7fr; }
   .doors-sec .doors:has(.door:last-child:hover) { grid-template-columns: .7fr 1.3fr; }
-  .doors-sec .doors:hover .door:not(:hover) { filter: blur(6px); opacity: .5; }
+  .doors-sec .doors:hover .door:not(:hover) { filter: none; opacity: .5; }
 }
 @media (max-width: 860px) { .doors-sec .door { height: 70svh; } .doors-sec .door:first-child, .doors-sec .door:last-child { transform: none; } }
 
@@ -4247,7 +4246,7 @@ body:not(:has(.hv)) .ambient > *, body:not(:has(.hv)) .ambient::after { display:
 /* Objektreport: Kartenraster über weichgezeichnetem Bild */
 .rg { position: relative; --p: 0; }
 .rg-bg { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; overflow: hidden; z-index: 0; }
-.rg-bg img { width: 100%; height: 100%; object-fit: cover; display: block; filter: blur(16px) saturate(.9) brightness(.55); transform: scale(1.08); }
+.rg-bg img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.9) brightness(.55); transform: scale(1.08); }
 .rg-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 19, 33, .55), rgba(7, 19, 33, .2) 40%, rgba(7, 19, 33, .6)); }
 .rg-title { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; z-index: 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--gut, clamp(16px, 4vw, 56px)) clamp(60px, 12vh, 120px); pointer-events: none; opacity: calc(1 - var(--p) * 1.15); filter: blur(calc(var(--p) * 10px)); transform: translateY(calc(var(--p) * -30px)); }
 .rg-title h2 { margin: 6px 0 8px; font: 400 clamp(54px, 9vw, 150px)/.95 var(--font-head); text-transform: uppercase; letter-spacing: .01em; color: var(--ivory); }

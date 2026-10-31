@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { REGIONS } from '../content/data.js'
@@ -103,7 +104,7 @@ function ObjectView() {
   const [t, setT] = useState(0)
   return (
     <div className="pd-obj">
-      <div className="pd-gal">{IMG.map((s, i) => <img key={s} src={s} alt="" loading="lazy" style={{ '--i': i }} />)}</div>
+      <div className="pd-gal">{IMG.map((s, i) => <Photo key={s} src={s} alt="" loading="lazy" style={{ '--i': i }} />)}</div>
       <div className="pd-panel">
         <div className="pd-tabs" role="tablist">{TABS.map(([n], i) => <button key={n} role="tab" type="button" aria-selected={t === i} onClick={() => setT(i)}>{n}</button>)}</div>
         <p className="pd-tx" key={t}>{TABS[t][1]}</p>

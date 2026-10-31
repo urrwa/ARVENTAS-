@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 
 // Geteilte Bühne: links bleibt das Bild stehen und wechselt, rechts scrollen die Schritte (Titel oben, Text unten). Vorbild Archter.
@@ -23,7 +24,7 @@ export default function JourneySplit({ items, label, title }) {
   return (
     <section className="js" aria-label={title}>
       <div className="js-img" aria-hidden="true">
-        {items.map((it, i) => <img key={it.t} src={it.img || `/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" className={act === i ? 'on' : ''} />)}
+        {items.map((it, i) => <Photo key={it.t} src={it.img || `/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" className={act === i ? 'on' : ''} />)}
         <span className="js-count" data-notr>{String(act + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}</span>
       </div>
       <div className="js-list">

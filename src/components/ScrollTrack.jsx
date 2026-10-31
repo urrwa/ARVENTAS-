@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 
 // Angeheftete Szene: Überschrift und Fortschrittslinie bleiben stehen, die Karten laufen beim Scrollen seitlich durch; die aktive Karte ist hell, die übrigen gedimmt.
@@ -7,7 +8,7 @@ const clamp = (v, a, b) => Math.max(a, Math.min(b, v))
 function Card({ it, k, on }) {
   return (
     <article className={'st-card' + (on ? ' on' : '') + (it.img ? ' has-img' : '')} aria-current={on ? 'true' : undefined}>
-      {it.img && <div className="st-pic"><img src={it.img} alt="" loading="lazy" decoding="async" /></div>}
+      {it.img && <div className="st-pic"><Photo src={it.img} alt="" loading="lazy" decoding="async" /></div>}
       <div className="st-body">
         <small>{String(k + 1).padStart(2, '0')} / {String(it.total).padStart(2, '0')}</small>
         <h3>{it.t}</h3>

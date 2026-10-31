@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 import { HOME } from '../content/images.js'
 
@@ -50,7 +51,7 @@ export default function AudienceCards({ items }) {
         <div className="aud3-row">
           {items.map((x, i) => i === a ? (
             <figure key={x.t} className="aud3-card">
-              {items.map((y, j) => <img key={y.t} src={IMGS[j % IMGS.length]} alt="" className={j === a ? 'on' : ''} loading="lazy" decoding="async" />)}
+              {items.map((y, j) => <Photo key={y.t} src={IMGS[j % IMGS.length]} alt="" className={j === a ? 'on' : ''} loading="lazy" decoding="async" />)}
               <figcaption><b>{nn(i)}</b><span>{x.t}</span></figcaption>
             </figure>
           ) : (

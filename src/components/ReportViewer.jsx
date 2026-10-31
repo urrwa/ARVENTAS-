@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useId, useRef, useState } from 'react'
 
 // Interaktive Musteransicht des Objektreports. Rein illustrativ: keine Werte, Renditen, Bewertungen oder Käuferzahlen.
@@ -90,7 +91,7 @@ export default function ReportViewer({ id }) {
     <div id={id} className="rep-wrap">
       <div className="rep2">
         <div className="rep2-bg" aria-hidden="true">
-          {PANELS.map((p, k) => <img key={p.id} src={`/media/baustein-${p.img}.webp`} alt="" loading="lazy" decoding="async" className={i === k ? 'on' : ''} />)}
+          {PANELS.map((p, k) => <Photo key={p.id} src={`/media/baustein-${p.img}.webp`} alt="" loading="lazy" decoding="async" className={i === k ? 'on' : ''} />)}
         </div>
         <div className="rep2-tabs" role="tablist" aria-label="Analyseebenen des Objektreports (Muster)" aria-orientation="vertical" onKeyDown={onKey}>
           {PANELS.map((p, k) => (

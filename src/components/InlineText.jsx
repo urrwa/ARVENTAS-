@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef } from 'react'
 
 // Großer Absatz mit kleinen Bildern zwischen den Wörtern: Teile blenden beim Scrollen nacheinander ein,
@@ -24,7 +25,7 @@ export default function InlineText({ parts }) {
     <p className="inl" ref={ref} style={{ '--n': parts.length }}>
       {parts.map((p, i) => (typeof p === 'string'
         ? <span key={i} className="inl-t" style={{ '--i': i }}>{p}</span>
-        : <span key={i} className="inl-i" style={{ '--i': i }} tabIndex={0}><img src={p.img} alt="" loading="lazy" decoding="async" /></span>))}
+        : <span key={i} className="inl-i" style={{ '--i': i }} tabIndex={0}><Photo src={p.img} alt="" loading="lazy" decoding="async" /></span>))}
     </p>
   )
 }

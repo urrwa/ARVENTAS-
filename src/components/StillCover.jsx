@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef } from 'react'
 
 // Ruhendes, weichgezeichnetes Bild als Bühne: Die große Überschrift blendet beim Scrollen aus, der Inhalt schiebt sich darüber.
@@ -19,7 +20,7 @@ export default function StillCover({ image, eyebrow, title, lead, id, children }
   }, [])
   return (
     <section className="rg" ref={root} aria-labelledby={id}>
-      <div className="rg-bg" aria-hidden="true"><img src={image} alt="" loading="lazy" /></div>
+      <div className="rg-bg" aria-hidden="true"><Photo src={image} alt="" loading="lazy" /></div>
       <div className="rg-title">
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
         <h2 id={id}>{title}</h2>

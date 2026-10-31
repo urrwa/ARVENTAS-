@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { Roll } from './ui.jsx'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -57,7 +58,7 @@ export default function HomeFilm() {
           </div>
           <button type="button" className="hf-see" onClick={() => setShow(true)} aria-haspopup="dialog"><i aria-hidden="true">▶</i><span>So entsteht Klarheit</span></button>
           <Link to="/objektreport" className="hf-mini">
-            <img src={HOME.miniCard} alt="" width="120" height="120" loading="lazy" decoding="async" />
+            <Photo src={HOME.miniCard} alt="" width="120" height="120" loading="lazy" decoding="async" />
             <span>Objektreport: datenbasiert analysiert, persönlich geprüft.</span>
             <em>Objektreport ansehen <i aria-hidden="true">→</i></em>
           </Link>

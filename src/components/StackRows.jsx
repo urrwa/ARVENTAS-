@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef } from 'react'
 
 // Nummerierte Zeilen: Zahl, Titel mit Text, Bild rechts. Beim Scrollen öffnet sich das Bild von unten, die Linie zeichnet sich (Vorbild Haven).
@@ -38,7 +39,7 @@ export default function StackRows({ items }) {
             <h3>{it.t}</h3>
             <p>{it.d}</p>
           </div>
-          <div className="sr-img" aria-hidden="true"><img src={it.img || `/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" /></div>
+          <div className="sr-img" aria-hidden="true"><Photo src={it.img || `/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" /></div>
         </article>
       ))}
     </div>

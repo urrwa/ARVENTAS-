@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { Roll } from './ui.jsx'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -56,7 +57,7 @@ export default function InvestorLaptop() {
               <p className="il-h">Passende Objekte</p>
               {[0, 1, 2].map((k) => (
                 <div className="il-card" key={k} style={{ '--k': k }}>
-                  <i><img src={`/media/p/${IMG[type][k]}.webp`} alt=""/></i>
+                  <i><Photo src={`/media/p/${IMG[type][k]}.webp`} alt="" loading="eager" /></i>
                   <div><b /><b className="s" /><span className="il-chips"><em>{TYPES[type]}</em><em>{st.name}</em><em>{BUDGET[bud]}</em></span></div>
                 </div>
               ))}

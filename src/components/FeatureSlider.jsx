@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 
 // Bühne mit Bildwechsel (Vorbild Reise-Slider): Ein Foto füllt die Fläche, groß die Aussage, unten Pfeile, Fortschrittsbalken und Zähler,
@@ -25,7 +26,7 @@ export default function FeatureSlider({ items, images, label }) {
 
   return (
     <div className="fsl" ref={root} onMouseEnter={() => setHold(true)} onMouseLeave={() => setHold(false)}>
-      {items.map((x, i) => <img key={x.t} className={`fsl-bg${i === a ? ' on' : ''}`} src={images[i % images.length]} alt="" loading="lazy" decoding="async" />)}
+      {items.map((x, i) => <Photo key={x.t} className={`fsl-bg${i === a ? ' on' : ''}`} src={images[i % images.length]} alt="" loading="lazy" decoding="async" />)}
       <div className="fsl-shade" />
       <p className="fsl-tag">{label}</p>
       <div className="fsl-main" key={a}>
@@ -36,7 +37,7 @@ export default function FeatureSlider({ items, images, label }) {
         {next.map((i, k) => (
           <li key={items[i].t} style={{ '--k': k }}>
             <button type="button" onClick={() => go(i)} aria-label={items[i].t}>
-              <img src={images[i % images.length]} alt="" loading="lazy" decoding="async" />
+              <Photo src={images[i % images.length]} alt="" loading="lazy" decoding="async" />
               <span><small>{nn(i)}</small>{items[i].t.replace('erkennung', '\u00ADerkennung')}</span>
             </button>
           </li>

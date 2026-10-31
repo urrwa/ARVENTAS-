@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Icon from './Icon.jsx'
@@ -135,7 +136,7 @@ export function Versus({ left, right, line }) {
 export function Split({ img, children, flip = false, alt = '' }) {
   return (
     <div className={`split${flip ? ' flip' : ''}`}>
-      <div className="split-img rv"><img src={img} alt={alt} loading="lazy" decoding="async" /></div>
+      <div className="split-img rv"><Photo src={img} alt={alt} loading="lazy" decoding="async" /></div>
       <div className="split-txt">{children}</div>
     </div>
   )
@@ -146,7 +147,7 @@ export function ServiceCards({ items }) {
     <div className="igrid c5 svc">
       {items.map((s, i) => (
         <article key={s.slug} className="icard svc-card rv" style={{ '--d': i * 70 }}>
-          <div className="svc-img"><img src={s.img} alt="" loading="lazy" decoding="async" /></div>
+          <div className="svc-img"><Photo src={s.img} alt="" loading="lazy" decoding="async" /></div>
           <Ring name={s.icon} />
           <h3>{hy(s.t)}</h3>
           <p className="svc-tag">{s.tag}</p>

@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Btn } from './ui.jsx'
@@ -40,7 +41,7 @@ export default function ProcessStack({ steps, lead, active = -1, facts, links })
         <ol className="fl-cards">
           {steps.map((s, i) => (
             <li key={s.t} className={`fl-card${i === active ? ' on' : ''}`} aria-current={i === active ? 'step' : undefined} style={{ '--i': i }}>
-              <img src={HOME.process[i % HOME.process.length]} alt="" loading="lazy" decoding="async" />
+              <Photo src={HOME.process[i % HOME.process.length]} alt="" loading="lazy" decoding="async" />
               <span className="fl-info">
                 <span className="fl-row"><b>{s.t}</b><i>{String(i + 1).padStart(2, '0')}</i></span>
                 {s.d && <span className="fl-d">{s.d}</span>}
@@ -48,7 +49,7 @@ export default function ProcessStack({ steps, lead, active = -1, facts, links })
             </li>
           ))}
         </ol>
-        <div className="fl-photo" aria-hidden="true"><img src={BG} alt="" width="1000" height="2275" loading="lazy" decoding="async" /></div>
+        <div className="fl-photo" aria-hidden="true"><Photo src={BG} alt="" width="1000" height="2275" loading="lazy" decoding="async" /></div>
         <div className="fl-txt">
           <div className="fl-txt-in">
             <p className="fl-lab">(Unser System)</p>
@@ -65,7 +66,7 @@ export default function ProcessStack({ steps, lead, active = -1, facts, links })
               <b>{f.n}</b>
               <span className="fl-fl">{f.l}</span>
               <p>{f.d}</p>
-              <img src={`/media/${f.img}.webp`} alt="" loading="lazy" decoding="async" style={{ '--pos': f.pos }} />
+              <Photo src={`/media/${f.img}.webp`} alt="" loading="lazy" decoding="async" style={{ '--pos': f.pos }} />
             </article>
           ))}
         </div>

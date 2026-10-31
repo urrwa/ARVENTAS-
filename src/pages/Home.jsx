@@ -1,3 +1,4 @@
+import Photo from '../components/Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
@@ -47,7 +48,7 @@ function ConnectSvg() {
 function Door({ to, img, alt, eyebrow, title, text, cta, d }) {
   return (
     <Link to={to} className="door rv" style={d ? { '--d': d } : undefined}>
-      <img src={`/media/${img}.webp`} alt={alt} loading="lazy" />
+      <Photo src={`/media/${img}.webp`} alt={alt} loading="lazy" />
       <div className="door-txt"><p className="eyebrow">{eyebrow}</p><h3>{title}</h3><p>{text}</p><span className="btn btn-gold"><Roll>{cta}</Roll> <span className="arr" aria-hidden="true">→</span></span></div>
     </Link>
   )
@@ -153,7 +154,7 @@ export default function Home() {
       {/* 11 – Kontaktentscheidung */}
       <section id="naechster-schritt" className="sec dark kx" aria-labelledby="h-next">
         <div className="wrap kx-in">
-          <figure className="kx-pic"><img src="/media/p/h-kontakt.webp" alt="" loading="lazy" decoding="async" /></figure>
+          <figure className="kx-pic"><Photo src="/media/p/h-kontakt.webp" alt="" loading="lazy" decoding="async" /></figure>
           <div className="kx-card">
             <p className="eyebrow rv">Kontakt</p>
             <h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2>

@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef } from 'react'
 
 // Schlangenlinie durch die Schritte: Text und Bild wechseln die Seite, die goldene Linie färbt sich beim Scrollen ein (Vorbild steps-flow).
@@ -38,7 +39,7 @@ export default function StepsFlow({ items, title }) {
                 <h3>{it.t}</h3>
                 <p>{it.d}</p>
               </div>
-              <div className="sf-img"><img src={`/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" /></div>
+              <div className="sf-img"><Photo src={`/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" /></div>
             </li>
           ))}
         </ol>

@@ -1,7 +1,7 @@
 // Vom Auftraggeber bereitgestellte Teamaufnahmen, passend zur gezeigten Tätigkeit.
-const photo = (name, alt, width = 1800, height = 1005) => ({
-  src: `/media/team/${name}-${width}.webp`,
-  srcSet: `/media/team/${name}-800.webp 800w, /media/team/${name}-${width}.webp ${width}w`,
+const photo = (name, alt, width = 2752, height = 1536) => ({
+  src: `/media/team/${name}-hq-${width}.webp`,
+  srcSet: [800, ...(width > 1600 ? [1600] : []), width].map((w) => `/media/team/${name}-hq-${w}.webp ${w}w`).join(', '),
   width,
   height,
   alt,
@@ -24,10 +24,10 @@ export const TEAM_PHOTOS = {
 export const TEAM_PORTRAITS = Array.from({ length: 6 }, (_, i) => {
   const id = String(i + 1).padStart(2, '0')
   return {
-    src: `/media/team/team-portrait-${id}-1000.webp`,
-    srcSet: `/media/team/team-portrait-${id}-480.webp 480w, /media/team/team-portrait-${id}-1000.webp 1000w`,
-    width: 1000,
-    height: 1000,
+    src: `/media/team/team-portrait-${id}-hq-1254.webp`,
+    srcSet: [480, 1000, 1254].map((w) => `/media/team/team-portrait-${id}-hq-${w}.webp ${w}w`).join(', '),
+    width: 1254,
+    height: 1254,
     alt: `Porträt eines Mitglieds des ARVENTAS-Teams (${i + 1}).`,
   }
 })

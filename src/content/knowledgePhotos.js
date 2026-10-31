@@ -11,10 +11,10 @@ export const KNOWLEDGE_CATEGORY_PHOTOS = {
     "alt": "Blick über Wohnhäuser und begrünte Hügel."
   },
   "Immobilienbewertung": {
-    "src": "/media/knowledge/hq/valuation-1920.webp",
-    "srcSet": "/media/knowledge/hq/valuation-640.webp 640w, /media/knowledge/hq/valuation-1280.webp 1280w, /media/knowledge/hq/valuation-1920.webp 1920w, /media/knowledge/hq/valuation-2560.webp 2560w, /media/knowledge/hq/valuation-3840.webp 3840w",
-    "width": 1920,
-    "height": 1091,
+    "src": "/media/quality/knowledge-valuation-hq-1332.webp",
+    "srcSet": "/media/quality/knowledge-valuation-hq-640.webp 640w, /media/quality/knowledge-valuation-hq-1332.webp 1332w",
+    "width": 1332,
+    "height": 757,
     "alt": "Gemeinsame Prüfung von Objektinformationen und Grundrissen am Bildschirm."
   },
   "Kapitalanlage": {

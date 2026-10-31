@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef } from 'react'
 import { Btn } from './ui.jsx'
 
@@ -40,7 +41,7 @@ export default function RiseList({ items, title, cta }) {
           ))}
         </ol></div>
         <div className="rl-band" aria-hidden="true">
-          {items.map((it, i) => <img key={i} src={`/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" style={{ '--i': i }} />)}
+          {items.map((it, i) => <Photo key={i} src={`/media/${IMGS[i % IMGS.length]}.webp`} alt="" loading="lazy" decoding="async" style={{ '--i': i }} />)}
         </div>
       </div>
     </section>

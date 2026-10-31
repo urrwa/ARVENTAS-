@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 // Treppe aus Karten (Vorbild Framer-Ablauf): Die Karten steigen versetzt ab, eine feine Linie verbindet die Punkte,
@@ -56,7 +57,7 @@ export default function StairFlow({ items, images }) {
           <li key={it.t} style={{ '--i': i }}>
             <span className={`stf-n${act > i || !seen ? ' on' : ''}`} ref={(e) => { dots.current[i] = e }}>{nn(i)}</span>
             <a className="stf-card" tabIndex={0}>
-              <span className="stf-img"><img src={images[i % images.length]} alt="" loading="lazy" decoding="async" /><span className="stf-d">{it.d}</span></span>
+              <span className="stf-img"><Photo src={images[i % images.length]} alt="" loading="lazy" decoding="async" /><span className="stf-d">{it.d}</span></span>
               <b>{it.t}</b>
             </a>
           </li>

@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useRef, useState } from 'react'
 import { Btn } from './ui.jsx'
 
@@ -19,12 +20,12 @@ export default function CaseAccordion({ items }) {
               <span className="ca-n">({String(i + 1).padStart(2, '0')})</span>
               <span className="ca-t">{it.t}</span>
               <span className="ca-plus" aria-hidden="true" />
-              <img className="ca-thumb" src={img} alt="" loading="lazy" decoding="async" />
+              <Photo className="ca-thumb" src={img} alt="" loading="lazy" decoding="async" />
             </button>
             <div className="ca-panel">
               <div className="ca-inner">
                 <div className="ca-big">
-                  <img src={img} alt="" loading="lazy" decoding="async" />
+                  <Photo src={img} alt="" loading="lazy" decoding="async" />
                   <span className="ca-card">
                     <b>{it.t}</b>
                     <p>{it.d}</p>

@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 import Letters from './Letters.jsx'
 
@@ -49,12 +50,12 @@ export default function WordZoom({ left, right, images }) {
         <div className="wz-row">
           <span className="wz-w"><Letters text={left} per={60} /></span>
           <span className="wz-slot" ref={slot}>
-            {images.map((image, i) => <img key={typeof image === 'string' ? image : image.src} src={typeof image === 'string' ? image : image.thumbnail || image.src} alt="" className={i === idx ? 'on' : ''} />)}
+            {images.map((image, i) => <Photo key={typeof image === 'string' ? image : image.src} src={typeof image === 'string' ? image : image.thumbnail || image.src} alt="" loading="eager" className={i === idx ? 'on' : ''} />)}
           </span>
           <span className="wz-w"><Letters text={right} per={60} delay={300} /></span>
         </div>
         <div className="wz-full" aria-hidden="true">
-          {images.map((image, i) => <img key={typeof image === 'string' ? image : image.src} src={typeof image === 'string' ? image : image.src} alt="" loading="eager" decoding="async" fetchPriority={i === 0 ? 'high' : 'auto'} onLoad={() => setLoaded((previous) => previous.has(i) ? previous : new Set([...previous, i]))} className={i === idx ? 'on' : ''} />)}
+          {images.map((image, i) => <Photo key={typeof image === 'string' ? image : image.src} src={typeof image === 'string' ? image : image.src} alt="" loading="eager" decoding="async" fetchPriority={i === 0 ? 'high' : 'auto'} onLoad={() => setLoaded((previous) => previous.has(i) ? previous : new Set([...previous, i]))} className={i === idx ? 'on' : ''} />)}
         </div>
       </div>
     </section>

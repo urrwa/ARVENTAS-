@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 
 // Breite Bildpaneele nebeneinander: das aktive öffnet sich mit Zoom, die anderen bleiben als schmale Streifen.
@@ -20,7 +21,7 @@ export default function PanelSlider({ items, label }) {
       onMouseEnter={() => { hold.current = true }} onMouseLeave={() => { hold.current = false }}>
       {items.map((it, i) => (
         <article key={it.t} className={'ps-p' + (i === a ? ' on' : '')} onClick={() => setA(i)} aria-current={i === a}>
-          <img src={it.img} alt="" loading="lazy" />
+          <Photo src={it.img} alt="" loading="lazy" />
           <div className="ps-c">
             <b>{it.t}</b>
             <p>{it.d}</p>

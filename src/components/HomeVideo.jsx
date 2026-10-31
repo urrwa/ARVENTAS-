@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { Link } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
@@ -23,7 +24,7 @@ export default function HomeVideo() {
   }, [])
   return (
     <section className="hv" aria-label="Einführung">
-      <video ref={vid} className="hv-vid" autoPlay muted loop playsInline preload="metadata" poster={typeof window !== 'undefined' && window.innerWidth <= 900 ? '/media/hero/poster-sm.webp' : '/media/hero/poster.webp'} aria-hidden="true">
+      <video ref={vid} className="hv-vid" autoPlay muted loop playsInline preload="metadata" poster={typeof window !== 'undefined' && window.matchMedia('(max-width: 600px) and (orientation: portrait)').matches ? '/media/hero/poster-sm.webp' : '/media/hero/poster.webp'} aria-hidden="true">
         <source src="/media/hero/montage.webm" type="video/webm" />
         <source src="/media/hero/montage.mp4" type="video/mp4" />
       </video>
@@ -34,7 +35,7 @@ export default function HomeVideo() {
         <Link to="/immobilie-verkaufen#anfrage" className="hv-go"><span aria-hidden="true">↗</span> Objektreport anfragen</Link>
       </div>
       <aside className="hv-card">
-        <img src={PROVIDED_PHOTOS.report.src} alt={PROVIDED_PHOTOS.report.alt} loading="lazy" />
+        <Photo src={PROVIDED_PHOTOS.report.src} alt={PROVIDED_PHOTOS.report.alt} loading="lazy" />
         <p>Datenbasiert analysiert. Persönlich geprüft.</p>
         <Link to="/objektreport#muster" className="hv-go"><span aria-hidden="true">↗</span> Muster ansehen</Link>
       </aside>

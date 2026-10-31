@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { OWNER_PROCESS, INVESTOR_PROCESS } from '../content/data.js'
 import { TEAM_PROCESS_PHOTOS } from '../content/team.js'
+import { qualityPhoto } from '../content/photoQuality.js'
 
 // Ablauf: Würfel wie in der Landingpage. Beim Scrollen kippt und dreht er sich von Schritt zu Schritt (Seite nach vorn), wechselt die Seite
 // und der Text wechselt mit. Schmale Bildschirme und reduzierte Bewegung: schlichte nummerierte Liste.
@@ -83,7 +84,11 @@ export default function ProcessTimeline({ initial = 'owner' }) {
           <span className="pck-floor" aria-hidden="true" />
           <div className="pck-scene" aria-hidden="true">
             <div className="pck-cube">
-              {FACES.map((f, i) => <i key={f} className={'pck-f pck-f--' + f} style={{ backgroundImage: `url(${TEAM_PROCESS_PHOTOS[who][i].src})` }} />)}
+              {FACES.map((f, i) => {
+                const source = TEAM_PROCESS_PHOTOS[who][i]
+                const photo = qualityPhoto(typeof source === 'string' ? { src: source } : source)
+                return <i key={f} className={'pck-f pck-f--' + f} style={{ backgroundImage: `url(${photo.src})` }} />
+              })}
             </div>
           </div>
           {steps.map((s, i) => (

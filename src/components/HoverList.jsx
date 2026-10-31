@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -38,11 +39,11 @@ export default function HoverList({ items }) {
           <span className="hl-n">({String(i + 1).padStart(2, '0')})</span>
           <h3>{it.to ? <Link to={it.to} className="hl-link">{it.t}</Link> : it.t}</h3>
           <p>{it.d}</p>
-          <img className="hl-thumb" src={it.img} alt="" loading="lazy" decoding="async" />
+          <Photo className="hl-thumb" src={it.img} alt="" loading="lazy" decoding="async" />
         </article>
       ))}
       <div className="hl-pic" ref={pic} aria-hidden="true">
-        {items.map((it, i) => <img key={it.t} src={it.img} alt="" decoding="async" className={act === i ? 'on' : ''} />)}
+        {items.map((it, i) => <Photo key={it.t} src={it.img} alt="" loading="eager" decoding="async" className={act === i ? 'on' : ''} />)}
       </div>
     </div>
   )

@@ -1,3 +1,4 @@
+import Photo from './Photo.jsx'
 import { useEffect, useRef, useState } from 'react'
 
 // Vollflächige Bühne mit zwei Bildhälften: Die nächste Hälfte schiebt sich von rechts nach links.
@@ -28,12 +29,12 @@ export default function OwnerShowcase({ items, children }) {
       <div className="os-bg" aria-hidden="true">
         {items.map((it, i) => {
           const pos = (i - a + n) % n
-          return <div key={it.t} className="os-p" style={{ left: pos * 50 + '%', transition: pos === n - 1 ? 'none' : undefined }}><img src={it.img} alt="" loading="lazy" /></div>
+          return <div key={it.t} className="os-p" style={{ left: pos * 50 + '%', transition: pos === n - 1 ? 'none' : undefined }}><Photo src={it.img} alt="" loading="lazy" /></div>
         })}
       </div>
       <div className="os-top">{children}</div>
       <div className="os-card" aria-live="polite">
-        <img key={a} src={items[a].img} alt="" />
+        <Photo key={a} src={items[a].img} alt="" loading="eager" />
         <div><small>{String(a + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</small><b>{items[a].t}</b></div>
         <button type="button" aria-label="Weiter" onClick={() => go((a + 1) % n)}>→</button>
       </div>
