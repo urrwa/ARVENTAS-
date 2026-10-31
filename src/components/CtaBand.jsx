@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Btn } from './ui.jsx'
 import Letters from './Letters.jsx'
 import { HOME } from '../content/images.js'
+import Photo from './Photo.jsx'
 
 // Abschlusskarte (Vorbild Rivos): Das Foto öffnet sich beim Scrollen von oben nach unten, Aussage links, ein Button rechts.
 export default function CtaBand({ image = HOME.cta, title = 'Bereit für bessere Immobilienentscheidungen?', btn = 'Potenzial analysieren', to = '/kontakt' }) {
@@ -26,7 +27,7 @@ export default function CtaBand({ image = HOME.cta, title = 'Bereit für bessere
   return (
     <div className="cta2-wrap">
       <section className="cta2" ref={ref} aria-label="Nächster Schritt">
-        <div className="cta2-pic"><img className="cta2-bg" src={image} alt="" loading="eager" decoding="async" /></div>
+        <div className="cta2-pic"><Photo className="cta2-bg" image={image} sizes="110vw" loading="eager" /></div>
         <div className="cta2-in">
           <div className="cta2-l">
             <p className="cta2-lab">(Nächster Schritt)</p>

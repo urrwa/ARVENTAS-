@@ -9,6 +9,8 @@ import StrengthStack from '../components/StrengthStack.jsx'
 import Brand from '../components/Brand.jsx'
 import KnowledgeTabs from '../components/KnowledgeTabs.jsx'
 import GermanyMap from '../components/GermanyMap.jsx'
+import { PROVIDED_PHOTOS } from '../content/providedPhotos.js'
+import { KNOWLEDGE_CATEGORY_PHOTOS } from '../content/knowledgePhotos.js'
 
 function DocSvg() {
   return (
@@ -107,7 +109,7 @@ export default function Home() {
           <SectionHead eyebrow="Leistungslogik" title="Drei Stärken. Ein Zusammenhang." />
         </div>
         <StrengthStack items={[
-            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', img: '/media/p/home-zugang-tor.webp', icon: 'key' },
+            { t: 'Zugang', d: 'Immobilien abseits öffentlicher Portale.', photo: PROVIDED_PHOTOS.city, icon: 'key' },
             { t: 'Analyse', d: 'Wert, Potenzial und Risiken nachvollziehbar einordnen.', img: '/media/p/home-analyse-hand.webp', icon: 'chart' },
             { t: 'Abwicklung', d: 'Persönlich begleitet zur fundierten Entscheidung.', img: '/media/p/owner-beratung.webp', icon: 'hand' },
           ]} />
@@ -119,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* 05 – Zwei nachvollziehbare Prozesse */}
-      <section className="sec dark proc-sec" aria-labelledby="h-proc">
+      <section id="ablauf" className="sec dark proc-sec" aria-labelledby="h-proc">
         <div className="wrap">
           <SectionHead eyebrow="Ablauf" title="Der Ablauf." />
           <ProcessTimeline />
@@ -141,7 +143,7 @@ export default function Home() {
         <div className="wrap">
           <header className="sec-head"><p className="eyebrow rv">Wissen</p><h2 id="h-wis" className="h2 rv">Hinter die Fassade schauen.</h2></header>
         </div>
-        <KnowledgeTabs full cat={wcat} setCat={setWcat} />
+        <KnowledgeTabs full cat={wcat} setCat={setWcat} images={KNOWLEDGE_CATEGORY_PHOTOS} loadOnDemand />
         <div className="wrap">
           <div className="btn-row"><Btn to="/wissen">Wissen entdecken</Btn></div>
           <p className="small muted" style={{ marginTop: 16 }}>Entwürfe sind gekennzeichnet und keine aktuelle Recherche oder Marktdaten.</p>
@@ -149,9 +151,9 @@ export default function Home() {
       </section>
 
       {/* 11 – Kontaktentscheidung */}
-      <section className="sec dark kx" aria-labelledby="h-next">
+      <section id="naechster-schritt" className="sec dark kx" aria-labelledby="h-next">
         <div className="wrap kx-in">
-          <figure className="kx-pic"><img src="/media/p/kontakt-buero.webp" alt="" loading="lazy" /><figcaption>Illustrationsbild</figcaption></figure>
+          <figure className="kx-pic"><img src="/media/p/h-kontakt.webp" alt="" loading="lazy" decoding="async" /></figure>
           <div className="kx-card">
             <p className="eyebrow rv">Kontakt</p>
             <h2 id="h-next" className="h2 rv">Was ist Ihr nächster Schritt?</h2>

@@ -26,7 +26,7 @@ export default function InvestorsPage() {
       <Seo title="Kapitalanlage-Immobilien | ARVENTAS" description="Ausgewählte Off-Market-Immobilien für Investoren: Suchprofil, Objektanalyse, Chancen und Risiken – persönlich begleitet, deutschlandweit." />
       <h1 className="sr-only">Investieren beginnt mit dem richtigen Zugang.</h1>
 
-      <WordZoom left="Off-Market" right="verständlich erklärt." images={['/media/p/offmarket-strasse.webp', '/media/p/offmarket-gartentor.webp', '/media/p/offmarket-gespraech.webp']} />
+      <WordZoom left="Off-Market" right="verständlich erklärt." images={['wohnviertel', 'fassaden', 'wohnstrasse'].map((name) => ({ thumbnail: `/media/investors/off-market-${name}.webp`, src: `/media/investors/off-market-${name}-hd.webp` }))} />
       <section className="sec dark wz-after">
         <div className="wrap">
           <p className="eyebrow">Off-Market</p>
@@ -34,7 +34,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <ScrollList id="h-vorgehen" eyebrow="Vorgehen" title="Suchprofil, Analyse und Begleitung." items={STEPS.map((x) => ({ t: x.t, d: x.d, img: x.img }))} />
+      <ScrollList id="h-vorgehen" eyebrow="Vorgehen" title="Suchprofil, Analyse und Begleitung." items={STEPS} />
       <ScrollTrack id="h-matrix" eyebrow="Prüfmatrix" title="Chancen und Risiken prüfen." lead="Fünf Bereiche, die vor jeder Entscheidung betrachtet werden sollten. Die Matrix zeigt Prüffragen, keine Empfehlungen."
         items={MATRIX.map((m) => ({ t: m.label, list: m.q, note: 'Keine automatischen Kaufempfehlungen oder Renditezusagen.' }))} />
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import Photo from './Photo.jsx'
 
 // Große Schrittzeilen: Foto blendet beim Hover/Fokus ein, auf Touch-Geräten bei Annäherung zur Bildschirmmitte.
 export default function StepRows({ items }) {
@@ -15,7 +16,7 @@ export default function StepRows({ items }) {
     <div className="step-rows" ref={root}>
       {items.map((s, i) => (
         <Link key={s.title} to={s.to} className="step-row">
-          <img src={s.img} alt="" loading="eager" decoding="async" />
+          <Photo image={s.photo || s.img} sizes="(max-width: 860px) 100vw, 40vw" loading="eager" />
           <span className="sr-no">{i + 1}</span>
           <span className="sr-text">{s.text}</span>
           <span className="sr-title">{s.title}</span>

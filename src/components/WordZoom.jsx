@@ -6,10 +6,17 @@ export default function WordZoom({ left, right, images }) {
   const wrap = useRef(null)
   const slot = useRef(null)
   const [idx, setIdx] = useState(0)
+  const [loaded, setLoaded] = useState(() => new Set())
   useEffect(() => {
-    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 1300)
+    const t = setInterval(() => setIdx((current) => {
+      for (let step = 1; step <= images.length; step++) {
+        const next = (current + step) % images.length
+        if (loaded.has(next)) return next
+      }
+      return current
+    }), 1300)
     return () => clearInterval(t)
-  }, [images.length])
+  }, [images.length, loaded])
   useEffect(() => {
     const el = wrap.current
     if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { el && el.style.setProperty('--p', 1); return }
@@ -42,12 +49,12 @@ export default function WordZoom({ left, right, images }) {
         <div className="wz-row">
           <span className="wz-w"><Letters text={left} per={60} /></span>
           <span className="wz-slot" ref={slot}>
-            {images.map((src, i) => <img key={src} src={src} alt="" className={i === idx ? 'on' : ''} />)}
+            {images.map((image, i) => <img key={typeof image === 'string' ? image : image.src} src={typeof image === 'string' ? image : image.thumbnail || image.src} alt="" className={i === idx ? 'on' : ''} />)}
           </span>
           <span className="wz-w"><Letters text={right} per={60} delay={300} /></span>
         </div>
         <div className="wz-full" aria-hidden="true">
-          {images.map((src, i) => <img key={src} src={src} alt="" className={i === idx ? 'on' : ''} />)}
+          {images.map((image, i) => <img key={typeof image === 'string' ? image : image.src} src={typeof image === 'string' ? image : image.src} alt="" loading="eager" decoding="async" fetchPriority={i === 0 ? 'high' : 'auto'} onLoad={() => setLoaded((previous) => previous.has(i) ? previous : new Set([...previous, i]))} className={i === idx ? 'on' : ''} />)}
         </div>
       </div>
     </section>

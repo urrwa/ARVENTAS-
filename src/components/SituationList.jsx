@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import Photo from './Photo.jsx'
 
 // Der Abschnitt bleibt beim Scrollen stehen: links ein festes Foto, rechts eine feste Überschrift. Die Situationen laufen darunter nach oben durch
 // und blenden am oberen Rand aus. Schmal: normale Liste ohne Fixierung.
@@ -28,7 +29,7 @@ export default function SituationList({ items, eyebrow, title, img }) {
   return (
     <div className="sl" ref={box}>
       <div className="sl-stage">
-        <div className="sl-pic pic-open" aria-hidden="true"><img src={img} alt="" loading="lazy" decoding="async" /></div>
+        <div className="sl-pic pic-open"><Photo image={img} sizes="(max-width: 860px) 92vw, 42vw" /></div>
         <div className="sl-main">
           <header className="sl-head">
             <p className="eyebrow">{eyebrow}</p>

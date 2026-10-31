@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import Photo from './Photo.jsx'
 
 // Horizontale Kartenleiste mit Pfeilen (Scroll-Snap).
 export default function HScroll({ items }) {
@@ -9,7 +10,7 @@ export default function HScroll({ items }) {
       <div className="hs-track" ref={ref} tabIndex={0} role="group" aria-label="Geschäftsmodell">
         {items.map((it, i) => (
           <article key={it.t} className="hs-card">
-            <div className="hs-img"><img src={it.img} alt="" loading="lazy" /></div>
+            <div className="hs-img"><Photo image={it.photo || it.img} sizes="(max-width: 860px) 80vw, 420px" /></div>
             <span className="hs-no">0{i + 1}</span>
             <h3>{it.t}</h3>
             <p>{it.p}</p>
