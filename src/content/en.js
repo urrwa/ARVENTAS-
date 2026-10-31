@@ -1,6 +1,15 @@
 // Englische Leseversion (Lesehilfe für die Abnahme). Schlüssel = deutscher Originaltext, Wert = englische Übersetzung.
 // Ein Wert, der mit "^" beginnt, entfernt das führende Leerzeichen des Originals.
 export default {
+ "Deine Privatsphäre ist uns wichtig": "Your privacy matters to us",
+ "Wir verwenden technisch notwendige Cookies und vergleichbare Technologien, damit unsere Website sicher und funktionsfähig ist. Mit deiner Einwilligung können wir außerdem optionale Technologien für Statistik, Marketing und externe Inhalte verwenden.": "We use strictly necessary cookies and similar technologies to keep our website secure and functional. With your consent, we can also use optional technologies for statistics, marketing and external content.",
+ "Du kannst selbst entscheiden, welchen Kategorien du zustimmst. Deine Auswahl kannst du jederzeit ändern oder widerrufen.": "You can decide which categories you consent to. You can change or withdraw your choice at any time.",
+ "Weitere Informationen findest du in unserer": "You can find further information in our",
+ "Datenschutzerklärung": "Privacy policy",
+ "Aktuell sind keine optionalen Dienste eingebunden. Die optionalen Kategorien bleiben deshalb deaktiviert.": "No optional services are currently connected. These categories therefore remain disabled.",
+ "Alle ablehnen": "Reject all",
+ "Alle akzeptieren": "Accept all",
+ "Externe Inhalte": "External content",
  "Stand: 31. Oktober 2026": "Last updated: 31 October 2026",
  "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)": "Information pursuant to Section 5 of the German Digital Services Act (DDG)",
  "Vertreten durch die Geschäftsführer:": "Represented by the managing directors:",
