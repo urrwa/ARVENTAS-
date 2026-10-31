@@ -17,7 +17,7 @@ export const TEAM_PHOTOS = {
   conversation: photo('team-erstgespraech', 'Mitglieder des ARVENTAS-Teams im persönlichen Gespräch mit einem Tablet.'),
   guidance: photo('team-begleitung', 'Mitglieder des ARVENTAS-Teams besprechen gemeinsam Immobilienfragen in einer Sitzgruppe.'),
   development: photo('team-modellplanung', 'Gemeinsame Besprechung eines Architekturmodells, von Grundrissen und Materialmustern.', 1357, 762),
-  review: photo('team-planpruefung', 'Gemeinsame Prüfung und Besprechung von Grundrissen am Planungstisch.', 1347, 762),
+  review: {"src": "/media/team/team-planpruefung-drive-hq-2752.webp", "srcSet": "/media/team/team-planpruefung-drive-hq-800.webp 800w, /media/team/team-planpruefung-drive-hq-1600.webp 1600w, /media/team/team-planpruefung-drive-hq-2752.webp 2752w", "width": 2752, "height": 1536, "alt": "Gemeinsame Prüfung und Besprechung von Grundrissen am Planungstisch."},
 }
 
 // Einzelporträts in der vom Auftraggeber gelieferten Reihenfolge; Namen und Rollen bleiben offen.
