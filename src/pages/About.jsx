@@ -8,6 +8,7 @@ import ScrollZoom from '../components/ScrollZoom.jsx'
 import HScroll from '../components/HScroll.jsx'
 import Photo from '../components/Photo.jsx'
 import { TEAM_PHOTOS, TEAM_PORTRAITS } from '../content/team.js'
+import { EDITORIAL_PHOTOS } from '../content/editorialPhotos.js'
 
 const VALUES = [
   { title: 'Präzision', icon: 'target', detail: 'Sorgfältig prüfen.' },
@@ -80,7 +81,7 @@ export default function About() {
         </div>
       </section>
 
-      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image={TEAM_PHOTOS.development} />
+      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image={EDITORIAL_PHOTOS.knowledgeOverview} />
 
       <section className="sec dark">
         <div className="wrap">
