@@ -10,19 +10,27 @@ export function Impressum() {
   return (
     <>
       <Seo title="Impressum | ARVENTAS" description="Unternehmens- und Kontaktangaben der ARVENTAS GmbH, Am Grund 11, 86489 Deisenhausen." />
-      <PageHero crumb="Impressum" title="Impressum" lead="Unternehmens- und Kontaktangaben." />
+      <PageHero crumb="Impressum" title="Impressum" lead="Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)." />
       <section className="sec dark"><div className="wrap legal legal-document">
-        <p className="legal-date">Stand: 30. Oktober 2026</p>
-        <aside className="legal-note"><strong>Entwurf zur Abstimmung</strong><p>Die bestätigten Unternehmens- und Kontaktdaten sind eingetragen. Gegebenenfalls erforderliche Steuer-, Erlaubnis- und Aufsichtsangaben sind noch zu bestätigen.</p></aside>
         <h2>Angaben gemäß § 5 DDG</h2>
-        <CompanyAddress />
-        <h2>Vertretung</h2>
-        <p>Geschäftsführer: Ioannis Vozicis, Esref Yavuz und Roman Tränkle.</p>
-        <h2>Handelsregister</h2>
-        <dl className="legal-facts"><div><dt>Registergericht</dt><dd>Amtsgericht Memmingen</dd></div><div><dt>Registernummer</dt><dd>HRB 22526</dd></div></dl>
+        <p><strong>ARVENTAS GmbH</strong><br />Am Grund 11<br />86489 Deisenhausen<br />Deutschland</p>
+        <h2>Vertreten durch die Geschäftsführer</h2>
+        <p>Ioannis Vozicis, Esref Yavuz und Roman Tränkle</p>
         <h2>Kontakt</h2>
-        <p><span>E-Mail:</span> <a href="mailto:info@arventas.de">info@arventas.de</a><br /><span>Telefon:</span> <a href="tel:+49828260299090">08282 60299090</a><br /><span>Website:</span> <a href="https://www.arventas.de">www.arventas.de</a></p>
-        <p>Für eine tatsächliche Kontaktaufnahme nutzen Sie bitte die angegebene E-Mail-Adresse oder Telefonnummer. Die Website-Formulare sind derzeit als Demo gekennzeichnet und versenden keine Anfragen.</p>
+        <p>Telefon: <a href="tel:+498282602990">+49 8282 60 299 90</a><br />E-Mail: <a href="mailto:info@arventas.de">info@arventas.de</a></p>
+        <h2>Registereintrag</h2>
+        <p>Eingetragen im Handelsregister des Amtsgerichts Memmingen.<br />Registernummer: HRB 22526</p>
+        <h2>Umsatzsteuer-ID</h2>
+        <p>Die Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG ist beantragt und wird nach Erteilung an dieser Stelle ergänzt.</p>
+        <h2>Gewerberechtliche Aufsichtsbehörde</h2>
+        <p>Die Erlaubnisse nach § 34c / § 34d GewO sind beantragt.</p>
+        <p>Zuständige Aufsichtsbehörde:<br />Industrie- und Handelskammer für München und Oberbayern<br />Max-Joseph-Straße 2<br />80333 München</p>
+        <h2>Redaktionell Verantwortlicher</h2>
+        <p>Verantwortlich für journalistisch-redaktionelle Inhalte gemäß § 18 Abs. 2 Medienstaatsvertrag (MStV):<br />Roman Tränkle<br />c/o ARVENTAS GmbH<br />Am Grund 11<br />86489 Deisenhausen</p>
+        <h2>Verbraucherstreitbeilegung</h2>
+        <p>Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        <h2>Hinweis zu Immobilieninformationen und Analysen</h2>
+        <p>Die allgemeinen Informationen auf dieser Website dienen der Orientierung. Angaben zu Immobilienwerten, Entwicklungspotenzialen und wirtschaftlichen Szenarien beruhen auf den jeweils beschriebenen Daten und Annahmen. Sie sind keine Zusage eines bestimmten Verkaufspreises, einer Rendite, einer Finanzierung oder einer behördlichen Genehmigung. Der verbindliche Umfang einer beauftragten Leistung ergibt sich aus der jeweiligen Vereinbarung. Individuelle Rechts- und Steuerberatung wird durch allgemeine Website-Informationen nicht ersetzt. Gesetzliche und vertragliche Ansprüche bleiben unberührt.</p>
       </div></section>
     </>
   )

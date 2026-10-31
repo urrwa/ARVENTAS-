@@ -80,7 +80,7 @@ export default function About() {
         </div>
       </section>
 
-      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image={TEAM_PHOTOS.development} />
+      <ScrollZoom left="Werte schaffen." right="Zukunft bauen." image={{ src: '/media/p/mfh-balkone.webp', alt: 'Moderne Wohnanlage mit Balkonen' }} />
 
       <section className="sec dark">
         <div className="wrap">
