@@ -4618,3 +4618,7 @@ body .cookie-actions .btn.btn-gold:hover, body .cookie-actions .btn.btn-gold:foc
 @media (max-width: 350px) {
   body .cookie-actions .btn, body .cookie-actions .btn.btn-gold { font-size: 11px; }
 }
+@media (max-height: 480px) {
+  .cookie-dialog { overflow-y: auto; overscroll-behavior: contain; }
+  .cookie-body { flex: none; overflow: visible; }
+}
